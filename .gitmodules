@@ -1,0 +1,3 @@
+[submodule "grammars-v4"]
+	path = grammars-v4
+	url = git@github.com:antlr/grammars-v4.git

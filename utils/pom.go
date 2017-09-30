@@ -1,0 +1,241 @@
+package utils
+
+import (
+	"bufio"
+	"encoding/xml"
+	"errors"
+	"fmt"
+	"log"
+	"os"
+	"path/filepath"
+	"strings"
+)
+
+const GRAMMARS_ROOT = "grammars-v4" // TODO REMOVE THIS
+
+// Pom represents one of the pom.xml
+// TODO Rename struct to say "Project", since it represents more than the Pom.
+type Pom struct {
+	Name      string   // shortname of this grammar (ususally the directory name)
+	LongName  string   // long name, usually very similar to the shortname.
+	Includes  []string // list of g4 files
+	Generated []string // list of generated files
+	Grammars  []*Grammar
+
+	// Test related info
+	EntryPoint          string
+	ExampleRoot         string
+	Examples            []string
+	CaseInsensitiveType string
+}
+
+func (p *Pom) findGrammarOfType(t string) *Grammar {
+	for _, g := range p.Grammars {
+		if g.Type == t {
+			return g
+		}
+	}
+	return nil
+}
+
+func (p *Pom) ParserName() string {
+	return p.rootParserName() + "Parser"
+}
+
+func (p *Pom) LexerName() string {
+	return p.rootLexerName() + "Lexer"
+}
+
+func (p *Pom) ListenerName() string {
+	return p.rootParserName() + "Listener"
+}
+
+// FilePrefix returns the filename prefix for the generated files.
+func (p *Pom) FilePrefix() string {
+	return strings.ToLower(p.rootParserName())
+}
+
+func (p *Pom) rootParserName() string {
+	if g := p.findGrammarOfType("PARSER"); g != nil {
+		return strings.TrimSuffix(g.Name, "Parser")
+	}
+
+	if g := p.findGrammarOfType("COMBINED"); g != nil {
+		return g.Name
+	}
+
+	return p.LongName
+}
+
+func (p *Pom) rootLexerName() string {
+	if g := p.findGrammarOfType("LEXER"); g != nil {
+		return strings.TrimSuffix(g.Name, "Lexer")
+	}
+
+	if g := p.findGrammarOfType("COMBINED"); g != nil {
+		return g.Name
+	}
+
+	return p.LongName
+}
+
+// Grammar represents a Antlr G4 grammar file.
+type Grammar struct {
+	Name string // name of this grammar
+	Type string // one of PARSER, LEXER or COMBINED // TODO(bramp): Change to enum.
+}
+
+// GeneratedFilename returns the generated filename, for the given grammar.
+// Based on the code at:
+// https://github.com/antlr/antlr4/blob/46b3aa98cc8d8b6908c2cabb64a9587b6b973e6c/tool/src/org/antlr/v4/codegen/target/GoTarget.java#L146
+func (g *Grammar) GeneratedFilename() string {
+	name := g.Name
+	switch g.Type {
+	case "PARSER":
+		name = strings.TrimSuffix(name, "Parser")
+		return strings.ToLower(name) + "_parser.go"
+	case "LEXER":
+		name = strings.TrimSuffix(name, "Lexer")
+		return strings.ToLower(name) + "_lexer.go"
+	case "COMBINED":
+		return strings.ToLower(name) + "_parser.go"
+	}
+	panic(fmt.Sprintf("unknown grammar type %q", g.Type))
+}
+
+// grammar Abnf;
+// lexer grammar MySqlLexer;
+// parser grammar MySqlParser;
+
+func ParseG4(path string) (*Grammar, error) {
+	// TODO(bramp) Use a proper antlr4 parser
+
+	f, err := os.Open(path)
+	if err != nil {
+		return nil, err
+	}
+
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		line := strings.TrimSpace(scanner.Text())
+		t := ""
+		if strings.HasPrefix(line, "grammar") {
+			t = "COMBINED"
+		} else if strings.HasPrefix(line, "lexer") {
+			t = "LEXER"
+		} else if strings.HasPrefix(line, "parser") {
+			t = "PARSER"
+		}
+
+		if t != "" {
+			parts := strings.Fields(strings.TrimSuffix(line, ";"))
+			if len(parts) < 2 {
+				return nil, fmt.Errorf("failed to parse grammar name: %q", line)
+			}
+			return &Grammar{
+				Name: parts[len(parts)-1],
+				Type: t,
+			}, nil
+		}
+	}
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+	return nil, errors.New("failed to find fields of interest in grammar")
+}
+
+func contains(haystack []string, needle string) bool {
+	for _, straw := range haystack {
+		if straw == needle {
+			return true
+		}
+	}
+	return false
+}
+
+// ParsePom extracts information about the grammar in a very lazy way!
+func ParsePom(path string) (*Pom, error) {
+	dir := filepath.Dir(path)
+	name := strings.TrimPrefix(strings.TrimPrefix(dir, GRAMMARS_ROOT), "/")
+
+	p := &Pom{
+		Name: name, // TODO Read name from pom
+	}
+
+	file, err := os.Open(path)
+	if err != nil {
+		return nil, err
+	}
+
+	decoder := xml.NewDecoder(file)
+	for {
+		t, _ := decoder.Token()
+		if t == nil {
+			break
+		}
+
+		switch se := t.(type) {
+		case xml.StartElement:
+			switch se.Name.Local {
+			case "grammars", "include":
+				var file string
+				if err := decoder.DecodeElement(&file, &se); err != nil {
+					return nil, err
+				}
+				file = filepath.Join(dir, file)
+				if _, err := os.Stat(file); os.IsNotExist(err) {
+					log.Printf("missing grammar %q referenced in %q", file, path)
+				} else {
+					// Ignore dups
+					if contains(p.Includes, file) {
+						continue
+					}
+
+					p.Includes = append(p.Includes, file)
+
+					if g, err := ParseG4(file); err != nil {
+						log.Printf("failed to parse grammar %q: %s", file, err)
+					} else {
+						p.Grammars = append(p.Grammars, g)
+						p.Generated = append(p.Generated, g.GeneratedFilename())
+					}
+				}
+
+			case "grammarName":
+				var longName string
+				if err := decoder.DecodeElement(&longName, &se); err != nil {
+					return nil, err
+				}
+				p.LongName = longName
+
+			case "entryPoint":
+				var entryPoint string
+				if err := decoder.DecodeElement(&entryPoint, &se); err != nil {
+					return nil, err
+				}
+				p.EntryPoint = entryPoint
+
+			case "exampleFiles":
+				var file string
+				if err := decoder.DecodeElement(&file, &se); err != nil {
+					return nil, err
+				}
+				p.ExampleRoot = filepath.Join(dir, file)
+				examples, err := filepath.Glob(filepath.Join(p.ExampleRoot, "*"))
+				if err != nil {
+					return nil, err
+				}
+				p.Examples = examples
+
+			case "caseInsensitiveType":
+				var caseInsensitiveType string
+				if err := decoder.DecodeElement(&caseInsensitiveType, &se); err != nil {
+					return nil, err
+				}
+				p.CaseInsensitiveType = caseInsensitiveType
+			}
+		}
+	}
+
+	return p, nil
+}
