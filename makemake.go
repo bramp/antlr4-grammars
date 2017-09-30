@@ -138,7 +138,7 @@ func main() {
 	generatedFiles := make(map[string][]string)
 	for name, pom := range poms {
 		var generated []string
-		for _, file := range pom.Generated {
+		for _, file := range pom.GeneratedFilenames() {
 			// Full path to generated file
 			generated = append(generated, name+"/"+file)
 		}

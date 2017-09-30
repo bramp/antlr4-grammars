@@ -16,11 +16,10 @@ const GRAMMARS_ROOT = "grammars-v4" // TODO REMOVE THIS
 // Pom represents one of the pom.xml
 // TODO Rename struct to say "Project", since it represents more than the Pom.
 type Pom struct {
-	Name      string   // shortname of this grammar (ususally the directory name)
-	LongName  string   // long name, usually very similar to the shortname.
-	Includes  []string // list of g4 files
-	Generated []string // list of generated files
-	Grammars  []*Grammar
+	Name     string   // shortname of this grammar (ususally the directory name)
+	LongName string   // long name, usually very similar to the shortname.
+	Includes []string // list of g4 files
+	Grammars []*Grammar
 
 	// Test related info
 	EntryPoint          string
@@ -83,33 +82,36 @@ func (p *Pom) grammarLexerName() string {
 	return p.LongName
 }
 
+// GeneratedFilenames returns the list of generated files.
+func (p *Pom) GeneratedFilenames() []string {
+	// Based on the code at:
+	// https://github.com/antlr/antlr4/blob/46b3aa98cc8d8b6908c2cabb64a9587b6b973e6c/tool/src/org/antlr/v4/codegen/target/GoTarget.java#L146
+	var files []string
+	for _, g := range p.Grammars {
+		name := g.Name
+		switch g.Type {
+		case "PARSER":
+			name = strings.TrimSuffix(name, "Parser")
+			files = append(files, strings.ToLower(name)+"_parser.go")
+		case "LEXER":
+			name = strings.TrimSuffix(name, "Lexer")
+			files = append(files, strings.ToLower(name)+"_lexer.go")
+		case "COMBINED":
+			files = append(files, strings.ToLower(name)+"_parser.go")
+			files = append(files, strings.ToLower(name)+"_lexer.go")
+		default:
+			panic(fmt.Sprintf("unknown grammar type %q", g.Type))
+		}
+	}
+
+	return files
+}
+
 // Grammar represents a Antlr G4 grammar file.
 type Grammar struct {
 	Name string // name of this grammar
 	Type string // one of PARSER, LEXER or COMBINED // TODO(bramp): Change to enum.
 }
-
-// GeneratedFilename returns the generated filename, for the given grammar.
-// Based on the code at:
-// https://github.com/antlr/antlr4/blob/46b3aa98cc8d8b6908c2cabb64a9587b6b973e6c/tool/src/org/antlr/v4/codegen/target/GoTarget.java#L146
-func (g *Grammar) GeneratedFilename() string {
-	name := g.Name
-	switch g.Type {
-	case "PARSER":
-		name = strings.TrimSuffix(name, "Parser")
-		return strings.ToLower(name) + "_parser.go"
-	case "LEXER":
-		name = strings.TrimSuffix(name, "Lexer")
-		return strings.ToLower(name) + "_lexer.go"
-	case "COMBINED":
-		return strings.ToLower(name) + "_parser.go"
-	}
-	panic(fmt.Sprintf("unknown grammar type %q", g.Type))
-}
-
-// grammar Abnf;
-// lexer grammar MySqlLexer;
-// parser grammar MySqlParser;
 
 func ParseG4(path string) (*Grammar, error) {
 	// TODO(bramp) Use a proper antlr4 parser
@@ -201,7 +203,6 @@ func ParsePom(path string) (*Pom, error) {
 						log.Printf("failed to parse grammar %q: %s", file, err)
 					} else {
 						p.Grammars = append(p.Grammars, g)
-						p.Generated = append(p.Generated, g.GeneratedFilename())
 					}
 				}
 
