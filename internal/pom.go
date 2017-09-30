@@ -39,12 +39,12 @@ func (p *Pom) findGrammarOfType(t string) *Grammar {
 
 // ParserName returns the name of the generated Parser.
 func (p *Pom) ParserName() string {
-	return strings.TrimSuffix(p.grammarParserName(), "Parser") + "Parser"
+	return p.grammarParserName() + "Parser"
 }
 
 // LexerName returns the name of the generated Lexer.
 func (p *Pom) LexerName() string {
-	return strings.TrimSuffix(p.grammarLexerName(), "Lexer") + "Lexer"
+	return p.grammarLexerName() + "Lexer"
 }
 
 func (p *Pom) ListenerName() string {
@@ -59,7 +59,7 @@ func (p *Pom) FilePrefix() string {
 // grammarParserName returns the name parser grammar.
 func (p *Pom) grammarParserName() string {
 	if g := p.findGrammarOfType("PARSER"); g != nil {
-		return g.Name
+		return strings.TrimSuffix(g.Name, "Parser")
 	}
 
 	if g := p.findGrammarOfType("COMBINED"); g != nil {
@@ -72,7 +72,7 @@ func (p *Pom) grammarParserName() string {
 // grammarLexerName returns the name lexer grammar.
 func (p *Pom) grammarLexerName() string {
 	if g := p.findGrammarOfType("LEXER"); g != nil {
-		return g.Name
+		return strings.TrimSuffix(g.Name, "Lexer")
 	}
 
 	if g := p.findGrammarOfType("COMBINED"); g != nil {
