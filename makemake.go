@@ -59,7 +59,7 @@ test: {{ range $name, $pom := .Poms -}}{{ $name }}/{{ $pom.FilePrefix }}_test.go
 {{ $testfile }}: {{ $genfiles }}
 {{- end }}
 
-%_parser.go %_lexer.go:
+%_lexer.go:
 	lang=$$(dirname $@); \
 	mkdir -p $$lang; \
 	pushd {{.GrammarsRoot}}/$$lang > /dev/null; \
