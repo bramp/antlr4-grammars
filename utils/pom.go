@@ -38,26 +38,29 @@ func (p *Pom) findGrammarOfType(t string) *Grammar {
 	return nil
 }
 
+// ParserName returns the name of the generated Parser.
 func (p *Pom) ParserName() string {
-	return p.rootParserName() + "Parser"
+	return strings.TrimSuffix(p.grammarParserName(), "Parser") + "Parser"
 }
 
+// LexerName returns the name of the generated Lexer.
 func (p *Pom) LexerName() string {
-	return p.rootLexerName() + "Lexer"
+	return strings.TrimSuffix(p.grammarLexerName(), "Lexer") + "Lexer"
 }
 
 func (p *Pom) ListenerName() string {
-	return p.rootParserName() + "Listener"
+	return p.grammarParserName() + "Listener"
 }
 
 // FilePrefix returns the filename prefix for the generated files.
 func (p *Pom) FilePrefix() string {
-	return strings.ToLower(p.rootParserName())
+	return strings.ToLower(p.grammarParserName())
 }
 
-func (p *Pom) rootParserName() string {
+// grammarParserName returns the name parser grammar.
+func (p *Pom) grammarParserName() string {
 	if g := p.findGrammarOfType("PARSER"); g != nil {
-		return strings.TrimSuffix(g.Name, "Parser")
+		return g.Name
 	}
 
 	if g := p.findGrammarOfType("COMBINED"); g != nil {
@@ -67,9 +70,10 @@ func (p *Pom) rootParserName() string {
 	return p.LongName
 }
 
-func (p *Pom) rootLexerName() string {
+// grammarLexerName returns the name lexer grammar.
+func (p *Pom) grammarLexerName() string {
 	if g := p.findGrammarOfType("LEXER"); g != nil {
-		return strings.TrimSuffix(g.Name, "Lexer")
+		return g.Name
 	}
 
 	if g := p.findGrammarOfType("COMBINED"); g != nil {
