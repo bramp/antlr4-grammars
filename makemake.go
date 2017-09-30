@@ -3,7 +3,7 @@
 package main
 
 import (
-	"bramp.net/antlr4test-go/utils"
+	"bramp.net/antlr4test-go/internal"
 	"log"
 	"os"
 	"path/filepath"
@@ -96,16 +96,16 @@ test: {{ range $name, $pom := .Poms -}}{{ $name }}/{{ $pom.FilePrefix }}_test.go
 type templateData struct {
 	GrammarsRoot   string
 	Grammars       []string
-	Poms           map[string]*utils.Pom
+	Poms           map[string]*internal.Pom
 	GeneratedFiles map[string][]string
 }
 
 func main() {
-	poms := make(map[string]*utils.Pom)
+	poms := make(map[string]*internal.Pom)
 
 	err := filepath.Walk(GRAMMARS_ROOT, func(path string, info os.FileInfo, err error) error {
 		if err == nil && strings.HasSuffix(path, "/pom.xml") {
-			p, err := utils.ParsePom(path)
+			p, err := internal.ParsePom(path)
 			if err != nil {
 				return err
 			}

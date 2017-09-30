@@ -2,7 +2,7 @@
 package main
 
 import (
-	"bramp.net/antlr4test-go/utils"
+	"bramp.net/antlr4test-go/internal"
 	"fmt"
 	"github.com/iancoleman/strcase"
 	"log"
@@ -26,7 +26,7 @@ package {{ .Name }}_test
 import (
 	"bramp.net/antlr4test-go/{{.Name}}"
 {{- if or (eq .CaseInsensitiveType "UPPER") (eq .CaseInsensitiveType "lower") }}
-	"bramp.net/antlr4test-go/utils"
+	"bramp.net/antlr4test-go/internal"
 {{- end }}
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
@@ -51,9 +51,9 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 
 	{{ if eq .CaseInsensitiveType "UPPER" }}
 	// TODO Switch NewCaseChangingStream for something in the core antlr
-	input = utils.NewCaseChangingStream(input, true)
+	input = internal.NewCaseChangingStream(input, true)
 	{{ else if eq .CaseInsensitiveType "lower" }}
-	input = utils.NewCaseChangingStream(input, false)
+	input = internal.NewCaseChangingStream(input, false)
 	{{ end -}}
 
 	return input, nil
@@ -153,7 +153,7 @@ func main() {
 	grammar := os.Args[1]
 
 	path := filepath.Join(GRAMMARS_ROOT, grammar, "pom.xml")
-	pom, err := utils.ParsePom(path)
+	pom, err := internal.ParsePom(path)
 	if err != nil {
 		log.Fatalf("Failed to read pom file %q: %s", path, err)
 	}
