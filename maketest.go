@@ -63,10 +63,6 @@ type exampleListener struct {
 	*{{.Name}}.Base{{ .ListenerName }}
 }
 
-func newExampleListener() *exampleListener {
-	return new(exampleListener)
-}
-
 func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 	fmt.Println(ctx.GetText())
 }
@@ -86,7 +82,7 @@ func Example() {
 
 	// Finally walk the tree
 	tree := p.{{ .EntryPoint | Title }}()
-	antlr.ParseTreeWalkerDefault.Walk(newExampleListener(), tree)
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
 }
 
 func Test{{ .LexerName }}(t *testing.T) {
