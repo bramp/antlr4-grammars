@@ -81,7 +81,6 @@ func Example() {
 | ✅  | mps             |                                                                             |
 | ✅  | mumath          |                                                                             |
 | ✅  | mumps           |                                                                             |
-| ✅  | muparser        |                                                                             |
 | ✅  | p               |                                                                             |
 | ✅  | pcre            |                                                                             |
 | ✅  | peoplecode      |                                                                             |
@@ -123,7 +122,6 @@ func Example() {
 | ❌  | gff3            | antlr: error(134): gff3.g4:45:28: symbol type conflicts with generated code in target language or runtime |
 | ❌  | golang          | antlr: error(134): Golang.g4:151:23: symbol type conflicts with generated code in target language or runtime |
 | ❌  | graphql         | antlr: error(8): Graphql.g4:33:8: grammar name GraphQL and file name Graphql.g4 differ |
-| ❌  | graphstream-dgs | antlr: warning(125): DGSParser.g4:69:35: implicit definition of token DOT in parser |
 | ❌  | icalendar       | antlr: error(8): iCalendar.g4:35:8: grammar name ICalendar and file name iCalendar.g4 differ |
 | ❌  | informix        | antlr: error(134): informix.g4:601:266: symbol string conflicts with generated code in target language or runtime |
 | ❌  | java8           | antlr: error(134): Java8.g4:73:0: symbol type conflicts with generated code in target language or runtime |
@@ -131,12 +129,11 @@ func Example() {
 | ❌  | javadoc         | build: javadoc/javadoc_lexer.go:167:10: undefined: _input                   |
 | ❌  | jpa             | antlr: error(8): jpa.g4:1:8: grammar name JPA and file name jpa.g4 differ   |
 | ❌  | kotlin          | antlr: error(134): KotlinParser.g4:56:21: symbol type conflicts with generated code in target language or runtime |
-| ❌  | less            | antlr: error(126): LessParser.g4:142:4: cannot create implicit token for string literal in non-combined grammar: '|=' |
 | ❌  | lolcode         | antlr: error(134): lolcode.g4:111:5: symbol func conflicts with generated code in target language or runtime |
 | ❌  | lua             | antlr: error(134): Lua.g4:90:15: symbol var conflicts with generated code in target language or runtime |
 | ❌  | masm            | build: masm/masm_lexer.go:12:4: syntax error: non-declaration statement outside function body |
-| ❌  | mysql           | build: 	previous declaration at mysql/mysql_parser.go:12215:6               |
-| ❌  | objc            | antlr: error(126): ObjectiveCParser.g4:786:13: cannot create implicit token for string literal in non-combined grammar: '-' |
+| ❌  | muparser        |  test: FAIL  bramp.net/antlr4test-go/muparser [build failed]                 |
+| ❌  | mysql           | build:       previous declaration at mysql/mysql_parser.go:12215:6               |
 | ❌  | pascal          | antlr: error(134): pascal.g4:115:23: symbol type conflicts with generated code in target language or runtime |
 | ❌  | pddl            | antlr: error(134): Pddl.g4:92:25: symbol type conflicts with generated code in target language or runtime |
 | ❌  | pdn             | antlr: error(134): pdn.g4:44:14: symbol string conflicts with generated code in target language or runtime |
@@ -153,22 +150,17 @@ func Example() {
 | ❌  | python3alt      | build: python3alt/altpython3_lexer.go:812:13: too many errors               |
 | ❌  | quakemap        | antlr: error(134): quakemap.g4:44:12: symbol string conflicts with generated code in target language or runtime |
 | ❌  | scala           | antlr: error(134): Scala.g4:433:17: symbol type conflicts with generated code in target language or runtime |
-| ❌  | scss            |  test: FAIL	bramp.net/antlr4test-go/scss [build failed]                     |
-| ❌  | sharc           | antlr: warning(125): SHARCParser.g4:783:19: implicit definition of token MR2B in parser |
 | ❌  | smalltalk       | antlr: error(134): Smalltalk.g4:50:57: symbol string conflicts with generated code in target language or runtime |
 | ❌  | smtlibv2        | antlr: error(134): SMTLIBv2.g4:1089:23: symbol string conflicts with generated code in target language or runtime |
 | ❌  | sparql          | antlr: error(134): Sparql.g4:57:45: symbol var conflicts with generated code in target language or runtime |
 | ❌  | sqlite          | antlr: error(134): SQLite.g4:34:21: symbol error conflicts with generated code in target language or runtime |
-| ❌  | stacktrace      | build: can't load package: package bramp.net/antlr4test-go/stacktrace: no Go files in /Users/bramp/go/src/bramp.net/antlr4test-go/stacktrace |
-| ❌  | stringtemplate  | antlr: warning(125): STParser.g4:167:40: implicit definition of token ELLIPSIS in parser |
-| ❌  | tsql            | build: 	previous declaration at tsql/tsql_parser.go:123881:8                |
+| ❌  | tsql            | build:       previous declaration at tsql/tsql_parser.go:123881:8                |
 | ❌  | ucb-logo        | build: ucb-logo/ucblogo_base_listener.go:3:12: syntax error: unexpected -, expecting ; |
 | ❌  | url             | antlr: error(134): url.g4:95:18: symbol string conflicts with generated code in target language or runtime |
 | ❌  | vb6             | antlr: error(134): VisualBasic6.g4:555:35: symbol type conflicts with generated code in target language or runtime |
 | ❌  | vba             | antlr: error(134): vba.g4:569:44: symbol type conflicts with generated code in target language or runtime |
 | ❌  | verilog         | antlr: error(134): Verilog2001.g4:1944:24: symbol range conflicts with generated code in target language or runtime |
 | ❌  | webidl          | antlr: error(134): WebIDL.g4:584:3: symbol type conflicts with generated code in target language or runtime |
-| ❌  | xml             | antlr: error(126): XMLParser.g4:47:21: cannot create implicit token for string literal in non-combined grammar: '=' |   
 
 ## To develop
 
@@ -189,7 +181,7 @@ go run makemake.go
 
 # Now build all the grammars
 make clean
-make all -k -j 8 2> /dev/null
+make all -k -j8 2> /dev/null
 
 # Update the table at the top with new successes or failures
 ```
