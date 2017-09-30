@@ -544,14 +544,14 @@ xpath/xpath_test.go: xpath/xpath_parser.go
 	RET=$$?; \
 	popd > /dev/null; \
 	if [ $$RET -ne 0 ]; then \
-		printf "$(FAIL_COLOR)%s $(LANG_COLOR)%-15s$(NO_COLOR) %s\n" "[FAIL]" "$$lang" "Generating parser: $$(tail -n 1 $$lang/$$lang.errors)"; \
+		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "antlr: $$(tail -n 1 $$lang/$$lang.errors)"; \
 		rm $$lang/*.go > /dev/null 2>&1 || true; \
 		exit $$RET; \
 	fi; \
 	go build ./$$lang >> $$lang/$$lang.errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
-		printf "$(FAIL_COLOR)%s $(LANG_COLOR)%-15s$(NO_COLOR) %s\n" "[FAIL]" "$$lang" "Building parser: $$(tail -n 1 $$lang/$$lang.errors)"; \
+		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "build: $$(tail -n 1 $$lang/$$lang.errors)"; \
 		exit $$RET; \
 	fi;
 
@@ -560,18 +560,18 @@ xpath/xpath_test.go: xpath/xpath_parser.go
 	go run maketest.go $$lang >> $$lang/$$lang.errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
-		printf "$(FAIL_COLOR)%s $(LANG_COLOR)%-15s$(NO_COLOR) %s\n" "[FAIL]" "$$lang" "Generating test: $$(tail -n 1 $$lang/$$lang.errors)"; \
+		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "maketest: $$(tail -n 1 $$lang/$$lang.errors)"; \
 		exit $$RET; \
 	fi; \
 	go test -timeout 10s ./$$lang >> $$lang/$$lang.errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
-		printf "$(FAIL_COLOR)%s $(LANG_COLOR)%-15s$(NO_COLOR) %s\n" "[FAIL]" "$$lang" "Testing: $$(tail -n 1 $$lang/$$lang.errors)"; \
+		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" " test: $$(tail -n 1 $$lang/$$lang.errors)"; \
 		exit $$RET; \
 	fi; \
 	if [[ -s $$lang/$$lang.errors ]]; then \
 		rm $$lang/$$lang.errors; \
-		printf "$(OK_COLOR)%s $(LANG_COLOR)%-15s$(NO_COLOR)\n" "[ OK ]" "$$lang"; \
+		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "✅" "$$lang" ""; \
 	else \
-		printf "$(OK_COLOR)%s $(LANG_COLOR)%-15s$(NO_COLOR) %s\n" "[WARN]" "$$lang" "$$(tail -n 1 $$lang/$$lang.errors)"; \
+		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "⚠️" "$$lang" "$$(tail -n 1 $$lang/$$lang.errors)"; \
 	fi;
