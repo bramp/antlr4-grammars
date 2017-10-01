@@ -7,7 +7,8 @@
 package molecule_test
 
 import (
-	"bramp.net/antlr4test-go/molecule"
+	"bramp.net/antlr4-grammars/molecule"
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
@@ -32,6 +33,32 @@ var examples = []string{
 	"grammars-v4/molecule/examples/NiC2O4 · 2H2O.txt",
 }
 
+type exampleListener struct {
+	*molecule.BasemoleculeListener
+}
+
+func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
+	fmt.Println(ctx.GetText())
+}
+
+func Example() {
+	// Setup the input
+	is := antlr.NewInputStream("...some text to parse...")
+
+	// Create the Lexer
+	lexer := molecule.NewmoleculeLexer(is)
+	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
+	// Create the Parser
+	p := molecule.NewmoleculeParser(stream)
+	p.BuildParseTrees = true
+	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+
+	// Finally walk the tree
+	tree := p.Molecule()
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+}
+
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
 	input, err := antlr.NewFileStream(filepath.Join("..", filename))
@@ -41,8 +68,6 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 
 	return input, nil
 }
-
-// TODO Add an Example func
 
 func TestmoleculeLexer(t *testing.T) {
 	for _, file := range examples {
@@ -71,6 +96,8 @@ func TestmoleculeLexer(t *testing.T) {
 }
 
 func TestmoleculeParser(t *testing.T) {
+	// TODO(bramp): Run this test with and without p.BuildParseTrees
+
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {

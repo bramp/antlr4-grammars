@@ -7,7 +7,7 @@
 package abnf_test
 
 import (
-	"bramp.net/antlr4test-go/abnf"
+	"bramp.net/antlr4-grammars/abnf"
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -22,22 +22,8 @@ var examples = []string{
 	"grammars-v4/abnf/examples/rfc5322.abnf",
 }
 
-func newCharStream(filename string) (antlr.CharStream, error) {
-	var input antlr.CharStream
-	input, err := antlr.NewFileStream(filepath.Join("..", filename))
-	if err != nil {
-		return nil, err
-	}
-
-	return input, nil
-}
-
 type exampleListener struct {
 	*abnf.BaseAbnfListener
-}
-
-func newExampleListener() *exampleListener {
-	return new(exampleListener)
 }
 
 func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
@@ -59,7 +45,17 @@ func Example() {
 
 	// Finally walk the tree
 	tree := p.Rulelist()
-	antlr.ParseTreeWalkerDefault.Walk(newExampleListener(), tree)
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+}
+
+func newCharStream(filename string) (antlr.CharStream, error) {
+	var input antlr.CharStream
+	input, err := antlr.NewFileStream(filepath.Join("..", filename))
+	if err != nil {
+		return nil, err
+	}
+
+	return input, nil
 }
 
 func TestAbnfLexer(t *testing.T) {
@@ -89,6 +85,8 @@ func TestAbnfLexer(t *testing.T) {
 }
 
 func TestAbnfParser(t *testing.T) {
+	// TODO(bramp): Run this test with and without p.BuildParseTrees
+
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {

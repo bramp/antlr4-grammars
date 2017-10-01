@@ -2,7 +2,7 @@
 package main
 
 import (
-	"bramp.net/antlr4test-go/internal"
+	"bramp.net/antlr4-grammars/internal"
 	"fmt"
 	"github.com/iancoleman/strcase"
 	"log"
@@ -12,6 +12,8 @@ import (
 	"strings"
 	"text/template"
 )
+
+const GRAMMARS_ROOT = "grammars-v4"
 
 // TESTFILE is the template for a go test file for this grammar.
 // It expects to be executed with a pom.
@@ -24,9 +26,9 @@ const TESTFILE = `// Package {{ .Name }}_test contains tests for the {{ .LongNam
 package {{ .PackageName }}_test
 
 import (
-	"bramp.net/antlr4test-go/{{.PackageName}}"
+	"bramp.net/antlr4-grammars/{{.PackageName}}"
 {{- if or (eq .CaseInsensitiveType "UPPER") (eq .CaseInsensitiveType "lower") }}
-	"bramp.net/antlr4test-go/internal"
+	"bramp.net/antlr4-grammars/internal"
 {{- end }}
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
@@ -137,8 +139,6 @@ func Test{{ .ParserName }}(t *testing.T) {
 	}
 }
 `
-
-const GRAMMARS_ROOT = "grammars-v4"
 
 // fuzzyMatch returns a filename that matches either exactly, or close enough
 // // to the input. Due to the way the Makefile is constructed, and that the

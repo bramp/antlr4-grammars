@@ -1,13 +1,13 @@
-# antlr4test-go
+# antlr4-grammars
 by Andrew Brampton
 
-Precompiled Go versions of most of the grammars on github.com/antlr/grammars-v4.
+Precompiled Go versions of many of the grammars on github.com/antlr/grammars-v4.
 
-Example
+## Example
 ```go
 
 import (
-	"bramp.net/antlr4/java"
+	"bramp.net/antlr4-grammars/java"
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
@@ -39,10 +39,10 @@ func Example() {
 }
 ```
 
-## Supported
+## Supported Languages
 
 | Status | Language     | Notes                                                                       |
-| --- | --------------- | --------------------------------------------------------------------------- |
+| :-: | --------------- | --------------------------------------------------------------------------- |
 | ✅  | abnf            |                                                                             |
 | ✅  | agc             |                                                                             |
 | ✅  | arithmetic      |                                                                             |
@@ -123,7 +123,8 @@ func Example() {
 | ❌  | basic           | antlr: error(134): jvmBasic.g4:481:8: symbol var conflicts with generated code in target language or runtime |
 | ❌  | calculator      | antlr: error(134): calculator.g4:54:5: symbol func conflicts with generated code in target language or runtime |
 | ❌  | clojure         | antlr: error(134): Clojure.g4:99:12: symbol map conflicts with generated code in target language or runtime |
-| ❌  | cobol85         | build: cobol85/cobol85preprocessor_parser.go:17:5: too many errors          |
+| ❌  | cobol85         | build: cobol85/cobol85_base_visitor.go:374:98: syntax error: unexpected EOF, expecting comma or ) |
+| ❌  | cobol85         | build: cobol85/cobol85preprocessor_parser.go:262:34: too many errors        |
 | ❌  | cpp             | build: cpp/cpp14_parser.go:28859:6: syntax error: unexpected NewEmptyBaseclauseContext, expecting ( |
 | ❌  | csharp          | antlr: error(134): CSharpParser.g4:330:8: symbol type conflicts with generated code in target language or runtime |
 | ❌  | css3            | antlr: error(134): css3.g4:196:6: symbol var conflicts with generated code in target language or runtime |
@@ -133,7 +134,7 @@ func Example() {
 | ❌  | gff3            | antlr: error(134): gff3.g4:45:28: symbol type conflicts with generated code in target language or runtime |
 | ❌  | golang          | antlr: error(134): Golang.g4:151:23: symbol type conflicts with generated code in target language or runtime |
 | ❌  | graphql         | antlr: error(8): Graphql.g4:33:8: grammar name GraphQL and file name Graphql.g4 differ |
-| ❌  | html            |  test: FAIL  bramp.net/antlr4test-go/html    10.035s                            |
+| ❌  | html            |  test: FAIL  bramp.net/antlr4-grammars/html  10.041s                          |
 | ❌  | icalendar       | antlr: error(8): iCalendar.g4:35:8: grammar name ICalendar and file name iCalendar.g4 differ |
 | ❌  | informix        | antlr: error(134): informix.g4:601:266: symbol string conflicts with generated code in target language or runtime |
 | ❌  | java8           | antlr: error(134): Java8.g4:73:0: symbol type conflicts with generated code in target language or runtime |
@@ -170,14 +171,13 @@ func Example() {
 | ❌  | smtlibv2        | antlr: error(134): SMTLIBv2.g4:1089:23: symbol string conflicts with generated code in target language or runtime |
 | ❌  | sparql          | antlr: error(134): Sparql.g4:57:45: symbol var conflicts with generated code in target language or runtime |
 | ❌  | sqlite          | antlr: error(134): SQLite.g4:34:21: symbol error conflicts with generated code in target language or runtime |
+| ❌  | stringtemplate  | build: stringtemplate/st_lexer.go:779:2: syntax error: unexpected default, expecting : |
 | ❌  | stringtemplate  | build: stringtemplate/stg_lexer.go:716:2: syntax error: unexpected default, expecting : |
 | ❌  | swift2          | antlr: error(134): Swift2.g4:783:34: symbol type conflicts with generated code in target language or runtime |
 | ❌  | swift3          | antlr: error(134): Swift3.g4:664:16: symbol type conflicts with generated code in target language or runtime |
 | ❌  | tsql            | build:       previous declaration at tsql/tsql_parser.go:123881:8                |
 | ❌  | turtle          | build:               want String([]string, antlr.RuleContext) string                    |
 | ❌  | ucb_logo        | build: ucb_logo/ucblogo_parser.go:14:14: expected 'STRING', found '.'       |
-| ❌  | unicode/graphemes | antlr:                                                                      |
-| ❌  | unicode/unicode16 | antlr:                                                                      |
 | ❌  | url             | antlr: error(134): url.g4:95:18: symbol string conflicts with generated code in target language or runtime |
 | ❌  | vb6             | antlr: error(134): VisualBasic6.g4:555:35: symbol type conflicts with generated code in target language or runtime |
 | ❌  | vba             | antlr: error(134): vba.g4:569:44: symbol type conflicts with generated code in target language or runtime |

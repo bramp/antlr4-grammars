@@ -7,7 +7,8 @@
 package memcached_protocol_test
 
 import (
-	"bramp.net/antlr4test-go/memcached_protocol"
+	"bramp.net/antlr4-grammars/memcached_protocol"
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
@@ -19,6 +20,32 @@ var examples = []string{
 	"grammars-v4/memcached_protocol/examples/example1.txt",
 }
 
+type exampleListener struct {
+	*memcached_protocol.Basememcached_protocolListener
+}
+
+func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
+	fmt.Println(ctx.GetText())
+}
+
+func Example() {
+	// Setup the input
+	is := antlr.NewInputStream("...some text to parse...")
+
+	// Create the Lexer
+	lexer := memcached_protocol.Newmemcached_protocolLexer(is)
+	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
+	// Create the Parser
+	p := memcached_protocol.Newmemcached_protocolParser(stream)
+	p.BuildParseTrees = true
+	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+
+	// Finally walk the tree
+	tree := p.Command_line()
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+}
+
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
 	input, err := antlr.NewFileStream(filepath.Join("..", filename))
@@ -28,8 +55,6 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 
 	return input, nil
 }
-
-// TODO Add an Example func
 
 func Testmemcached_protocolLexer(t *testing.T) {
 	for _, file := range examples {
@@ -58,6 +83,8 @@ func Testmemcached_protocolLexer(t *testing.T) {
 }
 
 func Testmemcached_protocolParser(t *testing.T) {
+	// TODO(bramp): Run this test with and without p.BuildParseTrees
+
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {

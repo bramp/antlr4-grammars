@@ -7,7 +7,8 @@
 package postalcode_test
 
 import (
-	"bramp.net/antlr4test-go/postalcode"
+	"bramp.net/antlr4-grammars/postalcode"
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
@@ -19,6 +20,32 @@ var examples = []string{
 	"grammars-v4/postalcode/examples/example1.txt",
 }
 
+type exampleListener struct {
+	*postalcode.BasepostalcodeListener
+}
+
+func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
+	fmt.Println(ctx.GetText())
+}
+
+func Example() {
+	// Setup the input
+	is := antlr.NewInputStream("...some text to parse...")
+
+	// Create the Lexer
+	lexer := postalcode.NewpostalcodeLexer(is)
+	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
+	// Create the Parser
+	p := postalcode.NewpostalcodeParser(stream)
+	p.BuildParseTrees = true
+	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+
+	// Finally walk the tree
+	tree := p.Postalcode()
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+}
+
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
 	input, err := antlr.NewFileStream(filepath.Join("..", filename))
@@ -28,8 +55,6 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 
 	return input, nil
 }
-
-// TODO Add an Example func
 
 func TestpostalcodeLexer(t *testing.T) {
 	for _, file := range examples {
@@ -58,6 +83,8 @@ func TestpostalcodeLexer(t *testing.T) {
 }
 
 func TestpostalcodeParser(t *testing.T) {
+	// TODO(bramp): Run this test with and without p.BuildParseTrees
+
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {

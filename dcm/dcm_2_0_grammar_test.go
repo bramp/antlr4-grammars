@@ -7,7 +7,8 @@
 package dcm_test
 
 import (
-	"bramp.net/antlr4test-go/dcm"
+	"bramp.net/antlr4-grammars/dcm"
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
@@ -16,6 +17,32 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{}
+
+type exampleListener struct {
+	*dcm.BaseDCM_2_0_grammarListener
+}
+
+func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
+	fmt.Println(ctx.GetText())
+}
+
+func Example() {
+	// Setup the input
+	is := antlr.NewInputStream("...some text to parse...")
+
+	// Create the Lexer
+	lexer := dcm.NewDCM_2_0_grammarLexer(is)
+	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
+	// Create the Parser
+	p := dcm.NewDCM_2_0_grammarParser(stream)
+	p.BuildParseTrees = true
+	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+
+	// Finally walk the tree
+	tree := p.Konservierung()
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+}
 
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
@@ -26,8 +53,6 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 
 	return input, nil
 }
-
-// TODO Add an Example func
 
 func TestDCM_2_0_grammarLexer(t *testing.T) {
 	for _, file := range examples {
@@ -56,6 +81,8 @@ func TestDCM_2_0_grammarLexer(t *testing.T) {
 }
 
 func TestDCM_2_0_grammarParser(t *testing.T) {
+	// TODO(bramp): Run this test with and without p.BuildParseTrees
+
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {

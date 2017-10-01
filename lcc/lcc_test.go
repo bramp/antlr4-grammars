@@ -7,7 +7,8 @@
 package lcc_test
 
 import (
-	"bramp.net/antlr4test-go/lcc"
+	"bramp.net/antlr4-grammars/lcc"
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
@@ -27,6 +28,32 @@ var examples = []string{
 	"grammars-v4/lcc/examples/geb.txt",
 }
 
+type exampleListener struct {
+	*lcc.BaselccListener
+}
+
+func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
+	fmt.Println(ctx.GetText())
+}
+
+func Example() {
+	// Setup the input
+	is := antlr.NewInputStream("...some text to parse...")
+
+	// Create the Lexer
+	lexer := lcc.NewlccLexer(is)
+	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
+	// Create the Parser
+	p := lcc.NewlccParser(stream)
+	p.BuildParseTrees = true
+	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+
+	// Finally walk the tree
+	tree := p.Lcc()
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+}
+
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
 	input, err := antlr.NewFileStream(filepath.Join("..", filename))
@@ -36,8 +63,6 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 
 	return input, nil
 }
-
-// TODO Add an Example func
 
 func TestlccLexer(t *testing.T) {
 	for _, file := range examples {
@@ -66,6 +91,8 @@ func TestlccLexer(t *testing.T) {
 }
 
 func TestlccParser(t *testing.T) {
+	// TODO(bramp): Run this test with and without p.BuildParseTrees
+
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {

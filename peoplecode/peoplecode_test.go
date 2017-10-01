@@ -7,7 +7,8 @@
 package peoplecode_test
 
 import (
-	"bramp.net/antlr4test-go/peoplecode"
+	"bramp.net/antlr4-grammars/peoplecode"
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
@@ -37,6 +38,32 @@ var examples = []string{
 	"grammars-v4/peoplecode/examples/RecordPC.SSF_SS_PMT_WRK.SSF_MAKE_PAYMENT.FieldChange.pc",
 }
 
+type exampleListener struct {
+	*peoplecode.BasePeopleCodeListener
+}
+
+func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
+	fmt.Println(ctx.GetText())
+}
+
+func Example() {
+	// Setup the input
+	is := antlr.NewInputStream("...some text to parse...")
+
+	// Create the Lexer
+	lexer := peoplecode.NewPeopleCodeLexer(is)
+	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
+	// Create the Parser
+	p := peoplecode.NewPeopleCodeParser(stream)
+	p.BuildParseTrees = true
+	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+
+	// Finally walk the tree
+	tree := p.Program()
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+}
+
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
 	input, err := antlr.NewFileStream(filepath.Join("..", filename))
@@ -46,8 +73,6 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 
 	return input, nil
 }
-
-// TODO Add an Example func
 
 func TestPeopleCodeLexer(t *testing.T) {
 	for _, file := range examples {
@@ -76,6 +101,8 @@ func TestPeopleCodeLexer(t *testing.T) {
 }
 
 func TestPeopleCodeParser(t *testing.T) {
+	// TODO(bramp): Run this test with and without p.BuildParseTrees
+
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {

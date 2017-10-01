@@ -7,7 +7,8 @@
 package datetime_test
 
 import (
-	"bramp.net/antlr4test-go/datetime"
+	"bramp.net/antlr4-grammars/datetime"
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
@@ -20,6 +21,32 @@ var examples = []string{
 	"grammars-v4/datetime/examples/example2.txt",
 }
 
+type exampleListener struct {
+	*datetime.BasedatetimeListener
+}
+
+func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
+	fmt.Println(ctx.GetText())
+}
+
+func Example() {
+	// Setup the input
+	is := antlr.NewInputStream("...some text to parse...")
+
+	// Create the Lexer
+	lexer := datetime.NewdatetimeLexer(is)
+	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
+	// Create the Parser
+	p := datetime.NewdatetimeParser(stream)
+	p.BuildParseTrees = true
+	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+
+	// Finally walk the tree
+	tree := p.Date_time()
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+}
+
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
 	input, err := antlr.NewFileStream(filepath.Join("..", filename))
@@ -29,8 +56,6 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 
 	return input, nil
 }
-
-// TODO Add an Example func
 
 func TestdatetimeLexer(t *testing.T) {
 	for _, file := range examples {
@@ -59,6 +84,8 @@ func TestdatetimeLexer(t *testing.T) {
 }
 
 func TestdatetimeParser(t *testing.T) {
+	// TODO(bramp): Run this test with and without p.BuildParseTrees
+
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {

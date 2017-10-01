@@ -7,7 +7,8 @@
 package ruby_test
 
 import (
-	"bramp.net/antlr4test-go/ruby"
+	"bramp.net/antlr4-grammars/ruby"
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
@@ -19,6 +20,32 @@ var examples = []string{
 	"grammars-v4/ruby/examples/test.rb",
 }
 
+type exampleListener struct {
+	*ruby.BaseCorundumListener
+}
+
+func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
+	fmt.Println(ctx.GetText())
+}
+
+func Example() {
+	// Setup the input
+	is := antlr.NewInputStream("...some text to parse...")
+
+	// Create the Lexer
+	lexer := ruby.NewCorundumLexer(is)
+	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
+	// Create the Parser
+	p := ruby.NewCorundumParser(stream)
+	p.BuildParseTrees = true
+	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+
+	// Finally walk the tree
+	tree := p.Prog()
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+}
+
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
 	input, err := antlr.NewFileStream(filepath.Join("..", filename))
@@ -28,8 +55,6 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 
 	return input, nil
 }
-
-// TODO Add an Example func
 
 func TestCorundumLexer(t *testing.T) {
 	for _, file := range examples {
@@ -58,6 +83,8 @@ func TestCorundumLexer(t *testing.T) {
 }
 
 func TestCorundumParser(t *testing.T) {
+	// TODO(bramp): Run this test with and without p.BuildParseTrees
+
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {

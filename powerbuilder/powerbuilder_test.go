@@ -7,7 +7,8 @@
 package powerbuilder_test
 
 import (
-	"bramp.net/antlr4test-go/powerbuilder"
+	"bramp.net/antlr4-grammars/powerbuilder"
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
@@ -16,6 +17,32 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{}
+
+type exampleListener struct {
+	*powerbuilder.BasepowerbuilderListener
+}
+
+func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
+	fmt.Println(ctx.GetText())
+}
+
+func Example() {
+	// Setup the input
+	is := antlr.NewInputStream("...some text to parse...")
+
+	// Create the Lexer
+	lexer := powerbuilder.NewpowerbuilderLexer(is)
+	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
+	// Create the Parser
+	p := powerbuilder.NewpowerbuilderParser(stream)
+	p.BuildParseTrees = true
+	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+
+	// Finally walk the tree
+	tree := p.Start_rule()
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+}
 
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
@@ -26,8 +53,6 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 
 	return input, nil
 }
-
-// TODO Add an Example func
 
 func TestpowerbuilderLexer(t *testing.T) {
 	for _, file := range examples {
@@ -56,6 +81,8 @@ func TestpowerbuilderLexer(t *testing.T) {
 }
 
 func TestpowerbuilderParser(t *testing.T) {
+	// TODO(bramp): Run this test with and without p.BuildParseTrees
+
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {

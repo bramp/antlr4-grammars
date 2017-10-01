@@ -3,7 +3,7 @@
 package main
 
 import (
-	"bramp.net/antlr4test-go/internal"
+	"bramp.net/antlr4-grammars/internal"
 	"log"
 	"os"
 	"path/filepath"

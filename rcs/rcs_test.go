@@ -7,7 +7,8 @@
 package rcs_test
 
 import (
-	"bramp.net/antlr4test-go/rcs"
+	"bramp.net/antlr4-grammars/rcs"
+	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
@@ -16,6 +17,32 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{}
+
+type exampleListener struct {
+	*rcs.BaseRCSListener
+}
+
+func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
+	fmt.Println(ctx.GetText())
+}
+
+func Example() {
+	// Setup the input
+	is := antlr.NewInputStream("...some text to parse...")
+
+	// Create the Lexer
+	lexer := rcs.NewRCSLexer(is)
+	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
+	// Create the Parser
+	p := rcs.NewRCSParser(stream)
+	p.BuildParseTrees = true
+	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+
+	// Finally walk the tree
+	tree := p.Rcstext()
+	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+}
 
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
@@ -26,8 +53,6 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 
 	return input, nil
 }
-
-// TODO Add an Example func
 
 func TestRCSLexer(t *testing.T) {
 	for _, file := range examples {
@@ -56,6 +81,8 @@ func TestRCSLexer(t *testing.T) {
 }
 
 func TestRCSParser(t *testing.T) {
+	// TODO(bramp): Run this test with and without p.BuildParseTrees
+
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {
