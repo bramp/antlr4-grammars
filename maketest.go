@@ -130,7 +130,7 @@ func Test{{ .ParserName }}(t *testing.T) {
 		// Create the Parser
 		p := {{.PackageName}}.New{{ .ParserName }}(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(internal.NewTestingErrorListener(t))
+		p.AddErrorListener(internal.NewTestingErrorListener(t, file))
 
 		// Finally test
 		p.{{ .EntryPoint | Title }}()

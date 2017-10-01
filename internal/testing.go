@@ -23,15 +23,16 @@ func PrintAllTokens(lexer antlr.Lexer) {
 type TestingErrorListener struct {
 	*antlr.DefaultErrorListener
 
-	t *testing.T
+	t    *testing.T
+	name string
 }
 
-func NewTestingErrorListener(t *testing.T) *TestingErrorListener {
-	return &TestingErrorListener{t: t}
+func NewTestingErrorListener(t *testing.T, name string) *TestingErrorListener {
+	return &TestingErrorListener{t: t, name: name}
 }
 
 func (l *TestingErrorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbol interface{}, line, column int, msg string, e antlr.RecognitionException) {
-	l.t.Errorf("SyntaxError %d:%d: %s", line, column, msg)
+	l.t.Errorf("%s: SyntaxError %d:%d: %s", l.name, line, column, msg)
 }
 
 // CaseChangingStream wraps an existing CharStream, but upper cases, or lower cases
