@@ -13,9 +13,8 @@ import (
 
 const GRAMMARS_ROOT = "grammars-v4" // TODO REMOVE THIS
 
-// Pom represents one of the pom.xml
-// TODO Rename struct to say "Project", since it represents more than the Pom.
-type Pom struct {
+// Project represents one of language grammars defined by a pom.xml file and a set of g4 files.
+type Project struct {
 	Name     string   // shortname of this grammar (ususally the directory name)
 	LongName string   // long name, usually very similar to the shortname.
 	Includes []string // list of g4 files
@@ -30,7 +29,7 @@ type Pom struct {
 	FoundAntlr4MavenPlugin bool // Did we actually find the right Maven plugin?
 }
 
-func (p *Pom) findGrammarOfType(t string) *Grammar {
+func (p *Project) findGrammarOfType(t string) *Grammar {
 	for _, g := range p.Grammars {
 		if g.Type == t {
 			return g
@@ -40,21 +39,21 @@ func (p *Pom) findGrammarOfType(t string) *Grammar {
 }
 
 // PackageName returns the name of this package, that is safe to use in Go.
-func (p *Pom) PackageName() string {
+func (p *Project) PackageName() string {
 	return strings.Replace(p.Name, "-", "_", -1)
 }
 
 // ParserName returns the name of the generated Parser.
-func (p *Pom) ParserName() string {
+func (p *Project) ParserName() string {
 	return p.grammarParserName() + "Parser"
 }
 
 // LexerName returns the name of the generated Lexer.
-func (p *Pom) LexerName() string {
+func (p *Project) LexerName() string {
 	return p.grammarLexerName() + "Lexer"
 }
 
-func (p *Pom) ListenerName() string {
+func (p *Project) ListenerName() string {
 	if g := p.findGrammarOfType("PARSER"); g != nil {
 		return g.Name + "Listener"
 	}
@@ -67,12 +66,12 @@ func (p *Pom) ListenerName() string {
 }
 
 // FilePrefix returns the filename prefix for the generated files.
-func (p *Pom) FilePrefix() string {
+func (p *Project) FilePrefix() string {
 	return strings.ToLower(p.grammarParserName())
 }
 
 // grammarParserName returns the name parser grammar.
-func (p *Pom) grammarParserName() string {
+func (p *Project) grammarParserName() string {
 	if g := p.findGrammarOfType("PARSER"); g != nil {
 		return strings.TrimSuffix(g.Name, "Parser")
 	}
@@ -85,7 +84,7 @@ func (p *Pom) grammarParserName() string {
 }
 
 // grammarLexerName returns the name lexer grammar.
-func (p *Pom) grammarLexerName() string {
+func (p *Project) grammarLexerName() string {
 	if g := p.findGrammarOfType("LEXER"); g != nil {
 		return strings.TrimSuffix(g.Name, "Lexer")
 	}
@@ -98,7 +97,7 @@ func (p *Pom) grammarLexerName() string {
 }
 
 // GeneratedFilenames returns the list of generated files.
-func (p *Pom) GeneratedFilenames() []string {
+func (p *Project) GeneratedFilenames() []string {
 	// Based on the code at:
 	// https://github.com/antlr/antlr4/blob/46b3aa98cc8d8b6908c2cabb64a9587b6b973e6c/tool/src/org/antlr/v4/codegen/target/GoTarget.java#L146
 	var files []string
@@ -174,12 +173,17 @@ func contains(haystack []string, needle string) bool {
 	return false
 }
 
+func fileExists(path string) bool {
+	_, err := os.Stat(path)
+	return !os.IsNotExist(err)
+}
+
 // ParsePom extracts information about the grammar in a very lazy way!
-func ParsePom(path string) (*Pom, error) {
+func ParsePom(path string) (*Project, error) {
 	dir := filepath.Dir(path)
 	name := strings.TrimPrefix(strings.TrimPrefix(dir, GRAMMARS_ROOT), "/")
 
-	p := &Pom{
+	p := &Project{
 		Name: name, // TODO Read name from pom
 	}
 
@@ -212,7 +216,14 @@ func ParsePom(path string) (*Pom, error) {
 					return nil, err
 				}
 				file = filepath.Join(dir, file)
-				if _, err := os.Stat(file); os.IsNotExist(err) {
+
+				// "Upgrade" the file to a GoTarget specific one (if it exists)
+				betterfile := strings.Replace(file, ".g4", ".GoTarget.g4", -1)
+				if fileExists(betterfile) {
+					file = betterfile
+				}
+
+				if !fileExists(file) {
 					log.Printf("missing grammar %q referenced in %q", file, path)
 				} else {
 					// Ignore dups

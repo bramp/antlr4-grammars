@@ -168,7 +168,7 @@ func main() {
 		log.Fatalf("Failed to find pom file %q: %s", path, err)
 	}
 
-	pom, err := internal.ParsePom(path)
+	project, err := internal.ParsePom(path)
 	if err != nil {
 		log.Fatalf("Failed to read pom file %q: %s", path, err)
 	}
@@ -181,13 +181,13 @@ func main() {
 
 	testTemplate := template.Must(template.New("test").Funcs(funcs).Parse(TESTFILE))
 
-	testfile := filepath.Join(grammar, pom.FilePrefix()+"_test.go")
+	testfile := filepath.Join(grammar, project.FilePrefix()+"_test.go")
 	out, err := os.Create(testfile)
 	if err != nil {
 		log.Fatalf("failed to create %q: %s", testfile, err)
 	}
 
-	if err := testTemplate.Execute(out, pom); err != nil {
+	if err := testTemplate.Execute(out, project); err != nil {
 		log.Fatalf("failed to generate %q: %s", testfile, err)
 	}
 

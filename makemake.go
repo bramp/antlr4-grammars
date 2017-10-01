@@ -55,13 +55,13 @@ $(ANTLR_BIN):
 	mkdir -p .bin
 	curl -o $@ $(ANTLR_URL)
 
-test: {{ range $name, $pom := .Poms -}}{{ $name }}/{{ $pom.FilePrefix }}_test.go {{ end }}
+test: {{ range $name, $project := .Projects -}}{{ $name }}/{{ $project.FilePrefix }}_test.go {{ end }}
 
-{{ range $name, $pom := .Poms -}}
+{{ range $name, $project := .Projects -}}
 {{ $genfiles := (Join (index $.GeneratedFiles $name) " ") }}
-{{ $testfile := (Concat $name "/" $pom.FilePrefix "_test.go") }}
+{{ $testfile := (Concat $name "/" $project.FilePrefix "_test.go") }}
 {{ $name }}: {{ $testfile }}
-{{ $genfiles }}: {{ Join $pom.Includes " " }}
+{{ $genfiles }}: {{ Join $project.Includes " " }}
 {{ $testfile }}: {{ $genfiles }}
 {{- end }}
 
@@ -108,10 +108,11 @@ test: {{ range $name, $pom := .Poms -}}{{ $name }}/{{ $pom.FilePrefix }}_test.go
 
 type templateData struct {
 	Grammars       []string
-	Poms           map[string]*internal.Pom
+	Projects       map[string]*internal.Project
 	GeneratedFiles map[string][]string
 }
 
+// onIgnoreList returns true if the pom file in the path is on the banned list.
 func onIgnoreList(path string) bool {
 	for _, ignore := range IGNORE {
 		if strings.HasSuffix(path, "/"+ignore+"/pom.xml") {
@@ -122,7 +123,7 @@ func onIgnoreList(path string) bool {
 }
 
 func main() {
-	poms := make(map[string]*internal.Pom)
+	projects := make(map[string]*internal.Project)
 
 	err := filepath.Walk(GRAMMARS_ROOT, func(path string, info os.FileInfo, err error) error {
 		if err == nil && strings.HasSuffix(path, "/pom.xml") {
@@ -145,7 +146,17 @@ func main() {
 				return nil
 			}
 
-			poms[p.PackageName()] = p
+			// Check for g4 files not mentioned in pom
+			//g4s, err := filepath.Glob(filepath.Dir(path) + "/*.g4")
+			//if err != nil {
+			//	return err
+			//}
+			//if len(g4s) != len(p.Includes) {
+			//	log.Printf("mismatch g4 files:\n    *.g4: %q\nincludes: %q", g4s, p.Includes)
+			//	return nil
+			//}
+
+			projects[p.PackageName()] = p
 		}
 		return err
 	})
@@ -154,24 +165,28 @@ func main() {
 	}
 
 	var grammars []string
-	for name := range poms {
+	for name := range projects {
 		grammars = append(grammars, name)
 	}
 	sort.Strings(grammars)
 
 	generatedFiles := make(map[string][]string)
-	for name, pom := range poms {
+	for name, project := range projects {
 		var generated []string
-		for _, file := range pom.GeneratedFilenames() {
+		for _, file := range project.GeneratedFilenames() {
 			// Full path to generated file
 			generated = append(generated, name+"/"+file)
 		}
 		generatedFiles[name] = generated
+		if len(generated) < 2 {
+			// TODO(bramp): Actually check we have one lexer, and one parser.
+			log.Fatalf("Expect atleast two generated files, only got: %q for %q", generated, name)
+		}
 	}
 
 	data := templateData{
 		Grammars:       grammars,
-		Poms:           poms,
+		Projects:       projects,
 		GeneratedFiles: generatedFiles,
 	}
 
