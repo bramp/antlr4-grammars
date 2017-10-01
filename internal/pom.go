@@ -55,7 +55,15 @@ func (p *Pom) LexerName() string {
 }
 
 func (p *Pom) ListenerName() string {
-	return p.grammarParserName() + "Listener"
+	if g := p.findGrammarOfType("PARSER"); g != nil {
+		return g.Name + "Listener"
+	}
+
+	if g := p.findGrammarOfType("COMBINED"); g != nil {
+		return g.Name + "Listener"
+	}
+
+	panic(fmt.Sprintf("%q does not contain a parser", p.Name))
 }
 
 // FilePrefix returns the filename prefix for the generated files.
@@ -73,7 +81,7 @@ func (p *Pom) grammarParserName() string {
 		return g.Name
 	}
 
-	return p.LongName
+	panic(fmt.Sprintf("%q does not contain a parser", p.Name))
 }
 
 // grammarLexerName returns the name lexer grammar.
@@ -86,7 +94,7 @@ func (p *Pom) grammarLexerName() string {
 		return g.Name
 	}
 
-	return p.LongName
+	panic(fmt.Sprintf("%q does not contain a lexer", p.Name))
 }
 
 // GeneratedFilenames returns the list of generated files.
