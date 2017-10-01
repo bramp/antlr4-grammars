@@ -27,9 +27,8 @@ package {{ .PackageName }}_test
 
 import (
 	"bramp.net/antlr4-grammars/{{.PackageName}}"
-{{- if or (eq .CaseInsensitiveType "UPPER") (eq .CaseInsensitiveType "lower") }}
 	"bramp.net/antlr4-grammars/internal"
-{{- end }}
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -55,6 +54,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := {{.PackageName}}.New{{ .LexerName }}(is)
@@ -129,13 +130,10 @@ func Test{{ .ParserName }}(t *testing.T) {
 		// Create the Parser
 		p := {{.PackageName}}.New{{ .ParserName }}(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.{{ .EntryPoint | Title }}()
-
-		// TODO Check for errors
 	}
 }
 `
