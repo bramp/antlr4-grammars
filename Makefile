@@ -192,7 +192,7 @@ golang/golang_parser.go golang/golang_lexer.go: grammars-v4/golang/Golang.g4
 golang/golang_test.go: golang/golang_parser.go golang/golang_lexer.go
 
 graphql: graphql/graphql_test.go
-graphql/graphql_parser.go graphql/graphql_lexer.go: grammars-v4/graphql/Graphql.g4
+graphql/graphql_parser.go graphql/graphql_lexer.go: grammars-v4/graphql/GraphQL.g4
 graphql/graphql_test.go: graphql/graphql_parser.go graphql/graphql_lexer.go
 
 graphstream_dgs: graphstream_dgs/dgs_test.go
@@ -208,7 +208,7 @@ html/html_lexer.go html/html_parser.go: grammars-v4/html/HTMLLexer.g4 grammars-v
 html/html_test.go: html/html_lexer.go html/html_parser.go
 
 icalendar: icalendar/icalendar_test.go
-icalendar/icalendar_parser.go icalendar/icalendar_lexer.go: grammars-v4/icalendar/iCalendar.g4
+icalendar/icalendar_parser.go icalendar/icalendar_lexer.go: grammars-v4/icalendar/ICalendar.g4
 icalendar/icalendar_test.go: icalendar/icalendar_parser.go icalendar/icalendar_lexer.go
 
 idl: idl/idl_test.go
@@ -244,7 +244,7 @@ javadoc/javadoc_parser.go javadoc/javadoc_lexer.go: grammars-v4/javadoc/JavadocP
 javadoc/javadoc_test.go: javadoc/javadoc_parser.go javadoc/javadoc_lexer.go
 
 jpa: jpa/jpa_test.go
-jpa/jpa_parser.go jpa/jpa_lexer.go: grammars-v4/jpa/jpa.g4
+jpa/jpa_parser.go jpa/jpa_lexer.go: grammars-v4/jpa/JPA.g4
 jpa/jpa_test.go: jpa/jpa_parser.go jpa/jpa_lexer.go
 
 json: json/json_test.go

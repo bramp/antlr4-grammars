@@ -72,6 +72,7 @@ func Example() {
 | ✅  | istc            |                                                                             |
 | ✅  | java            |                                                                             |
 | ✅  | java8_pt        |                                                                             |
+| ✅  | jpa             |                                                                             |
 | ✅  | json            |                                                                             |
 | ✅  | lambda          |                                                                             |
 | ✅  | lcc             |                                                                             |
@@ -133,13 +134,12 @@ func Example() {
 | ❌  | fortran77       | antlr: error(134): fortran77.g4:89:6: symbol type conflicts with generated code in target language or runtime |
 | ❌  | gff3            | antlr: error(134): gff3.g4:45:28: symbol type conflicts with generated code in target language or runtime |
 | ❌  | golang          | antlr: error(134): Golang.g4:151:23: symbol type conflicts with generated code in target language or runtime |
-| ❌  | graphql         | antlr: error(8): Graphql.g4:33:8: grammar name GraphQL and file name Graphql.g4 differ |
+| ❌  | graphql         | antlr: error(134): GraphQL.g4:140:9: symbol type conflicts with generated code in target language or runtime |
 | ❌  | html            |  test: FAIL  bramp.net/antlr4-grammars/html  10.041s                          |
-| ❌  | icalendar       | antlr: error(8): iCalendar.g4:35:8: grammar name ICalendar and file name iCalendar.g4 differ |
+| ❌  | icalendar       | antlr: error(134): ICalendar.g4:305:3: symbol action conflicts with generated code in target language or runtime |
 | ❌  | informix        | antlr: error(134): informix.g4:601:266: symbol string conflicts with generated code in target language or runtime |
 | ❌  | java8           | antlr: error(134): Java8.g4:73:0: symbol type conflicts with generated code in target language or runtime |
 | ❌  | javadoc         | build: javadoc/javadoc_lexer.go:167:10: undefined: _input                   |
-| ❌  | jpa             | antlr: error(8): jpa.g4:1:8: grammar name JPA and file name jpa.g4 differ   |
 | ❌  | kotlin          | antlr: error(134): KotlinParser.g4:56:21: symbol type conflicts with generated code in target language or runtime |
 | ❌  | kuka            | antlr: error(134): krl.g4:80:68: symbol type conflicts with generated code in target language or runtime |
 | ❌  | logo            | antlr: error(134): logo.g4:128:38: symbol func conflicts with generated code in target language or runtime |
