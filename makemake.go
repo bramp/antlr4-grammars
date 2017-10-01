@@ -62,7 +62,7 @@ test: {{ range $name, $pom := .Poms -}}{{ $name }}/{{ $pom.FilePrefix }}_test.go
 %_lexer.go:
 	lang=$$(dirname $@); \
 	mkdir -p $$lang; \
-	pushd {{.GrammarsRoot}}/$$lang > /dev/null; \
+	pushd $$(dirname $<) > /dev/null; \
 	java -jar $(ANTLR_BIN) $(ANTLR_ARGS) -package $$lang $(notdir $^) -o ../../$$lang > ../../$$lang/$$lang.errors 2>&1; \
 	RET=$$?; \
 	popd > /dev/null; \
@@ -78,7 +78,7 @@ test: {{ range $name, $pom := .Poms -}}{{ $name }}/{{ $pom.FilePrefix }}_test.go
 		exit $$RET; \
 	fi;
 
-%_test.go: %_parser.go
+%_test.go: %_parser.go %_lexer.go
 	lang=$$(dirname $@); \
 	go run maketest.go $$lang >> $$lang/$$lang.errors 2>&1; \
 	RET=$$?; \
@@ -101,7 +101,6 @@ test: {{ range $name, $pom := .Poms -}}{{ $name }}/{{ $pom.FilePrefix }}_test.go
 `
 
 type templateData struct {
-	GrammarsRoot   string
 	Grammars       []string
 	Poms           map[string]*internal.Pom
 	GeneratedFiles map[string][]string
@@ -127,7 +126,7 @@ func main() {
 				return nil
 			}
 
-			poms[p.Name] = p
+			poms[p.PackageName()] = p
 		}
 		return err
 	})
@@ -152,7 +151,6 @@ func main() {
 	}
 
 	data := templateData{
-		GrammarsRoot:   GRAMMARS_ROOT,
 		Grammars:       grammars,
 		Poms:           poms,
 		GeneratedFiles: generatedFiles,

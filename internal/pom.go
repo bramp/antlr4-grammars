@@ -39,6 +39,11 @@ func (p *Pom) findGrammarOfType(t string) *Grammar {
 	return nil
 }
 
+// PackageName returns the name of this package, that is safe to use in Go.
+func (p *Pom) PackageName() string {
+	return strings.Replace(p.Name, "-", "_", -1)
+}
+
 // ParserName returns the name of the generated Parser.
 func (p *Pom) ParserName() string {
 	return p.grammarParserName() + "Parser"
