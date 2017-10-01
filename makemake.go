@@ -70,44 +70,47 @@ test: {{ range $name, $project := .Projects -}}{{ $name }}/{{ $project.FilePrefi
 {{ $testfile }}: {{ $genfiles }}
 {{- end }}
 
-%_lexer.go:
+%_lexer.go %_parser.go:
 	lang=$$(dirname $@); \
+	errors=$$lang/$$(basename $*).errors; \
 	mkdir -p $$lang; \
 	pushd $$(dirname $<) > /dev/null; \
-	java -jar $(ANTLR_BIN) $(ANTLR_ARGS) -package $$lang $(notdir $^) -o ../../$$lang > ../../$$lang/$$lang.errors 2>&1; \
+	java -jar $(ANTLR_BIN) $(ANTLR_ARGS) -package $$lang $(notdir $^) -o ../../$$lang > ../../$$errors 2>&1; \
 	RET=$$?; \
 	popd > /dev/null; \
 	if [ $$RET -ne 0 ]; then \
-		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "antlr: $$(tail -n 1 $$lang/$$lang.errors)"; \
+		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "antlr: $$(tail -n 1 $$errors)"; \
 		rm $$lang/*.go > /dev/null 2>&1 || true; \
 		exit $$RET; \
 	fi; \
-	go build ./$$lang >> $$lang/$$lang.errors 2>&1; \
+	shopt -s nullglob; \
+	go build $*_*.go $*parser_*.go >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
-		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "build: $$(tail -n 1 $$lang/$$lang.errors)"; \
+		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "build: $$(tail -n 1 $$errors)"; \
 		exit $$RET; \
 	fi;
 
-%_test.go: %_parser.go %_lexer.go
+%_test.go:
 	lang=$$(dirname $@); \
-	go run maketest.go $$lang >> $$lang/$$lang.errors 2>&1; \
+	errors=$$lang/$$(basename $*).errors; \
+	go run maketest.go $$lang >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
-		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "maketest: $$(tail -n 1 $$lang/$$lang.errors)"; \
+		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "maketest: $$(tail -n 1 $$errors)"; \
 		exit $$RET; \
 	fi; \
-	go test -timeout 10s ./$$lang >> $$lang/$$lang.errors 2>&1; \
+	go test -timeout 10s ./$$lang >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
-		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" " test: $$(tail -n 1 $$lang/$$lang.errors)"; \
+		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" " test: $$(tail -n 1 $$errors)"; \
 		exit $$RET; \
 	fi; \
-	if [[ -s $$lang/$$lang.errors ]]; then \
-		rm $$lang/$$lang.errors; \
+	if [[ -s $$errors ]]; then \
+		rm $$errors; \
 		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "✅" "$$lang" ""; \
 	else \
-		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "⚠️" "$$lang" "$$(tail -n 1 $$lang/$$lang.errors)"; \
+		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "⚠️" "$$lang" "$$(tail -n 1 $$errors)"; \
 	fi;
 `
 
