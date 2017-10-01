@@ -117,9 +117,14 @@ func main() {
 				return err
 			}
 
+			// Ignore pom files which don't even have the Antlr plugin
+			if !p.FoundAntlr4MavenPlugin {
+				return nil
+			}
+
 			if len(p.Includes) == 0 {
 				log.Printf("skipping %q as it contains no grammars", path)
-				return err
+				return nil
 			}
 
 			poms[p.Name] = p

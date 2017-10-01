@@ -26,6 +26,8 @@ type Pom struct {
 	ExampleRoot         string
 	Examples            []string
 	CaseInsensitiveType string
+
+	FoundAntlr4MavenPlugin bool // Did we actually find the right Maven plugin?
 }
 
 func (p *Pom) findGrammarOfType(t string) *Grammar {
@@ -183,6 +185,14 @@ func ParsePom(path string) (*Pom, error) {
 		switch se := t.(type) {
 		case xml.StartElement:
 			switch se.Name.Local {
+			case "artifactId":
+				var name string
+				if err := decoder.DecodeElement(&name, &se); err != nil {
+					return nil, err
+				}
+				if name == "antlr4-maven-plugin" {
+					p.FoundAntlr4MavenPlugin = true
+				}
 			case "grammars", "include":
 				var file string
 				if err := decoder.DecodeElement(&file, &se); err != nil {
@@ -230,6 +240,9 @@ func ParsePom(path string) (*Pom, error) {
 				if err != nil {
 					return nil, err
 				}
+				//if len(examples) == 0 {
+				//	log.Printf("exampleFiles %q contains no examples for grammar %q", file, path)
+				//}
 				p.Examples = examples
 
 			case "caseInsensitiveType":
