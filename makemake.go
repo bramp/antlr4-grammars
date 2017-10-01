@@ -14,6 +14,12 @@ import (
 
 const GRAMMARS_ROOT = "grammars-v4"
 
+// IGNORE these projects
+var IGNORE = []string{
+	"objc",      // Is actually two subprojects, needs splitting out.
+	"swift-fin", // The g4 files are nested under a src/main/... directory, which we can't handle.
+}
+
 // MAKEFILE is the template used to build the Makefile.
 // It expects to be executed with a templateData
 const MAKEFILE = `#
@@ -106,11 +112,24 @@ type templateData struct {
 	GeneratedFiles map[string][]string
 }
 
+func onIgnoreList(path string) bool {
+	for _, ignore := range IGNORE {
+		if strings.HasSuffix(path, "/"+ignore+"/pom.xml") {
+			return true
+		}
+	}
+	return false
+}
+
 func main() {
 	poms := make(map[string]*internal.Pom)
 
 	err := filepath.Walk(GRAMMARS_ROOT, func(path string, info os.FileInfo, err error) error {
 		if err == nil && strings.HasSuffix(path, "/pom.xml") {
+			if onIgnoreList(path) {
+				return nil
+			}
+
 			p, err := internal.ParsePom(path)
 			if err != nil {
 				return err
