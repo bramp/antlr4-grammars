@@ -204,12 +204,8 @@ make <name of grammar>
 git submodule init
 git submodule update
 
-# Update the Makefile
-go run makemake.go
-
-# Now build all the grammars
-make clean
-make all -k -j4 2> /dev/null
+# Run make and all the magic will happen
+make all
 
 # Update the table in the README.me with the output
 ```

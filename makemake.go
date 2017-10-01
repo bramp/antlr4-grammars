@@ -27,7 +27,7 @@ const MAKEFILE = `#
 #
 MAKEFLAGS += --no-builtin-rules
 
-.PHONY: all antlr clean test
+.PHONY: all antlr clean rebuild test
 .SILENT:
 .DELETE_ON_ERROR:
 .SUFFIXES:
@@ -45,7 +45,12 @@ WARN_COLOR = \033[0;33m
 NO_COLOR   = \033[m
 
 # This is the default target
-all: antlr test
+rebuild: antlr test
+
+all:
+	go run makemake.go
+	make clean
+	make -k -j2 rebuild 2> /dev/null
 
 clean:
 	@rm -r $(GRAMMARS) 2> /dev/null || true
