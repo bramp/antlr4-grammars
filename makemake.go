@@ -39,9 +39,6 @@ ANTLR_ARGS := -Dlanguage=Go -visitor
 GRAMMARS := {{ Join .Grammars " " }}
 
 LANG_COLOR = \033[0;36m
-OK_COLOR   = \033[0;32m
-FAIL_COLOR = \033[0;31m
-WARN_COLOR = \033[0;33m
 NO_COLOR   = \033[m
 
 # This is the default target
