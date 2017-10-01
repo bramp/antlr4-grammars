@@ -7,7 +7,9 @@
 package tiny_test
 
 import (
+	"bramp.net/antlr4-grammars/internal"
 	"bramp.net/antlr4-grammars/tiny"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -33,6 +35,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := tiny.NewtinyLexer(is)
@@ -100,12 +104,9 @@ func TesttinyParser(t *testing.T) {
 		// Create the Parser
 		p := tiny.NewtinyParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Program()
-
-		// TODO Check for errors
 	}
 }

@@ -7,7 +7,9 @@
 package muparser_test
 
 import (
+	"bramp.net/antlr4-grammars/internal"
 	"bramp.net/antlr4-grammars/muparser"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -31,6 +33,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := muparser.NewMuParserLexer(is)
@@ -98,12 +102,9 @@ func TestMuParserParser(t *testing.T) {
 		// Create the Parser
 		p := muparser.NewMuParserParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Prog()
-
-		// TODO Check for errors
 	}
 }

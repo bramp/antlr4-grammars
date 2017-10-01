@@ -8,6 +8,8 @@ package dcm_test
 
 import (
 	"bramp.net/antlr4-grammars/dcm"
+	"bramp.net/antlr4-grammars/internal"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -29,6 +31,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := dcm.NewDCM_2_0_grammarLexer(is)
@@ -96,12 +100,9 @@ func TestDCM_2_0_grammarParser(t *testing.T) {
 		// Create the Parser
 		p := dcm.NewDCM_2_0_grammarParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Konservierung()
-
-		// TODO Check for errors
 	}
 }

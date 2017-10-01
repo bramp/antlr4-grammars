@@ -8,6 +8,8 @@ package fol_test
 
 import (
 	"bramp.net/antlr4-grammars/fol"
+	"bramp.net/antlr4-grammars/internal"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -33,6 +35,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := fol.NewfolLexer(is)
@@ -100,12 +104,9 @@ func TestfolParser(t *testing.T) {
 		// Create the Parser
 		p := fol.NewfolParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Condition()
-
-		// TODO Check for errors
 	}
 }

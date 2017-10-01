@@ -8,6 +8,8 @@ package abnf_test
 
 import (
 	"bramp.net/antlr4-grammars/abnf"
+	"bramp.net/antlr4-grammars/internal"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -33,6 +35,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := abnf.NewAbnfLexer(is)
@@ -100,12 +104,9 @@ func TestAbnfParser(t *testing.T) {
 		// Create the Parser
 		p := abnf.NewAbnfParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Rulelist()
-
-		// TODO Check for errors
 	}
 }

@@ -8,6 +8,8 @@ package cool_test
 
 import (
 	"bramp.net/antlr4-grammars/cool"
+	"bramp.net/antlr4-grammars/internal"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -48,6 +50,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := cool.NewCOOLLexer(is)
@@ -115,12 +119,9 @@ func TestCOOLParser(t *testing.T) {
 		// Create the Parser
 		p := cool.NewCOOLParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Program()
-
-		// TODO Check for errors
 	}
 }

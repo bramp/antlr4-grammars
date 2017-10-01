@@ -7,7 +7,9 @@
 package peoplecode_test
 
 import (
+	"bramp.net/antlr4-grammars/internal"
 	"bramp.net/antlr4-grammars/peoplecode"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -49,6 +51,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := peoplecode.NewPeopleCodeLexer(is)
@@ -116,12 +120,9 @@ func TestPeopleCodeParser(t *testing.T) {
 		// Create the Parser
 		p := peoplecode.NewPeopleCodeParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Program()
-
-		// TODO Check for errors
 	}
 }

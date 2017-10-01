@@ -7,7 +7,9 @@
 package telephone_test
 
 import (
+	"bramp.net/antlr4-grammars/internal"
 	"bramp.net/antlr4-grammars/telephone"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -34,6 +36,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := telephone.NewtelephoneLexer(is)
@@ -101,12 +105,9 @@ func TesttelephoneParser(t *testing.T) {
 		// Create the Parser
 		p := telephone.NewtelephoneParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Number()
-
-		// TODO Check for errors
 	}
 }

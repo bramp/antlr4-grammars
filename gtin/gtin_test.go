@@ -8,6 +8,8 @@ package gtin_test
 
 import (
 	"bramp.net/antlr4-grammars/gtin"
+	"bramp.net/antlr4-grammars/internal"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -54,6 +56,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := gtin.NewgtinLexer(is)
@@ -121,12 +125,9 @@ func TestgtinParser(t *testing.T) {
 		// Create the Parser
 		p := gtin.NewgtinParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Gtin()
-
-		// TODO Check for errors
 	}
 }

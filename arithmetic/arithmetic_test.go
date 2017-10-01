@@ -8,6 +8,8 @@ package arithmetic_test
 
 import (
 	"bramp.net/antlr4-grammars/arithmetic"
+	"bramp.net/antlr4-grammars/internal"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -51,6 +53,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := arithmetic.NewarithmeticLexer(is)
@@ -118,12 +122,9 @@ func TestarithmeticParser(t *testing.T) {
 		// Create the Parser
 		p := arithmetic.NewarithmeticParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Equation()
-
-		// TODO Check for errors
 	}
 }

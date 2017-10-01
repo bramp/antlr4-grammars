@@ -8,6 +8,8 @@ package clif_test
 
 import (
 	"bramp.net/antlr4-grammars/clif"
+	"bramp.net/antlr4-grammars/internal"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -29,6 +31,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := clif.NewCLIFLexer(is)
@@ -96,12 +100,9 @@ func TestCLIFParser(t *testing.T) {
 		// Create the Parser
 		p := clif.NewCLIFParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Termseq()
-
-		// TODO Check for errors
 	}
 }

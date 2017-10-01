@@ -3,6 +3,7 @@ package internal
 import (
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
+	"testing"
 	"unicode"
 )
 
@@ -15,6 +16,22 @@ func PrintAllTokens(lexer antlr.Lexer) {
 		}
 		fmt.Printf("%d %s\n", t.GetChannel(), t.GetText())
 	}
+}
+
+// TestingErrorListener is a antlr.ErrorListener which fails a given test if a
+// SyntaxError is found. The other Report errors are ignored.
+type TestingErrorListener struct {
+	*antlr.DefaultErrorListener
+
+	t *testing.T
+}
+
+func NewTestingErrorListener(t *testing.T) *TestingErrorListener {
+	return &TestingErrorListener{t: t}
+}
+
+func (l *TestingErrorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbol interface{}, line, column int, msg string, e antlr.RecognitionException) {
+	l.t.Errorf("SyntaxError %d:%d: %s", line, column, msg)
 }
 
 // CaseChangingStream wraps an existing CharStream, but upper cases, or lower cases

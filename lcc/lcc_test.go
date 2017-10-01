@@ -7,7 +7,9 @@
 package lcc_test
 
 import (
+	"bramp.net/antlr4-grammars/internal"
 	"bramp.net/antlr4-grammars/lcc"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -39,6 +41,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := lcc.NewlccLexer(is)
@@ -106,12 +110,9 @@ func TestlccParser(t *testing.T) {
 		// Create the Parser
 		p := lcc.NewlccParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Lcc()
-
-		// TODO Check for errors
 	}
 }

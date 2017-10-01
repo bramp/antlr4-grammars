@@ -7,7 +7,9 @@
 package memcached_protocol_test
 
 import (
+	"bramp.net/antlr4-grammars/internal"
 	"bramp.net/antlr4-grammars/memcached_protocol"
+
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
@@ -31,6 +33,8 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
+
+	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := memcached_protocol.Newmemcached_protocolLexer(is)
@@ -98,12 +102,9 @@ func Testmemcached_protocolParser(t *testing.T) {
 		// Create the Parser
 		p := memcached_protocol.Newmemcached_protocolParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(antlr.NewDiagnosticErrorListener(true)) // TODO Change this
-		p.AddErrorListener(antlr.NewConsoleErrorListener())
+		p.AddErrorListener(internal.NewTestingErrorListener(t))
 
 		// Finally test
 		p.Command_line()
-
-		// TODO Check for errors
 	}
 }
