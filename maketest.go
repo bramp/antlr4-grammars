@@ -88,7 +88,7 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 	return input, nil
 }
 
-func Test{{ .LexerName }}(t *testing.T) {
+func Test{{ .LexerName | Title }}(t *testing.T) {
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {
@@ -114,7 +114,7 @@ func Test{{ .LexerName }}(t *testing.T) {
 	}
 }
 
-func Test{{ .ParserName }}(t *testing.T) {
+func Test{{ .ParserName | Title }}(t *testing.T) {
 	// TODO(bramp): Run this test with and without p.BuildParseTrees
 
 	for _, file := range examples {
