@@ -123,18 +123,19 @@ func Example() {
 | ❌  | basic           | antlr: error(134): jvmBasic.g4:481:8: symbol var conflicts with generated code in target language or runtime |
 | ❌  | calculator      | antlr: error(134): calculator.g4:54:5: symbol func conflicts with generated code in target language or runtime |
 | ❌  | clojure         | antlr: error(134): Clojure.g4:99:12: symbol map conflicts with generated code in target language or runtime |
-| ❌  | cobol85         | build: cobol85/cobol85preprocessor_parser.go:17:5: too many errors          |
+| ❌  | cobol85         |  test: FAIL  bramp.net/antlr4-grammars/cobol85 [build failed]                |
 | ❌  | cpp             | build: cpp/cpp14_parser.go:28859:6: syntax error: unexpected NewEmptyBaseclauseContext, expecting ( |
 | ❌  | csharp          | antlr: error(134): CSharpParser.g4:330:8: symbol type conflicts with generated code in target language or runtime |
+| ❌  | csharp          | antlr: error(134): CSharpParser.g4:330:8: symbol type conflicts with generated code in target language or runtime |
 | ❌  | css3            | antlr: error(134): css3.g4:196:6: symbol var conflicts with generated code in target language or runtime |
-| ❌  | dice            |  test: FAIL  bramp.net/antlr4-grammars/dice  0.030s                           |
+| ❌  | dice            |  test: FAIL  bramp.net/antlr4-grammars/dice  0.025s                           |
 | ❌  | ecmascript      | antlr: error(8): ECMAScript.GoTarget.g4:28:8: grammar name ECMAScript and file name ECMAScript.GoTarget.g4 differ |
 | ❌  | erlang          | antlr: error(134): Erlang.g4:156:36: symbol type conflicts with generated code in target language or runtime |
 | ❌  | fortran77       | antlr: error(134): fortran77.g4:89:6: symbol type conflicts with generated code in target language or runtime |
 | ❌  | gff3            | antlr: error(134): gff3.g4:45:28: symbol type conflicts with generated code in target language or runtime |
 | ❌  | golang          | antlr: error(134): Golang.g4:151:23: symbol type conflicts with generated code in target language or runtime |
 | ❌  | graphql         | antlr: error(134): GraphQL.g4:140:9: symbol type conflicts with generated code in target language or runtime |
-| ❌  | html            |  test: FAIL  bramp.net/antlr4-grammars/html  10.030s                          |
+| ❌  | html            |  test: FAIL  bramp.net/antlr4-grammars/html  10.026s                          |
 | ❌  | icalendar       | antlr: error(134): ICalendar.g4:305:3: symbol action conflicts with generated code in target language or runtime |
 | ❌  | informix        | antlr: error(134): informix.g4:601:266: symbol string conflicts with generated code in target language or runtime |
 | ❌  | java8           | antlr: error(134): Java8.g4:73:0: symbol type conflicts with generated code in target language or runtime |
@@ -147,7 +148,7 @@ func Example() {
 | ❌  | masm            | build: masm/masm_lexer.go:12:4: syntax error: non-declaration statement outside function body |
 | ❌  | modula2pim4     | antlr: error(134): m2pim4.g4:356:22: symbol type conflicts with generated code in target language or runtime |
 | ❌  | mysql           | build:       previous declaration at mysql/mysql_parser.go:12215:6               |
-| ❌  | oncrpc          | build: oncrpc/xdr_parser.go:17:5: too many errors                           |
+| ❌  | oncrpc          |  test: FAIL  bramp.net/antlr4-grammars/oncrpc [build failed]                 |
 | ❌  | pascal          | antlr: error(134): pascal.g4:115:23: symbol type conflicts with generated code in target language or runtime |
 | ❌  | pddl            | antlr: error(134): Pddl.g4:92:25: symbol type conflicts with generated code in target language or runtime |
 | ❌  | pdn             | antlr: error(134): pdn.g4:44:14: symbol string conflicts with generated code in target language or runtime |
@@ -164,7 +165,7 @@ func Example() {
 | ❌  | python3_ts      | build: python3_ts/python3_lexer.go:14:33: illegal rune literal              |
 | ❌  | python3alt      | build: python3alt/altpython3_lexer.go:812:13: too many errors               |
 | ❌  | quakemap        | antlr: error(134): quakemap.g4:44:12: symbol string conflicts with generated code in target language or runtime |
-| ❌  | r               | build: r/rfilter_parser.go:95:5: too many errors                            |
+| ❌  | r               | build: r/rfilter_parser.go:1283:2: syntax error: unexpected default, expecting } |
 | ❌  | scala           | antlr: error(134): Scala.g4:433:17: symbol type conflicts with generated code in target language or runtime |
 | ❌  | smalltalk       | antlr: error(134): Smalltalk.g4:50:57: symbol string conflicts with generated code in target language or runtime |
 | ❌  | smtlibv2        | antlr: error(134): SMTLIBv2.g4:1089:23: symbol string conflicts with generated code in target language or runtime |
@@ -183,6 +184,8 @@ func Example() {
 | ❌  | verilog         | antlr: error(134): Verilog2001.g4:1944:24: symbol range conflicts with generated code in target language or runtime |
 | ❌  | webidl          | antlr: error(134): WebIDL.g4:584:3: symbol type conflicts with generated code in target language or runtime |
 | ❌  | z               | build: z/z_lexer.go:1231:2: syntax error: non-declaration statement outside function body |
+| ❌  | z               | build: z/zoperator_parser.go:146:10: escape sequence is invalid Unicode code point |
+
 Less than 50% of the grammars build successfully. This is due to limitations in the ANTLR Go target. The failures are broken down like so:
 
 * **antlr** - ANTLR failed to generate Go code from the grammar.
