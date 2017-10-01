@@ -53,6 +53,8 @@ func (p *Project) LexerName() string {
 	return p.grammarLexerName() + "Lexer"
 }
 
+// ListenerName returns the filename of the generated Listener.
+// See https://github.com/antlr/antlr4/blob/master/tool/src/org/antlr/v4/codegen/target/GoTarget.java#L168
 func (p *Project) ListenerName() string {
 	if g := p.findGrammarOfType("PARSER"); g != nil {
 		return g.Name + "Listener"
