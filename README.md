@@ -1,4 +1,3 @@
-# antlr4-grammars
 # antlr4-grammars [![Build Status](https://img.shields.io/travis/bramp/antlr4-grammars.svg)](https://travis-ci.org/bramp/antlr4-grammars) [![Coverage](https://img.shields.io/coveralls/bramp/antlr4-grammars.svg)](https://coveralls.io/github/bramp/antlr4-grammars) [![Report card](https://goreportcard.com/badge/github.com/bramp/antlr4-grammars)](https://goreportcard.com/report/github.com/bramp/antlr4-grammars) [![GoDoc](https://godoc.org/github.com/bramp/antlr4-grammars?status.svg)](https://godoc.org/github.com/bramp/antlr4-grammars)
 by Andrew Brampton [bramp.net](https://bramp.net) (c) 2017
 
@@ -188,9 +187,9 @@ func Example() {
 
 Less than 50% of the grammars build successfully. This is due to limitations in the ANTLR Go target. The failures are broken down like so:
 
-**antlr** - ANTLR failed to generate Go code from the grammar.
-**build** - The generated Go code failed to build.
-**test**  - The generated Go code failed the unit tests for that language.
+* **antlr** - ANTLR failed to generate Go code from the grammar.
+* **build** - The generated Go code failed to build.
+* **test**  - The generated Go code failed the unit tests for that language.
 
 If you wish to help fix the situation then please submit fixes back to the [ANTLR Go target](https://github.com/antlr/antlr4/blob/master/tool/src/org/antlr/v4/codegen/target/GoTarget.java), or the [Gramamrs Github Repo](https://github.com/antlr/grammars-v4).
 
