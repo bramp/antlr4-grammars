@@ -1,3 +1,17 @@
+// Copyright 2017 Google Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 // Package creole_test contains tests for the creole grammar.
 // The tests should be run with the -timeout flag, to ensure the parser doesn't
 // get stuck.
@@ -66,7 +80,7 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 	return input, nil
 }
 
-func TestcreoleLexer(t *testing.T) {
+func TestCreoleLexer(t *testing.T) {
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {
@@ -92,7 +106,7 @@ func TestcreoleLexer(t *testing.T) {
 	}
 }
 
-func TestcreoleParser(t *testing.T) {
+func TestCreoleParser(t *testing.T) {
 	// TODO(bramp): Run this test with and without p.BuildParseTrees
 
 	for _, file := range examples {
@@ -108,7 +122,7 @@ func TestcreoleParser(t *testing.T) {
 		// Create the Parser
 		p := creole.NewcreoleParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(internal.NewTestingErrorListener(t))
+		p.AddErrorListener(internal.NewTestingErrorListener(t, file))
 
 		// Finally test
 		p.Document()

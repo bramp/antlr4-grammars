@@ -1,3 +1,17 @@
+// Copyright 2017 Google Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 // Package abnf_test contains tests for the Abnf grammar.
 // The tests should be run with the -timeout flag, to ensure the parser doesn't
 // get stuck.
@@ -104,7 +118,7 @@ func TestAbnfParser(t *testing.T) {
 		// Create the Parser
 		p := abnf.NewAbnfParser(stream)
 		p.BuildParseTrees = true
-		p.AddErrorListener(internal.NewTestingErrorListener(t))
+		p.AddErrorListener(internal.NewTestingErrorListener(t, file))
 
 		// Finally test
 		p.Rulelist()

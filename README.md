@@ -45,7 +45,6 @@ func Example() {
 | :-: | --------------- | --------------------------------------------------------------------------- |
 | ✅  | abnf            |                                                                             |
 | ✅  | agc             |                                                                             |
-| ✅  | arithmetic      |                                                                             |
 | ✅  | atl             |                                                                             |
 | ✅  | bnf             |                                                                             |
 | ✅  | brainfuck       |                                                                             |
@@ -65,7 +64,6 @@ func Example() {
 | ✅  | fusion_tables   |                                                                             |
 | ✅  | gml             |                                                                             |
 | ✅  | graphstream_dgs |                                                                             |
-| ✅  | gtin            |                                                                             |
 | ✅  | idl             |                                                                             |
 | ✅  | iri             |                                                                             |
 | ✅  | istc            |                                                                             |
@@ -81,7 +79,6 @@ func Example() {
 | ✅  | metric          |                                                                             |
 | ✅  | modelica        |                                                                             |
 | ✅  | molecule        |                                                                             |
-| ✅  | morsecode       |                                                                             |
 | ✅  | mps             |                                                                             |
 | ✅  | mumath          |                                                                             |
 | ✅  | mumps           |                                                                             |
@@ -111,13 +108,13 @@ func Example() {
 | ✅  | tnsnames        |                                                                             |
 | ✅  | tnt             |                                                                             |
 | ✅  | useragent       |                                                                             |
-| ✅  | vhdl            |                                                                             |
 | ✅  | wavefront       |                                                                             |
 | ✅  | xml             |                                                                             |
 | ✅  | xpath           |                                                                             |
 | ❌  | antlr3          | antlr: error(134): ANTLRv3.g4:32:102: symbol action conflicts with generated code in target language or runtime |
 | ❌  | antlr4          | antlr: error(134): ANTLRv4Parser.g4:62:5: symbol action conflicts with generated code in target language or runtime |
 | ❌  | apex            | antlr: error(134): apex.g4:544:30: symbol type conflicts with generated code in target language or runtime |
+| ❌  | arithmetic      |  test: FAIL  bramp.net/antlr4-grammars/arithmetic    0.031s                     |
 | ❌  | asm6502         | antlr: error(134): asm6502.g4:71:30: symbol string conflicts with generated code in target language or runtime |
 | ❌  | asn             | antlr: error(134): ASN.g4:166:2: symbol type conflicts with generated code in target language or runtime |
 | ❌  | basic           | antlr: error(134): jvmBasic.g4:481:8: symbol var conflicts with generated code in target language or runtime |
@@ -128,14 +125,15 @@ func Example() {
 | ❌  | csharp          | antlr: error(134): CSharpParser.g4:330:8: symbol type conflicts with generated code in target language or runtime |
 | ❌  | csharp          | antlr: error(134): CSharpParser.g4:330:8: symbol type conflicts with generated code in target language or runtime |
 | ❌  | css3            | antlr: error(134): css3.g4:196:6: symbol var conflicts with generated code in target language or runtime |
-| ❌  | dice            |  test: FAIL  bramp.net/antlr4-grammars/dice  0.025s                           |
+| ❌  | dice            |  test: FAIL  bramp.net/antlr4-grammars/dice  0.032s                           |
 | ❌  | ecmascript      | antlr: error(8): ECMAScript.GoTarget.g4:28:8: grammar name ECMAScript and file name ECMAScript.GoTarget.g4 differ |
 | ❌  | erlang          | antlr: error(134): Erlang.g4:156:36: symbol type conflicts with generated code in target language or runtime |
 | ❌  | fortran77       | antlr: error(134): fortran77.g4:89:6: symbol type conflicts with generated code in target language or runtime |
 | ❌  | gff3            | antlr: error(134): gff3.g4:45:28: symbol type conflicts with generated code in target language or runtime |
 | ❌  | golang          | antlr: error(134): Golang.g4:151:23: symbol type conflicts with generated code in target language or runtime |
 | ❌  | graphql         | antlr: error(134): GraphQL.g4:140:9: symbol type conflicts with generated code in target language or runtime |
-| ❌  | html            |  test: FAIL  bramp.net/antlr4-grammars/html  10.026s                          |
+| ❌  | gtin            |  test: FAIL  bramp.net/antlr4-grammars/gtin  0.048s                           |
+| ❌  | html            |  test: FAIL  bramp.net/antlr4-grammars/html  10.027s                          |
 | ❌  | icalendar       | antlr: error(134): ICalendar.g4:305:3: symbol action conflicts with generated code in target language or runtime |
 | ❌  | informix        | antlr: error(134): informix.g4:601:266: symbol string conflicts with generated code in target language or runtime |
 | ❌  | java8           | antlr: error(134): Java8.g4:73:0: symbol type conflicts with generated code in target language or runtime |
@@ -147,6 +145,7 @@ func Example() {
 | ❌  | lua             | antlr: error(134): Lua.g4:90:15: symbol var conflicts with generated code in target language or runtime |
 | ❌  | masm            | build: masm/masm_lexer.go:12:4: syntax error: non-declaration statement outside function body |
 | ❌  | modula2pim4     | antlr: error(134): m2pim4.g4:356:22: symbol type conflicts with generated code in target language or runtime |
+| ❌  | morsecode       |  test: FAIL  bramp.net/antlr4-grammars/morsecode     0.028s                      |
 | ❌  | mysql           | build:       previous declaration at mysql/mysql_parser.go:12215:6               |
 | ❌  | oncrpc          |  test: FAIL  bramp.net/antlr4-grammars/oncrpc [build failed]                 |
 | ❌  | pascal          | antlr: error(134): pascal.g4:115:23: symbol type conflicts with generated code in target language or runtime |
@@ -178,10 +177,13 @@ func Example() {
 | ❌  | tsql            | build:       previous declaration at tsql/tsql_parser.go:123881:8                |
 | ❌  | turtle          | build:               want String([]string, antlr.RuleContext) string                    |
 | ❌  | ucb_logo        | build: ucb_logo/ucblogo_parser.go:14:14: expected 'STRING', found '.'       |
+| ❌  | unicode/graphemes | build:     previous declaration at ./makemake.go:158:6                         |
+| ❌  | unicode/unicode16 | build:     previous declaration at ./makemake.go:158:6                         |
 | ❌  | url             | antlr: error(134): url.g4:95:18: symbol string conflicts with generated code in target language or runtime |
 | ❌  | vb6             | antlr: error(134): VisualBasic6.g4:555:35: symbol type conflicts with generated code in target language or runtime |
 | ❌  | vba             | antlr: error(134): vba.g4:569:44: symbol type conflicts with generated code in target language or runtime |
 | ❌  | verilog         | antlr: error(134): Verilog2001.g4:1944:24: symbol range conflicts with generated code in target language or runtime |
+| ❌  | vhdl            |  test: FAIL  bramp.net/antlr4-grammars/vhdl  10.069s                        |
 | ❌  | webidl          | antlr: error(134): WebIDL.g4:584:3: symbol type conflicts with generated code in target language or runtime |
 | ❌  | z               | build: z/z_lexer.go:1231:2: syntax error: non-declaration statement outside function body |
 | ❌  | z               | build: z/zoperator_parser.go:146:10: escape sequence is invalid Unicode code point |
