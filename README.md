@@ -1,5 +1,4 @@
 # antlr4-grammars [![Build Status](https://img.shields.io/travis/bramp/antlr4-grammars.svg)](https://travis-ci.org/bramp/antlr4-grammars) [![Coverage](https://img.shields.io/coveralls/bramp/antlr4-grammars.svg)](https://coveralls.io/github/bramp/antlr4-grammars) [![Report card](https://goreportcard.com/badge/github.com/bramp/antlr4-grammars)](https://goreportcard.com/report/github.com/bramp/antlr4-grammars) [![GoDoc](https://godoc.org/github.com/bramp/antlr4-grammars?status.svg)](https://godoc.org/github.com/bramp/antlr4-grammars)
-by Andrew Brampton [bramp.net](https://bramp.net) (c) 2017
 
 Precompiled Go versions of many of the grammars on [github.com/antlr/grammars-v4](http://github.com/antlr/grammars-v4).
 
