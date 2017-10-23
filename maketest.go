@@ -80,10 +80,16 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 }
 
 func Example() {
+	{{- if eq .CaseInsensitiveType "UPPER" }}
+	// Setup the input (which this parser expects to be uppercased).
+	is := antlr.NewInputStream(strings.ToUpper("...some text to parse..."))
+	{{ else if eq .CaseInsensitiveType "lower" }}
+	// Setup the input (which this parser expects to be lowercased).
+	is := antlr.NewInputStream(strings.ToLower("...some text to parse..."))
+	{{ else }}
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
-
-	// TODO(bramp) Add note about Case Insensitive grammers
+	{{- end }}
 
 	// Create the Lexer
 	lexer := {{.PackageName}}.New{{ .LexerName }}(is)
@@ -107,7 +113,6 @@ func newCharStream(filename string) (antlr.CharStream, error) {
 	}
 
 	{{ if eq .CaseInsensitiveType "UPPER" }}
-	// TODO Switch NewCaseChangingStream for something in the core antlr
 	input = internal.NewCaseChangingStream(input, true)
 	{{ else if eq .CaseInsensitiveType "lower" }}
 	input = internal.NewCaseChangingStream(input, false)
