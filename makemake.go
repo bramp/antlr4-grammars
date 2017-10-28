@@ -17,7 +17,7 @@
 package main
 
 import (
-	"bramp.net/antlr4-grammars/internal"
+	"bramp.net/antlr4/internal"
 	"log"
 	"os"
 	"path/filepath"

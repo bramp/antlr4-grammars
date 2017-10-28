@@ -16,7 +16,7 @@
 package main
 
 import (
-	"bramp.net/antlr4-grammars/internal"
+	"bramp.net/antlr4/internal"
 	"fmt"
 	"github.com/iancoleman/strcase"
 	"log"
@@ -54,8 +54,8 @@ const TESTFILE = `// Copyright 2017 Google Inc.
 package {{ .PackageName }}_test
 
 import (
-	"bramp.net/antlr4-grammars/{{.PackageName}}"
-	"bramp.net/antlr4-grammars/internal"
+	"bramp.net/antlr4/{{.PackageName}}"
+	"bramp.net/antlr4/internal"
 
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
