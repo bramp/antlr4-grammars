@@ -84,8 +84,8 @@ $(ANTLR_BIN):
 	mkdir -p .bin
 	curl -o $@ $(ANTLR_URL)
 
-Makefile: makemake.go
-	go run makemake.go
+Makefile: internal/tools/makemake.go grammars-v4
+	go run internal/tools/makemake.go
 
 test: {{ range $name, $project := .Projects -}}{{ $name }}/{{ $project.FilePrefix }}_test.go {{ end }}
 
@@ -121,7 +121,7 @@ test: {{ range $name, $project := .Projects -}}{{ $name }}/{{ $project.FilePrefi
 %_test.go:
 	lang=$$(dirname $@); \
 	errors=$$lang/$$(basename $*).errors; \
-	go run maketest.go $$lang >> $$errors 2>&1; \
+	go run internal/tools/maketest.go $$lang >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
 		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "maketest: $$(tail -n 1 $$errors)"; \

@@ -1,4 +1,4 @@
-# antlr4 go parsers [![Build Status](https://img.shields.io/travis/bramp/antlr4.svg)](https://travis-ci.org/bramp/antlr4) [![Coverage](https://img.shields.io/coveralls/bramp/antlr4.svg)](https://coveralls.io/github/bramp/antlr4) [![Report card](https://goreportcard.com/badge/bramp.net/antlr4)](https://goreportcard.com/report/bramp.net/antlr4) [![GoDoc](https://godoc.org/bramp.net/antlr4?status.svg)](https://godoc.org/bramp.net/antlr4)
+# antlr4 go parsers [![Build Status](https://img.shields.io/travis/bramp/antlr4-grammars.svg)](https://travis-ci.org/bramp/antlr4-grammars) [![Coverage](https://img.shields.io/coveralls/bramp/antlr4-grammars.svg)](https://coveralls.io/github/bramp/antlr4-grammars) [![Report card](https://goreportcard.com/badge/bramp.net/antlr4)](https://goreportcard.com/report/bramp.net/antlr4) [![GoDoc](https://godoc.org/bramp.net/antlr4?status.svg)](https://godoc.org/bramp.net/antlr4)
 by Andrew Brampton [bramp.net](https://bramp.net)
 
 Precompiled Go parsers of many of the grammars on [github.com/antlr/grammars-v4](http://github.com/antlr/grammars-v4).
