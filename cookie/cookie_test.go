@@ -21,8 +21,8 @@
 package cookie_test
 
 import (
-	"bramp.net/antlr4-grammars/cookie"
-	"bramp.net/antlr4-grammars/internal"
+	"bramp.net/antlr4/cookie"
+	"bramp.net/antlr4/internal"
 
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
@@ -50,8 +50,6 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
-
-	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := cookie.NewcookieLexer(is)
@@ -97,7 +95,7 @@ func TestCookieLexer(t *testing.T) {
 		}
 
 		// If we read too many tokens, then perhaps there is a problem with the lexer.
-		if i == MAX_TOKENS {
+		if i >= MAX_TOKENS {
 			t.Errorf("NewcookieLexer(%q) read %d tokens without finding EOF", file, i)
 		}
 	}

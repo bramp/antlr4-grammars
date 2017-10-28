@@ -6,9 +6,10 @@ Precompiled Go versions of many of the grammars on [github.com/antlr/grammars-v4
 ```go
 
 import (
-	"bramp.net/antlr4-grammars/java"
 	"fmt"
-	"github.com/antlr/antlr4/runtime/Go/antlr"
+
+	"bramp.net/antlr4/java8" // The parser
+	"github.com/antlr/antlr4/runtime/Go/antlr" // The antlr library
 )
 
 type exampleListener struct {
@@ -19,6 +20,7 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 	fmt.Println(ctx.GetText())
 }
 
+// Example shows how to parse Java source code with a simple Go program.
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
@@ -28,7 +30,7 @@ func Example() {
 	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
 
 	// Create the Parser
-	p := java.NewJavaParser(stream)
+	p := java8.NewJavaParser(stream)
 	p.BuildParseTrees = true
 	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 
@@ -66,8 +68,6 @@ func Example() {
 | ✅  | idl             |                                                                             |
 | ✅  | iri             |                                                                             |
 | ✅  | istc            |                                                                             |
-| ✅  | java            |                                                                             |
-| ✅  | java8_pt        |                                                                             |
 | ✅  | jpa             |                                                                             |
 | ✅  | json            |                                                                             |
 | ✅  | lambda          |                                                                             |
@@ -113,47 +113,50 @@ func Example() {
 | ❌  | antlr3          | antlr: error(134): ANTLRv3.g4:32:102: symbol action conflicts with generated code in target language or runtime |
 | ❌  | antlr4          | antlr: error(134): ANTLRv4Parser.g4:62:5: symbol action conflicts with generated code in target language or runtime |
 | ❌  | apex            | antlr: error(134): apex.g4:544:30: symbol type conflicts with generated code in target language or runtime |
-| ❌  | arithmetic      |  test: FAIL  bramp.net/antlr4-grammars/arithmetic    0.031s                     |
+| ❌  | arithmetic      |  test: FAIL  bramp.net/antlr4/arithmetic     0.028s                              |
 | ❌  | asm6502         | antlr: error(134): asm6502.g4:71:30: symbol string conflicts with generated code in target language or runtime |
 | ❌  | asn             | antlr: error(134): ASN.g4:166:2: symbol type conflicts with generated code in target language or runtime |
 | ❌  | basic           | antlr: error(134): jvmBasic.g4:481:8: symbol var conflicts with generated code in target language or runtime |
 | ❌  | calculator      | antlr: error(134): calculator.g4:54:5: symbol func conflicts with generated code in target language or runtime |
 | ❌  | clojure         | antlr: error(134): Clojure.g4:99:12: symbol map conflicts with generated code in target language or runtime |
-| ❌  | cobol85         |  test: FAIL  bramp.net/antlr4-grammars/cobol85 [build failed]                |
+| ❌  | cobol85         |  test: FAIL  bramp.net/antlr4/cobol85 [build failed]                         |
 | ❌  | cpp             | build: cpp/cpp14_parser.go:28859:6: syntax error: unexpected NewEmptyBaseclauseContext, expecting ( |
 | ❌  | csharp          | antlr: error(134): CSharpParser.g4:330:8: symbol type conflicts with generated code in target language or runtime |
 | ❌  | csharp          | antlr: error(134): CSharpParser.g4:330:8: symbol type conflicts with generated code in target language or runtime |
 | ❌  | css3            | antlr: error(134): css3.g4:196:6: symbol var conflicts with generated code in target language or runtime |
-| ❌  | dice            |  test: FAIL  bramp.net/antlr4-grammars/dice  0.032s                           |
-| ❌  | ecmascript      | antlr: error(8): ECMAScript.GoTarget.g4:28:8: grammar name ECMAScript and file name ECMAScript.GoTarget.g4 differ |
+| ❌  | dice            |  test: FAIL  bramp.net/antlr4/dice   0.032s                                    |
+| ❌  | ecmascript      | build: ecmascript/ecmascript_lexer.go:761:5: invalid character U+0040 '@'   |
 | ❌  | erlang          | antlr: error(134): Erlang.g4:156:36: symbol type conflicts with generated code in target language or runtime |
 | ❌  | fortran77       | antlr: error(134): fortran77.g4:89:6: symbol type conflicts with generated code in target language or runtime |
 | ❌  | gff3            | antlr: error(134): gff3.g4:45:28: symbol type conflicts with generated code in target language or runtime |
 | ❌  | golang          | antlr: error(134): Golang.g4:151:23: symbol type conflicts with generated code in target language or runtime |
 | ❌  | graphql         | antlr: error(134): GraphQL.g4:140:9: symbol type conflicts with generated code in target language or runtime |
-| ❌  | gtin            |  test: FAIL  bramp.net/antlr4-grammars/gtin  0.048s                           |
-| ❌  | html            |  test: FAIL  bramp.net/antlr4-grammars/html  10.027s                          |
+| ❌  | gtin            |  test: FAIL  bramp.net/antlr4/gtin   0.045s                                    |
+| ❌  | html            |  test: FAIL  bramp.net/antlr4/html   10.034s                                   |
 | ❌  | icalendar       | antlr: error(134): ICalendar.g4:305:3: symbol action conflicts with generated code in target language or runtime |
+| ❌  | inf             | antlr: error(134): inf.g4:57:17: symbol string conflicts with generated code in target language or runtime |
 | ❌  | informix        | antlr: error(134): informix.g4:601:266: symbol string conflicts with generated code in target language or runtime |
 | ❌  | java8           | antlr: error(134): Java8.g4:73:0: symbol type conflicts with generated code in target language or runtime |
+| ❌  | java9           | antlr: error(134): Java9.g4:84:0: symbol type conflicts with generated code in target language or runtime |
 | ❌  | javadoc         | build: javadoc/javadoc_lexer.go:167:10: undefined: _input                   |
-| ❌  | kotlin          | antlr: error(134): KotlinParser.g4:56:21: symbol type conflicts with generated code in target language or runtime |
+| ❌  | kotlin          | antlr: error(134): KotlinParser.g4:261:53: symbol type conflicts with generated code in target language or runtime |
+| ❌  | kotlin          | antlr: error(134): KotlinParser.g4:261:53: symbol type conflicts with generated code in target language or runtime |
 | ❌  | kuka            | antlr: error(134): krl.g4:80:68: symbol type conflicts with generated code in target language or runtime |
 | ❌  | logo            | antlr: error(134): logo.g4:128:38: symbol func conflicts with generated code in target language or runtime |
 | ❌  | lolcode         | antlr: error(134): lolcode.g4:111:5: symbol func conflicts with generated code in target language or runtime |
 | ❌  | lua             | antlr: error(134): Lua.g4:90:15: symbol var conflicts with generated code in target language or runtime |
 | ❌  | masm            | build: masm/masm_lexer.go:12:4: syntax error: non-declaration statement outside function body |
 | ❌  | modula2pim4     | antlr: error(134): m2pim4.g4:356:22: symbol type conflicts with generated code in target language or runtime |
-| ❌  | morsecode       |  test: FAIL  bramp.net/antlr4-grammars/morsecode     0.028s                      |
+| ❌  | morsecode       |  test: FAIL  bramp.net/antlr4/morsecode      0.029s                               |
 | ❌  | mysql           | build:       previous declaration at mysql/mysql_parser.go:12215:6               |
-| ❌  | oncrpc          |  test: FAIL  bramp.net/antlr4-grammars/oncrpc [build failed]                 |
+| ❌  | oncrpc          |  test: FAIL  bramp.net/antlr4/oncrpc [build failed]                          |
 | ❌  | pascal          | antlr: error(134): pascal.g4:115:23: symbol type conflicts with generated code in target language or runtime |
 | ❌  | pddl            | antlr: error(134): Pddl.g4:92:25: symbol type conflicts with generated code in target language or runtime |
 | ❌  | pdn             | antlr: error(134): pdn.g4:44:14: symbol string conflicts with generated code in target language or runtime |
 | ❌  | pdp7            | antlr: error(134): pdp7.g4:87:5: symbol string conflicts with generated code in target language or runtime |
 | ❌  | pgn             | build: pgn/pgn_lexer.go:191:10: undefined: getCharPositionInLine            |
-| ❌  | php             | antlr: error(134): PHPParser.g4:478:6: symbol string conflicts with generated code in target language or runtime |
-| ❌  | plsql           | antlr: error(134): PlSqlParser.g4:779:41: symbol range conflicts with generated code in target language or runtime |
+| ❌  | php             | antlr: error(134): PhpParser.g4:476:6: symbol string conflicts with generated code in target language or runtime |
+| ❌  | plsql           | antlr: error(134): PlSqlParser.g4:844:41: symbol range conflicts with generated code in target language or runtime |
 | ❌  | prolog          | antlr: error(134): prolog.g4:72:23: symbol string conflicts with generated code in target language or runtime |
 | ❌  | protobuf3       | antlr: error(134): Protobuf3.g4:138:19: symbol range conflicts with generated code in target language or runtime |
 | ❌  | python2         | build: python2/python2_lexer.go:639:14: too many errors                     |
@@ -176,18 +179,18 @@ func Example() {
 | ❌  | tsql            | build:       previous declaration at tsql/tsql_parser.go:123881:8                |
 | ❌  | turtle          | build:               want String([]string, antlr.RuleContext) string                    |
 | ❌  | ucb_logo        | build: ucb_logo/ucblogo_parser.go:14:14: expected 'STRING', found '.'       |
-| ❌  | unicode/graphemes | build:     previous declaration at ./makemake.go:158:6                         |
-| ❌  | unicode/unicode16 | build:     previous declaration at ./makemake.go:158:6                         |
+| ❌  | unicode/graphemes | build: can't load package: package bramp.net/antlr4: found packages antlr4 (doc.go) and main (makemake.go) in /Users/bramp/go/src/bramp.net/antlr4 |
+| ❌  | unicode/unicode16 | build: can't load package: package bramp.net/antlr4: found packages antlr4 (doc.go) and main (makemake.go) in /Users/bramp/go/src/bramp.net/antlr4 |
 | ❌  | url             | antlr: error(134): url.g4:95:18: symbol string conflicts with generated code in target language or runtime |
 | ❌  | vb6             | antlr: error(134): VisualBasic6.g4:555:35: symbol type conflicts with generated code in target language or runtime |
 | ❌  | vba             | antlr: error(134): vba.g4:569:44: symbol type conflicts with generated code in target language or runtime |
 | ❌  | verilog         | antlr: error(134): Verilog2001.g4:1944:24: symbol range conflicts with generated code in target language or runtime |
-| ❌  | vhdl            |  test: FAIL  bramp.net/antlr4-grammars/vhdl  10.069s                        |
+| ❌  | vhdl            |  test: FAIL  bramp.net/antlr4/vhdl   10.066s                                   |
 | ❌  | webidl          | antlr: error(134): WebIDL.g4:584:3: symbol type conflicts with generated code in target language or runtime |
 | ❌  | z               | build: z/z_lexer.go:1231:2: syntax error: non-declaration statement outside function body |
 | ❌  | z               | build: z/zoperator_parser.go:146:10: escape sequence is invalid Unicode code point |
 
-Less than 50% of the grammars build successfully. This is due to limitations in the ANTLR Go target. The failures are broken down like so:
+The failures are broken down like so:
 
 * **antlr** - ANTLR failed to generate Go code from the grammar.
 * **build** - The generated Go code failed to build.

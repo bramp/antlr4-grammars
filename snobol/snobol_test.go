@@ -21,8 +21,8 @@
 package snobol_test
 
 import (
-	"bramp.net/antlr4-grammars/internal"
-	"bramp.net/antlr4-grammars/snobol"
+	"bramp.net/antlr4/internal"
+	"bramp.net/antlr4/snobol"
 
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
@@ -49,8 +49,6 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
-
-	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := snobol.NewsnobolLexer(is)
@@ -96,7 +94,7 @@ func TestSnobolLexer(t *testing.T) {
 		}
 
 		// If we read too many tokens, then perhaps there is a problem with the lexer.
-		if i == MAX_TOKENS {
+		if i >= MAX_TOKENS {
 			t.Errorf("NewsnobolLexer(%q) read %d tokens without finding EOF", file, i)
 		}
 	}

@@ -21,8 +21,8 @@
 package memcached_protocol_test
 
 import (
-	"bramp.net/antlr4-grammars/internal"
-	"bramp.net/antlr4-grammars/memcached_protocol"
+	"bramp.net/antlr4/internal"
+	"bramp.net/antlr4/memcached_protocol"
 
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
@@ -47,8 +47,6 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
-
-	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := memcached_protocol.Newmemcached_protocolLexer(is)
@@ -94,7 +92,7 @@ func TestMemcached_protocolLexer(t *testing.T) {
 		}
 
 		// If we read too many tokens, then perhaps there is a problem with the lexer.
-		if i == MAX_TOKENS {
+		if i >= MAX_TOKENS {
 			t.Errorf("Newmemcached_protocolLexer(%q) read %d tokens without finding EOF", file, i)
 		}
 	}

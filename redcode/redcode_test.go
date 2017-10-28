@@ -21,8 +21,8 @@
 package redcode_test
 
 import (
-	"bramp.net/antlr4-grammars/internal"
-	"bramp.net/antlr4-grammars/redcode"
+	"bramp.net/antlr4/internal"
+	"bramp.net/antlr4/redcode"
 
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
@@ -51,8 +51,6 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
-
-	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := redcode.NewredcodeLexer(is)
@@ -98,7 +96,7 @@ func TestRedcodeLexer(t *testing.T) {
 		}
 
 		// If we read too many tokens, then perhaps there is a problem with the lexer.
-		if i == MAX_TOKENS {
+		if i >= MAX_TOKENS {
 			t.Errorf("NewredcodeLexer(%q) read %d tokens without finding EOF", file, i)
 		}
 	}

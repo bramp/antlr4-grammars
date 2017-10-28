@@ -21,8 +21,8 @@
 package less_test
 
 import (
-	"bramp.net/antlr4-grammars/internal"
-	"bramp.net/antlr4-grammars/less"
+	"bramp.net/antlr4/internal"
+	"bramp.net/antlr4/less"
 
 	"fmt"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
@@ -45,8 +45,6 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
-
-	// TODO(bramp) Add note about Case Insensitive grammers
 
 	// Create the Lexer
 	lexer := less.NewLessLexer(is)
@@ -92,7 +90,7 @@ func TestLessLexer(t *testing.T) {
 		}
 
 		// If we read too many tokens, then perhaps there is a problem with the lexer.
-		if i == MAX_TOKENS {
+		if i >= MAX_TOKENS {
 			t.Errorf("NewLessLexer(%q) read %d tokens without finding EOF", file, i)
 		}
 	}

@@ -26,30 +26,30 @@ ANTLR_BIN := $(PWD)/.bin/antlr-4.7-complete.jar
 ANTLR_URL := http://www.antlr.org/download/antlr-4.7-complete.jar
 ANTLR_ARGS := -Dlanguage=Go -visitor
 
-GRAMMARS := abnf agc antlr3 antlr4 apex arithmetic asm6502 asn atl basic bnf brainfuck c calculator clf clif clojure cobol85 cookie cool cpp creole csharp css3 csv datetime dcm dice dot ecmascript emailaddress erlang fasta fol fortran77 fusion_tables gff3 gml golang graphql graphstream_dgs gtin html icalendar idl informix iri istc java java8 java8_pt javadoc jpa json kotlin kuka lambda lcc less logo lolcode lua masm mdx memcached_protocol metric modelica modula2pim4 molecule morsecode mps mumath mumps muparser mysql oncrpc p pascal pcre pddl pdn pdp7 peoplecode pgn php plsql postalcode powerbuilder prolog propcalc properties protobuf3 python2 python3 python3_js python3_py python3_ts python3alt quakemap r rcs redcode robotwars romannumerals rpn ruby scala scss sexpression sharc smalltalk smtlibv2 snobol sparql sqlite stacktrace stringtemplate suokif swift2 swift3 telephone tiny tinyc tnsnames tnt tsql turtle ucb_logo unicode/graphemes unicode/unicode16 url useragent vb6 vba verilog vhdl wavefront webidl xml xpath z
+GRAMMARS := abnf agc antlr3 antlr4 apex arithmetic asm6502 asn atl basic bnf brainfuck c calculator clf clif clojure cobol85 cookie cool cpp creole csharp css3 csv datetime dcm dice dot ecmascript emailaddress erlang fasta fol fortran77 fusion_tables gff3 gml golang graphql graphstream_dgs gtin html icalendar idl inf informix iri istc java java8 java8_pt java9 javadoc jpa json kotlin kuka lambda lcc less logo lolcode lua masm mdx memcached_protocol metric modelica modula2pim4 molecule morsecode mps mumath mumps muparser mysql oncrpc p pascal pcre pddl pdn pdp7 peoplecode pgn php plsql postalcode powerbuilder prolog propcalc properties protobuf3 python2 python3 python3_js python3_py python3_ts python3alt quakemap r rcs redcode robotwars romannumerals rpn ruby scala scss sexpression sharc smalltalk smtlibv2 snobol sparql sqlite stacktrace stringtemplate suokif swift2 swift3 telephone tiny tinyc tnsnames tnt tsql turtle ucb_logo unicode/graphemes unicode/unicode16 url useragent vb6 vba verilog vhdl wavefront webidl xml xpath z
 
 LANG_COLOR = \033[0;36m
 NO_COLOR   = \033[m
 
-# This is the default target
-rebuild: antlr test
-
-all:
-	go run makemake.go
+# This is the default target (which cleans and rebuilds everything)
+all: Makefile
 	make clean
 	make -k -j2 rebuild 2> /dev/null
 
 clean:
 	@rm -r $(GRAMMARS) 2> /dev/null || true
 
+rebuild: antlr test
+
 antlr: $(ANTLR_BIN)
 $(ANTLR_BIN):
 	mkdir -p .bin
 	curl -o $@ $(ANTLR_URL)
 
-test: abnf/abnf_test.go agc/agc_test.go antlr3/antlrv3_test.go antlr4/antlrv4_test.go apex/apex_test.go arithmetic/arithmetic_test.go asm6502/asm6502_test.go asn/asn_test.go atl/atl_test.go basic/jvmbasic_test.go bnf/bnf_test.go brainfuck/brainfuck_test.go c/c_test.go calculator/calculator_test.go clf/clf_test.go clif/clif_test.go clojure/clojure_test.go cobol85/cobol85_test.go cookie/cookie_test.go cool/cool_test.go cpp/cpp14_test.go creole/creole_test.go csharp/csharppreprocessor_test.go css3/css3_test.go csv/csv_test.go datetime/datetime_test.go dcm/dcm_2_0_grammar_test.go dice/dicenotation_test.go dot/dot_test.go ecmascript/ecmascript_test.go emailaddress/emailaddress_test.go erlang/erlang_test.go fasta/fasta_test.go fol/fol_test.go fortran77/fortran77_test.go fusion_tables/fusiontablessql_test.go gff3/gff3_test.go gml/gml_test.go golang/golang_test.go graphql/graphql_test.go graphstream_dgs/dgs_test.go gtin/gtin_test.go html/html_test.go icalendar/icalendar_test.go idl/idl_test.go informix/informix_test.go iri/iri_test.go istc/istc_test.go java/java_test.go java8/java8_test.go java8_pt/java_test.go javadoc/javadoc_test.go jpa/jpa_test.go json/json_test.go kotlin/kotlin_test.go kuka/krl_test.go lambda/lambda_test.go lcc/lcc_test.go less/less_test.go logo/logo_test.go lolcode/lolcode_test.go lua/lua_test.go masm/masm_test.go mdx/mdx_test.go memcached_protocol/memcached_protocol_test.go metric/metric_test.go modelica/modelica_test.go modula2pim4/m2pim4_test.go molecule/molecule_test.go morsecode/morsecode_test.go mps/mps_test.go mumath/mumath_test.go mumps/mumps_test.go muparser/muparser_test.go mysql/mysql_test.go oncrpc/oncrpcv2_test.go p/p_test.go pascal/pascal_test.go pcre/pcre_test.go pddl/pddl_test.go pdn/pdn_test.go pdp7/pdp7_test.go peoplecode/peoplecode_test.go pgn/pgn_test.go php/php_test.go plsql/plsql_test.go postalcode/postalcode_test.go powerbuilder/powerbuilder_test.go prolog/prolog_test.go propcalc/propcalc_test.go properties/properties_test.go protobuf3/protobuf3_test.go python2/python2_test.go python3/python3_test.go python3_js/python3_test.go python3_py/python3_test.go python3_ts/python3_test.go python3alt/altpython3_test.go quakemap/quakemap_test.go r/rfilter_test.go rcs/rcs_test.go redcode/redcode_test.go robotwars/robotwar_test.go romannumerals/romannumerals_test.go rpn/rpn_test.go ruby/corundum_test.go scala/scala_test.go scss/scss_test.go sexpression/sexpression_test.go sharc/sharc_test.go smalltalk/smalltalk_test.go smtlibv2/smtlibv2_test.go snobol/snobol_test.go sparql/sparql_test.go sqlite/sqlite_test.go stacktrace/stacktrace_test.go stringtemplate/st_test.go suokif/suokif_test.go swift2/2.2_test.go swift3/swift3_test.go telephone/telephone_test.go tiny/tiny_test.go tinyc/tinyc_test.go tnsnames/tnsnames_test.go tnt/tnt_test.go tsql/tsql_test.go turtle/turtle_test.go ucb_logo/ucblogo_test.go unicode/graphemes/graphemes_test.go unicode/unicode16/classify_test.go url/url_test.go useragent/useragent_test.go vb6/visualbasic6_test.go vba/vba_test.go verilog/verilog2001_test.go vhdl/vhdl_test.go wavefront/wavefrontobj_test.go webidl/webidl_test.go xml/xml_test.go xpath/xpath_test.go z/z_test.go 
+Makefile: makemake.go
+	go run makemake.go
 
-
+test: abnf/abnf_test.go agc/agc_test.go antlr3/antlrv3_test.go antlr4/antlrv4_test.go apex/apex_test.go arithmetic/arithmetic_test.go asm6502/asm6502_test.go asn/asn_test.go atl/atl_test.go basic/jvmbasic_test.go bnf/bnf_test.go brainfuck/brainfuck_test.go c/c_test.go calculator/calculator_test.go clf/clf_test.go clif/clif_test.go clojure/clojure_test.go cobol85/cobol85_test.go cookie/cookie_test.go cool/cool_test.go cpp/cpp14_test.go creole/creole_test.go csharp/csharppreprocessor_test.go css3/css3_test.go csv/csv_test.go datetime/datetime_test.go dcm/dcm_2_0_grammar_test.go dice/dicenotation_test.go dot/dot_test.go ecmascript/ecmascript_test.go emailaddress/emailaddress_test.go erlang/erlang_test.go fasta/fasta_test.go fol/fol_test.go fortran77/fortran77_test.go fusion_tables/fusiontablessql_test.go gff3/gff3_test.go gml/gml_test.go golang/golang_test.go graphql/graphql_test.go graphstream_dgs/dgs_test.go gtin/gtin_test.go html/html_test.go icalendar/icalendar_test.go idl/idl_test.go inf/inf_test.go informix/informix_test.go iri/iri_test.go istc/istc_test.go java/java_test.go java8/java8_test.go java8_pt/java_test.go java9/java9_test.go javadoc/javadoc_test.go jpa/jpa_test.go json/json_test.go kotlin/kotlin_test.go kuka/krl_test.go lambda/lambda_test.go lcc/lcc_test.go less/less_test.go logo/logo_test.go lolcode/lolcode_test.go lua/lua_test.go masm/masm_test.go mdx/mdx_test.go memcached_protocol/memcached_protocol_test.go metric/metric_test.go modelica/modelica_test.go modula2pim4/m2pim4_test.go molecule/molecule_test.go morsecode/morsecode_test.go mps/mps_test.go mumath/mumath_test.go mumps/mumps_test.go muparser/muparser_test.go mysql/mysql_test.go oncrpc/oncrpcv2_test.go p/p_test.go pascal/pascal_test.go pcre/pcre_test.go pddl/pddl_test.go pdn/pdn_test.go pdp7/pdp7_test.go peoplecode/peoplecode_test.go pgn/pgn_test.go php/php_test.go plsql/plsql_test.go postalcode/postalcode_test.go powerbuilder/powerbuilder_test.go prolog/prolog_test.go propcalc/propcalc_test.go properties/properties_test.go protobuf3/protobuf3_test.go python2/python2_test.go python3/python3_test.go python3_js/python3_test.go python3_py/python3_test.go python3_ts/python3_test.go python3alt/altpython3_test.go quakemap/quakemap_test.go r/rfilter_test.go rcs/rcs_test.go redcode/redcode_test.go robotwars/robotwar_test.go romannumerals/romannumerals_test.go rpn/rpn_test.go ruby/corundum_test.go scala/scala_test.go scss/scss_test.go sexpression/sexpression_test.go sharc/sharc_test.go smalltalk/smalltalk_test.go smtlibv2/smtlibv2_test.go snobol/snobol_test.go sparql/sparql_test.go sqlite/sqlite_test.go stacktrace/stacktrace_test.go stringtemplate/st_test.go suokif/suokif_test.go swift2/2.2_test.go swift3/swift3_test.go telephone/telephone_test.go tiny/tiny_test.go tinyc/tinyc_test.go tnsnames/tnsnames_test.go tnt/tnt_test.go tsql/tsql_test.go turtle/turtle_test.go ucb_logo/ucblogo_test.go unicode/graphemes/graphemes_test.go unicode/unicode16/classify_test.go url/url_test.go useragent/useragent_test.go vb6/visualbasic6_test.go vba/vba_test.go verilog/verilog2001_test.go vhdl/vhdl_test.go wavefront/wavefrontobj_test.go webidl/webidl_test.go xml/xml_test.go xpath/xpath_test.go z/z_test.go 
 
 abnf: abnf/abnf_test.go
 abnf/abnf_parser.go abnf/abnf_lexer.go: grammars-v4/abnf/Abnf.g4
@@ -168,7 +168,7 @@ dot/dot_parser.go dot/dot_lexer.go: grammars-v4/dot/DOT.g4
 dot/dot_test.go: dot/dot_parser.go dot/dot_lexer.go
 
 ecmascript: ecmascript/ecmascript_test.go
-ecmascript/ecmascript_parser.go ecmascript/ecmascript_lexer.go: grammars-v4/ecmascript/ECMAScript.GoTarget.g4
+ecmascript/ecmascript_parser.go ecmascript/ecmascript_lexer.go: grammars-v4/ecmascript/ECMAScript.g4
 ecmascript/ecmascript_test.go: ecmascript/ecmascript_parser.go ecmascript/ecmascript_lexer.go
 
 emailaddress: emailaddress/emailaddress_test.go
@@ -231,6 +231,10 @@ idl: idl/idl_test.go
 idl/idl_parser.go idl/idl_lexer.go: grammars-v4/idl/IDL.g4
 idl/idl_test.go: idl/idl_parser.go idl/idl_lexer.go
 
+inf: inf/inf_test.go
+inf/inf_parser.go inf/inf_lexer.go: grammars-v4/inf/inf.g4
+inf/inf_test.go: inf/inf_parser.go inf/inf_lexer.go
+
 informix: informix/informix_test.go
 informix/informix_parser.go informix/informix_lexer.go: grammars-v4/informix/informix.g4
 informix/informix_test.go: informix/informix_parser.go informix/informix_lexer.go
@@ -255,6 +259,10 @@ java8_pt: java8_pt/java_test.go
 java8_pt/java_lexer.go java8_pt/java_parser.go: grammars-v4/java8-pt/JavaLexer.g4 grammars-v4/java8-pt/JavaParser.g4
 java8_pt/java_test.go: java8_pt/java_lexer.go java8_pt/java_parser.go
 
+java9: java9/java9_test.go
+java9/java9_parser.go java9/java9_lexer.go: grammars-v4/java9/Java9.g4
+java9/java9_test.go: java9/java9_parser.go java9/java9_lexer.go
+
 javadoc: javadoc/javadoc_test.go
 javadoc/javadoc_parser.go javadoc/javadoc_lexer.go: grammars-v4/javadoc/JavadocParser.g4 grammars-v4/javadoc/JavadocLexer.g4
 javadoc/javadoc_test.go: javadoc/javadoc_parser.go javadoc/javadoc_lexer.go
@@ -268,8 +276,8 @@ json/json_parser.go json/json_lexer.go: grammars-v4/json/JSON.g4
 json/json_test.go: json/json_parser.go json/json_lexer.go
 
 kotlin: kotlin/kotlin_test.go
-kotlin/kotlin_lexer.go kotlin/kotlin_parser.go: grammars-v4/kotlin/KotlinLexer.g4 grammars-v4/kotlin/KotlinParser.g4
-kotlin/kotlin_test.go: kotlin/kotlin_lexer.go kotlin/kotlin_parser.go
+kotlin/unicodeclasses_lexer.go kotlin/kotlin_lexer.go kotlin/kotlin_parser.go: grammars-v4/kotlin/UnicodeClasses.g4 grammars-v4/kotlin/KotlinLexer.g4 grammars-v4/kotlin/KotlinParser.g4
+kotlin/kotlin_test.go: kotlin/unicodeclasses_lexer.go kotlin/kotlin_lexer.go kotlin/kotlin_parser.go
 
 kuka: kuka/krl_test.go
 kuka/krl_parser.go kuka/krl_lexer.go: grammars-v4/kuka/krl.g4
@@ -388,7 +396,7 @@ pgn/pgn_parser.go pgn/pgn_lexer.go: grammars-v4/pgn/PGN.g4
 pgn/pgn_test.go: pgn/pgn_parser.go pgn/pgn_lexer.go
 
 php: php/php_test.go
-php/php_lexer.go php/php_parser.go: grammars-v4/php/PHPLexer.g4 grammars-v4/php/PHPParser.g4
+php/php_lexer.go php/php_parser.go: grammars-v4/php/PhpLexer.g4 grammars-v4/php/PhpParser.g4
 php/php_test.go: php/php_lexer.go php/php_parser.go
 
 plsql: plsql/plsql_test.go
