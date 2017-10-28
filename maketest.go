@@ -29,9 +29,7 @@ import (
 
 const GRAMMARS_ROOT = "grammars-v4"
 
-// TESTFILE is the template for a go test file for this grammar.
-// It expects to be executed with a pom.
-const TESTFILE = `// Copyright 2017 Google Inc.
+const COPYRIGHT = `// Copyright 2017 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -45,6 +43,16 @@ const TESTFILE = `// Copyright 2017 Google Inc.
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+`
+
+const DOCFILE = `{{template "copyright" .}}
+package {{ .PackageName }} // import "bramp.net/antlr4/{{ .PackageName }}"
+
+`
+
+// TESTFILE is the template for a go test file for this grammar.
+// It expects to be executed with a pom.
+const TESTFILE = `{{template "copyright" .}}
 // Package {{ .Name }}_test contains tests for the {{ .LongName }} grammar.
 // The tests should be run with the -timeout flag, to ensure the parser doesn't
 // get stuck.
@@ -141,7 +149,7 @@ func Test{{ .LexerName | Title }}(t *testing.T) {
 		}
 
 		// If we read too many tokens, then perhaps there is a problem with the lexer.
-		if i == MAX_TOKENS {
+		if i >= MAX_TOKENS {
 			t.Errorf("New{{ .LexerName }}(%q) read %d tokens without finding EOF", file, i)
 		}
 	}
@@ -186,6 +194,23 @@ func fuzzyMatch(filename string) (string, error) {
 	return matches[0], nil
 }
 
+func create(filename string, t *template.Template, data interface{}) error {
+	out, err := os.Create(filename)
+	if err != nil {
+		return fmt.Errorf("failed to create %q: %s", filename, err)
+	}
+
+	if err := t.Execute(out, data); err != nil {
+		return fmt.Errorf("failed to generate %q: %s", filename, err)
+	}
+
+	if err := exec.Command("go", "fmt", filename).Run(); err != nil {
+		return fmt.Errorf("failed to `go fmt %q`: %s", filename, err)
+	}
+
+	return nil
+}
+
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Fprintf(os.Stderr, "Usage: %s <grammar>\n", filepath.Base(os.Args[0]))
@@ -210,20 +235,18 @@ func main() {
 		"Title":   strings.Title,
 	}
 
-	testTemplate := template.Must(template.New("test").Funcs(funcs).Parse(TESTFILE))
+	tmpl := template.Must(template.New("copyright").Parse(COPYRIGHT))
+
+	docTemplate := template.Must(tmpl.New("doc").Parse(DOCFILE))
+	testTemplate := template.Must(tmpl.New("test").Funcs(funcs).Parse(TESTFILE))
+
+	docfile := filepath.Join(grammar, "doc.go")
+	if err := create(docfile, docTemplate, project); err != nil {
+		log.Fatalf("%s", err)
+	}
 
 	testfile := filepath.Join(grammar, project.FilePrefix()+"_test.go")
-	out, err := os.Create(testfile)
-	if err != nil {
-		log.Fatalf("failed to create %q: %s", testfile, err)
-	}
-
-	if err := testTemplate.Execute(out, project); err != nil {
-		log.Fatalf("failed to generate %q: %s", testfile, err)
-	}
-
-	cmd := exec.Command("go", "fmt", testfile)
-	if err := cmd.Run(); err != nil {
-		log.Fatalf("failed to `go fmt`: %s", err)
+	if err := create(testfile, testTemplate, project); err != nil {
+		log.Fatalf("%s", err)
 	}
 }
