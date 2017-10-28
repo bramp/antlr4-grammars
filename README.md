@@ -6,40 +6,58 @@ Precompiled Go parsers of many of the grammars on [github.com/antlr/grammars-v4]
 The Antlr's Go Target is still a work in progress. As such, many of the grammars fail to compile, or pass simple tests. To report issues with the grammar [go here](https://github.com/antlr/grammars-v4), to report issues with Antlr's Go Target [go here](https://github.com/antlr/antlr4).
 
 ## Example
-```go
 
+```go
 import (
 	"fmt"
 
-	"bramp.net/antlr4/java8" // The parser
+	"bramp.net/antlr4/json"                    // The parser
 	"github.com/antlr/antlr4/runtime/Go/antlr" // The antlr library
 )
 
+// exampleListener is an event-driven callback for the parser.
 type exampleListener struct {
-	*java.BaseJavaListener
+	*json.BaseJSONListener // https://godoc.org/bramp.net/antlr4/json#BaseJSONListener
 }
 
-func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
-	fmt.Println(ctx.GetText())
+func (l *exampleListener) EnterObj(ctx *json.ObjContext) {
+	fmt.Printf("Object: %s\n", ctx.GetText())
+
 }
 
-// Example shows how to parse Java source code with a simple Go program.
+func (l *exampleListener) EnterPair(ctx *json.PairContext) {
+	fmt.Printf("Pair: %s\n", ctx.GetText())
+
+}
+
+func (l *exampleListener) EnterArray(ctx *json.ArrayContext) {
+	fmt.Printf("Array: %s\n", ctx.GetText())
+
+}
+
+// Example shows how to use the JSON lexer and parser.
 func Example() {
 	// Setup the input
-	is := antlr.NewInputStream("...some text to parse...")
+	is := antlr.NewInputStream(`{"example": "json", "with": ["an", "array"]}`)
 
 	// Create the Lexer
-	lexer := java.NewJavaLexer(is)
+	lexer := json.NewJSONLexer(is)
 	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
 
 	// Create the Parser
-	p := java8.NewJavaParser(stream)
+	p := json.NewJSONParser(stream)
 	p.BuildParseTrees = true
 	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 
 	// Finally walk the tree
-	tree := p.CompilationUnit()
+	tree := p.Json()
 	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+
+	// Output:
+	// Object: {"example":"json","with":["an","array"]}
+	// Pair: "example":"json"
+	// Pair: "with":["an","array"]
+	// Array: ["an","array"]
 }
 ```
 
