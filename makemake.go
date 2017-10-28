@@ -69,28 +69,30 @@ GRAMMARS := {{ Join .Grammars " " }}
 LANG_COLOR = \033[0;36m
 NO_COLOR   = \033[m
 
-# This is the default target
-rebuild: antlr test
-
-all:
-	go run makemake.go
+# This is the default target (which cleans and rebuilds everything)
+all: Makefile
 	make clean
 	make -k -j2 rebuild 2> /dev/null
 
 clean:
 	@rm -r $(GRAMMARS) 2> /dev/null || true
 
+rebuild: antlr test
+
 antlr: $(ANTLR_BIN)
 $(ANTLR_BIN):
 	mkdir -p .bin
 	curl -o $@ $(ANTLR_URL)
 
+Makefile: makemake.go
+	go run makemake.go
+
 test: {{ range $name, $project := .Projects -}}{{ $name }}/{{ $project.FilePrefix }}_test.go {{ end }}
 
-{{ range $name, $project := .Projects -}}
+{{- range $name, $project := .Projects }}
 {{ $genfiles := (Join (index $.GeneratedFiles $name) " ") }}
 {{ $testfile := (Concat $name "/" $project.FilePrefix "_test.go") }}
-{{ $name }}: {{ $testfile }}
+{{- $name }}: {{ $testfile }}
 {{ $genfiles }}: {{ Join $project.Includes " " }}
 {{ $testfile }}: {{ $genfiles }}
 {{- end }}
