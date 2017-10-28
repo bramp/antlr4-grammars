@@ -24,7 +24,7 @@ MAKEFLAGS += --no-builtin-rules
 
 ANTLR_BIN := $(PWD)/.bin/antlr-4.7-complete.jar
 ANTLR_URL := http://www.antlr.org/download/antlr-4.7-complete.jar
-ANTLR_ARGS := -Dlanguage=Go -visitor
+ANTLR_ARGS := -Dlanguage=Go
 
 GRAMMARS := abnf agc antlr3 antlr4 apex arithmetic asm6502 asn atl basic bnf brainfuck c calculator clf clif clojure cobol85 cookie cool cpp creole csharp css3 csv datetime dcm dice dot ecmascript emailaddress erlang fasta fol fortran77 fusion_tables gff3 gml golang graphql graphstream_dgs gtin html icalendar idl inf informix iri istc java java8 java9 javadoc jpa json kotlin kuka lambda lcc less logo lolcode lua masm mdx memcached_protocol metric modelica modula2pim4 molecule morsecode mps mumath mumps muparser mysql oncrpc p pascal pcre pddl pdn pdp7 peoplecode pgn php plsql postalcode powerbuilder prolog propcalc properties protobuf3 python2 python3 python3_js python3_py python3_ts python3alt quakemap r rcs redcode robotwars romannumerals rpn ruby scala scss sexpression sharc smalltalk smtlibv2 snobol sparql sqlite stacktrace stringtemplate suokif swift2 swift3 telephone tiny tinyc tnsnames tnt tsql turtle ucb_logo unicode/graphemes unicode/unicode16 url useragent vb6 vba verilog vhdl wavefront webidl xml xpath z
 

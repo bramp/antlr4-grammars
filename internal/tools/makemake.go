@@ -62,7 +62,7 @@ MAKEFLAGS += --no-builtin-rules
 
 ANTLR_BIN := $(PWD)/.bin/antlr-4.7-complete.jar
 ANTLR_URL := http://www.antlr.org/download/antlr-4.7-complete.jar
-ANTLR_ARGS := -Dlanguage=Go -visitor
+ANTLR_ARGS := -Dlanguage=Go
 
 GRAMMARS := {{ Join .Grammars " " }}
 
