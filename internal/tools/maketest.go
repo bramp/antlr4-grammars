@@ -46,14 +46,14 @@ const COPYRIGHT = `// Copyright 2017 Google Inc.
 `
 
 const DOCFILE = `{{template "copyright" .}}
-package {{ .PackageName }} // import "bramp.net/antlr4/{{ .PackageName }}"
+package {{ .PackageName }} // import "bramp.net/antlr4/{{ .FullPackageName }}"
 
 `
 
 // TESTFILE is the template for a go test file for this grammar.
 // It expects to be executed with a pom.
 const TESTFILE = `{{template "copyright" .}}
-// Package {{ .Name }}_test contains tests for the {{ .LongName }} grammar.
+// Package {{ .PackageName }}_test contains tests for the {{ .LongName }} grammar.
 // The tests should be run with the -timeout flag, to ensure the parser doesn't
 // get stuck.
 //
@@ -62,7 +62,7 @@ const TESTFILE = `{{template "copyright" .}}
 package {{ .PackageName }}_test
 
 import (
-	"bramp.net/antlr4/{{.PackageName}}"
+	"bramp.net/antlr4/{{.FullPackageName}}"
 	"bramp.net/antlr4/internal"
 
 	"fmt"
@@ -115,7 +115,7 @@ func Example() {
 
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
-	input, err := antlr.NewFileStream(filepath.Join("..", filename))
+	input, err := antlr.NewFileStream(filepath.Join("{{ .ExampleRoot }}", filename))
 	if err != nil {
 		return nil, err
 	}

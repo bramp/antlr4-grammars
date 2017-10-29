@@ -21,6 +21,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path"
 	"path/filepath"
 	"strings"
 )
@@ -52,8 +53,14 @@ func (p *Project) findGrammarOfType(t string) *Grammar {
 	return nil
 }
 
-// PackageName returns the name of this package, that is safe to use in Go.
+// PackageName returns the basename of this package, that is safe to use in Go.
 func (p *Project) PackageName() string {
+	return path.Base(p.FullPackageName())
+
+}
+
+// FullPackageName returns the name of this package (rooted from the current dir), that is safe to use in Go.
+func (p *Project) FullPackageName() string {
 	return strings.Replace(p.Name, "-", "_", -1)
 }
 
@@ -281,15 +288,12 @@ func ParsePom(path string) (*Project, error) {
 				if err := decoder.DecodeElement(&file, &se); err != nil {
 					return nil, err
 				}
-				p.ExampleRoot = filepath.Join(dir, file)
-				examples, err := filepath.Glob(filepath.Join(p.ExampleRoot, "*"))
+				examples, err := filepath.Glob(filepath.Join(dir, file, "*"))
 				if err != nil {
 					return nil, err
 				}
-				//if len(examples) == 0 {
-				//	log.Printf("exampleFiles %q contains no examples for grammar %q", file, path)
-				//}
 				p.Examples = examples
+				p.ExampleRoot = strings.Repeat("../", strings.Count(dir, "/"))
 
 			case "caseInsensitiveType":
 				var caseInsensitiveType string

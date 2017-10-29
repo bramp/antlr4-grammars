@@ -103,7 +103,7 @@ test: {{ range $name, $project := .Projects -}}{{ $name }}/{{ $project.FilePrefi
 	errors=$$lang/$$(basename $*).errors; \
 	mkdir -p $$lang; \
 	pushd $$(dirname $<) > /dev/null; \
-	java -jar $(ANTLR_BIN) $(ANTLR_ARGS) -package $$lang $(notdir $^) -o $$basedir/$$lang > $$basedir/$$errors 2>&1; \
+	java -jar $(ANTLR_BIN) $(ANTLR_ARGS) -package $$(basename $$lang) $(notdir $^) -o $$basedir/$$lang > $$basedir/$$errors 2>&1; \
 	RET=$$?; \
 	popd > /dev/null; \
 	if [ $$RET -ne 0 ]; then \
@@ -112,7 +112,7 @@ test: {{ range $name, $project := .Projects -}}{{ $name }}/{{ $project.FilePrefi
 		exit $$RET; \
 	fi; \
 	shopt -s nullglob; \
-	go build $*_*.go $*parser_*.go >> $$errors 2>&1; \
+	go build $$lang/*.go >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
 		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "build: $$(tail -n 1 $$errors)"; \
@@ -182,17 +182,7 @@ func main() {
 				return nil
 			}
 
-			// Check for g4 files not mentioned in pom
-			//g4s, err := filepath.Glob(filepath.Dir(path) + "/*.g4")
-			//if err != nil {
-			//	return err
-			//}
-			//if len(g4s) != len(p.Includes) {
-			//	log.Printf("mismatch g4 files:\n    *.g4: %q\nincludes: %q", g4s, p.Includes)
-			//	return nil
-			//}
-
-			projects[p.PackageName()] = p
+			projects[p.FullPackageName()] = p
 		}
 		return err
 	})
