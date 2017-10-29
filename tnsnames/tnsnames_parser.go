@@ -724,16 +724,6 @@ func (s *TnsnamesContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TnsnamesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitTnsnames(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Tnsnames() (localctx ITnsnamesContext) {
 	localctx = NewTnsnamesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, tnsnamesParserRULE_tnsnames)
@@ -884,16 +874,6 @@ func (s *Tns_entryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Tns_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitTns_entry(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Tns_entry() (localctx ITns_entryContext) {
 	localctx = NewTns_entryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, tnsnamesParserRULE_tns_entry)
@@ -1010,16 +990,6 @@ func (s *IfileContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IfileContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitIfile(s)
-	}
-}
-
-func (s *IfileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitIfile(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1172,16 +1142,6 @@ func (s *Lsnr_entryContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Lsnr_entryContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitLsnr_entry(s)
-	}
-}
-
-func (s *Lsnr_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitLsnr_entry(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1358,16 +1318,6 @@ func (s *Lsnr_descriptionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Lsnr_descriptionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitLsnr_description(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Lsnr_description() (localctx ILsnr_descriptionContext) {
 	localctx = NewLsnr_descriptionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, tnsnamesParserRULE_lsnr_description)
@@ -1525,16 +1475,6 @@ func (s *Alias_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Alias_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitAlias_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Alias_list() (localctx IAlias_listContext) {
 	localctx = NewAlias_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, tnsnamesParserRULE_alias_list)
@@ -1654,16 +1594,6 @@ func (s *AliasContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AliasContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitAlias(s)
-	}
-}
-
-func (s *AliasContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitAlias(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1848,16 +1778,6 @@ func (s *Description_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Description_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitDescription_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Description_list() (localctx IDescription_listContext) {
 	localctx = NewDescription_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, tnsnamesParserRULE_description_list)
@@ -2023,16 +1943,6 @@ func (s *Dl_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Dl_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitDl_params(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Dl_params() (localctx IDl_paramsContext) {
 	localctx = NewDl_paramsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, tnsnamesParserRULE_dl_params)
@@ -2164,16 +2074,6 @@ func (s *Dl_parameterContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Dl_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitDl_parameter(s)
-	}
-}
-
-func (s *Dl_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitDl_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2366,16 +2266,6 @@ func (s *DescriptionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DescriptionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitDescription(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Description() (localctx IDescriptionContext) {
 	localctx = NewDescriptionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, tnsnamesParserRULE_description)
@@ -2564,16 +2454,6 @@ func (s *D_paramsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *D_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitD_params(s)
-	}
-}
-
-func (s *D_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitD_params(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2801,16 +2681,6 @@ func (s *D_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *D_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitD_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) D_parameter() (localctx ID_parameterContext) {
 	localctx = NewD_parameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, tnsnamesParserRULE_d_parameter)
@@ -3001,16 +2871,6 @@ func (s *D_enableContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *D_enableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitD_enable(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) D_enable() (localctx ID_enableContext) {
 	localctx = NewD_enableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, tnsnamesParserRULE_d_enable)
@@ -3131,16 +2991,6 @@ func (s *D_sduContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *D_sduContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitD_sdu(s)
-	}
-}
-
-func (s *D_sduContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitD_sdu(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3267,16 +3117,6 @@ func (s *D_recv_bufContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *D_recv_bufContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitD_recv_buf(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) D_recv_buf() (localctx ID_recv_bufContext) {
 	localctx = NewD_recv_bufContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, tnsnamesParserRULE_d_recv_buf)
@@ -3400,16 +3240,6 @@ func (s *D_send_bufContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *D_send_bufContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitD_send_buf(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) D_send_buf() (localctx ID_send_bufContext) {
 	localctx = NewD_send_bufContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, tnsnamesParserRULE_d_send_buf)
@@ -3530,16 +3360,6 @@ func (s *D_service_typeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *D_service_typeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitD_service_type(s)
-	}
-}
-
-func (s *D_service_typeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitD_service_type(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3672,16 +3492,6 @@ func (s *D_securityContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *D_securityContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitD_security(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) D_security() (localctx ID_securityContext) {
 	localctx = NewD_securityContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, tnsnamesParserRULE_d_security)
@@ -3802,16 +3612,6 @@ func (s *D_conn_timeoutContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *D_conn_timeoutContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitD_conn_timeout(s)
-	}
-}
-
-func (s *D_conn_timeoutContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitD_conn_timeout(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3938,16 +3738,6 @@ func (s *D_retry_countContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *D_retry_countContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitD_retry_count(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) D_retry_count() (localctx ID_retry_countContext) {
 	localctx = NewD_retry_countContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, tnsnamesParserRULE_d_retry_count)
@@ -4071,16 +3861,6 @@ func (s *D_tctContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *D_tctContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitD_tct(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) D_tct() (localctx ID_tctContext) {
 	localctx = NewD_tctContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, tnsnamesParserRULE_d_tct)
@@ -4201,16 +3981,6 @@ func (s *Ds_parameterContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ds_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitDs_parameter(s)
-	}
-}
-
-func (s *Ds_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitDs_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4379,16 +4149,6 @@ func (s *Address_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Address_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitAddress_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Address_list() (localctx IAddress_listContext) {
 	localctx = NewAddress_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, tnsnamesParserRULE_address_list)
@@ -4554,16 +4314,6 @@ func (s *Al_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Al_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitAl_params(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Al_params() (localctx IAl_paramsContext) {
 	localctx = NewAl_paramsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, tnsnamesParserRULE_al_params)
@@ -4695,16 +4445,6 @@ func (s *Al_parameterContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Al_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitAl_parameter(s)
-	}
-}
-
-func (s *Al_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitAl_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4840,16 +4580,6 @@ func (s *Al_failoverContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Al_failoverContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitAl_failover(s)
-	}
-}
-
-func (s *Al_failoverContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitAl_failover(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4990,16 +4720,6 @@ func (s *Al_load_balanceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Al_load_balanceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitAl_load_balance(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Al_load_balance() (localctx IAl_load_balanceContext) {
 	localctx = NewAl_load_balanceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, tnsnamesParserRULE_al_load_balance)
@@ -5130,16 +4850,6 @@ func (s *Al_source_routeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Al_source_routeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitAl_source_route(s)
-	}
-}
-
-func (s *Al_source_routeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitAl_source_route(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5288,16 +4998,6 @@ func (s *AddressContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AddressContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitAddress(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Address() (localctx IAddressContext) {
 	localctx = NewAddressContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, tnsnamesParserRULE_address)
@@ -5436,16 +5136,6 @@ func (s *A_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *A_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitA_params(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) A_params() (localctx IA_paramsContext) {
 	localctx = NewA_paramsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, tnsnamesParserRULE_a_params)
@@ -5561,16 +5251,6 @@ func (s *A_parameterContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *A_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitA_parameter(s)
-	}
-}
-
-func (s *A_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitA_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5724,16 +5404,6 @@ func (s *Protocol_infoContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Protocol_infoContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitProtocol_info(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Protocol_info() (localctx IProtocol_infoContext) {
 	localctx = NewProtocol_infoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, tnsnamesParserRULE_protocol_info)
@@ -5865,16 +5535,6 @@ func (s *Tcp_protocolContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Tcp_protocolContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitTcp_protocol(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Tcp_protocol() (localctx ITcp_protocolContext) {
 	localctx = NewTcp_protocolContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, tnsnamesParserRULE_tcp_protocol)
@@ -5982,16 +5642,6 @@ func (s *Tcp_paramsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Tcp_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitTcp_params(s)
-	}
-}
-
-func (s *Tcp_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitTcp_params(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6129,16 +5779,6 @@ func (s *Tcp_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Tcp_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitTcp_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Tcp_parameter() (localctx ITcp_parameterContext) {
 	localctx = NewTcp_parameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, tnsnamesParserRULE_tcp_parameter)
@@ -6272,16 +5912,6 @@ func (s *Tcp_hostContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Tcp_hostContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitTcp_host(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Tcp_host() (localctx ITcp_hostContext) {
 	localctx = NewTcp_hostContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, tnsnamesParserRULE_tcp_host)
@@ -6411,16 +6041,6 @@ func (s *Tcp_portContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Tcp_portContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitTcp_port(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Tcp_port() (localctx ITcp_portContext) {
 	localctx = NewTcp_portContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, tnsnamesParserRULE_tcp_port)
@@ -6544,16 +6164,6 @@ func (s *Tcp_tcpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Tcp_tcpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitTcp_tcp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Tcp_tcp() (localctx ITcp_tcpContext) {
 	localctx = NewTcp_tcpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, tnsnamesParserRULE_tcp_tcp)
@@ -6674,16 +6284,6 @@ func (s *HostContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *HostContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitHost(s)
-	}
-}
-
-func (s *HostContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitHost(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6817,16 +6417,6 @@ func (s *PortContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PortContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitPort(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Port() (localctx IPortContext) {
 	localctx = NewPortContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, tnsnamesParserRULE_port)
@@ -6921,16 +6511,6 @@ func (s *Ipc_protocolContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ipc_protocolContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitIpc_protocol(s)
-	}
-}
-
-func (s *Ipc_protocolContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitIpc_protocol(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7041,16 +6621,6 @@ func (s *Ipc_paramsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ipc_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitIpc_params(s)
-	}
-}
-
-func (s *Ipc_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitIpc_params(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7178,16 +6748,6 @@ func (s *Ipc_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ipc_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitIpc_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Ipc_parameter() (localctx IIpc_parameterContext) {
 	localctx = NewIpc_parameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, tnsnamesParserRULE_ipc_parameter)
@@ -7305,16 +6865,6 @@ func (s *Ipc_ipcContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ipc_ipcContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitIpc_ipc(s)
-	}
-}
-
-func (s *Ipc_ipcContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitIpc_ipc(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7441,16 +6991,6 @@ func (s *Ipc_keyContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ipc_keyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitIpc_key(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Ipc_key() (localctx IIpc_keyContext) {
 	localctx = NewIpc_keyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, tnsnamesParserRULE_ipc_key)
@@ -7564,16 +7104,6 @@ func (s *Spx_protocolContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Spx_protocolContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitSpx_protocol(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Spx_protocol() (localctx ISpx_protocolContext) {
 	localctx = NewSpx_protocolContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, tnsnamesParserRULE_spx_protocol)
@@ -7681,16 +7211,6 @@ func (s *Spx_paramsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Spx_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitSpx_params(s)
-	}
-}
-
-func (s *Spx_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitSpx_params(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7818,16 +7338,6 @@ func (s *Spx_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Spx_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitSpx_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Spx_parameter() (localctx ISpx_parameterContext) {
 	localctx = NewSpx_parameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, tnsnamesParserRULE_spx_parameter)
@@ -7945,16 +7455,6 @@ func (s *Spx_spxContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Spx_spxContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitSpx_spx(s)
-	}
-}
-
-func (s *Spx_spxContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitSpx_spx(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8081,16 +7581,6 @@ func (s *Spx_serviceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Spx_serviceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitSpx_service(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Spx_service() (localctx ISpx_serviceContext) {
 	localctx = NewSpx_serviceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, tnsnamesParserRULE_spx_service)
@@ -8204,16 +7694,6 @@ func (s *Nmp_protocolContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Nmp_protocolContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitNmp_protocol(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Nmp_protocol() (localctx INmp_protocolContext) {
 	localctx = NewNmp_protocolContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, tnsnamesParserRULE_nmp_protocol)
@@ -8321,16 +7801,6 @@ func (s *Nmp_paramsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Nmp_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitNmp_params(s)
-	}
-}
-
-func (s *Nmp_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitNmp_params(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8468,16 +7938,6 @@ func (s *Nmp_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Nmp_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitNmp_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Nmp_parameter() (localctx INmp_parameterContext) {
 	localctx = NewNmp_parameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, tnsnamesParserRULE_nmp_parameter)
@@ -8605,16 +8065,6 @@ func (s *Nmp_nmpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Nmp_nmpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitNmp_nmp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Nmp_nmp() (localctx INmp_nmpContext) {
 	localctx = NewNmp_nmpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 108, tnsnamesParserRULE_nmp_nmp)
@@ -8735,16 +8185,6 @@ func (s *Nmp_serverContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Nmp_serverContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitNmp_server(s)
-	}
-}
-
-func (s *Nmp_serverContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitNmp_server(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8871,16 +8311,6 @@ func (s *Nmp_pipeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Nmp_pipeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitNmp_pipe(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Nmp_pipe() (localctx INmp_pipeContext) {
 	localctx = NewNmp_pipeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, tnsnamesParserRULE_nmp_pipe)
@@ -8994,16 +8424,6 @@ func (s *Beq_protocolContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Beq_protocolContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBeq_protocol(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Beq_protocol() (localctx IBeq_protocolContext) {
 	localctx = NewBeq_protocolContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, tnsnamesParserRULE_beq_protocol)
@@ -9111,16 +8531,6 @@ func (s *Beq_paramsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Beq_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitBeq_params(s)
-	}
-}
-
-func (s *Beq_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBeq_params(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9268,16 +8678,6 @@ func (s *Beq_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Beq_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBeq_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Beq_parameter() (localctx IBeq_parameterContext) {
 	localctx = NewBeq_parameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 118, tnsnamesParserRULE_beq_parameter)
@@ -9412,16 +8812,6 @@ func (s *Beq_beqContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Beq_beqContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBeq_beq(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Beq_beq() (localctx IBeq_beqContext) {
 	localctx = NewBeq_beqContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, tnsnamesParserRULE_beq_beq)
@@ -9545,16 +8935,6 @@ func (s *Beq_programContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Beq_programContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBeq_program(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Beq_program() (localctx IBeq_programContext) {
 	localctx = NewBeq_programContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, tnsnamesParserRULE_beq_program)
@@ -9675,16 +9055,6 @@ func (s *Beq_argv0Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Beq_argv0Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitBeq_argv0(s)
-	}
-}
-
-func (s *Beq_argv0Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBeq_argv0(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9817,16 +9187,6 @@ func (s *Beq_argsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Beq_argsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBeq_args(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Beq_args() (localctx IBeq_argsContext) {
 	localctx = NewBeq_argsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, tnsnamesParserRULE_beq_args)
@@ -9948,16 +9308,6 @@ func (s *Ba_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ba_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBa_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Ba_parameter() (localctx IBa_parameterContext) {
 	localctx = NewBa_parameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, tnsnamesParserRULE_ba_parameter)
@@ -10076,16 +9426,6 @@ func (s *Ba_descriptionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ba_descriptionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitBa_description(s)
-	}
-}
-
-func (s *Ba_descriptionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBa_description(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10215,16 +9555,6 @@ func (s *Bad_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Bad_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBad_params(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Bad_params() (localctx IBad_paramsContext) {
 	localctx = NewBad_paramsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, tnsnamesParserRULE_bad_params)
@@ -10340,16 +9670,6 @@ func (s *Bad_parameterContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Bad_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitBad_parameter(s)
-	}
-}
-
-func (s *Bad_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBad_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10470,16 +9790,6 @@ func (s *Bad_localContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Bad_localContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitBad_local(s)
-	}
-}
-
-func (s *Bad_localContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBad_local(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10612,16 +9922,6 @@ func (s *Bad_addressContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Bad_addressContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitBad_address(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Bad_address() (localctx IBad_addressContext) {
 	localctx = NewBad_addressContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 138, tnsnamesParserRULE_bad_address)
@@ -10751,16 +10051,6 @@ func (s *Connect_dataContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Connect_dataContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitConnect_data(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Connect_data() (localctx IConnect_dataContext) {
 	localctx = NewConnect_dataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 140, tnsnamesParserRULE_connect_data)
@@ -10884,16 +10174,6 @@ func (s *Cd_paramsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Cd_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitCd_params(s)
-	}
-}
-
-func (s *Cd_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitCd_params(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11085,16 +10365,6 @@ func (s *Cd_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Cd_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitCd_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Cd_parameter() (localctx ICd_parameterContext) {
 	localctx = NewCd_parameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 144, tnsnamesParserRULE_cd_parameter)
@@ -11276,16 +10546,6 @@ func (s *Cd_service_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Cd_service_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitCd_service_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Cd_service_name() (localctx ICd_service_nameContext) {
 	localctx = NewCd_service_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 146, tnsnamesParserRULE_cd_service_name)
@@ -11428,16 +10688,6 @@ func (s *Cd_sidContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Cd_sidContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitCd_sid(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Cd_sid() (localctx ICd_sidContext) {
 	localctx = NewCd_sidContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 148, tnsnamesParserRULE_cd_sid)
@@ -11570,16 +10820,6 @@ func (s *Cd_instance_nameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Cd_instance_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitCd_instance_name(s)
-	}
-}
-
-func (s *Cd_instance_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitCd_instance_name(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11731,16 +10971,6 @@ func (s *Cd_failover_modeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Cd_failover_modeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitCd_failover_mode(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Cd_failover_mode() (localctx ICd_failover_modeContext) {
 	localctx = NewCd_failover_modeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 152, tnsnamesParserRULE_cd_failover_mode)
@@ -11873,16 +11103,6 @@ func (s *Cd_global_nameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Cd_global_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitCd_global_name(s)
-	}
-}
-
-func (s *Cd_global_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitCd_global_name(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12028,16 +11248,6 @@ func (s *Cd_hsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Cd_hsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitCd_hs(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Cd_hs() (localctx ICd_hsContext) {
 	localctx = NewCd_hsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 156, tnsnamesParserRULE_cd_hs)
@@ -12178,16 +11388,6 @@ func (s *Cd_rdb_databaseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Cd_rdb_databaseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitCd_rdb_database(s)
-	}
-}
-
-func (s *Cd_rdb_databaseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitCd_rdb_database(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12364,16 +11564,6 @@ func (s *Cd_serverContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Cd_serverContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitCd_server(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Cd_server() (localctx ICd_serverContext) {
 	localctx = NewCd_serverContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 160, tnsnamesParserRULE_cd_server)
@@ -12503,16 +11693,6 @@ func (s *Cd_urContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Cd_urContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitCd_ur(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Cd_ur() (localctx ICd_urContext) {
 	localctx = NewCd_urContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 162, tnsnamesParserRULE_cd_ur)
@@ -12636,16 +11816,6 @@ func (s *Fo_paramsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Fo_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitFo_params(s)
-	}
-}
-
-func (s *Fo_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitFo_params(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12794,16 +11964,6 @@ func (s *Fo_parameterContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Fo_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitFo_parameter(s)
-	}
-}
-
-func (s *Fo_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitFo_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12956,16 +12116,6 @@ func (s *Fo_typeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Fo_typeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitFo_type(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Fo_type() (localctx IFo_typeContext) {
 	localctx = NewFo_typeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 168, tnsnamesParserRULE_fo_type)
@@ -13104,16 +12254,6 @@ func (s *Fo_backupContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Fo_backupContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitFo_backup(s)
-	}
-}
-
-func (s *Fo_backupContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitFo_backup(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13263,16 +12403,6 @@ func (s *Fo_methodContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Fo_methodContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitFo_method(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Fo_method() (localctx IFo_methodContext) {
 	localctx = NewFo_methodContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 172, tnsnamesParserRULE_fo_method)
@@ -13402,16 +12532,6 @@ func (s *Fo_retriesContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Fo_retriesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitFo_retries(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tnsnamesParser) Fo_retries() (localctx IFo_retriesContext) {
 	localctx = NewFo_retriesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 174, tnsnamesParserRULE_fo_retries)
@@ -13532,16 +12652,6 @@ func (s *Fo_delayContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Fo_delayContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tnsnamesParserListener); ok {
 		listenerT.ExitFo_delay(s)
-	}
-}
-
-func (s *Fo_delayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tnsnamesParserVisitor:
-		return t.VisitFo_delay(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

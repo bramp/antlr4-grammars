@@ -289,16 +289,6 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitProgram(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *robotwarParser) Program() (localctx IProgramContext) {
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, robotwarParserRULE_program)
@@ -431,16 +421,6 @@ func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitLine(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *robotwarParser) Line() (localctx ILineContext) {
 	localctx = NewLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, robotwarParserRULE_line)
@@ -555,16 +535,6 @@ func (s *LabelContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LabelContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(robotwarListener); ok {
 		listenerT.ExitLabel(s)
-	}
-}
-
-func (s *LabelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitLabel(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -715,16 +685,6 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitStatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *robotwarParser) Statement() (localctx IStatementContext) {
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, robotwarParserRULE_statement)
@@ -863,16 +823,6 @@ func (s *AccumstatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AccumstatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitAccumstatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *robotwarParser) Accumstatement() (localctx IAccumstatementContext) {
 	localctx = NewAccumstatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, robotwarParserRULE_accumstatement)
@@ -977,16 +927,6 @@ func (s *AccumexpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AccumexpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(robotwarListener); ok {
 		listenerT.ExitAccumexpression(s)
-	}
-}
-
-func (s *AccumexpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitAccumexpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1126,16 +1066,6 @@ func (s *GosubstatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *GosubstatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitGosubstatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *robotwarParser) Gosubstatement() (localctx IGosubstatementContext) {
 	localctx = NewGosubstatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, robotwarParserRULE_gosubstatement)
@@ -1234,16 +1164,6 @@ func (s *GotostatementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *GotostatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(robotwarListener); ok {
 		listenerT.ExitGotostatement(s)
-	}
-}
-
-func (s *GotostatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitGotostatement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1371,16 +1291,6 @@ func (s *TostatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TostatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitTostatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *robotwarParser) Tostatement() (localctx ITostatementContext) {
 	localctx = NewTostatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, robotwarParserRULE_tostatement)
@@ -1490,16 +1400,6 @@ func (s *EndsubstatementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EndsubstatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(robotwarListener); ok {
 		listenerT.ExitEndsubstatement(s)
-	}
-}
-
-func (s *EndsubstatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitEndsubstatement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1619,16 +1519,6 @@ func (s *IfstatementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IfstatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(robotwarListener); ok {
 		listenerT.ExitIfstatement(s)
-	}
-}
-
-func (s *IfstatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitIfstatement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1784,16 +1674,6 @@ func (s *ConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ConditionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitCondition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *robotwarParser) Condition() (localctx IConditionContext) {
 	localctx = NewConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, robotwarParserRULE_condition)
@@ -1935,16 +1815,6 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *robotwarParser) Expression() (localctx IExpressionContext) {
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, robotwarParserRULE_expression)
@@ -2077,16 +1947,6 @@ func (s *OperationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OperationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitOperation(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *robotwarParser) Operation() (localctx IOperationContext) {
 	localctx = NewOperationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, robotwarParserRULE_operation)
@@ -2176,16 +2036,6 @@ func (s *ComparisonContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ComparisonContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(robotwarListener); ok {
 		listenerT.ExitComparison(s)
-	}
-}
-
-func (s *ComparisonContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitComparison(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2303,16 +2153,6 @@ func (s *ArgumentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ArgumentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(robotwarListener); ok {
 		listenerT.ExitArgument(s)
-	}
-}
-
-func (s *ArgumentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitArgument(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2563,16 +2403,6 @@ func (s *RegisterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RegisterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitRegister(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *robotwarParser) Register() (localctx IRegisterContext) {
 	localctx = NewRegisterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, robotwarParserRULE_register)
@@ -2667,16 +2497,6 @@ func (s *NumberContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NumberContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(robotwarListener); ok {
 		listenerT.ExitNumber(s)
-	}
-}
-
-func (s *NumberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitNumber(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2785,16 +2605,6 @@ func (s *CommentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(robotwarListener); ok {
 		listenerT.ExitComment(s)
-	}
-}
-
-func (s *CommentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case robotwarVisitor:
-		return t.VisitComment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

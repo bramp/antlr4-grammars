@@ -250,16 +250,6 @@ func (s *ProgExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitProgExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *MuParserParser) Prog() (localctx IProgContext) {
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, MuParserParserRULE_prog)
@@ -429,16 +419,6 @@ func (s *FunctionMultiExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FunctionMultiExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitFunctionMultiExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type AddSubExprContext struct {
 	*ExprContext
 	op antlr.Token
@@ -505,16 +485,6 @@ func (s *AddSubExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AddSubExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitAddSubExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type AtomExprContext struct {
 	*ExprContext
 }
@@ -552,16 +522,6 @@ func (s *AtomExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AtomExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(MuParserListener); ok {
 		listenerT.ExitAtomExpr(s)
-	}
-}
-
-func (s *AtomExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitAtomExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -619,16 +579,6 @@ func (s *OrExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OrExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(MuParserListener); ok {
 		listenerT.ExitOrExpr(s)
-	}
-}
-
-func (s *OrExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitOrExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -706,16 +656,6 @@ func (s *RelationalExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RelationalExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitRelationalExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type FunctionExprContext struct {
 	*ExprContext
 	op antlr.Token
@@ -773,16 +713,6 @@ func (s *FunctionExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FunctionExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitFunctionExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type UnaryMinusExprContext struct {
 	*ExprContext
 }
@@ -824,16 +754,6 @@ func (s *UnaryMinusExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *UnaryMinusExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(MuParserListener); ok {
 		listenerT.ExitUnaryMinusExpr(s)
-	}
-}
-
-func (s *UnaryMinusExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitUnaryMinusExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -891,16 +811,6 @@ func (s *PowExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PowExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(MuParserListener); ok {
 		listenerT.ExitPowExpr(s)
-	}
-}
-
-func (s *PowExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitPowExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -973,16 +883,6 @@ func (s *AssignExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AssignExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitAssignExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type MulDivExprContext struct {
 	*ExprContext
 	op antlr.Token
@@ -1046,16 +946,6 @@ func (s *MulDivExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MulDivExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(MuParserListener); ok {
 		listenerT.ExitMulDivExpr(s)
-	}
-}
-
-func (s *MulDivExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitMulDivExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1125,16 +1015,6 @@ func (s *EqualityExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EqualityExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitEqualityExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type AndExprContext struct {
 	*ExprContext
 }
@@ -1189,16 +1069,6 @@ func (s *AndExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AndExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(MuParserListener); ok {
 		listenerT.ExitAndExpr(s)
-	}
-}
-
-func (s *AndExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitAndExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1260,16 +1130,6 @@ func (s *IteExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IteExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(MuParserListener); ok {
 		listenerT.ExitIteExpr(s)
-	}
-}
-
-func (s *IteExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitIteExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1743,16 +1603,6 @@ func (s *ParExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ParExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitParExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type BooleanAtomContext struct {
 	*AtomContext
 }
@@ -1791,16 +1641,6 @@ func (s *BooleanAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BooleanAtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitBooleanAtom(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type IdAtomContext struct {
 	*AtomContext
 }
@@ -1832,16 +1672,6 @@ func (s *IdAtomContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(MuParserListener); ok {
 		listenerT.ExitIdAtom(s)
-	}
-}
-
-func (s *IdAtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitIdAtom(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1883,16 +1713,6 @@ func (s *PredefinedConstantAtomContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *PredefinedConstantAtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitPredefinedConstantAtom(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type NumberAtomContext struct {
 	*AtomContext
 }
@@ -1928,16 +1748,6 @@ func (s *NumberAtomContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NumberAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(MuParserListener); ok {
 		listenerT.ExitNumberAtom(s)
-	}
-}
-
-func (s *NumberAtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case MuParserVisitor:
-		return t.VisitNumberAtom(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

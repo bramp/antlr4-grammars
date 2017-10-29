@@ -510,16 +510,6 @@ func (s *KonservierungContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *KonservierungContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKonservierung(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Konservierung() (localctx IKonservierungContext) {
 	localctx = NewKonservierungContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, DCM_2_0_grammarParserRULE_konservierung)
@@ -674,16 +664,6 @@ func (s *Kons_kopfContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Kons_kopfContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKons_kopf(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Kons_kopf() (localctx IKons_kopfContext) {
 	localctx = NewKons_kopfContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, DCM_2_0_grammarParserRULE_kons_kopf)
@@ -824,16 +804,6 @@ func (s *Modulkopf_infoContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Modulkopf_infoContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitModulkopf_info(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Modulkopf_info() (localctx IModulkopf_infoContext) {
 	localctx = NewModulkopf_infoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, DCM_2_0_grammarParserRULE_modulkopf_info)
@@ -965,16 +935,6 @@ func (s *Mod_zeileContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Mod_zeileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitMod_zeile(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Mod_zeile() (localctx IMod_zeileContext) {
 	localctx = NewMod_zeileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, DCM_2_0_grammarParserRULE_mod_zeile)
@@ -1100,16 +1060,6 @@ func (s *Mod_anf_zeileContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Mod_anf_zeileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitMod_anf_zeile(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Mod_anf_zeile() (localctx IMod_anf_zeileContext) {
 	localctx = NewMod_anf_zeileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, DCM_2_0_grammarParserRULE_mod_anf_zeile)
@@ -1215,16 +1165,6 @@ func (s *Mod_fort_zeileContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Mod_fort_zeileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitMod_fort_zeile(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Mod_fort_zeile() (localctx IMod_fort_zeileContext) {
 	localctx = NewMod_fort_zeileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, DCM_2_0_grammarParserRULE_mod_fort_zeile)
@@ -1320,16 +1260,6 @@ func (s *Mod_ele_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Mod_ele_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitMod_ele_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Mod_ele_name() (localctx IMod_ele_nameContext) {
 	localctx = NewMod_ele_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, DCM_2_0_grammarParserRULE_mod_ele_name)
@@ -1418,16 +1348,6 @@ func (s *Mod_ele_wertContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Mod_ele_wertContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitMod_ele_wert(s)
-	}
-}
-
-func (s *Mod_ele_wertContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitMod_ele_wert(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1553,16 +1473,6 @@ func (s *FunktionsdefContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FunktionsdefContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitFunktionsdef(s)
-	}
-}
-
-func (s *FunktionsdefContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitFunktionsdef(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1714,16 +1624,6 @@ func (s *FunktionszeileContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FunktionszeileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitFunktionszeile(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Funktionszeile() (localctx IFunktionszeileContext) {
 	localctx = NewFunktionszeileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, DCM_2_0_grammarParserRULE_funktionszeile)
@@ -1827,16 +1727,6 @@ func (s *Fkt_versionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Fkt_versionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitFkt_version(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Fkt_version() (localctx IFkt_versionContext) {
 	localctx = NewFkt_versionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, DCM_2_0_grammarParserRULE_fkt_version)
@@ -1925,16 +1815,6 @@ func (s *Fkt_langnameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Fkt_langnameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitFkt_langname(s)
-	}
-}
-
-func (s *Fkt_langnameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitFkt_langname(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2060,16 +1940,6 @@ func (s *VariantendefContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *VariantendefContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitVariantendef(s)
-	}
-}
-
-func (s *VariantendefContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitVariantendef(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2230,16 +2100,6 @@ func (s *VariantenkritContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *VariantenkritContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitVariantenkrit(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Variantenkrit() (localctx IVariantenkritContext) {
 	localctx = NewVariantenkritContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, DCM_2_0_grammarParserRULE_variantenkrit)
@@ -2364,16 +2224,6 @@ func (s *Krit_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Krit_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKrit_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Krit_name() (localctx IKrit_nameContext) {
 	localctx = NewKrit_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, DCM_2_0_grammarParserRULE_krit_name)
@@ -2462,16 +2312,6 @@ func (s *Krit_wertContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Krit_wertContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitKrit_wert(s)
-	}
-}
-
-func (s *Krit_wertContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKrit_wert(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2582,16 +2422,6 @@ func (s *Kons_rumpfContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Kons_rumpfContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitKons_rumpf(s)
-	}
-}
-
-func (s *Kons_rumpfContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKons_rumpf(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2750,16 +2580,6 @@ func (s *KenngroesseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *KenngroesseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitKenngroesse(s)
-	}
-}
-
-func (s *KenngroesseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKenngroesse(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2924,16 +2744,6 @@ func (s *KennwertContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *KennwertContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitKennwert(s)
-	}
-}
-
-func (s *KennwertContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKennwert(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3201,16 +3011,6 @@ func (s *KennwerteblockContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *KennwerteblockContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKennwerteblock(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Kennwerteblock() (localctx IKennwerteblockContext) {
 	localctx = NewKennwerteblockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, DCM_2_0_grammarParserRULE_kennwerteblock)
@@ -3445,16 +3245,6 @@ func (s *KennlinieContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *KennlinieContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitKennlinie(s)
-	}
-}
-
-func (s *KennlinieContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKennlinie(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3921,16 +3711,6 @@ func (s *KennfeldContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *KennfeldContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKennfeld(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Kennfeld() (localctx IKennfeldContext) {
 	localctx = NewKennfeldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, DCM_2_0_grammarParserRULE_kennfeld)
@@ -4369,16 +4149,6 @@ func (s *GruppenstuetzstellenContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *GruppenstuetzstellenContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitGruppenstuetzstellen(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Gruppenstuetzstellen() (localctx IGruppenstuetzstellenContext) {
 	localctx = NewGruppenstuetzstellenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, DCM_2_0_grammarParserRULE_gruppenstuetzstellen)
@@ -4541,16 +4311,6 @@ func (s *KenntextContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *KenntextContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitKenntext(s)
-	}
-}
-
-func (s *KenntextContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKenntext(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4724,16 +4484,6 @@ func (s *Kgr_infoContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Kgr_infoContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKgr_info(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Kgr_info() (localctx IKgr_infoContext) {
 	localctx = NewKgr_infoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, DCM_2_0_grammarParserRULE_kgr_info)
@@ -4866,16 +4616,6 @@ func (s *Einheit_xContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Einheit_xContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitEinheit_x(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Einheit_x() (localctx IEinheit_xContext) {
 	localctx = NewEinheit_xContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, DCM_2_0_grammarParserRULE_einheit_x)
@@ -4972,16 +4712,6 @@ func (s *Einheit_yContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Einheit_yContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitEinheit_y(s)
-	}
-}
-
-func (s *Einheit_yContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitEinheit_y(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5084,16 +4814,6 @@ func (s *Einheit_wContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Einheit_wContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitEinheit_w(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Einheit_w() (localctx IEinheit_wContext) {
 	localctx = NewEinheit_wContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, DCM_2_0_grammarParserRULE_einheit_w)
@@ -5190,16 +4910,6 @@ func (s *LangnameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LangnameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitLangname(s)
-	}
-}
-
-func (s *LangnameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitLangname(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5303,16 +5013,6 @@ func (s *DisplaynameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DisplaynameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitDisplayname(s)
-	}
-}
-
-func (s *DisplaynameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitDisplayname(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5440,16 +5140,6 @@ func (s *Var_abhangigkeitenContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Var_abhangigkeitenContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitVar_abhangigkeiten(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Var_abhangigkeiten() (localctx IVar_abhangigkeitenContext) {
 	localctx = NewVar_abhangigkeitenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, DCM_2_0_grammarParserRULE_var_abhangigkeiten)
@@ -5572,16 +5262,6 @@ func (s *Var_abhContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Var_abhContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitVar_abh(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Var_abh() (localctx IVar_abhContext) {
 	localctx = NewVar_abhContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, DCM_2_0_grammarParserRULE_var_abh)
@@ -5682,16 +5362,6 @@ func (s *FunktionszugehorigkeitContext) EnterRule(listener antlr.ParseTreeListen
 func (s *FunktionszugehorigkeitContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitFunktionszugehorigkeit(s)
-	}
-}
-
-func (s *FunktionszugehorigkeitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitFunktionszugehorigkeit(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5805,16 +5475,6 @@ func (s *Anzahl_xContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Anzahl_xContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitAnzahl_x(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Anzahl_x() (localctx IAnzahl_xContext) {
 	localctx = NewAnzahl_xContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, DCM_2_0_grammarParserRULE_anzahl_x)
@@ -5903,16 +5563,6 @@ func (s *Anzahl_yContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Anzahl_yContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitAnzahl_y(s)
-	}
-}
-
-func (s *Anzahl_yContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitAnzahl_y(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6023,16 +5673,6 @@ func (s *WertelisteContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *WertelisteContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitWerteliste(s)
-	}
-}
-
-func (s *WertelisteContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitWerteliste(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6170,16 +5810,6 @@ func (s *Werteliste_kwbContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Werteliste_kwbContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitWerteliste_kwb(s)
-	}
-}
-
-func (s *Werteliste_kwbContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitWerteliste_kwb(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6350,16 +5980,6 @@ func (s *Sst_liste_xContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Sst_liste_xContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitSst_liste_x(s)
-	}
-}
-
-func (s *Sst_liste_xContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitSst_liste_x(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6548,16 +6168,6 @@ func (s *Kf_zeile_listeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Kf_zeile_listeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKf_zeile_liste(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Kf_zeile_liste() (localctx IKf_zeile_listeContext) {
 	localctx = NewKf_zeile_listeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, DCM_2_0_grammarParserRULE_kf_zeile_liste)
@@ -6714,16 +6324,6 @@ func (s *Kf_zeile_liste_rContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Kf_zeile_liste_rContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKf_zeile_liste_r(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Kf_zeile_liste_r() (localctx IKf_zeile_liste_rContext) {
 	localctx = NewKf_zeile_liste_rContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, DCM_2_0_grammarParserRULE_kf_zeile_liste_r)
@@ -6861,16 +6461,6 @@ func (s *Kf_zeile_liste_txContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Kf_zeile_liste_txContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitKf_zeile_liste_tx(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DCM_2_0_grammarParser) Kf_zeile_liste_tx() (localctx IKf_zeile_liste_txContext) {
 	localctx = NewKf_zeile_liste_txContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, DCM_2_0_grammarParserRULE_kf_zeile_liste_tx)
@@ -6986,16 +6576,6 @@ func (s *RealzahlContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RealzahlContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DCM_2_0_grammarListener); ok {
 		listenerT.ExitRealzahl(s)
-	}
-}
-
-func (s *RealzahlContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DCM_2_0_grammarVisitor:
-		return t.VisitRealzahl(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

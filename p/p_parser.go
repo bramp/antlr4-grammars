@@ -166,16 +166,6 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case pVisitor:
-		return t.VisitProg(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *pParser) Prog() (localctx IProgContext) {
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, pParserRULE_prog)
@@ -291,16 +281,6 @@ func (s *SymbolContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SymbolContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(pListener); ok {
 		listenerT.ExitSymbol(s)
-	}
-}
-
-func (s *SymbolContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case pVisitor:
-		return t.VisitSymbol(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -430,16 +410,6 @@ func (s *IterateContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IterateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case pVisitor:
-		return t.VisitIterate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *pParser) Iterate() (localctx IIterateContext) {
 	localctx = NewIterateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, pParserRULE_iterate)
@@ -551,16 +521,6 @@ func (s *AtomContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(pListener); ok {
 		listenerT.ExitAtom(s)
-	}
-}
-
-func (s *AtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case pVisitor:
-		return t.VisitAtom(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

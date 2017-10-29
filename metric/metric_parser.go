@@ -224,16 +224,6 @@ func (s *UomContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *UomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case metricVisitor:
-		return t.VisitUom(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *metricParser) Uom() (localctx IUomContext) {
 	localctx = NewUomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, metricParserRULE_uom)
@@ -375,16 +365,6 @@ func (s *MeasureContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MeasureContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case metricVisitor:
-		return t.VisitMeasure(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *metricParser) Measure() (localctx IMeasureContext) {
 	localctx = NewMeasureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, metricParserRULE_measure)
@@ -498,16 +478,6 @@ func (s *ExponentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExponentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case metricVisitor:
-		return t.VisitExponent(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *metricParser) Exponent() (localctx IExponentContext) {
 	localctx = NewExponentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, metricParserRULE_exponent)
@@ -595,16 +565,6 @@ func (s *PrefixContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PrefixContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(metricListener); ok {
 		listenerT.ExitPrefix(s)
-	}
-}
-
-func (s *PrefixContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case metricVisitor:
-		return t.VisitPrefix(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -721,16 +681,6 @@ func (s *UnitContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *UnitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case metricVisitor:
-		return t.VisitUnit(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *metricParser) Unit() (localctx IUnitContext) {
 	localctx = NewUnitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, metricParserRULE_unit)
@@ -833,16 +783,6 @@ func (s *BaseunitContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BaseunitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case metricVisitor:
-		return t.VisitBaseunit(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *metricParser) Baseunit() (localctx IBaseunitContext) {
 	localctx = NewBaseunitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, metricParserRULE_baseunit)
@@ -932,16 +872,6 @@ func (s *DerivedunitContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DerivedunitContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(metricListener); ok {
 		listenerT.ExitDerivedunit(s)
-	}
-}
-
-func (s *DerivedunitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case metricVisitor:
-		return t.VisitDerivedunit(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

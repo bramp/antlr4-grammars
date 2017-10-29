@@ -315,16 +315,6 @@ func (s *MorsecodeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MorsecodeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitMorsecode(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) Morsecode() (localctx IMorsecodeContext) {
 	localctx = NewMorsecodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, morsecodeParserRULE_morsecode)
@@ -791,16 +781,6 @@ func (s *LetterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LetterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitLetter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) Letter() (localctx ILetterContext) {
 	localctx = NewLetterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, morsecodeParserRULE_letter)
@@ -1147,16 +1127,6 @@ func (s *AContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitA(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) A() (localctx IAContext) {
 	localctx = NewAContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, morsecodeParserRULE_a)
@@ -1257,16 +1227,6 @@ func (s *BContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *BContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitB(s)
-	}
-}
-
-func (s *BContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitB(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1385,16 +1345,6 @@ func (s *CContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitC(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) C() (localctx ICContext) {
 	localctx = NewCContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, morsecodeParserRULE_c)
@@ -1506,16 +1456,6 @@ func (s *DContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitD(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) D() (localctx IDContext) {
 	localctx = NewDContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, morsecodeParserRULE_d)
@@ -1615,16 +1555,6 @@ func (s *EContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitE(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) E() (localctx IEContext) {
 	localctx = NewEContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, morsecodeParserRULE_e)
@@ -1721,16 +1651,6 @@ func (s *FContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitF(s)
-	}
-}
-
-func (s *FContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitF(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1845,16 +1765,6 @@ func (s *GContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *GContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitG(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) G() (localctx IGContext) {
 	localctx = NewGContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, morsecodeParserRULE_g)
@@ -1955,16 +1865,6 @@ func (s *HContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *HContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitH(s)
-	}
-}
-
-func (s *HContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitH(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2075,16 +1975,6 @@ func (s *IContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitI(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) I() (localctx IIContext) {
 	localctx = NewIContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, morsecodeParserRULE_i)
@@ -2185,16 +2075,6 @@ func (s *JContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *JContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitJ(s)
-	}
-}
-
-func (s *JContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitJ(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2309,16 +2189,6 @@ func (s *KContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *KContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitK(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) K() (localctx IKContext) {
 	localctx = NewKContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, morsecodeParserRULE_k)
@@ -2423,16 +2293,6 @@ func (s *LContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitL(s)
-	}
-}
-
-func (s *LContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitL(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2543,16 +2403,6 @@ func (s *MContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitM(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) M() (localctx IMContext) {
 	localctx = NewMContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, morsecodeParserRULE_m)
@@ -2652,16 +2502,6 @@ func (s *NContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitN(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) N() (localctx INContext) {
 	localctx = NewNContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, morsecodeParserRULE_n)
@@ -2758,16 +2598,6 @@ func (s *OContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitO(s)
-	}
-}
-
-func (s *OContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitO(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2882,16 +2712,6 @@ func (s *PContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitP(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) P() (localctx IPContext) {
 	localctx = NewPContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, morsecodeParserRULE_p)
@@ -3000,16 +2820,6 @@ func (s *QContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *QContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitQ(s)
-	}
-}
-
-func (s *QContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitQ(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3124,16 +2934,6 @@ func (s *RContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitR(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) R() (localctx IRContext) {
 	localctx = NewRContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, morsecodeParserRULE_r)
@@ -3237,16 +3037,6 @@ func (s *SContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitS(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) S() (localctx ISContext) {
 	localctx = NewSContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, morsecodeParserRULE_s)
@@ -3346,16 +3136,6 @@ func (s *TContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitT(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) T() (localctx ITContext) {
 	localctx = NewTContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, morsecodeParserRULE_t)
@@ -3452,16 +3232,6 @@ func (s *UContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *UContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitU(s)
-	}
-}
-
-func (s *UContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitU(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3569,16 +3339,6 @@ func (s *VContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *VContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitV(s)
-	}
-}
-
-func (s *VContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitV(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3693,16 +3453,6 @@ func (s *WContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *WContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitW(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) W() (localctx IWContext) {
 	localctx = NewWContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, morsecodeParserRULE_w)
@@ -3814,16 +3564,6 @@ func (s *XContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *XContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitX(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) X() (localctx IXContext) {
 	localctx = NewXContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, morsecodeParserRULE_x)
@@ -3932,16 +3672,6 @@ func (s *YContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *YContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitY(s)
-	}
-}
-
-func (s *YContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitY(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4060,16 +3790,6 @@ func (s *ZContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ZContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitZ(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) Z() (localctx IZContext) {
 	localctx = NewZContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, morsecodeParserRULE_z)
@@ -4178,16 +3898,6 @@ func (s *OneContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OneContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitOne(s)
-	}
-}
-
-func (s *OneContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitOne(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4310,16 +4020,6 @@ func (s *TwoContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TwoContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitTwo(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) Two() (localctx ITwoContext) {
 	localctx = NewTwoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, morsecodeParserRULE_two)
@@ -4439,16 +4139,6 @@ func (s *ThreeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ThreeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitThree(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) Three() (localctx IThreeContext) {
 	localctx = NewThreeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, morsecodeParserRULE_three)
@@ -4564,16 +4254,6 @@ func (s *FourContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FourContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitFour(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) Four() (localctx IFourContext) {
 	localctx = NewFourContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, morsecodeParserRULE_four)
@@ -4682,16 +4362,6 @@ func (s *FiveContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FiveContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitFive(s)
-	}
-}
-
-func (s *FiveContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitFive(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4807,16 +4477,6 @@ func (s *SixContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SixContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitSix(s)
-	}
-}
-
-func (s *SixContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitSix(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4939,16 +4599,6 @@ func (s *SevenContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SevenContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitSeven(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) Seven() (localctx ISevenContext) {
 	localctx = NewSevenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, morsecodeParserRULE_seven)
@@ -5068,16 +4718,6 @@ func (s *EightContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EightContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitEight(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) Eight() (localctx IEightContext) {
 	localctx = NewEightContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, morsecodeParserRULE_eight)
@@ -5193,16 +4833,6 @@ func (s *NineContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitNine(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *morsecodeParser) Nine() (localctx INineContext) {
 	localctx = NewNineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, morsecodeParserRULE_nine)
@@ -5311,16 +4941,6 @@ func (s *ZeroContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ZeroContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(morsecodeListener); ok {
 		listenerT.ExitZero(s)
-	}
-}
-
-func (s *ZeroContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case morsecodeVisitor:
-		return t.VisitZero(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

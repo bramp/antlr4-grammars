@@ -144,16 +144,6 @@ func (s *PostalcodeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PostalcodeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case postalcodeVisitor:
-		return t.VisitPostalcode(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *postalcodeParser) Postalcode() (localctx IPostalcodeContext) {
 	localctx = NewPostalcodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, postalcodeParserRULE_postalcode)

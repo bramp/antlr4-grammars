@@ -210,16 +210,6 @@ func (s *RulelistContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RulelistContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case AbnfVisitor:
-		return t.VisitRulelist(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *AbnfParser) Rulelist() (localctx IRulelistContext) {
 	localctx = NewRulelistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, AbnfParserRULE_rulelist)
@@ -336,16 +326,6 @@ func (s *Rule_Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Rule_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case AbnfVisitor:
-		return t.VisitRule_(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *AbnfParser) Rule_() (localctx IRule_Context) {
 	localctx = NewRule_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, AbnfParserRULE_rule_)
@@ -457,16 +437,6 @@ func (s *ElementsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ElementsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case AbnfVisitor:
-		return t.VisitElements(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *AbnfParser) Elements() (localctx IElementsContext) {
 	localctx = NewElementsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, AbnfParserRULE_elements)
@@ -574,16 +544,6 @@ func (s *AlternationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AlternationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(AbnfListener); ok {
 		listenerT.ExitAlternation(s)
-	}
-}
-
-func (s *AlternationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case AbnfVisitor:
-		return t.VisitAlternation(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -716,16 +676,6 @@ func (s *ConcatenationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ConcatenationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case AbnfVisitor:
-		return t.VisitConcatenation(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *AbnfParser) Concatenation() (localctx IConcatenationContext) {
 	localctx = NewConcatenationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, AbnfParserRULE_concatenation)
@@ -851,16 +801,6 @@ func (s *RepetitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RepetitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case AbnfVisitor:
-		return t.VisitRepetition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *AbnfParser) Repetition() (localctx IRepetitionContext) {
 	localctx = NewRepetitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, AbnfParserRULE_repetition)
@@ -965,16 +905,6 @@ func (s *RepeatContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RepeatContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(AbnfListener); ok {
 		listenerT.ExitRepeat(s)
-	}
-}
-
-func (s *RepeatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case AbnfVisitor:
-		return t.VisitRepeat(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1137,16 +1067,6 @@ func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case AbnfVisitor:
-		return t.VisitElement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *AbnfParser) Element() (localctx IElementContext) {
 	localctx = NewElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, AbnfParserRULE_element)
@@ -1288,16 +1208,6 @@ func (s *GroupContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *GroupContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case AbnfVisitor:
-		return t.VisitGroup(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *AbnfParser) Group() (localctx IGroupContext) {
 	localctx = NewGroupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, AbnfParserRULE_group)
@@ -1400,16 +1310,6 @@ func (s *OptionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OptionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(AbnfListener); ok {
 		listenerT.ExitOption(s)
-	}
-}
-
-func (s *OptionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case AbnfVisitor:
-		return t.VisitOption(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

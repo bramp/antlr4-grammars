@@ -489,16 +489,6 @@ func (s *StartRuleContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StartRuleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitStartRule(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) StartRule() (localctx IStartRuleContext) {
 	localctx = NewStartRuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, Cobol85PreprocessorParserRULE_startRule)
@@ -675,16 +665,6 @@ func (s *ExecCicsStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExecCicsStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitExecCicsStatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) ExecCicsStatement() (localctx IExecCicsStatementContext) {
 	localctx = NewExecCicsStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, Cobol85PreprocessorParserRULE_execCicsStatement)
@@ -820,16 +800,6 @@ func (s *ExecSqlStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExecSqlStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitExecSqlStatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) ExecSqlStatement() (localctx IExecSqlStatementContext) {
 	localctx = NewExecSqlStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, Cobol85PreprocessorParserRULE_execSqlStatement)
@@ -962,16 +932,6 @@ func (s *ExecSqlImsStatementContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *ExecSqlImsStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85PreprocessorListener); ok {
 		listenerT.ExitExecSqlImsStatement(s)
-	}
-}
-
-func (s *ExecSqlImsStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitExecSqlImsStatement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1141,16 +1101,6 @@ func (s *CopyStatementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CopyStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85PreprocessorListener); ok {
 		listenerT.ExitCopyStatement(s)
-	}
-}
-
-func (s *CopyStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitCopyStatement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1354,16 +1304,6 @@ func (s *CopySourceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CopySourceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitCopySource(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) CopySource() (localctx ICopySourceContext) {
 	localctx = NewCopySourceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, Cobol85PreprocessorParserRULE_copySource)
@@ -1499,16 +1439,6 @@ func (s *ReplacingPhraseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ReplacingPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85PreprocessorListener); ok {
 		listenerT.ExitReplacingPhrase(s)
-	}
-}
-
-func (s *ReplacingPhraseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitReplacingPhrase(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1712,16 +1642,6 @@ func (s *ReplaceAreaContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ReplaceAreaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitReplaceArea(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) ReplaceArea() (localctx IReplaceAreaContext) {
 	localctx = NewReplaceAreaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, Cobol85PreprocessorParserRULE_replaceArea)
@@ -1891,16 +1811,6 @@ func (s *ReplaceByStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ReplaceByStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitReplaceByStatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) ReplaceByStatement() (localctx IReplaceByStatementContext) {
 	localctx = NewReplaceByStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, Cobol85PreprocessorParserRULE_replaceByStatement)
@@ -2037,16 +1947,6 @@ func (s *ReplaceOffStatementContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *ReplaceOffStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85PreprocessorListener); ok {
 		listenerT.ExitReplaceOffStatement(s)
-	}
-}
-
-func (s *ReplaceOffStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitReplaceOffStatement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2194,16 +2094,6 @@ func (s *ReplaceClauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ReplaceClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85PreprocessorListener); ok {
 		listenerT.ExitReplaceClause(s)
-	}
-}
-
-func (s *ReplaceClauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitReplaceClause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2415,16 +2305,6 @@ func (s *DirectoryPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DirectoryPhraseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitDirectoryPhrase(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) DirectoryPhrase() (localctx IDirectoryPhraseContext) {
 	localctx = NewDirectoryPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, Cobol85PreprocessorParserRULE_directoryPhrase)
@@ -2580,16 +2460,6 @@ func (s *FamilyPhraseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FamilyPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85PreprocessorListener); ok {
 		listenerT.ExitFamilyPhrase(s)
-	}
-}
-
-func (s *FamilyPhraseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitFamilyPhrase(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2754,16 +2624,6 @@ func (s *ReplaceableContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ReplaceableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitReplaceable(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) Replaceable() (localctx IReplaceableContext) {
 	localctx = NewReplaceableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, Cobol85PreprocessorParserRULE_replaceable)
@@ -2918,16 +2778,6 @@ func (s *ReplacementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ReplacementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitReplacement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) Replacement() (localctx IReplacementContext) {
 	localctx = NewReplacementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, Cobol85PreprocessorParserRULE_replacement)
@@ -3058,16 +2908,6 @@ func (s *ControlSpacingStatementContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
-func (s *ControlSpacingStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitControlSpacingStatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) ControlSpacingStatement() (localctx IControlSpacingStatementContext) {
 	localctx = NewControlSpacingStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, Cobol85PreprocessorParserRULE_controlSpacingStatement)
@@ -3165,16 +3005,6 @@ func (s *CobolWordContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CobolWordContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitCobolWord(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) CobolWord() (localctx ICobolWordContext) {
 	localctx = NewCobolWordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, Cobol85PreprocessorParserRULE_cobolWord)
@@ -3263,16 +3093,6 @@ func (s *LiteralContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85PreprocessorListener); ok {
 		listenerT.ExitLiteral(s)
-	}
-}
-
-func (s *LiteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitLiteral(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3378,16 +3198,6 @@ func (s *PseudoTextContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PseudoTextContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85PreprocessorListener); ok {
 		listenerT.ExitPseudoText(s)
-	}
-}
-
-func (s *PseudoTextContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitPseudoText(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3522,16 +3332,6 @@ func (s *CharDataContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CharDataContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85PreprocessorListener); ok {
 		listenerT.ExitCharData(s)
-	}
-}
-
-func (s *CharDataContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitCharData(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3739,16 +3539,6 @@ func (s *CharDataLineContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CharDataLineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitCharDataLine(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *Cobol85PreprocessorParser) CharDataLine() (localctx ICharDataLineContext) {
 	localctx = NewCharDataLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, Cobol85PreprocessorParserRULE_charDataLine)
@@ -3907,16 +3697,6 @@ func (s *CharDataKeywordContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CharDataKeywordContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85PreprocessorListener); ok {
 		listenerT.ExitCharDataKeyword(s)
-	}
-}
-
-func (s *CharDataKeywordContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case Cobol85PreprocessorVisitor:
-		return t.VisitCharDataKeyword(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

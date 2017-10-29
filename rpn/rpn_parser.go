@@ -196,16 +196,6 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case rpnVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *rpnParser) Expression() (localctx IExpressionContext) {
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, rpnParserRULE_expression)
@@ -325,16 +315,6 @@ func (s *TermContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(rpnListener); ok {
 		listenerT.ExitTerm(s)
-	}
-}
-
-func (s *TermContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case rpnVisitor:
-		return t.VisitTerm(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -490,16 +470,6 @@ func (s *OperContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OperContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case rpnVisitor:
-		return t.VisitOper(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *rpnParser) Oper() (localctx IOperContext) {
 	localctx = NewOperContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, rpnParserRULE_oper)
@@ -628,16 +598,6 @@ func (s *SignedAtomContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SignedAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(rpnListener); ok {
 		listenerT.ExitSignedAtom(s)
-	}
-}
-
-func (s *SignedAtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case rpnVisitor:
-		return t.VisitSignedAtom(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -770,16 +730,6 @@ func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *VariableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case rpnVisitor:
-		return t.VisitVariable(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *rpnParser) Variable() (localctx IVariableContext) {
 	localctx = NewVariableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, rpnParserRULE_variable)
@@ -868,16 +818,6 @@ func (s *ScientificContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ScientificContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(rpnListener); ok {
 		listenerT.ExitScientific(s)
-	}
-}
-
-func (s *ScientificContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case rpnVisitor:
-		return t.VisitScientific(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

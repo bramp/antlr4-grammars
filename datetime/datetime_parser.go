@@ -237,16 +237,6 @@ func (s *Date_timeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Date_timeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case datetimeVisitor:
-		return t.VisitDate_time(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *datetimeParser) Date_time() (localctx IDate_timeContext) {
 	localctx = NewDate_timeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, datetimeParserRULE_date_time)
@@ -350,16 +340,6 @@ func (s *DayContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DayContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(datetimeListener); ok {
 		listenerT.ExitDay(s)
-	}
-}
-
-func (s *DayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case datetimeVisitor:
-		return t.VisitDay(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -489,16 +469,6 @@ func (s *DateContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case datetimeVisitor:
-		return t.VisitDate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *datetimeParser) Date() (localctx IDateContext) {
 	localctx = NewDateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, datetimeParserRULE_date)
@@ -601,16 +571,6 @@ func (s *MonthContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MonthContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(datetimeListener); ok {
 		listenerT.ExitMonth(s)
-	}
-}
-
-func (s *MonthContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case datetimeVisitor:
-		return t.VisitMonth(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -727,16 +687,6 @@ func (s *TimeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TimeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case datetimeVisitor:
-		return t.VisitTime(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *datetimeParser) Time() (localctx ITimeContext) {
 	localctx = NewTimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, datetimeParserRULE_time)
@@ -848,16 +798,6 @@ func (s *HourContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *HourContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(datetimeListener); ok {
 		listenerT.ExitHour(s)
-	}
-}
-
-func (s *HourContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case datetimeVisitor:
-		return t.VisitHour(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -983,16 +923,6 @@ func (s *ZoneContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ZoneContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(datetimeListener); ok {
 		listenerT.ExitZone(s)
-	}
-}
-
-func (s *ZoneContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case datetimeVisitor:
-		return t.VisitZone(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1202,16 +1132,6 @@ func (s *Two_digitContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Two_digitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case datetimeVisitor:
-		return t.VisitTwo_digit(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *datetimeParser) Two_digit() (localctx ITwo_digitContext) {
 	localctx = NewTwo_digitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, datetimeParserRULE_two_digit)
@@ -1326,16 +1246,6 @@ func (s *Four_digitContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Four_digitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case datetimeVisitor:
-		return t.VisitFour_digit(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *datetimeParser) Four_digit() (localctx IFour_digitContext) {
 	localctx = NewFour_digitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, datetimeParserRULE_four_digit)
@@ -1440,16 +1350,6 @@ func (s *AlphanumericContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AlphanumericContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(datetimeListener); ok {
 		listenerT.ExitAlphanumeric(s)
-	}
-}
-
-func (s *AlphanumericContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case datetimeVisitor:
-		return t.VisitAlphanumeric(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

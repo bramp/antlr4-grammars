@@ -169,16 +169,6 @@ func (s *PropertiesFileContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PropertiesFileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propertiesVisitor:
-		return t.VisitPropertiesFile(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *propertiesParser) PropertiesFile() (localctx IPropertiesFileContext) {
 	localctx = NewPropertiesFileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, propertiesParserRULE_propertiesFile)
@@ -294,16 +284,6 @@ func (s *RowContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RowContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(propertiesListener); ok {
 		listenerT.ExitRow(s)
-	}
-}
-
-func (s *RowContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propertiesVisitor:
-		return t.VisitRow(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -429,16 +409,6 @@ func (s *DeclContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DeclContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propertiesVisitor:
-		return t.VisitDecl(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *propertiesParser) Decl() (localctx IDeclContext) {
 	localctx = NewDeclContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, propertiesParserRULE_decl)
@@ -544,16 +514,6 @@ func (s *KeyContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *KeyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propertiesVisitor:
-		return t.VisitKey(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *propertiesParser) Key() (localctx IKeyContext) {
 	localctx = NewKeyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, propertiesParserRULE_key)
@@ -646,16 +606,6 @@ func (s *ValueContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(propertiesListener); ok {
 		listenerT.ExitValue(s)
-	}
-}
-
-func (s *ValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propertiesVisitor:
-		return t.VisitValue(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -753,16 +703,6 @@ func (s *CommentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(propertiesListener); ok {
 		listenerT.ExitComment(s)
-	}
-}
-
-func (s *CommentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propertiesVisitor:
-		return t.VisitComment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

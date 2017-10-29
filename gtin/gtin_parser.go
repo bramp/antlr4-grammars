@@ -333,16 +333,6 @@ func (s *GtinContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *GtinContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitGtin(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Gtin() (localctx IGtinContext) {
 	localctx = NewGtinContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, gtinParserRULE_gtin)
@@ -474,16 +464,6 @@ func (s *Gtin8Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Gtin8Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitGtin8(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Gtin8() (localctx IGtin8Context) {
 	localctx = NewGtin8Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, gtinParserRULE_gtin8)
@@ -591,16 +571,6 @@ func (s *Ean8Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ean8Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitEan8(s)
-	}
-}
-
-func (s *Ean8Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitEan8(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -729,16 +699,6 @@ func (s *Gtin12Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Gtin12Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitGtin12(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Gtin12() (localctx IGtin12Context) {
 	localctx = NewGtin12Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, gtinParserRULE_gtin12)
@@ -836,16 +796,6 @@ func (s *Gtin13Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Gtin13Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitGtin13(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Gtin13() (localctx IGtin13Context) {
 	localctx = NewGtin13Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, gtinParserRULE_gtin13)
@@ -940,16 +890,6 @@ func (s *Gtin14Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Gtin14Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitGtin14(s)
-	}
-}
-
-func (s *Gtin14Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitGtin14(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1057,16 +997,6 @@ func (s *UpcContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *UpcContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitUpc(s)
-	}
-}
-
-func (s *UpcContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitUpc(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1209,16 +1139,6 @@ func (s *Upc_aContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Upc_aContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitUpc_a(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Upc_a() (localctx IUpc_aContext) {
 	localctx = NewUpc_aContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, gtinParserRULE_upc_a)
@@ -1328,16 +1248,6 @@ func (s *Upc_a_manufacturerContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Upc_a_manufacturerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitUpc_a_manufacturer(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Upc_a_manufacturer() (localctx IUpc_a_manufacturerContext) {
 	localctx = NewUpc_a_manufacturerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, gtinParserRULE_upc_a_manufacturer)
@@ -1432,16 +1342,6 @@ func (s *Upc_a_productContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Upc_a_productContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitUpc_a_product(s)
-	}
-}
-
-func (s *Upc_a_productContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitUpc_a_product(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1552,16 +1452,6 @@ func (s *Upc_a_5Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Upc_a_5Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitUpc_a_5(s)
-	}
-}
-
-func (s *Upc_a_5Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitUpc_a_5(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1691,16 +1581,6 @@ func (s *Upc_eContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Upc_eContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitUpc_e(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Upc_e() (localctx IUpc_eContext) {
 	localctx = NewUpc_eContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, gtinParserRULE_upc_e)
@@ -1818,16 +1698,6 @@ func (s *Num_systemContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Num_systemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitNum_system(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Num_system() (localctx INum_systemContext) {
 	localctx = NewNum_systemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, gtinParserRULE_num_system)
@@ -1922,16 +1792,6 @@ func (s *Check_codeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Check_codeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitCheck_code(s)
-	}
-}
-
-func (s *Check_codeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitCheck_code(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2039,16 +1899,6 @@ func (s *Supplemental_codeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Supplemental_codeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitSupplemental_code(s)
-	}
-}
-
-func (s *Supplemental_codeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitSupplemental_code(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2175,16 +2025,6 @@ func (s *Supplemental_code_5Context) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *Supplemental_code_5Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitSupplemental_code_5(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Supplemental_code_5() (localctx ISupplemental_code_5Context) {
 	localctx = NewSupplemental_code_5Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, gtinParserRULE_supplemental_code_5)
@@ -2308,16 +2148,6 @@ func (s *Supplemental_code_2Context) EnterRule(listener antlr.ParseTreeListener)
 func (s *Supplemental_code_2Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitSupplemental_code_2(s)
-	}
-}
-
-func (s *Supplemental_code_2Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitSupplemental_code_2(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2449,16 +2279,6 @@ func (s *Ean13Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ean13Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitEan13(s)
-	}
-}
-
-func (s *Ean13Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitEan13(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2603,16 +2423,6 @@ func (s *Ean13_genericContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ean13_genericContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitEan13_generic(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Ean13_generic() (localctx IEan13_genericContext) {
 	localctx = NewEan13_genericContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, gtinParserRULE_ean13_generic)
@@ -2748,16 +2558,6 @@ func (s *Ean13_ismnContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ean13_ismnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitEan13_ismn(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Ean13_ismn() (localctx IEan13_ismnContext) {
 	localctx = NewEan13_ismnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, gtinParserRULE_ean13_ismn)
@@ -2853,16 +2653,6 @@ func (s *Gs1_prefix_ismnContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Gs1_prefix_ismnContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitGs1_prefix_ismn(s)
-	}
-}
-
-func (s *Gs1_prefix_ismnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitGs1_prefix_ismn(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2988,16 +2778,6 @@ func (s *Ismn_publisher_numberContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *Ismn_publisher_numberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitIsmn_publisher_number(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Ismn_publisher_number() (localctx IIsmn_publisher_numberContext) {
 	localctx = NewIsmn_publisher_numberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, gtinParserRULE_ismn_publisher_number)
@@ -3117,16 +2897,6 @@ func (s *Ismn_item_numberContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ismn_item_numberContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitIsmn_item_number(s)
-	}
-}
-
-func (s *Ismn_item_numberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitIsmn_item_number(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3259,16 +3029,6 @@ func (s *Ean13_booklandContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ean13_booklandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitEan13_bookland(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Ean13_bookland() (localctx IEan13_booklandContext) {
 	localctx = NewEan13_booklandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, gtinParserRULE_ean13_bookland)
@@ -3395,16 +3155,6 @@ func (s *Bookland_isbnContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Bookland_isbnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitBookland_isbn(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Bookland_isbn() (localctx IBookland_isbnContext) {
 	localctx = NewBookland_isbnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, gtinParserRULE_bookland_isbn)
@@ -3523,16 +3273,6 @@ func (s *Gs1_prefix_bookland_1Context) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *Gs1_prefix_bookland_1Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitGs1_prefix_bookland_1(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Gs1_prefix_bookland_1() (localctx IGs1_prefix_bookland_1Context) {
 	localctx = NewGs1_prefix_bookland_1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, gtinParserRULE_gs1_prefix_bookland_1)
@@ -3648,16 +3388,6 @@ func (s *Gs1_prefix_bookland_2Context) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *Gs1_prefix_bookland_2Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitGs1_prefix_bookland_2(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Gs1_prefix_bookland_2() (localctx IGs1_prefix_bookland_2Context) {
 	localctx = NewGs1_prefix_bookland_2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, gtinParserRULE_gs1_prefix_bookland_2)
@@ -3753,16 +3483,6 @@ func (s *Gs1_prefix_issnContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Gs1_prefix_issnContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitGs1_prefix_issn(s)
-	}
-}
-
-func (s *Gs1_prefix_issnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitGs1_prefix_issn(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3891,16 +3611,6 @@ func (s *Ean13_issnContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ean13_issnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitEan13_issn(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Ean13_issn() (localctx IEan13_issnContext) {
 	localctx = NewEan13_issnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, gtinParserRULE_ean13_issn)
@@ -4016,16 +3726,6 @@ func (s *IssnContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IssnContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitIssn(s)
-	}
-}
-
-func (s *IssnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitIssn(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4171,16 +3871,6 @@ func (s *Ean_13_manprodContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ean_13_manprodContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitEan_13_manprod(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Ean_13_manprod() (localctx IEan_13_manprodContext) {
 	localctx = NewEan_13_manprodContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, gtinParserRULE_ean_13_manprod)
@@ -4323,16 +4013,6 @@ func (s *Gs1_prefixContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Gs1_prefixContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitGs1_prefix(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Gs1_prefix() (localctx IGs1_prefixContext) {
 	localctx = NewGs1_prefixContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, gtinParserRULE_gs1_prefix)
@@ -4458,16 +4138,6 @@ func (s *Ean14Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ean14Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitEan14(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Ean14() (localctx IEan14Context) {
 	localctx = NewEan14Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, gtinParserRULE_ean14)
@@ -4586,16 +4256,6 @@ func (s *Ean14_appidContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ean14_appidContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitEan14_appid(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gtinParser) Ean14_appid() (localctx IEan14_appidContext) {
 	localctx = NewEan14_appidContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, gtinParserRULE_ean14_appid)
@@ -4683,16 +4343,6 @@ func (s *Ean14_packagingContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ean14_packagingContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitEan14_packaging(s)
-	}
-}
-
-func (s *Ean14_packagingContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitEan14_packaging(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4809,16 +4459,6 @@ func (s *Ean14_productContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ean14_productContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitEan14_product(s)
-	}
-}
-
-func (s *Ean14_productContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitEan14_product(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4990,16 +4630,6 @@ func (s *Any_digitContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Any_digitContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gtinListener); ok {
 		listenerT.ExitAny_digit(s)
-	}
-}
-
-func (s *Any_digitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gtinVisitor:
-		return t.VisitAny_digit(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

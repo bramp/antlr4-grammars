@@ -231,16 +231,6 @@ func (s *StartRuleContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StartRuleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitStartRule(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *StackTraceParser) StartRule() (localctx IStartRuleContext) {
 	localctx = NewStartRuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, StackTraceParserRULE_startRule)
@@ -388,16 +378,6 @@ func (s *StackTraceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StackTraceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitStackTrace(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *StackTraceParser) StackTrace() (localctx IStackTraceContext) {
 	localctx = NewStackTraceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, StackTraceParserRULE_stackTrace)
@@ -541,16 +521,6 @@ func (s *StackTraceLineContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StackTraceLineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitStackTraceLine(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *StackTraceParser) StackTraceLine() (localctx IStackTraceLineContext) {
 	localctx = NewStackTraceLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, StackTraceParserRULE_stackTraceLine)
@@ -682,16 +652,6 @@ func (s *AtLineContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AtLineContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(StackTraceListener); ok {
 		listenerT.ExitAtLine(s)
-	}
-}
-
-func (s *AtLineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitAtLine(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -828,16 +788,6 @@ func (s *CausedByLineContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CausedByLineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitCausedByLine(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *StackTraceParser) CausedByLine() (localctx ICausedByLineContext) {
 	localctx = NewCausedByLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, StackTraceParserRULE_causedByLine)
@@ -938,16 +888,6 @@ func (s *EllipsisLineContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EllipsisLineContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(StackTraceListener); ok {
 		listenerT.ExitEllipsisLine(s)
-	}
-}
-
-func (s *EllipsisLineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitEllipsisLine(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1063,16 +1003,6 @@ func (s *MessageLineContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MessageLineContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(StackTraceListener); ok {
 		listenerT.ExitMessageLine(s)
-	}
-}
-
-func (s *MessageLineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitMessageLine(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1218,16 +1148,6 @@ func (s *QualifiedClassContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *QualifiedClassContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitQualifiedClass(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *StackTraceParser) QualifiedClass() (localctx IQualifiedClassContext) {
 	localctx = NewQualifiedClassContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, StackTraceParserRULE_qualifiedClass)
@@ -1350,16 +1270,6 @@ func (s *InnerClassNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *InnerClassNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitInnerClassName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *StackTraceParser) InnerClassName() (localctx IInnerClassNameContext) {
 	localctx = NewInnerClassNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, StackTraceParserRULE_innerClassName)
@@ -1466,16 +1376,6 @@ func (s *ClassFileContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ClassFileContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(StackTraceListener); ok {
 		listenerT.ExitClassFile(s)
-	}
-}
-
-func (s *ClassFileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitClassFile(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1625,16 +1525,6 @@ func (s *QualifiedMethodContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *QualifiedMethodContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitQualifiedMethod(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *StackTraceParser) QualifiedMethod() (localctx IQualifiedMethodContext) {
 	localctx = NewQualifiedMethodContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, StackTraceParserRULE_qualifiedMethod)
@@ -1750,16 +1640,6 @@ func (s *ConstructorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ConstructorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitConstructor(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *StackTraceParser) Constructor() (localctx IConstructorContext) {
 	localctx = NewConstructorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, StackTraceParserRULE_constructor)
@@ -1854,16 +1734,6 @@ func (s *MethodNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MethodNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(StackTraceListener); ok {
 		listenerT.ExitMethodName(s)
-	}
-}
-
-func (s *MethodNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitMethodName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1985,16 +1855,6 @@ func (s *PackagePathContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PackagePathContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitPackagePath(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *StackTraceParser) PackagePath() (localctx IPackagePathContext) {
 	localctx = NewPackagePathContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, StackTraceParserRULE_packagePath)
@@ -2107,16 +1967,6 @@ func (s *ClassNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ClassNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitClassName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *StackTraceParser) ClassName() (localctx IClassNameContext) {
 	localctx = NewClassNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, StackTraceParserRULE_className)
@@ -2208,16 +2058,6 @@ func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IdentifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitIdentifier(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *StackTraceParser) Identifier() (localctx IIdentifierContext) {
 	localctx = NewIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, StackTraceParserRULE_identifier)
@@ -2306,16 +2146,6 @@ func (s *MessageContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MessageContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(StackTraceListener); ok {
 		listenerT.ExitMessage(s)
-	}
-}
-
-func (s *MessageContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case StackTraceVisitor:
-		return t.VisitMessage(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

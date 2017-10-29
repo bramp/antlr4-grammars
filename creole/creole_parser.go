@@ -268,16 +268,6 @@ func (s *DocumentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DocumentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitDocument(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *creoleParser) Document() (localctx IDocumentContext) {
 	localctx = NewDocumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, creoleParserRULE_document)
@@ -407,16 +397,6 @@ func (s *LineContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(creoleListener); ok {
 		listenerT.ExitLine(s)
-	}
-}
-
-func (s *LineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitLine(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -628,16 +608,6 @@ func (s *MarkupContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MarkupContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitMarkup(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *creoleParser) Markup() (localctx IMarkupContext) {
 	localctx = NewMarkupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, creoleParserRULE_markup)
@@ -840,16 +810,6 @@ func (s *TextContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TextContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitText(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *creoleParser) Text() (localctx ITextContext) {
 	localctx = NewTextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, creoleParserRULE_text)
@@ -1003,16 +963,6 @@ func (s *BoldContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BoldContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitBold(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *creoleParser) Bold() (localctx IBoldContext) {
 	localctx = NewBoldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, creoleParserRULE_bold)
@@ -1159,16 +1109,6 @@ func (s *ItalicsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ItalicsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(creoleListener); ok {
 		listenerT.ExitItalics(s)
-	}
-}
-
-func (s *ItalicsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitItalics(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1338,16 +1278,6 @@ func (s *HrefContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *HrefContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(creoleListener); ok {
 		listenerT.ExitHref(s)
-	}
-}
-
-func (s *HrefContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitHref(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1532,16 +1462,6 @@ func (s *ImageContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ImageContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitImage(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *creoleParser) Image() (localctx IImageContext) {
 	localctx = NewImageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, creoleParserRULE_image)
@@ -1633,16 +1553,6 @@ func (s *HlineContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *HlineContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(creoleListener); ok {
 		listenerT.ExitHline(s)
-	}
-}
-
-func (s *HlineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitHline(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1740,16 +1650,6 @@ func (s *ListitemContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ListitemContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(creoleListener); ok {
 		listenerT.ExitListitem(s)
-	}
-}
-
-func (s *ListitemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitListitem(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1927,16 +1827,6 @@ func (s *TableheaderContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TableheaderContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitTableheader(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *creoleParser) Tableheader() (localctx ITableheaderContext) {
 	localctx = NewTableheaderContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, creoleParserRULE_tableheader)
@@ -2105,16 +1995,6 @@ func (s *TablerowContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TablerowContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitTablerow(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *creoleParser) Tablerow() (localctx ITablerowContext) {
 	localctx = NewTablerowContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, creoleParserRULE_tablerow)
@@ -2267,16 +2147,6 @@ func (s *TitleContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TitleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitTitle(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *creoleParser) Title() (localctx ITitleContext) {
 	localctx = NewTitleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, creoleParserRULE_title)
@@ -2402,16 +2272,6 @@ func (s *NowikiContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NowikiContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(creoleListener); ok {
 		listenerT.ExitNowiki(s)
-	}
-}
-
-func (s *NowikiContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case creoleVisitor:
-		return t.VisitNowiki(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

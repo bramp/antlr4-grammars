@@ -198,16 +198,6 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitProgram(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinyParser) Program() (localctx IProgramContext) {
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, tinyParserRULE_program)
@@ -320,16 +310,6 @@ func (s *Stmt_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Stmt_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinyListener); ok {
 		listenerT.ExitStmt_list(s)
-	}
-}
-
-func (s *Stmt_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitStmt_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -490,16 +470,6 @@ func (s *StmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitStmt(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinyParser) Stmt() (localctx IStmtContext) {
 	localctx = NewStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, tinyParserRULE_stmt)
@@ -630,16 +600,6 @@ func (s *Assign_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Assign_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitAssign_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinyParser) Assign_stmt() (localctx IAssign_stmtContext) {
 	localctx = NewAssign_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, tinyParserRULE_assign_stmt)
@@ -745,16 +705,6 @@ func (s *Read_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Read_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitRead_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinyParser) Read_stmt() (localctx IRead_stmtContext) {
 	localctx = NewRead_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, tinyParserRULE_read_stmt)
@@ -853,16 +803,6 @@ func (s *Write_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Write_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinyListener); ok {
 		listenerT.ExitWrite_stmt(s)
-	}
-}
-
-func (s *Write_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitWrite_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -974,16 +914,6 @@ func (s *Id_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Id_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinyListener); ok {
 		listenerT.ExitId_list(s)
-	}
-}
-
-func (s *Id_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitId_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1135,16 +1065,6 @@ func (s *Expr_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Expr_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinyListener); ok {
 		listenerT.ExitExpr_list(s)
-	}
-}
-
-func (s *Expr_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitExpr_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1309,16 +1229,6 @@ func (s *ExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinyParser) Expr() (localctx IExprContext) {
 	return p.expr(0)
 }
@@ -1470,16 +1380,6 @@ func (s *FactorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FactorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitFactor(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinyParser) Factor() (localctx IFactorContext) {
 	localctx = NewFactorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, tinyParserRULE_factor)
@@ -1587,16 +1487,6 @@ func (s *IntegerContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IntegerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitInteger(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinyParser) Integer() (localctx IIntegerContext) {
 	localctx = NewIntegerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, tinyParserRULE_integer)
@@ -1695,16 +1585,6 @@ func (s *OpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitOp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinyParser) Op() (localctx IOpContext) {
 	localctx = NewOpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, tinyParserRULE_op)
@@ -1799,16 +1679,6 @@ func (s *IdentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinyListener); ok {
 		listenerT.ExitIdent(s)
-	}
-}
-
-func (s *IdentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinyVisitor:
-		return t.VisitIdent(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

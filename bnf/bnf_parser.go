@@ -208,16 +208,6 @@ func (s *RulelistContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RulelistContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitRulelist(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *bnfParser) Rulelist() (localctx IRulelistContext) {
 	localctx = NewRulelistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, bnfParserRULE_rulelist)
@@ -344,16 +334,6 @@ func (s *Rule_Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Rule_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitRule_(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *bnfParser) Rule_() (localctx IRule_Context) {
 	localctx = NewRule_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, bnfParserRULE_rule_)
@@ -459,16 +439,6 @@ func (s *LhsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LhsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitLhs(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *bnfParser) Lhs() (localctx ILhsContext) {
 	localctx = NewLhsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, bnfParserRULE_lhs)
@@ -563,16 +533,6 @@ func (s *RhsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RhsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
 		listenerT.ExitRhs(s)
-	}
-}
-
-func (s *RhsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitRhs(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -691,16 +651,6 @@ func (s *AlternativesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AlternativesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
 		listenerT.ExitAlternatives(s)
-	}
-}
-
-func (s *AlternativesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitAlternatives(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -830,16 +780,6 @@ func (s *AlternativeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AlternativeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
 		listenerT.ExitAlternative(s)
-	}
-}
-
-func (s *AlternativeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitAlternative(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -994,16 +934,6 @@ func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitElement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *bnfParser) Element() (localctx IElementContext) {
 	localctx = NewElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, bnfParserRULE_element)
@@ -1146,16 +1076,6 @@ func (s *OptionalContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OptionalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitOptional(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *bnfParser) Optional() (localctx IOptionalContext) {
 	localctx = NewOptionalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, bnfParserRULE_optional)
@@ -1266,16 +1186,6 @@ func (s *ZeroormoreContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ZeroormoreContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
 		listenerT.ExitZeroormore(s)
-	}
-}
-
-func (s *ZeroormoreContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitZeroormore(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1392,16 +1302,6 @@ func (s *OneormoreContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OneormoreContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitOneormore(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *bnfParser) Oneormore() (localctx IOneormoreContext) {
 	localctx = NewOneormoreContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, bnfParserRULE_oneormore)
@@ -1498,16 +1398,6 @@ func (s *TextContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TextContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
 		listenerT.ExitText(s)
-	}
-}
-
-func (s *TextContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitText(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1616,16 +1506,6 @@ func (s *IdContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitId(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *bnfParser) Id() (localctx IIdContext) {
 	localctx = NewIdContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, bnfParserRULE_id)
@@ -1722,16 +1602,6 @@ func (s *RuleidContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RuleidContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
 		listenerT.ExitRuleid(s)
-	}
-}
-
-func (s *RuleidContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case bnfVisitor:
-		return t.VisitRuleid(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

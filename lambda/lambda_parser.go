@@ -166,16 +166,6 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lambdaVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *lambdaParser) Expression() (localctx IExpressionContext) {
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, lambdaParserRULE_expression)
@@ -297,16 +287,6 @@ func (s *FunctionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FunctionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(lambdaListener); ok {
 		listenerT.ExitFunction(s)
-	}
-}
-
-func (s *FunctionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lambdaVisitor:
-		return t.VisitFunction(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -432,16 +412,6 @@ func (s *ApplicationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ApplicationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lambdaVisitor:
-		return t.VisitApplication(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *lambdaParser) Application() (localctx IApplicationContext) {
 	localctx = NewApplicationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, lambdaParserRULE_application)
@@ -548,16 +518,6 @@ func (s *ScopeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ScopeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(lambdaListener); ok {
 		listenerT.ExitScope(s)
-	}
-}
-
-func (s *ScopeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lambdaVisitor:
-		return t.VisitScope(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

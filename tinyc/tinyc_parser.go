@@ -214,16 +214,6 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinycVisitor:
-		return t.VisitProgram(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinycParser) Program() (localctx IProgramContext) {
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, tinycParserRULE_program)
@@ -362,16 +352,6 @@ func (s *StatementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinycListener); ok {
 		listenerT.ExitStatement(s)
-	}
-}
-
-func (s *StatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinycVisitor:
-		return t.VisitStatement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -591,16 +571,6 @@ func (s *Paren_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Paren_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinycVisitor:
-		return t.VisitParen_expr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinycParser) Paren_expr() (localctx IParen_exprContext) {
 	localctx = NewParen_exprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, tinycParserRULE_paren_expr)
@@ -723,16 +693,6 @@ func (s *ExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinycListener); ok {
 		listenerT.ExitExpr(s)
-	}
-}
-
-func (s *ExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinycVisitor:
-		return t.VisitExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -867,16 +827,6 @@ func (s *TestContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TestContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinycVisitor:
-		return t.VisitTest(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinycParser) Test() (localctx ITestContext) {
 	localctx = NewTestContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, tinycParserRULE_test)
@@ -1002,16 +952,6 @@ func (s *SumContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SumContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinycListener); ok {
 		listenerT.ExitSum(s)
-	}
-}
-
-func (s *SumContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinycVisitor:
-		return t.VisitSum(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1199,16 +1139,6 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TermContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinycVisitor:
-		return t.VisitTerm(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinycParser) Term() (localctx ITermContext) {
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, tinycParserRULE_term)
@@ -1323,16 +1253,6 @@ func (s *IdContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinycVisitor:
-		return t.VisitId(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tinycParser) Id() (localctx IIdContext) {
 	localctx = NewIdContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, tinycParserRULE_id)
@@ -1421,16 +1341,6 @@ func (s *IntegerContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IntegerContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinycListener); ok {
 		listenerT.ExitInteger(s)
-	}
-}
-
-func (s *IntegerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tinycVisitor:
-		return t.VisitInteger(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

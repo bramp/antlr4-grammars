@@ -205,16 +205,6 @@ func (s *EquationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EquationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tntVisitor:
-		return t.VisitEquation(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tntParser) Equation() (localctx IEquationContext) {
 	localctx = NewEquationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, tntParserRULE_equation)
@@ -330,16 +320,6 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tntVisitor:
-		return t.VisitAtom(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tntParser) Atom() (localctx IAtomContext) {
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, tntParserRULE_atom)
@@ -449,16 +429,6 @@ func (s *NumberContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NumberContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tntListener); ok {
 		listenerT.ExitNumber(s)
-	}
-}
-
-func (s *NumberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tntVisitor:
-		return t.VisitNumber(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -597,16 +567,6 @@ func (s *VariableContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tntListener); ok {
 		listenerT.ExitVariable(s)
-	}
-}
-
-func (s *VariableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tntVisitor:
-		return t.VisitVariable(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -785,16 +745,6 @@ func (s *ExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tntListener); ok {
 		listenerT.ExitExpression(s)
-	}
-}
-
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tntVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1018,16 +968,6 @@ func (s *ForeveryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ForeveryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tntVisitor:
-		return t.VisitForevery(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *tntParser) Forevery() (localctx IForeveryContext) {
 	localctx = NewForeveryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, tntParserRULE_forevery)
@@ -1134,16 +1074,6 @@ func (s *ExistsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExistsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tntListener); ok {
 		listenerT.ExitExists(s)
-	}
-}
-
-func (s *ExistsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case tntVisitor:
-		return t.VisitExists(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

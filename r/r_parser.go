@@ -337,16 +337,6 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RVisitor:
-		return t.VisitProg(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RParser) Prog() (localctx IProgContext) {
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, RParserRULE_prog)
@@ -551,16 +541,6 @@ func (s *ExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RListener); ok {
 		listenerT.ExitExpr(s)
-	}
-}
-
-func (s *ExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RVisitor:
-		return t.VisitExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1326,16 +1306,6 @@ func (s *ExprlistContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExprlistContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RVisitor:
-		return t.VisitExprlist(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RParser) Exprlist() (localctx IExprlistContext) {
 	localctx = NewExprlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, RParserRULE_exprlist)
@@ -1489,16 +1459,6 @@ func (s *FormlistContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FormlistContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RVisitor:
-		return t.VisitFormlist(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RParser) Formlist() (localctx IFormlistContext) {
 	localctx = NewFormlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, RParserRULE_formlist)
@@ -1616,16 +1576,6 @@ func (s *FormContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FormContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RListener); ok {
 		listenerT.ExitForm(s)
-	}
-}
-
-func (s *FormContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RVisitor:
-		return t.VisitForm(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1767,16 +1717,6 @@ func (s *SublistContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SublistContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RVisitor:
-		return t.VisitSublist(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RParser) Sublist() (localctx ISublistContext) {
 	localctx = NewSublistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, RParserRULE_sublist)
@@ -1898,16 +1838,6 @@ func (s *SubContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SubContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RListener); ok {
 		listenerT.ExitSub(s)
-	}
-}
-
-func (s *SubContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RVisitor:
-		return t.VisitSub(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

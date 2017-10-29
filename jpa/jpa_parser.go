@@ -770,16 +770,6 @@ func (s *Ql_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ql_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitQl_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Ql_statement() (localctx IQl_statementContext) {
 	localctx = NewQl_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, JPAParserRULE_ql_statement)
@@ -950,16 +940,6 @@ func (s *Select_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Select_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSelect_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Select_statement() (localctx ISelect_statementContext) {
 	localctx = NewSelect_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, JPAParserRULE_select_statement)
@@ -1116,16 +1096,6 @@ func (s *Update_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Update_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitUpdate_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Update_statement() (localctx IUpdate_statementContext) {
 	localctx = NewUpdate_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, JPAParserRULE_update_statement)
@@ -1242,16 +1212,6 @@ func (s *Delete_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Delete_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitDelete_statement(s)
-	}
-}
-
-func (s *Delete_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitDelete_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1397,16 +1357,6 @@ func (s *From_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *From_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitFrom_clause(s)
-	}
-}
-
-func (s *From_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitFrom_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1591,16 +1541,6 @@ func (s *Identification_variable_declarationContext) ExitRule(listener antlr.Par
 	}
 }
 
-func (s *Identification_variable_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitIdentification_variable_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Identification_variable_declaration() (localctx IIdentification_variable_declarationContext) {
 	localctx = NewIdentification_variable_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, JPAParserRULE_identification_variable_declaration)
@@ -1726,16 +1666,6 @@ func (s *Range_variable_declarationContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Range_variable_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitRange_variable_declaration(s)
-	}
-}
-
-func (s *Range_variable_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitRange_variable_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1866,16 +1796,6 @@ func (s *JoinContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *JoinContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitJoin(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Join() (localctx IJoinContext) {
 	localctx = NewJoinContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, JPAParserRULE_join)
@@ -2003,16 +1923,6 @@ func (s *Fetch_joinContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Fetch_joinContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitFetch_join(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Fetch_join() (localctx IFetch_joinContext) {
 	localctx = NewFetch_joinContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, JPAParserRULE_fetch_join)
@@ -2104,16 +2014,6 @@ func (s *Join_specContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Join_specContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitJoin_spec(s)
-	}
-}
-
-func (s *Join_specContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitJoin_spec(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2257,16 +2157,6 @@ func (s *Join_association_path_expressionContext) ExitRule(listener antlr.ParseT
 	}
 }
 
-func (s *Join_association_path_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitJoin_association_path_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Join_association_path_expression() (localctx IJoin_association_path_expressionContext) {
 	localctx = NewJoin_association_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, JPAParserRULE_join_association_path_expression)
@@ -2382,16 +2272,6 @@ func (s *Join_collection_valued_path_expressionContext) ExitRule(listener antlr.
 	}
 }
 
-func (s *Join_collection_valued_path_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitJoin_collection_valued_path_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Join_collection_valued_path_expression() (localctx IJoin_collection_valued_path_expressionContext) {
 	localctx = NewJoin_collection_valued_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, JPAParserRULE_join_collection_valued_path_expression)
@@ -2504,16 +2384,6 @@ func (s *Join_single_valued_association_path_expressionContext) ExitRule(listene
 	}
 }
 
-func (s *Join_single_valued_association_path_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitJoin_single_valued_association_path_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Join_single_valued_association_path_expression() (localctx IJoin_single_valued_association_path_expressionContext) {
 	localctx = NewJoin_single_valued_association_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, JPAParserRULE_join_single_valued_association_path_expression)
@@ -2620,16 +2490,6 @@ func (s *Collection_member_declarationContext) EnterRule(listener antlr.ParseTre
 func (s *Collection_member_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitCollection_member_declaration(s)
-	}
-}
-
-func (s *Collection_member_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitCollection_member_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2768,16 +2628,6 @@ func (s *Single_valued_path_expressionContext) ExitRule(listener antlr.ParseTree
 	}
 }
 
-func (s *Single_valued_path_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSingle_valued_path_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Single_valued_path_expression() (localctx ISingle_valued_path_expressionContext) {
 	localctx = NewSingle_valued_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, JPAParserRULE_single_valued_path_expression)
@@ -2899,16 +2749,6 @@ func (s *State_field_path_expressionContext) EnterRule(listener antlr.ParseTreeL
 func (s *State_field_path_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitState_field_path_expression(s)
-	}
-}
-
-func (s *State_field_path_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitState_field_path_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3044,16 +2884,6 @@ func (s *Single_valued_association_path_expressionContext) EnterRule(listener an
 func (s *Single_valued_association_path_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitSingle_valued_association_path_expression(s)
-	}
-}
-
-func (s *Single_valued_association_path_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSingle_valued_association_path_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3211,16 +3041,6 @@ func (s *Collection_valued_path_expressionContext) ExitRule(listener antlr.Parse
 	}
 }
 
-func (s *Collection_valued_path_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitCollection_valued_path_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Collection_valued_path_expression() (localctx ICollection_valued_path_expressionContext) {
 	localctx = NewCollection_valued_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, JPAParserRULE_collection_valued_path_expression)
@@ -3368,16 +3188,6 @@ func (s *State_fieldContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *State_fieldContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitState_field(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) State_field() (localctx IState_fieldContext) {
 	localctx = NewState_fieldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, JPAParserRULE_state_field)
@@ -3518,16 +3328,6 @@ func (s *Update_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Update_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitUpdate_clause(s)
-	}
-}
-
-func (s *Update_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitUpdate_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3702,16 +3502,6 @@ func (s *Update_itemContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Update_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitUpdate_item(s)
-	}
-}
-
-func (s *Update_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitUpdate_item(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3898,16 +3688,6 @@ func (s *New_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *New_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitNew_value(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) New_value() (localctx INew_valueContext) {
 	localctx = NewNew_valueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, JPAParserRULE_new_value)
@@ -4057,16 +3837,6 @@ func (s *Delete_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Delete_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitDelete_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Delete_clause() (localctx IDelete_clauseContext) {
 	localctx = NewDelete_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, JPAParserRULE_delete_clause)
@@ -4205,16 +3975,6 @@ func (s *Select_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Select_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitSelect_clause(s)
-	}
-}
-
-func (s *Select_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSelect_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4370,16 +4130,6 @@ func (s *Select_expressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Select_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitSelect_expression(s)
-	}
-}
-
-func (s *Select_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSelect_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4549,16 +4299,6 @@ func (s *Constructor_expressionContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Constructor_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitConstructor_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Constructor_expression() (localctx IConstructor_expressionContext) {
 	localctx = NewConstructor_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, JPAParserRULE_constructor_expression)
@@ -4701,16 +4441,6 @@ func (s *Constructor_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Constructor_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitConstructor_item(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Constructor_item() (localctx IConstructor_itemContext) {
 	localctx = NewConstructor_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, JPAParserRULE_constructor_item)
@@ -4835,16 +4565,6 @@ func (s *Aggregate_expressionContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Aggregate_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitAggregate_expression(s)
-	}
-}
-
-func (s *Aggregate_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitAggregate_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5031,16 +4751,6 @@ func (s *Where_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Where_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitWhere_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Where_clause() (localctx IWhere_clauseContext) {
 	localctx = NewWhere_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, JPAParserRULE_where_clause)
@@ -5152,16 +4862,6 @@ func (s *Groupby_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Groupby_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitGroupby_clause(s)
-	}
-}
-
-func (s *Groupby_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitGroupby_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5293,16 +4993,6 @@ func (s *Groupby_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Groupby_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitGroupby_item(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Groupby_item() (localctx IGroupby_itemContext) {
 	localctx = NewGroupby_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, JPAParserRULE_groupby_item)
@@ -5410,16 +5100,6 @@ func (s *Having_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Having_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitHaving_clause(s)
-	}
-}
-
-func (s *Having_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitHaving_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5534,16 +5214,6 @@ func (s *Orderby_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Orderby_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitOrderby_clause(s)
-	}
-}
-
-func (s *Orderby_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitOrderby_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5668,16 +5338,6 @@ func (s *Orderby_itemContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Orderby_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitOrderby_item(s)
-	}
-}
-
-func (s *Orderby_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitOrderby_item(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5835,16 +5495,6 @@ func (s *SubqueryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SubqueryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSubquery(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Subquery() (localctx ISubqueryContext) {
 	localctx = NewSubqueryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, JPAParserRULE_subquery)
@@ -5990,16 +5640,6 @@ func (s *Subquery_from_clauseContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Subquery_from_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitSubquery_from_clause(s)
-	}
-}
-
-func (s *Subquery_from_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSubquery_from_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6150,16 +5790,6 @@ func (s *Subselect_identification_variable_declarationContext) ExitRule(listener
 	}
 }
 
-func (s *Subselect_identification_variable_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSubselect_identification_variable_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Subselect_identification_variable_declaration() (localctx ISubselect_identification_variable_declarationContext) {
 	localctx = NewSubselect_identification_variable_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, JPAParserRULE_subselect_identification_variable_declaration)
@@ -6303,16 +5933,6 @@ func (s *Association_path_expressionContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
-func (s *Association_path_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitAssociation_path_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Association_path_expression() (localctx IAssociation_path_expressionContext) {
 	localctx = NewAssociation_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, JPAParserRULE_association_path_expression)
@@ -6420,16 +6040,6 @@ func (s *Simple_select_clauseContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Simple_select_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitSimple_select_clause(s)
-	}
-}
-
-func (s *Simple_select_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSimple_select_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6557,16 +6167,6 @@ func (s *Simple_select_expressionContext) EnterRule(listener antlr.ParseTreeList
 func (s *Simple_select_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitSimple_select_expression(s)
-	}
-}
-
-func (s *Simple_select_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSimple_select_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6700,16 +6300,6 @@ func (s *Conditional_expressionContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Conditional_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitConditional_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Conditional_expression() (localctx IConditional_expressionContext) {
 	localctx = NewConditional_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, JPAParserRULE_conditional_expression)
@@ -6840,16 +6430,6 @@ func (s *Conditional_termContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Conditional_termContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitConditional_term(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Conditional_term() (localctx IConditional_termContext) {
 	localctx = NewConditional_termContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, JPAParserRULE_conditional_term)
@@ -6967,16 +6547,6 @@ func (s *Conditional_factorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Conditional_factorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitConditional_factor(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Conditional_factor() (localctx IConditional_factorContext) {
 	localctx = NewConditional_factorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, JPAParserRULE_conditional_factor)
@@ -7091,16 +6661,6 @@ func (s *Conditional_primaryContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Conditional_primaryContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitConditional_primary(s)
-	}
-}
-
-func (s *Conditional_primaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitConditional_primary(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7289,16 +6849,6 @@ func (s *Simple_cond_expressionContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Simple_cond_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitSimple_cond_expression(s)
-	}
-}
-
-func (s *Simple_cond_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSimple_cond_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7510,16 +7060,6 @@ func (s *Between_expressionContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Between_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitBetween_expression(s)
-	}
-}
-
-func (s *Between_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitBetween_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7755,16 +7295,6 @@ func (s *In_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *In_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitIn_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) In_expression() (localctx IIn_expressionContext) {
 	localctx = NewIn_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, JPAParserRULE_in_expression)
@@ -7933,16 +7463,6 @@ func (s *In_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *In_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitIn_item(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) In_item() (localctx IIn_itemContext) {
 	localctx = NewIn_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, JPAParserRULE_in_item)
@@ -8067,16 +7587,6 @@ func (s *Like_expressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Like_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitLike_expression(s)
-	}
-}
-
-func (s *Like_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitLike_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8222,16 +7732,6 @@ func (s *Null_comparison_expressionContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
-func (s *Null_comparison_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitNull_comparison_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Null_comparison_expression() (localctx INull_comparison_expressionContext) {
 	localctx = NewNull_comparison_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, JPAParserRULE_null_comparison_expression)
@@ -8365,16 +7865,6 @@ func (s *Empty_collection_comparison_expressionContext) ExitRule(listener antlr.
 	}
 }
 
-func (s *Empty_collection_comparison_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitEmpty_collection_comparison_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Empty_collection_comparison_expression() (localctx IEmpty_collection_comparison_expressionContext) {
 	localctx = NewEmpty_collection_comparison_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, JPAParserRULE_empty_collection_comparison_expression)
@@ -8499,16 +7989,6 @@ func (s *Collection_member_expressionContext) EnterRule(listener antlr.ParseTree
 func (s *Collection_member_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitCollection_member_expression(s)
-	}
-}
-
-func (s *Collection_member_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitCollection_member_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8640,16 +8120,6 @@ func (s *Exists_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Exists_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitExists_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Exists_expression() (localctx IExists_expressionContext) {
 	localctx = NewExists_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, JPAParserRULE_exists_expression)
@@ -8768,16 +8238,6 @@ func (s *All_or_any_expressionContext) EnterRule(listener antlr.ParseTreeListene
 func (s *All_or_any_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitAll_or_any_expression(s)
-	}
-}
-
-func (s *All_or_any_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitAll_or_any_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9041,16 +8501,6 @@ func (s *Comparison_expressionContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Comparison_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitComparison_expression(s)
-	}
-}
-
-func (s *Comparison_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitComparison_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9335,16 +8785,6 @@ func (s *Comparison_operatorContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *Comparison_operatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitComparison_operator(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Comparison_operator() (localctx IComparison_operatorContext) {
 	localctx = NewComparison_operatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, JPAParserRULE_comparison_operator)
@@ -9455,16 +8895,6 @@ func (s *Arithmetic_expressionContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Arithmetic_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitArithmetic_expression(s)
-	}
-}
-
-func (s *Arithmetic_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitArithmetic_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9596,16 +9026,6 @@ func (s *Simple_arithmetic_expressionContext) EnterRule(listener antlr.ParseTree
 func (s *Simple_arithmetic_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitSimple_arithmetic_expression(s)
-	}
-}
-
-func (s *Simple_arithmetic_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSimple_arithmetic_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9744,16 +9164,6 @@ func (s *Arithmetic_termContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Arithmetic_termContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitArithmetic_term(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Arithmetic_term() (localctx IArithmetic_termContext) {
 	localctx = NewArithmetic_termContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, JPAParserRULE_arithmetic_term)
@@ -9873,16 +9283,6 @@ func (s *Arithmetic_factorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Arithmetic_factorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitArithmetic_factor(s)
-	}
-}
-
-func (s *Arithmetic_factorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitArithmetic_factor(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10049,16 +9449,6 @@ func (s *Arithmetic_primaryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Arithmetic_primaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitArithmetic_primary(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Arithmetic_primary() (localctx IArithmetic_primaryContext) {
 	localctx = NewArithmetic_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, JPAParserRULE_arithmetic_primary)
@@ -10218,16 +9608,6 @@ func (s *String_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *String_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitString_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) String_expression() (localctx IString_expressionContext) {
 	localctx = NewString_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, JPAParserRULE_string_expression)
@@ -10383,16 +9763,6 @@ func (s *String_primaryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *String_primaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitString_primary(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) String_primary() (localctx IString_primaryContext) {
 	localctx = NewString_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 124, JPAParserRULE_string_primary)
@@ -10534,16 +9904,6 @@ func (s *Datetime_expressionContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Datetime_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitDatetime_expression(s)
-	}
-}
-
-func (s *Datetime_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitDatetime_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10698,16 +10058,6 @@ func (s *Datetime_primaryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Datetime_primaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitDatetime_primary(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Datetime_primary() (localctx IDatetime_primaryContext) {
 	localctx = NewDatetime_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, JPAParserRULE_datetime_primary)
@@ -10842,16 +10192,6 @@ func (s *Boolean_expressionContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Boolean_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitBoolean_expression(s)
-	}
-}
-
-func (s *Boolean_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitBoolean_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10996,16 +10336,6 @@ func (s *Boolean_primaryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Boolean_primaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitBoolean_primary(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Boolean_primary() (localctx IBoolean_primaryContext) {
 	localctx = NewBoolean_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, JPAParserRULE_boolean_primary)
@@ -11133,16 +10463,6 @@ func (s *Enum_expressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Enum_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitEnum_expression(s)
-	}
-}
-
-func (s *Enum_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitEnum_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11287,16 +10607,6 @@ func (s *Enum_primaryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Enum_primaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitEnum_primary(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Enum_primary() (localctx IEnum_primaryContext) {
 	localctx = NewEnum_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 136, JPAParserRULE_enum_primary)
@@ -11427,16 +10737,6 @@ func (s *Entity_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Entity_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitEntity_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Entity_expression() (localctx IEntity_expressionContext) {
 	localctx = NewEntity_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 138, JPAParserRULE_entity_expression)
@@ -11548,16 +10848,6 @@ func (s *Simple_entity_expressionContext) EnterRule(listener antlr.ParseTreeList
 func (s *Simple_entity_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitSimple_entity_expression(s)
-	}
-}
-
-func (s *Simple_entity_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSimple_entity_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11717,16 +11007,6 @@ func (s *Functions_returning_numericsContext) EnterRule(listener antlr.ParseTree
 func (s *Functions_returning_numericsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitFunctions_returning_numerics(s)
-	}
-}
-
-func (s *Functions_returning_numericsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitFunctions_returning_numerics(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11964,16 +11244,6 @@ func (s *Functions_returning_datetimeContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
-func (s *Functions_returning_datetimeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitFunctions_returning_datetime(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Functions_returning_datetime() (localctx IFunctions_returning_datetimeContext) {
 	localctx = NewFunctions_returning_datetimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 144, JPAParserRULE_functions_returning_datetime)
@@ -12124,16 +11394,6 @@ func (s *Functions_returning_stringsContext) EnterRule(listener antlr.ParseTreeL
 func (s *Functions_returning_stringsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitFunctions_returning_strings(s)
-	}
-}
-
-func (s *Functions_returning_stringsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitFunctions_returning_strings(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12378,16 +11638,6 @@ func (s *Trim_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Trim_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitTrim_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Trim_specification() (localctx ITrim_specificationContext) {
 	localctx = NewTrim_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 148, JPAParserRULE_trim_specification)
@@ -12480,16 +11730,6 @@ func (s *Numeric_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Numeric_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitNumeric_literal(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Numeric_literal() (localctx INumeric_literalContext) {
 	localctx = NewNumeric_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 150, JPAParserRULE_numeric_literal)
@@ -12569,16 +11809,6 @@ func (s *Pattern_valueContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Pattern_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitPattern_value(s)
-	}
-}
-
-func (s *Pattern_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitPattern_value(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12670,16 +11900,6 @@ func (s *Input_parameterContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Input_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitInput_parameter(s)
-	}
-}
-
-func (s *Input_parameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitInput_parameter(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12793,16 +12013,6 @@ func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LiteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitLiteral(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Literal() (localctx ILiteralContext) {
 	localctx = NewLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 156, JPAParserRULE_literal)
@@ -12882,16 +12092,6 @@ func (s *Constructor_nameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Constructor_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitConstructor_name(s)
-	}
-}
-
-func (s *Constructor_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitConstructor_name(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12977,16 +12177,6 @@ func (s *Enum_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Enum_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitEnum_literal(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Enum_literal() (localctx IEnum_literalContext) {
 	localctx = NewEnum_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 160, JPAParserRULE_enum_literal)
@@ -13066,16 +12256,6 @@ func (s *Boolean_literalContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Boolean_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitBoolean_literal(s)
-	}
-}
-
-func (s *Boolean_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitBoolean_literal(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13171,16 +12351,6 @@ func (s *Simple_state_fieldContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Simple_state_fieldContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSimple_state_field(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Simple_state_field() (localctx ISimple_state_fieldContext) {
 	localctx = NewSimple_state_fieldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 164, JPAParserRULE_simple_state_field)
@@ -13260,16 +12430,6 @@ func (s *Embedded_class_state_fieldContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Embedded_class_state_fieldContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitEmbedded_class_state_field(s)
-	}
-}
-
-func (s *Embedded_class_state_fieldContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitEmbedded_class_state_field(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13355,16 +12515,6 @@ func (s *Single_valued_association_fieldContext) ExitRule(listener antlr.ParseTr
 	}
 }
 
-func (s *Single_valued_association_fieldContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitSingle_valued_association_field(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Single_valued_association_field() (localctx ISingle_valued_association_fieldContext) {
 	localctx = NewSingle_valued_association_fieldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 168, JPAParserRULE_single_valued_association_field)
@@ -13447,16 +12597,6 @@ func (s *Collection_valued_association_fieldContext) ExitRule(listener antlr.Par
 	}
 }
 
-func (s *Collection_valued_association_fieldContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitCollection_valued_association_field(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JPAParser) Collection_valued_association_field() (localctx ICollection_valued_association_fieldContext) {
 	localctx = NewCollection_valued_association_fieldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 170, JPAParserRULE_collection_valued_association_field)
@@ -13536,16 +12676,6 @@ func (s *Abstract_schema_nameContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Abstract_schema_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JPAListener); ok {
 		listenerT.ExitAbstract_schema_name(s)
-	}
-}
-
-func (s *Abstract_schema_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JPAVisitor:
-		return t.VisitAbstract_schema_name(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

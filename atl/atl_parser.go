@@ -823,16 +823,6 @@ func (s *UnitContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *UnitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitUnit(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Unit() (localctx IUnitContext) {
 	localctx = NewUnitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, ATLParserRULE_unit)
@@ -1027,16 +1017,6 @@ func (s *ModuleContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ModuleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitModule(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Module() (localctx IModuleContext) {
 	localctx = NewModuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, ATLParserRULE_module)
@@ -1209,16 +1189,6 @@ func (s *TargetModelPatternContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TargetModelPatternContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitTargetModelPattern(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) TargetModelPattern() (localctx ITargetModelPatternContext) {
 	localctx = NewTargetModelPatternContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, ATLParserRULE_targetModelPattern)
@@ -1348,16 +1318,6 @@ func (s *SourceModelPatternContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SourceModelPatternContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitSourceModelPattern(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) SourceModelPattern() (localctx ISourceModelPatternContext) {
 	localctx = NewSourceModelPatternContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, ATLParserRULE_sourceModelPattern)
@@ -1460,16 +1420,6 @@ func (s *TransformationModeContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *TransformationModeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitTransformationMode(s)
-	}
-}
-
-func (s *TransformationModeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitTransformationMode(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1617,16 +1567,6 @@ func (s *LibraryContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LibraryContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitLibrary(s)
-	}
-}
-
-func (s *LibraryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitLibrary(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1823,16 +1763,6 @@ func (s *QueryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *QueryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitQuery(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Query() (localctx IQueryContext) {
 	localctx = NewQueryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, ATLParserRULE_query)
@@ -1974,16 +1904,6 @@ func (s *LibraryRefContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LibraryRefContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitLibraryRef(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) LibraryRef() (localctx ILibraryRefContext) {
 	localctx = NewLibraryRefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, ATLParserRULE_libraryRef)
@@ -2096,16 +2016,6 @@ func (s *ModuleElementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ModuleElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitModuleElement(s)
-	}
-}
-
-func (s *ModuleElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitModuleElement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2222,16 +2132,6 @@ func (s *HelperContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HelperContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitHelper(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Helper() (localctx IHelperContext) {
 	localctx = NewHelperContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, ATLParserRULE_helper)
@@ -2344,16 +2244,6 @@ func (s *OclFeatureDefinitionContext) EnterRule(listener antlr.ParseTreeListener
 func (s *OclFeatureDefinitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitOclFeatureDefinition(s)
-	}
-}
-
-func (s *OclFeatureDefinitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOclFeatureDefinition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2474,16 +2364,6 @@ func (s *OclContextDefinitionContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *OclContextDefinitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOclContextDefinition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) OclContextDefinition() (localctx IOclContextDefinitionContext) {
 	localctx = NewOclContextDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, ATLParserRULE_oclContextDefinition)
@@ -2592,16 +2472,6 @@ func (s *OclFeatureContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OclFeatureContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitOclFeature(s)
-	}
-}
-
-func (s *OclFeatureContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOclFeature(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2749,16 +2619,6 @@ func (s *OperationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OperationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitOperation(s)
-	}
-}
-
-func (s *OperationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOperation(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2917,16 +2777,6 @@ func (s *ParameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ParameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitParameter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Parameter() (localctx IParameterContext) {
 	localctx = NewParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, ATLParserRULE_parameter)
@@ -3043,16 +2893,6 @@ func (s *AttributeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AttributeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitAttribute(s)
-	}
-}
-
-func (s *AttributeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitAttribute(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3179,16 +3019,6 @@ func (s *AruleContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AruleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitArule(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Arule() (localctx IAruleContext) {
 	localctx = NewAruleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, ATLParserRULE_arule)
@@ -3306,16 +3136,6 @@ func (s *MatchedRuleContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MatchedRuleContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitMatchedRule(s)
-	}
-}
-
-func (s *MatchedRuleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitMatchedRule(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3480,16 +3300,6 @@ func (s *LazyMatchedRuleContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LazyMatchedRuleContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitLazyMatchedRule(s)
-	}
-}
-
-func (s *LazyMatchedRuleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitLazyMatchedRule(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3728,16 +3538,6 @@ func (s *RuleVariableDeclarationContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
-func (s *RuleVariableDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitRuleVariableDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) RuleVariableDeclaration() (localctx IRuleVariableDeclarationContext) {
 	localctx = NewRuleVariableDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, ATLParserRULE_ruleVariableDeclaration)
@@ -3912,16 +3712,6 @@ func (s *CalledRuleContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CalledRuleContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitCalledRule(s)
-	}
-}
-
-func (s *CalledRuleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitCalledRule(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4172,16 +3962,6 @@ func (s *InPatternContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *InPatternContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitInPattern(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) InPattern() (localctx IInPatternContext) {
 	localctx = NewInPatternContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, ATLParserRULE_inPattern)
@@ -4321,16 +4101,6 @@ func (s *InPatternElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *InPatternElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitInPatternElement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) InPatternElement() (localctx IInPatternElementContext) {
 	localctx = NewInPatternElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, ATLParserRULE_inPatternElement)
@@ -4433,16 +4203,6 @@ func (s *SimpleInPatternElementContext) EnterRule(listener antlr.ParseTreeListen
 func (s *SimpleInPatternElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitSimpleInPatternElement(s)
-	}
-}
-
-func (s *SimpleInPatternElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitSimpleInPatternElement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4602,16 +4362,6 @@ func (s *OutPatternContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OutPatternContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOutPattern(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) OutPattern() (localctx IOutPatternContext) {
 	localctx = NewOutPatternContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, ATLParserRULE_outPattern)
@@ -4739,16 +4489,6 @@ func (s *OutPatternElementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OutPatternElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitOutPatternElement(s)
-	}
-}
-
-func (s *OutPatternElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOutPatternElement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4890,16 +4630,6 @@ func (s *SimpleOutPatternElementContext) EnterRule(listener antlr.ParseTreeListe
 func (s *SimpleOutPatternElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitSimpleOutPatternElement(s)
-	}
-}
-
-func (s *SimpleOutPatternElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitSimpleOutPatternElement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5134,16 +4864,6 @@ func (s *ForEachOutPatternElementContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *ForEachOutPatternElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitForEachOutPatternElement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) ForEachOutPatternElement() (localctx IForEachOutPatternElementContext) {
 	localctx = NewForEachOutPatternElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, ATLParserRULE_forEachOutPatternElement)
@@ -5341,16 +5061,6 @@ func (s *BindingContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BindingContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitBinding(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Binding() (localctx IBindingContext) {
 	localctx = NewBindingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, ATLParserRULE_binding)
@@ -5466,16 +5176,6 @@ func (s *ActionBlockContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ActionBlockContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitActionBlock(s)
-	}
-}
-
-func (s *ActionBlockContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitActionBlock(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5629,16 +5329,6 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitStatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Statement() (localctx IStatementContext) {
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, ATLParserRULE_statement)
@@ -5776,16 +5466,6 @@ func (s *BindingStatContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BindingStatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitBindingStat(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) BindingStat() (localctx IBindingStatContext) {
 	localctx = NewBindingStatContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, ATLParserRULE_bindingStat)
@@ -5892,16 +5572,6 @@ func (s *ExpressionStatContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExpressionStatContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitExpressionStat(s)
-	}
-}
-
-func (s *ExpressionStatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitExpressionStat(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6026,16 +5696,6 @@ func (s *IfStatContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IfStatContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitIfStat(s)
-	}
-}
-
-func (s *IfStatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitIfStat(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6266,16 +5926,6 @@ func (s *ForStatContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ForStatContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitForStat(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) ForStat() (localctx IForStatContext) {
 	localctx = NewForStatContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, ATLParserRULE_forStat)
@@ -6414,16 +6064,6 @@ func (s *OclModelContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OclModelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOclModel(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) OclModel() (localctx IOclModelContext) {
 	localctx = NewOclModelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, ATLParserRULE_oclModel)
@@ -6528,16 +6168,6 @@ func (s *OclModelElementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OclModelElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitOclModelElement(s)
-	}
-}
-
-func (s *OclModelElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOclModelElement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6659,16 +6289,6 @@ func (s *OclExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OclExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitOclExpression(s)
-	}
-}
-
-func (s *OclExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOclExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6809,16 +6429,6 @@ func (s *IteratorExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IteratorExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitIteratorExp(s)
-	}
-}
-
-func (s *IteratorExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitIteratorExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6991,16 +6601,6 @@ func (s *IterateExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IterateExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitIterateExp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) IterateExp() (localctx IIterateExpContext) {
 	localctx = NewIterateExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, ATLParserRULE_iterateExp)
@@ -7162,16 +6762,6 @@ func (s *CollectionOperationCallExpContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
-func (s *CollectionOperationCallExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitCollectionOperationCallExp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) CollectionOperationCallExp() (localctx ICollectionOperationCallExpContext) {
 	localctx = NewCollectionOperationCallExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, ATLParserRULE_collectionOperationCallExp)
@@ -7324,16 +6914,6 @@ func (s *OperationCallExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OperationCallExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOperationCallExp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) OperationCallExp() (localctx IOperationCallExpContext) {
 	localctx = NewOperationCallExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, ATLParserRULE_operationCallExp)
@@ -7463,16 +7043,6 @@ func (s *NavigationOrAttributeCallExpContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
-func (s *NavigationOrAttributeCallExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitNavigationOrAttributeCallExp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) NavigationOrAttributeCallExp() (localctx INavigationOrAttributeCallExpContext) {
 	localctx = NewNavigationOrAttributeCallExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, ATLParserRULE_navigationOrAttributeCallExp)
@@ -7564,16 +7134,6 @@ func (s *IteratorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IteratorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitIterator(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Iterator() (localctx IIteratorContext) {
 	localctx = NewIteratorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, ATLParserRULE_iterator)
@@ -7657,16 +7217,6 @@ func (s *OclUndefinedExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OclUndefinedExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitOclUndefinedExp(s)
-	}
-}
-
-func (s *OclUndefinedExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOclUndefinedExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7784,16 +7334,6 @@ func (s *PrimitiveExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PrimitiveExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitPrimitiveExp(s)
-	}
-}
-
-func (s *PrimitiveExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitPrimitiveExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7927,16 +7467,6 @@ func (s *NumericExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NumericExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitNumericExp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) NumericExp() (localctx INumericExpContext) {
 	localctx = NewNumericExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, ATLParserRULE_numericExp)
@@ -8039,16 +7569,6 @@ func (s *BooleanExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BooleanExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitBooleanExp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) BooleanExp() (localctx IBooleanExpContext) {
 	localctx = NewBooleanExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, ATLParserRULE_booleanExp)
@@ -8146,16 +7666,6 @@ func (s *IntegerExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IntegerExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitIntegerExp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) IntegerExp() (localctx IIntegerExpContext) {
 	localctx = NewIntegerExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, ATLParserRULE_integerExp)
@@ -8247,16 +7757,6 @@ func (s *RealExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RealExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitRealExp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) RealExp() (localctx IRealExpContext) {
 	localctx = NewRealExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, ATLParserRULE_realExp)
@@ -8345,16 +7845,6 @@ func (s *StringExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *StringExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitStringExp(s)
-	}
-}
-
-func (s *StringExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitStringExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8465,16 +7955,6 @@ func (s *IfExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IfExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitIfExp(s)
-	}
-}
-
-func (s *IfExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitIfExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8593,16 +8073,6 @@ func (s *VariableExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *VariableExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitVariableExp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) VariableExp() (localctx IVariableExpContext) {
 	localctx = NewVariableExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, ATLParserRULE_variableExp)
@@ -8686,16 +8156,6 @@ func (s *SuperExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SuperExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitSuperExp(s)
-	}
-}
-
-func (s *SuperExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitSuperExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8803,16 +8263,6 @@ func (s *LetExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LetExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitLetExp(s)
-	}
-}
-
-func (s *LetExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitLetExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8939,16 +8389,6 @@ func (s *VariableDeclarationContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *VariableDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitVariableDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) VariableDeclaration() (localctx IVariableDeclarationContext) {
 	localctx = NewVariableDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, ATLParserRULE_variableDeclaration)
@@ -9053,16 +8493,6 @@ func (s *EnumLiteralExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EnumLiteralExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitEnumLiteralExp(s)
-	}
-}
-
-func (s *EnumLiteralExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitEnumLiteralExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9194,16 +8624,6 @@ func (s *CollectionExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CollectionExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitCollectionExp(s)
-	}
-}
-
-func (s *CollectionExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitCollectionExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9344,16 +8764,6 @@ func (s *BagExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *BagExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitBagExp(s)
-	}
-}
-
-func (s *BagExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitBagExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9505,16 +8915,6 @@ func (s *SetExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SetExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitSetExp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) SetExp() (localctx ISetExpContext) {
 	localctx = NewSetExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 118, ATLParserRULE_setExp)
@@ -9660,16 +9060,6 @@ func (s *OrderedSetExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OrderedSetExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitOrderedSetExp(s)
-	}
-}
-
-func (s *OrderedSetExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOrderedSetExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9821,16 +9211,6 @@ func (s *SequenceExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SequenceExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitSequenceExp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) SequenceExp() (localctx ISequenceExpContext) {
 	localctx = NewSequenceExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, ATLParserRULE_sequenceExp)
@@ -9976,16 +9356,6 @@ func (s *MapExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MapExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitMapExp(s)
-	}
-}
-
-func (s *MapExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitMapExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10137,16 +9507,6 @@ func (s *MapElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MapElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitMapElement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) MapElement() (localctx IMapElementContext) {
 	localctx = NewMapElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, ATLParserRULE_mapElement)
@@ -10270,16 +9630,6 @@ func (s *TupleExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TupleExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitTupleExp(s)
-	}
-}
-
-func (s *TupleExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitTupleExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10429,16 +9779,6 @@ func (s *TuplePartContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TuplePartContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitTuplePart(s)
-	}
-}
-
-func (s *TuplePartContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitTuplePart(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10623,16 +9963,6 @@ func (s *OclTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OclTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOclType(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) OclType() (localctx IOclTypeContext) {
 	localctx = NewOclTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, ATLParserRULE_oclType)
@@ -10781,16 +10111,6 @@ func (s *OclAnyTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OclAnyTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOclAnyType(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) OclAnyType() (localctx IOclAnyTypeContext) {
 	localctx = NewOclAnyTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 134, ATLParserRULE_oclAnyType)
@@ -10898,16 +10218,6 @@ func (s *TupleTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TupleTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitTupleType(s)
-	}
-}
-
-func (s *TupleTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitTupleType(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11050,16 +10360,6 @@ func (s *TupleTypeAttributeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TupleTypeAttributeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitTupleTypeAttribute(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) TupleTypeAttribute() (localctx ITupleTypeAttributeContext) {
 	localctx = NewTupleTypeAttributeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 138, ATLParserRULE_tupleTypeAttribute)
@@ -11175,16 +10475,6 @@ func (s *MapTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MapTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitMapType(s)
-	}
-}
-
-func (s *MapTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitMapType(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11325,16 +10615,6 @@ func (s *PrimitiveContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PrimitiveContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitPrimitive(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Primitive() (localctx IPrimitiveContext) {
 	localctx = NewPrimitiveContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 142, ATLParserRULE_primitive)
@@ -11465,16 +10745,6 @@ func (s *NumericTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NumericTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitNumericType(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) NumericType() (localctx INumericTypeContext) {
 	localctx = NewNumericTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 144, ATLParserRULE_numericType)
@@ -11577,16 +10847,6 @@ func (s *IntegerTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IntegerTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitIntegerType(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) IntegerType() (localctx IIntegerTypeContext) {
 	localctx = NewIntegerTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 146, ATLParserRULE_integerType)
@@ -11670,16 +10930,6 @@ func (s *RealTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RealTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitRealType(s)
-	}
-}
-
-func (s *RealTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitRealType(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11769,16 +11019,6 @@ func (s *BooleanTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BooleanTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitBooleanType(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) BooleanType() (localctx IBooleanTypeContext) {
 	localctx = NewBooleanTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 150, ATLParserRULE_booleanType)
@@ -11862,16 +11102,6 @@ func (s *StringTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *StringTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitStringType(s)
-	}
-}
-
-func (s *StringTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitStringType(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12012,16 +11242,6 @@ func (s *CollectionTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CollectionTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitCollectionType(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) CollectionType() (localctx ICollectionTypeContext) {
 	localctx = NewCollectionTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 154, ATLParserRULE_collectionType)
@@ -12156,16 +11376,6 @@ func (s *BagTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BagTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitBagType(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) BagType() (localctx IBagTypeContext) {
 	localctx = NewBagTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 156, ATLParserRULE_bagType)
@@ -12272,16 +11482,6 @@ func (s *SetTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SetTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitSetType(s)
-	}
-}
-
-func (s *SetTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitSetType(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12394,16 +11594,6 @@ func (s *OrderedSetTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OrderedSetTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOrderedSetType(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) OrderedSetType() (localctx IOrderedSetTypeContext) {
 	localctx = NewOrderedSetTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 160, ATLParserRULE_orderedSetType)
@@ -12510,16 +11700,6 @@ func (s *SequenceTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SequenceTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitSequenceType(s)
-	}
-}
-
-func (s *SequenceTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitSequenceType(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12747,16 +11927,6 @@ func (s *Priority_0Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Priority_0Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitPriority_0(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Priority_0() (localctx IPriority_0Context) {
 	localctx = NewPriority_0Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 164, ATLParserRULE_priority_0)
@@ -12922,16 +12092,6 @@ func (s *Priority_1Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Priority_1Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitPriority_1(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Priority_1() (localctx IPriority_1Context) {
 	localctx = NewPriority_1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 166, ATLParserRULE_priority_1)
@@ -13070,16 +12230,6 @@ func (s *Priority_2Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Priority_2Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitPriority_2(s)
-	}
-}
-
-func (s *Priority_2Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitPriority_2(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13251,16 +12401,6 @@ func (s *Priority_3Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Priority_3Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitPriority_3(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) Priority_3() (localctx IPriority_3Context) {
 	localctx = NewPriority_3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 170, ATLParserRULE_priority_3)
@@ -13406,16 +12546,6 @@ func (s *Priority_4Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Priority_4Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitPriority_4(s)
-	}
-}
-
-func (s *Priority_4Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitPriority_4(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13604,16 +12734,6 @@ func (s *Priority_5Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Priority_5Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitPriority_5(s)
-	}
-}
-
-func (s *Priority_5Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitPriority_5(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13823,16 +12943,6 @@ func (s *MatchedRule_abstractContentsContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
-func (s *MatchedRule_abstractContentsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitMatchedRule_abstractContents(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) MatchedRule_abstractContents() (localctx IMatchedRule_abstractContentsContext) {
 	localctx = NewMatchedRule_abstractContentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 176, ATLParserRULE_matchedRule_abstractContents)
@@ -14039,16 +13149,6 @@ func (s *OclType_abstractContentsContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *OclType_abstractContentsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOclType_abstractContents(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ATLParser) OclType_abstractContents() (localctx IOclType_abstractContentsContext) {
 	localctx = NewOclType_abstractContentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 178, ATLParserRULE_oclType_abstractContents)
@@ -14132,16 +13232,6 @@ func (s *OclAnyType_abstractContentsContext) EnterRule(listener antlr.ParseTreeL
 func (s *OclAnyType_abstractContentsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitOclAnyType_abstractContents(s)
-	}
-}
-
-func (s *OclAnyType_abstractContentsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitOclAnyType_abstractContents(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -14239,16 +13329,6 @@ func (s *CollectionType_abstractContentsContext) EnterRule(listener antlr.ParseT
 func (s *CollectionType_abstractContentsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitCollectionType_abstractContents(s)
-	}
-}
-
-func (s *CollectionType_abstractContentsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitCollectionType_abstractContents(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -14458,16 +13538,6 @@ func (s *Primary_oclExpressionContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Primary_oclExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
 		listenerT.ExitPrimary_oclExpression(s)
-	}
-}
-
-func (s *Primary_oclExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ATLVisitor:
-		return t.VisitPrimary_oclExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

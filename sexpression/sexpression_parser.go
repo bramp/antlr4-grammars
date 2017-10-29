@@ -176,16 +176,6 @@ func (s *SexprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SexprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case sexpressionVisitor:
-		return t.VisitSexpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *sexpressionParser) Sexpr() (localctx ISexprContext) {
 	localctx = NewSexprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, sexpressionParserRULE_sexpr)
@@ -343,16 +333,6 @@ func (s *ItemContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case sexpressionVisitor:
-		return t.VisitItem(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *sexpressionParser) Item() (localctx IItemContext) {
 	localctx = NewItemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, sexpressionParserRULE_item)
@@ -507,16 +487,6 @@ func (s *ListContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ListContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case sexpressionVisitor:
-		return t.VisitList(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *sexpressionParser) List() (localctx IListContext) {
 	localctx = NewListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, sexpressionParserRULE_list)
@@ -636,16 +606,6 @@ func (s *AtomContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(sexpressionListener); ok {
 		listenerT.ExitAtom(s)
-	}
-}
-
-func (s *AtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case sexpressionVisitor:
-		return t.VisitAtom(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

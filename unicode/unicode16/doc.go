@@ -12,4 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package cobol85 // import "bramp.net/antlr4/cobol85"
+
+package unicode/unicode16 // import "bramp.net/antlr4/unicode/unicode16"
+

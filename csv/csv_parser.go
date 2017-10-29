@@ -179,16 +179,6 @@ func (s *CsvFileContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CsvFileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CSVVisitor:
-		return t.VisitCsvFile(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CSVParser) CsvFile() (localctx ICsvFileContext) {
 	localctx = NewCsvFileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, CSVParserRULE_csvFile)
@@ -301,16 +291,6 @@ func (s *HdrContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HdrContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CSVVisitor:
-		return t.VisitHdr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CSVParser) Hdr() (localctx IHdrContext) {
 	localctx = NewHdrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, CSVParserRULE_hdr)
@@ -418,16 +398,6 @@ func (s *RowContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RowContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CSVListener); ok {
 		listenerT.ExitRow(s)
-	}
-}
-
-func (s *RowContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CSVVisitor:
-		return t.VisitRow(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -557,16 +527,6 @@ func (s *FieldContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FieldContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CSVListener); ok {
 		listenerT.ExitField(s)
-	}
-}
-
-func (s *FieldContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CSVVisitor:
-		return t.VisitField(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

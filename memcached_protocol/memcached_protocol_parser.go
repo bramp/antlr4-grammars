@@ -545,16 +545,6 @@ func (s *Command_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Command_lineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitCommand_line(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Command_line() (localctx ICommand_lineContext) {
 	localctx = NewCommand_lineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, memcached_protocolParserRULE_command_line)
@@ -786,16 +776,6 @@ func (s *Storage_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Storage_commandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitStorage_command(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Storage_command() (localctx IStorage_commandContext) {
 	localctx = NewStorage_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, memcached_protocolParserRULE_storage_command)
@@ -945,16 +925,6 @@ func (s *Storage_command_nameContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *Storage_command_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitStorage_command_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Storage_command_name() (localctx IStorage_command_nameContext) {
 	localctx = NewStorage_command_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, memcached_protocolParserRULE_storage_command_name)
@@ -1068,16 +1038,6 @@ func (s *Retrieval_commandContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Retrieval_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitRetrieval_command(s)
-	}
-}
-
-func (s *Retrieval_commandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitRetrieval_command(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1225,16 +1185,6 @@ func (s *Delete_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Delete_commandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitDelete_command(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Delete_command() (localctx IDelete_commandContext) {
 	localctx = NewDelete_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, memcached_protocolParserRULE_delete_command)
@@ -1379,16 +1329,6 @@ func (s *Increment_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Increment_commandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitIncrement_command(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Increment_command() (localctx IIncrement_commandContext) {
 	localctx = NewIncrement_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, memcached_protocolParserRULE_increment_command)
@@ -1526,16 +1466,6 @@ func (s *Decrement_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Decrement_commandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitDecrement_command(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Decrement_command() (localctx IDecrement_commandContext) {
 	localctx = NewDecrement_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, memcached_protocolParserRULE_decrement_command)
@@ -1653,16 +1583,6 @@ func (s *Statistics_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Statistics_commandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitStatistics_command(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Statistics_command() (localctx IStatistics_commandContext) {
 	localctx = NewStatistics_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, memcached_protocolParserRULE_statistics_command)
@@ -1758,16 +1678,6 @@ func (s *Statistics_optionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Statistics_optionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitStatistics_option(s)
-	}
-}
-
-func (s *Statistics_optionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitStatistics_option(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1884,16 +1794,6 @@ func (s *Flush_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Flush_commandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitFlush_command(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Flush_command() (localctx IFlush_commandContext) {
 	localctx = NewFlush_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, memcached_protocolParserRULE_flush_command)
@@ -2003,16 +1903,6 @@ func (s *Version_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Version_commandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitVersion_command(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Version_command() (localctx IVersion_commandContext) {
 	localctx = NewVersion_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, memcached_protocolParserRULE_version_command)
@@ -2110,16 +2000,6 @@ func (s *Verbosity_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Verbosity_commandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitVerbosity_command(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Verbosity_command() (localctx IVerbosity_commandContext) {
 	localctx = NewVerbosity_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, memcached_protocolParserRULE_verbosity_command)
@@ -2207,16 +2087,6 @@ func (s *Quit_commandContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Quit_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitQuit_command(s)
-	}
-}
-
-func (s *Quit_commandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitQuit_command(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2314,16 +2184,6 @@ func (s *Storage_responseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Storage_responseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitStorage_response(s)
-	}
-}
-
-func (s *Storage_responseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitStorage_response(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2511,16 +2371,6 @@ func (s *Retrieval_responseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Retrieval_responseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitRetrieval_response(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Retrieval_response() (localctx IRetrieval_responseContext) {
 	localctx = NewRetrieval_responseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, memcached_protocolParserRULE_retrieval_response)
@@ -2665,16 +2515,6 @@ func (s *Deletion_responseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Deletion_responseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitDeletion_response(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Deletion_response() (localctx IDeletion_responseContext) {
 	localctx = NewDeletion_responseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, memcached_protocolParserRULE_deletion_response)
@@ -2796,16 +2636,6 @@ func (s *Incr_or_decr_responseContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Incr_or_decr_responseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitIncr_or_decr_response(s)
-	}
-}
-
-func (s *Incr_or_decr_responseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitIncr_or_decr_response(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2959,16 +2789,6 @@ func (s *Statistics_responseContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *Statistics_responseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitStatistics_response(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Statistics_response() (localctx IStatistics_responseContext) {
 	localctx = NewStatistics_responseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, memcached_protocolParserRULE_statistics_response)
@@ -3116,16 +2936,6 @@ func (s *Error_responseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Error_responseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitError_response(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Error_response() (localctx IError_responseContext) {
 	localctx = NewError_responseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, memcached_protocolParserRULE_error_response)
@@ -3256,16 +3066,6 @@ func (s *General_statisticContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *General_statisticContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitGeneral_statistic(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) General_statistic() (localctx IGeneral_statisticContext) {
 	localctx = NewGeneral_statisticContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, memcached_protocolParserRULE_general_statistic)
@@ -3381,16 +3181,6 @@ func (s *Size_statisticContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Size_statisticContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitSize_statistic(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Size_statistic() (localctx ISize_statisticContext) {
 	localctx = NewSize_statisticContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, memcached_protocolParserRULE_size_statistic)
@@ -3481,16 +3271,6 @@ func (s *General_errorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *General_errorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitGeneral_error(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) General_error() (localctx IGeneral_errorContext) {
 	localctx = NewGeneral_errorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, memcached_protocolParserRULE_general_error)
@@ -3574,16 +3354,6 @@ func (s *Client_error_messageContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Client_error_messageContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitClient_error_message(s)
-	}
-}
-
-func (s *Client_error_messageContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitClient_error_message(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3692,16 +3462,6 @@ func (s *Server_error_messageContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *Server_error_messageContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitServer_error_message(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Server_error_message() (localctx IServer_error_messageContext) {
 	localctx = NewServer_error_messageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, memcached_protocolParserRULE_server_error_message)
@@ -3807,16 +3567,6 @@ func (s *EndContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EndContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitEnd(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) End() (localctx IEndContext) {
 	localctx = NewEndContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, memcached_protocolParserRULE_end)
@@ -3900,16 +3650,6 @@ func (s *NoreplyContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NoreplyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitNoreply(s)
-	}
-}
-
-func (s *NoreplyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitNoreply(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3999,16 +3739,6 @@ func (s *KeyContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *KeyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitKey(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Key() (localctx IKeyContext) {
 	localctx = NewKeyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, memcached_protocolParserRULE_key)
@@ -4095,16 +3825,6 @@ func (s *FlagsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FlagsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitFlags(s)
-	}
-}
-
-func (s *FlagsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitFlags(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4199,16 +3919,6 @@ func (s *ExptimeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExptimeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitExptime(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Exptime() (localctx IExptimeContext) {
 	localctx = NewExptimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, memcached_protocolParserRULE_exptime)
@@ -4297,16 +4007,6 @@ func (s *BytesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *BytesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitBytes(s)
-	}
-}
-
-func (s *BytesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitBytes(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4401,16 +4101,6 @@ func (s *Cas_uniqueContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Cas_uniqueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitCas_unique(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Cas_unique() (localctx ICas_uniqueContext) {
 	localctx = NewCas_uniqueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, memcached_protocolParserRULE_cas_unique)
@@ -4499,16 +4189,6 @@ func (s *ValueContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitValue(s)
-	}
-}
-
-func (s *ValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitValue(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4603,16 +4283,6 @@ func (s *TimeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TimeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitTime(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Time() (localctx ITimeContext) {
 	localctx = NewTimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, memcached_protocolParserRULE_time)
@@ -4701,16 +4371,6 @@ func (s *DelayContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DelayContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitDelay(s)
-	}
-}
-
-func (s *DelayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitDelay(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4805,16 +4465,6 @@ func (s *Verbosity_levelContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Verbosity_levelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitVerbosity_level(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Verbosity_level() (localctx IVerbosity_levelContext) {
 	localctx = NewVerbosity_levelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, memcached_protocolParserRULE_verbosity_level)
@@ -4906,16 +4556,6 @@ func (s *Statistic_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Statistic_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitStatistic_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Statistic_name() (localctx IStatistic_nameContext) {
 	localctx = NewStatistic_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, memcached_protocolParserRULE_statistic_name)
@@ -4999,16 +4639,6 @@ func (s *Statistic_valueContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Statistic_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitStatistic_value(s)
-	}
-}
-
-func (s *Statistic_valueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitStatistic_value(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5101,16 +4731,6 @@ func (s *SizeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SizeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitSize(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *memcached_protocolParser) Size() (localctx ISizeContext) {
 	localctx = NewSizeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, memcached_protocolParserRULE_size)
@@ -5199,16 +4819,6 @@ func (s *CountContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CountContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(memcached_protocolListener); ok {
 		listenerT.ExitCount(s)
-	}
-}
-
-func (s *CountContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case memcached_protocolVisitor:
-		return t.VisitCount(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

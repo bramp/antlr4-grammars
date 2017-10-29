@@ -154,16 +154,6 @@ func (s *ParseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ParseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DiceNotationVisitor:
-		return t.VisitParse(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DiceNotationParser) Parse() (localctx IParseContext) {
 	localctx = NewParseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, DiceNotationParserRULE_parse)
@@ -272,16 +262,6 @@ func (s *FunctionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FunctionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DiceNotationListener); ok {
 		listenerT.ExitFunction(s)
-	}
-}
-
-func (s *FunctionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DiceNotationVisitor:
-		return t.VisitFunction(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -420,16 +400,6 @@ func (s *BinaryOpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BinaryOpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DiceNotationVisitor:
-		return t.VisitBinaryOp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DiceNotationParser) BinaryOp() (localctx IBinaryOpContext) {
 	localctx = NewBinaryOpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, DiceNotationParserRULE_binaryOp)
@@ -555,16 +525,6 @@ func (s *DiceContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DiceContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DiceNotationListener); ok {
 		listenerT.ExitDice(s)
-	}
-}
-
-func (s *DiceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DiceNotationVisitor:
-		return t.VisitDice(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

@@ -188,16 +188,6 @@ func (s *GraphContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *GraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gmlVisitor:
-		return t.VisitGraph(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gmlParser) Graph() (localctx IGraphContext) {
 	localctx = NewGraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, gmlParserRULE_graph)
@@ -316,16 +306,6 @@ func (s *ListContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ListContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gmlListener); ok {
 		listenerT.ExitList(s)
-	}
-}
-
-func (s *ListContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gmlVisitor:
-		return t.VisitList(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -452,16 +432,6 @@ func (s *KvContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *KvContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gmlListener); ok {
 		listenerT.ExitKv(s)
-	}
-}
-
-func (s *KvContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gmlVisitor:
-		return t.VisitKv(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -606,16 +576,6 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gmlVisitor:
-		return t.VisitValue(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gmlParser) Value() (localctx IValueContext) {
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, gmlParserRULE_value)
@@ -744,16 +704,6 @@ func (s *KeyContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *KeyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gmlVisitor:
-		return t.VisitKey(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gmlParser) Key() (localctx IKeyContext) {
 	localctx = NewKeyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, gmlParserRULE_key)
@@ -850,16 +800,6 @@ func (s *IntegerContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IntegerContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gmlListener); ok {
 		listenerT.ExitInteger(s)
-	}
-}
-
-func (s *IntegerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gmlVisitor:
-		return t.VisitInteger(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -976,16 +916,6 @@ func (s *RealnumContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RealnumContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gmlVisitor:
-		return t.VisitRealnum(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gmlParser) Realnum() (localctx IRealnumContext) {
 	localctx = NewRealnumContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, gmlParserRULE_realnum)
@@ -1077,16 +1007,6 @@ func (s *StrContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StrContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gmlVisitor:
-		return t.VisitStr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *gmlParser) Str() (localctx IStrContext) {
 	localctx = NewStrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, gmlParserRULE_str)
@@ -1175,16 +1095,6 @@ func (s *StringliteralContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *StringliteralContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gmlListener); ok {
 		listenerT.ExitStringliteral(s)
-	}
-}
-
-func (s *StringliteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case gmlVisitor:
-		return t.VisitStringliteral(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

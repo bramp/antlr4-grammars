@@ -368,16 +368,6 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitProgram(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumathParser) Program() (localctx IProgramContext) {
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, mumathParserRULE_program)
@@ -533,16 +523,6 @@ func (s *AssignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AssignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitAssignment(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumathParser) Assignment() (localctx IAssignmentContext) {
 	localctx = NewAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, mumathParserRULE_assignment)
@@ -676,16 +656,6 @@ func (s *ListContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ListContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumathListener); ok {
 		listenerT.ExitList(s)
-	}
-}
-
-func (s *ListContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitList(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -858,16 +828,6 @@ func (s *FunctionDefinitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FunctionDefinitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitFunctionDefinition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumathParser) FunctionDefinition() (localctx IFunctionDefinitionContext) {
 	localctx = NewFunctionDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, mumathParserRULE_functionDefinition)
@@ -1004,16 +964,6 @@ func (s *ActualParameterContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ActualParameterContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumathListener); ok {
 		listenerT.ExitActualParameter(s)
-	}
-}
-
-func (s *ActualParameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitActualParameter(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1208,16 +1158,6 @@ func (s *StatmentsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StatmentsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitStatments(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumathParser) Statments() (localctx IStatmentsContext) {
 	localctx = NewStatmentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, mumathParserRULE_statments)
@@ -1385,16 +1325,6 @@ func (s *BlockContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BlockContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitBlock(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumathParser) Block() (localctx IBlockContext) {
 	localctx = NewBlockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, mumathParserRULE_block)
@@ -1513,16 +1443,6 @@ func (s *LoopContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LoopContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumathListener); ok {
 		listenerT.ExitLoop(s)
-	}
-}
-
-func (s *LoopContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitLoop(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1670,16 +1590,6 @@ func (s *WhenContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *WhenContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumathListener); ok {
 		listenerT.ExitWhen(s)
-	}
-}
-
-func (s *WhenContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitWhen(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1860,16 +1770,6 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumathParser) Expression() (localctx IExpressionContext) {
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, mumathParserRULE_expression)
@@ -2007,16 +1907,6 @@ func (s *RelationalOperatorContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *RelationalOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumathListener); ok {
 		listenerT.ExitRelationalOperator(s)
-	}
-}
-
-func (s *RelationalOperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitRelationalOperator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2179,16 +2069,6 @@ func (s *SimpleExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SimpleExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitSimpleExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumathParser) SimpleExpression() (localctx ISimpleExpressionContext) {
 	localctx = NewSimpleExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, mumathParserRULE_simpleExpression)
@@ -2315,16 +2195,6 @@ func (s *AddingOperatorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AddingOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumathListener); ok {
 		listenerT.ExitAddingOperator(s)
-	}
-}
-
-func (s *AddingOperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitAddingOperator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2467,16 +2337,6 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TermContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitTerm(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumathParser) Term() (localctx ITermContext) {
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, mumathParserRULE_term)
@@ -2600,16 +2460,6 @@ func (s *MultiplyingOperatorContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *MultiplyingOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumathListener); ok {
 		listenerT.ExitMultiplyingOperator(s)
-	}
-}
-
-func (s *MultiplyingOperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitMultiplyingOperator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2762,16 +2612,6 @@ func (s *FactorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FactorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitFactor(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumathParser) Factor() (localctx IFactorContext) {
 	localctx = NewFactorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, mumathParserRULE_factor)
@@ -2918,16 +2758,6 @@ func (s *ConstantContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ConstantContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumathListener); ok {
 		listenerT.ExitConstant(s)
-	}
-}
-
-func (s *ConstantContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitConstant(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3093,16 +2923,6 @@ func (s *FunctionDesignatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FunctionDesignatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitFunctionDesignator(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumathParser) FunctionDesignator() (localctx IFunctionDesignatorContext) {
 	localctx = NewFunctionDesignatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, mumathParserRULE_functionDesignator)
@@ -3237,16 +3057,6 @@ func (s *EqualContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EqualContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumathListener); ok {
 		listenerT.ExitEqual(s)
-	}
-}
-
-func (s *EqualContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumathVisitor:
-		return t.VisitEqual(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

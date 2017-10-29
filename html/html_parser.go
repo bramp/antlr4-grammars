@@ -319,16 +319,6 @@ func (s *HtmlDocumentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HtmlDocumentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitHtmlDocument(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *HTMLParser) HtmlDocument() (localctx IHtmlDocumentContext) {
 	localctx = NewHtmlDocumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, HTMLParserRULE_htmlDocument)
@@ -577,16 +567,6 @@ func (s *HtmlElementsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HtmlElementsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitHtmlElements(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *HTMLParser) HtmlElements() (localctx IHtmlElementsContext) {
 	localctx = NewHtmlElementsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, HTMLParserRULE_htmlElements)
@@ -814,16 +794,6 @@ func (s *HtmlElementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *HtmlElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(HTMLParserListener); ok {
 		listenerT.ExitHtmlElement(s)
-	}
-}
-
-func (s *HtmlElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitHtmlElement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1134,16 +1104,6 @@ func (s *HtmlContentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HtmlContentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitHtmlContent(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *HTMLParser) HtmlContent() (localctx IHtmlContentContext) {
 	localctx = NewHtmlContentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, HTMLParserRULE_htmlContent)
@@ -1313,16 +1273,6 @@ func (s *HtmlAttributeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HtmlAttributeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitHtmlAttribute(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *HTMLParser) HtmlAttribute() (localctx IHtmlAttributeContext) {
 	localctx = NewHtmlAttributeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, HTMLParserRULE_htmlAttribute)
@@ -1435,16 +1385,6 @@ func (s *HtmlAttributeNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HtmlAttributeNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitHtmlAttributeName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *HTMLParser) HtmlAttributeName() (localctx IHtmlAttributeNameContext) {
 	localctx = NewHtmlAttributeNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, HTMLParserRULE_htmlAttributeName)
@@ -1536,16 +1476,6 @@ func (s *HtmlAttributeValueContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HtmlAttributeValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitHtmlAttributeValue(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *HTMLParser) HtmlAttributeValue() (localctx IHtmlAttributeValueContext) {
 	localctx = NewHtmlAttributeValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, HTMLParserRULE_htmlAttributeValue)
@@ -1634,16 +1564,6 @@ func (s *HtmlTagNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *HtmlTagNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(HTMLParserListener); ok {
 		listenerT.ExitHtmlTagName(s)
-	}
-}
-
-func (s *HtmlTagNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitHtmlTagName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1739,16 +1659,6 @@ func (s *HtmlChardataContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *HtmlChardataContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(HTMLParserListener); ok {
 		listenerT.ExitHtmlChardata(s)
-	}
-}
-
-func (s *HtmlChardataContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitHtmlChardata(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1856,16 +1766,6 @@ func (s *HtmlMiscContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *HtmlMiscContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(HTMLParserListener); ok {
 		listenerT.ExitHtmlMisc(s)
-	}
-}
-
-func (s *HtmlMiscContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitHtmlMisc(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1980,16 +1880,6 @@ func (s *HtmlCommentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HtmlCommentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitHtmlComment(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *HTMLParser) HtmlComment() (localctx IHtmlCommentContext) {
 	localctx = NewHtmlCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, HTMLParserRULE_htmlComment)
@@ -2087,16 +1977,6 @@ func (s *XhtmlCDATAContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *XhtmlCDATAContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitXhtmlCDATA(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *HTMLParser) XhtmlCDATA() (localctx IXhtmlCDATAContext) {
 	localctx = NewXhtmlCDATAContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, HTMLParserRULE_xhtmlCDATA)
@@ -2185,16 +2065,6 @@ func (s *DtdContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DtdContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(HTMLParserListener); ok {
 		listenerT.ExitDtd(s)
-	}
-}
-
-func (s *DtdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitDtd(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2289,16 +2159,6 @@ func (s *XmlContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *XmlContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitXml(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *HTMLParser) Xml() (localctx IXmlContext) {
 	localctx = NewXmlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, HTMLParserRULE_xml)
@@ -2387,16 +2247,6 @@ func (s *ScriptletContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ScriptletContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(HTMLParserListener); ok {
 		listenerT.ExitScriptlet(s)
-	}
-}
-
-func (s *ScriptletContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitScriptlet(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2496,16 +2346,6 @@ func (s *ScriptContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ScriptContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(HTMLParserListener); ok {
 		listenerT.ExitScript(s)
-	}
-}
-
-func (s *ScriptContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitScript(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2615,16 +2455,6 @@ func (s *StyleContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *StyleContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(HTMLParserListener); ok {
 		listenerT.ExitStyle(s)
-	}
-}
-
-func (s *StyleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case HTMLParserVisitor:
-		return t.VisitStyle(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

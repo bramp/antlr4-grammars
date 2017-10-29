@@ -237,16 +237,6 @@ func (s *StartContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StartContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case WavefrontOBJVisitor:
-		return t.VisitStart(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *WavefrontOBJParser) Start() (localctx IStartContext) {
 	localctx = NewStartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, WavefrontOBJParserRULE_start)
@@ -405,16 +395,6 @@ func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case WavefrontOBJVisitor:
-		return t.VisitLine(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *WavefrontOBJParser) Line() (localctx ILineContext) {
 	localctx = NewLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, WavefrontOBJParserRULE_line)
@@ -569,16 +549,6 @@ func (s *FaceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FaceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case WavefrontOBJVisitor:
-		return t.VisitFace(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *WavefrontOBJParser) Face() (localctx IFaceContext) {
 	localctx = NewFaceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, WavefrontOBJParserRULE_face)
@@ -702,16 +672,6 @@ func (s *VertexContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *VertexContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(WavefrontOBJListener); ok {
 		listenerT.ExitVertex(s)
-	}
-}
-
-func (s *VertexContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case WavefrontOBJVisitor:
-		return t.VisitVertex(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -863,16 +823,6 @@ func (s *MtllibContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MtllibContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case WavefrontOBJVisitor:
-		return t.VisitMtllib(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *WavefrontOBJParser) Mtllib() (localctx IMtllibContext) {
 	localctx = NewMtllibContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, WavefrontOBJParserRULE_mtllib)
@@ -979,16 +929,6 @@ func (s *ObjectContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ObjectContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case WavefrontOBJVisitor:
-		return t.VisitObject(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *WavefrontOBJParser) Object() (localctx IObjectContext) {
 	localctx = NewObjectContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, WavefrontOBJParserRULE_object)
@@ -1088,16 +1028,6 @@ func (s *Use_materialContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Use_materialContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case WavefrontOBJVisitor:
-		return t.VisitUse_material(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *WavefrontOBJParser) Use_material() (localctx IUse_materialContext) {
 	localctx = NewUse_materialContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, WavefrontOBJParserRULE_use_material)
@@ -1190,16 +1120,6 @@ func (s *GroupContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *GroupContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(WavefrontOBJListener); ok {
 		listenerT.ExitGroup(s)
-	}
-}
-
-func (s *GroupContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case WavefrontOBJVisitor:
-		return t.VisitGroup(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

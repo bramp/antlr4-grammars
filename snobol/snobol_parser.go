@@ -416,16 +416,6 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitProg(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Prog() (localctx IProgContext) {
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, snobolParserRULE_prog)
@@ -535,16 +525,6 @@ func (s *LinContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LinContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitLin(s)
-	}
-}
-
-func (s *LinContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitLin(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -723,16 +703,6 @@ func (s *LineContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitLine(s)
-	}
-}
-
-func (s *LineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitLine(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -921,16 +891,6 @@ func (s *LabelContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LabelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitLabel(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Label() (localctx ILabelContext) {
 	localctx = NewLabelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, snobolParserRULE_label)
@@ -1027,16 +987,6 @@ func (s *SubjectContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SubjectContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitSubject(s)
-	}
-}
-
-func (s *SubjectContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitSubject(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1183,16 +1133,6 @@ func (s *PatternContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PatternContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitPattern(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Pattern() (localctx IPatternContext) {
 	localctx = NewPatternContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, snobolParserRULE_pattern)
@@ -1322,16 +1262,6 @@ func (s *ExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitExpression(s)
-	}
-}
-
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1489,16 +1419,6 @@ func (s *MultiplyingExpressionContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *MultiplyingExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitMultiplyingExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) MultiplyingExpression() (localctx IMultiplyingExpressionContext) {
 	localctx = NewMultiplyingExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, snobolParserRULE_multiplyingExpression)
@@ -1635,16 +1555,6 @@ func (s *PowExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PowExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitPowExpression(s)
-	}
-}
-
-func (s *PowExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitPowExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1811,16 +1721,6 @@ func (s *AtomContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitAtom(s)
-	}
-}
-
-func (s *AtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitAtom(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2258,16 +2158,6 @@ func (s *CommandContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CommandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitCommand(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Command() (localctx ICommandContext) {
 	localctx = NewCommandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, snobolParserRULE_command)
@@ -2564,16 +2454,6 @@ func (s *IdentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IdentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitIdent(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Ident() (localctx IIdentContext) {
 	localctx = NewIdentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, snobolParserRULE_ident)
@@ -2688,16 +2568,6 @@ func (s *DifferContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DifferContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitDiffer(s)
-	}
-}
-
-func (s *DifferContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitDiffer(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2818,16 +2688,6 @@ func (s *EqContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EqContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitEq(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Eq() (localctx IEqContext) {
 	localctx = NewEqContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, snobolParserRULE_eq)
@@ -2942,16 +2802,6 @@ func (s *NeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitNe(s)
-	}
-}
-
-func (s *NeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitNe(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3072,16 +2922,6 @@ func (s *GeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *GeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitGe(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Ge() (localctx IGeContext) {
 	localctx = NewGeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, snobolParserRULE_ge)
@@ -3196,16 +3036,6 @@ func (s *GtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *GtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitGt(s)
-	}
-}
-
-func (s *GtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitGt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3326,16 +3156,6 @@ func (s *LeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitLe(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Le() (localctx ILeContext) {
 	localctx = NewLeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, snobolParserRULE_le)
@@ -3450,16 +3270,6 @@ func (s *LtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitLt(s)
-	}
-}
-
-func (s *LtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitLt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3580,16 +3390,6 @@ func (s *IntegerContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IntegerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitInteger(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Integer() (localctx IIntegerContext) {
 	localctx = NewIntegerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, snobolParserRULE_integer)
@@ -3704,16 +3504,6 @@ func (s *LgtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LgtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitLgt(s)
-	}
-}
-
-func (s *LgtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitLgt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3834,16 +3624,6 @@ func (s *AtanContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AtanContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitAtan(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Atan() (localctx IAtanContext) {
 	localctx = NewAtanContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, snobolParserRULE_atan)
@@ -3958,16 +3738,6 @@ func (s *ChopContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ChopContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitChop(s)
-	}
-}
-
-func (s *ChopContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitChop(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4088,16 +3858,6 @@ func (s *CosContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CosContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitCos(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Cos() (localctx ICosContext) {
 	localctx = NewCosContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, snobolParserRULE_cos)
@@ -4212,16 +3972,6 @@ func (s *ExpContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExpContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitExp(s)
-	}
-}
-
-func (s *ExpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitExp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4342,16 +4092,6 @@ func (s *LnContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitLn(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Ln() (localctx ILnContext) {
 	localctx = NewLnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, snobolParserRULE_ln)
@@ -4466,16 +4206,6 @@ func (s *RemdrContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RemdrContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitRemdr(s)
-	}
-}
-
-func (s *RemdrContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitRemdr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4596,16 +4326,6 @@ func (s *SinContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SinContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitSin(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Sin() (localctx ISinContext) {
 	localctx = NewSinContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, snobolParserRULE_sin)
@@ -4720,16 +4440,6 @@ func (s *TanContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TanContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitTan(s)
-	}
-}
-
-func (s *TanContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitTan(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4867,16 +4577,6 @@ func (s *DuplContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DuplContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitDupl(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Dupl() (localctx IDuplContext) {
 	localctx = NewDuplContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, snobolParserRULE_dupl)
@@ -5002,16 +4702,6 @@ func (s *ReverseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ReverseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitReverse(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Reverse() (localctx IReverseContext) {
 	localctx = NewReverseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, snobolParserRULE_reverse)
@@ -5116,16 +4806,6 @@ func (s *DateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitDate(s)
-	}
-}
-
-func (s *DateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitDate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5263,16 +4943,6 @@ func (s *ReplaceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ReplaceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitReplace(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Replace() (localctx IReplaceContext) {
 	localctx = NewReplaceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, snobolParserRULE_replace)
@@ -5406,16 +5076,6 @@ func (s *SizeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SizeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitSize(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Size() (localctx ISizeContext) {
 	localctx = NewSizeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, snobolParserRULE_size)
@@ -5530,16 +5190,6 @@ func (s *TrimContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TrimContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitTrim(s)
-	}
-}
-
-func (s *TrimContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitTrim(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5674,16 +5324,6 @@ func (s *ArrayContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ArrayContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitArray(s)
-	}
-}
-
-func (s *ArrayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitArray(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5829,16 +5469,6 @@ func (s *ConvertContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ConvertContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitConvert(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Convert() (localctx IConvertContext) {
 	localctx = NewConvertContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, snobolParserRULE_convert)
@@ -5964,16 +5594,6 @@ func (s *TableContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitTable(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Table() (localctx ITableContext) {
 	localctx = NewTableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, snobolParserRULE_table)
@@ -6091,16 +5711,6 @@ func (s *SortContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SortContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitSort(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Sort() (localctx ISortContext) {
 	localctx = NewSortContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, snobolParserRULE_sort)
@@ -6215,16 +5825,6 @@ func (s *Break_Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Break_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitBreak_(s)
-	}
-}
-
-func (s *Break_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitBreak_(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6359,16 +5959,6 @@ func (s *TransferContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TransferContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitTransfer(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *snobolParser) Transfer() (localctx ITransferContext) {
 	localctx = NewTransferContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, snobolParserRULE_transfer)
@@ -6494,16 +6084,6 @@ func (s *TransferpreContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TransferpreContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
 		listenerT.ExitTransferpre(s)
-	}
-}
-
-func (s *TransferpreContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case snobolVisitor:
-		return t.VisitTransferpre(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

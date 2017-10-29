@@ -203,16 +203,6 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case romannumeralsVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *romannumeralsParser) Expression() (localctx IExpressionContext) {
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, romannumeralsParserRULE_expression)
@@ -317,16 +307,6 @@ func (s *ThousandsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ThousandsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(romannumeralsListener); ok {
 		listenerT.ExitThousands(s)
-	}
-}
-
-func (s *ThousandsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case romannumeralsVisitor:
-		return t.VisitThousands(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -452,16 +432,6 @@ func (s *Thous_partContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Thous_partContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(romannumeralsListener); ok {
 		listenerT.ExitThous_part(s)
-	}
-}
-
-func (s *Thous_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case romannumeralsVisitor:
-		return t.VisitThous_part(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -612,16 +582,6 @@ func (s *HundredsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HundredsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case romannumeralsVisitor:
-		return t.VisitHundreds(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *romannumeralsParser) Hundreds() (localctx IHundredsContext) {
 	localctx = NewHundredsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, romannumeralsParserRULE_hundreds)
@@ -752,16 +712,6 @@ func (s *Hun_partContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Hun_partContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(romannumeralsListener); ok {
 		listenerT.ExitHun_part(s)
-	}
-}
-
-func (s *Hun_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case romannumeralsVisitor:
-		return t.VisitHun_part(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -902,16 +852,6 @@ func (s *Hun_repContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Hun_repContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case romannumeralsVisitor:
-		return t.VisitHun_rep(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *romannumeralsParser) Hun_rep() (localctx IHun_repContext) {
 	localctx = NewHun_repContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, romannumeralsParserRULE_hun_rep)
@@ -1022,16 +962,6 @@ func (s *TensContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TensContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(romannumeralsListener); ok {
 		listenerT.ExitTens(s)
-	}
-}
-
-func (s *TensContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case romannumeralsVisitor:
-		return t.VisitTens(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1165,16 +1095,6 @@ func (s *Tens_partContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Tens_partContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(romannumeralsListener); ok {
 		listenerT.ExitTens_part(s)
-	}
-}
-
-func (s *Tens_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case romannumeralsVisitor:
-		return t.VisitTens_part(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1315,16 +1235,6 @@ func (s *Tens_repContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Tens_repContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case romannumeralsVisitor:
-		return t.VisitTens_rep(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *romannumeralsParser) Tens_rep() (localctx ITens_repContext) {
 	localctx = NewTens_repContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, romannumeralsParserRULE_tens_rep)
@@ -1437,16 +1347,6 @@ func (s *OnesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OnesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(romannumeralsListener); ok {
 		listenerT.ExitOnes(s)
-	}
-}
-
-func (s *OnesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case romannumeralsVisitor:
-		return t.VisitOnes(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1584,16 +1484,6 @@ func (s *Ones_repContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Ones_repContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(romannumeralsListener); ok {
 		listenerT.ExitOnes_rep(s)
-	}
-}
-
-func (s *Ones_repContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case romannumeralsVisitor:
-		return t.VisitOnes_rep(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

@@ -222,16 +222,6 @@ func (s *LccContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LccContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lccVisitor:
-		return t.VisitLcc(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *lccParser) Lcc() (localctx ILccContext) {
 	localctx = NewLccContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, lccParserRULE_lcc)
@@ -404,16 +394,6 @@ func (s *TopicContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TopicContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lccVisitor:
-		return t.VisitTopic(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *lccParser) Topic() (localctx ITopicContext) {
 	localctx = NewTopicContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, lccParserRULE_topic)
@@ -502,16 +482,6 @@ func (s *SubtopicContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SubtopicContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(lccListener); ok {
 		listenerT.ExitSubtopic(s)
-	}
-}
-
-func (s *SubtopicContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lccVisitor:
-		return t.VisitSubtopic(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -622,16 +592,6 @@ func (s *SubclassesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SubclassesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(lccListener); ok {
 		listenerT.ExitSubclasses(s)
-	}
-}
-
-func (s *SubclassesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lccVisitor:
-		return t.VisitSubclasses(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -749,16 +709,6 @@ func (s *SubclassContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SubclassContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(lccListener); ok {
 		listenerT.ExitSubclass(s)
-	}
-}
-
-func (s *SubclassContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lccVisitor:
-		return t.VisitSubclass(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -883,16 +833,6 @@ func (s *CuttersContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CuttersContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lccVisitor:
-		return t.VisitCutters(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *lccParser) Cutters() (localctx ICuttersContext) {
 	localctx = NewCuttersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, lccParserRULE_cutters)
@@ -1014,16 +954,6 @@ func (s *CutterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CutterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lccVisitor:
-		return t.VisitCutter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *lccParser) Cutter() (localctx ICutterContext) {
 	localctx = NewCutterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, lccParserRULE_cutter)
@@ -1131,16 +1061,6 @@ func (s *DateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(lccListener); ok {
 		listenerT.ExitDate(s)
-	}
-}
-
-func (s *DateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case lccVisitor:
-		return t.VisitDate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

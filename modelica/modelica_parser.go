@@ -853,16 +853,6 @@ func (s *Stored_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Stored_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitStored_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Stored_definition() (localctx IStored_definitionContext) {
 	localctx = NewStored_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, modelicaParserRULE_stored_definition)
@@ -1025,16 +1015,6 @@ func (s *Class_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Class_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitClass_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Class_definition() (localctx IClass_definitionContext) {
 	localctx = NewClass_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, modelicaParserRULE_class_definition)
@@ -1168,16 +1148,6 @@ func (s *Class_specifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Class_specifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitClass_specifier(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Class_specifier() (localctx IClass_specifierContext) {
 	localctx = NewClass_specifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, modelicaParserRULE_class_specifier)
@@ -1281,16 +1251,6 @@ func (s *Class_prefixesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Class_prefixesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitClass_prefixes(s)
-	}
-}
-
-func (s *Class_prefixesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitClass_prefixes(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1534,16 +1494,6 @@ func (s *Long_class_specifierContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *Long_class_specifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitLong_class_specifier(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Long_class_specifier() (localctx ILong_class_specifierContext) {
 	localctx = NewLong_class_specifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, modelicaParserRULE_long_class_specifier)
@@ -1756,16 +1706,6 @@ func (s *Short_class_specifierContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Short_class_specifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitShort_class_specifier(s)
-	}
-}
-
-func (s *Short_class_specifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitShort_class_specifier(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1982,16 +1922,6 @@ func (s *Der_class_specifierContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *Der_class_specifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitDer_class_specifier(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Der_class_specifier() (localctx IDer_class_specifierContext) {
 	localctx = NewDer_class_specifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, modelicaParserRULE_der_class_specifier)
@@ -2140,16 +2070,6 @@ func (s *Base_prefixContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Base_prefixContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitBase_prefix(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Base_prefix() (localctx IBase_prefixContext) {
 	localctx = NewBase_prefixContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, modelicaParserRULE_base_prefix)
@@ -2257,16 +2177,6 @@ func (s *Enum_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Enum_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitEnum_list(s)
-	}
-}
-
-func (s *Enum_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitEnum_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2387,16 +2297,6 @@ func (s *Enumeration_literalContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Enumeration_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitEnumeration_literal(s)
-	}
-}
-
-func (s *Enumeration_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitEnumeration_literal(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2603,16 +2503,6 @@ func (s *CompositionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CompositionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitComposition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Composition() (localctx ICompositionContext) {
 	localctx = NewCompositionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, modelicaParserRULE_composition)
@@ -2814,16 +2704,6 @@ func (s *Language_specificationContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Language_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitLanguage_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Language_specification() (localctx ILanguage_specificationContext) {
 	localctx = NewLanguage_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, modelicaParserRULE_language_specification)
@@ -2932,16 +2812,6 @@ func (s *External_function_callContext) EnterRule(listener antlr.ParseTreeListen
 func (s *External_function_callContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitExternal_function_call(s)
-	}
-}
-
-func (s *External_function_callContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitExternal_function_call(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3086,16 +2956,6 @@ func (s *Element_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Element_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitElement_list(s)
-	}
-}
-
-func (s *Element_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitElement_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3258,16 +3118,6 @@ func (s *ElementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitElement(s)
-	}
-}
-
-func (s *ElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitElement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3524,16 +3374,6 @@ func (s *Import_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Import_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitImport_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Import_clause() (localctx IImport_clauseContext) {
 	localctx = NewImport_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, modelicaParserRULE_import_clause)
@@ -3685,16 +3525,6 @@ func (s *Import_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Import_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitImport_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Import_list() (localctx IImport_listContext) {
 	localctx = NewImport_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, modelicaParserRULE_import_list)
@@ -3831,16 +3661,6 @@ func (s *Extends_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Extends_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitExtends_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Extends_clause() (localctx IExtends_clauseContext) {
 	localctx = NewExtends_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, modelicaParserRULE_extends_clause)
@@ -3972,16 +3792,6 @@ func (s *Constraining_clauseContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Constraining_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitConstraining_clause(s)
-	}
-}
-
-func (s *Constraining_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitConstraining_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4128,16 +3938,6 @@ func (s *Component_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Component_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitComponent_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Component_clause() (localctx IComponent_clauseContext) {
 	localctx = NewComponent_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, modelicaParserRULE_component_clause)
@@ -4241,16 +4041,6 @@ func (s *Type_prefixContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Type_prefixContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitType_prefix(s)
-	}
-}
-
-func (s *Type_prefixContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitType_prefix(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4396,16 +4186,6 @@ func (s *Type_specifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Type_specifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitType_specifier(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Type_specifier() (localctx IType_specifierContext) {
 	localctx = NewType_specifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, modelicaParserRULE_type_specifier)
@@ -4513,16 +4293,6 @@ func (s *Component_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Component_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitComponent_list(s)
-	}
-}
-
-func (s *Component_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitComponent_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4662,16 +4432,6 @@ func (s *Component_declarationContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *Component_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitComponent_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Component_declaration() (localctx IComponent_declarationContext) {
 	localctx = NewComponent_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, modelicaParserRULE_component_declaration)
@@ -4782,16 +4542,6 @@ func (s *Condition_attributeContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Condition_attributeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitCondition_attribute(s)
-	}
-}
-
-func (s *Condition_attributeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitCondition_attribute(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4907,16 +4657,6 @@ func (s *DeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitDeclaration(s)
-	}
-}
-
-func (s *DeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5047,16 +4787,6 @@ func (s *ModificationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ModificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitModification(s)
-	}
-}
-
-func (s *ModificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitModification(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5204,16 +4934,6 @@ func (s *Class_modificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Class_modificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitClass_modification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Class_modification() (localctx IClass_modificationContext) {
 	localctx = NewClass_modificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, modelicaParserRULE_class_modification)
@@ -5337,16 +5057,6 @@ func (s *Argument_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Argument_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitArgument_list(s)
-	}
-}
-
-func (s *Argument_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitArgument_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5476,16 +5186,6 @@ func (s *ArgumentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ArgumentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitArgument(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Argument() (localctx IArgumentContext) {
 	localctx = NewArgumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, modelicaParserRULE_argument)
@@ -5606,16 +5306,6 @@ func (s *Element_modification_or_replaceableContext) EnterRule(listener antlr.Pa
 func (s *Element_modification_or_replaceableContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitElement_modification_or_replaceable(s)
-	}
-}
-
-func (s *Element_modification_or_replaceableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitElement_modification_or_replaceable(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5774,16 +5464,6 @@ func (s *Element_modificationContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *Element_modificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitElement_modification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Element_modification() (localctx IElement_modificationContext) {
 	localctx = NewElement_modificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, modelicaParserRULE_element_modification)
@@ -5914,16 +5594,6 @@ func (s *Element_redeclarationContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Element_redeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitElement_redeclaration(s)
-	}
-}
-
-func (s *Element_redeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitElement_redeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6101,16 +5771,6 @@ func (s *Element_replaceableContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *Element_replaceableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitElement_replaceable(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Element_replaceable() (localctx IElement_replaceableContext) {
 	localctx = NewElement_replaceableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, modelicaParserRULE_element_replaceable)
@@ -6259,16 +5919,6 @@ func (s *Component_clause1Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Component_clause1Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitComponent_clause1(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Component_clause1() (localctx IComponent_clause1Context) {
 	localctx = NewComponent_clause1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, modelicaParserRULE_component_clause1)
@@ -6384,16 +6034,6 @@ func (s *Component_declaration1Context) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Component_declaration1Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitComponent_declaration1(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Component_declaration1() (localctx IComponent_declaration1Context) {
 	localctx = NewComponent_declaration1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, modelicaParserRULE_component_declaration1)
@@ -6502,16 +6142,6 @@ func (s *Short_class_definitionContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Short_class_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitShort_class_definition(s)
-	}
-}
-
-func (s *Short_class_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitShort_class_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6626,16 +6256,6 @@ func (s *Equation_sectionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Equation_sectionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitEquation_section(s)
-	}
-}
-
-func (s *Equation_sectionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitEquation_section(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6780,16 +6400,6 @@ func (s *Algorithm_sectionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Algorithm_sectionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitAlgorithm_section(s)
-	}
-}
-
-func (s *Algorithm_sectionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitAlgorithm_section(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6997,16 +6607,6 @@ func (s *EquationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EquationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitEquation(s)
-	}
-}
-
-func (s *EquationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitEquation(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7239,16 +6839,6 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitStatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Statement() (localctx IStatementContext) {
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, modelicaParserRULE_statement)
@@ -7477,16 +7067,6 @@ func (s *If_equationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *If_equationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitIf_equation(s)
-	}
-}
-
-func (s *If_equationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitIf_equation(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7735,16 +7315,6 @@ func (s *If_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *If_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitIf_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) If_statement() (localctx IIf_statementContext) {
 	localctx = NewIf_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, modelicaParserRULE_if_statement)
@@ -7969,16 +7539,6 @@ func (s *For_equationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *For_equationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitFor_equation(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) For_equation() (localctx IFor_equationContext) {
 	localctx = NewFor_equationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, modelicaParserRULE_for_equation)
@@ -8137,16 +7697,6 @@ func (s *For_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *For_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitFor_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) For_statement() (localctx IFor_statementContext) {
 	localctx = NewFor_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, modelicaParserRULE_for_statement)
@@ -8292,16 +7842,6 @@ func (s *For_indicesContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *For_indicesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitFor_indices(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) For_indices() (localctx IFor_indicesContext) {
 	localctx = NewFor_indicesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, modelicaParserRULE_for_indices)
@@ -8419,16 +7959,6 @@ func (s *For_indexContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *For_indexContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitFor_index(s)
-	}
-}
-
-func (s *For_indexContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitFor_index(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8565,16 +8095,6 @@ func (s *While_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *While_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitWhile_statement(s)
-	}
-}
-
-func (s *While_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitWhile_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8743,16 +8263,6 @@ func (s *When_equationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *When_equationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitWhen_equation(s)
-	}
-}
-
-func (s *When_equationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitWhen_equation(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8970,16 +8480,6 @@ func (s *When_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *When_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitWhen_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) When_statement() (localctx IWhen_statementContext) {
 	localctx = NewWhen_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, modelicaParserRULE_when_statement)
@@ -9165,16 +8665,6 @@ func (s *Connect_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Connect_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitConnect_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Connect_clause() (localctx IConnect_clauseContext) {
 	localctx = NewConnect_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, modelicaParserRULE_connect_clause)
@@ -9312,16 +8802,6 @@ func (s *ExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitExpression(s)
-	}
-}
-
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9498,16 +8978,6 @@ func (s *Simple_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Simple_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitSimple_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Simple_expression() (localctx ISimple_expressionContext) {
 	localctx = NewSimple_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, modelicaParserRULE_simple_expression)
@@ -9649,16 +9119,6 @@ func (s *Logical_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Logical_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitLogical_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Logical_expression() (localctx ILogical_expressionContext) {
 	localctx = NewLogical_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, modelicaParserRULE_logical_expression)
@@ -9788,16 +9248,6 @@ func (s *Logical_termContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Logical_termContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitLogical_term(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Logical_term() (localctx ILogical_termContext) {
 	localctx = NewLogical_termContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 108, modelicaParserRULE_logical_term)
@@ -9911,16 +9361,6 @@ func (s *Logical_factorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Logical_factorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitLogical_factor(s)
-	}
-}
-
-func (s *Logical_factorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitLogical_factor(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10056,16 +9496,6 @@ func (s *RelationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RelationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitRelation(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Relation() (localctx IRelationContext) {
 	localctx = NewRelationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, modelicaParserRULE_relation)
@@ -10165,16 +9595,6 @@ func (s *Rel_opContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Rel_opContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitRel_op(s)
-	}
-}
-
-func (s *Rel_opContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitRel_op(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10317,16 +9737,6 @@ func (s *Arithmetic_expressionContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *Arithmetic_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitArithmetic_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Arithmetic_expression() (localctx IArithmetic_expressionContext) {
 	localctx = NewArithmetic_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, modelicaParserRULE_arithmetic_expression)
@@ -10440,16 +9850,6 @@ func (s *Add_opContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Add_opContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitAdd_op(s)
-	}
-}
-
-func (s *Add_opContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitAdd_op(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10592,16 +9992,6 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TermContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitTerm(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Term() (localctx ITermContext) {
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, modelicaParserRULE_term)
@@ -10704,16 +10094,6 @@ func (s *Mul_opContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Mul_opContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitMul_op(s)
-	}
-}
-
-func (s *Mul_opContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitMul_op(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10830,16 +10210,6 @@ func (s *FactorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FactorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitFactor(s)
-	}
-}
-
-func (s *FactorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitFactor(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11029,16 +10399,6 @@ func (s *PrimaryContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PrimaryContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitPrimary(s)
-	}
-}
-
-func (s *PrimaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitPrimary(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11274,16 +10634,6 @@ func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Name() (localctx INameContext) {
 	localctx = NewNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, modelicaParserRULE_name)
@@ -11429,16 +10779,6 @@ func (s *Component_referenceContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Component_referenceContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitComponent_reference(s)
-	}
-}
-
-func (s *Component_referenceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitComponent_reference(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11591,16 +10931,6 @@ func (s *Function_call_argsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Function_call_argsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitFunction_call_args(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Function_call_args() (localctx IFunction_call_argsContext) {
 	localctx = NewFunction_call_argsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, modelicaParserRULE_function_call_args)
@@ -11741,16 +11071,6 @@ func (s *Function_argumentsContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Function_argumentsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitFunction_arguments(s)
-	}
-}
-
-func (s *Function_argumentsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitFunction_arguments(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11902,16 +11222,6 @@ func (s *Named_argumentsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Named_argumentsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitNamed_arguments(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Named_arguments() (localctx INamed_argumentsContext) {
 	localctx = NewNamed_argumentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 136, modelicaParserRULE_named_arguments)
@@ -12026,16 +11336,6 @@ func (s *Named_argumentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Named_argumentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitNamed_argument(s)
-	}
-}
-
-func (s *Named_argumentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitNamed_argument(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12161,16 +11461,6 @@ func (s *Function_argumentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Function_argumentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitFunction_argument(s)
-	}
-}
-
-func (s *Function_argumentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitFunction_argument(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12324,16 +11614,6 @@ func (s *Output_expression_listContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Output_expression_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitOutput_expression_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Output_expression_list() (localctx IOutput_expression_listContext) {
 	localctx = NewOutput_expression_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 142, modelicaParserRULE_output_expression_list)
@@ -12477,16 +11757,6 @@ func (s *Expression_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Expression_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitExpression_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Expression_list() (localctx IExpression_listContext) {
 	localctx = NewExpression_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 144, modelicaParserRULE_expression_list)
@@ -12616,16 +11886,6 @@ func (s *Array_subscriptsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Array_subscriptsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitArray_subscripts(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Array_subscripts() (localctx IArray_subscriptsContext) {
 	localctx = NewArray_subscriptsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 146, modelicaParserRULE_array_subscripts)
@@ -12747,16 +12007,6 @@ func (s *SubscriptContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SubscriptContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitSubscript(s)
-	}
-}
-
-func (s *SubscriptContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitSubscript(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12883,16 +12133,6 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CommentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitComment(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *modelicaParser) Comment() (localctx ICommentContext) {
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 150, modelicaParserRULE_comment)
@@ -12997,16 +12237,6 @@ func (s *String_commentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *String_commentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitString_comment(s)
-	}
-}
-
-func (s *String_commentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitString_comment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13130,16 +12360,6 @@ func (s *AnnotationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AnnotationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
 		listenerT.ExitAnnotation(s)
-	}
-}
-
-func (s *AnnotationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case modelicaVisitor:
-		return t.VisitAnnotation(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

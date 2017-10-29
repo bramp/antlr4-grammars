@@ -529,16 +529,6 @@ func (s *FusionTablesSqlContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FusionTablesSqlContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitFusionTablesSql(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) FusionTablesSql() (localctx IFusionTablesSqlContext) {
 	localctx = NewFusionTablesSqlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, FusionTablesSqlParserRULE_fusionTablesSql)
@@ -737,16 +727,6 @@ func (s *Sql_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Sql_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitSql_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Sql_stmt() (localctx ISql_stmtContext) {
 	localctx = NewSql_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, FusionTablesSqlParserRULE_sql_stmt)
@@ -908,16 +888,6 @@ func (s *Table_name_in_ddlContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Table_name_in_ddlContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitTable_name_in_ddl(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Table_name_in_ddl() (localctx ITable_name_in_ddlContext) {
 	localctx = NewTable_name_in_ddlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, FusionTablesSqlParserRULE_table_name_in_ddl)
@@ -1012,16 +982,6 @@ func (s *Table_name_in_dmlContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Table_name_in_dmlContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitTable_name_in_dml(s)
-	}
-}
-
-func (s *Table_name_in_dmlContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitTable_name_in_dml(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1149,16 +1109,6 @@ func (s *Create_table_as_select_stmtContext) EnterRule(listener antlr.ParseTreeL
 func (s *Create_table_as_select_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitCreate_table_as_select_stmt(s)
-	}
-}
-
-func (s *Create_table_as_select_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitCreate_table_as_select_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1291,16 +1241,6 @@ func (s *Describe_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Describe_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitDescribe_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Describe_stmt() (localctx IDescribe_stmtContext) {
 	localctx = NewDescribe_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, FusionTablesSqlParserRULE_describe_stmt)
@@ -1397,16 +1337,6 @@ func (s *Show_tables_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Show_tables_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitShow_tables_stmt(s)
-	}
-}
-
-func (s *Show_tables_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitShow_tables_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1534,16 +1464,6 @@ func (s *Alter_table_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Alter_table_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitAlter_table_stmt(s)
-	}
-}
-
-func (s *Alter_table_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitAlter_table_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1755,16 +1675,6 @@ func (s *Create_view_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Create_view_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitCreate_view_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Create_view_stmt() (localctx ICreate_view_stmtContext) {
 	localctx = NewCreate_view_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, FusionTablesSqlParserRULE_create_view_stmt)
@@ -1957,16 +1867,6 @@ func (s *Drop_table_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Drop_table_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitDrop_table_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Drop_table_stmt() (localctx IDrop_table_stmtContext) {
 	localctx = NewDrop_table_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, FusionTablesSqlParserRULE_drop_table_stmt)
@@ -2127,16 +2027,6 @@ func (s *Insert_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Insert_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitInsert_stmt(s)
-	}
-}
-
-func (s *Insert_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitInsert_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2357,16 +2247,6 @@ func (s *Update_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Update_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitUpdate_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Update_stmt() (localctx IUpdate_stmtContext) {
 	localctx = NewUpdate_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, FusionTablesSqlParserRULE_update_stmt)
@@ -2513,16 +2393,6 @@ func (s *Column_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Column_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitColumn_assignment(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Column_assignment() (localctx IColumn_assignmentContext) {
 	localctx = NewColumn_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, FusionTablesSqlParserRULE_column_assignment)
@@ -2657,16 +2527,6 @@ func (s *Delete_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Delete_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitDelete_stmt(s)
-	}
-}
-
-func (s *Delete_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitDelete_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2813,16 +2673,6 @@ func (s *Eq_comparisonContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Eq_comparisonContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitEq_comparison(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Eq_comparison() (localctx IEq_comparisonContext) {
 	localctx = NewEq_comparisonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, FusionTablesSqlParserRULE_eq_comparison)
@@ -2939,16 +2789,6 @@ func (s *Table_name_with_aliasContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Table_name_with_aliasContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitTable_name_with_alias(s)
-	}
-}
-
-func (s *Table_name_with_aliasContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitTable_name_with_alias(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3223,16 +3063,6 @@ func (s *Select_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Select_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitSelect_stmt(s)
-	}
-}
-
-func (s *Select_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitSelect_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3519,16 +3349,6 @@ func (s *Ordering_termContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Ordering_termContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitOrdering_term(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Ordering_term() (localctx IOrdering_termContext) {
 	localctx = NewOrdering_termContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, FusionTablesSqlParserRULE_ordering_term)
@@ -3717,16 +3537,6 @@ func (s *Join_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Join_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitJoin_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Join_clause() (localctx IJoin_clauseContext) {
 	localctx = NewJoin_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, FusionTablesSqlParserRULE_join_clause)
@@ -3872,16 +3682,6 @@ func (s *Result_columnContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Result_columnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitResult_column(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Result_column() (localctx IResult_columnContext) {
 	localctx = NewResult_columnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, FusionTablesSqlParserRULE_result_column)
@@ -4024,16 +3824,6 @@ func (s *Qualified_column_nameContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *Qualified_column_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitQualified_column_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Qualified_column_name() (localctx IQualified_column_nameContext) {
 	localctx = NewQualified_column_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, FusionTablesSqlParserRULE_qualified_column_name)
@@ -4170,16 +3960,6 @@ func (s *Aggregate_expContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Aggregate_expContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitAggregate_exp(s)
-	}
-}
-
-func (s *Aggregate_expContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitAggregate_exp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4467,16 +4247,6 @@ func (s *ExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitExpr(s)
-	}
-}
-
-func (s *ExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4855,16 +4625,6 @@ func (s *Column_name_beginning_exprContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
-func (s *Column_name_beginning_exprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitColumn_name_beginning_expr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Column_name_beginning_expr() (localctx IColumn_name_beginning_exprContext) {
 	localctx = NewColumn_name_beginning_exprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, FusionTablesSqlParserRULE_column_name_beginning_expr)
@@ -4962,16 +4722,6 @@ func (s *Column_name_in_dmlContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Column_name_in_dmlContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitColumn_name_in_dml(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Column_name_in_dml() (localctx IColumn_name_in_dmlContext) {
 	localctx = NewColumn_name_in_dmlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, FusionTablesSqlParserRULE_column_name_in_dml)
@@ -5064,16 +4814,6 @@ func (s *And_or_orContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *And_or_orContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitAnd_or_or(s)
-	}
-}
-
-func (s *And_or_orContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitAnd_or_or(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5187,16 +4927,6 @@ func (s *GeometryContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *GeometryContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitGeometry(s)
-	}
-}
-
-func (s *GeometryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitGeometry(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5324,16 +5054,6 @@ func (s *CircleContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CircleContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitCircle(s)
-	}
-}
-
-func (s *CircleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitCircle(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5471,16 +5191,6 @@ func (s *RectangleContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RectangleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitRectangle(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Rectangle() (localctx IRectangleContext) {
 	localctx = NewRectangleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, FusionTablesSqlParserRULE_rectangle)
@@ -5612,16 +5322,6 @@ func (s *CoordinateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CoordinateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitCoordinate(s)
-	}
-}
-
-func (s *CoordinateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitCoordinate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5957,16 +5657,6 @@ func (s *KeywordContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *KeywordContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitKeyword(s)
-	}
-}
-
-func (s *KeywordContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitKeyword(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6481,16 +6171,6 @@ func (s *OperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitOperator(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Operator() (localctx IOperatorContext) {
 	localctx = NewOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, FusionTablesSqlParserRULE_operator)
@@ -6601,16 +6281,6 @@ func (s *LiteralContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitLiteral(s)
-	}
-}
-
-func (s *LiteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitLiteral(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6727,16 +6397,6 @@ func (s *Error_messageContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Error_messageContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitError_message(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Error_message() (localctx IError_messageContext) {
 	localctx = NewError_messageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, FusionTablesSqlParserRULE_error_message)
@@ -6831,16 +6491,6 @@ func (s *IdentifierContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitIdentifier(s)
-	}
-}
-
-func (s *IdentifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitIdentifier(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6941,16 +6591,6 @@ func (s *Column_aliasContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Column_aliasContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitColumn_alias(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Column_alias() (localctx IColumn_aliasContext) {
 	localctx = NewColumn_aliasContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, FusionTablesSqlParserRULE_column_alias)
@@ -7045,16 +6685,6 @@ func (s *Table_nameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Table_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitTable_name(s)
-	}
-}
-
-func (s *Table_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitTable_name(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7155,16 +6785,6 @@ func (s *Column_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Column_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitColumn_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Column_name() (localctx IColumn_nameContext) {
 	localctx = NewColumn_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, FusionTablesSqlParserRULE_column_name)
@@ -7259,16 +6879,6 @@ func (s *New_table_nameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *New_table_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitNew_table_name(s)
-	}
-}
-
-func (s *New_table_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitNew_table_name(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7369,16 +6979,6 @@ func (s *View_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *View_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitView_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) View_name() (localctx IView_nameContext) {
 	localctx = NewView_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, FusionTablesSqlParserRULE_view_name)
@@ -7476,16 +7076,6 @@ func (s *Table_aliasContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Table_aliasContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitTable_alias(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Table_alias() (localctx ITable_aliasContext) {
 	localctx = NewTable_aliasContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, FusionTablesSqlParserRULE_table_alias)
@@ -7577,16 +7167,6 @@ func (s *Numeric_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Numeric_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitNumeric_literal(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *FusionTablesSqlParser) Numeric_literal() (localctx INumeric_literalContext) {
 	localctx = NewNumeric_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, FusionTablesSqlParserRULE_numeric_literal)
@@ -7675,16 +7255,6 @@ func (s *String_literalContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *String_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
 		listenerT.ExitString_literal(s)
-	}
-}
-
-func (s *String_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case FusionTablesSqlVisitor:
-		return t.VisitString_literal(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

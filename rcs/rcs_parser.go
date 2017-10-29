@@ -322,16 +322,6 @@ func (s *RcstextContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RcstextContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitRcstext(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Rcstext() (localctx IRcstextContext) {
 	localctx = NewRcstextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, RCSParserRULE_rcstext)
@@ -445,16 +435,6 @@ func (s *RcsheaderContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RcsheaderContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitRcsheader(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Rcsheader() (localctx IRcsheaderContext) {
 	localctx = NewRcsheaderContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, RCSParserRULE_rcsheader)
@@ -559,16 +539,6 @@ func (s *RcsrevisionsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RcsrevisionsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitRcsrevisions(s)
-	}
-}
-
-func (s *RcsrevisionsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitRcsrevisions(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -766,16 +736,6 @@ func (s *AdminContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AdminContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitAdmin(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Admin() (localctx IAdminContext) {
 	localctx = NewAdminContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, RCSParserRULE_admin)
@@ -953,16 +913,6 @@ func (s *HeadContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HeadContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitHead(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Head() (localctx IHeadContext) {
 	localctx = NewHeadContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, RCSParserRULE_head)
@@ -1067,16 +1017,6 @@ func (s *BranchContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *BranchContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitBranch(s)
-	}
-}
-
-func (s *BranchContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitBranch(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1188,16 +1128,6 @@ func (s *AccessContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AccessContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitAccess(s)
-	}
-}
-
-func (s *AccessContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitAccess(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1338,16 +1268,6 @@ func (s *SymbolsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SymbolsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitSymbols(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Symbols() (localctx ISymbolsContext) {
 	localctx = NewSymbolsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, RCSParserRULE_symbols)
@@ -1466,16 +1386,6 @@ func (s *TagsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TagsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitTags(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Tags() (localctx ITagsContext) {
 	localctx = NewTagsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, RCSParserRULE_tags)
@@ -1584,16 +1494,6 @@ func (s *LocksContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LocksContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitLocks(s)
-	}
-}
-
-func (s *LocksContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitLocks(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1711,16 +1611,6 @@ func (s *StrictContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StrictContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitStrict(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Strict() (localctx IStrictContext) {
 	localctx = NewStrictContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, RCSParserRULE_strict)
@@ -1821,16 +1711,6 @@ func (s *CommentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitComment(s)
-	}
-}
-
-func (s *CommentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitComment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1946,16 +1826,6 @@ func (s *ExpandContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExpandContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitExpand(s)
-	}
-}
-
-func (s *ExpandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitExpand(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2082,16 +1952,6 @@ func (s *DeltalistContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DeltalistContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitDeltalist(s)
-	}
-}
-
-func (s *DeltalistContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDeltalist(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2270,16 +2130,6 @@ func (s *DeltaContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DeltaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDelta(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Delta() (localctx IDeltaContext) {
 	localctx = NewDeltaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, RCSParserRULE_delta)
@@ -2414,16 +2264,6 @@ func (s *Delta_dateContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Delta_dateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDelta_date(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Delta_date() (localctx IDelta_dateContext) {
 	localctx = NewDelta_dateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, RCSParserRULE_delta_date)
@@ -2531,16 +2371,6 @@ func (s *Delta_authorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Delta_authorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDelta_author(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Delta_author() (localctx IDelta_authorContext) {
 	localctx = NewDelta_authorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, RCSParserRULE_delta_author)
@@ -2645,16 +2475,6 @@ func (s *Delta_stateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Delta_stateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitDelta_state(s)
-	}
-}
-
-func (s *Delta_stateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDelta_state(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2766,16 +2586,6 @@ func (s *Delta_branchesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Delta_branchesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitDelta_branches(s)
-	}
-}
-
-func (s *Delta_branchesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDelta_branches(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2897,16 +2707,6 @@ func (s *Delta_nextContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Delta_nextContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDelta_next(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Delta_next() (localctx IDelta_nextContext) {
 	localctx = NewDelta_nextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, RCSParserRULE_delta_next)
@@ -3015,16 +2815,6 @@ func (s *DescContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DescContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitDesc(s)
-	}
-}
-
-func (s *DescContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDesc(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3139,16 +2929,6 @@ func (s *DeltatextlistContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DeltatextlistContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitDeltatextlist(s)
-	}
-}
-
-func (s *DeltatextlistContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDeltatextlist(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3297,16 +3077,6 @@ func (s *DeltatextContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DeltatextContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDeltatext(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Deltatext() (localctx IDeltatextContext) {
 	localctx = NewDeltatextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, RCSParserRULE_deltatext)
@@ -3425,16 +3195,6 @@ func (s *Deltatext_logContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Deltatext_logContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDeltatext_log(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *RCSParser) Deltatext_log() (localctx IDeltatext_logContext) {
 	localctx = NewDeltatext_logContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, RCSParserRULE_deltatext_log)
@@ -3531,16 +3291,6 @@ func (s *Deltatext_textContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Deltatext_textContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitDeltatext_text(s)
-	}
-}
-
-func (s *Deltatext_textContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitDeltatext_text(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3644,16 +3394,6 @@ func (s *NewphraseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NewphraseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(RCSListener); ok {
 		listenerT.ExitNewphrase(s)
-	}
-}
-
-func (s *NewphraseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case RCSVisitor:
-		return t.VisitNewphrase(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

@@ -234,16 +234,6 @@ func (s *Top_levelContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Top_levelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case SUOKIFVisitor:
-		return t.VisitTop_level(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *SUOKIFParser) Top_level() (localctx ITop_levelContext) {
 	localctx = NewTop_levelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, SUOKIFParserRULE_top_level)
@@ -375,16 +365,6 @@ func (s *TermContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SUOKIFListener); ok {
 		listenerT.ExitTerm(s)
-	}
-}
-
-func (s *TermContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case SUOKIFVisitor:
-		return t.VisitTerm(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -536,16 +516,6 @@ func (s *ArgumentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ArgumentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case SUOKIFVisitor:
-		return t.VisitArgument(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *SUOKIFParser) Argument() (localctx IArgumentContext) {
 	localctx = NewArgumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, SUOKIFParserRULE_argument)
@@ -670,16 +640,6 @@ func (s *FuntermContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FuntermContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SUOKIFListener); ok {
 		listenerT.ExitFunterm(s)
-	}
-}
-
-func (s *FuntermContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case SUOKIFVisitor:
-		return t.VisitFunterm(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -841,16 +801,6 @@ func (s *SentenceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SentenceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case SUOKIFVisitor:
-		return t.VisitSentence(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *SUOKIFParser) Sentence() (localctx ISentenceContext) {
 	localctx = NewSentenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, SUOKIFParserRULE_sentence)
@@ -1002,16 +952,6 @@ func (s *EquationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EquationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case SUOKIFVisitor:
-		return t.VisitEquation(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *SUOKIFParser) Equation() (localctx IEquationContext) {
 	localctx = NewEquationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, SUOKIFParserRULE_equation)
@@ -1143,16 +1083,6 @@ func (s *RelsentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RelsentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SUOKIFListener); ok {
 		listenerT.ExitRelsent(s)
-	}
-}
-
-func (s *RelsentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case SUOKIFVisitor:
-		return t.VisitRelsent(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1303,16 +1233,6 @@ func (s *LogsentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LogsentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SUOKIFListener); ok {
 		listenerT.ExitLogsent(s)
-	}
-}
-
-func (s *LogsentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case SUOKIFVisitor:
-		return t.VisitLogsent(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1561,16 +1481,6 @@ func (s *QuantsentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *QuantsentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SUOKIFListener); ok {
 		listenerT.ExitQuantsent(s)
-	}
-}
-
-func (s *QuantsentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case SUOKIFVisitor:
-		return t.VisitQuantsent(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

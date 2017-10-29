@@ -310,16 +310,6 @@ func (s *DgsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DgsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitDgs(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) Dgs() (localctx IDgsContext) {
 	localctx = NewDgsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, DGSParserRULE_dgs)
@@ -470,16 +460,6 @@ func (s *HeaderContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *HeaderContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DGSParserListener); ok {
 		listenerT.ExitHeader(s)
-	}
-}
-
-func (s *HeaderContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitHeader(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -688,16 +668,6 @@ func (s *EventContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EventContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitEvent(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) Event() (localctx IEventContext) {
 	localctx = NewEventContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, DGSParserRULE_event)
@@ -876,16 +846,6 @@ func (s *AnContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitAn(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) An() (localctx IAnContext) {
 	localctx = NewAnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, DGSParserRULE_an)
@@ -1005,16 +965,6 @@ func (s *CnContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitCn(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) Cn() (localctx ICnContext) {
 	localctx = NewCnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, DGSParserRULE_cn)
@@ -1121,16 +1071,6 @@ func (s *DnContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DnContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DGSParserListener); ok {
 		listenerT.ExitDn(s)
-	}
-}
-
-func (s *DnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitDn(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1269,16 +1209,6 @@ func (s *AeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DGSParserListener); ok {
 		listenerT.ExitAe(s)
-	}
-}
-
-func (s *AeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitAe(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1421,16 +1351,6 @@ func (s *CeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitCe(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) Ce() (localctx ICeContext) {
 	localctx = NewCeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, DGSParserRULE_ce)
@@ -1540,16 +1460,6 @@ func (s *DeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitDe(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) De() (localctx IDeContext) {
 	localctx = NewDeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, DGSParserRULE_de)
@@ -1655,16 +1565,6 @@ func (s *CgContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitCg(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) Cg() (localctx ICgContext) {
 	localctx = NewCgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, DGSParserRULE_cg)
@@ -1764,16 +1664,6 @@ func (s *StContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitSt(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) St() (localctx IStContext) {
 	localctx = NewStContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, DGSParserRULE_st)
@@ -1866,16 +1756,6 @@ func (s *ClContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ClContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DGSParserListener); ok {
 		listenerT.ExitCl(s)
-	}
-}
-
-func (s *ClContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitCl(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1986,16 +1866,6 @@ func (s *AttributesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AttributesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DGSParserListener); ok {
 		listenerT.ExitAttributes(s)
-	}
-}
-
-func (s *AttributesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitAttributes(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2153,16 +2023,6 @@ func (s *AttributeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AttributeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DGSParserListener); ok {
 		listenerT.ExitAttribute(s)
-	}
-}
-
-func (s *AttributeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitAttribute(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2349,16 +2209,6 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitValue(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) Value() (localctx IValueContext) {
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, DGSParserRULE_value)
@@ -2533,16 +2383,6 @@ func (s *ArrayContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ArrayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitArray(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) Array() (localctx IArrayContext) {
 	localctx = NewArrayContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, DGSParserRULE_array)
@@ -2703,16 +2543,6 @@ func (s *A_mapContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *A_mapContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitA_map(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) A_map() (localctx IA_mapContext) {
 	localctx = NewA_mapContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, DGSParserRULE_a_map)
@@ -2864,16 +2694,6 @@ func (s *MappingContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MappingContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitMapping(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) Mapping() (localctx IMappingContext) {
 	localctx = NewMappingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, DGSParserRULE_mapping)
@@ -2977,16 +2797,6 @@ func (s *DirectionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DirectionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitDirection(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DGSParser) Direction() (localctx IDirectionContext) {
 	localctx = NewDirectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, DGSParserRULE_direction)
@@ -3085,16 +2895,6 @@ func (s *AssignContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AssignContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DGSParserListener); ok {
 		listenerT.ExitAssign(s)
-	}
-}
-
-func (s *AssignContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitAssign(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3212,16 +3012,6 @@ func (s *IdentifierContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DGSParserListener); ok {
 		listenerT.ExitIdentifier(s)
-	}
-}
-
-func (s *IdentifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DGSParserVisitor:
-		return t.VisitIdentifier(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

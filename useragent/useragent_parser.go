@@ -192,16 +192,6 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case useragentVisitor:
-		return t.VisitProg(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *useragentParser) Prog() (localctx IProgContext) {
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, useragentParserRULE_prog)
@@ -331,16 +321,6 @@ func (s *ProductContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProductContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case useragentVisitor:
-		return t.VisitProduct(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *useragentParser) Product() (localctx IProductContext) {
 	localctx = NewProductContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, useragentParserRULE_product)
@@ -440,16 +420,6 @@ func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case useragentVisitor:
-		return t.VisitName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *useragentParser) Name() (localctx INameContext) {
 	localctx = NewNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, useragentParserRULE_name)
@@ -542,16 +512,6 @@ func (s *VersionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *VersionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(useragentListener); ok {
 		listenerT.ExitVersion(s)
-	}
-}
-
-func (s *VersionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case useragentVisitor:
-		return t.VisitVersion(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -662,16 +622,6 @@ func (s *CommentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(useragentListener); ok {
 		listenerT.ExitComment(s)
-	}
-}
-
-func (s *CommentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case useragentVisitor:
-		return t.VisitComment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

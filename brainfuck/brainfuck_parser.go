@@ -162,16 +162,6 @@ func (s *FileContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case brainfuckVisitor:
-		return t.VisitFile(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *brainfuckParser) File() (localctx IFileContext) {
 	localctx = NewFileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, brainfuckParserRULE_file)
@@ -299,16 +289,6 @@ func (s *OpcodeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OpcodeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(brainfuckListener); ok {
 		listenerT.ExitOpcode(s)
-	}
-}
-
-func (s *OpcodeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case brainfuckVisitor:
-		return t.VisitOpcode(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

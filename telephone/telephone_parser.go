@@ -164,16 +164,6 @@ func (s *NumberContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NumberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case telephoneVisitor:
-		return t.VisitNumber(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *telephoneParser) Number() (localctx INumberContext) {
 	localctx = NewNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, telephoneParserRULE_number)
@@ -301,16 +291,6 @@ func (s *VariationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *VariationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(telephoneListener); ok {
 		listenerT.ExitVariation(s)
-	}
-}
-
-func (s *VariationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case telephoneVisitor:
-		return t.VisitVariation(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -447,16 +427,6 @@ func (s *NanpContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NanpContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case telephoneVisitor:
-		return t.VisitNanp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *telephoneParser) Nanp() (localctx INanpContext) {
 	localctx = NewNanpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, telephoneParserRULE_nanp)
@@ -564,16 +534,6 @@ func (s *AreacodeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AreacodeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case telephoneVisitor:
-		return t.VisitAreacode(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *telephoneParser) Areacode() (localctx IAreacodeContext) {
 	localctx = NewAreacodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, telephoneParserRULE_areacode)
@@ -677,16 +637,6 @@ func (s *ExchangeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExchangeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case telephoneVisitor:
-		return t.VisitExchange(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *telephoneParser) Exchange() (localctx IExchangeContext) {
 	localctx = NewExchangeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, telephoneParserRULE_exchange)
@@ -787,16 +737,6 @@ func (s *SubscriberContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SubscriberContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(telephoneListener); ok {
 		listenerT.ExitSubscriber(s)
-	}
-}
-
-func (s *SubscriberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case telephoneVisitor:
-		return t.VisitSubscriber(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -926,16 +866,6 @@ func (s *JapanContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *JapanContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(telephoneListener); ok {
 		listenerT.ExitJapan(s)
-	}
-}
-
-func (s *JapanContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case telephoneVisitor:
-		return t.VisitJapan(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

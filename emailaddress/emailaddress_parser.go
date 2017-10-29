@@ -264,16 +264,6 @@ func (s *EmailaddressContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EmailaddressContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitEmailaddress(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *emailaddressParser) Emailaddress() (localctx IEmailaddressContext) {
 	localctx = NewEmailaddressContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, emailaddressParserRULE_emailaddress)
@@ -404,16 +394,6 @@ func (s *GroupContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *GroupContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(emailaddressListener); ok {
 		listenerT.ExitGroup(s)
-	}
-}
-
-func (s *GroupContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitGroup(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -557,16 +537,6 @@ func (s *MailboxContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MailboxContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitMailbox(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *emailaddressParser) Mailbox() (localctx IMailboxContext) {
 	localctx = NewMailboxContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, emailaddressParserRULE_mailbox)
@@ -704,16 +674,6 @@ func (s *RouteaddrContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RouteaddrContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitRouteaddr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *emailaddressParser) Routeaddr() (localctx IRouteaddrContext) {
 	localctx = NewRouteaddrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, emailaddressParserRULE_routeaddr)
@@ -834,16 +794,6 @@ func (s *RouteContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RouteContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitRoute(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *emailaddressParser) Route() (localctx IRouteContext) {
 	localctx = NewRouteContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, emailaddressParserRULE_route)
@@ -956,16 +906,6 @@ func (s *AddrspecContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AddrspecContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(emailaddressListener); ok {
 		listenerT.ExitAddrspec(s)
-	}
-}
-
-func (s *AddrspecContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitAddrspec(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1084,16 +1024,6 @@ func (s *LocalpartContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LocalpartContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(emailaddressListener); ok {
 		listenerT.ExitLocalpart(s)
-	}
-}
-
-func (s *LocalpartContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitLocalpart(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1226,16 +1156,6 @@ func (s *DomainContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DomainContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitDomain(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *emailaddressParser) Domain() (localctx IDomainContext) {
 	localctx = NewDomainContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, emailaddressParserRULE_domain)
@@ -1362,16 +1282,6 @@ func (s *SubdomainContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SubdomainContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitSubdomain(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *emailaddressParser) Subdomain() (localctx ISubdomainContext) {
 	localctx = NewSubdomainContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, emailaddressParserRULE_subdomain)
@@ -1485,16 +1395,6 @@ func (s *DomainrefContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DomainrefContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitDomainref(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *emailaddressParser) Domainref() (localctx IDomainrefContext) {
 	localctx = NewDomainrefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, emailaddressParserRULE_domainref)
@@ -1602,16 +1502,6 @@ func (s *PhraseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(emailaddressListener); ok {
 		listenerT.ExitPhrase(s)
-	}
-}
-
-func (s *PhraseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitPhrase(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1733,16 +1623,6 @@ func (s *WordContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *WordContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitWord(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *emailaddressParser) Word() (localctx IWordContext) {
 	localctx = NewWordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, emailaddressParserRULE_word)
@@ -1851,16 +1731,6 @@ func (s *LwspcharContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LwspcharContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(emailaddressListener); ok {
 		listenerT.ExitLwspchar(s)
-	}
-}
-
-func (s *LwspcharContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitLwspchar(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1985,16 +1855,6 @@ func (s *LwspContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LwspContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(emailaddressListener); ok {
 		listenerT.ExitLwsp(s)
-	}
-}
-
-func (s *LwspContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitLwsp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2131,16 +1991,6 @@ func (s *DelimetersContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DelimetersContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitDelimeters(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *emailaddressParser) Delimeters() (localctx IDelimetersContext) {
 	localctx = NewDelimetersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, emailaddressParserRULE_delimeters)
@@ -2259,16 +2109,6 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitAtom(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *emailaddressParser) Atom() (localctx IAtomContext) {
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, emailaddressParserRULE_atom)
@@ -2374,16 +2214,6 @@ func (s *QuotedpairContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *QuotedpairContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(emailaddressListener); ok {
 		listenerT.ExitQuotedpair(s)
-	}
-}
-
-func (s *QuotedpairContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitQuotedpair(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2506,16 +2336,6 @@ func (s *DomainliteralContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DomainliteralContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(emailaddressListener); ok {
 		listenerT.ExitDomainliteral(s)
-	}
-}
-
-func (s *DomainliteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitDomainliteral(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2668,16 +2488,6 @@ func (s *QuotedstringContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *QuotedstringContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(emailaddressListener); ok {
 		listenerT.ExitQuotedstring(s)
-	}
-}
-
-func (s *QuotedstringContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitQuotedstring(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2853,16 +2663,6 @@ func (s *CommentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(emailaddressListener); ok {
 		listenerT.ExitComment(s)
-	}
-}
-
-func (s *CommentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case emailaddressVisitor:
-		return t.VisitComment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

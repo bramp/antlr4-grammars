@@ -167,16 +167,6 @@ func (s *SequenceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SequenceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case fastaVisitor:
-		return t.VisitSequence(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *fastaParser) Sequence() (localctx ISequenceContext) {
 	localctx = NewSequenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, fastaParserRULE_sequence)
@@ -305,16 +295,6 @@ func (s *SectionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SectionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case fastaVisitor:
-		return t.VisitSection(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *fastaParser) Section() (localctx ISectionContext) {
 	localctx = NewSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, fastaParserRULE_section)
@@ -433,16 +413,6 @@ func (s *SequencelinesContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SequencelinesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case fastaVisitor:
-		return t.VisitSequencelines(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *fastaParser) Sequencelines() (localctx ISequencelinesContext) {
 	localctx = NewSequencelinesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, fastaParserRULE_sequencelines)
@@ -551,16 +521,6 @@ func (s *DescriptionlineContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DescriptionlineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case fastaVisitor:
-		return t.VisitDescriptionline(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *fastaParser) Descriptionline() (localctx IDescriptionlineContext) {
 	localctx = NewDescriptionlineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, fastaParserRULE_descriptionline)
@@ -649,16 +609,6 @@ func (s *CommentlineContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CommentlineContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(fastaListener); ok {
 		listenerT.ExitCommentline(s)
-	}
-}
-
-func (s *CommentlineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case fastaVisitor:
-		return t.VisitCommentline(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

@@ -1953,16 +1953,6 @@ func (s *Abstract_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Abstract_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAbstract_literal(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Abstract_literal() (localctx IAbstract_literalContext) {
 	localctx = NewAbstract_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, vhdlParserRULE_abstract_literal)
@@ -2067,16 +2057,6 @@ func (s *Access_type_definitionContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Access_type_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitAccess_type_definition(s)
-	}
-}
-
-func (s *Access_type_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAccess_type_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2206,16 +2186,6 @@ func (s *Across_aspectContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Across_aspectContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitAcross_aspect(s)
-	}
-}
-
-func (s *Across_aspectContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAcross_aspect(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2351,16 +2321,6 @@ func (s *Actual_designatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Actual_designatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitActual_designator(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Actual_designator() (localctx IActual_designatorContext) {
 	localctx = NewActual_designatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, vhdlParserRULE_actual_designator)
@@ -2471,16 +2431,6 @@ func (s *Actual_parameter_partContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Actual_parameter_partContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitActual_parameter_part(s)
-	}
-}
-
-func (s *Actual_parameter_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitActual_parameter_part(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2596,16 +2546,6 @@ func (s *Actual_partContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Actual_partContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitActual_part(s)
-	}
-}
-
-func (s *Actual_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitActual_part(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2730,16 +2670,6 @@ func (s *Adding_operatorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Adding_operatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitAdding_operator(s)
-	}
-}
-
-func (s *Adding_operatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAdding_operator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2872,16 +2802,6 @@ func (s *AggregateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AggregateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitAggregate(s)
-	}
-}
-
-func (s *AggregateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAggregate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3055,16 +2975,6 @@ func (s *Alias_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Alias_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAlias_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Alias_declaration() (localctx IAlias_declarationContext) {
 	localctx = NewAlias_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, vhdlParserRULE_alias_declaration)
@@ -3213,16 +3123,6 @@ func (s *Alias_designatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Alias_designatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAlias_designator(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Alias_designator() (localctx IAlias_designatorContext) {
 	localctx = NewAlias_designatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, vhdlParserRULE_alias_designator)
@@ -3353,16 +3253,6 @@ func (s *Alias_indicationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Alias_indicationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAlias_indication(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Alias_indication() (localctx IAlias_indicationContext) {
 	localctx = NewAlias_indicationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, vhdlParserRULE_alias_indication)
@@ -3484,16 +3374,6 @@ func (s *AllocatorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AllocatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitAllocator(s)
-	}
-}
-
-func (s *AllocatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAllocator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3671,16 +3551,6 @@ func (s *Architecture_bodyContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Architecture_bodyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitArchitecture_body(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Architecture_body() (localctx IArchitecture_bodyContext) {
 	localctx = NewArchitecture_bodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, vhdlParserRULE_architecture_body)
@@ -3847,16 +3717,6 @@ func (s *Architecture_declarative_partContext) EnterRule(listener antlr.ParseTre
 func (s *Architecture_declarative_partContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitArchitecture_declarative_part(s)
-	}
-}
-
-func (s *Architecture_declarative_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitArchitecture_declarative_part(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4059,16 +3919,6 @@ func (s *Architecture_statementContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Architecture_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitArchitecture_statement(s)
-	}
-}
-
-func (s *Architecture_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitArchitecture_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4284,16 +4134,6 @@ func (s *Architecture_statement_partContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
-func (s *Architecture_statement_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitArchitecture_statement_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Architecture_statement_part() (localctx IArchitecture_statement_partContext) {
 	localctx = NewArchitecture_statement_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, vhdlParserRULE_architecture_statement_part)
@@ -4409,16 +4249,6 @@ func (s *Array_nature_definitionContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Array_nature_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitArray_nature_definition(s)
-	}
-}
-
-func (s *Array_nature_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitArray_nature_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4539,16 +4369,6 @@ func (s *Array_type_definitionContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Array_type_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitArray_type_definition(s)
-	}
-}
-
-func (s *Array_type_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitArray_type_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4694,16 +4514,6 @@ func (s *AssertionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AssertionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitAssertion(s)
-	}
-}
-
-func (s *AssertionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAssertion(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4853,16 +4663,6 @@ func (s *Assertion_statementContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *Assertion_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAssertion_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Assertion_statement() (localctx IAssertion_statementContext) {
 	localctx = NewAssertion_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, vhdlParserRULE_assertion_statement)
@@ -4987,16 +4787,6 @@ func (s *Association_elementContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Association_elementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitAssociation_element(s)
-	}
-}
-
-func (s *Association_elementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAssociation_element(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5129,16 +4919,6 @@ func (s *Association_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Association_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitAssociation_list(s)
-	}
-}
-
-func (s *Association_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAssociation_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5276,16 +5056,6 @@ func (s *Attribute_declarationContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *Attribute_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAttribute_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Attribute_declaration() (localctx IAttribute_declarationContext) {
 	localctx = NewAttribute_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, vhdlParserRULE_attribute_declaration)
@@ -5416,16 +5186,6 @@ func (s *Attribute_designatorContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Attribute_designatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitAttribute_designator(s)
-	}
-}
-
-func (s *Attribute_designatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAttribute_designator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5613,16 +5373,6 @@ func (s *Attribute_specificationContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
-func (s *Attribute_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitAttribute_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Attribute_specification() (localctx IAttribute_specificationContext) {
 	localctx = NewAttribute_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, vhdlParserRULE_attribute_specification)
@@ -5748,16 +5498,6 @@ func (s *Base_unit_declarationContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *Base_unit_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBase_unit_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Base_unit_declaration() (localctx IBase_unit_declarationContext) {
 	localctx = NewBase_unit_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, vhdlParserRULE_base_unit_declaration)
@@ -5880,16 +5620,6 @@ func (s *Binding_indicationContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Binding_indicationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitBinding_indication(s)
-	}
-}
-
-func (s *Binding_indicationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBinding_indication(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6083,16 +5813,6 @@ func (s *Block_configurationContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Block_configurationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitBlock_configuration(s)
-	}
-}
-
-func (s *Block_configurationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBlock_configuration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6448,16 +6168,6 @@ func (s *Block_declarative_itemContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Block_declarative_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBlock_declarative_item(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Block_declarative_item() (localctx IBlock_declarative_itemContext) {
 	localctx = NewBlock_declarative_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, vhdlParserRULE_block_declarative_item)
@@ -6721,16 +6431,6 @@ func (s *Block_declarative_partContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Block_declarative_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBlock_declarative_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Block_declarative_part() (localctx IBlock_declarative_partContext) {
 	localctx = NewBlock_declarative_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, vhdlParserRULE_block_declarative_part)
@@ -6874,16 +6574,6 @@ func (s *Block_headerContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Block_headerContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitBlock_header(s)
-	}
-}
-
-func (s *Block_headerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBlock_header(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7058,16 +6748,6 @@ func (s *Block_specificationContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Block_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitBlock_specification(s)
-	}
-}
-
-func (s *Block_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBlock_specification(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7283,16 +6963,6 @@ func (s *Block_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Block_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBlock_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Block_statement() (localctx IBlock_statementContext) {
 	localctx = NewBlock_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, vhdlParserRULE_block_statement)
@@ -7477,16 +7147,6 @@ func (s *Block_statement_partContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *Block_statement_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBlock_statement_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Block_statement_part() (localctx IBlock_statement_partContext) {
 	localctx = NewBlock_statement_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, vhdlParserRULE_block_statement_part)
@@ -7620,16 +7280,6 @@ func (s *Branch_quantity_declarationContext) EnterRule(listener antlr.ParseTreeL
 func (s *Branch_quantity_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitBranch_quantity_declaration(s)
-	}
-}
-
-func (s *Branch_quantity_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBranch_quantity_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7782,16 +7432,6 @@ func (s *Break_elementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Break_elementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBreak_element(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Break_element() (localctx IBreak_elementContext) {
 	localctx = NewBreak_elementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, vhdlParserRULE_break_element)
@@ -7930,16 +7570,6 @@ func (s *Break_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Break_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBreak_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Break_list() (localctx IBreak_listContext) {
 	localctx = NewBreak_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, vhdlParserRULE_break_list)
@@ -8061,16 +7691,6 @@ func (s *Break_selector_clauseContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Break_selector_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitBreak_selector_clause(s)
-	}
-}
-
-func (s *Break_selector_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBreak_selector_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8208,16 +7828,6 @@ func (s *Break_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Break_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitBreak_statement(s)
-	}
-}
-
-func (s *Break_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitBreak_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8423,16 +8033,6 @@ func (s *Case_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Case_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitCase_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Case_statement() (localctx ICase_statementContext) {
 	localctx = NewCase_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, vhdlParserRULE_case_statement)
@@ -8605,16 +8205,6 @@ func (s *Case_statement_alternativeContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
-func (s *Case_statement_alternativeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitCase_statement_alternative(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Case_statement_alternative() (localctx ICase_statement_alternativeContext) {
 	localctx = NewCase_statement_alternativeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, vhdlParserRULE_case_statement_alternative)
@@ -8745,16 +8335,6 @@ func (s *ChoiceContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ChoiceContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitChoice(s)
-	}
-}
-
-func (s *ChoiceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitChoice(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8900,16 +8480,6 @@ func (s *ChoicesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ChoicesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitChoices(s)
-	}
-}
-
-func (s *ChoicesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitChoices(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9066,16 +8636,6 @@ func (s *Component_configurationContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Component_configurationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitComponent_configuration(s)
-	}
-}
-
-func (s *Component_configurationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitComponent_configuration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9272,16 +8832,6 @@ func (s *Component_declarationContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *Component_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitComponent_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Component_declaration() (localctx IComponent_declarationContext) {
 	localctx = NewComponent_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, vhdlParserRULE_component_declaration)
@@ -9474,16 +9024,6 @@ func (s *Component_instantiation_statementContext) ExitRule(listener antlr.Parse
 	}
 }
 
-func (s *Component_instantiation_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitComponent_instantiation_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Component_instantiation_statement() (localctx IComponent_instantiation_statementContext) {
 	localctx = NewComponent_instantiation_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, vhdlParserRULE_component_instantiation_statement)
@@ -9626,16 +9166,6 @@ func (s *Component_specificationContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
-func (s *Component_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitComponent_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Component_specification() (localctx IComponent_specificationContext) {
 	localctx = NewComponent_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, vhdlParserRULE_component_specification)
@@ -9748,16 +9278,6 @@ func (s *Composite_nature_definitionContext) EnterRule(listener antlr.ParseTreeL
 func (s *Composite_nature_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitComposite_nature_definition(s)
-	}
-}
-
-func (s *Composite_nature_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitComposite_nature_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9881,16 +9401,6 @@ func (s *Composite_type_definitionContext) EnterRule(listener antlr.ParseTreeLis
 func (s *Composite_type_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitComposite_type_definition(s)
-	}
-}
-
-func (s *Composite_type_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitComposite_type_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10022,16 +9532,6 @@ func (s *Concurrent_assertion_statementContext) EnterRule(listener antlr.ParseTr
 func (s *Concurrent_assertion_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitConcurrent_assertion_statement(s)
-	}
-}
-
-func (s *Concurrent_assertion_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConcurrent_assertion_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10198,16 +9698,6 @@ func (s *Concurrent_break_statementContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Concurrent_break_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitConcurrent_break_statement(s)
-	}
-}
-
-func (s *Concurrent_break_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConcurrent_break_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10379,16 +9869,6 @@ func (s *Concurrent_procedure_call_statementContext) ExitRule(listener antlr.Par
 	}
 }
 
-func (s *Concurrent_procedure_call_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConcurrent_procedure_call_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Concurrent_procedure_call_statement() (localctx IConcurrent_procedure_call_statementContext) {
 	localctx = NewConcurrent_procedure_call_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, vhdlParserRULE_concurrent_procedure_call_statement)
@@ -10537,16 +10017,6 @@ func (s *Concurrent_signal_assignment_statementContext) ExitRule(listener antlr.
 	}
 }
 
-func (s *Concurrent_signal_assignment_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConcurrent_signal_assignment_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Concurrent_signal_assignment_statement() (localctx IConcurrent_signal_assignment_statementContext) {
 	localctx = NewConcurrent_signal_assignment_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, vhdlParserRULE_concurrent_signal_assignment_statement)
@@ -10681,16 +10151,6 @@ func (s *ConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ConditionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitCondition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Condition() (localctx IConditionContext) {
 	localctx = NewConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, vhdlParserRULE_condition)
@@ -10789,16 +10249,6 @@ func (s *Condition_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Condition_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitCondition_clause(s)
-	}
-}
-
-func (s *Condition_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitCondition_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10928,16 +10378,6 @@ func (s *Conditional_signal_assignmentContext) EnterRule(listener antlr.ParseTre
 func (s *Conditional_signal_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitConditional_signal_assignment(s)
-	}
-}
-
-func (s *Conditional_signal_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConditional_signal_assignment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11079,16 +10519,6 @@ func (s *Conditional_waveformsContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Conditional_waveformsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitConditional_waveforms(s)
-	}
-}
-
-func (s *Conditional_waveformsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConditional_waveforms(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11287,16 +10717,6 @@ func (s *Configuration_declarationContext) ExitRule(listener antlr.ParseTreeList
 	}
 }
 
-func (s *Configuration_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConfiguration_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Configuration_declaration() (localctx IConfiguration_declarationContext) {
 	localctx = NewConfiguration_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, vhdlParserRULE_configuration_declaration)
@@ -11469,16 +10889,6 @@ func (s *Configuration_declarative_itemContext) ExitRule(listener antlr.ParseTre
 	}
 }
 
-func (s *Configuration_declarative_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConfiguration_declarative_item(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Configuration_declarative_item() (localctx IConfiguration_declarative_itemContext) {
 	localctx = NewConfiguration_declarative_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, vhdlParserRULE_configuration_declarative_item)
@@ -11612,16 +11022,6 @@ func (s *Configuration_declarative_partContext) ExitRule(listener antlr.ParseTre
 	}
 }
 
-func (s *Configuration_declarative_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConfiguration_declarative_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Configuration_declarative_part() (localctx IConfiguration_declarative_partContext) {
 	localctx = NewConfiguration_declarative_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 118, vhdlParserRULE_configuration_declarative_part)
@@ -11737,16 +11137,6 @@ func (s *Configuration_itemContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Configuration_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitConfiguration_item(s)
-	}
-}
-
-func (s *Configuration_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConfiguration_item(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11875,16 +11265,6 @@ func (s *Configuration_specificationContext) EnterRule(listener antlr.ParseTreeL
 func (s *Configuration_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitConfiguration_specification(s)
-	}
-}
-
-func (s *Configuration_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConfiguration_specification(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12030,16 +11410,6 @@ func (s *Constant_declarationContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Constant_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitConstant_declaration(s)
-	}
-}
-
-func (s *Constant_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConstant_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12190,16 +11560,6 @@ func (s *Constrained_array_definitionContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
-func (s *Constrained_array_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConstrained_array_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Constrained_array_definition() (localctx IConstrained_array_definitionContext) {
 	localctx = NewConstrained_array_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, vhdlParserRULE_constrained_array_definition)
@@ -12327,16 +11687,6 @@ func (s *Constrained_nature_definitionContext) ExitRule(listener antlr.ParseTree
 	}
 }
 
-func (s *Constrained_nature_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConstrained_nature_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Constrained_nature_definition() (localctx IConstrained_nature_definitionContext) {
 	localctx = NewConstrained_nature_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, vhdlParserRULE_constrained_nature_definition)
@@ -12453,16 +11803,6 @@ func (s *ConstraintContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ConstraintContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitConstraint(s)
-	}
-}
-
-func (s *ConstraintContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitConstraint(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12592,16 +11932,6 @@ func (s *Context_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Context_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitContext_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Context_clause() (localctx IContext_clauseContext) {
 	localctx = NewContext_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, vhdlParserRULE_context_clause)
@@ -12717,16 +12047,6 @@ func (s *Context_itemContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Context_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitContext_item(s)
-	}
-}
-
-func (s *Context_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitContext_item(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12852,16 +12172,6 @@ func (s *Delay_mechanismContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Delay_mechanismContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitDelay_mechanism(s)
-	}
-}
-
-func (s *Delay_mechanismContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitDelay_mechanism(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13011,16 +12321,6 @@ func (s *Design_fileContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Design_fileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitDesign_file(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Design_file() (localctx IDesign_fileContext) {
 	localctx = NewDesign_fileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 138, vhdlParserRULE_design_file)
@@ -13143,16 +12443,6 @@ func (s *Design_unitContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Design_unitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitDesign_unit(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Design_unit() (localctx IDesign_unitContext) {
 	localctx = NewDesign_unitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 140, vhdlParserRULE_design_unit)
@@ -13255,16 +12545,6 @@ func (s *DesignatorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DesignatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitDesignator(s)
-	}
-}
-
-func (s *DesignatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitDesignator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13376,16 +12656,6 @@ func (s *DirectionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DirectionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitDirection(s)
-	}
-}
-
-func (s *DirectionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitDirection(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13514,16 +12784,6 @@ func (s *Disconnection_specificationContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
-func (s *Disconnection_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitDisconnection_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Disconnection_specification() (localctx IDisconnection_specificationContext) {
 	localctx = NewDisconnection_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 146, vhdlParserRULE_disconnection_specification)
@@ -13644,16 +12904,6 @@ func (s *Discrete_rangeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Discrete_rangeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitDiscrete_range(s)
-	}
-}
-
-func (s *Discrete_rangeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitDiscrete_range(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13778,16 +13028,6 @@ func (s *Element_associationContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Element_associationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitElement_association(s)
-	}
-}
-
-func (s *Element_associationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitElement_association(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13920,16 +13160,6 @@ func (s *Element_declarationContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *Element_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitElement_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Element_declaration() (localctx IElement_declarationContext) {
 	localctx = NewElement_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 152, vhdlParserRULE_element_declaration)
@@ -14039,16 +13269,6 @@ func (s *Element_subnature_definitionContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
-func (s *Element_subnature_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitElement_subnature_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Element_subnature_definition() (localctx IElement_subnature_definitionContext) {
 	localctx = NewElement_subnature_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 154, vhdlParserRULE_element_subnature_definition)
@@ -14143,16 +13363,6 @@ func (s *Element_subtype_definitionContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Element_subtype_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitElement_subtype_definition(s)
-	}
-}
-
-func (s *Element_subtype_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitElement_subtype_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -14280,16 +13490,6 @@ func (s *Entity_aspectContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Entity_aspectContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitEntity_aspect(s)
-	}
-}
-
-func (s *Entity_aspectContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_aspect(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -14515,16 +13715,6 @@ func (s *Entity_classContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Entity_classContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_class(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Entity_class() (localctx IEntity_classContext) {
 	localctx = NewEntity_classContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 160, vhdlParserRULE_entity_class)
@@ -14629,16 +13819,6 @@ func (s *Entity_class_entryContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Entity_class_entryContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitEntity_class_entry(s)
-	}
-}
-
-func (s *Entity_class_entryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_class_entry(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -14769,16 +13949,6 @@ func (s *Entity_class_entry_listContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Entity_class_entry_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitEntity_class_entry_list(s)
-	}
-}
-
-func (s *Entity_class_entry_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_class_entry_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -14962,16 +14132,6 @@ func (s *Entity_declarationContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Entity_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitEntity_declaration(s)
-	}
-}
-
-func (s *Entity_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -15324,16 +14484,6 @@ func (s *Entity_declarative_itemContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
-func (s *Entity_declarative_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_declarative_item(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Entity_declarative_item() (localctx IEntity_declarative_itemContext) {
 	localctx = NewEntity_declarative_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 168, vhdlParserRULE_entity_declarative_item)
@@ -15583,16 +14733,6 @@ func (s *Entity_declarative_partContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
-func (s *Entity_declarative_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_declarative_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Entity_declarative_part() (localctx IEntity_declarative_partContext) {
 	localctx = NewEntity_declarative_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 170, vhdlParserRULE_entity_declarative_part)
@@ -15708,16 +14848,6 @@ func (s *Entity_designatorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Entity_designatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitEntity_designator(s)
-	}
-}
-
-func (s *Entity_designatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_designator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -15837,16 +14967,6 @@ func (s *Entity_headerContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Entity_headerContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitEntity_header(s)
-	}
-}
-
-func (s *Entity_headerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_header(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -15992,16 +15112,6 @@ func (s *Entity_name_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Entity_name_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitEntity_name_list(s)
-	}
-}
-
-func (s *Entity_name_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_name_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -16158,16 +15268,6 @@ func (s *Entity_specificationContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *Entity_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Entity_specification() (localctx IEntity_specificationContext) {
 	localctx = NewEntity_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 178, vhdlParserRULE_entity_specification)
@@ -16290,16 +15390,6 @@ func (s *Entity_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Entity_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitEntity_statement(s)
-	}
-}
-
-func (s *Entity_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -16433,16 +15523,6 @@ func (s *Entity_statement_partContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *Entity_statement_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_statement_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Entity_statement_part() (localctx IEntity_statement_partContext) {
 	localctx = NewEntity_statement_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 182, vhdlParserRULE_entity_statement_part)
@@ -16556,16 +15636,6 @@ func (s *Entity_tagContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Entity_tagContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitEntity_tag(s)
-	}
-}
-
-func (s *Entity_tagContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEntity_tag(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -16690,16 +15760,6 @@ func (s *Enumeration_literalContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Enumeration_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitEnumeration_literal(s)
-	}
-}
-
-func (s *Enumeration_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEnumeration_literal(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -16842,16 +15902,6 @@ func (s *Enumeration_type_definitionContext) EnterRule(listener antlr.ParseTreeL
 func (s *Enumeration_type_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitEnumeration_type_definition(s)
-	}
-}
-
-func (s *Enumeration_type_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitEnumeration_type_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -17008,16 +16058,6 @@ func (s *Exit_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Exit_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitExit_statement(s)
-	}
-}
-
-func (s *Exit_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitExit_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -17196,16 +16236,6 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Expression() (localctx IExpressionContext) {
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 192, vhdlParserRULE_expression)
@@ -17347,16 +16377,6 @@ func (s *FactorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FactorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitFactor(s)
-	}
-}
-
-func (s *FactorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitFactor(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -17534,16 +16554,6 @@ func (s *File_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *File_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitFile_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) File_declaration() (localctx IFile_declarationContext) {
 	localctx = NewFile_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 196, vhdlParserRULE_file_declaration)
@@ -17669,16 +16679,6 @@ func (s *File_logical_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *File_logical_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitFile_logical_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) File_logical_name() (localctx IFile_logical_nameContext) {
 	localctx = NewFile_logical_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 198, vhdlParserRULE_file_logical_name)
@@ -17791,16 +16791,6 @@ func (s *File_open_informationContext) EnterRule(listener antlr.ParseTreeListene
 func (s *File_open_informationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitFile_open_information(s)
-	}
-}
-
-func (s *File_open_informationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitFile_open_information(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -17929,16 +16919,6 @@ func (s *File_type_definitionContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *File_type_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitFile_type_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) File_type_definition() (localctx IFile_type_definitionContext) {
 	localctx = NewFile_type_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 202, vhdlParserRULE_file_type_definition)
@@ -18041,16 +17021,6 @@ func (s *Formal_parameter_listContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Formal_parameter_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitFormal_parameter_list(s)
-	}
-}
-
-func (s *Formal_parameter_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitFormal_parameter_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -18166,16 +17136,6 @@ func (s *Formal_partContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Formal_partContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitFormal_part(s)
-	}
-}
-
-func (s *Formal_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitFormal_part(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -18334,16 +17294,6 @@ func (s *Free_quantity_declarationContext) EnterRule(listener antlr.ParseTreeLis
 func (s *Free_quantity_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitFree_quantity_declaration(s)
-	}
-}
-
-func (s *Free_quantity_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitFree_quantity_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -18562,16 +17512,6 @@ func (s *Generate_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Generate_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitGenerate_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Generate_statement() (localctx IGenerate_statementContext) {
 	localctx = NewGenerate_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 210, vhdlParserRULE_generate_statement)
@@ -18758,16 +17698,6 @@ func (s *Generation_schemeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Generation_schemeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitGeneration_scheme(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Generation_scheme() (localctx IGeneration_schemeContext) {
 	localctx = NewGeneration_schemeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 212, vhdlParserRULE_generation_scheme)
@@ -18905,16 +17835,6 @@ func (s *Generic_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Generic_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitGeneric_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Generic_clause() (localctx IGeneric_clauseContext) {
 	localctx = NewGeneric_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 214, vhdlParserRULE_generic_clause)
@@ -19046,16 +17966,6 @@ func (s *Generic_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Generic_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitGeneric_list(s)
-	}
-}
-
-func (s *Generic_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitGeneric_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -19191,16 +18101,6 @@ func (s *Generic_map_aspectContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Generic_map_aspectContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitGeneric_map_aspect(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Generic_map_aspect() (localctx IGeneric_map_aspectContext) {
 	localctx = NewGeneric_map_aspectContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 218, vhdlParserRULE_generic_map_aspect)
@@ -19315,16 +18215,6 @@ func (s *Group_constituentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Group_constituentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitGroup_constituent(s)
-	}
-}
-
-func (s *Group_constituentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitGroup_constituent(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -19459,16 +18349,6 @@ func (s *Group_constituent_listContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Group_constituent_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitGroup_constituent_list(s)
-	}
-}
-
-func (s *Group_constituent_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitGroup_constituent_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -19624,16 +18504,6 @@ func (s *Group_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Group_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitGroup_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Group_declaration() (localctx IGroup_declarationContext) {
 	localctx = NewGroup_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 224, vhdlParserRULE_group_declaration)
@@ -19785,16 +18655,6 @@ func (s *Group_template_declarationContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
-func (s *Group_template_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitGroup_template_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Group_template_declaration() (localctx IGroup_template_declarationContext) {
 	localctx = NewGroup_template_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 226, vhdlParserRULE_group_template_declaration)
@@ -19930,16 +18790,6 @@ func (s *Guarded_signal_specificationContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
-func (s *Guarded_signal_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitGuarded_signal_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Guarded_signal_specification() (localctx IGuarded_signal_specificationContext) {
 	localctx = NewGuarded_signal_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 228, vhdlParserRULE_guarded_signal_specification)
@@ -20040,16 +18890,6 @@ func (s *IdentifierContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitIdentifier(s)
-	}
-}
-
-func (s *IdentifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitIdentifier(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -20174,16 +19014,6 @@ func (s *Identifier_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Identifier_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitIdentifier_list(s)
-	}
-}
-
-func (s *Identifier_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitIdentifier_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -20392,16 +19222,6 @@ func (s *If_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *If_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitIf_statement(s)
-	}
-}
-
-func (s *If_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitIf_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -20619,16 +19439,6 @@ func (s *Index_constraintContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Index_constraintContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitIndex_constraint(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Index_constraint() (localctx IIndex_constraintContext) {
 	localctx = NewIndex_constraintContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 236, vhdlParserRULE_index_constraint)
@@ -20763,16 +19573,6 @@ func (s *Index_specificationContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *Index_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitIndex_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Index_specification() (localctx IIndex_specificationContext) {
 	localctx = NewIndex_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 238, vhdlParserRULE_index_specification)
@@ -20888,16 +19688,6 @@ func (s *Index_subtype_definitionContext) EnterRule(listener antlr.ParseTreeList
 func (s *Index_subtype_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitIndex_subtype_definition(s)
-	}
-}
-
-func (s *Index_subtype_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitIndex_subtype_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -21033,16 +19823,6 @@ func (s *Instantiated_unitContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Instantiated_unitContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitInstantiated_unit(s)
-	}
-}
-
-func (s *Instantiated_unitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInstantiated_unit(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -21234,16 +20014,6 @@ func (s *Instantiation_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Instantiation_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInstantiation_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Instantiation_list() (localctx IInstantiation_listContext) {
 	localctx = NewInstantiation_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 244, vhdlParserRULE_instantiation_list)
@@ -21416,16 +20186,6 @@ func (s *Interface_constant_declarationContext) EnterRule(listener antlr.ParseTr
 func (s *Interface_constant_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitInterface_constant_declaration(s)
-	}
-}
-
-func (s *Interface_constant_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_constant_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -21622,16 +20382,6 @@ func (s *Interface_declarationContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *Interface_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Interface_declaration() (localctx IInterface_declarationContext) {
 	localctx = NewInterface_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 248, vhdlParserRULE_interface_declaration)
@@ -21770,16 +20520,6 @@ func (s *Interface_elementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Interface_elementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_element(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Interface_element() (localctx IInterface_elementContext) {
 	localctx = NewInterface_elementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 250, vhdlParserRULE_interface_element)
@@ -21892,16 +20632,6 @@ func (s *Interface_file_declarationContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Interface_file_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitInterface_file_declaration(s)
-	}
-}
-
-func (s *Interface_file_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_file_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -22032,16 +20762,6 @@ func (s *Interface_signal_listContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Interface_signal_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitInterface_signal_list(s)
-	}
-}
-
-func (s *Interface_signal_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_signal_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -22182,16 +20902,6 @@ func (s *Interface_port_listContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *Interface_port_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_port_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Interface_port_list() (localctx IInterface_port_listContext) {
 	localctx = NewInterface_port_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 256, vhdlParserRULE_interface_port_list)
@@ -22326,16 +21036,6 @@ func (s *Interface_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Interface_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitInterface_list(s)
-	}
-}
-
-func (s *Interface_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -22492,16 +21192,6 @@ func (s *Interface_quantity_declarationContext) EnterRule(listener antlr.ParseTr
 func (s *Interface_quantity_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitInterface_quantity_declaration(s)
-	}
-}
-
-func (s *Interface_quantity_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_quantity_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -22688,16 +21378,6 @@ func (s *Interface_port_declarationContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
-func (s *Interface_port_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_port_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Interface_port_declaration() (localctx IInterface_port_declarationContext) {
 	localctx = NewInterface_port_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 262, vhdlParserRULE_interface_port_declaration)
@@ -22880,16 +21560,6 @@ func (s *Interface_signal_declarationContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
-func (s *Interface_signal_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_signal_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Interface_signal_declaration() (localctx IInterface_signal_declarationContext) {
 	localctx = NewInterface_signal_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 264, vhdlParserRULE_interface_signal_declaration)
@@ -23055,16 +21725,6 @@ func (s *Interface_terminal_declarationContext) ExitRule(listener antlr.ParseTre
 	}
 }
 
-func (s *Interface_terminal_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_terminal_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Interface_terminal_declaration() (localctx IInterface_terminal_declarationContext) {
 	localctx = NewInterface_terminal_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 266, vhdlParserRULE_interface_terminal_declaration)
@@ -23213,16 +21873,6 @@ func (s *Interface_variable_declarationContext) EnterRule(listener antlr.ParseTr
 func (s *Interface_variable_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitInterface_variable_declaration(s)
-	}
-}
-
-func (s *Interface_variable_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitInterface_variable_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -23387,16 +22037,6 @@ func (s *Iteration_schemeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Iteration_schemeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitIteration_scheme(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Iteration_scheme() (localctx IIteration_schemeContext) {
 	localctx = NewIteration_schemeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 270, vhdlParserRULE_iteration_scheme)
@@ -23522,16 +22162,6 @@ func (s *Label_colonContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Label_colonContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitLabel_colon(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Label_colon() (localctx ILabel_colonContext) {
 	localctx = NewLabel_colonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 272, vhdlParserRULE_label_colon)
@@ -23638,16 +22268,6 @@ func (s *Library_clauseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Library_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitLibrary_clause(s)
-	}
-}
-
-func (s *Library_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitLibrary_clause(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -23763,16 +22383,6 @@ func (s *Library_unitContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Library_unitContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitLibrary_unit(s)
-	}
-}
-
-func (s *Library_unitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitLibrary_unit(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -23905,16 +22515,6 @@ func (s *LiteralContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitLiteral(s)
-	}
-}
-
-func (s *LiteralContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitLiteral(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -24052,16 +22652,6 @@ func (s *Logical_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Logical_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitLogical_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Logical_name() (localctx ILogical_nameContext) {
 	localctx = NewLogical_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 280, vhdlParserRULE_logical_name)
@@ -24177,16 +22767,6 @@ func (s *Logical_name_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Logical_name_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitLogical_name_list(s)
-	}
-}
-
-func (s *Logical_name_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitLogical_name_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -24317,16 +22897,6 @@ func (s *Logical_operatorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Logical_operatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitLogical_operator(s)
-	}
-}
-
-func (s *Logical_operatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitLogical_operator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -24476,16 +23046,6 @@ func (s *Loop_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Loop_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitLoop_statement(s)
-	}
-}
-
-func (s *Loop_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitLoop_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -24646,16 +23206,6 @@ func (s *Signal_modeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Signal_modeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSignal_mode(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Signal_mode() (localctx ISignal_modeContext) {
 	localctx = NewSignal_modeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 288, vhdlParserRULE_signal_mode)
@@ -24762,16 +23312,6 @@ func (s *Multiplying_operatorContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Multiplying_operatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitMultiplying_operator(s)
-	}
-}
-
-func (s *Multiplying_operatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitMultiplying_operator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -24906,16 +23446,6 @@ func (s *NameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitName(s)
-	}
-}
-
-func (s *NameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -25081,16 +23611,6 @@ func (s *Name_partContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Name_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitName_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Name_part() (localctx IName_partContext) {
 	localctx = NewName_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 294, vhdlParserRULE_name_part)
@@ -25245,16 +23765,6 @@ func (s *Name_attribute_partContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *Name_attribute_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitName_attribute_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Name_attribute_part() (localctx IName_attribute_partContext) {
 	localctx = NewName_attribute_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 296, vhdlParserRULE_name_attribute_part)
@@ -25393,16 +23903,6 @@ func (s *Name_function_call_or_indexed_partContext) EnterRule(listener antlr.Par
 func (s *Name_function_call_or_indexed_partContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitName_function_call_or_indexed_part(s)
-	}
-}
-
-func (s *Name_function_call_or_indexed_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitName_function_call_or_indexed_part(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -25553,16 +24053,6 @@ func (s *Name_slice_partContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Name_slice_partContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitName_slice_part(s)
-	}
-}
-
-func (s *Name_slice_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitName_slice_part(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -25738,16 +24228,6 @@ func (s *Selected_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Selected_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSelected_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Selected_name() (localctx ISelected_nameContext) {
 	localctx = NewSelected_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 302, vhdlParserRULE_selected_name)
@@ -25889,16 +24369,6 @@ func (s *Nature_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Nature_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitNature_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Nature_declaration() (localctx INature_declarationContext) {
 	localctx = NewNature_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 304, vhdlParserRULE_nature_declaration)
@@ -26019,16 +24489,6 @@ func (s *Nature_definitionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Nature_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitNature_definition(s)
-	}
-}
-
-func (s *Nature_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitNature_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -26156,16 +24616,6 @@ func (s *Nature_element_declarationContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Nature_element_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitNature_element_declaration(s)
-	}
-}
-
-func (s *Nature_element_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitNature_element_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -26303,16 +24753,6 @@ func (s *Next_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Next_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitNext_statement(s)
-	}
-}
-
-func (s *Next_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitNext_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -26462,16 +24902,6 @@ func (s *Numeric_literalContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Numeric_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitNumeric_literal(s)
-	}
-}
-
-func (s *Numeric_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitNumeric_literal(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -26635,16 +25065,6 @@ func (s *Object_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Object_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitObject_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Object_declaration() (localctx IObject_declarationContext) {
 	localctx = NewObject_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 314, vhdlParserRULE_object_declaration)
@@ -26787,16 +25207,6 @@ func (s *OptsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OptsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitOpts(s)
-	}
-}
-
-func (s *OptsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitOpts(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -26964,16 +25374,6 @@ func (s *Package_bodyContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Package_bodyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitPackage_body(s)
-	}
-}
-
-func (s *Package_bodyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPackage_body(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -27225,16 +25625,6 @@ func (s *Package_body_declarative_itemContext) ExitRule(listener antlr.ParseTree
 	}
 }
 
-func (s *Package_body_declarative_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPackage_body_declarative_item(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Package_body_declarative_item() (localctx IPackage_body_declarative_itemContext) {
 	localctx = NewPackage_body_declarative_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 320, vhdlParserRULE_package_body_declarative_item)
@@ -27421,16 +25811,6 @@ func (s *Package_body_declarative_partContext) ExitRule(listener antlr.ParseTree
 	}
 }
 
-func (s *Package_body_declarative_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPackage_body_declarative_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Package_body_declarative_part() (localctx IPackage_body_declarative_partContext) {
 	localctx = NewPackage_body_declarative_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 322, vhdlParserRULE_package_body_declarative_part)
@@ -27579,16 +25959,6 @@ func (s *Package_declarationContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Package_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitPackage_declaration(s)
-	}
-}
-
-func (s *Package_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPackage_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -27902,16 +26272,6 @@ func (s *Package_declarative_itemContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *Package_declarative_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPackage_declarative_item(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Package_declarative_item() (localctx IPackage_declarative_itemContext) {
 	localctx = NewPackage_declarative_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 326, vhdlParserRULE_package_declarative_item)
@@ -28147,16 +26507,6 @@ func (s *Package_declarative_partContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *Package_declarative_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPackage_declarative_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Package_declarative_part() (localctx IPackage_declarative_partContext) {
 	localctx = NewPackage_declarative_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 328, vhdlParserRULE_package_declarative_part)
@@ -28279,16 +26629,6 @@ func (s *Parameter_specificationContext) ExitRule(listener antlr.ParseTreeListen
 	}
 }
 
-func (s *Parameter_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitParameter_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Parameter_specification() (localctx IParameter_specificationContext) {
 	localctx = NewParameter_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 330, vhdlParserRULE_parameter_specification)
@@ -28401,16 +26741,6 @@ func (s *Physical_literalContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Physical_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitPhysical_literal(s)
-	}
-}
-
-func (s *Physical_literalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPhysical_literal(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -28571,16 +26901,6 @@ func (s *Physical_type_definitionContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *Physical_type_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPhysical_type_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Physical_type_definition() (localctx IPhysical_type_definitionContext) {
 	localctx = NewPhysical_type_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 334, vhdlParserRULE_physical_type_definition)
@@ -28736,16 +27056,6 @@ func (s *Port_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Port_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPort_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Port_clause() (localctx IPort_clauseContext) {
 	localctx = NewPort_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 336, vhdlParserRULE_port_clause)
@@ -28859,16 +27169,6 @@ func (s *Port_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Port_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPort_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Port_list() (localctx IPort_listContext) {
 	localctx = NewPort_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 338, vhdlParserRULE_port_list)
@@ -28979,16 +27279,6 @@ func (s *Port_map_aspectContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Port_map_aspectContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitPort_map_aspect(s)
-	}
-}
-
-func (s *Port_map_aspectContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPort_map_aspect(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -29163,16 +27453,6 @@ func (s *PrimaryContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PrimaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPrimary(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Primary() (localctx IPrimaryContext) {
 	localctx = NewPrimaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 342, vhdlParserRULE_primary)
@@ -29336,16 +27616,6 @@ func (s *Primary_unitContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Primary_unitContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitPrimary_unit(s)
-	}
-}
-
-func (s *Primary_unitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitPrimary_unit(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -29579,16 +27849,6 @@ func (s *Procedural_declarative_itemContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
-func (s *Procedural_declarative_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitProcedural_declarative_item(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Procedural_declarative_item() (localctx IProcedural_declarative_itemContext) {
 	localctx = NewProcedural_declarative_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 346, vhdlParserRULE_procedural_declarative_item)
@@ -29782,16 +28042,6 @@ func (s *Procedural_declarative_partContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
-func (s *Procedural_declarative_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitProcedural_declarative_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Procedural_declarative_part() (localctx IProcedural_declarative_partContext) {
 	localctx = NewProcedural_declarative_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 348, vhdlParserRULE_procedural_declarative_part)
@@ -29910,16 +28160,6 @@ func (s *Procedural_statement_partContext) EnterRule(listener antlr.ParseTreeLis
 func (s *Procedural_statement_partContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitProcedural_statement_part(s)
-	}
-}
-
-func (s *Procedural_statement_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitProcedural_statement_part(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -30046,16 +28286,6 @@ func (s *Procedure_callContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Procedure_callContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitProcedure_call(s)
-	}
-}
-
-func (s *Procedure_callContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitProcedure_call(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -30187,16 +28417,6 @@ func (s *Procedure_call_statementContext) EnterRule(listener antlr.ParseTreeList
 func (s *Procedure_call_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitProcedure_call_statement(s)
-	}
-}
-
-func (s *Procedure_call_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitProcedure_call_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -30431,16 +28651,6 @@ func (s *Process_declarative_itemContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *Process_declarative_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitProcess_declarative_item(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Process_declarative_item() (localctx IProcess_declarative_itemContext) {
 	localctx = NewProcess_declarative_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 356, vhdlParserRULE_process_declarative_item)
@@ -30641,16 +28851,6 @@ func (s *Process_declarative_partContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *Process_declarative_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitProcess_declarative_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Process_declarative_part() (localctx IProcess_declarative_partContext) {
 	localctx = NewProcess_declarative_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 358, vhdlParserRULE_process_declarative_part)
@@ -30836,16 +29036,6 @@ func (s *Process_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Process_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitProcess_statement(s)
-	}
-}
-
-func (s *Process_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitProcess_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -31058,16 +29248,6 @@ func (s *Process_statement_partContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Process_statement_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitProcess_statement_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Process_statement_part() (localctx IProcess_statement_partContext) {
 	localctx = NewProcess_statement_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 362, vhdlParserRULE_process_statement_part)
@@ -31205,16 +29385,6 @@ func (s *Qualified_expressionContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Qualified_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitQualified_expression(s)
-	}
-}
-
-func (s *Qualified_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitQualified_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -31363,16 +29533,6 @@ func (s *Quantity_declarationContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *Quantity_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitQuantity_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Quantity_declaration() (localctx IQuantity_declarationContext) {
 	localctx = NewQuantity_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 366, vhdlParserRULE_quantity_declaration)
@@ -31516,16 +29676,6 @@ func (s *Quantity_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Quantity_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitQuantity_list(s)
-	}
-}
-
-func (s *Quantity_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitQuantity_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -31682,16 +29832,6 @@ func (s *Quantity_specificationContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Quantity_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitQuantity_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Quantity_specification() (localctx IQuantity_specificationContext) {
 	localctx = NewQuantity_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 370, vhdlParserRULE_quantity_specification)
@@ -31804,16 +29944,6 @@ func (s *Range_declContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Range_declContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitRange_decl(s)
-	}
-}
-
-func (s *Range_declContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitRange_decl(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -31950,16 +30080,6 @@ func (s *Explicit_rangeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Explicit_rangeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitExplicit_range(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Explicit_range() (localctx IExplicit_rangeContext) {
 	localctx = NewExplicit_rangeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 374, vhdlParserRULE_explicit_range)
@@ -32072,16 +30192,6 @@ func (s *Range_constraintContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Range_constraintContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitRange_constraint(s)
-	}
-}
-
-func (s *Range_constraintContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitRange_constraint(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -32218,16 +30328,6 @@ func (s *Record_nature_definitionContext) EnterRule(listener antlr.ParseTreeList
 func (s *Record_nature_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitRecord_nature_definition(s)
-	}
-}
-
-func (s *Record_nature_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitRecord_nature_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -32397,16 +30497,6 @@ func (s *Record_type_definitionContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Record_type_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitRecord_type_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Record_type_definition() (localctx IRecord_type_definitionContext) {
 	localctx = NewRecord_type_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 380, vhdlParserRULE_record_type_definition)
@@ -32561,16 +30651,6 @@ func (s *RelationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RelationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitRelation(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Relation() (localctx IRelationContext) {
 	localctx = NewRelationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 382, vhdlParserRULE_relation)
@@ -32693,16 +30773,6 @@ func (s *Relational_operatorContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Relational_operatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitRelational_operator(s)
-	}
-}
-
-func (s *Relational_operatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitRelational_operator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -32841,16 +30911,6 @@ func (s *Report_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Report_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitReport_statement(s)
-	}
-}
-
-func (s *Report_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitReport_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -33004,16 +31064,6 @@ func (s *Return_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Return_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitReturn_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Return_statement() (localctx IReturn_statementContext) {
 	localctx = NewReturn_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 388, vhdlParserRULE_return_statement)
@@ -33163,16 +31213,6 @@ func (s *Scalar_nature_definitionContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *Scalar_nature_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitScalar_nature_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Scalar_nature_definition() (localctx IScalar_nature_definitionContext) {
 	localctx = NewScalar_nature_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 390, vhdlParserRULE_scalar_nature_definition)
@@ -33310,16 +31350,6 @@ func (s *Scalar_type_definitionContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Scalar_type_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitScalar_type_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Scalar_type_definition() (localctx IScalar_type_definitionContext) {
 	localctx = NewScalar_type_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 392, vhdlParserRULE_scalar_type_definition)
@@ -33444,16 +31474,6 @@ func (s *Secondary_unitContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Secondary_unitContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSecondary_unit(s)
-	}
-}
-
-func (s *Secondary_unitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSecondary_unit(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -33585,16 +31605,6 @@ func (s *Secondary_unit_declarationContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Secondary_unit_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSecondary_unit_declaration(s)
-	}
-}
-
-func (s *Secondary_unit_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSecondary_unit_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -33750,16 +31760,6 @@ func (s *Selected_signal_assignmentContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Selected_signal_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSelected_signal_assignment(s)
-	}
-}
-
-func (s *Selected_signal_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSelected_signal_assignment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -33940,16 +31940,6 @@ func (s *Selected_waveformsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Selected_waveformsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSelected_waveforms(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Selected_waveforms() (localctx ISelected_waveformsContext) {
 	localctx = NewSelected_waveformsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 400, vhdlParserRULE_selected_waveforms)
@@ -34086,16 +32076,6 @@ func (s *Sensitivity_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Sensitivity_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSensitivity_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Sensitivity_clause() (localctx ISensitivity_clauseContext) {
 	localctx = NewSensitivity_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 402, vhdlParserRULE_sensitivity_clause)
@@ -34215,16 +32195,6 @@ func (s *Sensitivity_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Sensitivity_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSensitivity_list(s)
-	}
-}
-
-func (s *Sensitivity_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSensitivity_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -34354,16 +32324,6 @@ func (s *Sequence_of_statementsContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Sequence_of_statementsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSequence_of_statements(s)
-	}
-}
-
-func (s *Sequence_of_statementsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSequence_of_statements(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -34613,16 +32573,6 @@ func (s *Sequential_statementContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *Sequential_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSequential_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Sequential_statement() (localctx ISequential_statementContext) {
 	localctx = NewSequential_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 408, vhdlParserRULE_sequential_statement)
@@ -34856,16 +32806,6 @@ func (s *Shift_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Shift_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitShift_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Shift_expression() (localctx IShift_expressionContext) {
 	localctx = NewShift_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 410, vhdlParserRULE_shift_expression)
@@ -34988,16 +32928,6 @@ func (s *Shift_operatorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Shift_operatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitShift_operator(s)
-	}
-}
-
-func (s *Shift_operatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitShift_operator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -35139,16 +33069,6 @@ func (s *Signal_assignment_statementContext) EnterRule(listener antlr.ParseTreeL
 func (s *Signal_assignment_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSignal_assignment_statement(s)
-	}
-}
-
-func (s *Signal_assignment_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSignal_assignment_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -35329,16 +33249,6 @@ func (s *Signal_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Signal_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSignal_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Signal_declaration() (localctx ISignal_declarationContext) {
 	localctx = NewSignal_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 416, vhdlParserRULE_signal_declaration)
@@ -35477,16 +33387,6 @@ func (s *Signal_kindContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Signal_kindContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSignal_kind(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Signal_kind() (localctx ISignal_kindContext) {
 	localctx = NewSignal_kindContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 418, vhdlParserRULE_signal_kind)
@@ -35616,16 +33516,6 @@ func (s *Signal_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Signal_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSignal_list(s)
-	}
-}
-
-func (s *Signal_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSignal_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -35798,16 +33688,6 @@ func (s *SignatureContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SignatureContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSignature(s)
-	}
-}
-
-func (s *SignatureContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSignature(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -36001,16 +33881,6 @@ func (s *Simple_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Simple_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSimple_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Simple_expression() (localctx ISimple_expressionContext) {
 	localctx = NewSimple_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 424, vhdlParserRULE_simple_expression)
@@ -36188,16 +34058,6 @@ func (s *Simple_simultaneous_statementContext) ExitRule(listener antlr.ParseTree
 	}
 }
 
-func (s *Simple_simultaneous_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSimple_simultaneous_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Simple_simultaneous_statement() (localctx ISimple_simultaneous_statementContext) {
 	localctx = NewSimple_simultaneous_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 426, vhdlParserRULE_simple_simultaneous_statement)
@@ -36344,16 +34204,6 @@ func (s *Simultaneous_alternativeContext) EnterRule(listener antlr.ParseTreeList
 func (s *Simultaneous_alternativeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSimultaneous_alternative(s)
-	}
-}
-
-func (s *Simultaneous_alternativeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSimultaneous_alternative(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -36526,16 +34376,6 @@ func (s *Simultaneous_case_statementContext) EnterRule(listener antlr.ParseTreeL
 func (s *Simultaneous_case_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSimultaneous_case_statement(s)
-	}
-}
-
-func (s *Simultaneous_case_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSimultaneous_case_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -36781,16 +34621,6 @@ func (s *Simultaneous_if_statementContext) ExitRule(listener antlr.ParseTreeList
 	}
 }
 
-func (s *Simultaneous_if_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSimultaneous_if_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Simultaneous_if_statement() (localctx ISimultaneous_if_statementContext) {
 	localctx = NewSimultaneous_if_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 432, vhdlParserRULE_simultaneous_if_statement)
@@ -37030,16 +34860,6 @@ func (s *Simultaneous_procedural_statementContext) ExitRule(listener antlr.Parse
 	}
 }
 
-func (s *Simultaneous_procedural_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSimultaneous_procedural_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Simultaneous_procedural_statement() (localctx ISimultaneous_procedural_statementContext) {
 	localctx = NewSimultaneous_procedural_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 434, vhdlParserRULE_simultaneous_procedural_statement)
@@ -37243,16 +35063,6 @@ func (s *Simultaneous_statementContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Simultaneous_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSimultaneous_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Simultaneous_statement() (localctx ISimultaneous_statementContext) {
 	localctx = NewSimultaneous_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 436, vhdlParserRULE_simultaneous_statement)
@@ -37413,16 +35223,6 @@ func (s *Simultaneous_statement_partContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
-func (s *Simultaneous_statement_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSimultaneous_statement_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Simultaneous_statement_part() (localctx ISimultaneous_statement_partContext) {
 	localctx = NewSimultaneous_statement_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 438, vhdlParserRULE_simultaneous_statement_part)
@@ -37553,16 +35353,6 @@ func (s *Source_aspectContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Source_aspectContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSource_aspect(s)
-	}
-}
-
-func (s *Source_aspectContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSource_aspect(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -37727,16 +35517,6 @@ func (s *Source_quantity_declarationContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
-func (s *Source_quantity_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSource_quantity_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Source_quantity_declaration() (localctx ISource_quantity_declarationContext) {
 	localctx = NewSource_quantity_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 442, vhdlParserRULE_source_quantity_declaration)
@@ -37876,16 +35656,6 @@ func (s *Step_limit_specificationContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *Step_limit_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitStep_limit_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Step_limit_specification() (localctx IStep_limit_specificationContext) {
 	localctx = NewStep_limit_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 444, vhdlParserRULE_step_limit_specification)
@@ -38018,16 +35788,6 @@ func (s *Subnature_declarationContext) EnterRule(listener antlr.ParseTreeListene
 func (s *Subnature_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSubnature_declaration(s)
-	}
-}
-
-func (s *Subnature_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSubnature_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -38186,16 +35946,6 @@ func (s *Subnature_indicationContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Subnature_indicationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSubnature_indication(s)
-	}
-}
-
-func (s *Subnature_indicationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSubnature_indication(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -38391,16 +36141,6 @@ func (s *Subprogram_bodyContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Subprogram_bodyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSubprogram_body(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Subprogram_body() (localctx ISubprogram_bodyContext) {
 	localctx = NewSubprogram_bodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 450, vhdlParserRULE_subprogram_body)
@@ -38546,16 +36286,6 @@ func (s *Subprogram_declarationContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Subprogram_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSubprogram_declaration(s)
-	}
-}
-
-func (s *Subprogram_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSubprogram_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -38780,16 +36510,6 @@ func (s *Subprogram_declarative_itemContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
-func (s *Subprogram_declarative_itemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSubprogram_declarative_item(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Subprogram_declarative_item() (localctx ISubprogram_declarative_itemContext) {
 	localctx = NewSubprogram_declarative_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 454, vhdlParserRULE_subprogram_declarative_item)
@@ -38990,16 +36710,6 @@ func (s *Subprogram_declarative_partContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
-func (s *Subprogram_declarative_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSubprogram_declarative_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Subprogram_declarative_part() (localctx ISubprogram_declarative_partContext) {
 	localctx = NewSubprogram_declarative_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 456, vhdlParserRULE_subprogram_declarative_part)
@@ -39103,16 +36813,6 @@ func (s *Subprogram_kindContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Subprogram_kindContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSubprogram_kind(s)
-	}
-}
-
-func (s *Subprogram_kindContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSubprogram_kind(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -39226,16 +36926,6 @@ func (s *Subprogram_specificationContext) EnterRule(listener antlr.ParseTreeList
 func (s *Subprogram_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSubprogram_specification(s)
-	}
-}
-
-func (s *Subprogram_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSubprogram_specification(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -39371,16 +37061,6 @@ func (s *Procedure_specificationContext) EnterRule(listener antlr.ParseTreeListe
 func (s *Procedure_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitProcedure_specification(s)
-	}
-}
-
-func (s *Procedure_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitProcedure_specification(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -39549,16 +37229,6 @@ func (s *Function_specificationContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *Function_specificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitFunction_specification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Function_specification() (localctx IFunction_specificationContext) {
 	localctx = NewFunction_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 464, vhdlParserRULE_function_specification)
@@ -39717,16 +37387,6 @@ func (s *Subprogram_statement_partContext) ExitRule(listener antlr.ParseTreeList
 	}
 }
 
-func (s *Subprogram_statement_partContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSubprogram_statement_part(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Subprogram_statement_part() (localctx ISubprogram_statement_partContext) {
 	localctx = NewSubprogram_statement_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 466, vhdlParserRULE_subprogram_statement_part)
@@ -39854,16 +37514,6 @@ func (s *Subtype_declarationContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Subtype_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitSubtype_declaration(s)
-	}
-}
-
-func (s *Subtype_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSubtype_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -40013,16 +37663,6 @@ func (s *Subtype_indicationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Subtype_indicationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSubtype_indication(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Subtype_indication() (localctx ISubtype_indicationContext) {
 	localctx = NewSubtype_indicationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 470, vhdlParserRULE_subtype_indication)
@@ -40162,16 +37802,6 @@ func (s *SuffixContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SuffixContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitSuffix(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Suffix() (localctx ISuffixContext) {
 	localctx = NewSuffixContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 472, vhdlParserRULE_suffix)
@@ -40306,16 +37936,6 @@ func (s *TargetContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TargetContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitTarget(s)
-	}
-}
-
-func (s *TargetContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitTarget(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -40468,16 +38088,6 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TermContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitTerm(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Term() (localctx ITermContext) {
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 476, vhdlParserRULE_term)
@@ -40614,16 +38224,6 @@ func (s *Terminal_aspectContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Terminal_aspectContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitTerminal_aspect(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Terminal_aspect() (localctx ITerminal_aspectContext) {
 	localctx = NewTerminal_aspectContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 478, vhdlParserRULE_terminal_aspect)
@@ -40756,16 +38356,6 @@ func (s *Terminal_declarationContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Terminal_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitTerminal_declaration(s)
-	}
-}
-
-func (s *Terminal_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitTerminal_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -40910,16 +38500,6 @@ func (s *Through_aspectContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Through_aspectContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitThrough_aspect(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Through_aspect() (localctx IThrough_aspectContext) {
 	localctx = NewThrough_aspectContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 482, vhdlParserRULE_through_aspect)
@@ -41052,16 +38632,6 @@ func (s *Timeout_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Timeout_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitTimeout_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Timeout_clause() (localctx ITimeout_clauseContext) {
 	localctx = NewTimeout_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 484, vhdlParserRULE_timeout_clause)
@@ -41164,16 +38734,6 @@ func (s *Tolerance_aspectContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Tolerance_aspectContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitTolerance_aspect(s)
-	}
-}
-
-func (s *Tolerance_aspectContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitTolerance_aspect(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -41297,16 +38857,6 @@ func (s *Type_declarationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Type_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitType_declaration(s)
-	}
-}
-
-func (s *Type_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitType_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -41458,16 +39008,6 @@ func (s *Type_definitionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Type_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitType_definition(s)
-	}
-}
-
-func (s *Type_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitType_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -41642,16 +39182,6 @@ func (s *Unconstrained_array_definitionContext) EnterRule(listener antlr.ParseTr
 func (s *Unconstrained_array_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitUnconstrained_array_definition(s)
-	}
-}
-
-func (s *Unconstrained_array_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitUnconstrained_array_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -41838,16 +39368,6 @@ func (s *Unconstrained_nature_definitionContext) ExitRule(listener antlr.ParseTr
 	}
 }
 
-func (s *Unconstrained_nature_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitUnconstrained_nature_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Unconstrained_nature_definition() (localctx IUnconstrained_nature_definitionContext) {
 	localctx = NewUnconstrained_nature_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 494, vhdlParserRULE_unconstrained_nature_definition)
@@ -42013,16 +39533,6 @@ func (s *Use_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Use_clauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitUse_clause(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Use_clause() (localctx IUse_clauseContext) {
 	localctx = NewUse_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 496, vhdlParserRULE_use_clause)
@@ -42172,16 +39682,6 @@ func (s *Variable_assignment_statementContext) EnterRule(listener antlr.ParseTre
 func (s *Variable_assignment_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitVariable_assignment_statement(s)
-	}
-}
-
-func (s *Variable_assignment_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitVariable_assignment_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -42341,16 +39841,6 @@ func (s *Variable_declarationContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Variable_declarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitVariable_declaration(s)
-	}
-}
-
-func (s *Variable_declarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitVariable_declaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -42532,16 +40022,6 @@ func (s *Wait_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Wait_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitWait_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Wait_statement() (localctx IWait_statementContext) {
 	localctx = NewWait_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 502, vhdlParserRULE_wait_statement)
@@ -42713,16 +40193,6 @@ func (s *WaveformContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *WaveformContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitWaveform(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *vhdlParser) Waveform() (localctx IWaveformContext) {
 	localctx = NewWaveformContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 504, vhdlParserRULE_waveform)
@@ -42869,16 +40339,6 @@ func (s *Waveform_elementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Waveform_elementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(vhdlListener); ok {
 		listenerT.ExitWaveform_element(s)
-	}
-}
-
-func (s *Waveform_elementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case vhdlVisitor:
-		return t.VisitWaveform_element(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

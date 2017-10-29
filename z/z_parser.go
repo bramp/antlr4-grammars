@@ -975,16 +975,6 @@ func (s *SpecificationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SpecificationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSpecification(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -1180,16 +1170,6 @@ func (s *BaseSectionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BaseSectionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitBaseSection(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type InheritingSectionContext struct {
 	*SectionContext
@@ -1272,16 +1252,6 @@ func (s *InheritingSectionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *InheritingSectionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitInheritingSection(s)
-	}
-}
-
-func (s *InheritingSectionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitInheritingSection(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1518,16 +1488,6 @@ func (s *ConjectureParagraphContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *ConjectureParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitConjectureParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type GenericHorizontalDefinitionParagraphContext struct {
 	*ParagraphContext
@@ -1610,16 +1570,6 @@ func (s *GenericHorizontalDefinitionParagraphContext) ExitRule(listener antlr.Pa
 	}
 }
 
-func (s *GenericHorizontalDefinitionParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitGenericHorizontalDefinitionParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type HorizontalDefinitionParagraphContext struct {
 	*ParagraphContext
@@ -1671,16 +1621,6 @@ func (s *HorizontalDefinitionParagraphContext) EnterRule(listener antlr.ParseTre
 func (s *HorizontalDefinitionParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitHorizontalDefinitionParagraph(s)
-	}
-}
-
-func (s *HorizontalDefinitionParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitHorizontalDefinitionParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1764,16 +1704,6 @@ func (s *GenericSchemaDefinitionParagraphContext) ExitRule(listener antlr.ParseT
 	}
 }
 
-func (s *GenericSchemaDefinitionParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitGenericSchemaDefinitionParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type GenericOperatorDefinitionParagraphContext struct {
 	*ParagraphContext
@@ -1835,16 +1765,6 @@ func (s *GenericOperatorDefinitionParagraphContext) EnterRule(listener antlr.Par
 func (s *GenericOperatorDefinitionParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitGenericOperatorDefinitionParagraph(s)
-	}
-}
-
-func (s *GenericOperatorDefinitionParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitGenericOperatorDefinitionParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1924,16 +1844,6 @@ func (s *GenericAxiomaticDescriptionParagraphContext) ExitRule(listener antlr.Pa
 	}
 }
 
-func (s *GenericAxiomaticDescriptionParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitGenericAxiomaticDescriptionParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type OperatorTemplateParagraphContext struct {
 	*ParagraphContext
@@ -1981,16 +1891,6 @@ func (s *OperatorTemplateParagraphContext) EnterRule(listener antlr.ParseTreeLis
 func (s *OperatorTemplateParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitOperatorTemplateParagraph(s)
-	}
-}
-
-func (s *OperatorTemplateParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitOperatorTemplateParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2066,16 +1966,6 @@ func (s *GenericConjectureParagraphContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
-func (s *GenericConjectureParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitGenericConjectureParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type GivenTypesParagraphContext struct {
 	*ParagraphContext
@@ -2138,16 +2028,6 @@ func (s *GivenTypesParagraphContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *GivenTypesParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitGivenTypesParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaDefinitionParagraphContext struct {
 	*ParagraphContext
@@ -2203,16 +2083,6 @@ func (s *SchemaDefinitionParagraphContext) EnterRule(listener antlr.ParseTreeLis
 func (s *SchemaDefinitionParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSchemaDefinitionParagraph(s)
-	}
-}
-
-func (s *SchemaDefinitionParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaDefinitionParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2287,16 +2157,6 @@ func (s *FreeTypesParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FreeTypesParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitFreeTypesParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type AxiomaticDescriptionParagraphContext struct {
 	*ParagraphContext
@@ -2344,16 +2204,6 @@ func (s *AxiomaticDescriptionParagraphContext) EnterRule(listener antlr.ParseTre
 func (s *AxiomaticDescriptionParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitAxiomaticDescriptionParagraph(s)
-	}
-}
-
-func (s *AxiomaticDescriptionParagraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitAxiomaticDescriptionParagraph(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2868,16 +2718,6 @@ func (s *FreetypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FreetypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitFreetype(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -3030,16 +2870,6 @@ func (s *BranchContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BranchContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitBranch(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -3169,16 +2999,6 @@ func (s *FormalsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FormalsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitFormals(s)
-	}
-}
-
-func (s *FormalsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitFormals(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3352,16 +3172,6 @@ func (s *ExistentialQuantificationPredicateContext) ExitRule(listener antlr.Pars
 	}
 }
 
-func (s *ExistentialQuantificationPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitExistentialQuantificationPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type ConjunctionPredicateContext struct {
 	*PredicateContext
@@ -3418,16 +3228,6 @@ func (s *ConjunctionPredicateContext) EnterRule(listener antlr.ParseTreeListener
 func (s *ConjunctionPredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitConjunctionPredicate(s)
-	}
-}
-
-func (s *ConjunctionPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitConjunctionPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3490,16 +3290,6 @@ func (s *EquivalencePredicateContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *EquivalencePredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitEquivalencePredicate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type NewlineConjunctionPredicateContext struct {
 	*PredicateContext
@@ -3556,16 +3346,6 @@ func (s *NewlineConjunctionPredicateContext) EnterRule(listener antlr.ParseTreeL
 func (s *NewlineConjunctionPredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitNewlineConjunctionPredicate(s)
-	}
-}
-
-func (s *NewlineConjunctionPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitNewlineConjunctionPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3628,16 +3408,6 @@ func (s *ImplicationPredicateContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *ImplicationPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitImplicationPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type RelationOperatorApplicationPredicateContext struct {
 	*PredicateContext
@@ -3677,16 +3447,6 @@ func (s *RelationOperatorApplicationPredicateContext) EnterRule(listener antlr.P
 func (s *RelationOperatorApplicationPredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitRelationOperatorApplicationPredicate(s)
-	}
-}
-
-func (s *RelationOperatorApplicationPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitRelationOperatorApplicationPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3750,16 +3510,6 @@ func (s *UniversalQuantificationPredicateContext) ExitRule(listener antlr.ParseT
 	}
 }
 
-func (s *UniversalQuantificationPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitUniversalQuantificationPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type TruthPredicateContext struct {
 	*PredicateContext
@@ -3796,16 +3546,6 @@ func (s *TruthPredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TruthPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitTruthPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type FalsityPredicateContext struct {
 	*PredicateContext
@@ -3839,16 +3579,6 @@ func (s *FalsityPredicateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FalsityPredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitFalsityPredicate(s)
-	}
-}
-
-func (s *FalsityPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitFalsityPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3899,16 +3629,6 @@ func (s *ParenthesizedPredicateContext) EnterRule(listener antlr.ParseTreeListen
 func (s *ParenthesizedPredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitParenthesizedPredicate(s)
-	}
-}
-
-func (s *ParenthesizedPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitParenthesizedPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3971,16 +3691,6 @@ func (s *DisjunctionPredicateContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *DisjunctionPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitDisjunctionPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SemicolonConjunctionPredicateContext struct {
 	*PredicateContext
@@ -4040,16 +3750,6 @@ func (s *SemicolonConjunctionPredicateContext) ExitRule(listener antlr.ParseTree
 	}
 }
 
-func (s *SemicolonConjunctionPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSemicolonConjunctionPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaPredicatePredicateContext struct {
 	*PredicateContext
@@ -4089,16 +3789,6 @@ func (s *SchemaPredicatePredicateContext) EnterRule(listener antlr.ParseTreeList
 func (s *SchemaPredicatePredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSchemaPredicatePredicate(s)
-	}
-}
-
-func (s *SchemaPredicatePredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaPredicatePredicate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4162,16 +3852,6 @@ func (s *UniqueExistentialQuantificationPredicateContext) ExitRule(listener antl
 	}
 }
 
-func (s *UniqueExistentialQuantificationPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitUniqueExistentialQuantificationPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type NegationPredicateContext struct {
 	*PredicateContext
@@ -4215,16 +3895,6 @@ func (s *NegationPredicateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NegationPredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitNegationPredicate(s)
-	}
-}
-
-func (s *NegationPredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitNegationPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4656,16 +4326,6 @@ func (s *SetComprehensionExpressionContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
-func (s *SetComprehensionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSetComprehensionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaEquivalenceExpressionContext struct {
 	*ExpressionContext
@@ -4722,16 +4382,6 @@ func (s *SchemaEquivalenceExpressionContext) EnterRule(listener antlr.ParseTreeL
 func (s *SchemaEquivalenceExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSchemaEquivalenceExpression(s)
-	}
-}
-
-func (s *SchemaEquivalenceExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaEquivalenceExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4809,16 +4459,6 @@ func (s *NofixApplicationExpressionContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
-func (s *NofixApplicationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitNofixApplicationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaConstructionExpressionContext struct {
 	*ExpressionContext
@@ -4866,16 +4506,6 @@ func (s *SchemaConstructionExpressionContext) EnterRule(listener antlr.ParseTree
 func (s *SchemaConstructionExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSchemaConstructionExpression(s)
-	}
-}
-
-func (s *SchemaConstructionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaConstructionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4966,16 +4596,6 @@ func (s *GenericPostfixApplicationExpressionContext) ExitRule(listener antlr.Par
 	}
 }
 
-func (s *GenericPostfixApplicationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitGenericPostfixApplicationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type GenericPrefixApplicationExpressionContext struct {
 	*ExpressionContext
@@ -5063,16 +4683,6 @@ func (s *GenericPrefixApplicationExpressionContext) ExitRule(listener antlr.Pars
 	}
 }
 
-func (s *GenericPrefixApplicationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitGenericPrefixApplicationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type CharacteristicDefiniteDescriptionExpressionContext struct {
 	*ExpressionContext
@@ -5124,16 +4734,6 @@ func (s *CharacteristicDefiniteDescriptionExpressionContext) EnterRule(listener 
 func (s *CharacteristicDefiniteDescriptionExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitCharacteristicDefiniteDescriptionExpression(s)
-	}
-}
-
-func (s *CharacteristicDefiniteDescriptionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitCharacteristicDefiniteDescriptionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5197,16 +4797,6 @@ func (s *SchemaUniversalQuantificationExpressionContext) ExitRule(listener antlr
 	}
 }
 
-func (s *SchemaUniversalQuantificationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaUniversalQuantificationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SetExtensionExpressionContext struct {
 	*ExpressionContext
@@ -5254,16 +4844,6 @@ func (s *SetExtensionExpressionContext) EnterRule(listener antlr.ParseTreeListen
 func (s *SetExtensionExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSetExtensionExpression(s)
-	}
-}
-
-func (s *SetExtensionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSetExtensionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5327,16 +4907,6 @@ func (s *FunctionConstructionExpressionContext) ExitRule(listener antlr.ParseTre
 	}
 }
 
-func (s *FunctionConstructionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitFunctionConstructionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaNegationExpressionContext struct {
 	*ExpressionContext
@@ -5380,16 +4950,6 @@ func (s *SchemaNegationExpressionContext) EnterRule(listener antlr.ParseTreeList
 func (s *SchemaNegationExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSchemaNegationExpression(s)
-	}
-}
-
-func (s *SchemaNegationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaNegationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5464,16 +5024,6 @@ func (s *TupleExtensionExpressionContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *TupleExtensionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitTupleExtensionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaCompositionExpressionContext struct {
 	*ExpressionContext
@@ -5533,16 +5083,6 @@ func (s *SchemaCompositionExpressionContext) ExitRule(listener antlr.ParseTreeLi
 	}
 }
 
-func (s *SchemaCompositionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaCompositionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type PowersetExpressionContext struct {
 	*ExpressionContext
@@ -5586,16 +5126,6 @@ func (s *PowersetExpressionContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *PowersetExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitPowersetExpression(s)
-	}
-}
-
-func (s *PowersetExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPowersetExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5655,16 +5185,6 @@ func (s *SchemaDisjunctionExpressionContext) EnterRule(listener antlr.ParseTreeL
 func (s *SchemaDisjunctionExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSchemaDisjunctionExpression(s)
-	}
-}
-
-func (s *SchemaDisjunctionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaDisjunctionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5746,16 +5266,6 @@ func (s *SubstitutionExpressionExpressionContext) EnterRule(listener antlr.Parse
 func (s *SubstitutionExpressionExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSubstitutionExpressionExpression(s)
-	}
-}
-
-func (s *SubstitutionExpressionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSubstitutionExpressionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5844,16 +5354,6 @@ func (s *SchemaHidingExpressionContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *SchemaHidingExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaHidingExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type PostfixApplicationExpressionContext struct {
 	*ExpressionContext
@@ -5897,16 +5397,6 @@ func (s *PostfixApplicationExpressionContext) EnterRule(listener antlr.ParseTree
 func (s *PostfixApplicationExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitPostfixApplicationExpression(s)
-	}
-}
-
-func (s *PostfixApplicationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPostfixApplicationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5973,16 +5463,6 @@ func (s *CartesianProductExpressionContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
-func (s *CartesianProductExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitCartesianProductExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type BindingSelectionExpressionContext struct {
 	*ExpressionContext
@@ -6036,16 +5516,6 @@ func (s *BindingSelectionExpressionContext) EnterRule(listener antlr.ParseTreeLi
 func (s *BindingSelectionExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitBindingSelectionExpression(s)
-	}
-}
-
-func (s *BindingSelectionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitBindingSelectionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6109,16 +5579,6 @@ func (s *GenericInstantiationExpressionContext) ExitRule(listener antlr.ParseTre
 	}
 }
 
-func (s *GenericInstantiationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitGenericInstantiationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaExistentialQuantificationExpressionContext struct {
 	*ExpressionContext
@@ -6179,16 +5639,6 @@ func (s *SchemaExistentialQuantificationExpressionContext) ExitRule(listener ant
 	}
 }
 
-func (s *SchemaExistentialQuantificationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaExistentialQuantificationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type NumberLiteralExpressionContext struct {
 	*ExpressionContext
@@ -6222,16 +5672,6 @@ func (s *NumberLiteralExpressionContext) EnterRule(listener antlr.ParseTreeListe
 func (s *NumberLiteralExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitNumberLiteralExpression(s)
-	}
-}
-
-func (s *NumberLiteralExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitNumberLiteralExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6282,16 +5722,6 @@ func (s *ParenthesizedExpressionContext) EnterRule(listener antlr.ParseTreeListe
 func (s *ParenthesizedExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitParenthesizedExpression(s)
-	}
-}
-
-func (s *ParenthesizedExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitParenthesizedExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6354,16 +5784,6 @@ func (s *InfixLeftApplicationExpressionContext) ExitRule(listener antlr.ParseTre
 	}
 }
 
-func (s *InfixLeftApplicationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitInfixLeftApplicationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type ApplicationExpressionContext struct {
 	*ExpressionContext
@@ -6416,16 +5836,6 @@ func (s *ApplicationExpressionContext) EnterRule(listener antlr.ParseTreeListene
 func (s *ApplicationExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitApplicationExpression(s)
-	}
-}
-
-func (s *ApplicationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitApplicationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6518,16 +5928,6 @@ func (s *SchemaRenamingExpressionContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *SchemaRenamingExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaRenamingExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaConjunctionExpressionContext struct {
 	*ExpressionContext
@@ -6584,16 +5984,6 @@ func (s *SchemaConjunctionExpressionContext) EnterRule(listener antlr.ParseTreeL
 func (s *SchemaConjunctionExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSchemaConjunctionExpression(s)
-	}
-}
-
-func (s *SchemaConjunctionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaConjunctionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6674,16 +6064,6 @@ func (s *ConditionalExpressionContext) ExitRule(listener antlr.ParseTreeListener
 	}
 }
 
-func (s *ConditionalExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitConditionalExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaProjectionExpressionContext struct {
 	*ExpressionContext
@@ -6740,16 +6120,6 @@ func (s *SchemaProjectionExpressionContext) EnterRule(listener antlr.ParseTreeLi
 func (s *SchemaProjectionExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSchemaProjectionExpression(s)
-	}
-}
-
-func (s *SchemaProjectionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaProjectionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6812,16 +6182,6 @@ func (s *InfixRightApplicationExpressionContext) ExitRule(listener antlr.ParseTr
 	}
 }
 
-func (s *InfixRightApplicationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitInfixRightApplicationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type CharacteristicSetComprehensionExpressionContext struct {
 	*ExpressionContext
@@ -6872,16 +6232,6 @@ func (s *CharacteristicSetComprehensionExpressionContext) ExitRule(listener antl
 	}
 }
 
-func (s *CharacteristicSetComprehensionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitCharacteristicSetComprehensionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaPreconditionExpressionContext struct {
 	*ExpressionContext
@@ -6928,16 +6278,6 @@ func (s *SchemaPreconditionExpressionContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
-func (s *SchemaPreconditionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaPreconditionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type PrefixApplicationExpressionContext struct {
 	*ExpressionContext
@@ -6981,16 +6321,6 @@ func (s *PrefixApplicationExpressionContext) EnterRule(listener antlr.ParseTreeL
 func (s *PrefixApplicationExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitPrefixApplicationExpression(s)
-	}
-}
-
-func (s *PrefixApplicationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPrefixApplicationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7045,16 +6375,6 @@ func (s *BindingConstructionExpressionContext) EnterRule(listener antlr.ParseTre
 func (s *BindingConstructionExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitBindingConstructionExpression(s)
-	}
-}
-
-func (s *BindingConstructionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitBindingConstructionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7117,16 +6437,6 @@ func (s *SchemaPipingExpressionContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *SchemaPipingExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaPipingExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaImplicationExpressionContext struct {
 	*ExpressionContext
@@ -7183,16 +6493,6 @@ func (s *SchemaImplicationExpressionContext) EnterRule(listener antlr.ParseTreeL
 func (s *SchemaImplicationExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSchemaImplicationExpression(s)
-	}
-}
-
-func (s *SchemaImplicationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaImplicationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7267,16 +6567,6 @@ func (s *BindingExtensionExpressionContext) ExitRule(listener antlr.ParseTreeLis
 	}
 }
 
-func (s *BindingExtensionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitBindingExtensionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type SchemaDecorationExpressionContext struct {
 	*ExpressionContext
@@ -7320,16 +6610,6 @@ func (s *SchemaDecorationExpressionContext) EnterRule(listener antlr.ParseTreeLi
 func (s *SchemaDecorationExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitSchemaDecorationExpression(s)
-	}
-}
-
-func (s *SchemaDecorationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaDecorationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7393,16 +6673,6 @@ func (s *SchemaUniqueExistentialQuantificationExpressionContext) ExitRule(listen
 	}
 }
 
-func (s *SchemaUniqueExistentialQuantificationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaUniqueExistentialQuantificationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type DefiniteDescriptionExpressionContext struct {
 	*ExpressionContext
@@ -7463,16 +6733,6 @@ func (s *DefiniteDescriptionExpressionContext) ExitRule(listener antlr.ParseTree
 	}
 }
 
-func (s *DefiniteDescriptionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitDefiniteDescriptionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type ReferenceExpressionContext struct {
 	*ExpressionContext
@@ -7512,16 +6772,6 @@ func (s *ReferenceExpressionContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *ReferenceExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitReferenceExpression(s)
-	}
-}
-
-func (s *ReferenceExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitReferenceExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7612,16 +6862,6 @@ func (s *GenericInfixApplicationExpressionContext) ExitRule(listener antlr.Parse
 	}
 }
 
-func (s *GenericInfixApplicationExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitGenericInfixApplicationExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 type TupleSelectionExpressionContext struct {
 	*ExpressionContext
@@ -7669,16 +6909,6 @@ func (s *TupleSelectionExpressionContext) EnterRule(listener antlr.ParseTreeList
 func (s *TupleSelectionExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitTupleSelectionExpression(s)
-	}
-}
-
-func (s *TupleSelectionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitTupleSelectionExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8992,16 +8222,6 @@ func (s *SchemaTextContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SchemaTextContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitSchemaText(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -9221,16 +8441,6 @@ func (s *DeclPartContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DeclPartContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitDeclPart(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -9380,16 +8590,6 @@ func (s *DeclNameExpressionContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *DeclNameExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitDeclNameExpression(s)
-	}
-}
-
-func (s *DeclNameExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitDeclNameExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9559,16 +8759,6 @@ func (s *DeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitDeclaration(s)
-	}
-}
-
-func (s *DeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9746,16 +8936,6 @@ func (s *OperatorTemplateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OperatorTemplateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitOperatorTemplate(s)
-	}
-}
-
-func (s *OperatorTemplateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitOperatorTemplate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9951,16 +9131,6 @@ func (s *CategoryTemplateContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CategoryTemplateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitCategoryTemplate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -10096,16 +9266,6 @@ func (s *PrecContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PrecContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPrec(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -10205,16 +9365,6 @@ func (s *AssocContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AssocContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitAssoc(s)
-	}
-}
-
-func (s *AssocContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitAssoc(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10356,16 +9506,6 @@ func (s *TemplateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TemplateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitTemplate(s)
-	}
-}
-
-func (s *TemplateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitTemplate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10518,16 +9658,6 @@ func (s *PrefixTemplateContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PrefixTemplateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPrefixTemplate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -10670,16 +9800,6 @@ func (s *PostfixTemplateContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PostfixTemplateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPostfixTemplate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -10797,16 +9917,6 @@ func (s *InfixTemplateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *InfixTemplateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitInfixTemplate(s)
-	}
-}
-
-func (s *InfixTemplateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitInfixTemplate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10930,16 +10040,6 @@ func (s *NofixTemplateContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NofixTemplateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitNofixTemplate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -11053,16 +10153,6 @@ func (s *DeclNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DeclNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitDeclName(s)
-	}
-}
-
-func (s *DeclNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitDeclName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11197,16 +10287,6 @@ func (s *RefNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RefNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitRefName(s)
-	}
-}
-
-func (s *RefNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitRefName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11367,16 +10447,6 @@ func (s *OpNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OpNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitOpName(s)
-	}
-}
-
-func (s *OpNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitOpName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11564,16 +10634,6 @@ func (s *PrefixNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PrefixNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitPrefixName(s)
-	}
-}
-
-func (s *PrefixNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPrefixName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11931,16 +10991,6 @@ func (s *PostfixNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PostfixNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPostfixName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -12287,16 +11337,6 @@ func (s *InfixNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *InfixNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitInfixName(s)
-	}
-}
-
-func (s *InfixNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitInfixName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12657,16 +11697,6 @@ func (s *NofixNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NofixNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitNofixName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -12965,16 +11995,6 @@ func (s *GenNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *GenNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitGenName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -13135,16 +12155,6 @@ func (s *PrefixGenNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PrefixGenNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitPrefixGenName(s)
-	}
-}
-
-func (s *PrefixGenNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPrefixGenName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13351,16 +12361,6 @@ func (s *PostfixGenNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PostfixGenNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPostfixGenName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -13556,16 +12556,6 @@ func (s *InfixGenNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *InfixGenNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitInfixGenName(s)
-	}
-}
-
-func (s *InfixGenNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitInfixGenName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13771,16 +12761,6 @@ func (s *NofixGenNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NofixGenNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitNofixGenName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -13955,16 +12935,6 @@ func (s *RelationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RelationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitRelation(s)
-	}
-}
-
-func (s *RelationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitRelation(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -14147,16 +13117,6 @@ func (s *PrefixRelContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PrefixRelContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitPrefixRel(s)
-	}
-}
-
-func (s *PrefixRelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPrefixRel(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -14383,16 +13343,6 @@ func (s *PostfixRelContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PostfixRelContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitPostfixRel(s)
-	}
-}
-
-func (s *PostfixRelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPostfixRel(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -14634,16 +13584,6 @@ func (s *InfixRelContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *InfixRelContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitInfixRel(s)
-	}
-}
-
-func (s *InfixRelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitInfixRel(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -14994,16 +13934,6 @@ func (s *NofixRelContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NofixRelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitNofixRel(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -15182,16 +14112,6 @@ func (s *ApplicationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ApplicationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitApplication(s)
-	}
-}
-
-func (s *ApplicationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitApplication(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -15374,16 +14294,6 @@ func (s *PrefixAppContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PrefixAppContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitPrefixApp(s)
-	}
-}
-
-func (s *PrefixAppContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPrefixApp(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -15613,16 +14523,6 @@ func (s *PostfixAppContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PostfixAppContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitPostfixApp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -15844,16 +14744,6 @@ func (s *InfixAppContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *InfixAppContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitInfixApp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -16066,16 +14956,6 @@ func (s *NofixAppContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NofixAppContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitNofixApp(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -16279,16 +15159,6 @@ func (s *ExpSepContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExpSepContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitExpSep(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 
 
 
@@ -16461,16 +15331,6 @@ func (s *ExpressionListContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExpressionListContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ZParserListener); ok {
 		listenerT.ExitExpressionList(s)
-	}
-}
-
-func (s *ExpressionListContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ZParserVisitor:
-		return t.VisitExpressionList(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

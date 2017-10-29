@@ -173,16 +173,6 @@ func (s *JsonContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *JsonContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JSONVisitor:
-		return t.VisitJson(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JSONParser) Json() (localctx IJsonContext) {
 	localctx = NewJsonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, JSONParserRULE_json)
@@ -290,16 +280,6 @@ func (s *ObjContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ObjContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JSONListener); ok {
 		listenerT.ExitObj(s)
-	}
-}
-
-func (s *ObjContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JSONVisitor:
-		return t.VisitObj(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -448,16 +428,6 @@ func (s *PairContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PairContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JSONVisitor:
-		return t.VisitPair(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *JSONParser) Pair() (localctx IPairContext) {
 	localctx = NewPairContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, JSONParserRULE_pair)
@@ -573,16 +543,6 @@ func (s *ArrayContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ArrayContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JSONListener); ok {
 		listenerT.ExitArray(s)
-	}
-}
-
-func (s *ArrayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JSONVisitor:
-		return t.VisitArray(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -742,16 +702,6 @@ func (s *ValueContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JSONListener); ok {
 		listenerT.ExitValue(s)
-	}
-}
-
-func (s *ValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case JSONVisitor:
-		return t.VisitValue(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

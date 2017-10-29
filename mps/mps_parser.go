@@ -301,16 +301,6 @@ func (s *ModellContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ModellContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitModell(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Modell() (localctx IModellContext) {
 	localctx = NewModellContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, mpsParserRULE_modell)
@@ -453,16 +443,6 @@ func (s *FirstrowContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FirstrowContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitFirstrow(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Firstrow() (localctx IFirstrowContext) {
 	localctx = NewFirstrowContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, mpsParserRULE_firstrow)
@@ -600,16 +580,6 @@ func (s *RowsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RowsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitRows(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Rows() (localctx IRowsContext) {
 	localctx = NewRowsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, mpsParserRULE_rows)
@@ -726,16 +696,6 @@ func (s *ColumnsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ColumnsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitColumns(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Columns() (localctx IColumnsContext) {
 	localctx = NewColumnsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, mpsParserRULE_columns)
@@ -838,16 +798,6 @@ func (s *RhsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RhsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mpsListener); ok {
 		listenerT.ExitRhs(s)
-	}
-}
-
-func (s *RhsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitRhs(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -956,16 +906,6 @@ func (s *RangesContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RangesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitRanges(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Ranges() (localctx IRangesContext) {
 	localctx = NewRangesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, mpsParserRULE_ranges)
@@ -1071,16 +1011,6 @@ func (s *BoundsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BoundsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitBounds(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Bounds() (localctx IBoundsContext) {
 	localctx = NewBoundsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, mpsParserRULE_bounds)
@@ -1176,16 +1106,6 @@ func (s *EndataContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EndataContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitEndata(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Endata() (localctx IEndataContext) {
 	localctx = NewEndataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, mpsParserRULE_endata)
@@ -1278,16 +1198,6 @@ func (s *RowdatacardContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RowdatacardContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mpsListener); ok {
 		listenerT.ExitRowdatacard(s)
-	}
-}
-
-func (s *RowdatacardContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitRowdatacard(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1428,16 +1338,6 @@ func (s *ColumndatacardsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ColumndatacardsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitColumndatacards(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Columndatacards() (localctx IColumndatacardsContext) {
 	localctx = NewColumndatacardsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, mpsParserRULE_columndatacards)
@@ -1571,16 +1471,6 @@ func (s *RhsdatacardsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RhsdatacardsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitRhsdatacards(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Rhsdatacards() (localctx IRhsdatacardsContext) {
 	localctx = NewRhsdatacardsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, mpsParserRULE_rhsdatacards)
@@ -1699,16 +1589,6 @@ func (s *RangesdatacardsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RangesdatacardsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mpsListener); ok {
 		listenerT.ExitRangesdatacards(s)
-	}
-}
-
-func (s *RangesdatacardsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitRangesdatacards(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1833,16 +1713,6 @@ func (s *BoundsdatacardsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BoundsdatacardsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitBoundsdatacards(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Boundsdatacards() (localctx IBoundsdatacardsContext) {
 	localctx = NewBoundsdatacardsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, mpsParserRULE_boundsdatacards)
@@ -1954,16 +1824,6 @@ func (s *ColumndatacardContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ColumndatacardContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mpsListener); ok {
 		listenerT.ExitColumndatacard(s)
-	}
-}
-
-func (s *ColumndatacardContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitColumndatacard(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2093,16 +1953,6 @@ func (s *RhsdatacardContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RhsdatacardContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mpsListener); ok {
 		listenerT.ExitRhsdatacard(s)
-	}
-}
-
-func (s *RhsdatacardContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitRhsdatacard(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2241,16 +2091,6 @@ func (s *RangesdatacardContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RangesdatacardContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitRangesdatacard(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Rangesdatacard() (localctx IRangesdatacardContext) {
 	localctx = NewRangesdatacardContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, mpsParserRULE_rangesdatacard)
@@ -2383,16 +2223,6 @@ func (s *BoundsdatacardContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *BoundsdatacardContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mpsListener); ok {
 		listenerT.ExitBoundsdatacard(s)
-	}
-}
-
-func (s *BoundsdatacardContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitBoundsdatacard(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2551,16 +2381,6 @@ func (s *IntblockContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IntblockContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitIntblock(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Intblock() (localctx IIntblockContext) {
 	localctx = NewIntblockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, mpsParserRULE_intblock)
@@ -2685,16 +2505,6 @@ func (s *StartmarkerContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StartmarkerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitStartmarker(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mpsParser) Startmarker() (localctx IStartmarkerContext) {
 	localctx = NewStartmarkerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, mpsParserRULE_startmarker)
@@ -2799,16 +2609,6 @@ func (s *EndmarkerContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EndmarkerContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mpsListener); ok {
 		listenerT.ExitEndmarker(s)
-	}
-}
-
-func (s *EndmarkerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mpsVisitor:
-		return t.VisitEndmarker(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

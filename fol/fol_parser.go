@@ -198,16 +198,6 @@ func (s *ConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ConditionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case folVisitor:
-		return t.VisitCondition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *folParser) Condition() (localctx IConditionContext) {
 	localctx = NewConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, folParserRULE_condition)
@@ -318,16 +308,6 @@ func (s *FormulaContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FormulaContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(folListener); ok {
 		listenerT.ExitFormula(s)
-	}
-}
-
-func (s *FormulaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case folVisitor:
-		return t.VisitFormula(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -470,16 +450,6 @@ func (s *DisjunctionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DisjunctionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case folVisitor:
-		return t.VisitDisjunction(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *folParser) Disjunction() (localctx IDisjunctionContext) {
 	localctx = NewDisjunctionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, folParserRULE_disjunction)
@@ -614,16 +584,6 @@ func (s *ConjunctionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ConjunctionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(folListener); ok {
 		listenerT.ExitConjunction(s)
-	}
-}
-
-func (s *ConjunctionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case folVisitor:
-		return t.VisitConjunction(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -765,16 +725,6 @@ func (s *NegationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NegationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case folVisitor:
-		return t.VisitNegation(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *folParser) Negation() (localctx INegationContext) {
 	localctx = NewNegationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, folParserRULE_negation)
@@ -908,16 +858,6 @@ func (s *PredicateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(folListener); ok {
 		listenerT.ExitPredicate(s)
-	}
-}
-
-func (s *PredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case folVisitor:
-		return t.VisitPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1056,16 +996,6 @@ func (s *PredicateTupleContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PredicateTupleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case folVisitor:
-		return t.VisitPredicateTuple(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *folParser) PredicateTuple() (localctx IPredicateTupleContext) {
 	localctx = NewPredicateTupleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, folParserRULE_predicateTuple)
@@ -1194,16 +1124,6 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TermContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case folVisitor:
-		return t.VisitTerm(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *folParser) Term() (localctx ITermContext) {
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, folParserRULE_term)
@@ -1318,16 +1238,6 @@ func (s *FunctionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FunctionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(folListener); ok {
 		listenerT.ExitFunction(s)
-	}
-}
-
-func (s *FunctionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case folVisitor:
-		return t.VisitFunction(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1456,16 +1366,6 @@ func (s *FunctionTupleContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FunctionTupleContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(folListener); ok {
 		listenerT.ExitFunctionTuple(s)
-	}
-}
-
-func (s *FunctionTupleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case folVisitor:
-		return t.VisitFunctionTuple(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

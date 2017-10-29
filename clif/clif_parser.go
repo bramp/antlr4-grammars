@@ -304,16 +304,6 @@ func (s *TermseqContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TermseqContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitTermseq(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Termseq() (localctx ITermseqContext) {
 	localctx = NewTermseqContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, CLIFParserRULE_termseq)
@@ -435,16 +425,6 @@ func (s *InterpretednameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *InterpretednameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitInterpretedname(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Interpretedname() (localctx IInterpretednameContext) {
 	localctx = NewInterpretednameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, CLIFParserRULE_interpretedname)
@@ -543,16 +523,6 @@ func (s *InterpretablenameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *InterpretablenameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CLIFListener); ok {
 		listenerT.ExitInterpretablename(s)
-	}
-}
-
-func (s *InterpretablenameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitInterpretablename(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -666,16 +636,6 @@ func (s *NameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CLIFListener); ok {
 		listenerT.ExitName(s)
-	}
-}
-
-func (s *NameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -834,16 +794,6 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TermContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitTerm(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Term() (localctx ITermContext) {
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, CLIFParserRULE_term)
@@ -989,16 +939,6 @@ func (s *OperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OperatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitOperator(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Operator() (localctx IOperatorContext) {
 	localctx = NewOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, CLIFParserRULE_operator)
@@ -1114,16 +1054,6 @@ func (s *EquationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EquationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CLIFListener); ok {
 		listenerT.ExitEquation(s)
-	}
-}
-
-func (s *EquationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitEquation(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1270,16 +1200,6 @@ func (s *SentenceContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SentenceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitSentence(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Sentence() (localctx ISentenceContext) {
 	localctx = NewSentenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, CLIFParserRULE_sentence)
@@ -1411,16 +1331,6 @@ func (s *AtomsentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AtomsentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CLIFListener); ok {
 		listenerT.ExitAtomsent(s)
-	}
-}
-
-func (s *AtomsentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitAtomsent(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1593,16 +1503,6 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitAtom(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Atom() (localctx IAtomContext) {
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, CLIFParserRULE_atom)
@@ -1763,16 +1663,6 @@ func (s *PredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Predicate() (localctx IPredicateContext) {
 	localctx = NewPredicateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, CLIFParserRULE_predicate)
@@ -1888,16 +1778,6 @@ func (s *BoolsentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *BoolsentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CLIFListener); ok {
 		listenerT.ExitBoolsent(s)
-	}
-}
-
-func (s *BoolsentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitBoolsent(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2107,16 +1987,6 @@ func (s *QuantsentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *QuantsentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitQuantsent(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Quantsent() (localctx IQuantsentContext) {
 	localctx = NewQuantsentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, CLIFParserRULE_quantsent)
@@ -2307,16 +2177,6 @@ func (s *BoundlistContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BoundlistContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitBoundlist(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Boundlist() (localctx IBoundlistContext) {
 	localctx = NewBoundlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, CLIFParserRULE_boundlist)
@@ -2493,16 +2353,6 @@ func (s *CommentsentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CommentsentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitCommentsent(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Commentsent() (localctx ICommentsentContext) {
 	localctx = NewCommentsentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, CLIFParserRULE_commentsent)
@@ -2662,16 +2512,6 @@ func (s *ModuleContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ModuleContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CLIFListener); ok {
 		listenerT.ExitModule(s)
-	}
-}
-
-func (s *ModuleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitModule(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2870,16 +2710,6 @@ func (s *PhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PhraseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitPhrase(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Phrase() (localctx IPhraseContext) {
 	localctx = NewPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, CLIFParserRULE_phrase)
@@ -3053,16 +2883,6 @@ func (s *TextContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TextContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitText(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CLIFParser) Text() (localctx ITextContext) {
 	localctx = NewTextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, CLIFParserRULE_text)
@@ -3188,16 +3008,6 @@ func (s *CltextContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CltextContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CLIFListener); ok {
 		listenerT.ExitCltext(s)
-	}
-}
-
-func (s *CltextContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitCltext(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3333,16 +3143,6 @@ func (s *NamedtextContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NamedtextContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CLIFListener); ok {
 		listenerT.ExitNamedtext(s)
-	}
-}
-
-func (s *NamedtextContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CLIFVisitor:
-		return t.VisitNamedtext(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

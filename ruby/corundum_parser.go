@@ -665,16 +665,6 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitProg(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Prog() (localctx IProgContext) {
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, CorundumParserRULE_prog)
@@ -789,16 +779,6 @@ func (s *Expression_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Expression_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitExpression_list(s)
-	}
-}
-
-func (s *Expression_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitExpression_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1051,16 +1031,6 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Expression() (localctx IExpressionContext) {
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, CorundumParserRULE_expression)
@@ -1274,16 +1244,6 @@ func (s *Global_getContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Global_getContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitGlobal_get(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Global_get() (localctx IGlobal_getContext) {
 	localctx = NewGlobal_getContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, CorundumParserRULE_global_get)
@@ -1445,16 +1405,6 @@ func (s *Global_setContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Global_setContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitGlobal_set(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Global_set() (localctx IGlobal_setContext) {
 	localctx = NewGlobal_setContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, CorundumParserRULE_global_set)
@@ -1569,16 +1519,6 @@ func (s *Global_resultContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Global_resultContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitGlobal_result(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Global_result() (localctx IGlobal_resultContext) {
 	localctx = NewGlobal_resultContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, CorundumParserRULE_global_result)
@@ -1673,16 +1613,6 @@ func (s *Function_inline_callContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Function_inline_callContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFunction_inline_call(s)
-	}
-}
-
-func (s *Function_inline_callContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_inline_call(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1784,16 +1714,6 @@ func (s *Require_blockContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Require_blockContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitRequire_block(s)
-	}
-}
-
-func (s *Require_blockContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitRequire_block(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1916,16 +1836,6 @@ func (s *Pir_inlineContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Pir_inlineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitPir_inline(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Pir_inline() (localctx IPir_inlineContext) {
 	localctx = NewPir_inlineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, CorundumParserRULE_pir_inline)
@@ -2032,16 +1942,6 @@ func (s *Pir_expression_listContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *Pir_expression_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitPir_expression_list(s)
-	}
-}
-
-func (s *Pir_expression_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitPir_expression_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2156,16 +2056,6 @@ func (s *Function_definitionContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *Function_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_definition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Function_definition() (localctx IFunction_definitionContext) {
 	localctx = NewFunction_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, CorundumParserRULE_function_definition)
@@ -2268,16 +2158,6 @@ func (s *Function_definition_bodyContext) EnterRule(listener antlr.ParseTreeList
 func (s *Function_definition_bodyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFunction_definition_body(s)
-	}
-}
-
-func (s *Function_definition_bodyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_definition_body(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2399,16 +2279,6 @@ func (s *Function_definition_headerContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Function_definition_headerContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFunction_definition_header(s)
-	}
-}
-
-func (s *Function_definition_headerContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_definition_header(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2552,16 +2422,6 @@ func (s *Function_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Function_nameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_name(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Function_name() (localctx IFunction_nameContext) {
 	localctx = NewFunction_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, CorundumParserRULE_function_name)
@@ -2680,16 +2540,6 @@ func (s *Function_definition_paramsContext) EnterRule(listener antlr.ParseTreeLi
 func (s *Function_definition_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFunction_definition_params(s)
-	}
-}
-
-func (s *Function_definition_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_definition_params(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2836,16 +2686,6 @@ func (s *Function_definition_params_listContext) ExitRule(listener antlr.ParseTr
 	}
 }
 
-func (s *Function_definition_params_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_definition_params_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Function_definition_params_list() (localctx IFunction_definition_params_listContext) {
 	return p.function_definition_params_list(0)
 }
@@ -2987,16 +2827,6 @@ func (s *Function_definition_param_idContext) ExitRule(listener antlr.ParseTreeL
 	}
 }
 
-func (s *Function_definition_param_idContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_definition_param_id(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Function_definition_param_id() (localctx IFunction_definition_param_idContext) {
 	localctx = NewFunction_definition_param_idContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, CorundumParserRULE_function_definition_param_id)
@@ -3095,16 +2925,6 @@ func (s *Return_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Return_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitReturn_statement(s)
-	}
-}
-
-func (s *Return_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitReturn_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3246,16 +3066,6 @@ func (s *Function_callContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Function_callContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFunction_call(s)
-	}
-}
-
-func (s *Function_callContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_call(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3415,16 +3225,6 @@ func (s *Function_call_param_listContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *Function_call_param_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_call_param_list(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Function_call_param_list() (localctx IFunction_call_param_listContext) {
 	localctx = NewFunction_call_param_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, CorundumParserRULE_function_call_param_list)
@@ -3533,16 +3333,6 @@ func (s *Function_call_paramsContext) EnterRule(listener antlr.ParseTreeListener
 func (s *Function_call_paramsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFunction_call_params(s)
-	}
-}
-
-func (s *Function_call_paramsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_call_params(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3697,16 +3487,6 @@ func (s *Function_paramContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Function_paramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_param(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Function_param() (localctx IFunction_paramContext) {
 	localctx = NewFunction_paramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, CorundumParserRULE_function_param)
@@ -3843,16 +3623,6 @@ func (s *Function_unnamed_paramContext) EnterRule(listener antlr.ParseTreeListen
 func (s *Function_unnamed_paramContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFunction_unnamed_param(s)
-	}
-}
-
-func (s *Function_unnamed_paramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_unnamed_param(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4032,16 +3802,6 @@ func (s *Function_named_paramContext) ExitRule(listener antlr.ParseTreeListener)
 	}
 }
 
-func (s *Function_named_paramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_named_param(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Function_named_param() (localctx IFunction_named_paramContext) {
 	localctx = NewFunction_named_paramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, CorundumParserRULE_function_named_param)
@@ -4171,16 +3931,6 @@ func (s *Function_call_assignmentContext) EnterRule(listener antlr.ParseTreeList
 func (s *Function_call_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFunction_call_assignment(s)
-	}
-}
-
-func (s *Function_call_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFunction_call_assignment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4321,16 +4071,6 @@ func (s *All_resultContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *All_resultContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitAll_result(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) All_result() (localctx IAll_resultContext) {
 	localctx = NewAll_resultContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, CorundumParserRULE_all_result)
@@ -4455,16 +4195,6 @@ func (s *Elsif_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Elsif_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitElsif_statement(s)
-	}
-}
-
-func (s *Elsif_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitElsif_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4632,16 +4362,6 @@ func (s *If_elsif_statementContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *If_elsif_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitIf_elsif_statement(s)
-	}
-}
-
-func (s *If_elsif_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitIf_elsif_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4885,16 +4605,6 @@ func (s *If_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *If_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitIf_statement(s)
-	}
-}
-
-func (s *If_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitIf_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5153,16 +4863,6 @@ func (s *Unless_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Unless_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitUnless_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Unless_statement() (localctx IUnless_statementContext) {
 	localctx = NewUnless_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, CorundumParserRULE_unless_statement)
@@ -5372,16 +5072,6 @@ func (s *While_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *While_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitWhile_statement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) While_statement() (localctx IWhile_statementContext) {
 	localctx = NewWhile_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, CorundumParserRULE_while_statement)
@@ -5556,16 +5246,6 @@ func (s *For_statementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *For_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFor_statement(s)
-	}
-}
-
-func (s *For_statementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFor_statement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5751,16 +5431,6 @@ func (s *Init_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Init_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitInit_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Init_expression() (localctx IInit_expressionContext) {
 	localctx = NewInit_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, CorundumParserRULE_init_expression)
@@ -5885,16 +5555,6 @@ func (s *All_assignmentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *All_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitAll_assignment(s)
-	}
-}
-
-func (s *All_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitAll_assignment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6030,16 +5690,6 @@ func (s *For_init_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *For_init_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFor_init_list(s)
-	}
-}
-
-func (s *For_init_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFor_init_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6184,16 +5834,6 @@ func (s *Cond_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Cond_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitCond_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Cond_expression() (localctx ICond_expressionContext) {
 	localctx = NewCond_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, CorundumParserRULE_cond_expression)
@@ -6288,16 +5928,6 @@ func (s *Loop_expressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Loop_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitLoop_expression(s)
-	}
-}
-
-func (s *Loop_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitLoop_expression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6409,16 +6039,6 @@ func (s *For_loop_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *For_loop_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFor_loop_list(s)
-	}
-}
-
-func (s *For_loop_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFor_loop_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6563,16 +6183,6 @@ func (s *Statement_bodyContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Statement_bodyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitStatement_body(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Statement_body() (localctx IStatement_bodyContext) {
 	localctx = NewStatement_bodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, CorundumParserRULE_statement_body)
@@ -6701,16 +6311,6 @@ func (s *Statement_expression_listContext) EnterRule(listener antlr.ParseTreeLis
 func (s *Statement_expression_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitStatement_expression_list(s)
-	}
-}
-
-func (s *Statement_expression_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitStatement_expression_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6987,16 +6587,6 @@ func (s *AssignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AssignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitAssignment(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Assignment() (localctx IAssignmentContext) {
 	localctx = NewAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, CorundumParserRULE_assignment)
@@ -7202,16 +6792,6 @@ func (s *Dynamic_assignmentContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *Dynamic_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitDynamic_assignment(s)
-	}
-}
-
-func (s *Dynamic_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitDynamic_assignment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7423,16 +7003,6 @@ func (s *Int_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Int_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitInt_assignment(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Int_assignment() (localctx IInt_assignmentContext) {
 	localctx = NewInt_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, CorundumParserRULE_int_assignment)
@@ -7641,16 +7211,6 @@ func (s *Float_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Float_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFloat_assignment(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Float_assignment() (localctx IFloat_assignmentContext) {
 	localctx = NewFloat_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, CorundumParserRULE_float_assignment)
@@ -7839,16 +7399,6 @@ func (s *String_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *String_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitString_assignment(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) String_assignment() (localctx IString_assignmentContext) {
 	localctx = NewString_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, CorundumParserRULE_string_assignment)
@@ -8021,16 +7571,6 @@ func (s *Initial_array_assignmentContext) ExitRule(listener antlr.ParseTreeListe
 	}
 }
 
-func (s *Initial_array_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitInitial_array_assignment(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Initial_array_assignment() (localctx IInitial_array_assignmentContext) {
 	localctx = NewInitial_array_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, CorundumParserRULE_initial_array_assignment)
@@ -8193,16 +7733,6 @@ func (s *Array_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Array_assignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitArray_assignment(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Array_assignment() (localctx IArray_assignmentContext) {
 	localctx = NewArray_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, CorundumParserRULE_array_assignment)
@@ -8322,16 +7852,6 @@ func (s *Array_definitionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Array_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitArray_definition(s)
-	}
-}
-
-func (s *Array_definitionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitArray_definition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8461,16 +7981,6 @@ func (s *Array_definition_elementsContext) EnterRule(listener antlr.ParseTreeLis
 func (s *Array_definition_elementsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitArray_definition_elements(s)
-	}
-}
-
-func (s *Array_definition_elementsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitArray_definition_elements(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8674,16 +8184,6 @@ func (s *Array_selectorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Array_selectorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitArray_selector(s)
-	}
-}
-
-func (s *Array_selectorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitArray_selector(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8937,16 +8437,6 @@ func (s *Dynamic_resultContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Dynamic_resultContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitDynamic_result(s)
-	}
-}
-
-func (s *Dynamic_resultContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitDynamic_result(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9435,16 +8925,6 @@ func (s *DynamicContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DynamicContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitDynamic(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Dynamic() (localctx IDynamicContext) {
 	localctx = NewDynamicContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, CorundumParserRULE_dynamic)
@@ -9621,16 +9101,6 @@ func (s *Int_resultContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Int_resultContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitInt_result(s)
-	}
-}
-
-func (s *Int_resultContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitInt_result(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -9914,16 +9384,6 @@ func (s *Float_resultContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Float_resultContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitFloat_result(s)
-	}
-}
-
-func (s *Float_resultContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFloat_result(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10297,16 +9757,6 @@ func (s *String_resultContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *String_resultContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitString_result(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) String_result() (localctx IString_resultContext) {
 	return p.string_result(0)
 }
@@ -10566,16 +10016,6 @@ func (s *Comparison_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Comparison_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitComparison_list(s)
-	}
-}
-
-func (s *Comparison_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitComparison_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -10863,16 +10303,6 @@ func (s *ComparisonContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ComparisonContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitComparison(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Comparison() (localctx IComparisonContext) {
 	localctx = NewComparisonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, CorundumParserRULE_comparison)
@@ -11056,16 +10486,6 @@ func (s *Comp_varContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Comp_varContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitComp_var(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Comp_var() (localctx IComp_varContext) {
 	localctx = NewComp_varContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, CorundumParserRULE_comp_var)
@@ -11180,16 +10600,6 @@ func (s *LvalueContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LvalueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitLvalue(s)
-	}
-}
-
-func (s *LvalueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitLvalue(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -11582,16 +10992,6 @@ func (s *RvalueContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RvalueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitRvalue(s)
-	}
-}
-
-func (s *RvalueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitRvalue(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12050,16 +11450,6 @@ func (s *Break_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Break_expressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitBreak_expression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Break_expression() (localctx IBreak_expressionContext) {
 	localctx = NewBreak_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, CorundumParserRULE_break_expression)
@@ -12148,16 +11538,6 @@ func (s *Literal_tContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Literal_tContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitLiteral_t(s)
-	}
-}
-
-func (s *Literal_tContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitLiteral_t(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12252,16 +11632,6 @@ func (s *Float_tContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Float_tContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitFloat_t(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Float_t() (localctx IFloat_tContext) {
 	localctx = NewFloat_tContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 124, CorundumParserRULE_float_t)
@@ -12350,16 +11720,6 @@ func (s *Int_tContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Int_tContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitInt_t(s)
-	}
-}
-
-func (s *Int_tContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitInt_t(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12455,16 +11815,6 @@ func (s *Bool_tContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Bool_tContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitBool_t(s)
-	}
-}
-
-func (s *Bool_tContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitBool_t(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12565,16 +11915,6 @@ func (s *Nil_tContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Nil_tContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitNil_t(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Nil_t() (localctx INil_tContext) {
 	localctx = NewNil_tContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 130, CorundumParserRULE_nil_t)
@@ -12663,16 +12003,6 @@ func (s *IdContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitId(s)
-	}
-}
-
-func (s *IdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitId(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12767,16 +12097,6 @@ func (s *Id_globalContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Id_globalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitId_global(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Id_global() (localctx IId_globalContext) {
 	localctx = NewId_globalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 134, CorundumParserRULE_id_global)
@@ -12865,16 +12185,6 @@ func (s *Id_functionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Id_functionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitId_function(s)
-	}
-}
-
-func (s *Id_functionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitId_function(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -12986,16 +12296,6 @@ func (s *TerminatorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TerminatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitTerminator(s)
-	}
-}
-
-func (s *TerminatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitTerminator(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -13163,16 +12463,6 @@ func (s *Else_tokenContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Else_tokenContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitElse_token(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *CorundumParser) Else_token() (localctx IElse_tokenContext) {
 	localctx = NewElse_tokenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 140, CorundumParserRULE_else_token)
@@ -13261,16 +12551,6 @@ func (s *CrlfContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CrlfContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
 		listenerT.ExitCrlf(s)
-	}
-}
-
-func (s *CrlfContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case CorundumVisitor:
-		return t.VisitCrlf(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

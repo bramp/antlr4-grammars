@@ -499,16 +499,6 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitProgram(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) Program() (localctx IProgramContext) {
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, mumpsParserRULE_program)
@@ -626,16 +616,6 @@ func (s *EofContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EofContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitEof(s)
-	}
-}
-
-func (s *EofContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitEof(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -769,16 +749,6 @@ func (s *LineContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitLine(s)
-	}
-}
-
-func (s *LineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitLine(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -959,16 +929,6 @@ func (s *CodeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CodeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitCode(s)
-	}
-}
-
-func (s *CodeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitCode(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1191,16 +1151,6 @@ func (s *LabelContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LabelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitLabel(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) Label() (localctx ILabelContext) {
 	localctx = NewLabelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, mumpsParserRULE_label)
@@ -1350,16 +1300,6 @@ func (s *RoutinedeclContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RoutinedeclContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitRoutinedecl(s)
-	}
-}
-
-func (s *RoutinedeclContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitRoutinedecl(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1537,16 +1477,6 @@ func (s *ParamlistContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ParamlistContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitParamlist(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) Paramlist() (localctx IParamlistContext) {
 	localctx = NewParamlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, mumpsParserRULE_paramlist)
@@ -1660,16 +1590,6 @@ func (s *ParamContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ParamContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitParam(s)
-	}
-}
-
-func (s *ParamContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitParam(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1816,16 +1736,6 @@ func (s *SubprocContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SubprocContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitSubproc(s)
-	}
-}
-
-func (s *SubprocContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitSubproc(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2162,16 +2072,6 @@ func (s *CommandContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CommandContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitCommand(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) Command() (localctx ICommandContext) {
 	localctx = NewCommandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, mumpsParserRULE_command)
@@ -2386,16 +2286,6 @@ func (s *PostconditionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PostconditionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitPostcondition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) Postcondition() (localctx IPostconditionContext) {
 	localctx = NewPostconditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, mumpsParserRULE_postcondition)
@@ -2584,16 +2474,6 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) Expression() (localctx IExpressionContext) {
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, mumpsParserRULE_expression)
@@ -2752,16 +2632,6 @@ func (s *TermContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitTerm(s)
-	}
-}
-
-func (s *TermContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitTerm(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2926,16 +2796,6 @@ func (s *ConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ConditionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitCondition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) Condition() (localctx IConditionContext) {
 	localctx = NewConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, mumpsParserRULE_condition)
@@ -3051,16 +2911,6 @@ func (s *IdentifierContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitIdentifier(s)
-	}
-}
-
-func (s *IdentifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitIdentifier(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3203,16 +3053,6 @@ func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *VariableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitVariable(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) Variable() (localctx IVariableContext) {
 	localctx = NewVariableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, mumpsParserRULE_variable)
@@ -3350,16 +3190,6 @@ func (s *Break_Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Break_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitBreak_(s)
-	}
-}
-
-func (s *Break_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitBreak_(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3508,16 +3338,6 @@ func (s *Do_Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Do_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitDo_(s)
-	}
-}
-
-func (s *Do_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitDo_(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3745,16 +3565,6 @@ func (s *For_Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *For_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitFor_(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) For_() (localctx IFor_Context) {
 	localctx = NewFor_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, mumpsParserRULE_for_)
@@ -3966,16 +3776,6 @@ func (s *Halt_Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Halt_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitHalt_(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) Halt_() (localctx IHalt_Context) {
 	localctx = NewHalt_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, mumpsParserRULE_halt_)
@@ -4103,16 +3903,6 @@ func (s *Hang_Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Hang_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitHang_(s)
-	}
-}
-
-func (s *Hang_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitHang_(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4262,16 +4052,6 @@ func (s *If_Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *If_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitIf_(s)
-	}
-}
-
-func (s *If_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitIf_(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4428,16 +4208,6 @@ func (s *Kill_Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Kill_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitKill_(s)
-	}
-}
-
-func (s *Kill_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitKill_(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4608,16 +4378,6 @@ func (s *Merge_Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Merge_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitMerge_(s)
-	}
-}
-
-func (s *Merge_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitMerge_(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4804,16 +4564,6 @@ func (s *New_Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *New_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitNew_(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) New_() (localctx INew_Context) {
 	localctx = NewNew_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, mumpsParserRULE_new_)
@@ -4961,16 +4711,6 @@ func (s *Quit_Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Quit_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitQuit_(s)
-	}
-}
-
-func (s *Quit_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitQuit_(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5126,16 +4866,6 @@ func (s *Read_Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Read_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitRead_(s)
-	}
-}
-
-func (s *Read_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitRead_(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5299,16 +5029,6 @@ func (s *Set_Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Set_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitSet_(s)
-	}
-}
-
-func (s *Set_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitSet_(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5481,16 +5201,6 @@ func (s *View_Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *View_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitView_(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) View_() (localctx IView_Context) {
 	localctx = NewView_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, mumpsParserRULE_view_)
@@ -5640,16 +5350,6 @@ func (s *Write_Context) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Write_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitWrite_(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) Write_() (localctx IWrite_Context) {
 	localctx = NewWrite_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, mumpsParserRULE_write_)
@@ -5791,16 +5491,6 @@ func (s *Xecute_Context) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Xecute_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitXecute_(s)
-	}
-}
-
-func (s *Xecute_Context) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitXecute_(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5958,16 +5648,6 @@ func (s *AssignContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AssignContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitAssign(s)
-	}
-}
-
-func (s *AssignContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitAssign(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6162,16 +5842,6 @@ func (s *ArglistContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ArglistContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitArglist(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *mumpsParser) Arglist() (localctx IArglistContext) {
 	localctx = NewArglistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, mumpsParserRULE_arglist)
@@ -6311,16 +5981,6 @@ func (s *ArgContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ArgContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
 		listenerT.ExitArg(s)
-	}
-}
-
-func (s *ArgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case mumpsVisitor:
-		return t.VisitArg(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

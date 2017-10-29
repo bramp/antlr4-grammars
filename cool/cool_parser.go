@@ -295,16 +295,6 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ProgramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitProgram(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *COOLParser) Program() (localctx IProgramContext) {
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, COOLParserRULE_program)
@@ -434,16 +424,6 @@ func (s *ClassesContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ClassesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitClasses(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type EofContext struct {
 	*ProgramBlocksContext
 }
@@ -475,16 +455,6 @@ func (s *EofContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EofContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitEof(s)
-	}
-}
-
-func (s *EofContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitEof(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -637,16 +607,6 @@ func (s *ClassDefineContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ClassDefineContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitClassDefine(s)
-	}
-}
-
-func (s *ClassDefineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitClassDefine(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -846,16 +806,6 @@ func (s *MethodContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MethodContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitMethod(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type PropertyContext struct {
 	*FeatureContext
 }
@@ -905,16 +855,6 @@ func (s *PropertyContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PropertyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitProperty(s)
-	}
-}
-
-func (s *PropertyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitProperty(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1112,16 +1052,6 @@ func (s *FormalContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FormalContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitFormal(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *COOLParser) Formal() (localctx IFormalContext) {
 	localctx = NewFormalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, COOLParserRULE_formal)
@@ -1294,16 +1224,6 @@ func (s *LetInContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LetInContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitLetIn(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type MinusContext struct {
 	*ExpressionContext
 }
@@ -1361,16 +1281,6 @@ func (s *MinusContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MinusContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitMinus(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type StringContext struct {
 	*ExpressionContext
 }
@@ -1402,16 +1312,6 @@ func (s *StringContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *StringContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitString(s)
-	}
-}
-
-func (s *StringContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitString(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1456,16 +1356,6 @@ func (s *IsvoidContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IsvoidContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitIsvoid(s)
-	}
-}
-
-func (s *IsvoidContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitIsvoid(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1534,16 +1424,6 @@ func (s *WhileContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *WhileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitWhile(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type DivisionContext struct {
 	*ExpressionContext
 }
@@ -1601,16 +1481,6 @@ func (s *DivisionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *DivisionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitDivision(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type NegativeContext struct {
 	*ExpressionContext
 }
@@ -1655,16 +1525,6 @@ func (s *NegativeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NegativeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitNegative(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type BoolNotContext struct {
 	*ExpressionContext
 }
@@ -1706,16 +1566,6 @@ func (s *BoolNotContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *BoolNotContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitBoolNot(s)
-	}
-}
-
-func (s *BoolNotContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitBoolNot(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1776,16 +1626,6 @@ func (s *LessThanContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LessThanContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitLessThan(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type BlockContext struct {
 	*ExpressionContext
 }
@@ -1839,16 +1679,6 @@ func (s *BlockContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *BlockContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitBlock(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type IdContext struct {
 	*ExpressionContext
 }
@@ -1880,16 +1710,6 @@ func (s *IdContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitId(s)
-	}
-}
-
-func (s *IdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitId(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1947,16 +1767,6 @@ func (s *MultiplyContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MultiplyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitMultiply(s)
-	}
-}
-
-func (s *MultiplyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitMultiply(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2026,16 +1836,6 @@ func (s *IfContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IfContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitIf(s)
-	}
-}
-
-func (s *IfContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitIf(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2128,16 +1928,6 @@ func (s *CaseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CaseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitCase(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type OwnMethodCallContext struct {
 	*ExpressionContext
 }
@@ -2192,16 +1982,6 @@ func (s *OwnMethodCallContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OwnMethodCallContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitOwnMethodCall(s)
-	}
-}
-
-func (s *OwnMethodCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitOwnMethodCall(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2262,16 +2042,6 @@ func (s *AddContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AddContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitAdd(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type NewContext struct {
 	*ExpressionContext
 }
@@ -2307,16 +2077,6 @@ func (s *NewContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NewContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitNew(s)
-	}
-}
-
-func (s *NewContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitNew(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2357,16 +2117,6 @@ func (s *ParenthesesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ParenthesesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitParentheses(s)
-	}
-}
-
-func (s *ParenthesesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitParentheses(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2418,16 +2168,6 @@ func (s *AssignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AssignmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitAssignment(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type FalseContext struct {
 	*ExpressionContext
 }
@@ -2462,16 +2202,6 @@ func (s *FalseContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FalseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitFalse(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type IntContext struct {
 	*ExpressionContext
 }
@@ -2503,16 +2233,6 @@ func (s *IntContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IntContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitInt(s)
-	}
-}
-
-func (s *IntContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitInt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2573,16 +2293,6 @@ func (s *EqualContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EqualContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitEqual(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 type TrueContext struct {
 	*ExpressionContext
 }
@@ -2614,16 +2324,6 @@ func (s *TrueContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *TrueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitTrue(s)
-	}
-}
-
-func (s *TrueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitTrue(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2681,16 +2381,6 @@ func (s *LessEqualContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LessEqualContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitLessEqual(s)
-	}
-}
-
-func (s *LessEqualContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitLessEqual(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2752,16 +2442,6 @@ func (s *MethodCallContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MethodCallContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(COOLListener); ok {
 		listenerT.ExitMethodCall(s)
-	}
-}
-
-func (s *MethodCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case COOLVisitor:
-		return t.VisitMethodCall(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

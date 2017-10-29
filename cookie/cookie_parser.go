@@ -181,16 +181,6 @@ func (s *CookieContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *CookieContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case cookieVisitor:
-		return t.VisitCookie(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *cookieParser) Cookie() (localctx ICookieContext) {
 	localctx = NewCookieContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, cookieParserRULE_cookie)
@@ -296,16 +286,6 @@ func (s *NameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(cookieListener); ok {
 		listenerT.ExitName(s)
-	}
-}
-
-func (s *NameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case cookieVisitor:
-		return t.VisitName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -416,16 +396,6 @@ func (s *Av_pairsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Av_pairsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(cookieListener); ok {
 		listenerT.ExitAv_pairs(s)
-	}
-}
-
-func (s *Av_pairsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case cookieVisitor:
-		return t.VisitAv_pairs(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -555,16 +525,6 @@ func (s *Av_pairContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Av_pairContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case cookieVisitor:
-		return t.VisitAv_pair(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *cookieParser) Av_pair() (localctx IAv_pairContext) {
 	localctx = NewAv_pairContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, cookieParserRULE_av_pair)
@@ -678,16 +638,6 @@ func (s *AttrContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AttrContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case cookieVisitor:
-		return t.VisitAttr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *cookieParser) Attr() (localctx IAttrContext) {
 	localctx = NewAttrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, cookieParserRULE_attr)
@@ -782,16 +732,6 @@ func (s *ValueContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(cookieListener); ok {
 		listenerT.ExitValue(s)
-	}
-}
-
-func (s *ValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case cookieVisitor:
-		return t.VisitValue(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -902,16 +842,6 @@ func (s *WordContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *WordContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case cookieVisitor:
-		return t.VisitWord(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *cookieParser) Word() (localctx IWordContext) {
 	localctx = NewWordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, cookieParserRULE_word)
@@ -1019,16 +949,6 @@ func (s *TokenContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TokenContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case cookieVisitor:
-		return t.VisitToken(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *cookieParser) Token() (localctx ITokenContext) {
 	localctx = NewTokenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, cookieParserRULE_token)
@@ -1117,16 +1037,6 @@ func (s *Quoted_stringContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Quoted_stringContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(cookieListener); ok {
 		listenerT.ExitQuoted_string(s)
-	}
-}
-
-func (s *Quoted_stringContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case cookieVisitor:
-		return t.VisitQuoted_string(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

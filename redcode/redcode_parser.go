@@ -220,16 +220,6 @@ func (s *FileContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FileContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case redcodeVisitor:
-		return t.VisitFile(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *redcodeParser) File() (localctx IFileContext) {
 	localctx = NewFileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, redcodeParserRULE_file)
@@ -349,16 +339,6 @@ func (s *LineContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(redcodeListener); ok {
 		listenerT.ExitLine(s)
-	}
-}
-
-func (s *LineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case redcodeVisitor:
-		return t.VisitLine(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -541,16 +521,6 @@ func (s *InstructionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *InstructionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(redcodeListener); ok {
 		listenerT.ExitInstruction(s)
-	}
-}
-
-func (s *InstructionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case redcodeVisitor:
-		return t.VisitInstruction(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -773,16 +743,6 @@ func (s *OpcodeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *OpcodeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case redcodeVisitor:
-		return t.VisitOpcode(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *redcodeParser) Opcode() (localctx IOpcodeContext) {
 	localctx = NewOpcodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, redcodeParserRULE_opcode)
@@ -904,16 +864,6 @@ func (s *ModifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ModifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case redcodeVisitor:
-		return t.VisitModifier(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *redcodeParser) Modifier() (localctx IModifierContext) {
 	localctx = NewModifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, redcodeParserRULE_modifier)
@@ -1003,16 +953,6 @@ func (s *MmodeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MmodeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(redcodeListener); ok {
 		listenerT.ExitMmode(s)
-	}
-}
-
-func (s *MmodeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case redcodeVisitor:
-		return t.VisitMmode(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1110,16 +1050,6 @@ func (s *NumberContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NumberContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(redcodeListener); ok {
 		listenerT.ExitNumber(s)
-	}
-}
-
-func (s *NumberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case redcodeVisitor:
-		return t.VisitNumber(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1228,16 +1158,6 @@ func (s *CommentContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(redcodeListener); ok {
 		listenerT.ExitComment(s)
-	}
-}
-
-func (s *CommentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case redcodeVisitor:
-		return t.VisitComment(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

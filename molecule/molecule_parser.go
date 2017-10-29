@@ -186,16 +186,6 @@ func (s *MoleculeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MoleculeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case moleculeVisitor:
-		return t.VisitMolecule(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *moleculeParser) Molecule() (localctx IMoleculeContext) {
 	localctx = NewMoleculeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, moleculeParserRULE_molecule)
@@ -348,16 +338,6 @@ func (s *PartContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PartContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case moleculeVisitor:
-		return t.VisitPart(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *moleculeParser) Part() (localctx IPartContext) {
 	localctx = NewPartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, moleculeParserRULE_part)
@@ -487,16 +467,6 @@ func (s *StructureContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StructureContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case moleculeVisitor:
-		return t.VisitStructure(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *moleculeParser) Structure() (localctx IStructureContext) {
 	localctx = NewStructureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, moleculeParserRULE_structure)
@@ -621,16 +591,6 @@ func (s *SymbolContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SymbolContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(moleculeListener); ok {
 		listenerT.ExitSymbol(s)
-	}
-}
-
-func (s *SymbolContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case moleculeVisitor:
-		return t.VisitSymbol(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -767,16 +727,6 @@ func (s *GroupContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *GroupContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case moleculeVisitor:
-		return t.VisitGroup(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *moleculeParser) Group() (localctx IGroupContext) {
 	localctx = NewGroupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, moleculeParserRULE_group)
@@ -906,16 +856,6 @@ func (s *IonContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IonContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case moleculeVisitor:
-		return t.VisitIon(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *moleculeParser) Ion() (localctx IIonContext) {
 	localctx = NewIonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, moleculeParserRULE_ion)
@@ -1026,16 +966,6 @@ func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case moleculeVisitor:
-		return t.VisitElement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *moleculeParser) Element() (localctx IElementContext) {
 	localctx = NewElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, moleculeParserRULE_element)
@@ -1124,16 +1054,6 @@ func (s *CountContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CountContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(moleculeListener); ok {
 		listenerT.ExitCount(s)
-	}
-}
-
-func (s *CountContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case moleculeVisitor:
-		return t.VisitCount(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

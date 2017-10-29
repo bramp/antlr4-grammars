@@ -251,16 +251,6 @@ func (s *GraphContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *GraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitGraph(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DOTParser) Graph() (localctx IGraphContext) {
 	localctx = NewGraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, DOTParserRULE_graph)
@@ -408,16 +398,6 @@ func (s *Stmt_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Stmt_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DOTListener); ok {
 		listenerT.ExitStmt_list(s)
-	}
-}
-
-func (s *Stmt_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitStmt_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -593,16 +573,6 @@ func (s *StmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitStmt(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DOTParser) Stmt() (localctx IStmtContext) {
 	localctx = NewStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, DOTParserRULE_stmt)
@@ -754,16 +724,6 @@ func (s *Attr_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Attr_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitAttr_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DOTParser) Attr_stmt() (localctx IAttr_stmtContext) {
 	localctx = NewAttr_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, DOTParserRULE_attr_stmt)
@@ -881,16 +841,6 @@ func (s *Attr_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Attr_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DOTListener); ok {
 		listenerT.ExitAttr_list(s)
-	}
-}
-
-func (s *Attr_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitAttr_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1027,16 +977,6 @@ func (s *A_listContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *A_listContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DOTListener); ok {
 		listenerT.ExitA_list(s)
-	}
-}
-
-func (s *A_listContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitA_list(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1201,16 +1141,6 @@ func (s *Edge_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Edge_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DOTListener); ok {
 		listenerT.ExitEdge_stmt(s)
-	}
-}
-
-func (s *Edge_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitEdge_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1401,16 +1331,6 @@ func (s *EdgeRHSContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EdgeRHSContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitEdgeRHS(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DOTParser) EdgeRHS() (localctx IEdgeRHSContext) {
 	localctx = NewEdgeRHSContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, DOTParserRULE_edgeRHS)
@@ -1527,16 +1447,6 @@ func (s *EdgeopContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EdgeopContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitEdgeop(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DOTParser) Edgeop() (localctx IEdgeopContext) {
 	localctx = NewEdgeopContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, DOTParserRULE_edgeop)
@@ -1647,16 +1557,6 @@ func (s *Node_stmtContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *Node_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DOTListener); ok {
 		listenerT.ExitNode_stmt(s)
-	}
-}
-
-func (s *Node_stmtContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitNode_stmt(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1779,16 +1679,6 @@ func (s *Node_idContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *Node_idContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitNode_id(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DOTParser) Node_id() (localctx INode_idContext) {
 	localctx = NewNode_idContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, DOTParserRULE_node_id)
@@ -1908,16 +1798,6 @@ func (s *PortContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PortContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DOTListener); ok {
 		listenerT.ExitPort(s)
-	}
-}
-
-func (s *PortContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitPort(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2052,16 +1932,6 @@ func (s *SubgraphContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SubgraphContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitSubgraph(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *DOTParser) Subgraph() (localctx ISubgraphContext) {
 	localctx = NewSubgraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, DOTParserRULE_subgraph)
@@ -2193,16 +2063,6 @@ func (s *IdContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DOTListener); ok {
 		listenerT.ExitId(s)
-	}
-}
-
-func (s *IdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case DOTVisitor:
-		return t.VisitId(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

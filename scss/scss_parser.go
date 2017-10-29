@@ -514,16 +514,6 @@ func (s *StylesheetContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StylesheetContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitStylesheet(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) Stylesheet() (localctx IStylesheetContext) {
 	localctx = NewStylesheetContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, ScssParserRULE_stylesheet)
@@ -732,16 +722,6 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitStatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) Statement() (localctx IStatementContext) {
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, ScssParserRULE_statement)
@@ -943,16 +923,6 @@ func (s *ParamsContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ParamsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitParams(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) Params() (localctx IParamsContext) {
 	localctx = NewParamsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, ScssParserRULE_params)
@@ -1090,16 +1060,6 @@ func (s *ParamContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ParamContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitParam(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) Param() (localctx IParamContext) {
 	localctx = NewParamContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, ScssParserRULE_param)
@@ -1204,16 +1164,6 @@ func (s *VariableNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *VariableNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitVariableName(s)
-	}
-}
-
-func (s *VariableNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitVariableName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1332,16 +1282,6 @@ func (s *ParamOptionalValueContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *ParamOptionalValueContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitParamOptionalValue(s)
-	}
-}
-
-func (s *ParamOptionalValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitParamOptionalValue(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1476,16 +1416,6 @@ func (s *MixinDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MixinDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitMixinDeclaration(s)
-	}
-}
-
-func (s *MixinDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitMixinDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1644,16 +1574,6 @@ func (s *IncludeDeclarationContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *IncludeDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitIncludeDeclaration(s)
-	}
-}
-
-func (s *IncludeDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitIncludeDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1851,16 +1771,6 @@ func (s *FunctionDeclarationContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *FunctionDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitFunctionDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) FunctionDeclaration() (localctx IFunctionDeclarationContext) {
 	localctx = NewFunctionDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, ScssParserRULE_functionDeclaration)
@@ -2024,16 +1934,6 @@ func (s *FunctionBodyContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FunctionBodyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitFunctionBody(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) FunctionBody() (localctx IFunctionBodyContext) {
 	localctx = NewFunctionBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, ScssParserRULE_functionBody)
@@ -2143,16 +2043,6 @@ func (s *FunctionReturnContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FunctionReturnContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitFunctionReturn(s)
-	}
-}
-
-func (s *FunctionReturnContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitFunctionReturn(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2268,16 +2158,6 @@ func (s *FunctionStatementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FunctionStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitFunctionStatement(s)
-	}
-}
-
-func (s *FunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitFunctionStatement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2425,16 +2305,6 @@ func (s *CommandStatementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CommandStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitCommandStatement(s)
-	}
-}
-
-func (s *CommandStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitCommandStatement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2590,16 +2460,6 @@ func (s *MathCharacterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MathCharacterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitMathCharacter(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) MathCharacter() (localctx IMathCharacterContext) {
 	localctx = NewMathCharacterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, ScssParserRULE_mathCharacter)
@@ -2710,16 +2570,6 @@ func (s *MathStatementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MathStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitMathStatement(s)
-	}
-}
-
-func (s *MathStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitMathStatement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2873,16 +2723,6 @@ func (s *ExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitExpression(s)
-	}
-}
-
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3085,16 +2925,6 @@ func (s *IfDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IfDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitIfDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) IfDeclaration() (localctx IIfDeclarationContext) {
 	localctx = NewIfDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, ScssParserRULE_ifDeclaration)
@@ -3248,16 +3078,6 @@ func (s *ElseIfStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ElseIfStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitElseIfStatement(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) ElseIfStatement() (localctx IElseIfStatementContext) {
 	localctx = NewElseIfStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, ScssParserRULE_elseIfStatement)
@@ -3368,16 +3188,6 @@ func (s *ElseStatementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ElseStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitElseStatement(s)
-	}
-}
-
-func (s *ElseStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitElseStatement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3497,16 +3307,6 @@ func (s *ConditionsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ConditionsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitConditions(s)
-	}
-}
-
-func (s *ConditionsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitConditions(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3653,16 +3453,6 @@ func (s *ConditionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitCondition(s)
-	}
-}
-
-func (s *ConditionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitCondition(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3816,16 +3606,6 @@ func (s *VariableDeclarationContext) EnterRule(listener antlr.ParseTreeListener)
 func (s *VariableDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitVariableDeclaration(s)
-	}
-}
-
-func (s *VariableDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitVariableDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3984,16 +3764,6 @@ func (s *ForDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ForDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitForDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) ForDeclaration() (localctx IForDeclarationContext) {
 	localctx = NewForDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, ScssParserRULE_forDeclaration)
@@ -4109,16 +3879,6 @@ func (s *FromNumberContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FromNumberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitFromNumber(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) FromNumber() (localctx IFromNumberContext) {
 	localctx = NewFromNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, ScssParserRULE_fromNumber)
@@ -4207,16 +3967,6 @@ func (s *ThroughNumberContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ThroughNumberContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitThroughNumber(s)
-	}
-}
-
-func (s *ThroughNumberContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitThroughNumber(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4328,16 +4078,6 @@ func (s *WhileDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *WhileDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitWhileDeclaration(s)
-	}
-}
-
-func (s *WhileDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitWhileDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4492,16 +4232,6 @@ func (s *EachDeclarationContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EachDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitEachDeclaration(s)
-	}
-}
-
-func (s *EachDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitEachDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4663,16 +4393,6 @@ func (s *EachValueListContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EachValueListContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitEachValueList(s)
-	}
-}
-
-func (s *EachValueListContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitEachValueList(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -4855,16 +4575,6 @@ func (s *IdentifierListOrMapContext) ExitRule(listener antlr.ParseTreeListener) 
 	}
 }
 
-func (s *IdentifierListOrMapContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitIdentifierListOrMap(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) IdentifierListOrMap() (localctx IIdentifierListOrMapContext) {
 	localctx = NewIdentifierListOrMapContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, ScssParserRULE_identifierListOrMap)
@@ -5003,16 +4713,6 @@ func (s *IdentifierValueContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IdentifierValueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitIdentifierValue(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) IdentifierValue() (localctx IIdentifierValueContext) {
 	localctx = NewIdentifierValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, ScssParserRULE_identifierValue)
@@ -5136,16 +4836,6 @@ func (s *ImportDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ImportDeclarationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitImportDeclaration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) ImportDeclaration() (localctx IImportDeclarationContext) {
 	localctx = NewImportDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, ScssParserRULE_importDeclaration)
@@ -5266,16 +4956,6 @@ func (s *ReferenceUrlContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ReferenceUrlContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitReferenceUrl(s)
-	}
-}
-
-func (s *ReferenceUrlContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitReferenceUrl(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5403,16 +5083,6 @@ func (s *MediaTypesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MediaTypesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitMediaTypes(s)
-	}
-}
-
-func (s *MediaTypesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitMediaTypes(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5560,16 +5230,6 @@ func (s *NestedContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *NestedContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitNested(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) Nested() (localctx INestedContext) {
 	localctx = NewNestedContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, ScssParserRULE_nested)
@@ -5705,16 +5365,6 @@ func (s *NestContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NestContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitNest(s)
-	}
-}
-
-func (s *NestContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitNest(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -5863,16 +5513,6 @@ func (s *RulesetContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RulesetContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitRuleset(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) Ruleset() (localctx IRulesetContext) {
 	localctx = NewRulesetContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, ScssParserRULE_ruleset)
@@ -6015,16 +5655,6 @@ func (s *BlockContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *BlockContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitBlock(s)
-	}
-}
-
-func (s *BlockContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitBlock(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6193,16 +5823,6 @@ func (s *SelectorsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SelectorsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitSelectors(s)
-	}
-}
-
-func (s *SelectorsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitSelectors(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6391,16 +6011,6 @@ func (s *SelectorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SelectorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitSelector(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) Selector() (localctx ISelectorContext) {
 	localctx = NewSelectorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, ScssParserRULE_selector)
@@ -6554,16 +6164,6 @@ func (s *SelectorPrefixContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *SelectorPrefixContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitSelectorPrefix(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) SelectorPrefix() (localctx ISelectorPrefixContext) {
 	localctx = NewSelectorPrefixContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, ScssParserRULE_selectorPrefix)
@@ -6664,16 +6264,6 @@ func (s *ElementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitElement(s)
-	}
-}
-
-func (s *ElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitElement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -6831,16 +6421,6 @@ func (s *PseudoContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PseudoContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitPseudo(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) Pseudo() (localctx IPseudoContext) {
 	localctx = NewPseudoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, ScssParserRULE_pseudo)
@@ -6982,16 +6562,6 @@ func (s *AttribContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AttribContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitAttrib(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) Attrib() (localctx IAttribContext) {
 	localctx = NewAttribContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, ScssParserRULE_attrib)
@@ -7104,16 +6674,6 @@ func (s *AttribRelateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AttribRelateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitAttribRelate(s)
-	}
-}
-
-func (s *AttribRelateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitAttribRelate(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7252,16 +6812,6 @@ func (s *IdentifierContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitIdentifier(s)
-	}
-}
-
-func (s *IdentifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitIdentifier(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7427,16 +6977,6 @@ func (s *IdentifierPartContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IdentifierPartContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitIdentifierPart(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) IdentifierPart() (localctx IIdentifierPartContext) {
 	localctx = NewIdentifierPartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, ScssParserRULE_identifierPart)
@@ -7560,16 +7100,6 @@ func (s *IdentifierVariableNameContext) ExitRule(listener antlr.ParseTreeListene
 	}
 }
 
-func (s *IdentifierVariableNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitIdentifierVariableName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) IdentifierVariableName() (localctx IIdentifierVariableNameContext) {
 	localctx = NewIdentifierVariableNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, ScssParserRULE_identifierVariableName)
@@ -7688,16 +7218,6 @@ func (s *PropertyContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PropertyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitProperty(s)
-	}
-}
-
-func (s *PropertyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitProperty(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -7827,16 +7347,6 @@ func (s *ValuesContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ValuesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitValues(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) Values() (localctx IValuesContext) {
 	localctx = NewValuesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, ScssParserRULE_values)
@@ -7958,16 +7468,6 @@ func (s *UrlContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *UrlContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitUrl(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *ScssParser) Url() (localctx IUrlContext) {
 	localctx = NewUrlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, ScssParserRULE_url)
@@ -8068,16 +7568,6 @@ func (s *MeasurementContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *MeasurementContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitMeasurement(s)
-	}
-}
-
-func (s *MeasurementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitMeasurement(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -8199,16 +7689,6 @@ func (s *FunctionCallContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FunctionCallContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ScssParserListener); ok {
 		listenerT.ExitFunctionCall(s)
-	}
-}
-
-func (s *FunctionCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case ScssParserVisitor:
-		return t.VisitFunctionCall(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

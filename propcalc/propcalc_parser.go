@@ -198,16 +198,6 @@ func (s *PropositionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PropositionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propcalcVisitor:
-		return t.VisitProposition(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *propcalcParser) Proposition() (localctx IPropositionContext) {
 	localctx = NewPropositionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, propcalcParserRULE_proposition)
@@ -339,16 +329,6 @@ func (s *ExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(propcalcListener); ok {
 		listenerT.ExitExpression(s)
-	}
-}
-
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propcalcVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -493,16 +473,6 @@ func (s *RelExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RelExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propcalcVisitor:
-		return t.VisitRelExpression(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *propcalcParser) RelExpression() (localctx IRelExpressionContext) {
 	localctx = NewRelExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, propcalcParserRULE_relExpression)
@@ -630,16 +600,6 @@ func (s *AtomsContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AtomsContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(propcalcListener); ok {
 		listenerT.ExitAtoms(s)
-	}
-}
-
-func (s *AtomsContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propcalcVisitor:
-		return t.VisitAtoms(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -788,16 +748,6 @@ func (s *AtomContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(propcalcListener); ok {
 		listenerT.ExitAtom(s)
-	}
-}
-
-func (s *AtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propcalcVisitor:
-		return t.VisitAtom(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -950,16 +900,6 @@ func (s *EquivContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EquivContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propcalcVisitor:
-		return t.VisitEquiv(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *propcalcParser) Equiv() (localctx IEquivContext) {
 	localctx = NewEquivContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, propcalcParserRULE_equiv)
@@ -1082,16 +1022,6 @@ func (s *ImpliesContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ImpliesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propcalcVisitor:
-		return t.VisitImplies(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *propcalcParser) Implies() (localctx IImpliesContext) {
 	localctx = NewImpliesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, propcalcParserRULE_implies)
@@ -1192,16 +1122,6 @@ func (s *VariableContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(propcalcListener); ok {
 		listenerT.ExitVariable(s)
-	}
-}
-
-func (s *VariableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case propcalcVisitor:
-		return t.VisitVariable(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

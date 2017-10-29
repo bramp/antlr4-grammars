@@ -199,16 +199,6 @@ func (s *IstcContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *IstcContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case istcVisitor:
-		return t.VisitIstc(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *istcParser) Istc() (localctx IIstcContext) {
 	localctx = NewIstcContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, istcParserRULE_istc)
@@ -340,16 +330,6 @@ func (s *RegistrationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RegistrationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case istcVisitor:
-		return t.VisitRegistration(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *istcParser) Registration() (localctx IRegistrationContext) {
 	localctx = NewRegistrationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, istcParserRULE_registration)
@@ -450,16 +430,6 @@ func (s *YearContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *YearContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(istcListener); ok {
 		listenerT.ExitYear(s)
-	}
-}
-
-func (s *YearContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case istcVisitor:
-		return t.VisitYear(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -567,16 +537,6 @@ func (s *WorkContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *WorkContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(istcListener); ok {
 		listenerT.ExitWork(s)
-	}
-}
-
-func (s *WorkContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case istcVisitor:
-		return t.VisitWork(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -696,16 +656,6 @@ func (s *CheckContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *CheckContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(istcListener); ok {
 		listenerT.ExitCheck(s)
-	}
-}
-
-func (s *CheckContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case istcVisitor:
-		return t.VisitCheck(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

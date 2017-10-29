@@ -203,16 +203,6 @@ func (s *LogContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LogContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case clfVisitor:
-		return t.VisitLog(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *clfParser) Log() (localctx ILogContext) {
 	localctx = NewLogContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, clfParserRULE_log)
@@ -430,16 +420,6 @@ func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case clfVisitor:
-		return t.VisitLine(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *clfParser) Line() (localctx ILineContext) {
 	localctx = NewLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, clfParserRULE_line)
@@ -575,16 +555,6 @@ func (s *HostContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *HostContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case clfVisitor:
-		return t.VisitHost(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *clfParser) Host() (localctx IHostContext) {
 	localctx = NewHostContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, clfParserRULE_host)
@@ -682,16 +652,6 @@ func (s *LognameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *LognameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case clfVisitor:
-		return t.VisitLogname(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *clfParser) Logname() (localctx ILognameContext) {
 	localctx = NewLognameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, clfParserRULE_logname)
@@ -780,16 +740,6 @@ func (s *UsernameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *UsernameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(clfListener); ok {
 		listenerT.ExitUsername(s)
-	}
-}
-
-func (s *UsernameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case clfVisitor:
-		return t.VisitUsername(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -889,16 +839,6 @@ func (s *DatetimetzContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DatetimetzContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(clfListener); ok {
 		listenerT.ExitDatetimetz(s)
-	}
-}
-
-func (s *DatetimetzContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case clfVisitor:
-		return t.VisitDatetimetz(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1013,16 +953,6 @@ func (s *RefererContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RefererContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case clfVisitor:
-		return t.VisitReferer(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *clfParser) Referer() (localctx IRefererContext) {
 	localctx = NewRefererContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, clfParserRULE_referer)
@@ -1111,16 +1041,6 @@ func (s *RequestContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RequestContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(clfListener); ok {
 		listenerT.ExitRequest(s)
-	}
-}
-
-func (s *RequestContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case clfVisitor:
-		return t.VisitRequest(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1215,16 +1135,6 @@ func (s *UseragentContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *UseragentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case clfVisitor:
-		return t.VisitUseragent(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *clfParser) Useragent() (localctx IUseragentContext) {
 	localctx = NewUseragentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, clfParserRULE_useragent)
@@ -1316,16 +1226,6 @@ func (s *StatuscodeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StatuscodeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case clfVisitor:
-		return t.VisitStatuscode(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *clfParser) Statuscode() (localctx IStatuscodeContext) {
 	localctx = NewStatuscodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, clfParserRULE_statuscode)
@@ -1414,16 +1314,6 @@ func (s *BytesContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *BytesContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(clfListener); ok {
 		listenerT.ExitBytes(s)
-	}
-}
-
-func (s *BytesContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case clfVisitor:
-		return t.VisitBytes(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

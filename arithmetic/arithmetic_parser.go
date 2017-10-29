@@ -209,16 +209,6 @@ func (s *EquationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *EquationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case arithmeticVisitor:
-		return t.VisitEquation(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *arithmeticParser) Equation() (localctx IEquationContext) {
 	localctx = NewEquationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, arithmeticParserRULE_equation)
@@ -350,16 +340,6 @@ func (s *ExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(arithmeticListener); ok {
 		listenerT.ExitExpression(s)
-	}
-}
-
-func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case arithmeticVisitor:
-		return t.VisitExpression(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -513,16 +493,6 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *TermContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case arithmeticVisitor:
-		return t.VisitTerm(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *arithmeticParser) Term() (localctx ITermContext) {
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, arithmeticParserRULE_term)
@@ -665,16 +635,6 @@ func (s *FactorContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FactorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case arithmeticVisitor:
-		return t.VisitFactor(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *arithmeticParser) Factor() (localctx IFactorContext) {
 	localctx = NewFactorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, arithmeticParserRULE_factor)
@@ -806,16 +766,6 @@ func (s *SignedAtomContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SignedAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(arithmeticListener); ok {
 		listenerT.ExitSignedAtom(s)
-	}
-}
-
-func (s *SignedAtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case arithmeticVisitor:
-		return t.VisitSignedAtom(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -975,16 +925,6 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AtomContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case arithmeticVisitor:
-		return t.VisitAtom(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *arithmeticParser) Atom() (localctx IAtomContext) {
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, arithmeticParserRULE_atom)
@@ -1107,16 +1047,6 @@ func (s *ScientificContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *ScientificContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case arithmeticVisitor:
-		return t.VisitScientific(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *arithmeticParser) Scientific() (localctx IScientificContext) {
 	localctx = NewScientificContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, arithmeticParserRULE_scientific)
@@ -1205,16 +1135,6 @@ func (s *VariableContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(arithmeticListener); ok {
 		listenerT.ExitVariable(s)
-	}
-}
-
-func (s *VariableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case arithmeticVisitor:
-		return t.VisitVariable(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1314,16 +1234,6 @@ func (s *RelopContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RelopContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(arithmeticListener); ok {
 		listenerT.ExitRelop(s)
-	}
-}
-
-func (s *RelopContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case arithmeticVisitor:
-		return t.VisitRelop(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 

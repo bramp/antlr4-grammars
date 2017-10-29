@@ -312,16 +312,6 @@ func (s *MainContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *MainContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitMain(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) Main() (localctx IMainContext) {
 	localctx = NewMainContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, xpathParserRULE_main)
@@ -426,16 +416,6 @@ func (s *LocationPathContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LocationPathContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitLocationPath(s)
-	}
-}
-
-func (s *LocationPathContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitLocationPath(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -549,16 +529,6 @@ func (s *AbsoluteLocationPathNorootContext) EnterRule(listener antlr.ParseTreeLi
 func (s *AbsoluteLocationPathNorootContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitAbsoluteLocationPathNoroot(s)
-	}
-}
-
-func (s *AbsoluteLocationPathNorootContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitAbsoluteLocationPathNoroot(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -693,16 +663,6 @@ func (s *RelativeLocationPathContext) EnterRule(listener antlr.ParseTreeListener
 func (s *RelativeLocationPathContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitRelativeLocationPath(s)
-	}
-}
-
-func (s *RelativeLocationPathContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitRelativeLocationPath(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -870,16 +830,6 @@ func (s *StepContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *StepContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitStep(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) Step() (localctx IStepContext) {
 	localctx = NewStepContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, xpathParserRULE_step)
@@ -1003,16 +953,6 @@ func (s *AxisSpecifierContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AxisSpecifierContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitAxisSpecifier(s)
-	}
-}
-
-func (s *AxisSpecifierContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitAxisSpecifier(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1143,16 +1083,6 @@ func (s *NodeTestContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NodeTestContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitNodeTest(s)
-	}
-}
-
-func (s *NodeTestContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitNodeTest(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1296,16 +1226,6 @@ func (s *PredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PredicateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitPredicate(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) Predicate() (localctx IPredicateContext) {
 	localctx = NewPredicateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, xpathParserRULE_predicate)
@@ -1397,16 +1317,6 @@ func (s *AbbreviatedStepContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AbbreviatedStepContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitAbbreviatedStep(s)
-	}
-}
-
-func (s *AbbreviatedStepContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitAbbreviatedStep(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1510,16 +1420,6 @@ func (s *ExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitExpr(s)
-	}
-}
-
-func (s *ExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1645,16 +1545,6 @@ func (s *PrimaryExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PrimaryExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitPrimaryExpr(s)
-	}
-}
-
-func (s *PrimaryExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitPrimaryExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -1823,16 +1713,6 @@ func (s *FunctionCallContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FunctionCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitFunctionCall(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) FunctionCall() (localctx IFunctionCallContext) {
 	localctx = NewFunctionCallContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, xpathParserRULE_functionCall)
@@ -1975,16 +1855,6 @@ func (s *UnionExprNoRootContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *UnionExprNoRootContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitUnionExprNoRoot(s)
-	}
-}
-
-func (s *UnionExprNoRootContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitUnionExprNoRoot(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2142,16 +2012,6 @@ func (s *PathExprNoRootContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *PathExprNoRootContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitPathExprNoRoot(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) PathExprNoRoot() (localctx IPathExprNoRootContext) {
 	localctx = NewPathExprNoRootContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, xpathParserRULE_pathExprNoRoot)
@@ -2306,16 +2166,6 @@ func (s *FilterExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FilterExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitFilterExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) FilterExpr() (localctx IFilterExprContext) {
 	localctx = NewFilterExprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, xpathParserRULE_filterExpr)
@@ -2438,16 +2288,6 @@ func (s *OrExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OrExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitOrExpr(s)
-	}
-}
-
-func (s *OrExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitOrExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2580,16 +2420,6 @@ func (s *AndExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AndExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitAndExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) AndExpr() (localctx IAndExprContext) {
 	localctx = NewAndExprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, xpathParserRULE_andExpr)
@@ -2716,16 +2546,6 @@ func (s *EqualityExprContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EqualityExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitEqualityExpr(s)
-	}
-}
-
-func (s *EqualityExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitEqualityExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -2863,16 +2683,6 @@ func (s *RelationalExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *RelationalExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitRelationalExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) RelationalExpr() (localctx IRelationalExprContext) {
 	localctx = NewRelationalExprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, xpathParserRULE_relationalExpr)
@@ -3007,16 +2817,6 @@ func (s *AdditiveExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *AdditiveExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitAdditiveExpr(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) AdditiveExpr() (localctx IAdditiveExprContext) {
 	localctx = NewAdditiveExprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, xpathParserRULE_additiveExpr)
@@ -3145,16 +2945,6 @@ func (s *MultiplicativeExprContext) EnterRule(listener antlr.ParseTreeListener) 
 func (s *MultiplicativeExprContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitMultiplicativeExpr(s)
-	}
-}
-
-func (s *MultiplicativeExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitMultiplicativeExpr(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3309,16 +3099,6 @@ func (s *UnaryExprNoRootContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *UnaryExprNoRootContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitUnaryExprNoRoot(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) UnaryExprNoRoot() (localctx IUnaryExprNoRootContext) {
 	localctx = NewUnaryExprNoRootContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, xpathParserRULE_unaryExprNoRoot)
@@ -3444,16 +3224,6 @@ func (s *QNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *QNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitQName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) QName() (localctx IQNameContext) {
 	localctx = NewQNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, xpathParserRULE_qName)
@@ -3567,16 +3337,6 @@ func (s *FunctionNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
-func (s *FunctionNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitFunctionName(s)
-
-	default:
-		return t.VisitChildren(s)
-	}
-}
-
 func (p *xpathParser) FunctionName() (localctx IFunctionNameContext) {
 	localctx = NewFunctionNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, xpathParserRULE_functionName)
@@ -3671,16 +3431,6 @@ func (s *VariableReferenceContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *VariableReferenceContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitVariableReference(s)
-	}
-}
-
-func (s *VariableReferenceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitVariableReference(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3792,16 +3542,6 @@ func (s *NameTestContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NameTestContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitNameTest(s)
-	}
-}
-
-func (s *NameTestContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitNameTest(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
@@ -3925,16 +3665,6 @@ func (s *NCNameContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *NCNameContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(xpathListener); ok {
 		listenerT.ExitNCName(s)
-	}
-}
-
-func (s *NCNameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
-	switch t := visitor.(type) {
-	case xpathVisitor:
-		return t.VisitNCName(s)
-
-	default:
-		return t.VisitChildren(s)
 	}
 }
 
