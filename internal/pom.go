@@ -67,7 +67,7 @@ func (p *Project) LexerName() string {
 	return p.grammarLexerName() + "Lexer"
 }
 
-// ListenerName returns the filename of the generated Listener.
+// ListenerName returns the name of the of the generated Listener.
 // See https://github.com/antlr/antlr4/blob/master/tool/src/org/antlr/v4/codegen/target/GoTarget.java#L168
 func (p *Project) ListenerName() string {
 	if g := p.findGrammarOfType("PARSER"); g != nil {
@@ -118,23 +118,26 @@ func (p *Project) GeneratedFilenames() []string {
 	// https://github.com/antlr/antlr4/blob/46b3aa98cc8d8b6908c2cabb64a9587b6b973e6c/tool/src/org/antlr/v4/codegen/target/GoTarget.java#L146
 	var files []string
 	for _, g := range p.Grammars {
-		name := g.Name
 		switch g.Type {
-		case "PARSER":
-			name = strings.ToLower(strings.TrimSuffix(name, "Parser"))
-			files = append(files, name+"_parser.go")
 		case "LEXER":
-			name = strings.ToLower(strings.TrimSuffix(name, "Lexer"))
+			name := strings.ToLower(strings.TrimSuffix(g.Name, "Lexer"))
 			files = append(files, name+"_lexer.go")
+
+		case "PARSER":
+			name := strings.ToLower(g.Name)
+			files = append(files, name+"_base_listener.go", name+"_listener.go")
+
+			name = strings.ToLower(strings.TrimSuffix(g.Name, "Parser"))
+			files = append(files, name+"_parser.go")
+
 		case "COMBINED":
-			name = strings.ToLower(name)
+			name := strings.ToLower(g.Name)
+			files = append(files, name+"_base_listener.go", name+"_listener.go")
 			files = append(files, name+"_parser.go", name+"_lexer.go")
+
 		default:
 			panic(fmt.Sprintf("unknown grammar type %q", g.Type))
 		}
-
-		files = append(files, name+"_base_listener.go", name+"_listener.go")
-
 	}
 
 	return files
