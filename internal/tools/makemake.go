@@ -98,11 +98,12 @@ test: {{ range $name, $project := .Projects -}}{{ $name }}/{{ $project.FilePrefi
 {{- end }}
 
 %_lexer.go %_parser.go:
+	basedir=$$PWD; \
 	lang=$$(dirname $@); \
 	errors=$$lang/$$(basename $*).errors; \
 	mkdir -p $$lang; \
 	pushd $$(dirname $<) > /dev/null; \
-	java -jar $(ANTLR_BIN) $(ANTLR_ARGS) -package $$lang $(notdir $^) -o ../../$$lang > ../../$$errors 2>&1; \
+	java -jar $(ANTLR_BIN) $(ANTLR_ARGS) -package $$lang $(notdir $^) -o $$basedir/$$lang > $$basedir/$$errors 2>&1; \
 	RET=$$?; \
 	popd > /dev/null; \
 	if [ $$RET -ne 0 ]; then \
