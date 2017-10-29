@@ -121,17 +121,20 @@ func (p *Project) GeneratedFilenames() []string {
 		name := g.Name
 		switch g.Type {
 		case "PARSER":
-			name = strings.TrimSuffix(name, "Parser")
-			files = append(files, strings.ToLower(name)+"_parser.go")
+			name = strings.ToLower(strings.TrimSuffix(name, "Parser"))
+			files = append(files, name+"_parser.go")
 		case "LEXER":
-			name = strings.TrimSuffix(name, "Lexer")
-			files = append(files, strings.ToLower(name)+"_lexer.go")
+			name = strings.ToLower(strings.TrimSuffix(name, "Lexer"))
+			files = append(files, name+"_lexer.go")
 		case "COMBINED":
-			files = append(files, strings.ToLower(name)+"_parser.go")
-			files = append(files, strings.ToLower(name)+"_lexer.go")
+			name = strings.ToLower(name)
+			files = append(files, name+"_parser.go", name+"_lexer.go")
 		default:
 			panic(fmt.Sprintf("unknown grammar type %q", g.Type))
 		}
+
+		files = append(files, name+"_base_listener.go", name+"_listener.go")
+
 	}
 
 	return files
