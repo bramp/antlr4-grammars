@@ -27,8 +27,6 @@ import (
 	"text/template"
 )
 
-const GRAMMARS_ROOT = "grammars-v4"
-
 const COPYRIGHT = `// Copyright 2017 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,14 +44,14 @@ const COPYRIGHT = `// Copyright 2017 Google Inc.
 `
 
 const DOCFILE = `{{template "copyright" .}}
-package {{ .PackageName }} // import "bramp.net/antlr4/{{ .FullPackageName }}"
+package {{ .PackageName }} // import "bramp.net/antlr4/{{ .PackageName }}"
 
 `
 
 // TESTFILE is the template for a go test file for this grammar.
 // It expects to be executed with a pom.
 const TESTFILE = `{{template "copyright" .}}
-// Package {{ .PackageName }}_test contains tests for the {{ .LongName }} grammar.
+// Package {{ .PackageName }}_test contains tests for the {{ .Project.LongName }} grammar.
 // The tests should be run with the -timeout flag, to ensure the parser doesn't
 // get stuck.
 //
@@ -62,7 +60,7 @@ const TESTFILE = `{{template "copyright" .}}
 package {{ .PackageName }}_test
 
 import (
-	"bramp.net/antlr4/{{.FullPackageName}}"
+	"bramp.net/antlr4/{{ .PackageName }}"
 	"bramp.net/antlr4/internal"
 
 	"fmt"
@@ -74,13 +72,13 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{
-{{- range $_, $example := .Examples }}
+{{- range $_, $example := .Project.Examples }}
 	{{ printf "%q" . }},
 {{- end }}
 }
 
 type exampleListener struct {
-	*{{.PackageName}}.Base{{ .ListenerName }}
+	*{{ .PackageName }}.Base{{ .Project.ListenerName }}
 }
 
 func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
@@ -88,10 +86,10 @@ func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 }
 
 func Example() {
-	{{- if eq .CaseInsensitiveType "UPPER" }}
+	{{- if eq .Project.CaseInsensitiveType "UPPER" }}
 	// Setup the input (which this parser expects to be uppercased).
 	is := antlr.NewInputStream(strings.ToUpper("...some text to parse..."))
-	{{ else if eq .CaseInsensitiveType "lower" }}
+	{{ else if eq .Project.CaseInsensitiveType "lower" }}
 	// Setup the input (which this parser expects to be lowercased).
 	is := antlr.NewInputStream(strings.ToLower("...some text to parse..."))
 	{{ else }}
@@ -100,36 +98,36 @@ func Example() {
 	{{- end }}
 
 	// Create the Lexer
-	lexer := {{.PackageName}}.New{{ .LexerName }}(is)
+	lexer := {{ .PackageName }}.New{{ .Project.LexerName }}(is)
 	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
 
 	// Create the Parser
-	p := {{.PackageName}}.New{{ .ParserName }}(stream)
+	p := {{ .PackageName }}.New{{ .Project.ParserName }}(stream)
 	p.BuildParseTrees = true
 	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 
 	// Finally walk the tree
-	tree := p.{{ .EntryPoint | Title }}()
+	tree := p.{{ .Project.EntryPoint | Title }}()
 	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
 }
 
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
-	input, err := antlr.NewFileStream(filepath.Join("{{ .ExampleRoot }}", filename))
+	input, err := antlr.NewFileStream(filepath.Join("{{ .Project.ExampleRoot }}", filename))
 	if err != nil {
 		return nil, err
 	}
 
-	{{ if eq .CaseInsensitiveType "UPPER" }}
+	{{ if eq .Project.CaseInsensitiveType "UPPER" }}
 	input = internal.NewCaseChangingStream(input, true)
-	{{ else if eq .CaseInsensitiveType "lower" }}
+	{{ else if eq .Project.CaseInsensitiveType "lower" }}
 	input = internal.NewCaseChangingStream(input, false)
 	{{ end -}}
 
 	return input, nil
 }
 
-func Test{{ .LexerName | Title }}(t *testing.T) {
+func Test{{ .Project.LexerName | Title }}(t *testing.T) {
 	for _, file := range examples {
 		input, err := newCharStream(file)
 		if err != nil {
@@ -137,7 +135,7 @@ func Test{{ .LexerName | Title }}(t *testing.T) {
 		}
 
 		// Create the Lexer
-		lexer := {{.PackageName}}.New{{ .LexerName }}(input)
+		lexer := {{ .PackageName }}.New{{ .Project.LexerName }}(input)
 
 		// Try and read all tokens
 		i := 0
@@ -150,12 +148,12 @@ func Test{{ .LexerName | Title }}(t *testing.T) {
 
 		// If we read too many tokens, then perhaps there is a problem with the lexer.
 		if i >= MAX_TOKENS {
-			t.Errorf("New{{ .LexerName }}(%q) read %d tokens without finding EOF", file, i)
+			t.Errorf("New{{ .Project.LexerName }}(%q) read %d tokens without finding EOF", file, i)
 		}
 	}
 }
 
-func Test{{ .ParserName | Title }}(t *testing.T) {
+func Test{{ .Project.ParserName | Title }}(t *testing.T) {
 	// TODO(bramp): Run this test with and without p.BuildParseTrees
 
 	for _, file := range examples {
@@ -165,36 +163,26 @@ func Test{{ .ParserName | Title }}(t *testing.T) {
 		}
 
 		// Create the Lexer
-		lexer := {{.PackageName}}.New{{ .LexerName }}(input)
+		lexer := {{ .PackageName }}.New{{ .Project.LexerName }}(input)
 		stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
 
 		// Create the Parser
-		p := {{.PackageName}}.New{{ .ParserName }}(stream)
+		p := {{ .PackageName }}.New{{ .Project.ParserName }}(stream)
 		p.BuildParseTrees = true
 		p.AddErrorListener(internal.NewTestingErrorListener(t, file))
 
 		// Finally test
-		p.{{ .EntryPoint | Title }}()
+		p.{{ .Project.EntryPoint | Title }}()
 	}
 }
 `
 
-// fuzzyMatch returns a filename that matches either exactly, or close enough
-// // to the input. Due to the way the Makefile is constructed, and that the
-// directory names may not match the package name. So we do this hack.
-func fuzzyMatch(filename string) (string, error) {
-	filename = strings.Replace(filename, "_", "*", -1)
-	matches, err := filepath.Glob(filename)
-	if err != nil {
-		return "", err
-	}
-	if len(matches) != 1 {
-		return "", fmt.Errorf("%d matches, expected only 1", len(matches))
-	}
-	return matches[0], nil
+type templateData struct {
+	PackageName string
+	Project     *internal.Project
 }
 
-func create(filename string, t *template.Template, data interface{}) error {
+func create(filename string, t *template.Template, data *templateData) error {
 	out, err := os.Create(filename)
 	if err != nil {
 		return fmt.Errorf("failed to create %q: %s", filename, err)
@@ -212,18 +200,14 @@ func create(filename string, t *template.Template, data interface{}) error {
 }
 
 func main() {
-	if len(os.Args) < 2 {
-		fmt.Fprintf(os.Stderr, "Usage: %s <grammar>\n", filepath.Base(os.Args[0]))
+	if len(os.Args) < 3 {
+		fmt.Fprintf(os.Stderr, "Usage: %s <output> <input>\n", filepath.Base(os.Args[0]))
 		os.Exit(1)
 	}
 
-	grammar := os.Args[1]
-	path := filepath.Join(GRAMMARS_ROOT, grammar, "pom.xml")
-	path, err := fuzzyMatch(path)
-	if err != nil {
-		log.Fatalf("Failed to find pom file %q: %s", path, err)
-	}
-
+	output := os.Args[1]
+	input := os.Args[2]
+	path := filepath.Join(input, "pom.xml")
 	project, err := internal.ParsePom(path)
 	if err != nil {
 		log.Fatalf("Failed to read pom file %q: %s", path, err)
@@ -240,13 +224,18 @@ func main() {
 	docTemplate := template.Must(tmpl.New("doc").Parse(DOCFILE))
 	testTemplate := template.Must(tmpl.New("test").Funcs(funcs).Parse(TESTFILE))
 
-	docfile := filepath.Join(grammar, "doc.go")
-	if err := create(docfile, docTemplate, project); err != nil {
+	data := &templateData{
+		PackageName: output,
+		Project:     project,
+	}
+
+	docfile := filepath.Join(output, "doc.go")
+	if err := create(docfile, docTemplate, data); err != nil {
 		log.Fatalf("%s", err)
 	}
 
-	testfile := filepath.Join(grammar, project.FilePrefix()+"_test.go")
-	if err := create(testfile, testTemplate, project); err != nil {
+	testfile := filepath.Join(output, output+"_test.go")
+	if err := create(testfile, testTemplate, data); err != nil {
 		log.Fatalf("%s", err)
 	}
 }

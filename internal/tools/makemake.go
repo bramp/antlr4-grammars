@@ -21,18 +21,11 @@ import (
 	"log"
 	"os"
 	"path/filepath"
-	"sort"
 	"strings"
 	"text/template"
 )
 
 const GRAMMARS_ROOT = "grammars-v4"
-
-// IGNORE these projects
-var IGNORE = []string{
-	"objc",      // Is actually two subprojects, needs splitting out.
-	"swift-fin", // The g4 files are nested under a src/main/... directory, which we can't handle.
-}
 
 // MAKEFILE is the template used to build the Makefile.
 // It expects to be executed with a templateData
@@ -55,19 +48,22 @@ const MAKEFILE = `# Copyright 2017 Google Inc.
 #
 MAKEFLAGS += --no-builtin-rules
 
-.PHONY: all antlr clean rebuild test
+.PHONY: all clean rebuild test
 .SILENT:
 .DELETE_ON_ERROR:
 .SUFFIXES:
 
 ANTLR_BIN := $(PWD)/.bin/antlr-4.7-complete.jar
 ANTLR_URL := http://www.antlr.org/download/antlr-4.7-complete.jar
-ANTLR_ARGS := -Dlanguage=Go
+ANTLR := java -jar $(ANTLR_BIN) -Dlanguage=Go -listener -no-visitor
 
-GRAMMARS := {{ Join .Grammars " " }}
+GRAMMARS :={{ range $name, $grammar := .Grammars }} {{$name}}{{ end }}
 
 LANG_COLOR = \033[0;36m
 NO_COLOR   = \033[m
+
+XLOG=printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌"
+LOG=printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "✅"
 
 # This is the default target (which cleans and rebuilds everything)
 all: Makefile
@@ -75,11 +71,13 @@ all: Makefile
 	make -k -j2 rebuild 2> /dev/null
 
 clean:
-	@rm -r $(GRAMMARS) 2> /dev/null || true
+	-rm -r $(GRAMMARS) 2> /dev/null
 
-rebuild: antlr test
+rebuild: $(GRAMMARS)
 
-antlr: $(ANTLR_BIN)
+$(GRAMMARS): $(ANTLR_BIN)
+	$(LOG) "$@"
+
 $(ANTLR_BIN):
 	mkdir -p .bin
 	curl -o $@ $(ANTLR_URL)
@@ -87,71 +85,66 @@ $(ANTLR_BIN):
 Makefile: internal/tools/makemake.go grammars-v4
 	go run internal/tools/makemake.go
 
-test: {{ range $name, $project := .Projects -}}{{ $name }}/{{ $project.FilePrefix }}_test.go {{ end }}
-
-{{- range $name, $project := .Projects }}
-{{ $genfiles := (Join (index $.GeneratedFiles $name) " ") }}
-{{ $testfile := (Concat $name "/" $project.FilePrefix "_test.go") }}
-{{- $name }}: {{ $testfile }}
-{{ $genfiles }}: {{ Join $project.Includes " " }}
-{{ $testfile }}: {{ $genfiles }}
-{{- end }}
-
-%_lexer.go %_parser.go:
+# Define build as a "function" so it can be called over and over
+# This could have been a standard target, but each Grammar depends on
+# and creates a slightly different set of named files. This makes it
+# difficult to have one file. This is the best hack that keeps Make
+# working correctly.
+BUILD=sh -c '\
 	basedir=$$PWD; \
-	lang=$$(dirname $@); \
-	errors=$$lang/$$(basename $*).errors; \
-	mkdir -p $$lang; \
-	pushd $$(dirname $<) > /dev/null; \
-	java -jar $(ANTLR_BIN) $(ANTLR_ARGS) -package $$(basename $$lang) $(notdir $^) -o $$basedir/$$lang > $$basedir/$$errors 2>&1; \
+	errors=$$0/$$(basename $$1).log; \
+	mkdir -p $$0; \
+	pushd $$(dirname $$1) > /dev/null; \
+	$(ANTLR) -package $$0 $$(basename $$1) -o $$basedir/$$0 > $$basedir/$$errors 2>&1; \
 	RET=$$?; \
 	popd > /dev/null; \
 	if [ $$RET -ne 0 ]; then \
-		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "antlr: $$(tail -n 1 $$errors)"; \
-		rm $$lang/*.go > /dev/null 2>&1 || true; \
+		$(XLOG) "$$0" "antlr: $$(tail -n 1 $$errors)"; \
 		exit $$RET; \
 	fi; \
-	shopt -s nullglob; \
-	go build $$lang/*.go >> $$errors 2>&1; \
+	shift; shift; \
+	go build $$@ >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
-		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "build: $$(tail -n 1 $$errors)"; \
+		$(XLOG) "$$0" "build: $$(tail -n 1 $$errors)"; \
 		exit $$RET; \
-	fi;
+	fi;'
 
-%_test.go:
-	lang=$$(dirname $@); \
-	errors=$$lang/$$(basename $*).errors; \
-	go run internal/tools/maketest.go $$lang >> $$errors 2>&1; \
+TEST=sh -c '\
+	errors=$$0/$$0.log; \
+	go run internal/tools/maketest.go $$0 $$(dirname $$1) >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
-		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" "maketest: $$(tail -n 1 $$errors)"; \
+		$(XLOG) "$$0" "maketest: $$(tail -n 1 $$errors)"; \
 		exit $$RET; \
 	fi; \
-	go test -timeout 10s ./$$lang >> $$errors 2>&1; \
+	go test -timeout 10s ./$$0 >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
-		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌" "$$lang" " test: $$(tail -n 1 $$errors)"; \
+		$(XLOG) "$$0" "test: $$(tail -n 1 $$errors)"; \
 		exit $$RET; \
-	fi; \
-	if [[ -s $$errors ]]; then \
-		rm $$errors; \
-		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "✅" "$$lang" ""; \
-	else \
-		printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "⚠️" "$$lang" "$$(tail -n 1 $$errors)"; \
-	fi;
+	fi;'
+
+{{ range $name, $grammars := .Grammars }}
+{{ $name }}: {{ $name }}/doc.go {{ $name }}/{{ $name }}_test.go 
+{{ $name }} {{ $name }}/{{ $name }}_test.go: {{ range $i, $grammar := $grammars }}{{ Join (FilePathJoin $name $grammar.GeneratedFilenames) " " }} {{ end }}
+{{- range $i, $grammar := $grammars }}
+{{/* Create a literal target, to ensure all targets are built concurrently */}}
+{{ (Join (FilePathJoin "%" $grammar.GeneratedFilenames) " ") }}: {{ $grammar.Filename }}
+	${BUILD} {{ $name }} {{ $grammar.Filename }} {{ (Join (FilePathJoin $name $grammar.GeneratedFilenames) " ") }}
+{{- end }}
+%/doc.go %/{{ $name }}_test.go: {{ range $i, $grammar := $grammars }}{{ Join (FilePathJoin $name $grammar.GeneratedFilenames) " " }} {{ end }}
+	${TEST} {{ $name }} {{ range $i, $grammar := $grammars }}{{ $grammar.Filename }} {{ end }}
+{{ end }}
 `
 
 type templateData struct {
-	Grammars       []string
-	Projects       map[string]*internal.Project
-	GeneratedFiles map[string][]string
+	Grammars map[string][]*internal.Grammar
 }
 
-// onIgnoreList returns true if the pom file in the path is on the banned list.
-func onIgnoreList(path string) bool {
-	for _, ignore := range IGNORE {
-		if strings.HasSuffix(path, "/"+ignore+"/pom.xml") {
+func containAny(name string, any []string) bool {
+	for _, a := range any {
+		if strings.Contains(name, a) {
 			return true
 		}
 	}
@@ -159,71 +152,91 @@ func onIgnoreList(path string) bool {
 }
 
 func main() {
-	projects := make(map[string]*internal.Project)
+	g4s := make(map[string][]*internal.Grammar)
 
+	// Find all g4 files
 	err := filepath.Walk(GRAMMARS_ROOT, func(path string, info os.FileInfo, err error) error {
-		if err == nil && strings.HasSuffix(path, "/pom.xml") {
-			if onIgnoreList(path) {
-				return nil
-			}
 
-			p, err := internal.ParsePom(path)
+		// Ignore some paths
+		if containAny(path, []string{"/antlr4/examples/",
+			"/CSharpSharwell/", "/Python/", "/CSharp/", "/JavaScript/", "/two-step-processing/",
+			"/python3-js/", "/python3-py/", "/python3-ts/",
+			".TypeScriptTarget.", ".JavaScriptTarget.", ".PythonTarget.",
+			"/LexBasic.g4", "ecmascript/ECMAScript.g4"}) {
+			return nil
+		}
+
+		if err == nil && strings.HasSuffix(path, ".g4") {
+			g4, err := internal.ParseG4(path)
 			if err != nil {
 				return err
 			}
 
-			// Ignore pom files which don't even have the Antlr plugin
-			if !p.FoundAntlr4MavenPlugin {
-				return nil
+			name := strings.ToLower(g4.Name)
+			if len(g4s[name]) > 0 {
+				log.Fatalf("Multiple g4 files generate the same grammar:\n%q: %q %q", name, g4s[name][0], path)
 			}
 
-			if len(p.Includes) == 0 {
-				log.Printf("skipping %q as it contains no grammars", path)
-				return nil
-			}
-
-			projects[p.FullPackageName()] = p
+			g4s[name] = append(g4s[name], g4)
 		}
-		return err
+
+		return nil
 	})
 	if err != nil {
 		log.Fatalf("failed to walk: %s", err)
 	}
 
-	var grammars []string
-	for name := range projects {
-		grammars = append(grammars, name)
-	}
-	sort.Strings(grammars)
+	// Merge Parser and Lexer into same package
+	for name, files := range g4s {
+		if strings.HasSuffix(name, "parser") {
+			name = strings.TrimSuffix(name, "parser")
+			parser := name + "parser"
+			lexer := name + "lexer"
 
-	generatedFiles := make(map[string][]string)
-	for name, project := range projects {
-		var generated []string
-		for _, file := range project.GeneratedFilenames() {
-			// Full path to generated file
-			generated = append(generated, name+"/"+file)
+			if _, found := g4s[lexer]; found {
+				if _, found := g4s[name]; found {
+					log.Fatalf("Can not merge Parser and Lexer for: %q", name)
+				}
+
+				// Merge
+				g4s[name] = []*internal.Grammar{files[0], g4s[lexer][0]}
+				delete(g4s, parser)
+				delete(g4s, lexer)
+			} else {
+				if _, found := g4s[name]; found {
+					log.Fatalf("Can not shorten Parser name: %q", name)
+				}
+
+				g4s[name] = g4s[parser]
+				delete(g4s, parser)
+			}
 		}
-		generatedFiles[name] = generated
-		if len(generated) < 2 {
-			// TODO(bramp): Actually check we have one lexer, and one parser.
-			log.Fatalf("Expect atleast two generated files, only got: %q for %q", generated, name)
+	}
+
+	// Final parse for Lexers that have mismatching Parser
+	for name, files := range g4s {
+		if strings.HasSuffix(name, "lexer") {
+			name = strings.TrimSuffix(name, "lexer")
+			lexer := name + "lexer"
+			if len(g4s[name]) > 1 {
+				log.Fatalf("Can not shorten Lexer name: %q", name)
+			}
+			g4s[name] = []*internal.Grammar{g4s[name][0], files[0]}
+			delete(g4s, lexer)
 		}
 	}
 
 	data := templateData{
-		Grammars:       grammars,
-		Projects:       projects,
-		GeneratedFiles: generatedFiles,
+		Grammars: g4s,
 	}
 
 	funcs := template.FuncMap{
 		"Join": strings.Join,
-		"Concat": func(strings ...string) string {
-			results := ""
-			for _, s := range strings {
-				results = results + s
+		"FilePathJoin": func(prefix string, arr []string) []string {
+			for i, a := range arr {
+				arr[i] = filepath.Join(prefix, a)
 			}
-			return results
+			return arr
 		},
 	}
 
@@ -237,5 +250,4 @@ func main() {
 	if err := makeTemplate.Execute(out, data); err != nil {
 		log.Fatalf("failed to generate Makefile: %s", err)
 	}
-
 }

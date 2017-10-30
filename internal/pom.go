@@ -21,16 +21,13 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"path"
 	"path/filepath"
 	"strings"
 )
 
-const GRAMMARS_ROOT = "grammars-v4" // TODO REMOVE THIS
-
 // Project represents one of language grammars defined by a pom.xml file and a set of g4 files.
 type Project struct {
-	Name     string   // shortname of this grammar (ususally the directory name)
+	FileName string   // shortname of this grammar (ususally the directory name)
 	LongName string   // long name, usually very similar to the shortname.
 	Includes []string // list of g4 files
 	Grammars []*Grammar
@@ -51,17 +48,6 @@ func (p *Project) findGrammarOfType(t string) *Grammar {
 		}
 	}
 	return nil
-}
-
-// PackageName returns the basename of this package, that is safe to use in Go.
-func (p *Project) PackageName() string {
-	return path.Base(p.FullPackageName())
-
-}
-
-// FullPackageName returns the name of this package (rooted from the current dir), that is safe to use in Go.
-func (p *Project) FullPackageName() string {
-	return strings.Replace(p.Name, "-", "_", -1)
 }
 
 // ParserName returns the name of the generated Parser.
@@ -85,12 +71,7 @@ func (p *Project) ListenerName() string {
 		return g.Name + "Listener"
 	}
 
-	panic(fmt.Sprintf("%q does not contain a parser", p.Name))
-}
-
-// FilePrefix returns the filename prefix for the generated files.
-func (p *Project) FilePrefix() string {
-	return strings.ToLower(p.grammarParserName())
+	panic(fmt.Sprintf("%q does not contain a parser", p.FileName))
 }
 
 // grammarParserName returns the name parser grammar.
@@ -103,7 +84,7 @@ func (p *Project) grammarParserName() string {
 		return g.Name
 	}
 
-	panic(fmt.Sprintf("%q does not contain a parser", p.Name))
+	panic(fmt.Sprintf("%q does not contain a parser", p.FileName))
 }
 
 // grammarLexerName returns the name lexer grammar.
@@ -116,7 +97,7 @@ func (p *Project) grammarLexerName() string {
 		return g.Name
 	}
 
-	panic(fmt.Sprintf("%q does not contain a lexer", p.Name))
+	panic(fmt.Sprintf("%q does not contain a lexer", p.FileName))
 }
 
 // GeneratedFilenames returns the list of generated files.
@@ -125,35 +106,45 @@ func (p *Project) GeneratedFilenames() []string {
 	// https://github.com/antlr/antlr4/blob/46b3aa98cc8d8b6908c2cabb64a9587b6b973e6c/tool/src/org/antlr/v4/codegen/target/GoTarget.java#L146
 	var files []string
 	for _, g := range p.Grammars {
-		switch g.Type {
-		case "LEXER":
-			name := strings.ToLower(strings.TrimSuffix(g.Name, "Lexer"))
-			files = append(files, name+"_lexer.go")
-
-		case "PARSER":
-			name := strings.ToLower(g.Name)
-			files = append(files, name+"_base_listener.go", name+"_listener.go")
-
-			name = strings.ToLower(strings.TrimSuffix(g.Name, "Parser"))
-			files = append(files, name+"_parser.go")
-
-		case "COMBINED":
-			name := strings.ToLower(g.Name)
-			files = append(files, name+"_base_listener.go", name+"_listener.go")
-			files = append(files, name+"_parser.go", name+"_lexer.go")
-
-		default:
-			panic(fmt.Sprintf("unknown grammar type %q", g.Type))
-		}
+		files = append(files, g.GeneratedFilenames()...)
 	}
-
 	return files
 }
 
 // Grammar represents a Antlr G4 grammar file.
 type Grammar struct {
-	Name string // name of this grammar
-	Type string // one of PARSER, LEXER or COMBINED // TODO(bramp): Change to enum.
+	Name     string // name of this grammar
+	Filename string
+	Type     string // one of PARSER, LEXER or COMBINED // TODO(bramp): Change to enum.
+}
+
+// GeneratedFilenames returns the list of generated files.
+func (g *Grammar) GeneratedFilenames() []string {
+	// Based on the code at:
+	// https://github.com/antlr/antlr4/blob/46b3aa98cc8d8b6908c2cabb64a9587b6b973e6c/tool/src/org/antlr/v4/codegen/target/GoTarget.java#L146
+	var files []string
+	switch g.Type {
+	case "LEXER":
+		name := strings.ToLower(strings.TrimSuffix(g.Name, "Lexer"))
+		files = append(files, name+"_lexer.go")
+
+	case "PARSER":
+		name := strings.ToLower(g.Name)
+		files = append(files, name+"_base_listener.go", name+"_listener.go")
+
+		name = strings.ToLower(strings.TrimSuffix(g.Name, "Parser"))
+		files = append(files, name+"_parser.go")
+
+	case "COMBINED":
+		name := strings.ToLower(g.Name)
+		files = append(files, name+"_base_listener.go", name+"_listener.go")
+		files = append(files, name+"_parser.go", name+"_lexer.go")
+
+	default:
+		panic(fmt.Sprintf("unknown grammar type %q", g.Type))
+	}
+
+	return files
 }
 
 func ParseG4(path string) (*Grammar, error) {
@@ -177,13 +168,17 @@ func ParseG4(path string) (*Grammar, error) {
 		}
 
 		if t != "" {
-			parts := strings.Fields(strings.TrimSuffix(line, ";"))
+			if semi := strings.Index(line, ";"); semi >= 0 {
+				line = line[:semi]
+			}
+			parts := strings.Fields(line)
 			if len(parts) < 2 {
 				return nil, fmt.Errorf("failed to parse grammar name: %q", line)
 			}
 			return &Grammar{
-				Name: parts[len(parts)-1],
-				Type: t,
+				Name:     parts[len(parts)-1],
+				Filename: path,
+				Type:     t,
 			}, nil
 		}
 	}
@@ -209,17 +204,15 @@ func fileExists(path string) bool {
 
 // ParsePom extracts information about the grammar in a very lazy way!
 func ParsePom(path string) (*Project, error) {
-	dir := filepath.Dir(path)
-	name := strings.TrimPrefix(strings.TrimPrefix(dir, GRAMMARS_ROOT), "/")
-
 	p := &Project{
-		Name: name, // TODO Read name from pom
+		FileName: path,
 	}
 
 	file, err := os.Open(path)
 	if err != nil {
 		return nil, err
 	}
+	dir := filepath.Dir(path)
 
 	decoder := xml.NewDecoder(file)
 	for {
