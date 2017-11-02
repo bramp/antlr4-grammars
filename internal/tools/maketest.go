@@ -192,6 +192,10 @@ func create(filename string, t *template.Template, data *templateData) error {
 		return fmt.Errorf("failed to generate %q: %s", filename, err)
 	}
 
+	if err := out.Close(); err != nil {
+		return fmt.Errorf("failed to close file %q: %s", filename, err)
+	}
+
 	if err := exec.Command("go", "fmt", filename).Run(); err != nil {
 		return fmt.Errorf("failed to `go fmt %q`: %s", filename, err)
 	}
@@ -200,42 +204,58 @@ func create(filename string, t *template.Template, data *templateData) error {
 }
 
 func main() {
-	if len(os.Args) < 3 {
-		fmt.Fprintf(os.Stderr, "Usage: %s <output> <input>\n", filepath.Base(os.Args[0]))
+	if len(os.Args) < 4 {
+		fmt.Fprintf(os.Stderr, "Usage: %s [doc|test] <output> <input>\n", filepath.Base(os.Args[0]))
 		os.Exit(1)
 	}
 
-	output := os.Args[1]
-	input := os.Args[2]
-	path := filepath.Join(input, "pom.xml")
-	project, err := internal.ParsePom(path)
-	if err != nil {
-		log.Fatalf("Failed to read pom file %q: %s", path, err)
+	typ := os.Args[1]
+	output := os.Args[2]
+	input := os.Args[3]
+
+	if typ != "doc" && typ != "test" {
+		log.Fatalf("Type must be one of doc, test, got: %q", typ)
 	}
 
-	funcs := template.FuncMap{
-		"Join":    strings.Join,
-		"ToCamel": strcase.ToCamel, // I'd prefer to use ToCamel, but the go target does't do this yet...
-		"Title":   strings.Title,
-	}
-
-	tmpl := template.Must(template.New("copyright").Parse(COPYRIGHT))
-
-	docTemplate := template.Must(tmpl.New("doc").Parse(DOCFILE))
-	testTemplate := template.Must(tmpl.New("test").Funcs(funcs).Parse(TESTFILE))
+	copyrightTmpl := template.Must(template.New("copyright").Parse(COPYRIGHT))
 
 	data := &templateData{
 		PackageName: output,
-		Project:     project,
 	}
 
-	docfile := filepath.Join(output, "doc.go")
-	if err := create(docfile, docTemplate, data); err != nil {
-		log.Fatalf("%s", err)
+	var tmpl *template.Template
+	var target string
+
+	if typ == "test" {
+		// Hack to fix one case where the g4 is nested in a directory below the pom.xml
+		input = strings.Replace(input, "/Go/", "", 1)
+
+		path := filepath.Join(input, "pom.xml")
+		project, err := internal.ParsePom(path)
+		if err != nil {
+			log.Fatalf("Failed to read pom file %q: %s", path, err)
+		}
+
+		data.Project = project
+
+		funcs := template.FuncMap{
+			"Join":    strings.Join,
+			"ToCamel": strcase.ToCamel, // I'd prefer to use ToCamel, but the go target does't do this yet...
+			"Title":   strings.Title,
+		}
+
+		tmpl = template.Must(copyrightTmpl.New("test").Funcs(funcs).Parse(TESTFILE))
+		target = filepath.Join(output, output+"_test.go")
+
+	} else if typ == "doc" {
+		tmpl = template.Must(copyrightTmpl.New("doc").Parse(DOCFILE))
+		target = filepath.Join(output, "doc.go")
+
+	} else {
+		panic(fmt.Sprintf("Unexpected type %q want doc or test", typ))
 	}
 
-	testfile := filepath.Join(output, output+"_test.go")
-	if err := create(testfile, testTemplate, data); err != nil {
+	if err := create(target, tmpl, data); err != nil {
 		log.Fatalf("%s", err)
 	}
 }

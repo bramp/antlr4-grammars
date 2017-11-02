@@ -67,7 +67,6 @@ LOG=printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "✅"
 
 # This is the default target (which cleans and rebuilds everything)
 all: Makefile
-	make clean
 	make -k -j2 rebuild 2> /dev/null
 
 clean:
@@ -103,7 +102,7 @@ BUILD=sh -c '\
 		exit $$RET; \
 	fi; \
 	shift; shift; \
-	go build $$@ >> $$errors 2>&1; \
+	go build ./$$0 >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
 		$(XLOG) "$$0" "build: $$(tail -n 1 $$errors)"; \
@@ -112,7 +111,7 @@ BUILD=sh -c '\
 
 TEST=sh -c '\
 	errors=$$0/$$0.log; \
-	go run internal/tools/maketest.go $$0 $$(dirname $$1) >> $$errors 2>&1; \
+	go run internal/tools/maketest.go test $$0 $$(dirname $$1) >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
 		$(XLOG) "$$0" "maketest: $$(tail -n 1 $$errors)"; \
@@ -125,18 +124,32 @@ TEST=sh -c '\
 		exit $$RET; \
 	fi;'
 
+%/doc.go:
+	errors=$*/$*.log; \
+	go run internal/tools/maketest.go doc $* $* >> $$errors 2>&1; \
+	RET=$$?; \
+	if [ $$RET -ne 0 ]; then \
+		$(XLOG) "$*" "makedoc: $$(tail -n 1 $$errors)"; \
+		exit $$RET; \
+	fi;
+
 {{ range $name, $grammars := .Grammars }}
-{{ $name }}: {{ $name }}/doc.go {{ $name }}/{{ $name }}_test.go 
+{{ $name }}: {{ $name }}/{{ $name }}_test.go {{ $name }}/doc.go
 {{ $name }} {{ $name }}/{{ $name }}_test.go: {{ range $i, $grammar := $grammars }}{{ Join (FilePathJoin $name $grammar.GeneratedFilenames) " " }} {{ end }}
+{{ $name }}/doc.go: {{ $name }}/{{ $name }}_test.go
 {{- range $i, $grammar := $grammars }}
 {{/* Create a literal target, to ensure all targets are built concurrently */}}
-{{ (Join (FilePathJoin "%" $grammar.GeneratedFilenames) " ") }}: {{ $grammar.Filename }}
+{{ (Join (FilePathJoin "%" $grammar.GeneratedFilenames) " ") }}: {{ $grammar.Filename }} {{ (Join (FilePathJoin $name $grammar.DependentFilenames) " ") }}
 	${BUILD} {{ $name }} {{ $grammar.Filename }} {{ (Join (FilePathJoin $name $grammar.GeneratedFilenames) " ") }}
 {{- end }}
-%/doc.go %/{{ $name }}_test.go: {{ range $i, $grammar := $grammars }}{{ Join (FilePathJoin $name $grammar.GeneratedFilenames) " " }} {{ end }}
+%/{{ $name }}_test.go: {{ range $i, $grammar := $grammars }}{{ Join (FilePathJoin $name $grammar.GeneratedFilenames) " " }} {{ end }}
 	${TEST} {{ $name }} {{ range $i, $grammar := $grammars }}{{ $grammar.Filename }} {{ end }}
 {{ end }}
 `
+
+// TODO Add back docs
+// {{ $name }}: {{ $name }}/doc.go
+// %/doc.go  %/{{ $name }}_test.go:
 
 type templateData struct {
 	Grammars map[string][]*internal.Grammar

@@ -118,6 +118,16 @@ type Grammar struct {
 	Type     string // one of PARSER, LEXER or COMBINED // TODO(bramp): Change to enum.
 }
 
+func (g *Grammar) DependentFilenames() []string {
+	var files []string
+	if g.Type == "PARSER" {
+		// Depend on the generated lexer
+		name := strings.ToLower(strings.TrimSuffix(g.Name, "Parser"))
+		files = append(files, name+"_lexer.go")
+	}
+	return files
+}
+
 // GeneratedFilenames returns the list of generated files.
 func (g *Grammar) GeneratedFilenames() []string {
 	// Based on the code at:
