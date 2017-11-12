@@ -125,7 +125,7 @@ TEST=sh -c '\
 		$(XLOG) "$$0" "maketest: $$(tail -n 1 $$errors)"; \
 		exit $$RET; \
 	fi; \
-	go test -timeout 10s -run 3 ./$$0 >> $$errors 2>&1; \
+	go test -timeout 10s -count 3 ./$$0 >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
 		$(XLOG) "$$0" "test: $$(tail -n 1 $$errors)"; \
