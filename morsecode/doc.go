@@ -12,4 +12,4 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package fasta // import "bramp.net/antlr4/fasta"
+package morsecode // import "bramp.net/antlr4/morsecode"

@@ -257,10 +257,13 @@ func main() {
 			if len(grammars) < 1 {
 				panic("Pom needs atleast one grammar, zero given.")
 			}
-			g := grammars[0]
-			//panic(fmt.Sprintf("%v %v %v", g.Filename, filepath.Dir(g.Filename), filepath.Join(filepath.Dir(g.Filename), "pom.xml")))
 
-			return filepath.Join(filepath.Dir(g.Filename), "pom.xml")
+			// Only look at the first grammar (for no reason other than we're lazy).
+			g := grammars[0]
+			filename := filepath.Join(filepath.Dir(g.Filename), "pom.xml")
+
+			// HACK to work around one exception where the pom.xml is not in the same directory as the .g4
+			return strings.Replace(filename, "/Go/", "/", 1)
 		},
 	}
 
