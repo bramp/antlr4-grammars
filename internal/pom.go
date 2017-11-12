@@ -312,7 +312,7 @@ func ParsePom(path string) (*Project, error) {
 					filtered = append(filtered, example)
 				}
 
-				p.Examples = examples
+				p.Examples = filtered
 				p.ExampleRoot = strings.Repeat("../", strings.Count(dir, "/"))
 
 			case "caseInsensitiveType":
