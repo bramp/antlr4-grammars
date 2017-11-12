@@ -173,6 +173,8 @@ func Test{{ .Project.ParserName | Title }}(t *testing.T) {
 
 		// Finally test
 		p.{{ .Project.EntryPoint | Title }}()
+
+		// TODO(bramp): If there is a "file.tree", then compare the output
 	}
 }
 `
@@ -203,15 +205,21 @@ func create(filename string, t *template.Template, data *templateData) error {
 	return nil
 }
 
+func usage() {
+	// TODO Merge makemake.go into this
+	fmt.Fprintf(os.Stderr, "Usage: %s [doc|test] ...\n"+
+		"  doc <output>\n"+
+		"  test <output> <pom.xml> [<grammar.g4> ...]\n", filepath.Base(os.Args[0]))
+	os.Exit(1)
+}
+
 func main() {
-	if len(os.Args) < 4 {
-		fmt.Fprintf(os.Stderr, "Usage: %s [doc|test] <output> <input>\n", filepath.Base(os.Args[0]))
-		os.Exit(1)
+	if len(os.Args) < 3 {
+		usage()
 	}
 
 	typ := os.Args[1]
 	output := os.Args[2]
-	input := os.Args[3]
 
 	if typ != "doc" && typ != "test" {
 		log.Fatalf("Type must be one of doc, test, got: %q", typ)
@@ -227,13 +235,20 @@ func main() {
 	var target string
 
 	if typ == "test" {
-		// Hack to fix one case where the g4 is nested in a directory below the pom.xml
-		input = strings.Replace(input, "/Go/", "", 1)
+		if len(os.Args) < 3 {
+			usage()
+		}
 
-		path := filepath.Join(input, "pom.xml")
-		project, err := internal.ParsePom(path)
+		// TODO(bramp) Read args 4, 5, 6, etc which contain the actual grammars, instead of depending on the pom.xml
+
+		pom := os.Args[3]
+		project, err := internal.ParsePom(pom)
 		if err != nil {
-			log.Fatalf("Failed to read pom file %q: %s", path, err)
+			log.Fatalf("Failed to read pom file %q: %s", pom, err)
+		}
+
+		for _, arg := range os.Args[4:] {
+			project.AddGrammar(arg)
 		}
 
 		data.Project = project
@@ -256,6 +271,6 @@ func main() {
 	}
 
 	if err := create(target, tmpl, data); err != nil {
-		log.Fatalf("%s", err)
+		log.Fatalf("%s: %s", typ, err)
 	}
 }
