@@ -119,7 +119,7 @@ BUILD=sh -c '\
 
 TEST=sh -c '\
 	errors=$$0/$$0.log; \
-	go run internal/tools/maketest.go test $$0 "$$@" >> $$errors 2>&1; \
+	go run internal/tools/make.go test $$0 "$$@" >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
 		$(XLOG) "$$0" "maketest: $$(tail -n 1 $$errors)"; \
@@ -134,7 +134,7 @@ TEST=sh -c '\
 
 %/doc.go:
 	errors=$*/$*.log; \
-	go run internal/tools/maketest.go doc $* >> $$errors 2>&1; \
+	go run internal/tools/make.go doc $* >> $$errors 2>&1; \
 	RET=$$?; \
 	if [ $$RET -ne 0 ]; then \
 		$(XLOG) "$*" "makedoc: $$(tail -n 1 $$errors)"; \
