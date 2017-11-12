@@ -92,6 +92,10 @@ $(ANTLR_BIN):
 Makefile: internal/tools/makemake.go grammars-v4
 	go run internal/tools/makemake.go
 
+grammars-v4:
+	git submodule init
+	git submodule update
+
 # Define build as a "function" so it can be called over and over
 # This could have been a standard target, but each Grammar depends on
 # and creates a slightly different set of named files. This makes it
