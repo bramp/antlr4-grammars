@@ -14,6 +14,7 @@ git:
 go_import_path: bramp.net/antlr4
 
 before_install:
+  - go get github.com/antlr/antlr4/runtime/Go/antlr
   - go get github.com/go-playground/overalls
   - go get github.com/mattn/goveralls
   - go get golang.org/x/tools/cmd/cover
