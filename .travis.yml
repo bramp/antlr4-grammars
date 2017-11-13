@@ -20,5 +20,5 @@ before_install:
   - go get golang.org/x/tools/cmd/cover
 
 script:
-  - $GOPATH/bin/overalls -project=bramp.net/antlr4 -covermode=count
+  - $GOPATH/bin/overalls -project=bramp.net/antlr4 -covermode=count -debug
   - $GOPATH/bin/goveralls -coverprofile=overalls.coverprofile -service=travis-ci
