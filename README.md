@@ -243,11 +243,6 @@ make
 # Update the table in the README.md with the output
 ```
 
-## TODO
-
-* Make.go generates an invalid test for cobol85preprocessor.  BaseCobol85Listener
-
-
 ## Licence (Apache 2)
 
 *This is not an official Google product (experimental or otherwise), it is just code that happens to be owned by Google.*
