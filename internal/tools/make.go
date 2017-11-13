@@ -61,9 +61,13 @@ package {{ .PackageName }}_test
 
 import (
 	"bramp.net/antlr4/{{ .PackageName }}"
+{{ if .Project.HasParser -}}
 	"bramp.net/antlr4/internal"
+{{- end }}
 
+{{ if .Project.HasParser }}
 	"fmt"
+{{ end -}}
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
@@ -77,6 +81,7 @@ var examples = []string{
 {{- end }}
 }
 
+{{ if .Project.HasParser }}
 type exampleListener struct {
 	*{{ .PackageName }}.Base{{ .Project.ListenerName }}
 }
@@ -84,6 +89,7 @@ type exampleListener struct {
 func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 	fmt.Println(ctx.GetText())
 }
+{{ end -}}
 
 func Example() {
 	{{- if eq .Project.CaseInsensitiveType "UPPER" }}
@@ -99,6 +105,8 @@ func Example() {
 
 	// Create the Lexer
 	lexer := {{ .PackageName }}.New{{ .Project.LexerName }}(is)
+
+{{- if .Project.HasParser }}
 	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
 
 	// Create the Parser
@@ -109,6 +117,14 @@ func Example() {
 	// Finally walk the tree
 	tree := p.{{ .Project.EntryPoint | Title }}()
 	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
+{{- else }}
+	// There is no {{ .PackageName }} Parser so instead use the Lexer to read tokens.
+	t := lexer.NextToken()
+	for t.GetTokenType() != antlr.TokenEOF {
+		// Do something with the token
+		t = lexer.NextToken()
+	}
+{{ end -}}
 }
 
 func newCharStream(filename string) (antlr.CharStream, error) {
@@ -153,6 +169,7 @@ func Test{{ .Project.LexerName | Title }}(t *testing.T) {
 	}
 }
 
+{{ if .Project.HasParser }}
 func Test{{ .Project.ParserName | Title }}(t *testing.T) {
 	// TODO(bramp): Run this test with and without p.BuildParseTrees
 
@@ -175,8 +192,10 @@ func Test{{ .Project.ParserName | Title }}(t *testing.T) {
 		p.{{ .Project.EntryPoint | Title }}()
 
 		// TODO(bramp): If there is a "file.tree", then compare the output
+		// TODO(bramp): If there is a "file.errors", then check the error
 	}
 }
+{{ end }}
 `
 
 type templateData struct {
