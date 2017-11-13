@@ -1,5 +1,5 @@
-# antlr4 go parsers [![Build Status](https://img.shields.io/travis/bramp/antlr4-grammars.svg)](https://travis-ci.org/bramp/antlr4-grammars) [![Coverage](https://img.shields.io/coveralls/bramp/antlr4-grammars.svg)](https://coveralls.io/github/bramp/antlr4-grammars) [![Report card](https://goreportcard.com/badge/bramp.net/antlr4)](https://goreportcard.com/report/bramp.net/antlr4) [![GoDoc](https://godoc.org/bramp.net/antlr4?status.svg)](https://godoc.org/bramp.net/antlr4)
-by Andrew Brampton [bramp.net](https://bramp.net)
+# antlr4 Go parsers [![Build Status](https://img.shields.io/travis/bramp/antlr4-grammars.svg)](https://travis-ci.org/bramp/antlr4-grammars) [![Coverage](https://img.shields.io/coveralls/bramp/antlr4-grammars.svg)](https://coveralls.io/github/bramp/antlr4-grammars) [![Report card](https://goreportcard.com/badge/bramp.net/antlr4)](https://goreportcard.com/report/bramp.net/antlr4) [![GoDoc](https://godoc.org/bramp.net/antlr4?status.svg)](https://godoc.org/bramp.net/antlr4)
+Compiled by Andrew Brampton ([bramp.net](https://bramp.net))
 
 Precompiled Go parsers of many of the grammars on [github.com/antlr/grammars-v4](http://github.com/antlr/grammars-v4).
 
@@ -244,6 +244,8 @@ make
 ```
 
 ## Licence (Apache 2)
+
+Each grammar has its [own licence](https://github.com/antlr/grammars-v4#license), but the compiled code is licenced under Apache 2.
 
 *This is not an official Google product (experimental or otherwise), it is just code that happens to be owned by Google.*
 
