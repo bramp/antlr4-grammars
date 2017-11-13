@@ -52,7 +52,6 @@ type exampleListener struct {
 func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
 	fmt.Println(ctx.GetText())
 }
-
 func Example() {
 	// Setup the input
 	is := antlr.NewInputStream("...some text to parse...")
@@ -129,5 +128,6 @@ func TestMumpsParser(t *testing.T) {
 		p.Program()
 
 		// TODO(bramp): If there is a "file.tree", then compare the output
+		// TODO(bramp): If there is a "file.errors", then check the error
 	}
 }
