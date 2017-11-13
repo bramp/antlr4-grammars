@@ -1,0 +1,25 @@
+dist: trusty
+sudo: false
+
+language: go
+go:
+  - 1.8.x
+  - 1.9.x
+
+go_import_path: bramp.net/antlr4
+
+before_install:
+  # Tools
+  - go get github.com/go-playground/overalls
+  - go get github.com/mattn/goveralls
+  - go get golang.org/x/tools/cmd/cover
+
+  # Deps
+  - go get github.com/kylelemons/godebug/pretty
+  - go get github.com/antlr/antlr4/runtime/Go/antlr
+  - go get github.com/iancoleman/strcase
+
+
+script:
+  - $GOPATH/bin/overalls -project=bramp.net/antlr4 -covermode=count -debug
+  - $GOPATH/bin/goveralls -coverprofile=$GOPATH/src/bramp.net/antlr4/overalls.coverprofile -service=travis-ci

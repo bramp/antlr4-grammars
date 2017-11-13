@@ -2,3 +2,4 @@
 **/*.errors
 **/*.log
 .bin/
+**/*.coverprofile
