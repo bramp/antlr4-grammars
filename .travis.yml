@@ -7,10 +7,6 @@ go:
   - 1.9.x
   - tip
 
-git:
-  # This project uses submodules but Travis doesn't need them for testing.
-  submodules: false
-
 go_import_path: bramp.net/antlr4
 
 before_install:
