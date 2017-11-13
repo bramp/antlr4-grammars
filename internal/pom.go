@@ -57,6 +57,24 @@ func (p *Project) findGrammarOfType(t grammarType) *Grammar {
 	return nil
 }
 
+func (p *Project) HasParser() bool {
+	for _, g := range p.Grammars {
+		if g.Type == PARSER || g.Type == COMBINED {
+			return true
+		}
+	}
+	return false
+}
+
+func (p *Project) HasLexer() bool {
+	for _, g := range p.Grammars {
+		if g.Type == LEXER || g.Type == COMBINED {
+			return true
+		}
+	}
+	return false
+}
+
 // ParserName returns the name of the generated Parser.
 func (p *Project) ParserName() string {
 	if g := p.findGrammarOfType(PARSER); g != nil {
@@ -73,7 +91,7 @@ func (p *Project) ParserName() string {
 // LexerName returns the name of the generated Lexer.
 func (p *Project) LexerName() string {
 	if g := p.findGrammarOfType(LEXER); g != nil {
-		return strings.TrimSuffix(g.Name, "Lexer") + "Lexer"
+		return g.Name
 	}
 
 	if g := p.findGrammarOfType(COMBINED); g != nil {
@@ -309,6 +327,10 @@ func ParsePom(path string) (*Project, error) {
 					if strings.HasSuffix(example, ".tree") {
 						continue
 					}
+					if strings.HasSuffix(example, ".errors") {
+						continue
+					}
+
 					filtered = append(filtered, example)
 				}
 
