@@ -249,6 +249,10 @@ func main() {
 		//	log.Fatalf("Pom.xml contains zero examples: %q", pom)
 		//}
 
+		// Ignore all grammars defined in the pom.xml (because sometimes a single pom may span multiple grammars)
+		project.Includes = nil
+		project.Grammars = nil
+
 		for _, arg := range os.Args[4:] {
 			project.AddGrammar(arg)
 		}
