@@ -27,4 +27,4 @@ before_install:
 
 script:
   - $GOPATH/bin/overalls -project=bramp.net/antlr4 -covermode=count -debug
-  - $GOPATH/bin/goveralls -coverprofile=overalls.coverprofile -service=travis-ci
+  - $GOPATH/bin/goveralls -coverprofile=$GOPATH/src/bramp.net/antlr4/overalls.coverprofile -service=travis-ci
