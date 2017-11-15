@@ -68,6 +68,9 @@ import (
 {{ if .Project.HasParser }}
 	"fmt"
 {{ end -}}
+{{ if or (eq .Project.CaseInsensitiveType "UPPER") (eq .Project.CaseInsensitiveType "lower") -}}
+	"strings"
+{{ end -}}
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"path/filepath"
 	"testing"
