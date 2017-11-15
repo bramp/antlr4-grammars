@@ -64,7 +64,7 @@ func Example() {
 
 func newCharStream(filename string) (antlr.CharStream, error) {
 	var input antlr.CharStream
-	input, err := antlr.NewFileStream(filepath.Join("../", filename))
+	input, err := antlr.NewFileStream(filepath.Join("..", filename))
 	if err != nil {
 		return nil, err
 	}

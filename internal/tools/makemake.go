@@ -230,12 +230,12 @@ func main() {
 		}
 	}
 
-	// Final parse for Lexers that have mismatching Parser
+	// Final pass for Lexers that have mismatching Parser
 	for name, files := range g4s {
 		if strings.HasSuffix(name, "lexer") {
 			name = strings.TrimSuffix(name, "lexer")
 			lexer := name + "lexer"
-			if len(g4s[name]) > 1 {
+			if len(g4s[name]) != 1 {
 				log.Fatalf("Can not shorten Lexer name: %q", name)
 			}
 			g4s[name] = []*internal.Grammar{g4s[name][0], files[0]}

@@ -87,9 +87,11 @@ func Example() {
 | ✅  | dot             |                                                                             |
 | ✅  | ecmascript      |                                                                             |
 | ✅  | emailaddress    |                                                                             |
+| ✅  | fasta           |                                                                             |
 | ✅  | fol             |                                                                             |
 | ✅  | fusiontablessql |                                                                             |
 | ✅  | gml             |                                                                             |
+| ✅  | graphemes       |                                                                             |
 | ✅  | gtin            |                                                                             |
 | ✅  | idl             |                                                                             |
 | ✅  | iri             |                                                                             |
@@ -149,24 +151,22 @@ func Example() {
 | ❌  | asn             | antlr: error(134): ASN.g4:166:2: symbol type conflicts with generated code in target language or runtime |
 | ❌  | aspectj         | antlr: error(56): AspectJLexer.g4:382:21: reference to undefined rule: Identifier |
 | ❌  | calculator      | antlr: error(134): calculator.g4:54:5: symbol func conflicts with generated code in target language or runtime |
-| ❌  | classify        | test: FAIL   bramp.net/antlr4/classify       0.023s                                 |
+| ❌  | classify        | test: FAIL   bramp.net/antlr4/classify       0.021s                                 |
 | ❌  | clojure         | antlr: error(134): Clojure.g4:99:12: symbol map conflicts with generated code in target language or runtime |
 | ❌  | cpp14           | build: cpp14/cpp14_parser.go:27309:6: syntax error: unexpected NewEmptyBaseclauseContext, expecting ( |
 | ❌  | csharp          | build: csharp/csharp_lexer.go:11:12: expected 'STRING', found '.'           |
 | ❌  | css3            | antlr: error(134): css3.g4:196:6: symbol var conflicts with generated code in target language or runtime |
 | ❌  | dicenotation    | antlr: warning(125): DiceNotation.g4:50:7: implicit definition of token DSEPARATOR in parser |
 | ❌  | erlang          | antlr: error(134): Erlang.g4:156:36: symbol type conflicts with generated code in target language or runtime |
-| ❌  | fasta           | test: FAIL   bramp.net/antlr4/fasta  10.035s                                   |
 | ❌  | fortran77       | antlr: error(134): fortran77.g4:89:6: symbol type conflicts with generated code in target language or runtime |
 | ❌  | gff3            | antlr: error(134): gff3.g4:45:28: symbol type conflicts with generated code in target language or runtime |
 | ❌  | golang          | antlr: error(134): Golang.g4:151:23: symbol type conflicts with generated code in target language or runtime |
-| ❌  | graphemes       | test: FAIL   bramp.net/antlr4/graphemes      0.022s                                |
 | ❌  | graphql         | antlr: error(134): GraphQL.g4:140:9: symbol type conflicts with generated code in target language or runtime |
-| ❌  | html            | test: FAIL   bramp.net/antlr4/html   10.026s                                    |
+| ❌  | html            | test: FAIL   bramp.net/antlr4/html   30.028s                                    |
 | ❌  | icalendar       | antlr: error(134): ICalendar.g4:305:3: symbol action conflicts with generated code in target language or runtime |
 | ❌  | inf             | antlr: error(134): inf.g4:57:17: symbol string conflicts with generated code in target language or runtime |
 | ❌  | informix        | antlr: error(134): informix.g4:601:266: symbol string conflicts with generated code in target language or runtime |
-| ❌  | java            | test: FAIL   bramp.net/antlr4/java   10.058s                                    |
+| ❌  | java            | test: FAIL   bramp.net/antlr4/java   30.071s                                    |
 | ❌  | java8           | antlr: error(134): Java8.g4:73:0: symbol type conflicts with generated code in target language or runtime |
 | ❌  | java9           | antlr: error(134): Java9.g4:84:0: symbol type conflicts with generated code in target language or runtime |
 | ❌  | javadoc         | build: javadoc/javadoc_lexer.go:167:10: undefined: _input                   |
@@ -208,7 +208,7 @@ func Example() {
 | ❌  | url             | antlr: error(134): url.g4:95:18: symbol string conflicts with generated code in target language or runtime |
 | ❌  | vba             | antlr: error(134): vba.g4:569:44: symbol type conflicts with generated code in target language or runtime |
 | ❌  | verilog2001     | antlr: error(134): Verilog2001.g4:1944:24: symbol range conflicts with generated code in target language or runtime |
-| ❌  | vhdl            | test: FAIL   bramp.net/antlr4/vhdl   10.066s                                    |
+| ❌  | vhdl            | test: FAIL   bramp.net/antlr4/vhdl   30.069s                                    |
 | ❌  | visualbasic6    | antlr: error(134): VisualBasic6.g4:555:35: symbol type conflicts with generated code in target language or runtime |
 | ❌  | webidl          | antlr: error(134): WebIDL.g4:584:3: symbol type conflicts with generated code in target language or runtime |
 | ❌  | xdr             | test: FAIL   bramp.net/antlr4/xdr [build failed]                              |
