@@ -41,7 +41,6 @@ type Project struct {
 
 	// Test related info
 	EntryPoint          string
-	ExampleRoot         string
 	Examples            []string
 	CaseInsensitiveType string
 
@@ -335,7 +334,6 @@ func ParsePom(path string) (*Project, error) {
 				}
 
 				p.Examples = filtered
-				p.ExampleRoot = strings.Repeat("../", strings.Count(dir, "/"))
 
 			case "caseInsensitiveType":
 				var caseInsensitiveType string
