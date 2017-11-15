@@ -1,4 +1,5 @@
 **/*.tokens
+**/*.interp
 **/*.errors
 **/*.log
 .bin/
