@@ -58,7 +58,7 @@ MAKEFLAGS += --no-builtin-rules --warn-undefined-variables
 .PHONY: all clean rebuild test
 .DEFAULT_GOAL := all
 .SILENT:
-.DELETE_ON_ERROR:
+#.DELETE_ON_ERROR:
 .SUFFIXES:
 
 ANTLR_BIN := $(HOME)/.m2/repository/org/antlr/antlr4/4.7.1-SNAPSHOT/antlr4-4.7.1-SNAPSHOT-complete.jar
