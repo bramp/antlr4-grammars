@@ -149,24 +149,24 @@ func Example() {
 | ❌  | apex            | antlr: error(134): apex.g4:544:30: symbol type conflicts with generated code in target language or runtime |
 | ❌  | asm6502         | antlr: error(134): asm6502.g4:71:30: symbol string conflicts with generated code in target language or runtime |
 | ❌  | asn             | antlr: error(134): ASN.g4:166:2: symbol type conflicts with generated code in target language or runtime |
-| ❌  | aspectj         | antlr: error(56): AspectJLexer.g4:382:21: reference to undefined rule: Identifier |
+| ❌  | aspectj         | antlr: error(56): /Users/bramp/go/src/bramp.net/antlr4/grammars-v4/aspectj/AspectJLexer.g4:382:21: reference to undefined rule: Identifier |
 | ❌  | calculator      | antlr: error(134): calculator.g4:54:5: symbol func conflicts with generated code in target language or runtime |
-| ❌  | classify        | test: FAIL   bramp.net/antlr4/classify       0.021s                                 |
+| ❌  | classify        | test: FAIL   bramp.net/antlr4/classify       0.025s                                 |
 | ❌  | clojure         | antlr: error(134): Clojure.g4:99:12: symbol map conflicts with generated code in target language or runtime |
-| ❌  | cpp14           | build: cpp14/cpp14_parser.go:27309:6: syntax error: unexpected NewEmptyBaseclauseContext, expecting ( |
+| ❌  | cpp14           | build: cpp14/cpp14_parser.go:27325:6: syntax error: unexpected NewEmptyBaseclauseContext, expecting ( |
 | ❌  | csharp          | build: csharp/csharp_lexer.go:11:12: expected 'STRING', found '.'           |
-| ❌  | css3            | antlr: error(134): css3.g4:196:6: symbol var conflicts with generated code in target language or runtime |
+| ❌  | css3            | antlr: error(134): css3.g4:132:65: symbol String conflicts with generated code in target language or runtime |
 | ❌  | dicenotation    | antlr: warning(125): DiceNotation.g4:50:7: implicit definition of token DSEPARATOR in parser |
 | ❌  | erlang          | antlr: error(134): Erlang.g4:156:36: symbol type conflicts with generated code in target language or runtime |
 | ❌  | fortran77       | antlr: error(134): fortran77.g4:89:6: symbol type conflicts with generated code in target language or runtime |
 | ❌  | gff3            | antlr: error(134): gff3.g4:45:28: symbol type conflicts with generated code in target language or runtime |
 | ❌  | golang          | antlr: error(134): Golang.g4:151:23: symbol type conflicts with generated code in target language or runtime |
 | ❌  | graphql         | antlr: error(134): GraphQL.g4:140:9: symbol type conflicts with generated code in target language or runtime |
-| ❌  | html            | test: FAIL   bramp.net/antlr4/html   30.028s                                    |
+| ❌  | html            | test: FAIL   bramp.net/antlr4/html   30.031s                                    |
 | ❌  | icalendar       | antlr: error(134): ICalendar.g4:305:3: symbol action conflicts with generated code in target language or runtime |
 | ❌  | inf             | antlr: error(134): inf.g4:57:17: symbol string conflicts with generated code in target language or runtime |
 | ❌  | informix        | antlr: error(134): informix.g4:601:266: symbol string conflicts with generated code in target language or runtime |
-| ❌  | java            | test: FAIL   bramp.net/antlr4/java   30.071s                                    |
+| ❌  | java            | test: FAIL   bramp.net/antlr4/java   30.080s                                    |
 | ❌  | java8           | antlr: error(134): Java8.g4:73:0: symbol type conflicts with generated code in target language or runtime |
 | ❌  | java9           | antlr: error(134): Java9.g4:84:0: symbol type conflicts with generated code in target language or runtime |
 | ❌  | javadoc         | build: javadoc/javadoc_lexer.go:167:10: undefined: _input                   |
@@ -178,8 +178,8 @@ func Example() {
 | ❌  | lolcode         | antlr: error(134): lolcode.g4:111:5: symbol func conflicts with generated code in target language or runtime |
 | ❌  | lua             | antlr: error(134): Lua.g4:90:15: symbol var conflicts with generated code in target language or runtime |
 | ❌  | m2pim4          | antlr: error(134): m2pim4.g4:356:22: symbol type conflicts with generated code in target language or runtime |
-| ❌  | masm            | build: masm/masm_lexer.go:12:4: syntax error: non-declaration statement outside function body |
-| ❌  | mysql           | build:       previous declaration at mysql/mysql_parser.go:11965:6               |
+| ❌  | masm            | antlr: error(134): MASM.g4:130:31: symbol String conflicts with generated code in target language or runtime |
+| ❌  | mysql           | test: FAIL   bramp.net/antlr4/mysql  30.219s                                   |
 | ❌  | pascal          | antlr: error(134): pascal.g4:115:23: symbol type conflicts with generated code in target language or runtime |
 | ❌  | pddl            | antlr: error(134): Pddl.g4:92:25: symbol type conflicts with generated code in target language or runtime |
 | ❌  | pdn             | antlr: error(134): pdn.g4:44:14: symbol string conflicts with generated code in target language or runtime |
@@ -202,18 +202,17 @@ func Example() {
 | ❌  | swift2          | antlr: error(134): Swift2.g4:783:34: symbol type conflicts with generated code in target language or runtime |
 | ❌  | swift3          | antlr: error(134): Swift3.g4:664:16: symbol type conflicts with generated code in target language or runtime |
 | ❌  | swiftfin        | antlr: error(134): SwiftFinParser.g4:61:16: symbol map conflicts with generated code in target language or runtime |
-| ❌  | tsql            | build:       previous declaration at tsql/tsql_parser.go:119031:8                |
-| ❌  | turtle          | build:               want String([]string, antlr.RuleContext) string                    |
+| ❌  | tsql            | test: FAIL   bramp.net/antlr4/tsql   30.150s                                    |
+| ❌  | turtle          | antlr: error(134): TURTLE.g4:112:5: symbol String conflicts with generated code in target language or runtime |
 | ❌  | ucblogo         | build: ucblogo/ucblogo_parser.go:14:14: expected 'STRING', found '.'        |
 | ❌  | url             | antlr: error(134): url.g4:95:18: symbol string conflicts with generated code in target language or runtime |
 | ❌  | vba             | antlr: error(134): vba.g4:569:44: symbol type conflicts with generated code in target language or runtime |
 | ❌  | verilog2001     | antlr: error(134): Verilog2001.g4:1944:24: symbol range conflicts with generated code in target language or runtime |
-| ❌  | vhdl            | test: FAIL   bramp.net/antlr4/vhdl   30.069s                                    |
+| ❌  | vhdl            | test: FAIL   bramp.net/antlr4/vhdl   30.064s                                    |
 | ❌  | visualbasic6    | antlr: error(134): VisualBasic6.g4:555:35: symbol type conflicts with generated code in target language or runtime |
 | ❌  | webidl          | antlr: error(134): WebIDL.g4:584:3: symbol type conflicts with generated code in target language or runtime |
 | ❌  | xdr             | test: FAIL   bramp.net/antlr4/xdr [build failed]                              |
 | ❌  | z               | build: z/z_lexer.go:1231:2: syntax error: non-declaration statement outside function body |
-
 The failures are broken down like so:
 
 * **antlr** - ANTLR failed to generate Go code from the grammar.

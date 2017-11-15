@@ -23,7 +23,8 @@ MAKEFLAGS += --no-builtin-rules --warn-undefined-variables
 .DELETE_ON_ERROR:
 .SUFFIXES:
 
-ANTLR_BIN := $(PWD)/.bin/antlr-4.7-complete.jar
+ANTLR_BIN := $(HOME)/.m2/repository/org/antlr/antlr4/4.7.1-SNAPSHOT/antlr4-4.7.1-SNAPSHOT-complete.jar 
+#ANTLR_BIN := $(PWD)/.bin/antlr-4.7-complete.jar
 ANTLR_URL := http://www.antlr.org/download/antlr-4.7-complete.jar
 ANTLR := java -jar $(ANTLR_BIN) -Dlanguage=Go -listener -no-visitor
 
