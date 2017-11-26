@@ -5,7 +5,19 @@ Precompiled Go parsers of many of the grammars on [github.com/antlr/grammars-v4]
 
 The Antlr's Go Target is still a work in progress. As such, many of the grammars fail to compile, or only pass simple tests. To report issues with the grammar [go here](https://github.com/antlr/grammars-v4), to report issues with Antlr's Go Target [go here](https://github.com/antlr/antlr4).
 
-## Example
+## Quick Start
+
+Just import one of the parser listed in the table below:
+
+```go
+import (
+	"bramp.net/antlr4/<name of grammar>"
+)
+```
+
+Then the Antlr Lexer, Parser, and Listeners are available. More information on each Grammar's API is found on the [godocs](https://godoc.org/bramp.net/antlr4) with examples.
+
+## Full Example (using the json parser)
 
 ```go
 import (
@@ -213,17 +225,18 @@ func Example() {
 | ❌  | webidl          | antlr: error(134): WebIDL.g4:584:3: symbol type conflicts with generated code in target language or runtime |
 | ❌  | xdr             | test: FAIL   bramp.net/antlr4/xdr [build failed]                              |
 | ❌  | z               | build: z/z_lexer.go:1231:2: syntax error: non-declaration statement outside function body |
+
 The failures are broken down like so:
 
 * **antlr** - ANTLR failed to generate Go code from the grammar.
 * **build** - The generated Go code failed to build.
 * **test**  - The generated Go code failed the unit tests for that language.
 
-If you wish to help fix the situation then please submit fixes back to the [ANTLR Go target](https://github.com/antlr/antlr4/blob/master/tool/src/org/antlr/v4/codegen/target/GoTarget.java), or the [Gramamrs Github Repo](https://github.com/antlr/grammars-v4).
+If you wish to help fix the situation then please submit fixes back to the [ANTLR Go target](https://github.com/antlr/antlr4/blob/master/tool/src/org/antlr/v4/codegen/target/GoTarget.java), or the [Gramamers Github Repo](https://github.com/antlr/grammars-v4).
 
 # Build
 
-To generate, build and test a single grammar, just run:
+The grammars above are ready to use, but if you wish to change them, or build them yourself for any reason just run:
 
 ```bash
 make <name of grammar>
