@@ -1,4 +1,4 @@
-// Generated from SUOKIF.g4 by ANTLR 4.7.
+// Code generated from SUOKIF.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package suokif // SUOKIF
 import "github.com/antlr/antlr4/runtime/Go/antlr"

@@ -1,4 +1,4 @@
-// Generated from xdr.g4 by ANTLR 4.7.
+// Code generated from xdr.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package xdr // xdr
 import (
@@ -703,14 +703,16 @@ func (p *xdrParser) Constant() (localctx IConstantContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(78)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(78)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(xdrParserOCTAL-33))|(1<<(xdrParserDECIMAL-33))|(1<<(xdrParserHEXADECIMAL-33)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(xdrParserOCTAL-33))|(1<<(xdrParserDECIMAL-33))|(1<<(xdrParserHEXADECIMAL-33)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

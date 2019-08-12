@@ -1,4 +1,4 @@
-// Generated from datetime.g4 by ANTLR 4.7.
+// Code generated from datetime.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package datetime // datetime
 import (
@@ -365,14 +365,16 @@ func (p *datetimeParser) Day() (localctx IDayContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(28)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(28)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<datetimeParserT__1)|(1<<datetimeParserT__2)|(1<<datetimeParserT__3)|(1<<datetimeParserT__4)|(1<<datetimeParserT__5)|(1<<datetimeParserT__6)|(1<<datetimeParserT__7))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<datetimeParserT__1)|(1<<datetimeParserT__2)|(1<<datetimeParserT__3)|(1<<datetimeParserT__4)|(1<<datetimeParserT__5)|(1<<datetimeParserT__6)|(1<<datetimeParserT__7))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -596,14 +598,16 @@ func (p *datetimeParser) Month() (localctx IMonthContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(38)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(38)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<datetimeParserT__8)|(1<<datetimeParserT__9)|(1<<datetimeParserT__10)|(1<<datetimeParserT__11)|(1<<datetimeParserT__12)|(1<<datetimeParserT__13)|(1<<datetimeParserT__14)|(1<<datetimeParserT__15)|(1<<datetimeParserT__16)|(1<<datetimeParserT__17)|(1<<datetimeParserT__18)|(1<<datetimeParserT__19))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<datetimeParserT__8)|(1<<datetimeParserT__9)|(1<<datetimeParserT__10)|(1<<datetimeParserT__11)|(1<<datetimeParserT__12)|(1<<datetimeParserT__13)|(1<<datetimeParserT__14)|(1<<datetimeParserT__15)|(1<<datetimeParserT__16)|(1<<datetimeParserT__17)|(1<<datetimeParserT__18)|(1<<datetimeParserT__19))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -1030,14 +1034,16 @@ func (p *datetimeParser) Zone() (localctx IZoneContext) {
 
 	case datetimeParserT__31, datetimeParserT__32:
 		p.EnterOuterAlt(localctx, 12)
-		p.SetState(61)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(61)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == datetimeParserT__31 || _la == datetimeParserT__32) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == datetimeParserT__31 || _la == datetimeParserT__32) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(62)
@@ -1375,14 +1381,16 @@ func (p *datetimeParser) Alphanumeric() (localctx IAlphanumericContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(73)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(73)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == datetimeParserALPHA || _la == datetimeParserDIGIT) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == datetimeParserALPHA || _la == datetimeParserDIGIT) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

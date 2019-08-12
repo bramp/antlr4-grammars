@@ -1,4 +1,4 @@
-// Generated from gtin.g4 by ANTLR 4.7.
+// Code generated from gtin.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package gtin // gtin
 import (
@@ -2636,6 +2636,23 @@ func NewGs1_prefix_ismnContext(parser antlr.Parser, parent antlr.ParserRuleConte
 }
 
 func (s *Gs1_prefix_ismnContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Gs1_prefix_ismnContext) AllDIGIT_9() []antlr.TerminalNode {
+	return s.GetTokens(gtinParserDIGIT_9)
+}
+
+func (s *Gs1_prefix_ismnContext) DIGIT_9(i int) antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_9, i)
+}
+
+func (s *Gs1_prefix_ismnContext) DIGIT_7() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_7, 0)
+}
+
+func (s *Gs1_prefix_ismnContext) DIGIT_0() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_0, 0)
+}
+
 func (s *Gs1_prefix_ismnContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -3253,6 +3270,51 @@ func NewGs1_prefix_bookland_1Context(parser antlr.Parser, parent antlr.ParserRul
 }
 
 func (s *Gs1_prefix_bookland_1Context) GetParser() antlr.Parser { return s.parser }
+
+func (s *Gs1_prefix_bookland_1Context) AllDIGIT_9() []antlr.TerminalNode {
+	return s.GetTokens(gtinParserDIGIT_9)
+}
+
+func (s *Gs1_prefix_bookland_1Context) DIGIT_9(i int) antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_9, i)
+}
+
+func (s *Gs1_prefix_bookland_1Context) AllDIGIT_7() []antlr.TerminalNode {
+	return s.GetTokens(gtinParserDIGIT_7)
+}
+
+func (s *Gs1_prefix_bookland_1Context) DIGIT_7(i int) antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_7, i)
+}
+
+func (s *Gs1_prefix_bookland_1Context) DIGIT_1() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_1, 0)
+}
+
+func (s *Gs1_prefix_bookland_1Context) DIGIT_2() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_2, 0)
+}
+
+func (s *Gs1_prefix_bookland_1Context) DIGIT_3() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_3, 0)
+}
+
+func (s *Gs1_prefix_bookland_1Context) DIGIT_4() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_4, 0)
+}
+
+func (s *Gs1_prefix_bookland_1Context) DIGIT_5() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_5, 0)
+}
+
+func (s *Gs1_prefix_bookland_1Context) DIGIT_6() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_6, 0)
+}
+
+func (s *Gs1_prefix_bookland_1Context) DIGIT_8() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_8, 0)
+}
+
 func (s *Gs1_prefix_bookland_1Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -3307,14 +3369,16 @@ func (p *gtinParser) Gs1_prefix_bookland_1() (localctx IGs1_prefix_bookland_1Con
 		p.SetState(191)
 		p.Match(gtinParserDIGIT_9)
 	}
-	p.SetState(192)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(192)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<gtinParserDIGIT_1)|(1<<gtinParserDIGIT_2)|(1<<gtinParserDIGIT_3)|(1<<gtinParserDIGIT_4)|(1<<gtinParserDIGIT_5)|(1<<gtinParserDIGIT_6)|(1<<gtinParserDIGIT_7)|(1<<gtinParserDIGIT_8)|(1<<gtinParserDIGIT_9))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<gtinParserDIGIT_1)|(1<<gtinParserDIGIT_2)|(1<<gtinParserDIGIT_3)|(1<<gtinParserDIGIT_4)|(1<<gtinParserDIGIT_5)|(1<<gtinParserDIGIT_6)|(1<<gtinParserDIGIT_7)|(1<<gtinParserDIGIT_8)|(1<<gtinParserDIGIT_9))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -3357,6 +3421,18 @@ func NewGs1_prefix_bookland_2Context(parser antlr.Parser, parent antlr.ParserRul
 }
 
 func (s *Gs1_prefix_bookland_2Context) GetParser() antlr.Parser { return s.parser }
+
+func (s *Gs1_prefix_bookland_2Context) DIGIT_9() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_9, 0)
+}
+
+func (s *Gs1_prefix_bookland_2Context) DIGIT_7() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_7, 0)
+}
+
+func (s *Gs1_prefix_bookland_2Context) DIGIT_8() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_8, 0)
+}
 
 func (s *Gs1_prefix_bookland_2Context) Any_digit() IAny_digitContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAny_digitContext)(nil)).Elem(), 0)
@@ -3466,6 +3542,19 @@ func NewGs1_prefix_issnContext(parser antlr.Parser, parent antlr.ParserRuleConte
 }
 
 func (s *Gs1_prefix_issnContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Gs1_prefix_issnContext) DIGIT_9() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_9, 0)
+}
+
+func (s *Gs1_prefix_issnContext) AllDIGIT_7() []antlr.TerminalNode {
+	return s.GetTokens(gtinParserDIGIT_7)
+}
+
+func (s *Gs1_prefix_issnContext) DIGIT_7(i int) antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_7, i)
+}
+
 func (s *Gs1_prefix_issnContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -4326,6 +4415,43 @@ func NewEan14_packagingContext(parser antlr.Parser, parent antlr.ParserRuleConte
 }
 
 func (s *Ean14_packagingContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Ean14_packagingContext) DIGIT_0() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_0, 0)
+}
+
+func (s *Ean14_packagingContext) DIGIT_1() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_1, 0)
+}
+
+func (s *Ean14_packagingContext) DIGIT_2() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_2, 0)
+}
+
+func (s *Ean14_packagingContext) DIGIT_3() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_3, 0)
+}
+
+func (s *Ean14_packagingContext) DIGIT_4() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_4, 0)
+}
+
+func (s *Ean14_packagingContext) DIGIT_5() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_5, 0)
+}
+
+func (s *Ean14_packagingContext) DIGIT_6() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_6, 0)
+}
+
+func (s *Ean14_packagingContext) DIGIT_7() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_7, 0)
+}
+
+func (s *Ean14_packagingContext) DIGIT_8() antlr.TerminalNode {
+	return s.GetToken(gtinParserDIGIT_8, 0)
+}
+
 func (s *Ean14_packagingContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -4368,14 +4494,16 @@ func (p *gtinParser) Ean14_packaging() (localctx IEan14_packagingContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(238)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(238)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<gtinParserDIGIT_0)|(1<<gtinParserDIGIT_1)|(1<<gtinParserDIGIT_2)|(1<<gtinParserDIGIT_3)|(1<<gtinParserDIGIT_4)|(1<<gtinParserDIGIT_5)|(1<<gtinParserDIGIT_6)|(1<<gtinParserDIGIT_7)|(1<<gtinParserDIGIT_8))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<gtinParserDIGIT_0)|(1<<gtinParserDIGIT_1)|(1<<gtinParserDIGIT_2)|(1<<gtinParserDIGIT_3)|(1<<gtinParserDIGIT_4)|(1<<gtinParserDIGIT_5)|(1<<gtinParserDIGIT_6)|(1<<gtinParserDIGIT_7)|(1<<gtinParserDIGIT_8))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -4655,14 +4783,16 @@ func (p *gtinParser) Any_digit() (localctx IAny_digitContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(253)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(253)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<gtinParserDIGIT_0)|(1<<gtinParserDIGIT_1)|(1<<gtinParserDIGIT_2)|(1<<gtinParserDIGIT_3)|(1<<gtinParserDIGIT_4)|(1<<gtinParserDIGIT_5)|(1<<gtinParserDIGIT_6)|(1<<gtinParserDIGIT_7)|(1<<gtinParserDIGIT_8)|(1<<gtinParserDIGIT_9))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<gtinParserDIGIT_0)|(1<<gtinParserDIGIT_1)|(1<<gtinParserDIGIT_2)|(1<<gtinParserDIGIT_3)|(1<<gtinParserDIGIT_4)|(1<<gtinParserDIGIT_5)|(1<<gtinParserDIGIT_6)|(1<<gtinParserDIGIT_7)|(1<<gtinParserDIGIT_8)|(1<<gtinParserDIGIT_9))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

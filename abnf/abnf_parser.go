@@ -1,4 +1,4 @@
-// Generated from Abnf.g4 by ANTLR 4.7.
+// Code generated from Abnf.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package abnf // Abnf
 import (
@@ -15,50 +15,50 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 17, 83, 4,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 16, 84, 4,
 	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7, 4,
 	8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 3, 2, 7, 2, 24, 10, 2,
-	12, 2, 14, 2, 27, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4,
-	3, 5, 3, 5, 3, 5, 7, 5, 40, 10, 5, 12, 5, 14, 5, 43, 11, 5, 3, 6, 3, 6,
-	7, 6, 47, 10, 6, 12, 6, 14, 6, 50, 11, 6, 3, 7, 5, 7, 53, 10, 7, 3, 7,
-	3, 7, 3, 8, 3, 8, 5, 8, 59, 10, 8, 3, 8, 3, 8, 5, 8, 63, 10, 8, 5, 8, 65,
-	10, 8, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 5, 9, 73, 10, 9, 3, 10, 3, 10,
-	3, 10, 3, 10, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 2, 2, 12, 2, 4, 6, 8,
-	10, 12, 14, 16, 18, 20, 2, 3, 3, 2, 3, 4, 2, 84, 2, 25, 3, 2, 2, 2, 4,
-	30, 3, 2, 2, 2, 6, 34, 3, 2, 2, 2, 8, 36, 3, 2, 2, 2, 10, 44, 3, 2, 2,
-	2, 12, 52, 3, 2, 2, 2, 14, 64, 3, 2, 2, 2, 16, 72, 3, 2, 2, 2, 18, 74,
-	3, 2, 2, 2, 20, 78, 3, 2, 2, 2, 22, 24, 5, 4, 3, 2, 23, 22, 3, 2, 2, 2,
-	24, 27, 3, 2, 2, 2, 25, 23, 3, 2, 2, 2, 25, 26, 3, 2, 2, 2, 26, 28, 3,
-	2, 2, 2, 27, 25, 3, 2, 2, 2, 28, 29, 7, 2, 2, 3, 29, 3, 3, 2, 2, 2, 30,
-	31, 7, 13, 2, 2, 31, 32, 9, 2, 2, 2, 32, 33, 5, 6, 4, 2, 33, 5, 3, 2, 2,
-	2, 34, 35, 5, 8, 5, 2, 35, 7, 3, 2, 2, 2, 36, 41, 5, 10, 6, 2, 37, 38,
-	7, 5, 2, 2, 38, 40, 5, 10, 6, 2, 39, 37, 3, 2, 2, 2, 40, 43, 3, 2, 2, 2,
-	41, 39, 3, 2, 2, 2, 41, 42, 3, 2, 2, 2, 42, 9, 3, 2, 2, 2, 43, 41, 3, 2,
-	2, 2, 44, 48, 5, 12, 7, 2, 45, 47, 5, 12, 7, 2, 46, 45, 3, 2, 2, 2, 47,
-	50, 3, 2, 2, 2, 48, 46, 3, 2, 2, 2, 48, 49, 3, 2, 2, 2, 49, 11, 3, 2, 2,
-	2, 50, 48, 3, 2, 2, 2, 51, 53, 5, 14, 8, 2, 52, 51, 3, 2, 2, 2, 52, 53,
-	3, 2, 2, 2, 53, 54, 3, 2, 2, 2, 54, 55, 5, 16, 9, 2, 55, 13, 3, 2, 2, 2,
-	56, 65, 7, 14, 2, 2, 57, 59, 7, 14, 2, 2, 58, 57, 3, 2, 2, 2, 58, 59, 3,
-	2, 2, 2, 59, 60, 3, 2, 2, 2, 60, 62, 7, 6, 2, 2, 61, 63, 7, 14, 2, 2, 62,
-	61, 3, 2, 2, 2, 62, 63, 3, 2, 2, 2, 63, 65, 3, 2, 2, 2, 64, 56, 3, 2, 2,
-	2, 64, 58, 3, 2, 2, 2, 65, 15, 3, 2, 2, 2, 66, 73, 7, 13, 2, 2, 67, 73,
-	5, 18, 10, 2, 68, 73, 5, 20, 11, 2, 69, 73, 7, 17, 2, 2, 70, 73, 7, 11,
-	2, 2, 71, 73, 7, 12, 2, 2, 72, 66, 3, 2, 2, 2, 72, 67, 3, 2, 2, 2, 72,
-	68, 3, 2, 2, 2, 72, 69, 3, 2, 2, 2, 72, 70, 3, 2, 2, 2, 72, 71, 3, 2, 2,
-	2, 73, 17, 3, 2, 2, 2, 74, 75, 7, 7, 2, 2, 75, 76, 5, 8, 5, 2, 76, 77,
-	7, 8, 2, 2, 77, 19, 3, 2, 2, 2, 78, 79, 7, 9, 2, 2, 79, 80, 5, 8, 5, 2,
-	80, 81, 7, 10, 2, 2, 81, 21, 3, 2, 2, 2, 10, 25, 41, 48, 52, 58, 62, 64,
-	72,
+	12, 2, 14, 2, 27, 11, 2, 3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 5, 3, 34, 10, 3,
+	3, 3, 3, 3, 3, 4, 3, 4, 3, 5, 3, 5, 3, 5, 7, 5, 43, 10, 5, 12, 5, 14, 5,
+	46, 11, 5, 3, 6, 6, 6, 49, 10, 6, 13, 6, 14, 6, 50, 3, 7, 5, 7, 54, 10,
+	7, 3, 7, 3, 7, 3, 8, 3, 8, 5, 8, 60, 10, 8, 3, 8, 3, 8, 5, 8, 64, 10, 8,
+	5, 8, 66, 10, 8, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 3, 9, 5, 9, 74, 10, 9, 3,
+	10, 3, 10, 3, 10, 3, 10, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 2, 2, 12, 2,
+	4, 6, 8, 10, 12, 14, 16, 18, 20, 2, 2, 2, 86, 2, 25, 3, 2, 2, 2, 4, 30,
+	3, 2, 2, 2, 6, 37, 3, 2, 2, 2, 8, 39, 3, 2, 2, 2, 10, 48, 3, 2, 2, 2, 12,
+	53, 3, 2, 2, 2, 14, 65, 3, 2, 2, 2, 16, 73, 3, 2, 2, 2, 18, 75, 3, 2, 2,
+	2, 20, 79, 3, 2, 2, 2, 22, 24, 5, 4, 3, 2, 23, 22, 3, 2, 2, 2, 24, 27,
+	3, 2, 2, 2, 25, 23, 3, 2, 2, 2, 25, 26, 3, 2, 2, 2, 26, 28, 3, 2, 2, 2,
+	27, 25, 3, 2, 2, 2, 28, 29, 7, 2, 2, 3, 29, 3, 3, 2, 2, 2, 30, 31, 7, 12,
+	2, 2, 31, 33, 7, 3, 2, 2, 32, 34, 7, 4, 2, 2, 33, 32, 3, 2, 2, 2, 33, 34,
+	3, 2, 2, 2, 34, 35, 3, 2, 2, 2, 35, 36, 5, 6, 4, 2, 36, 5, 3, 2, 2, 2,
+	37, 38, 5, 8, 5, 2, 38, 7, 3, 2, 2, 2, 39, 44, 5, 10, 6, 2, 40, 41, 7,
+	4, 2, 2, 41, 43, 5, 10, 6, 2, 42, 40, 3, 2, 2, 2, 43, 46, 3, 2, 2, 2, 44,
+	42, 3, 2, 2, 2, 44, 45, 3, 2, 2, 2, 45, 9, 3, 2, 2, 2, 46, 44, 3, 2, 2,
+	2, 47, 49, 5, 12, 7, 2, 48, 47, 3, 2, 2, 2, 49, 50, 3, 2, 2, 2, 50, 48,
+	3, 2, 2, 2, 50, 51, 3, 2, 2, 2, 51, 11, 3, 2, 2, 2, 52, 54, 5, 14, 8, 2,
+	53, 52, 3, 2, 2, 2, 53, 54, 3, 2, 2, 2, 54, 55, 3, 2, 2, 2, 55, 56, 5,
+	16, 9, 2, 56, 13, 3, 2, 2, 2, 57, 66, 7, 13, 2, 2, 58, 60, 7, 13, 2, 2,
+	59, 58, 3, 2, 2, 2, 59, 60, 3, 2, 2, 2, 60, 61, 3, 2, 2, 2, 61, 63, 7,
+	5, 2, 2, 62, 64, 7, 13, 2, 2, 63, 62, 3, 2, 2, 2, 63, 64, 3, 2, 2, 2, 64,
+	66, 3, 2, 2, 2, 65, 57, 3, 2, 2, 2, 65, 59, 3, 2, 2, 2, 66, 15, 3, 2, 2,
+	2, 67, 74, 7, 12, 2, 2, 68, 74, 5, 18, 10, 2, 69, 74, 5, 20, 11, 2, 70,
+	74, 7, 16, 2, 2, 71, 74, 7, 10, 2, 2, 72, 74, 7, 11, 2, 2, 73, 67, 3, 2,
+	2, 2, 73, 68, 3, 2, 2, 2, 73, 69, 3, 2, 2, 2, 73, 70, 3, 2, 2, 2, 73, 71,
+	3, 2, 2, 2, 73, 72, 3, 2, 2, 2, 74, 17, 3, 2, 2, 2, 75, 76, 7, 6, 2, 2,
+	76, 77, 5, 8, 5, 2, 77, 78, 7, 7, 2, 2, 78, 19, 3, 2, 2, 2, 79, 80, 7,
+	8, 2, 2, 80, 81, 5, 8, 5, 2, 81, 82, 7, 9, 2, 2, 82, 21, 3, 2, 2, 2, 11,
+	25, 33, 44, 50, 53, 59, 63, 65, 73,
 }
 var deserializer = antlr.NewATNDeserializer(nil)
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
-	"", "'='", "'=/'", "'/'", "'*'", "'('", "')'", "'['", "']'",
+	"", "'='", "'/'", "'*'", "'('", "')'", "'['", "']'",
 }
 var symbolicNames = []string{
-	"", "", "", "", "", "", "", "", "", "NumberValue", "ProseValue", "ID",
-	"INT", "COMMENT", "WS", "STRING",
+	"", "", "", "", "", "", "", "", "NumberValue", "ProseValue", "ID", "INT",
+	"COMMENT", "WS", "STRING",
 }
 
 var ruleNames = []string{
@@ -101,14 +101,13 @@ const (
 	AbnfParserT__4        = 5
 	AbnfParserT__5        = 6
 	AbnfParserT__6        = 7
-	AbnfParserT__7        = 8
-	AbnfParserNumberValue = 9
-	AbnfParserProseValue  = 10
-	AbnfParserID          = 11
-	AbnfParserINT         = 12
-	AbnfParserCOMMENT     = 13
-	AbnfParserWS          = 14
-	AbnfParserSTRING      = 15
+	AbnfParserNumberValue = 8
+	AbnfParserProseValue  = 9
+	AbnfParserID          = 10
+	AbnfParserINT         = 11
+	AbnfParserCOMMENT     = 12
+	AbnfParserWS          = 13
+	AbnfParserSTRING      = 14
 )
 
 // AbnfParser rules.
@@ -352,17 +351,23 @@ func (p *AbnfParser) Rule_() (localctx IRule_Context) {
 		p.SetState(28)
 		p.Match(AbnfParserID)
 	}
-	p.SetState(29)
+	{
+		p.SetState(29)
+		p.Match(AbnfParserT__0)
+	}
+	p.SetState(31)
+	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if !(_la == AbnfParserT__0 || _la == AbnfParserT__1) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+	if _la == AbnfParserT__1 {
+		{
+			p.SetState(30)
+			p.Match(AbnfParserT__1)
+		}
+
 	}
 	{
-		p.SetState(30)
+		p.SetState(33)
 		p.Elements()
 	}
 
@@ -459,7 +464,7 @@ func (p *AbnfParser) Elements() (localctx IElementsContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(32)
+		p.SetState(35)
 		p.Alternation()
 	}
 
@@ -570,24 +575,24 @@ func (p *AbnfParser) Alternation() (localctx IAlternationContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(34)
+		p.SetState(37)
 		p.Concatenation()
 	}
-	p.SetState(39)
+	p.SetState(42)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == AbnfParserT__2 {
+	for _la == AbnfParserT__1 {
 		{
-			p.SetState(35)
-			p.Match(AbnfParserT__2)
+			p.SetState(38)
+			p.Match(AbnfParserT__1)
 		}
 		{
-			p.SetState(36)
+			p.SetState(39)
 			p.Concatenation()
 		}
 
-		p.SetState(41)
+		p.SetState(44)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
@@ -699,25 +704,24 @@ func (p *AbnfParser) Concatenation() (localctx IConcatenationContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	{
-		p.SetState(42)
-		p.Repetition()
-	}
 	p.SetState(46)
 	p.GetErrorHandler().Sync(p)
-	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 2, p.GetParserRuleContext())
-
-	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
-		if _alt == 1 {
+	_alt = 1
+	for ok := true; ok; ok = _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
+		switch _alt {
+		case 1:
 			{
-				p.SetState(43)
+				p.SetState(45)
 				p.Repetition()
 			}
 
+		default:
+			panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 		}
+
 		p.SetState(48)
 		p.GetErrorHandler().Sync(p)
-		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 2, p.GetParserRuleContext())
+		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 3, p.GetParserRuleContext())
 	}
 
 	return localctx
@@ -823,19 +827,19 @@ func (p *AbnfParser) Repetition() (localctx IRepetitionContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(50)
+	p.SetState(51)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == AbnfParserT__3 || _la == AbnfParserINT {
+	if _la == AbnfParserT__2 || _la == AbnfParserINT {
 		{
-			p.SetState(49)
+			p.SetState(50)
 			p.Repeat()
 		}
 
 	}
 	{
-		p.SetState(52)
+		p.SetState(53)
 		p.Element()
 	}
 
@@ -929,40 +933,40 @@ func (p *AbnfParser) Repeat() (localctx IRepeatContext) {
 		}
 	}()
 
-	p.SetState(62)
+	p.SetState(63)
 	p.GetErrorHandler().Sync(p)
-	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 6, p.GetParserRuleContext()) {
+	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 7, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(54)
+			p.SetState(55)
 			p.Match(AbnfParserINT)
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
-		p.SetState(56)
+		p.SetState(57)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == AbnfParserINT {
 			{
-				p.SetState(55)
+				p.SetState(56)
 				p.Match(AbnfParserINT)
 			}
 
 		}
 		{
-			p.SetState(58)
-			p.Match(AbnfParserT__3)
+			p.SetState(59)
+			p.Match(AbnfParserT__2)
 		}
-		p.SetState(60)
+		p.SetState(61)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == AbnfParserINT {
 			{
-				p.SetState(59)
+				p.SetState(60)
 				p.Match(AbnfParserINT)
 			}
 
@@ -1087,49 +1091,49 @@ func (p *AbnfParser) Element() (localctx IElementContext) {
 		}
 	}()
 
-	p.SetState(70)
+	p.SetState(71)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case AbnfParserID:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(64)
+			p.SetState(65)
 			p.Match(AbnfParserID)
 		}
 
-	case AbnfParserT__4:
+	case AbnfParserT__3:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(65)
+			p.SetState(66)
 			p.Group()
 		}
 
-	case AbnfParserT__6:
+	case AbnfParserT__5:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(66)
+			p.SetState(67)
 			p.Option()
 		}
 
 	case AbnfParserSTRING:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(67)
+			p.SetState(68)
 			p.Match(AbnfParserSTRING)
 		}
 
 	case AbnfParserNumberValue:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(68)
+			p.SetState(69)
 			p.Match(AbnfParserNumberValue)
 		}
 
 	case AbnfParserProseValue:
 		p.EnterOuterAlt(localctx, 6)
 		{
-			p.SetState(69)
+			p.SetState(70)
 			p.Match(AbnfParserProseValue)
 		}
 
@@ -1230,16 +1234,16 @@ func (p *AbnfParser) Group() (localctx IGroupContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(72)
-		p.Match(AbnfParserT__4)
-	}
-	{
 		p.SetState(73)
-		p.Alternation()
+		p.Match(AbnfParserT__3)
 	}
 	{
 		p.SetState(74)
-		p.Match(AbnfParserT__5)
+		p.Alternation()
+	}
+	{
+		p.SetState(75)
+		p.Match(AbnfParserT__4)
 	}
 
 	return localctx
@@ -1335,16 +1339,16 @@ func (p *AbnfParser) Option() (localctx IOptionContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(76)
-		p.Match(AbnfParserT__6)
-	}
-	{
 		p.SetState(77)
-		p.Alternation()
+		p.Match(AbnfParserT__5)
 	}
 	{
 		p.SetState(78)
-		p.Match(AbnfParserT__7)
+		p.Alternation()
+	}
+	{
+		p.SetState(79)
+		p.Match(AbnfParserT__6)
 	}
 
 	return localctx

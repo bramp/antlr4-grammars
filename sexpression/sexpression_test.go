@@ -85,8 +85,8 @@ func TestSexpressionLexer(t *testing.T) {
 		// Try and read all tokens
 		i := 0
 		for ; i < MAX_TOKENS; i++ {
-			t := lexer.NextToken()
-			if t.GetTokenType() == antlr.TokenEOF {
+			tok := lexer.NextToken()
+			if tok.GetTokenType() == antlr.TokenEOF {
 				break
 			}
 		}

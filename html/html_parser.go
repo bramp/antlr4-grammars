@@ -1,4 +1,4 @@
-// Generated from HTMLParser.g4 by ANTLR 4.7.
+// Code generated from HTMLParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package html // HTMLParser
 import (
@@ -1684,14 +1684,16 @@ func (p *HTMLParser) HtmlChardata() (localctx IHtmlChardataContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(149)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(149)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == HTMLParserSEA_WS || _la == HTMLParserHTML_TEXT) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == HTMLParserSEA_WS || _la == HTMLParserHTML_TEXT) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -1902,14 +1904,16 @@ func (p *HTMLParser) HtmlComment() (localctx IHtmlCommentContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(155)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(155)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == HTMLParserHTML_COMMENT || _la == HTMLParserHTML_CONDITIONAL_COMMENT) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == HTMLParserHTML_COMMENT || _la == HTMLParserHTML_CONDITIONAL_COMMENT) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -2375,14 +2379,16 @@ func (p *HTMLParser) Script() (localctx IScriptContext) {
 		p.SetState(165)
 		p.Match(HTMLParserSCRIPT_OPEN)
 	}
-	p.SetState(166)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(166)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == HTMLParserSCRIPT_BODY || _la == HTMLParserSCRIPT_SHORT_BODY) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == HTMLParserSCRIPT_BODY || _la == HTMLParserSCRIPT_SHORT_BODY) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -2484,14 +2490,16 @@ func (p *HTMLParser) Style() (localctx IStyleContext) {
 		p.SetState(168)
 		p.Match(HTMLParserSTYLE_OPEN)
 	}
-	p.SetState(169)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(169)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == HTMLParserSTYLE_BODY || _la == HTMLParserSTYLE_SHORT_BODY) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == HTMLParserSTYLE_BODY || _la == HTMLParserSTYLE_SHORT_BODY) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

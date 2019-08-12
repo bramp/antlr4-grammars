@@ -1,4 +1,4 @@
-// Generated from rpn.g4 by ANTLR 4.7.
+// Code generated from rpn.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package rpn // rpn
 import (
@@ -492,14 +492,16 @@ func (p *rpnParser) Oper() (localctx IOperContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(23)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(23)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<rpnParserPOW)|(1<<rpnParserPLUS)|(1<<rpnParserMINUS)|(1<<rpnParserTIMES)|(1<<rpnParserDIV)|(1<<rpnParserCOS)|(1<<rpnParserSIN)|(1<<rpnParserTAN)|(1<<rpnParserACOS)|(1<<rpnParserASIN)|(1<<rpnParserATAN)|(1<<rpnParserLN)|(1<<rpnParserLOG))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<rpnParserPOW)|(1<<rpnParserPLUS)|(1<<rpnParserMINUS)|(1<<rpnParserTIMES)|(1<<rpnParserDIV)|(1<<rpnParserCOS)|(1<<rpnParserSIN)|(1<<rpnParserTAN)|(1<<rpnParserACOS)|(1<<rpnParserASIN)|(1<<rpnParserATAN)|(1<<rpnParserLN)|(1<<rpnParserLOG))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

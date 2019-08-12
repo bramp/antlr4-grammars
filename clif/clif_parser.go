@@ -1,4 +1,4 @@
-// Generated from CLIF.g4 by ANTLR 4.7.
+// Code generated from CLIF.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package clif // CLIF
 import (
@@ -447,14 +447,16 @@ func (p *CLIFParser) Interpretedname() (localctx IInterpretednameContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(47)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(47)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == CLIFParserNUMERAL || _la == CLIFParserQUOTEDSTRING) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == CLIFParserNUMERAL || _la == CLIFParserQUOTEDSTRING) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -548,14 +550,16 @@ func (p *CLIFParser) Interpretablename() (localctx IInterpretablenameContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(49)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(49)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == CLIFParserENCLOSEDNAME || _la == CLIFParserNAMECHARSEQUENCE) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == CLIFParserENCLOSEDNAME || _la == CLIFParserNAMECHARSEQUENCE) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -758,6 +762,10 @@ func (s *TermContext) Termseq() ITermseqContext {
 
 func (s *TermContext) CLOSE() antlr.TerminalNode {
 	return s.GetToken(CLIFParserCLOSE, 0)
+}
+
+func (s *TermContext) CL_COMMENT() antlr.TerminalNode {
+	return s.GetToken(CLIFParserCL_COMMENT, 0)
 }
 
 func (s *TermContext) QUOTEDSTRING() antlr.TerminalNode {
@@ -1008,6 +1016,10 @@ func (s *EquationContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *EquationContext) OPEN() antlr.TerminalNode {
 	return s.GetToken(CLIFParserOPEN, 0)
+}
+
+func (s *EquationContext) EQUAL() antlr.TerminalNode {
+	return s.GetToken(CLIFParserEQUAL, 0)
 }
 
 func (s *EquationContext) AllTerm() []ITermContext {
@@ -1473,6 +1485,10 @@ func (s *AtomContext) Term(i int) ITermContext {
 	return t.(ITermContext)
 }
 
+func (s *AtomContext) CL_ROLESET() antlr.TerminalNode {
+	return s.GetToken(CLIFParserCL_ROLESET, 0)
+}
+
 func (s *AtomContext) Name() INameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*INameContext)(nil)).Elem(), 0)
 
@@ -1738,6 +1754,14 @@ func (s *BoolsentContext) CLOSE() antlr.TerminalNode {
 	return s.GetToken(CLIFParserCLOSE, 0)
 }
 
+func (s *BoolsentContext) AND() antlr.TerminalNode {
+	return s.GetToken(CLIFParserAND, 0)
+}
+
+func (s *BoolsentContext) OR() antlr.TerminalNode {
+	return s.GetToken(CLIFParserOR, 0)
+}
+
 func (s *BoolsentContext) AllSentence() []ISentenceContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISentenceContext)(nil)).Elem())
 	var tst = make([]ISentenceContext, len(ts))
@@ -1759,6 +1783,18 @@ func (s *BoolsentContext) Sentence(i int) ISentenceContext {
 	}
 
 	return t.(ISentenceContext)
+}
+
+func (s *BoolsentContext) IF() antlr.TerminalNode {
+	return s.GetToken(CLIFParserIF, 0)
+}
+
+func (s *BoolsentContext) IFF() antlr.TerminalNode {
+	return s.GetToken(CLIFParserIFF, 0)
+}
+
+func (s *BoolsentContext) NOT() antlr.TerminalNode {
+	return s.GetToken(CLIFParserNOT, 0)
 }
 
 func (s *BoolsentContext) GetRuleContext() antlr.RuleContext {
@@ -1811,14 +1847,16 @@ func (p *CLIFParser) Boolsent() (localctx IBoolsentContext) {
 			p.SetState(108)
 			p.Match(CLIFParserOPEN)
 		}
-		p.SetState(109)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(109)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == CLIFParserAND || _la == CLIFParserOR) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == CLIFParserAND || _la == CLIFParserOR) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		p.SetState(113)
 		p.GetErrorHandler().Sync(p)
@@ -1845,14 +1883,16 @@ func (p *CLIFParser) Boolsent() (localctx IBoolsentContext) {
 			p.SetState(117)
 			p.Match(CLIFParserOPEN)
 		}
-		p.SetState(118)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(118)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == CLIFParserIFF || _la == CLIFParserIF) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == CLIFParserIFF || _la == CLIFParserIF) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(119)
@@ -1957,6 +1997,14 @@ func (s *QuantsentContext) CLOSE() antlr.TerminalNode {
 	return s.GetToken(CLIFParserCLOSE, 0)
 }
 
+func (s *QuantsentContext) FORALL() antlr.TerminalNode {
+	return s.GetToken(CLIFParserFORALL, 0)
+}
+
+func (s *QuantsentContext) EXISTS() antlr.TerminalNode {
+	return s.GetToken(CLIFParserEXISTS, 0)
+}
+
 func (s *QuantsentContext) Interpretablename() IInterpretablenameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IInterpretablenameContext)(nil)).Elem(), 0)
 
@@ -2013,14 +2061,16 @@ func (p *CLIFParser) Quantsent() (localctx IQuantsentContext) {
 		p.SetState(130)
 		p.Match(CLIFParserOPEN)
 	}
-	p.SetState(131)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(131)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == CLIFParserFORALL || _la == CLIFParserEXISTS) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == CLIFParserFORALL || _la == CLIFParserEXISTS) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	p.SetState(133)
 	p.GetErrorHandler().Sync(p)
@@ -2315,6 +2365,10 @@ func (s *CommentsentContext) OPEN() antlr.TerminalNode {
 	return s.GetToken(CLIFParserOPEN, 0)
 }
 
+func (s *CommentsentContext) CL_COMMENT() antlr.TerminalNode {
+	return s.GetToken(CLIFParserCL_COMMENT, 0)
+}
+
 func (s *CommentsentContext) ENCLOSEDNAME() antlr.TerminalNode {
 	return s.GetToken(CLIFParserENCLOSEDNAME, 0)
 }
@@ -2444,6 +2498,10 @@ func (s *ModuleContext) OPEN(i int) antlr.TerminalNode {
 	return s.GetToken(CLIFParserOPEN, i)
 }
 
+func (s *ModuleContext) CL_MODULE() antlr.TerminalNode {
+	return s.GetToken(CLIFParserCL_MODULE, 0)
+}
+
 func (s *ModuleContext) Interpretablename() IInterpretablenameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IInterpretablenameContext)(nil)).Elem(), 0)
 
@@ -2460,6 +2518,10 @@ func (s *ModuleContext) AllCLOSE() []antlr.TerminalNode {
 
 func (s *ModuleContext) CLOSE(i int) antlr.TerminalNode {
 	return s.GetToken(CLIFParserCLOSE, i)
+}
+
+func (s *ModuleContext) CL_EXCLUDES() antlr.TerminalNode {
+	return s.GetToken(CLIFParserCL_EXCLUDES, 0)
 }
 
 func (s *ModuleContext) Cltext() ICltextContext {
@@ -2662,6 +2724,10 @@ func (s *PhraseContext) OPEN() antlr.TerminalNode {
 	return s.GetToken(CLIFParserOPEN, 0)
 }
 
+func (s *PhraseContext) CL_IMPORTS() antlr.TerminalNode {
+	return s.GetToken(CLIFParserCL_IMPORTS, 0)
+}
+
 func (s *PhraseContext) Interpretablename() IInterpretablenameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IInterpretablenameContext)(nil)).Elem(), 0)
 
@@ -2674,6 +2740,10 @@ func (s *PhraseContext) Interpretablename() IInterpretablenameContext {
 
 func (s *PhraseContext) CLOSE() antlr.TerminalNode {
 	return s.GetToken(CLIFParserCLOSE, 0)
+}
+
+func (s *PhraseContext) CL_COMMENT() antlr.TerminalNode {
+	return s.GetToken(CLIFParserCL_COMMENT, 0)
 }
 
 func (s *PhraseContext) ENCLOSEDNAME() antlr.TerminalNode {
@@ -3100,6 +3170,10 @@ func (s *NamedtextContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *NamedtextContext) OPEN() antlr.TerminalNode {
 	return s.GetToken(CLIFParserOPEN, 0)
+}
+
+func (s *NamedtextContext) CL_TEXT() antlr.TerminalNode {
+	return s.GetToken(CLIFParserCL_TEXT, 0)
 }
 
 func (s *NamedtextContext) Interpretablename() IInterpretablenameContext {

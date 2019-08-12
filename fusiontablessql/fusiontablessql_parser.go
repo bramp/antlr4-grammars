@@ -1,4 +1,4 @@
-// Generated from FusionTablesSql.g4 by ANTLR 4.7.
+// Code generated from FusionTablesSql.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package fusiontablessql // FusionTablesSql
 import (
@@ -1577,6 +1577,10 @@ func (s *Create_view_stmtContext) K_AS() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserK_AS, 0)
 }
 
+func (s *Create_view_stmtContext) LPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserLPAR, 0)
+}
+
 func (s *Create_view_stmtContext) K_SELECT() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserK_SELECT, 0)
 }
@@ -1606,6 +1610,10 @@ func (s *Create_view_stmtContext) Result_column(i int) IResult_columnContext {
 
 func (s *Create_view_stmtContext) K_FROM() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserK_FROM, 0)
+}
+
+func (s *Create_view_stmtContext) RPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserRPAR, 0)
 }
 
 func (s *Create_view_stmtContext) Table_name_with_alias() ITable_name_with_aliasContext {
@@ -1960,6 +1968,14 @@ func (s *Insert_stmtContext) Table_name_in_dml() ITable_name_in_dmlContext {
 	return t.(ITable_name_in_dmlContext)
 }
 
+func (s *Insert_stmtContext) AllLPAR() []antlr.TerminalNode {
+	return s.GetTokens(FusionTablesSqlParserLPAR)
+}
+
+func (s *Insert_stmtContext) LPAR(i int) antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserLPAR, i)
+}
+
 func (s *Insert_stmtContext) AllColumn_name_in_dml() []IColumn_name_in_dmlContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IColumn_name_in_dmlContext)(nil)).Elem())
 	var tst = make([]IColumn_name_in_dmlContext, len(ts))
@@ -1981,6 +1997,14 @@ func (s *Insert_stmtContext) Column_name_in_dml(i int) IColumn_name_in_dmlContex
 	}
 
 	return t.(IColumn_name_in_dmlContext)
+}
+
+func (s *Insert_stmtContext) AllRPAR() []antlr.TerminalNode {
+	return s.GetTokens(FusionTablesSqlParserRPAR)
+}
+
+func (s *Insert_stmtContext) RPAR(i int) antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserRPAR, i)
 }
 
 func (s *Insert_stmtContext) K_VALUES() antlr.TerminalNode {
@@ -2363,6 +2387,10 @@ func (s *Column_assignmentContext) Column_name_in_dml() IColumn_name_in_dmlConte
 	return t.(IColumn_name_in_dmlContext)
 }
 
+func (s *Column_assignmentContext) EQ() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserEQ, 0)
+}
+
 func (s *Column_assignmentContext) Literal() ILiteralContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILiteralContext)(nil)).Elem(), 0)
 
@@ -2498,6 +2526,10 @@ func (s *Delete_stmtContext) Column_name_in_dml() IColumn_name_in_dmlContext {
 	}
 
 	return t.(IColumn_name_in_dmlContext)
+}
+
+func (s *Delete_stmtContext) EQ() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserEQ, 0)
 }
 
 func (s *Delete_stmtContext) Literal() ILiteralContext {
@@ -3311,6 +3343,10 @@ func (s *Ordering_termContext) K_ST_DISTANCE() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserK_ST_DISTANCE, 0)
 }
 
+func (s *Ordering_termContext) LPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserLPAR, 0)
+}
+
 func (s *Ordering_termContext) Coordinate() ICoordinateContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICoordinateContext)(nil)).Elem(), 0)
 
@@ -3319,6 +3355,10 @@ func (s *Ordering_termContext) Coordinate() ICoordinateContext {
 	}
 
 	return t.(ICoordinateContext)
+}
+
+func (s *Ordering_termContext) RPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserRPAR, 0)
 }
 
 func (s *Ordering_termContext) K_ASC() antlr.TerminalNode {
@@ -3415,14 +3455,16 @@ func (p *FusionTablesSqlParser) Ordering_term() (localctx IOrdering_termContext)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == FusionTablesSqlParserK_ASC || _la == FusionTablesSqlParserK_DESC {
-		p.SetState(290)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(290)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == FusionTablesSqlParserK_ASC || _la == FusionTablesSqlParserK_DESC) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == FusionTablesSqlParserK_ASC || _la == FusionTablesSqlParserK_DESC) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -3515,6 +3557,10 @@ func (s *Join_clauseContext) Qualified_column_name(i int) IQualified_column_name
 	}
 
 	return t.(IQualified_column_nameContext)
+}
+
+func (s *Join_clauseContext) EQ() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserEQ, 0)
 }
 
 func (s *Join_clauseContext) GetRuleContext() antlr.RuleContext {
@@ -3985,14 +4031,16 @@ func (p *FusionTablesSqlParser) Aggregate_exp() (localctx IAggregate_expContext)
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(318)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(318)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == FusionTablesSqlParserK_AVERAGE || _la == FusionTablesSqlParserK_COUNT || (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(FusionTablesSqlParserK_MAXIMUM-39))|(1<<(FusionTablesSqlParserK_MINIMUM-39))|(1<<(FusionTablesSqlParserK_SUM-39)))) != 0)) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == FusionTablesSqlParserK_AVERAGE || _la == FusionTablesSqlParserK_COUNT || (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(FusionTablesSqlParserK_MAXIMUM-39))|(1<<(FusionTablesSqlParserK_MINIMUM-39))|(1<<(FusionTablesSqlParserK_SUM-39)))) != 0)) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(319)
@@ -4190,6 +4238,14 @@ func (s *ExprContext) K_IN() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserK_IN, 0)
 }
 
+func (s *ExprContext) LPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserLPAR, 0)
+}
+
+func (s *ExprContext) RPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserRPAR, 0)
+}
+
 func (s *ExprContext) K_BETWEEN() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserK_BETWEEN, 0)
 }
@@ -4200,10 +4256,6 @@ func (s *ExprContext) K_AND() antlr.TerminalNode {
 
 func (s *ExprContext) K_ST_INTERSECTS() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserK_ST_INTERSECTS, 0)
-}
-
-func (s *ExprContext) LPAR() antlr.TerminalNode {
-	return s.GetToken(FusionTablesSqlParserLPAR, 0)
 }
 
 func (s *ExprContext) Qualified_column_name() IQualified_column_nameContext {
@@ -4224,10 +4276,6 @@ func (s *ExprContext) Geometry() IGeometryContext {
 	}
 
 	return t.(IGeometryContext)
-}
-
-func (s *ExprContext) RPAR() antlr.TerminalNode {
-	return s.GetToken(FusionTablesSqlParserRPAR, 0)
 }
 
 func (s *ExprContext) GetRuleContext() antlr.RuleContext {
@@ -4839,14 +4887,16 @@ func (p *FusionTablesSqlParser) And_or_or() (localctx IAnd_or_orContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(400)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(400)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == FusionTablesSqlParserK_AND || _la == FusionTablesSqlParserK_OR) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == FusionTablesSqlParserK_AND || _la == FusionTablesSqlParserK_OR) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -5017,6 +5067,10 @@ func (s *CircleContext) K_CIRCLE() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserK_CIRCLE, 0)
 }
 
+func (s *CircleContext) LPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserLPAR, 0)
+}
+
 func (s *CircleContext) Coordinate() ICoordinateContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICoordinateContext)(nil)).Elem(), 0)
 
@@ -5035,6 +5089,10 @@ func (s *CircleContext) Numeric_literal() INumeric_literalContext {
 	}
 
 	return t.(INumeric_literalContext)
+}
+
+func (s *CircleContext) RPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserRPAR, 0)
 }
 
 func (s *CircleContext) GetRuleContext() antlr.RuleContext {
@@ -5148,6 +5206,10 @@ func (s *RectangleContext) K_RECTANGLE() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserK_RECTANGLE, 0)
 }
 
+func (s *RectangleContext) LPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserLPAR, 0)
+}
+
 func (s *RectangleContext) AllCoordinate() []ICoordinateContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ICoordinateContext)(nil)).Elem())
 	var tst = make([]ICoordinateContext, len(ts))
@@ -5169,6 +5231,10 @@ func (s *RectangleContext) Coordinate(i int) ICoordinateContext {
 	}
 
 	return t.(ICoordinateContext)
+}
+
+func (s *RectangleContext) RPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserRPAR, 0)
 }
 
 func (s *RectangleContext) GetRuleContext() antlr.RuleContext {
@@ -5282,6 +5348,10 @@ func (s *CoordinateContext) K_LATLNG() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserK_LATLNG, 0)
 }
 
+func (s *CoordinateContext) LPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserLPAR, 0)
+}
+
 func (s *CoordinateContext) AllNumeric_literal() []INumeric_literalContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*INumeric_literalContext)(nil)).Elem())
 	var tst = make([]INumeric_literalContext, len(ts))
@@ -5303,6 +5373,10 @@ func (s *CoordinateContext) Numeric_literal(i int) INumeric_literalContext {
 	}
 
 	return t.(INumeric_literalContext)
+}
+
+func (s *CoordinateContext) RPAR() antlr.TerminalNode {
+	return s.GetToken(FusionTablesSqlParserRPAR, 0)
 }
 
 func (s *CoordinateContext) GetRuleContext() antlr.RuleContext {
@@ -6193,14 +6267,16 @@ func (p *FusionTablesSqlParser) Operator() (localctx IOperatorContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(487)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(487)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-65)&-(0x1f+1)) == 0 && ((1<<uint((_la-65)))&((1<<(FusionTablesSqlParserLT_EQ-65))|(1<<(FusionTablesSqlParserGT_EQ-65))|(1<<(FusionTablesSqlParserGT-65))|(1<<(FusionTablesSqlParserEQ-65))|(1<<(FusionTablesSqlParserLT-65)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-65)&-(0x1f+1)) == 0 && ((1<<uint((_la-65)))&((1<<(FusionTablesSqlParserLT_EQ-65))|(1<<(FusionTablesSqlParserGT_EQ-65))|(1<<(FusionTablesSqlParserGT-65))|(1<<(FusionTablesSqlParserEQ-65))|(1<<(FusionTablesSqlParserLT-65)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

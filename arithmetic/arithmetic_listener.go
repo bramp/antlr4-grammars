@@ -1,4 +1,4 @@
-// Generated from arithmetic.g4 by ANTLR 4.7.
+// Code generated from arithmetic.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package arithmetic // arithmetic
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -7,20 +7,14 @@ import "github.com/antlr/antlr4/runtime/Go/antlr"
 type arithmeticListener interface {
 	antlr.ParseTreeListener
 
+	// EnterFile is called when entering the file production.
+	EnterFile(c *FileContext)
+
 	// EnterEquation is called when entering the equation production.
 	EnterEquation(c *EquationContext)
 
 	// EnterExpression is called when entering the expression production.
 	EnterExpression(c *ExpressionContext)
-
-	// EnterTerm is called when entering the term production.
-	EnterTerm(c *TermContext)
-
-	// EnterFactor is called when entering the factor production.
-	EnterFactor(c *FactorContext)
-
-	// EnterSignedAtom is called when entering the signedAtom production.
-	EnterSignedAtom(c *SignedAtomContext)
 
 	// EnterAtom is called when entering the atom production.
 	EnterAtom(c *AtomContext)
@@ -34,20 +28,14 @@ type arithmeticListener interface {
 	// EnterRelop is called when entering the relop production.
 	EnterRelop(c *RelopContext)
 
+	// ExitFile is called when exiting the file production.
+	ExitFile(c *FileContext)
+
 	// ExitEquation is called when exiting the equation production.
 	ExitEquation(c *EquationContext)
 
 	// ExitExpression is called when exiting the expression production.
 	ExitExpression(c *ExpressionContext)
-
-	// ExitTerm is called when exiting the term production.
-	ExitTerm(c *TermContext)
-
-	// ExitFactor is called when exiting the factor production.
-	ExitFactor(c *FactorContext)
-
-	// ExitSignedAtom is called when exiting the signedAtom production.
-	ExitSignedAtom(c *SignedAtomContext)
 
 	// ExitAtom is called when exiting the atom production.
 	ExitAtom(c *AtomContext)

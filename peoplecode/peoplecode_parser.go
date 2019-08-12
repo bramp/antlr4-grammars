@@ -1,4 +1,4 @@
-// Generated from PeopleCode.g4 by ANTLR 4.7.
+// Code generated from PeopleCode.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package peoplecode // PeopleCode
 import (
@@ -4298,14 +4298,16 @@ func (p *PeopleCodeParser) Event() (localctx IEventContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(263)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(263)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == PeopleCodeParserT__34 || _la == PeopleCodeParserT__35) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == PeopleCodeParserT__34 || _la == PeopleCodeParserT__35) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -7827,14 +7829,16 @@ func (p *PeopleCodeParser) Literal() (localctx ILiteralContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(461)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(461)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-72)&-(0x1f+1)) == 0 && ((1<<uint((_la-72)))&((1<<(PeopleCodeParserDecimalLiteral-72))|(1<<(PeopleCodeParserIntegerLiteral-72))|(1<<(PeopleCodeParserStringLiteral-72))|(1<<(PeopleCodeParserBoolLiteral-72)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-72)&-(0x1f+1)) == 0 && ((1<<uint((_la-72)))&((1<<(PeopleCodeParserDecimalLiteral-72))|(1<<(PeopleCodeParserIntegerLiteral-72))|(1<<(PeopleCodeParserStringLiteral-72))|(1<<(PeopleCodeParserBoolLiteral-72)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -7932,14 +7936,16 @@ func (p *PeopleCodeParser) Id() (localctx IIdContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(463)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(463)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-76)&-(0x1f+1)) == 0 && ((1<<uint((_la-76)))&((1<<(PeopleCodeParserVAR_ID-76))|(1<<(PeopleCodeParserSYS_VAR_ID-76))|(1<<(PeopleCodeParserGENERIC_ID-76)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-76)&-(0x1f+1)) == 0 && ((1<<uint((_la-76)))&((1<<(PeopleCodeParserVAR_ID-76))|(1<<(PeopleCodeParserSYS_VAR_ID-76))|(1<<(PeopleCodeParserGENERIC_ID-76)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

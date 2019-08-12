@@ -1,4 +1,4 @@
-// Generated from metric.g4 by ANTLR 4.7.
+// Code generated from metric.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package metric // metric
 import (
@@ -255,14 +255,16 @@ func (p *metricParser) Uom() (localctx IUomContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == metricParserT__0 || _la == metricParserT__1 {
-		p.SetState(15)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(15)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == metricParserT__0 || _la == metricParserT__1) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == metricParserT__0 || _la == metricParserT__1) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(16)
@@ -590,14 +592,16 @@ func (p *metricParser) Prefix() (localctx IPrefixContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(32)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(32)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<metricParserT__3)|(1<<metricParserT__4)|(1<<metricParserT__5)|(1<<metricParserT__6)|(1<<metricParserT__7)|(1<<metricParserT__8)|(1<<metricParserT__9)|(1<<metricParserT__10)|(1<<metricParserT__11)|(1<<metricParserT__12)|(1<<metricParserT__13)|(1<<metricParserT__14)|(1<<metricParserT__15)|(1<<metricParserT__16)|(1<<metricParserT__17)|(1<<metricParserT__18))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<metricParserT__3)|(1<<metricParserT__4)|(1<<metricParserT__5)|(1<<metricParserT__6)|(1<<metricParserT__7)|(1<<metricParserT__8)|(1<<metricParserT__9)|(1<<metricParserT__10)|(1<<metricParserT__11)|(1<<metricParserT__12)|(1<<metricParserT__13)|(1<<metricParserT__14)|(1<<metricParserT__15)|(1<<metricParserT__16)|(1<<metricParserT__17)|(1<<metricParserT__18))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -805,14 +809,16 @@ func (p *metricParser) Baseunit() (localctx IBaseunitContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(38)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(38)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<metricParserT__13)|(1<<metricParserT__19)|(1<<metricParserT__20)|(1<<metricParserT__21)|(1<<metricParserT__22)|(1<<metricParserT__23)|(1<<metricParserT__24))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<metricParserT__13)|(1<<metricParserT__19)|(1<<metricParserT__20)|(1<<metricParserT__21)|(1<<metricParserT__22)|(1<<metricParserT__23)|(1<<metricParserT__24))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -897,14 +903,16 @@ func (p *metricParser) Derivedunit() (localctx IDerivedunitContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(40)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(40)
+		_la = p.GetTokenStream().LA(1)
 
-	if !((((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<metricParserT__5)|(1<<metricParserT__25)|(1<<metricParserT__26)|(1<<metricParserT__27)|(1<<metricParserT__28)|(1<<metricParserT__29)|(1<<metricParserT__30))) != 0) || (((_la-32)&-(0x1f+1)) == 0 && ((1<<uint((_la-32)))&((1<<(metricParserT__31-32))|(1<<(metricParserT__32-32))|(1<<(metricParserT__33-32))|(1<<(metricParserT__34-32))|(1<<(metricParserT__35-32))|(1<<(metricParserT__36-32))|(1<<(metricParserT__37-32))|(1<<(metricParserT__38-32))|(1<<(metricParserT__39-32))|(1<<(metricParserT__40-32))|(1<<(metricParserT__41-32))|(1<<(metricParserT__42-32))|(1<<(metricParserT__43-32))|(1<<(metricParserT__44-32))|(1<<(metricParserT__45-32)))) != 0)) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !((((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<metricParserT__5)|(1<<metricParserT__25)|(1<<metricParserT__26)|(1<<metricParserT__27)|(1<<metricParserT__28)|(1<<metricParserT__29)|(1<<metricParserT__30))) != 0) || (((_la-32)&-(0x1f+1)) == 0 && ((1<<uint((_la-32)))&((1<<(metricParserT__31-32))|(1<<(metricParserT__32-32))|(1<<(metricParserT__33-32))|(1<<(metricParserT__34-32))|(1<<(metricParserT__35-32))|(1<<(metricParserT__36-32))|(1<<(metricParserT__37-32))|(1<<(metricParserT__38-32))|(1<<(metricParserT__39-32))|(1<<(metricParserT__40-32))|(1<<(metricParserT__41-32))|(1<<(metricParserT__42-32))|(1<<(metricParserT__43-32))|(1<<(metricParserT__44-32))|(1<<(metricParserT__45-32)))) != 0)) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

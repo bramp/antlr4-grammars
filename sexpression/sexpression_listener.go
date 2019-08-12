@@ -1,4 +1,4 @@
-// Generated from sexpression.g4 by ANTLR 4.7.
+// Code generated from sexpression.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package sexpression // sexpression
 import "github.com/antlr/antlr4/runtime/Go/antlr"

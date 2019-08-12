@@ -1,4 +1,4 @@
-// Generated from IRI.g4 by ANTLR 4.7.
+// Code generated from IRI.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package iri // IRI
 import (
@@ -602,6 +602,10 @@ func (s *IriContext) Scheme() ISchemeContext {
 	return t.(ISchemeContext)
 }
 
+func (s *IriContext) COL() antlr.TerminalNode {
+	return s.GetToken(IRIParserCOL, 0)
+}
+
 func (s *IriContext) Ihier_part() IIhier_partContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIhier_partContext)(nil)).Elem(), 0)
 
@@ -612,6 +616,10 @@ func (s *IriContext) Ihier_part() IIhier_partContext {
 	return t.(IIhier_partContext)
 }
 
+func (s *IriContext) QMARK() antlr.TerminalNode {
+	return s.GetToken(IRIParserQMARK, 0)
+}
+
 func (s *IriContext) Iquery() IIqueryContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIqueryContext)(nil)).Elem(), 0)
 
@@ -620,6 +628,10 @@ func (s *IriContext) Iquery() IIqueryContext {
 	}
 
 	return t.(IIqueryContext)
+}
+
+func (s *IriContext) HASH() antlr.TerminalNode {
+	return s.GetToken(IRIParserHASH, 0)
 }
 
 func (s *IriContext) Ifragment() IIfragmentContext {
@@ -757,6 +769,10 @@ func NewIhier_partContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 }
 
 func (s *Ihier_partContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Ihier_partContext) FSLASH2() antlr.TerminalNode {
+	return s.GetToken(IRIParserFSLASH2, 0)
+}
 
 func (s *Ihier_partContext) Iauthority() IIauthorityContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIauthorityContext)(nil)).Elem(), 0)
@@ -1063,6 +1079,10 @@ func (s *Absolute_iriContext) Scheme() ISchemeContext {
 	return t.(ISchemeContext)
 }
 
+func (s *Absolute_iriContext) COL() antlr.TerminalNode {
+	return s.GetToken(IRIParserCOL, 0)
+}
+
 func (s *Absolute_iriContext) Ihier_part() IIhier_partContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIhier_partContext)(nil)).Elem(), 0)
 
@@ -1071,6 +1091,10 @@ func (s *Absolute_iriContext) Ihier_part() IIhier_partContext {
 	}
 
 	return t.(IIhier_partContext)
+}
+
+func (s *Absolute_iriContext) QMARK() antlr.TerminalNode {
+	return s.GetToken(IRIParserQMARK, 0)
 }
 
 func (s *Absolute_iriContext) Iquery() IIqueryContext {
@@ -1204,6 +1228,10 @@ func (s *Irelative_refContext) Irelative_part() IIrelative_partContext {
 	return t.(IIrelative_partContext)
 }
 
+func (s *Irelative_refContext) QMARK() antlr.TerminalNode {
+	return s.GetToken(IRIParserQMARK, 0)
+}
+
 func (s *Irelative_refContext) Iquery() IIqueryContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIqueryContext)(nil)).Elem(), 0)
 
@@ -1212,6 +1240,10 @@ func (s *Irelative_refContext) Iquery() IIqueryContext {
 	}
 
 	return t.(IIqueryContext)
+}
+
+func (s *Irelative_refContext) HASH() antlr.TerminalNode {
+	return s.GetToken(IRIParserHASH, 0)
 }
 
 func (s *Irelative_refContext) Ifragment() IIfragmentContext {
@@ -1341,6 +1373,10 @@ func NewIrelative_partContext(parser antlr.Parser, parent antlr.ParserRuleContex
 }
 
 func (s *Irelative_partContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Irelative_partContext) FSLASH2() antlr.TerminalNode {
+	return s.GetToken(IRIParserFSLASH2, 0)
+}
 
 func (s *Irelative_partContext) Iauthority() IIauthorityContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIauthorityContext)(nil)).Elem(), 0)
@@ -1537,6 +1573,14 @@ func (s *IauthorityContext) Iuserinfo() IIuserinfoContext {
 	return t.(IIuserinfoContext)
 }
 
+func (s *IauthorityContext) AT() antlr.TerminalNode {
+	return s.GetToken(IRIParserAT, 0)
+}
+
+func (s *IauthorityContext) COL() antlr.TerminalNode {
+	return s.GetToken(IRIParserCOL, 0)
+}
+
 func (s *IauthorityContext) Port() IPortContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPortContext)(nil)).Elem(), 0)
 
@@ -1731,6 +1775,14 @@ func (s *IuserinfoContext) Sub_delims(i int) ISub_delimsContext {
 	}
 
 	return t.(ISub_delimsContext)
+}
+
+func (s *IuserinfoContext) AllCOL() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserCOL)
+}
+
+func (s *IuserinfoContext) COL(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserCOL, i)
 }
 
 func (s *IuserinfoContext) GetRuleContext() antlr.RuleContext {
@@ -2354,6 +2406,14 @@ func NewIpath_abemptyContext(parser antlr.Parser, parent antlr.ParserRuleContext
 
 func (s *Ipath_abemptyContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *Ipath_abemptyContext) AllFSLASH() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserFSLASH)
+}
+
+func (s *Ipath_abemptyContext) FSLASH(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserFSLASH, i)
+}
+
 func (s *Ipath_abemptyContext) AllIsegment() []IIsegmentContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IIsegmentContext)(nil)).Elem())
 	var tst = make([]IIsegmentContext, len(ts))
@@ -2478,6 +2538,14 @@ func NewIpath_absoluteContext(parser antlr.Parser, parent antlr.ParserRuleContex
 }
 
 func (s *Ipath_absoluteContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Ipath_absoluteContext) AllFSLASH() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserFSLASH)
+}
+
+func (s *Ipath_absoluteContext) FSLASH(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserFSLASH, i)
+}
 
 func (s *Ipath_absoluteContext) Isegment_nz() IIsegment_nzContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIsegment_nzContext)(nil)).Elem(), 0)
@@ -2639,6 +2707,14 @@ func (s *Ipath_noschemeContext) Isegment_nz_nc() IIsegment_nz_ncContext {
 	return t.(IIsegment_nz_ncContext)
 }
 
+func (s *Ipath_noschemeContext) AllFSLASH() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserFSLASH)
+}
+
+func (s *Ipath_noschemeContext) FSLASH(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserFSLASH, i)
+}
+
 func (s *Ipath_noschemeContext) AllIsegment() []IIsegmentContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IIsegmentContext)(nil)).Elem())
 	var tst = make([]IIsegmentContext, len(ts))
@@ -2776,6 +2852,14 @@ func (s *Ipath_rootlessContext) Isegment_nz() IIsegment_nzContext {
 	}
 
 	return t.(IIsegment_nzContext)
+}
+
+func (s *Ipath_rootlessContext) AllFSLASH() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserFSLASH)
+}
+
+func (s *Ipath_rootlessContext) FSLASH(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserFSLASH, i)
 }
 
 func (s *Ipath_rootlessContext) AllIsegment() []IIsegmentContext {
@@ -3300,6 +3384,14 @@ func (s *Isegment_nz_ncContext) Sub_delims(i int) ISub_delimsContext {
 	return t.(ISub_delimsContext)
 }
 
+func (s *Isegment_nz_ncContext) AllAT() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserAT)
+}
+
+func (s *Isegment_nz_ncContext) AT(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserAT, i)
+}
+
 func (s *Isegment_nz_ncContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -3455,6 +3547,14 @@ func (s *IpcharContext) Sub_delims() ISub_delimsContext {
 	return t.(ISub_delimsContext)
 }
 
+func (s *IpcharContext) COL() antlr.TerminalNode {
+	return s.GetToken(IRIParserCOL, 0)
+}
+
+func (s *IpcharContext) AT() antlr.TerminalNode {
+	return s.GetToken(IRIParserAT, 0)
+}
+
 func (s *IpcharContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -3523,14 +3623,16 @@ func (p *IRIParser) Ipchar() (localctx IIpcharContext) {
 
 	case IRIParserCOL, IRIParserAT:
 		p.EnterOuterAlt(localctx, 4)
-		p.SetState(233)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(233)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == IRIParserCOL || _la == IRIParserAT) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == IRIParserCOL || _la == IRIParserAT) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	default:
@@ -3609,6 +3711,22 @@ func (s *IqueryContext) IPRIVATE(i int) antlr.TerminalNode {
 	return s.GetToken(IRIParserIPRIVATE, i)
 }
 
+func (s *IqueryContext) AllFSLASH() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserFSLASH)
+}
+
+func (s *IqueryContext) FSLASH(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserFSLASH, i)
+}
+
+func (s *IqueryContext) AllQMARK() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserQMARK)
+}
+
+func (s *IqueryContext) QMARK(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserQMARK, i)
+}
+
 func (s *IqueryContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -3667,14 +3785,16 @@ func (p *IRIParser) Iquery() (localctx IIqueryContext) {
 			}
 
 		case IRIParserIPRIVATE, IRIParserFSLASH, IRIParserQMARK:
-			p.SetState(237)
-			_la = p.GetTokenStream().LA(1)
+			{
+				p.SetState(237)
+				_la = p.GetTokenStream().LA(1)
 
-			if !(_la == IRIParserIPRIVATE || _la == IRIParserFSLASH || _la == IRIParserQMARK) {
-				p.GetErrorHandler().RecoverInline(p)
-			} else {
-				p.GetErrorHandler().ReportMatch(p)
-				p.Consume()
+				if !(_la == IRIParserIPRIVATE || _la == IRIParserFSLASH || _la == IRIParserQMARK) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
 			}
 
 		default:
@@ -3750,6 +3870,22 @@ func (s *IfragmentContext) Ipchar(i int) IIpcharContext {
 	return t.(IIpcharContext)
 }
 
+func (s *IfragmentContext) AllFSLASH() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserFSLASH)
+}
+
+func (s *IfragmentContext) FSLASH(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserFSLASH, i)
+}
+
+func (s *IfragmentContext) AllQMARK() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserQMARK)
+}
+
+func (s *IfragmentContext) QMARK(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserQMARK, i)
+}
+
 func (s *IfragmentContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -3808,14 +3944,16 @@ func (p *IRIParser) Ifragment() (localctx IIfragmentContext) {
 			}
 
 		case IRIParserFSLASH, IRIParserQMARK:
-			p.SetState(244)
-			_la = p.GetTokenStream().LA(1)
+			{
+				p.SetState(244)
+				_la = p.GetTokenStream().LA(1)
 
-			if !(_la == IRIParserFSLASH || _la == IRIParserQMARK) {
-				p.GetErrorHandler().RecoverInline(p)
-			} else {
-				p.GetErrorHandler().ReportMatch(p)
-				p.Consume()
+				if !(_la == IRIParserFSLASH || _la == IRIParserQMARK) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
 			}
 
 		default:
@@ -3888,6 +4026,22 @@ func (s *IunreservedContext) Digit() IDigitContext {
 	return t.(IDigitContext)
 }
 
+func (s *IunreservedContext) HYPHEN() antlr.TerminalNode {
+	return s.GetToken(IRIParserHYPHEN, 0)
+}
+
+func (s *IunreservedContext) DOT() antlr.TerminalNode {
+	return s.GetToken(IRIParserDOT, 0)
+}
+
+func (s *IunreservedContext) USCORE() antlr.TerminalNode {
+	return s.GetToken(IRIParserUSCORE, 0)
+}
+
+func (s *IunreservedContext) TILDE() antlr.TerminalNode {
+	return s.GetToken(IRIParserTILDE, 0)
+}
+
 func (s *IunreservedContext) UCSCHAR() antlr.TerminalNode {
 	return s.GetToken(IRIParserUCSCHAR, 0)
 }
@@ -3953,14 +4107,16 @@ func (p *IRIParser) Iunreserved() (localctx IIunreservedContext) {
 
 	case IRIParserUCSCHAR, IRIParserDOT, IRIParserHYPHEN, IRIParserTILDE, IRIParserUSCORE:
 		p.EnterOuterAlt(localctx, 3)
-		p.SetState(252)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(252)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == IRIParserUCSCHAR || (((_la-41)&-(0x1f+1)) == 0 && ((1<<uint((_la-41)))&((1<<(IRIParserDOT-41))|(1<<(IRIParserHYPHEN-41))|(1<<(IRIParserTILDE-41))|(1<<(IRIParserUSCORE-41)))) != 0)) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == IRIParserUCSCHAR || (((_la-41)&-(0x1f+1)) == 0 && ((1<<uint((_la-41)))&((1<<(IRIParserDOT-41))|(1<<(IRIParserHYPHEN-41))|(1<<(IRIParserTILDE-41))|(1<<(IRIParserUSCORE-41)))) != 0)) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	default:
@@ -4054,6 +4210,30 @@ func (s *SchemeContext) Digit(i int) IDigitContext {
 	return t.(IDigitContext)
 }
 
+func (s *SchemeContext) AllPLUS() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserPLUS)
+}
+
+func (s *SchemeContext) PLUS(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserPLUS, i)
+}
+
+func (s *SchemeContext) AllHYPHEN() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserHYPHEN)
+}
+
+func (s *SchemeContext) HYPHEN(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserHYPHEN, i)
+}
+
+func (s *SchemeContext) AllDOT() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserDOT)
+}
+
+func (s *SchemeContext) DOT(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserDOT, i)
+}
+
 func (s *SchemeContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -4122,14 +4302,16 @@ func (p *IRIParser) Scheme() (localctx ISchemeContext) {
 			}
 
 		case IRIParserDOT, IRIParserHYPHEN, IRIParserPLUS:
-			p.SetState(258)
-			_la = p.GetTokenStream().LA(1)
+			{
+				p.SetState(258)
+				_la = p.GetTokenStream().LA(1)
 
-			if !(((_la-41)&-(0x1f+1)) == 0 && ((1<<uint((_la-41)))&((1<<(IRIParserDOT-41))|(1<<(IRIParserHYPHEN-41))|(1<<(IRIParserPLUS-41)))) != 0) {
-				p.GetErrorHandler().RecoverInline(p)
-			} else {
-				p.GetErrorHandler().ReportMatch(p)
-				p.Consume()
+				if !(((_la-41)&-(0x1f+1)) == 0 && ((1<<uint((_la-41)))&((1<<(IRIParserDOT-41))|(1<<(IRIParserHYPHEN-41))|(1<<(IRIParserPLUS-41)))) != 0) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
 			}
 
 		default:
@@ -4303,6 +4485,14 @@ func NewIp_literalContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 
 func (s *Ip_literalContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *Ip_literalContext) OBRACK() antlr.TerminalNode {
+	return s.GetToken(IRIParserOBRACK, 0)
+}
+
+func (s *Ip_literalContext) CBRACK() antlr.TerminalNode {
+	return s.GetToken(IRIParserCBRACK, 0)
+}
+
 func (s *Ip_literalContext) Ip_v6_address() IIp_v6_addressContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIp_v6_addressContext)(nil)).Elem(), 0)
 
@@ -4437,6 +4627,10 @@ func (s *Ip_v_futureContext) V() antlr.TerminalNode {
 	return s.GetToken(IRIParserV, 0)
 }
 
+func (s *Ip_v_futureContext) DOT() antlr.TerminalNode {
+	return s.GetToken(IRIParserDOT, 0)
+}
+
 func (s *Ip_v_futureContext) AllHexdig() []IHexdigContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IHexdigContext)(nil)).Elem())
 	var tst = make([]IHexdigContext, len(ts))
@@ -4504,6 +4698,14 @@ func (s *Ip_v_futureContext) Sub_delims(i int) ISub_delimsContext {
 	}
 
 	return t.(ISub_delimsContext)
+}
+
+func (s *Ip_v_futureContext) AllCOL() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserCOL)
+}
+
+func (s *Ip_v_futureContext) COL(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserCOL, i)
 }
 
 func (s *Ip_v_futureContext) GetRuleContext() antlr.RuleContext {
@@ -4670,6 +4872,14 @@ func (s *Ip_v6_addressContext) H16(i int) IH16Context {
 	return t.(IH16Context)
 }
 
+func (s *Ip_v6_addressContext) AllCOL() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserCOL)
+}
+
+func (s *Ip_v6_addressContext) COL(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserCOL, i)
+}
+
 func (s *Ip_v6_addressContext) Ls32() ILs32Context {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILs32Context)(nil)).Elem(), 0)
 
@@ -4678,6 +4888,10 @@ func (s *Ip_v6_addressContext) Ls32() ILs32Context {
 	}
 
 	return t.(ILs32Context)
+}
+
+func (s *Ip_v6_addressContext) COL2() antlr.TerminalNode {
+	return s.GetToken(IRIParserCOL2, 0)
 }
 
 func (s *Ip_v6_addressContext) GetRuleContext() antlr.RuleContext {
@@ -5581,6 +5795,10 @@ func (s *Ls32Context) H16(i int) IH16Context {
 	return t.(IH16Context)
 }
 
+func (s *Ls32Context) COL() antlr.TerminalNode {
+	return s.GetToken(IRIParserCOL, 0)
+}
+
 func (s *Ls32Context) Ip_v4_address() IIp_v4_addressContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIp_v4_addressContext)(nil)).Elem(), 0)
 
@@ -5720,6 +5938,14 @@ func (s *Ip_v4_addressContext) Dec_octet(i int) IDec_octetContext {
 	}
 
 	return t.(IDec_octetContext)
+}
+
+func (s *Ip_v4_addressContext) AllDOT() []antlr.TerminalNode {
+	return s.GetTokens(IRIParserDOT)
+}
+
+func (s *Ip_v4_addressContext) DOT(i int) antlr.TerminalNode {
+	return s.GetToken(IRIParserDOT, i)
 }
 
 func (s *Ip_v4_addressContext) GetRuleContext() antlr.RuleContext {
@@ -5981,14 +6207,16 @@ func (p *IRIParser) Dec_octet() (localctx IDec_octetContext) {
 			p.SetState(521)
 			p.Match(IRIParserD2)
 		}
-		p.SetState(522)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(522)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IRIParserD0)|(1<<IRIParserD1)|(1<<IRIParserD2)|(1<<IRIParserD3)|(1<<IRIParserD4))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IRIParserD0)|(1<<IRIParserD1)|(1<<IRIParserD2)|(1<<IRIParserD3)|(1<<IRIParserD4))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(523)
@@ -6005,14 +6233,16 @@ func (p *IRIParser) Dec_octet() (localctx IDec_octetContext) {
 			p.SetState(525)
 			p.Match(IRIParserD5)
 		}
-		p.SetState(526)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(526)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IRIParserD0)|(1<<IRIParserD1)|(1<<IRIParserD2)|(1<<IRIParserD3)|(1<<IRIParserD4)|(1<<IRIParserD5))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IRIParserD0)|(1<<IRIParserD1)|(1<<IRIParserD2)|(1<<IRIParserD3)|(1<<IRIParserD4)|(1<<IRIParserD5))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -6057,6 +6287,10 @@ func NewPct_encodedContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 }
 
 func (s *Pct_encodedContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Pct_encodedContext) PERCENT() antlr.TerminalNode {
+	return s.GetToken(IRIParserPERCENT, 0)
+}
 
 func (s *Pct_encodedContext) AllHexdig() []IHexdigContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IHexdigContext)(nil)).Elem())
@@ -6196,6 +6430,22 @@ func (s *UnreservedContext) Digit() IDigitContext {
 	return t.(IDigitContext)
 }
 
+func (s *UnreservedContext) HYPHEN() antlr.TerminalNode {
+	return s.GetToken(IRIParserHYPHEN, 0)
+}
+
+func (s *UnreservedContext) DOT() antlr.TerminalNode {
+	return s.GetToken(IRIParserDOT, 0)
+}
+
+func (s *UnreservedContext) USCORE() antlr.TerminalNode {
+	return s.GetToken(IRIParserUSCORE, 0)
+}
+
+func (s *UnreservedContext) TILDE() antlr.TerminalNode {
+	return s.GetToken(IRIParserTILDE, 0)
+}
+
 func (s *UnreservedContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -6257,14 +6507,16 @@ func (p *IRIParser) Unreserved() (localctx IUnreservedContext) {
 
 	case IRIParserDOT, IRIParserHYPHEN, IRIParserTILDE, IRIParserUSCORE:
 		p.EnterOuterAlt(localctx, 3)
-		p.SetState(535)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(535)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-41)&-(0x1f+1)) == 0 && ((1<<uint((_la-41)))&((1<<(IRIParserDOT-41))|(1<<(IRIParserHYPHEN-41))|(1<<(IRIParserTILDE-41))|(1<<(IRIParserUSCORE-41)))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la-41)&-(0x1f+1)) == 0 && ((1<<uint((_la-41)))&((1<<(IRIParserDOT-41))|(1<<(IRIParserHYPHEN-41))|(1<<(IRIParserTILDE-41))|(1<<(IRIParserUSCORE-41)))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	default:
@@ -6434,6 +6686,35 @@ func NewGen_delimsContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 }
 
 func (s *Gen_delimsContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Gen_delimsContext) COL() antlr.TerminalNode {
+	return s.GetToken(IRIParserCOL, 0)
+}
+
+func (s *Gen_delimsContext) FSLASH() antlr.TerminalNode {
+	return s.GetToken(IRIParserFSLASH, 0)
+}
+
+func (s *Gen_delimsContext) QMARK() antlr.TerminalNode {
+	return s.GetToken(IRIParserQMARK, 0)
+}
+
+func (s *Gen_delimsContext) HASH() antlr.TerminalNode {
+	return s.GetToken(IRIParserHASH, 0)
+}
+
+func (s *Gen_delimsContext) OBRACK() antlr.TerminalNode {
+	return s.GetToken(IRIParserOBRACK, 0)
+}
+
+func (s *Gen_delimsContext) CBRACK() antlr.TerminalNode {
+	return s.GetToken(IRIParserCBRACK, 0)
+}
+
+func (s *Gen_delimsContext) AT() antlr.TerminalNode {
+	return s.GetToken(IRIParserAT, 0)
+}
+
 func (s *Gen_delimsContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -6476,14 +6757,16 @@ func (p *IRIParser) Gen_delims() (localctx IGen_delimsContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(542)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(542)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-40)&-(0x1f+1)) == 0 && ((1<<uint((_la-40)))&((1<<(IRIParserCOL-40))|(1<<(IRIParserFSLASH-40))|(1<<(IRIParserQMARK-40))|(1<<(IRIParserHASH-40))|(1<<(IRIParserOBRACK-40))|(1<<(IRIParserCBRACK-40))|(1<<(IRIParserAT-40)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-40)&-(0x1f+1)) == 0 && ((1<<uint((_la-40)))&((1<<(IRIParserCOL-40))|(1<<(IRIParserFSLASH-40))|(1<<(IRIParserQMARK-40))|(1<<(IRIParserHASH-40))|(1<<(IRIParserOBRACK-40))|(1<<(IRIParserCBRACK-40))|(1<<(IRIParserAT-40)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -6526,6 +6809,51 @@ func NewSub_delimsContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 }
 
 func (s *Sub_delimsContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Sub_delimsContext) EXCL() antlr.TerminalNode {
+	return s.GetToken(IRIParserEXCL, 0)
+}
+
+func (s *Sub_delimsContext) DOLLAR() antlr.TerminalNode {
+	return s.GetToken(IRIParserDOLLAR, 0)
+}
+
+func (s *Sub_delimsContext) AMP() antlr.TerminalNode {
+	return s.GetToken(IRIParserAMP, 0)
+}
+
+func (s *Sub_delimsContext) SQUOTE() antlr.TerminalNode {
+	return s.GetToken(IRIParserSQUOTE, 0)
+}
+
+func (s *Sub_delimsContext) OPAREN() antlr.TerminalNode {
+	return s.GetToken(IRIParserOPAREN, 0)
+}
+
+func (s *Sub_delimsContext) CPAREN() antlr.TerminalNode {
+	return s.GetToken(IRIParserCPAREN, 0)
+}
+
+func (s *Sub_delimsContext) STAR() antlr.TerminalNode {
+	return s.GetToken(IRIParserSTAR, 0)
+}
+
+func (s *Sub_delimsContext) PLUS() antlr.TerminalNode {
+	return s.GetToken(IRIParserPLUS, 0)
+}
+
+func (s *Sub_delimsContext) COMMA() antlr.TerminalNode {
+	return s.GetToken(IRIParserCOMMA, 0)
+}
+
+func (s *Sub_delimsContext) SCOL() antlr.TerminalNode {
+	return s.GetToken(IRIParserSCOL, 0)
+}
+
+func (s *Sub_delimsContext) EQUALS() antlr.TerminalNode {
+	return s.GetToken(IRIParserEQUALS, 0)
+}
+
 func (s *Sub_delimsContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -6568,14 +6896,16 @@ func (p *IRIParser) Sub_delims() (localctx ISub_delimsContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(544)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(544)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-46)&-(0x1f+1)) == 0 && ((1<<uint((_la-46)))&((1<<(IRIParserEXCL-46))|(1<<(IRIParserDOLLAR-46))|(1<<(IRIParserAMP-46))|(1<<(IRIParserSQUOTE-46))|(1<<(IRIParserOPAREN-46))|(1<<(IRIParserCPAREN-46))|(1<<(IRIParserSTAR-46))|(1<<(IRIParserPLUS-46))|(1<<(IRIParserCOMMA-46))|(1<<(IRIParserSCOL-46))|(1<<(IRIParserEQUALS-46)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-46)&-(0x1f+1)) == 0 && ((1<<uint((_la-46)))&((1<<(IRIParserEXCL-46))|(1<<(IRIParserDOLLAR-46))|(1<<(IRIParserAMP-46))|(1<<(IRIParserSQUOTE-46))|(1<<(IRIParserOPAREN-46))|(1<<(IRIParserCPAREN-46))|(1<<(IRIParserSTAR-46))|(1<<(IRIParserPLUS-46))|(1<<(IRIParserCOMMA-46))|(1<<(IRIParserSCOL-46))|(1<<(IRIParserEQUALS-46)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -6765,14 +7095,16 @@ func (p *IRIParser) Alpha() (localctx IAlphaContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(546)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(546)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-13)&-(0x1f+1)) == 0 && ((1<<uint((_la-13)))&((1<<(IRIParserA-13))|(1<<(IRIParserB-13))|(1<<(IRIParserC-13))|(1<<(IRIParserD-13))|(1<<(IRIParserE-13))|(1<<(IRIParserF-13))|(1<<(IRIParserG-13))|(1<<(IRIParserH-13))|(1<<(IRIParserI-13))|(1<<(IRIParserJ-13))|(1<<(IRIParserK-13))|(1<<(IRIParserL-13))|(1<<(IRIParserM-13))|(1<<(IRIParserN-13))|(1<<(IRIParserO-13))|(1<<(IRIParserP-13))|(1<<(IRIParserQ-13))|(1<<(IRIParserR-13))|(1<<(IRIParserS-13))|(1<<(IRIParserT-13))|(1<<(IRIParserU-13))|(1<<(IRIParserV-13))|(1<<(IRIParserW-13))|(1<<(IRIParserX-13))|(1<<(IRIParserY-13))|(1<<(IRIParserZ-13)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-13)&-(0x1f+1)) == 0 && ((1<<uint((_la-13)))&((1<<(IRIParserA-13))|(1<<(IRIParserB-13))|(1<<(IRIParserC-13))|(1<<(IRIParserD-13))|(1<<(IRIParserE-13))|(1<<(IRIParserF-13))|(1<<(IRIParserG-13))|(1<<(IRIParserH-13))|(1<<(IRIParserI-13))|(1<<(IRIParserJ-13))|(1<<(IRIParserK-13))|(1<<(IRIParserL-13))|(1<<(IRIParserM-13))|(1<<(IRIParserN-13))|(1<<(IRIParserO-13))|(1<<(IRIParserP-13))|(1<<(IRIParserQ-13))|(1<<(IRIParserR-13))|(1<<(IRIParserS-13))|(1<<(IRIParserT-13))|(1<<(IRIParserU-13))|(1<<(IRIParserV-13))|(1<<(IRIParserW-13))|(1<<(IRIParserX-13))|(1<<(IRIParserY-13))|(1<<(IRIParserZ-13)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -6904,14 +7236,16 @@ func (p *IRIParser) Hexdig() (localctx IHexdigContext) {
 
 	case IRIParserA, IRIParserB, IRIParserC, IRIParserD, IRIParserE, IRIParserF:
 		p.EnterOuterAlt(localctx, 2)
-		p.SetState(549)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(549)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IRIParserA)|(1<<IRIParserB)|(1<<IRIParserC)|(1<<IRIParserD)|(1<<IRIParserE)|(1<<IRIParserF))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IRIParserA)|(1<<IRIParserB)|(1<<IRIParserC)|(1<<IRIParserD)|(1<<IRIParserE)|(1<<IRIParserF))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	default:
@@ -7154,14 +7488,16 @@ func (p *IRIParser) Non_zero_digit() (localctx INon_zero_digitContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(556)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(556)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IRIParserD1)|(1<<IRIParserD2)|(1<<IRIParserD3)|(1<<IRIParserD4)|(1<<IRIParserD5)|(1<<IRIParserD6)|(1<<IRIParserD7)|(1<<IRIParserD8)|(1<<IRIParserD9))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IRIParserD1)|(1<<IRIParserD2)|(1<<IRIParserD3)|(1<<IRIParserD4)|(1<<IRIParserD5)|(1<<IRIParserD6)|(1<<IRIParserD7)|(1<<IRIParserD8)|(1<<IRIParserD9))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

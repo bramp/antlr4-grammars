@@ -1,4 +1,4 @@
-// Generated from arithmetic.g4 by ANTLR 4.7.
+// Code generated from arithmetic.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package arithmetic // arithmetic
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -20,6 +20,12 @@ func (s *BasearithmeticListener) EnterEveryRule(ctx antlr.ParserRuleContext) {}
 // ExitEveryRule is called when any rule is exited.
 func (s *BasearithmeticListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
 
+// EnterFile is called when production file is entered.
+func (s *BasearithmeticListener) EnterFile(ctx *FileContext) {}
+
+// ExitFile is called when production file is exited.
+func (s *BasearithmeticListener) ExitFile(ctx *FileContext) {}
+
 // EnterEquation is called when production equation is entered.
 func (s *BasearithmeticListener) EnterEquation(ctx *EquationContext) {}
 
@@ -31,24 +37,6 @@ func (s *BasearithmeticListener) EnterExpression(ctx *ExpressionContext) {}
 
 // ExitExpression is called when production expression is exited.
 func (s *BasearithmeticListener) ExitExpression(ctx *ExpressionContext) {}
-
-// EnterTerm is called when production term is entered.
-func (s *BasearithmeticListener) EnterTerm(ctx *TermContext) {}
-
-// ExitTerm is called when production term is exited.
-func (s *BasearithmeticListener) ExitTerm(ctx *TermContext) {}
-
-// EnterFactor is called when production factor is entered.
-func (s *BasearithmeticListener) EnterFactor(ctx *FactorContext) {}
-
-// ExitFactor is called when production factor is exited.
-func (s *BasearithmeticListener) ExitFactor(ctx *FactorContext) {}
-
-// EnterSignedAtom is called when production signedAtom is entered.
-func (s *BasearithmeticListener) EnterSignedAtom(ctx *SignedAtomContext) {}
-
-// ExitSignedAtom is called when production signedAtom is exited.
-func (s *BasearithmeticListener) ExitSignedAtom(ctx *SignedAtomContext) {}
 
 // EnterAtom is called when production atom is entered.
 func (s *BasearithmeticListener) EnterAtom(ctx *AtomContext) {}

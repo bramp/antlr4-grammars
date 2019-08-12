@@ -1,4 +1,4 @@
-// Generated from mumath.g4 by ANTLR 4.7.
+// Code generated from mumath.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package mumath
 

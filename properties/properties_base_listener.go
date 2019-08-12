@@ -1,4 +1,4 @@
-// Generated from properties.g4 by ANTLR 4.7.
+// Code generated from properties.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package properties // properties
 import "github.com/antlr/antlr4/runtime/Go/antlr"

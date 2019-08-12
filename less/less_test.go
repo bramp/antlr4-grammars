@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Package less_test contains tests for the LessParser grammar.
+// Package less_test contains tests for the Less grammar.
 // The tests should be run with the -timeout flag, to ensure the parser doesn't
 // get stuck.
 //
@@ -32,7 +32,9 @@ import (
 
 const MAX_TOKENS = 1000000
 
-var examples = []string{}
+var examples = []string{
+	"grammars-v4/less/examples/example1.less",
+}
 
 type exampleListener struct {
 	*less.BaseLessParserListener
@@ -82,8 +84,8 @@ func TestLessLexer(t *testing.T) {
 		// Try and read all tokens
 		i := 0
 		for ; i < MAX_TOKENS; i++ {
-			t := lexer.NextToken()
-			if t.GetTokenType() == antlr.TokenEOF {
+			tok := lexer.NextToken()
+			if tok.GetTokenType() == antlr.TokenEOF {
 				break
 			}
 		}

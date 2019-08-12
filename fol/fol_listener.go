@@ -1,4 +1,4 @@
-// Generated from fol.g4 by ANTLR 4.7.
+// Code generated from fol.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package fol // fol
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -13,29 +13,26 @@ type folListener interface {
 	// EnterFormula is called when entering the formula production.
 	EnterFormula(c *FormulaContext)
 
-	// EnterDisjunction is called when entering the disjunction production.
-	EnterDisjunction(c *DisjunctionContext)
-
-	// EnterConjunction is called when entering the conjunction production.
-	EnterConjunction(c *ConjunctionContext)
-
-	// EnterNegation is called when entering the negation production.
-	EnterNegation(c *NegationContext)
-
-	// EnterPredicate is called when entering the predicate production.
-	EnterPredicate(c *PredicateContext)
-
-	// EnterPredicateTuple is called when entering the predicateTuple production.
-	EnterPredicateTuple(c *PredicateTupleContext)
-
 	// EnterTerm is called when entering the term production.
 	EnterTerm(c *TermContext)
 
-	// EnterFunction is called when entering the function production.
-	EnterFunction(c *FunctionContext)
+	// EnterBin_connective is called when entering the bin_connective production.
+	EnterBin_connective(c *Bin_connectiveContext)
 
-	// EnterFunctionTuple is called when entering the functionTuple production.
-	EnterFunctionTuple(c *FunctionTupleContext)
+	// EnterVariable is called when entering the variable production.
+	EnterVariable(c *VariableContext)
+
+	// EnterPred_constant is called when entering the pred_constant production.
+	EnterPred_constant(c *Pred_constantContext)
+
+	// EnterInd_constant is called when entering the ind_constant production.
+	EnterInd_constant(c *Ind_constantContext)
+
+	// EnterFunc_constant is called when entering the func_constant production.
+	EnterFunc_constant(c *Func_constantContext)
+
+	// EnterSeparator is called when entering the separator production.
+	EnterSeparator(c *SeparatorContext)
 
 	// ExitCondition is called when exiting the condition production.
 	ExitCondition(c *ConditionContext)
@@ -43,27 +40,24 @@ type folListener interface {
 	// ExitFormula is called when exiting the formula production.
 	ExitFormula(c *FormulaContext)
 
-	// ExitDisjunction is called when exiting the disjunction production.
-	ExitDisjunction(c *DisjunctionContext)
-
-	// ExitConjunction is called when exiting the conjunction production.
-	ExitConjunction(c *ConjunctionContext)
-
-	// ExitNegation is called when exiting the negation production.
-	ExitNegation(c *NegationContext)
-
-	// ExitPredicate is called when exiting the predicate production.
-	ExitPredicate(c *PredicateContext)
-
-	// ExitPredicateTuple is called when exiting the predicateTuple production.
-	ExitPredicateTuple(c *PredicateTupleContext)
-
 	// ExitTerm is called when exiting the term production.
 	ExitTerm(c *TermContext)
 
-	// ExitFunction is called when exiting the function production.
-	ExitFunction(c *FunctionContext)
+	// ExitBin_connective is called when exiting the bin_connective production.
+	ExitBin_connective(c *Bin_connectiveContext)
 
-	// ExitFunctionTuple is called when exiting the functionTuple production.
-	ExitFunctionTuple(c *FunctionTupleContext)
+	// ExitVariable is called when exiting the variable production.
+	ExitVariable(c *VariableContext)
+
+	// ExitPred_constant is called when exiting the pred_constant production.
+	ExitPred_constant(c *Pred_constantContext)
+
+	// ExitInd_constant is called when exiting the ind_constant production.
+	ExitInd_constant(c *Ind_constantContext)
+
+	// ExitFunc_constant is called when exiting the func_constant production.
+	ExitFunc_constant(c *Func_constantContext)
+
+	// ExitSeparator is called when exiting the separator production.
+	ExitSeparator(c *SeparatorContext)
 }

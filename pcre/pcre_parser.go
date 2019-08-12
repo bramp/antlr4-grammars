@@ -1,4 +1,4 @@
-// Generated from PCRE.g4 by ANTLR 4.7.
+// Code generated from PCRE.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package pcre // PCRE
 import (
@@ -859,6 +859,14 @@ func (s *AlternationContext) Expr(i int) IExprContext {
 	return t.(IExprContext)
 }
 
+func (s *AlternationContext) AllPipe() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserPipe)
+}
+
+func (s *AlternationContext) Pipe(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserPipe, i)
+}
+
 func (s *AlternationContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -1206,6 +1214,10 @@ func NewQuantifierContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 
 func (s *QuantifierContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *QuantifierContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(PCREParserQuestionMark, 0)
+}
+
 func (s *QuantifierContext) Quantifier_type() IQuantifier_typeContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQuantifier_typeContext)(nil)).Elem(), 0)
 
@@ -1214,6 +1226,18 @@ func (s *QuantifierContext) Quantifier_type() IQuantifier_typeContext {
 	}
 
 	return t.(IQuantifier_typeContext)
+}
+
+func (s *QuantifierContext) Plus() antlr.TerminalNode {
+	return s.GetToken(PCREParserPlus, 0)
+}
+
+func (s *QuantifierContext) Star() antlr.TerminalNode {
+	return s.GetToken(PCREParserStar, 0)
+}
+
+func (s *QuantifierContext) OpenBrace() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenBrace, 0)
 }
 
 func (s *QuantifierContext) AllNumber() []INumberContext {
@@ -1237,6 +1261,14 @@ func (s *QuantifierContext) Number(i int) INumberContext {
 	}
 
 	return t.(INumberContext)
+}
+
+func (s *QuantifierContext) CloseBrace() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseBrace, 0)
+}
+
+func (s *QuantifierContext) Comma() antlr.TerminalNode {
+	return s.GetToken(PCREParserComma, 0)
 }
 
 func (s *QuantifierContext) GetRuleContext() antlr.RuleContext {
@@ -1426,6 +1458,15 @@ func NewQuantifier_typeContext(parser antlr.Parser, parent antlr.ParserRuleConte
 }
 
 func (s *Quantifier_typeContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Quantifier_typeContext) Plus() antlr.TerminalNode {
+	return s.GetToken(PCREParserPlus, 0)
+}
+
+func (s *Quantifier_typeContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(PCREParserQuestionMark, 0)
+}
+
 func (s *Quantifier_typeContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -1532,8 +1573,20 @@ func NewCharacter_classContext(parser antlr.Parser, parent antlr.ParserRuleConte
 
 func (s *Character_classContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *Character_classContext) CharacterClassEnd() antlr.TerminalNode {
-	return s.GetToken(PCREParserCharacterClassEnd, 0)
+func (s *Character_classContext) CharacterClassStart() antlr.TerminalNode {
+	return s.GetToken(PCREParserCharacterClassStart, 0)
+}
+
+func (s *Character_classContext) Caret() antlr.TerminalNode {
+	return s.GetToken(PCREParserCaret, 0)
+}
+
+func (s *Character_classContext) AllCharacterClassEnd() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserCharacterClassEnd)
+}
+
+func (s *Character_classContext) CharacterClassEnd(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserCharacterClassEnd, i)
 }
 
 func (s *Character_classContext) Hyphen() antlr.TerminalNode {
@@ -1846,6 +1899,10 @@ func (s *BackreferenceContext) Backreference_or_octal() IBackreference_or_octalC
 	return t.(IBackreference_or_octalContext)
 }
 
+func (s *BackreferenceContext) SubroutineOrNamedReferenceStartG() antlr.TerminalNode {
+	return s.GetToken(PCREParserSubroutineOrNamedReferenceStartG, 0)
+}
+
 func (s *BackreferenceContext) Number() INumberContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*INumberContext)(nil)).Elem(), 0)
 
@@ -1856,6 +1913,26 @@ func (s *BackreferenceContext) Number() INumberContext {
 	return t.(INumberContext)
 }
 
+func (s *BackreferenceContext) OpenBrace() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenBrace, 0)
+}
+
+func (s *BackreferenceContext) CloseBrace() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseBrace, 0)
+}
+
+func (s *BackreferenceContext) Hyphen() antlr.TerminalNode {
+	return s.GetToken(PCREParserHyphen, 0)
+}
+
+func (s *BackreferenceContext) NamedReferenceStartK() antlr.TerminalNode {
+	return s.GetToken(PCREParserNamedReferenceStartK, 0)
+}
+
+func (s *BackreferenceContext) LessThan() antlr.TerminalNode {
+	return s.GetToken(PCREParserLessThan, 0)
+}
+
 func (s *BackreferenceContext) Name() INameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*INameContext)(nil)).Elem(), 0)
 
@@ -1864,6 +1941,38 @@ func (s *BackreferenceContext) Name() INameContext {
 	}
 
 	return t.(INameContext)
+}
+
+func (s *BackreferenceContext) GreaterThan() antlr.TerminalNode {
+	return s.GetToken(PCREParserGreaterThan, 0)
+}
+
+func (s *BackreferenceContext) AllSingleQuote() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserSingleQuote)
+}
+
+func (s *BackreferenceContext) SingleQuote(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserSingleQuote, i)
+}
+
+func (s *BackreferenceContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenParen, 0)
+}
+
+func (s *BackreferenceContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(PCREParserQuestionMark, 0)
+}
+
+func (s *BackreferenceContext) PUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserPUC, 0)
+}
+
+func (s *BackreferenceContext) Equals() antlr.TerminalNode {
+	return s.GetToken(PCREParserEquals, 0)
+}
+
+func (s *BackreferenceContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseParen, 0)
 }
 
 func (s *BackreferenceContext) GetRuleContext() antlr.RuleContext {
@@ -2243,6 +2352,18 @@ func NewCaptureContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 
 func (s *CaptureContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *CaptureContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenParen, 0)
+}
+
+func (s *CaptureContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(PCREParserQuestionMark, 0)
+}
+
+func (s *CaptureContext) LessThan() antlr.TerminalNode {
+	return s.GetToken(PCREParserLessThan, 0)
+}
+
 func (s *CaptureContext) Name() INameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*INameContext)(nil)).Elem(), 0)
 
@@ -2253,6 +2374,10 @@ func (s *CaptureContext) Name() INameContext {
 	return t.(INameContext)
 }
 
+func (s *CaptureContext) GreaterThan() antlr.TerminalNode {
+	return s.GetToken(PCREParserGreaterThan, 0)
+}
+
 func (s *CaptureContext) Alternation() IAlternationContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAlternationContext)(nil)).Elem(), 0)
 
@@ -2261,6 +2386,22 @@ func (s *CaptureContext) Alternation() IAlternationContext {
 	}
 
 	return t.(IAlternationContext)
+}
+
+func (s *CaptureContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseParen, 0)
+}
+
+func (s *CaptureContext) AllSingleQuote() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserSingleQuote)
+}
+
+func (s *CaptureContext) SingleQuote(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserSingleQuote, i)
+}
+
+func (s *CaptureContext) PUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserPUC, 0)
 }
 
 func (s *CaptureContext) GetRuleContext() antlr.RuleContext {
@@ -2461,6 +2602,18 @@ func NewNon_captureContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 
 func (s *Non_captureContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *Non_captureContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenParen, 0)
+}
+
+func (s *Non_captureContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(PCREParserQuestionMark, 0)
+}
+
+func (s *Non_captureContext) Colon() antlr.TerminalNode {
+	return s.GetToken(PCREParserColon, 0)
+}
+
 func (s *Non_captureContext) Alternation() IAlternationContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAlternationContext)(nil)).Elem(), 0)
 
@@ -2469,6 +2622,18 @@ func (s *Non_captureContext) Alternation() IAlternationContext {
 	}
 
 	return t.(IAlternationContext)
+}
+
+func (s *Non_captureContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseParen, 0)
+}
+
+func (s *Non_captureContext) Pipe() antlr.TerminalNode {
+	return s.GetToken(PCREParserPipe, 0)
+}
+
+func (s *Non_captureContext) GreaterThan() antlr.TerminalNode {
+	return s.GetToken(PCREParserGreaterThan, 0)
 }
 
 func (s *Non_captureContext) Option_flags() IOption_flagsContext {
@@ -2663,6 +2828,18 @@ func NewCommentContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 
 func (s *CommentContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *CommentContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenParen, 0)
+}
+
+func (s *CommentContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(PCREParserQuestionMark, 0)
+}
+
+func (s *CommentContext) Hash() antlr.TerminalNode {
+	return s.GetToken(PCREParserHash, 0)
+}
+
 func (s *CommentContext) Non_close_parens() INon_close_parensContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*INon_close_parensContext)(nil)).Elem(), 0)
 
@@ -2671,6 +2848,10 @@ func (s *CommentContext) Non_close_parens() INon_close_parensContext {
 	}
 
 	return t.(INon_close_parensContext)
+}
+
+func (s *CommentContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseParen, 0)
 }
 
 func (s *CommentContext) GetRuleContext() antlr.RuleContext {
@@ -2776,6 +2957,14 @@ func NewOptionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 
 func (s *OptionContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *OptionContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenParen, 0)
+}
+
+func (s *OptionContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(PCREParserQuestionMark, 0)
+}
+
 func (s *OptionContext) AllOption_flags() []IOption_flagsContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IOption_flagsContext)(nil)).Elem())
 	var tst = make([]IOption_flagsContext, len(ts))
@@ -2797,6 +2986,86 @@ func (s *OptionContext) Option_flags(i int) IOption_flagsContext {
 	}
 
 	return t.(IOption_flagsContext)
+}
+
+func (s *OptionContext) Hyphen() antlr.TerminalNode {
+	return s.GetToken(PCREParserHyphen, 0)
+}
+
+func (s *OptionContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseParen, 0)
+}
+
+func (s *OptionContext) Star() antlr.TerminalNode {
+	return s.GetToken(PCREParserStar, 0)
+}
+
+func (s *OptionContext) NUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserNUC, 0)
+}
+
+func (s *OptionContext) AllOUC() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserOUC)
+}
+
+func (s *OptionContext) OUC(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserOUC, i)
+}
+
+func (s *OptionContext) AllUnderscore() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserUnderscore)
+}
+
+func (s *OptionContext) Underscore(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserUnderscore, i)
+}
+
+func (s *OptionContext) SUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserSUC, 0)
+}
+
+func (s *OptionContext) AllTUC() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserTUC)
+}
+
+func (s *OptionContext) TUC(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserTUC, i)
+}
+
+func (s *OptionContext) AUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserAUC, 0)
+}
+
+func (s *OptionContext) RUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserRUC, 0)
+}
+
+func (s *OptionContext) PUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserPUC, 0)
+}
+
+func (s *OptionContext) UUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserUUC, 0)
+}
+
+func (s *OptionContext) FUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserFUC, 0)
+}
+
+func (s *OptionContext) D8() antlr.TerminalNode {
+	return s.GetToken(PCREParserD8, 0)
+}
+
+func (s *OptionContext) D1() antlr.TerminalNode {
+	return s.GetToken(PCREParserD1, 0)
+}
+
+func (s *OptionContext) D6() antlr.TerminalNode {
+	return s.GetToken(PCREParserD6, 0)
+}
+
+func (s *OptionContext) CUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserCUC, 0)
 }
 
 func (s *OptionContext) GetRuleContext() antlr.RuleContext {
@@ -3230,6 +3499,31 @@ func NewOption_flagContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 }
 
 func (s *Option_flagContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Option_flagContext) ILC() antlr.TerminalNode {
+	return s.GetToken(PCREParserILC, 0)
+}
+
+func (s *Option_flagContext) JUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserJUC, 0)
+}
+
+func (s *Option_flagContext) MLC() antlr.TerminalNode {
+	return s.GetToken(PCREParserMLC, 0)
+}
+
+func (s *Option_flagContext) SLC() antlr.TerminalNode {
+	return s.GetToken(PCREParserSLC, 0)
+}
+
+func (s *Option_flagContext) UUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserUUC, 0)
+}
+
+func (s *Option_flagContext) XLC() antlr.TerminalNode {
+	return s.GetToken(PCREParserXLC, 0)
+}
+
 func (s *Option_flagContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -3272,14 +3566,16 @@ func (p *PCREParser) Option_flag() (localctx IOption_flagContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(358)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(358)
+		_la = p.GetTokenStream().LA(1)
 
-	if !((((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(PCREParserILC-71))|(1<<(PCREParserMLC-71))|(1<<(PCREParserSLC-71))|(1<<(PCREParserXLC-71))|(1<<(PCREParserJUC-71)))) != 0) || _la == PCREParserUUC) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !((((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(PCREParserILC-71))|(1<<(PCREParserMLC-71))|(1<<(PCREParserSLC-71))|(1<<(PCREParserXLC-71))|(1<<(PCREParserJUC-71)))) != 0) || _la == PCREParserUUC) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -3323,6 +3619,18 @@ func NewLook_aroundContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 
 func (s *Look_aroundContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *Look_aroundContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenParen, 0)
+}
+
+func (s *Look_aroundContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(PCREParserQuestionMark, 0)
+}
+
+func (s *Look_aroundContext) Equals() antlr.TerminalNode {
+	return s.GetToken(PCREParserEquals, 0)
+}
+
 func (s *Look_aroundContext) Alternation() IAlternationContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAlternationContext)(nil)).Elem(), 0)
 
@@ -3331,6 +3639,18 @@ func (s *Look_aroundContext) Alternation() IAlternationContext {
 	}
 
 	return t.(IAlternationContext)
+}
+
+func (s *Look_aroundContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseParen, 0)
+}
+
+func (s *Look_aroundContext) Exclamation() antlr.TerminalNode {
+	return s.GetToken(PCREParserExclamation, 0)
+}
+
+func (s *Look_aroundContext) LessThan() antlr.TerminalNode {
+	return s.GetToken(PCREParserLessThan, 0)
 }
 
 func (s *Look_aroundContext) GetRuleContext() antlr.RuleContext {
@@ -3519,6 +3839,22 @@ func NewSubroutine_referenceContext(parser antlr.Parser, parent antlr.ParserRule
 
 func (s *Subroutine_referenceContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *Subroutine_referenceContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenParen, 0)
+}
+
+func (s *Subroutine_referenceContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(PCREParserQuestionMark, 0)
+}
+
+func (s *Subroutine_referenceContext) RUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserRUC, 0)
+}
+
+func (s *Subroutine_referenceContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseParen, 0)
+}
+
 func (s *Subroutine_referenceContext) Number() INumberContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*INumberContext)(nil)).Elem(), 0)
 
@@ -3529,6 +3865,18 @@ func (s *Subroutine_referenceContext) Number() INumberContext {
 	return t.(INumberContext)
 }
 
+func (s *Subroutine_referenceContext) Plus() antlr.TerminalNode {
+	return s.GetToken(PCREParserPlus, 0)
+}
+
+func (s *Subroutine_referenceContext) Hyphen() antlr.TerminalNode {
+	return s.GetToken(PCREParserHyphen, 0)
+}
+
+func (s *Subroutine_referenceContext) Ampersand() antlr.TerminalNode {
+	return s.GetToken(PCREParserAmpersand, 0)
+}
+
 func (s *Subroutine_referenceContext) Name() INameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*INameContext)(nil)).Elem(), 0)
 
@@ -3537,6 +3885,30 @@ func (s *Subroutine_referenceContext) Name() INameContext {
 	}
 
 	return t.(INameContext)
+}
+
+func (s *Subroutine_referenceContext) PUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserPUC, 0)
+}
+
+func (s *Subroutine_referenceContext) GreaterThan() antlr.TerminalNode {
+	return s.GetToken(PCREParserGreaterThan, 0)
+}
+
+func (s *Subroutine_referenceContext) SubroutineOrNamedReferenceStartG() antlr.TerminalNode {
+	return s.GetToken(PCREParserSubroutineOrNamedReferenceStartG, 0)
+}
+
+func (s *Subroutine_referenceContext) LessThan() antlr.TerminalNode {
+	return s.GetToken(PCREParserLessThan, 0)
+}
+
+func (s *Subroutine_referenceContext) AllSingleQuote() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserSingleQuote)
+}
+
+func (s *Subroutine_referenceContext) SingleQuote(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserSingleQuote, i)
 }
 
 func (s *Subroutine_referenceContext) GetRuleContext() antlr.RuleContext {
@@ -3927,6 +4299,18 @@ func NewConditionalContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 
 func (s *ConditionalContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *ConditionalContext) AllOpenParen() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserOpenParen)
+}
+
+func (s *ConditionalContext) OpenParen(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenParen, i)
+}
+
+func (s *ConditionalContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(PCREParserQuestionMark, 0)
+}
+
 func (s *ConditionalContext) Number() INumberContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*INumberContext)(nil)).Elem(), 0)
 
@@ -3935,6 +4319,14 @@ func (s *ConditionalContext) Number() INumberContext {
 	}
 
 	return t.(INumberContext)
+}
+
+func (s *ConditionalContext) AllCloseParen() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserCloseParen)
+}
+
+func (s *ConditionalContext) CloseParen(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseParen, i)
 }
 
 func (s *ConditionalContext) AllAlternation() []IAlternationContext {
@@ -3960,6 +4352,22 @@ func (s *ConditionalContext) Alternation(i int) IAlternationContext {
 	return t.(IAlternationContext)
 }
 
+func (s *ConditionalContext) Pipe() antlr.TerminalNode {
+	return s.GetToken(PCREParserPipe, 0)
+}
+
+func (s *ConditionalContext) Plus() antlr.TerminalNode {
+	return s.GetToken(PCREParserPlus, 0)
+}
+
+func (s *ConditionalContext) Hyphen() antlr.TerminalNode {
+	return s.GetToken(PCREParserHyphen, 0)
+}
+
+func (s *ConditionalContext) LessThan() antlr.TerminalNode {
+	return s.GetToken(PCREParserLessThan, 0)
+}
+
 func (s *ConditionalContext) Name() INameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*INameContext)(nil)).Elem(), 0)
 
@@ -3968,6 +4376,74 @@ func (s *ConditionalContext) Name() INameContext {
 	}
 
 	return t.(INameContext)
+}
+
+func (s *ConditionalContext) GreaterThan() antlr.TerminalNode {
+	return s.GetToken(PCREParserGreaterThan, 0)
+}
+
+func (s *ConditionalContext) AllSingleQuote() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserSingleQuote)
+}
+
+func (s *ConditionalContext) SingleQuote(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserSingleQuote, i)
+}
+
+func (s *ConditionalContext) RUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserRUC, 0)
+}
+
+func (s *ConditionalContext) Ampersand() antlr.TerminalNode {
+	return s.GetToken(PCREParserAmpersand, 0)
+}
+
+func (s *ConditionalContext) DUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserDUC, 0)
+}
+
+func (s *ConditionalContext) AllEUC() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserEUC)
+}
+
+func (s *ConditionalContext) EUC(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserEUC, i)
+}
+
+func (s *ConditionalContext) FUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserFUC, 0)
+}
+
+func (s *ConditionalContext) IUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserIUC, 0)
+}
+
+func (s *ConditionalContext) NUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserNUC, 0)
+}
+
+func (s *ConditionalContext) ALC() antlr.TerminalNode {
+	return s.GetToken(PCREParserALC, 0)
+}
+
+func (s *ConditionalContext) AllSLC() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserSLC)
+}
+
+func (s *ConditionalContext) SLC(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserSLC, i)
+}
+
+func (s *ConditionalContext) ELC() antlr.TerminalNode {
+	return s.GetToken(PCREParserELC, 0)
+}
+
+func (s *ConditionalContext) RLC() antlr.TerminalNode {
+	return s.GetToken(PCREParserRLC, 0)
+}
+
+func (s *ConditionalContext) TLC() antlr.TerminalNode {
+	return s.GetToken(PCREParserTLC, 0)
 }
 
 func (s *ConditionalContext) GetRuleContext() antlr.RuleContext {
@@ -4638,6 +5114,107 @@ func NewBacktrack_controlContext(parser antlr.Parser, parent antlr.ParserRuleCon
 }
 
 func (s *Backtrack_controlContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Backtrack_controlContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenParen, 0)
+}
+
+func (s *Backtrack_controlContext) Star() antlr.TerminalNode {
+	return s.GetToken(PCREParserStar, 0)
+}
+
+func (s *Backtrack_controlContext) AllAUC() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserAUC)
+}
+
+func (s *Backtrack_controlContext) AUC(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserAUC, i)
+}
+
+func (s *Backtrack_controlContext) AllCUC() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserCUC)
+}
+
+func (s *Backtrack_controlContext) CUC(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserCUC, i)
+}
+
+func (s *Backtrack_controlContext) AllEUC() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserEUC)
+}
+
+func (s *Backtrack_controlContext) EUC(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserEUC, i)
+}
+
+func (s *Backtrack_controlContext) PUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserPUC, 0)
+}
+
+func (s *Backtrack_controlContext) TUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserTUC, 0)
+}
+
+func (s *Backtrack_controlContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseParen, 0)
+}
+
+func (s *Backtrack_controlContext) FUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserFUC, 0)
+}
+
+func (s *Backtrack_controlContext) IUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserIUC, 0)
+}
+
+func (s *Backtrack_controlContext) LUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserLUC, 0)
+}
+
+func (s *Backtrack_controlContext) Colon() antlr.TerminalNode {
+	return s.GetToken(PCREParserColon, 0)
+}
+
+func (s *Backtrack_controlContext) AllNUC() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserNUC)
+}
+
+func (s *Backtrack_controlContext) NUC(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserNUC, i)
+}
+
+func (s *Backtrack_controlContext) AllMUC() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserMUC)
+}
+
+func (s *Backtrack_controlContext) MUC(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserMUC, i)
+}
+
+func (s *Backtrack_controlContext) RUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserRUC, 0)
+}
+
+func (s *Backtrack_controlContext) KUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserKUC, 0)
+}
+
+func (s *Backtrack_controlContext) OUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserOUC, 0)
+}
+
+func (s *Backtrack_controlContext) UUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserUUC, 0)
+}
+
+func (s *Backtrack_controlContext) SUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserSUC, 0)
+}
+
+func (s *Backtrack_controlContext) HUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserHUC, 0)
+}
+
 func (s *Backtrack_controlContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -5152,6 +5729,83 @@ func NewNewline_conventionContext(parser antlr.Parser, parent antlr.ParserRuleCo
 }
 
 func (s *Newline_conventionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *Newline_conventionContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenParen, 0)
+}
+
+func (s *Newline_conventionContext) Star() antlr.TerminalNode {
+	return s.GetToken(PCREParserStar, 0)
+}
+
+func (s *Newline_conventionContext) CUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserCUC, 0)
+}
+
+func (s *Newline_conventionContext) AllRUC() []antlr.TerminalNode {
+	return s.GetTokens(PCREParserRUC)
+}
+
+func (s *Newline_conventionContext) RUC(i int) antlr.TerminalNode {
+	return s.GetToken(PCREParserRUC, i)
+}
+
+func (s *Newline_conventionContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseParen, 0)
+}
+
+func (s *Newline_conventionContext) LUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserLUC, 0)
+}
+
+func (s *Newline_conventionContext) FUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserFUC, 0)
+}
+
+func (s *Newline_conventionContext) AUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserAUC, 0)
+}
+
+func (s *Newline_conventionContext) NUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserNUC, 0)
+}
+
+func (s *Newline_conventionContext) YUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserYUC, 0)
+}
+
+func (s *Newline_conventionContext) BUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserBUC, 0)
+}
+
+func (s *Newline_conventionContext) SUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserSUC, 0)
+}
+
+func (s *Newline_conventionContext) Underscore() antlr.TerminalNode {
+	return s.GetToken(PCREParserUnderscore, 0)
+}
+
+func (s *Newline_conventionContext) UUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserUUC, 0)
+}
+
+func (s *Newline_conventionContext) IUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserIUC, 0)
+}
+
+func (s *Newline_conventionContext) OUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserOUC, 0)
+}
+
+func (s *Newline_conventionContext) DUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserDUC, 0)
+}
+
+func (s *Newline_conventionContext) EUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserEUC, 0)
+}
+
 func (s *Newline_conventionContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -5502,6 +6156,22 @@ func NewCalloutContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 }
 
 func (s *CalloutContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *CalloutContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserOpenParen, 0)
+}
+
+func (s *CalloutContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(PCREParserQuestionMark, 0)
+}
+
+func (s *CalloutContext) CUC() antlr.TerminalNode {
+	return s.GetToken(PCREParserCUC, 0)
+}
+
+func (s *CalloutContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(PCREParserCloseParen, 0)
+}
 
 func (s *CalloutContext) Number() INumberContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*INumberContext)(nil)).Elem(), 0)
@@ -6376,14 +7046,16 @@ func (p *PCREParser) Shared_atom() (localctx IShared_atomContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(835)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(835)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-4)&-(0x1f+1)) == 0 && ((1<<uint((_la-4)))&((1<<(PCREParserControlChar-4))|(1<<(PCREParserDecimalDigit-4))|(1<<(PCREParserNotDecimalDigit-4))|(1<<(PCREParserHorizontalWhiteSpace-4))|(1<<(PCREParserNotHorizontalWhiteSpace-4))|(1<<(PCREParserNotNewLine-4))|(1<<(PCREParserCharWithProperty-4))|(1<<(PCREParserCharWithoutProperty-4))|(1<<(PCREParserNewLineSequence-4))|(1<<(PCREParserWhiteSpace-4))|(1<<(PCREParserNotWhiteSpace-4))|(1<<(PCREParserVerticalWhiteSpace-4))|(1<<(PCREParserNotVerticalWhiteSpace-4))|(1<<(PCREParserWordChar-4))|(1<<(PCREParserNotWordChar-4))|(1<<(PCREParserPOSIXNamedSet-4))|(1<<(PCREParserPOSIXNegatedNamedSet-4)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-4)&-(0x1f+1)) == 0 && ((1<<uint((_la-4)))&((1<<(PCREParserControlChar-4))|(1<<(PCREParserDecimalDigit-4))|(1<<(PCREParserNotDecimalDigit-4))|(1<<(PCREParserHorizontalWhiteSpace-4))|(1<<(PCREParserNotHorizontalWhiteSpace-4))|(1<<(PCREParserNotNewLine-4))|(1<<(PCREParserCharWithProperty-4))|(1<<(PCREParserCharWithoutProperty-4))|(1<<(PCREParserNewLineSequence-4))|(1<<(PCREParserWhiteSpace-4))|(1<<(PCREParserNotWhiteSpace-4))|(1<<(PCREParserVerticalWhiteSpace-4))|(1<<(PCREParserNotVerticalWhiteSpace-4))|(1<<(PCREParserWordChar-4))|(1<<(PCREParserNotWordChar-4))|(1<<(PCREParserPOSIXNamedSet-4))|(1<<(PCREParserPOSIXNegatedNamedSet-4)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -7354,14 +8026,16 @@ func (p *PCREParser) Octal_char() (localctx IOctal_charContext) {
 			p.SetState(885)
 			p.Match(PCREParserBackslash)
 		}
-		p.SetState(886)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(886)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-115)&-(0x1f+1)) == 0 && ((1<<uint((_la-115)))&((1<<(PCREParserD1-115))|(1<<(PCREParserD2-115))|(1<<(PCREParserD3-115))|(1<<(PCREParserD0-115)))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la-115)&-(0x1f+1)) == 0 && ((1<<uint((_la-115)))&((1<<(PCREParserD1-115))|(1<<(PCREParserD2-115))|(1<<(PCREParserD3-115))|(1<<(PCREParserD0-115)))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(887)
@@ -7503,14 +8177,16 @@ func (p *PCREParser) Octal_digit() (localctx IOctal_digitContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(896)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(896)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-115)&-(0x1f+1)) == 0 && ((1<<uint((_la-115)))&((1<<(PCREParserD1-115))|(1<<(PCREParserD2-115))|(1<<(PCREParserD3-115))|(1<<(PCREParserD4-115))|(1<<(PCREParserD5-115))|(1<<(PCREParserD6-115))|(1<<(PCREParserD7-115))|(1<<(PCREParserD0-115)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-115)&-(0x1f+1)) == 0 && ((1<<uint((_la-115)))&((1<<(PCREParserD1-115))|(1<<(PCREParserD2-115))|(1<<(PCREParserD3-115))|(1<<(PCREParserD4-115))|(1<<(PCREParserD5-115))|(1<<(PCREParserD6-115))|(1<<(PCREParserD7-115))|(1<<(PCREParserD0-115)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -7763,14 +8439,16 @@ func (p *PCREParser) Digit() (localctx IDigitContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(903)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(903)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-115)&-(0x1f+1)) == 0 && ((1<<uint((_la-115)))&((1<<(PCREParserD1-115))|(1<<(PCREParserD2-115))|(1<<(PCREParserD3-115))|(1<<(PCREParserD4-115))|(1<<(PCREParserD5-115))|(1<<(PCREParserD6-115))|(1<<(PCREParserD7-115))|(1<<(PCREParserD8-115))|(1<<(PCREParserD9-115))|(1<<(PCREParserD0-115)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-115)&-(0x1f+1)) == 0 && ((1<<uint((_la-115)))&((1<<(PCREParserD1-115))|(1<<(PCREParserD2-115))|(1<<(PCREParserD3-115))|(1<<(PCREParserD4-115))|(1<<(PCREParserD5-115))|(1<<(PCREParserD6-115))|(1<<(PCREParserD7-115))|(1<<(PCREParserD8-115))|(1<<(PCREParserD9-115))|(1<<(PCREParserD0-115)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -8270,14 +8948,16 @@ func (p *PCREParser) Non_close_paren() (localctx INon_close_parenContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(924)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(924)
+		_la = p.GetTokenStream().LA(1)
 
-	if _la <= 0 || _la == PCREParserCloseParen {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if _la <= 0 || _la == PCREParserCloseParen {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -8571,14 +9251,16 @@ func (p *PCREParser) Letter() (localctx ILetterContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(926)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(926)
+		_la = p.GetTokenStream().LA(1)
 
-	if !((((_la-63)&-(0x1f+1)) == 0 && ((1<<uint((_la-63)))&((1<<(PCREParserALC-63))|(1<<(PCREParserBLC-63))|(1<<(PCREParserCLC-63))|(1<<(PCREParserDLC-63))|(1<<(PCREParserELC-63))|(1<<(PCREParserFLC-63))|(1<<(PCREParserGLC-63))|(1<<(PCREParserHLC-63))|(1<<(PCREParserILC-63))|(1<<(PCREParserJLC-63))|(1<<(PCREParserKLC-63))|(1<<(PCREParserLLC-63))|(1<<(PCREParserMLC-63))|(1<<(PCREParserNLC-63))|(1<<(PCREParserOLC-63))|(1<<(PCREParserPLC-63))|(1<<(PCREParserQLC-63))|(1<<(PCREParserRLC-63))|(1<<(PCREParserSLC-63))|(1<<(PCREParserTLC-63))|(1<<(PCREParserULC-63))|(1<<(PCREParserVLC-63))|(1<<(PCREParserWLC-63))|(1<<(PCREParserXLC-63))|(1<<(PCREParserYLC-63))|(1<<(PCREParserZLC-63))|(1<<(PCREParserAUC-63))|(1<<(PCREParserBUC-63))|(1<<(PCREParserCUC-63))|(1<<(PCREParserDUC-63))|(1<<(PCREParserEUC-63))|(1<<(PCREParserFUC-63)))) != 0) || (((_la-95)&-(0x1f+1)) == 0 && ((1<<uint((_la-95)))&((1<<(PCREParserGUC-95))|(1<<(PCREParserHUC-95))|(1<<(PCREParserIUC-95))|(1<<(PCREParserJUC-95))|(1<<(PCREParserKUC-95))|(1<<(PCREParserLUC-95))|(1<<(PCREParserMUC-95))|(1<<(PCREParserNUC-95))|(1<<(PCREParserOUC-95))|(1<<(PCREParserPUC-95))|(1<<(PCREParserQUC-95))|(1<<(PCREParserRUC-95))|(1<<(PCREParserSUC-95))|(1<<(PCREParserTUC-95))|(1<<(PCREParserUUC-95))|(1<<(PCREParserVUC-95))|(1<<(PCREParserWUC-95))|(1<<(PCREParserXUC-95))|(1<<(PCREParserYUC-95))|(1<<(PCREParserZUC-95)))) != 0)) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !((((_la-63)&-(0x1f+1)) == 0 && ((1<<uint((_la-63)))&((1<<(PCREParserALC-63))|(1<<(PCREParserBLC-63))|(1<<(PCREParserCLC-63))|(1<<(PCREParserDLC-63))|(1<<(PCREParserELC-63))|(1<<(PCREParserFLC-63))|(1<<(PCREParserGLC-63))|(1<<(PCREParserHLC-63))|(1<<(PCREParserILC-63))|(1<<(PCREParserJLC-63))|(1<<(PCREParserKLC-63))|(1<<(PCREParserLLC-63))|(1<<(PCREParserMLC-63))|(1<<(PCREParserNLC-63))|(1<<(PCREParserOLC-63))|(1<<(PCREParserPLC-63))|(1<<(PCREParserQLC-63))|(1<<(PCREParserRLC-63))|(1<<(PCREParserSLC-63))|(1<<(PCREParserTLC-63))|(1<<(PCREParserULC-63))|(1<<(PCREParserVLC-63))|(1<<(PCREParserWLC-63))|(1<<(PCREParserXLC-63))|(1<<(PCREParserYLC-63))|(1<<(PCREParserZLC-63))|(1<<(PCREParserAUC-63))|(1<<(PCREParserBUC-63))|(1<<(PCREParserCUC-63))|(1<<(PCREParserDUC-63))|(1<<(PCREParserEUC-63))|(1<<(PCREParserFUC-63)))) != 0) || (((_la-95)&-(0x1f+1)) == 0 && ((1<<uint((_la-95)))&((1<<(PCREParserGUC-95))|(1<<(PCREParserHUC-95))|(1<<(PCREParserIUC-95))|(1<<(PCREParserJUC-95))|(1<<(PCREParserKUC-95))|(1<<(PCREParserLUC-95))|(1<<(PCREParserMUC-95))|(1<<(PCREParserNUC-95))|(1<<(PCREParserOUC-95))|(1<<(PCREParserPUC-95))|(1<<(PCREParserQUC-95))|(1<<(PCREParserRUC-95))|(1<<(PCREParserSUC-95))|(1<<(PCREParserTUC-95))|(1<<(PCREParserUUC-95))|(1<<(PCREParserVUC-95))|(1<<(PCREParserWUC-95))|(1<<(PCREParserXUC-95))|(1<<(PCREParserYUC-95))|(1<<(PCREParserZUC-95)))) != 0)) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

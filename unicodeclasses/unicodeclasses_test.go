@@ -31,7 +31,9 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{
-	"grammars-v4/kotlin/examples/Test.kt",
+	"grammars-v4/kotlin/examples/script/hello.kts",
+	"grammars-v4/kotlin/examples/script/preamble_nl.kts",
+	"grammars-v4/kotlin/examples/script/preamble_nl_semi.kts",
 }
 
 func Example() {
@@ -71,8 +73,8 @@ func TestUnicodeClasses(t *testing.T) {
 		// Try and read all tokens
 		i := 0
 		for ; i < MAX_TOKENS; i++ {
-			t := lexer.NextToken()
-			if t.GetTokenType() == antlr.TokenEOF {
+			tok := lexer.NextToken()
+			if tok.GetTokenType() == antlr.TokenEOF {
 				break
 			}
 		}

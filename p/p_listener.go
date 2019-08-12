@@ -1,4 +1,4 @@
-// Generated from p.g4 by ANTLR 4.7.
+// Code generated from p.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package p // p
 import "github.com/antlr/antlr4/runtime/Go/antlr"

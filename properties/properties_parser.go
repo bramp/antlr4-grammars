@@ -1,4 +1,4 @@
-// Generated from properties.g4 by ANTLR 4.7.
+// Code generated from properties.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package properties // properties
 import (
@@ -631,14 +631,16 @@ func (p *propertiesParser) Value() (localctx IValueContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(28)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(28)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == propertiesParserTEXT || _la == propertiesParserSTRING) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == propertiesParserTEXT || _la == propertiesParserSTRING) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

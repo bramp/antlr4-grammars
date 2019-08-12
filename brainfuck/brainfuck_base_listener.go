@@ -1,4 +1,4 @@
-// Generated from brainfuck.g4 by ANTLR 4.7.
+// Code generated from brainfuck.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package brainfuck // brainfuck
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -25,6 +25,12 @@ func (s *BasebrainfuckListener) EnterFile(ctx *FileContext) {}
 
 // ExitFile is called when production file is exited.
 func (s *BasebrainfuckListener) ExitFile(ctx *FileContext) {}
+
+// EnterStatement is called when production statement is entered.
+func (s *BasebrainfuckListener) EnterStatement(ctx *StatementContext) {}
+
+// ExitStatement is called when production statement is exited.
+func (s *BasebrainfuckListener) ExitStatement(ctx *StatementContext) {}
 
 // EnterOpcode is called when production opcode is entered.
 func (s *BasebrainfuckListener) EnterOpcode(ctx *OpcodeContext) {}

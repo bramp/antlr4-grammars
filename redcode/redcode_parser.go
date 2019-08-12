@@ -1,4 +1,4 @@
-// Generated from redcode.g4 by ANTLR 4.7.
+// Code generated from redcode.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package redcode // redcode
 import (
@@ -765,14 +765,16 @@ func (p *redcodeParser) Opcode() (localctx IOpcodeContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(46)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(46)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-17)&-(0x1f+1)) == 0 && ((1<<uint((_la-17)))&((1<<(redcodeParserDAT-17))|(1<<(redcodeParserMOV-17))|(1<<(redcodeParserADD-17))|(1<<(redcodeParserSUB-17))|(1<<(redcodeParserMUL-17))|(1<<(redcodeParserDIV-17))|(1<<(redcodeParserMOD-17))|(1<<(redcodeParserJMP-17))|(1<<(redcodeParserJMZ-17))|(1<<(redcodeParserJMN-17))|(1<<(redcodeParserDJN-17))|(1<<(redcodeParserCMP-17))|(1<<(redcodeParserSLT-17))|(1<<(redcodeParserDJZ-17))|(1<<(redcodeParserSPL-17))|(1<<(redcodeParserORG-17)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-17)&-(0x1f+1)) == 0 && ((1<<uint((_la-17)))&((1<<(redcodeParserDAT-17))|(1<<(redcodeParserMOV-17))|(1<<(redcodeParserADD-17))|(1<<(redcodeParserSUB-17))|(1<<(redcodeParserMUL-17))|(1<<(redcodeParserDIV-17))|(1<<(redcodeParserMOD-17))|(1<<(redcodeParserJMP-17))|(1<<(redcodeParserJMZ-17))|(1<<(redcodeParserJMN-17))|(1<<(redcodeParserDJN-17))|(1<<(redcodeParserCMP-17))|(1<<(redcodeParserSLT-17))|(1<<(redcodeParserDJZ-17))|(1<<(redcodeParserSPL-17))|(1<<(redcodeParserORG-17)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -886,14 +888,16 @@ func (p *redcodeParser) Modifier() (localctx IModifierContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(48)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(48)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<redcodeParserA)|(1<<redcodeParserB)|(1<<redcodeParserAB)|(1<<redcodeParserBA)|(1<<redcodeParserF)|(1<<redcodeParserX)|(1<<redcodeParserI))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<redcodeParserA)|(1<<redcodeParserB)|(1<<redcodeParserAB)|(1<<redcodeParserBA)|(1<<redcodeParserF)|(1<<redcodeParserX)|(1<<redcodeParserI))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -978,14 +982,16 @@ func (p *redcodeParser) Mmode() (localctx IMmodeContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(50)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(50)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<redcodeParserT__2)|(1<<redcodeParserT__3)|(1<<redcodeParserT__4)|(1<<redcodeParserT__5)|(1<<redcodeParserT__6))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<redcodeParserT__2)|(1<<redcodeParserT__3)|(1<<redcodeParserT__4)|(1<<redcodeParserT__5)|(1<<redcodeParserT__6))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -1080,14 +1086,16 @@ func (p *redcodeParser) Number() (localctx INumberContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == redcodeParserT__7 || _la == redcodeParserT__8 {
-		p.SetState(52)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(52)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == redcodeParserT__7 || _la == redcodeParserT__8) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == redcodeParserT__7 || _la == redcodeParserT__8) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}

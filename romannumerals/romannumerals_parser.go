@@ -1,4 +1,4 @@
-// Generated from romannumerals.g4 by ANTLR 4.7.
+// Code generated from romannumerals.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package romannumerals // romannumerals
 import (
@@ -874,14 +874,16 @@ func (p *romannumeralsParser) Hun_rep() (localctx IHun_repContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(56)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(56)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<romannumeralsParserC)|(1<<romannumeralsParserCC)|(1<<romannumeralsParserCCC))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<romannumeralsParserC)|(1<<romannumeralsParserCC)|(1<<romannumeralsParserCCC))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -1257,14 +1259,16 @@ func (p *romannumeralsParser) Tens_rep() (localctx ITens_repContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(73)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(73)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<romannumeralsParserX)|(1<<romannumeralsParserXX)|(1<<romannumeralsParserXXX))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<romannumeralsParserX)|(1<<romannumeralsParserXX)|(1<<romannumeralsParserXXX))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -1509,14 +1513,16 @@ func (p *romannumeralsParser) Ones_rep() (localctx IOnes_repContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(83)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(83)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<romannumeralsParserI)|(1<<romannumeralsParserII)|(1<<romannumeralsParserIII))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<romannumeralsParserI)|(1<<romannumeralsParserII)|(1<<romannumeralsParserIII))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

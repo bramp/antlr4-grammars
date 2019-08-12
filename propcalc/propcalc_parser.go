@@ -1,4 +1,4 @@
-// Generated from propcalc.g4 by ANTLR 4.7.
+// Code generated from propcalc.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package propcalc // propcalc
 import (
@@ -363,14 +363,16 @@ func (p *propcalcParser) Expression() (localctx IExpressionContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == propcalcParserAND || _la == propcalcParserOR {
-		p.SetState(21)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(21)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == propcalcParserAND || _la == propcalcParserOR) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == propcalcParserAND || _la == propcalcParserOR) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(22)

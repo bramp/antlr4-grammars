@@ -1,4 +1,4 @@
-// Generated from sexpression.g4 by ANTLR 4.7.
+// Code generated from sexpression.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package sexpression // sexpression
 import (
@@ -631,14 +631,16 @@ func (p *sexpressionParser) Atom() (localctx IAtomContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(35)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(35)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<sexpressionParserSTRING)|(1<<sexpressionParserNUMBER)|(1<<sexpressionParserSYMBOL)|(1<<sexpressionParserDOT))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<sexpressionParserSTRING)|(1<<sexpressionParserNUMBER)|(1<<sexpressionParserSYMBOL)|(1<<sexpressionParserDOT))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

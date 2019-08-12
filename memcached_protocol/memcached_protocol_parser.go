@@ -1,4 +1,4 @@
-// Generated from memcached_protocol.g4 by ANTLR 4.7.
+// Code generated from memcached_protocol.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package memcached_protocol // memcached_protocol
 import (
@@ -947,14 +947,16 @@ func (p *memcached_protocolParser) Storage_command_name() (localctx IStorage_com
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(110)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(110)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<memcached_protocolParserT__1)|(1<<memcached_protocolParserT__2)|(1<<memcached_protocolParserT__3)|(1<<memcached_protocolParserT__4)|(1<<memcached_protocolParserT__5))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<memcached_protocolParserT__1)|(1<<memcached_protocolParserT__2)|(1<<memcached_protocolParserT__3)|(1<<memcached_protocolParserT__4)|(1<<memcached_protocolParserT__5))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -1065,14 +1067,16 @@ func (p *memcached_protocolParser) Retrieval_command() (localctx IRetrieval_comm
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(112)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(112)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == memcached_protocolParserT__6 || _la == memcached_protocolParserT__7) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == memcached_protocolParserT__6 || _la == memcached_protocolParserT__7) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	p.SetState(114)
 	p.GetErrorHandler().Sync(p)
@@ -1703,14 +1707,16 @@ func (p *memcached_protocolParser) Statistics_option() (localctx IStatistics_opt
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(142)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(142)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<memcached_protocolParserT__12)|(1<<memcached_protocolParserT__13)|(1<<memcached_protocolParserT__14))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<memcached_protocolParserT__12)|(1<<memcached_protocolParserT__13)|(1<<memcached_protocolParserT__14))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

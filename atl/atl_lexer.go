@@ -1,4 +1,4 @@
-// Generated from ATL.g4 by ANTLR 4.7.
+// Code generated from ATL.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package atl
 

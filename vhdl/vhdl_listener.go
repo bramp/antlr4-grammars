@@ -1,4 +1,4 @@
-// Generated from vhdl.g4 by ANTLR 4.7.
+// Code generated from vhdl.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package vhdl // vhdl
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -451,17 +451,20 @@ type vhdlListener interface {
 	// EnterName_part is called when entering the name_part production.
 	EnterName_part(c *Name_partContext)
 
-	// EnterName_attribute_part is called when entering the name_attribute_part production.
-	EnterName_attribute_part(c *Name_attribute_partContext)
-
-	// EnterName_function_call_or_indexed_part is called when entering the name_function_call_or_indexed_part production.
-	EnterName_function_call_or_indexed_part(c *Name_function_call_or_indexed_partContext)
-
-	// EnterName_slice_part is called when entering the name_slice_part production.
-	EnterName_slice_part(c *Name_slice_partContext)
-
 	// EnterSelected_name is called when entering the selected_name production.
 	EnterSelected_name(c *Selected_nameContext)
+
+	// EnterSelected_name_part is called when entering the selected_name_part production.
+	EnterSelected_name_part(c *Selected_name_partContext)
+
+	// EnterFunction_call_or_indexed_name_part is called when entering the function_call_or_indexed_name_part production.
+	EnterFunction_call_or_indexed_name_part(c *Function_call_or_indexed_name_partContext)
+
+	// EnterSlice_name_part is called when entering the slice_name_part production.
+	EnterSlice_name_part(c *Slice_name_partContext)
+
+	// EnterAttribute_name_part is called when entering the attribute_name_part production.
+	EnterAttribute_name_part(c *Attribute_name_partContext)
 
 	// EnterNature_declaration is called when entering the nature_declaration production.
 	EnterNature_declaration(c *Nature_declarationContext)
@@ -1213,17 +1216,20 @@ type vhdlListener interface {
 	// ExitName_part is called when exiting the name_part production.
 	ExitName_part(c *Name_partContext)
 
-	// ExitName_attribute_part is called when exiting the name_attribute_part production.
-	ExitName_attribute_part(c *Name_attribute_partContext)
-
-	// ExitName_function_call_or_indexed_part is called when exiting the name_function_call_or_indexed_part production.
-	ExitName_function_call_or_indexed_part(c *Name_function_call_or_indexed_partContext)
-
-	// ExitName_slice_part is called when exiting the name_slice_part production.
-	ExitName_slice_part(c *Name_slice_partContext)
-
 	// ExitSelected_name is called when exiting the selected_name production.
 	ExitSelected_name(c *Selected_nameContext)
+
+	// ExitSelected_name_part is called when exiting the selected_name_part production.
+	ExitSelected_name_part(c *Selected_name_partContext)
+
+	// ExitFunction_call_or_indexed_name_part is called when exiting the function_call_or_indexed_name_part production.
+	ExitFunction_call_or_indexed_name_part(c *Function_call_or_indexed_name_partContext)
+
+	// ExitSlice_name_part is called when exiting the slice_name_part production.
+	ExitSlice_name_part(c *Slice_name_partContext)
+
+	// ExitAttribute_name_part is called when exiting the attribute_name_part production.
+	ExitAttribute_name_part(c *Attribute_name_partContext)
 
 	// ExitNature_declaration is called when exiting the nature_declaration production.
 	ExitNature_declaration(c *Nature_declarationContext)

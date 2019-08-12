@@ -1,4 +1,4 @@
-// Generated from LessParser.g4 by ANTLR 4.7.
+// Code generated from LessParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package less // LessParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -46,6 +46,9 @@ type LessParserListener interface {
 	// EnterImportDeclaration is called when entering the importDeclaration production.
 	EnterImportDeclaration(c *ImportDeclarationContext)
 
+	// EnterImportOption is called when entering the importOption production.
+	EnterImportOption(c *ImportOptionContext)
+
 	// EnterReferenceUrl is called when entering the referenceUrl production.
 	EnterReferenceUrl(c *ReferenceUrlContext)
 
@@ -78,6 +81,9 @@ type LessParserListener interface {
 
 	// EnterAttrib is called when entering the attrib production.
 	EnterAttrib(c *AttribContext)
+
+	// EnterNegation is called when entering the negation production.
+	EnterNegation(c *NegationContext)
 
 	// EnterPseudo is called when entering the pseudo production.
 	EnterPseudo(c *PseudoContext)
@@ -151,6 +157,9 @@ type LessParserListener interface {
 	// ExitImportDeclaration is called when exiting the importDeclaration production.
 	ExitImportDeclaration(c *ImportDeclarationContext)
 
+	// ExitImportOption is called when exiting the importOption production.
+	ExitImportOption(c *ImportOptionContext)
+
 	// ExitReferenceUrl is called when exiting the referenceUrl production.
 	ExitReferenceUrl(c *ReferenceUrlContext)
 
@@ -183,6 +192,9 @@ type LessParserListener interface {
 
 	// ExitAttrib is called when exiting the attrib production.
 	ExitAttrib(c *AttribContext)
+
+	// ExitNegation is called when exiting the negation production.
+	ExitNegation(c *NegationContext)
 
 	// ExitPseudo is called when exiting the pseudo production.
 	ExitPseudo(c *PseudoContext)

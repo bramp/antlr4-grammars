@@ -1,4 +1,4 @@
-// Generated from Cobol85.g4 by ANTLR 4.7.
+// Code generated from Cobol85.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package cobol85 // Cobol85
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -18,15 +18,6 @@ type Cobol85Listener interface {
 
 	// EnterEndProgramStatement is called when entering the endProgramStatement production.
 	EnterEndProgramStatement(c *EndProgramStatementContext)
-
-	// EnterCompilerOptions is called when entering the compilerOptions production.
-	EnterCompilerOptions(c *CompilerOptionsContext)
-
-	// EnterCompilerOption is called when entering the compilerOption production.
-	EnterCompilerOption(c *CompilerOptionContext)
-
-	// EnterCompilerSubOption is called when entering the compilerSubOption production.
-	EnterCompilerSubOption(c *CompilerSubOptionContext)
 
 	// EnterIdentificationDivision is called when entering the identificationDivision production.
 	EnterIdentificationDivision(c *IdentificationDivisionContext)
@@ -250,8 +241,8 @@ type Cobol85Listener interface {
 	// EnterDataDivision is called when entering the dataDivision production.
 	EnterDataDivision(c *DataDivisionContext)
 
-	// EnterDataDivisionBody is called when entering the dataDivisionBody production.
-	EnterDataDivisionBody(c *DataDivisionBodyContext)
+	// EnterDataDivisionSection is called when entering the dataDivisionSection production.
+	EnterDataDivisionSection(c *DataDivisionSectionContext)
 
 	// EnterFileSection is called when entering the fileSection production.
 	EnterFileSection(c *FileSectionContext)
@@ -721,9 +712,6 @@ type Cobol85Listener interface {
 	// EnterPictureChars is called when entering the pictureChars production.
 	EnterPictureChars(c *PictureCharsContext)
 
-	// EnterPictureCharsKeyword is called when entering the pictureCharsKeyword production.
-	EnterPictureCharsKeyword(c *PictureCharsKeywordContext)
-
 	// EnterPictureCardinality is called when entering the pictureCardinality production.
 	EnterPictureCardinality(c *PictureCardinalityContext)
 
@@ -784,6 +772,21 @@ type Cobol85Listener interface {
 	// EnterProcedureDivisionGivingClause is called when entering the procedureDivisionGivingClause production.
 	EnterProcedureDivisionGivingClause(c *ProcedureDivisionGivingClauseContext)
 
+	// EnterProcedureDivisionUsingParameter is called when entering the procedureDivisionUsingParameter production.
+	EnterProcedureDivisionUsingParameter(c *ProcedureDivisionUsingParameterContext)
+
+	// EnterProcedureDivisionByReferencePhrase is called when entering the procedureDivisionByReferencePhrase production.
+	EnterProcedureDivisionByReferencePhrase(c *ProcedureDivisionByReferencePhraseContext)
+
+	// EnterProcedureDivisionByReference is called when entering the procedureDivisionByReference production.
+	EnterProcedureDivisionByReference(c *ProcedureDivisionByReferenceContext)
+
+	// EnterProcedureDivisionByValuePhrase is called when entering the procedureDivisionByValuePhrase production.
+	EnterProcedureDivisionByValuePhrase(c *ProcedureDivisionByValuePhraseContext)
+
+	// EnterProcedureDivisionByValue is called when entering the procedureDivisionByValue production.
+	EnterProcedureDivisionByValue(c *ProcedureDivisionByValueContext)
+
 	// EnterProcedureDeclaratives is called when entering the procedureDeclaratives production.
 	EnterProcedureDeclaratives(c *ProcedureDeclarativesContext)
 
@@ -843,6 +846,9 @@ type Cobol85Listener interface {
 
 	// EnterAddTo is called when entering the addTo production.
 	EnterAddTo(c *AddToContext)
+
+	// EnterAddToGiving is called when entering the addToGiving production.
+	EnterAddToGiving(c *AddToGivingContext)
 
 	// EnterAddGiving is called when entering the addGiving production.
 	EnterAddGiving(c *AddGivingContext)
@@ -963,6 +969,9 @@ type Cobol85Listener interface {
 
 	// EnterDivideGivingPhrase is called when entering the divideGivingPhrase production.
 	EnterDivideGivingPhrase(c *DivideGivingPhraseContext)
+
+	// EnterDivideInto is called when entering the divideInto production.
+	EnterDivideInto(c *DivideIntoContext)
 
 	// EnterDivideGiving is called when entering the divideGiving production.
 	EnterDivideGiving(c *DivideGivingContext)
@@ -1146,6 +1155,9 @@ type Cobol85Listener interface {
 
 	// EnterMoveCorrespondingToStatement is called when entering the moveCorrespondingToStatement production.
 	EnterMoveCorrespondingToStatement(c *MoveCorrespondingToStatementContext)
+
+	// EnterMoveCorrespondingToSendingArea is called when entering the moveCorrespondingToSendingArea production.
+	EnterMoveCorrespondingToSendingArea(c *MoveCorrespondingToSendingAreaContext)
 
 	// EnterMultiplyStatement is called when entering the multiplyStatement production.
 	EnterMultiplyStatement(c *MultiplyStatementContext)
@@ -1792,15 +1804,6 @@ type Cobol85Listener interface {
 	// ExitEndProgramStatement is called when exiting the endProgramStatement production.
 	ExitEndProgramStatement(c *EndProgramStatementContext)
 
-	// ExitCompilerOptions is called when exiting the compilerOptions production.
-	ExitCompilerOptions(c *CompilerOptionsContext)
-
-	// ExitCompilerOption is called when exiting the compilerOption production.
-	ExitCompilerOption(c *CompilerOptionContext)
-
-	// ExitCompilerSubOption is called when exiting the compilerSubOption production.
-	ExitCompilerSubOption(c *CompilerSubOptionContext)
-
 	// ExitIdentificationDivision is called when exiting the identificationDivision production.
 	ExitIdentificationDivision(c *IdentificationDivisionContext)
 
@@ -2023,8 +2026,8 @@ type Cobol85Listener interface {
 	// ExitDataDivision is called when exiting the dataDivision production.
 	ExitDataDivision(c *DataDivisionContext)
 
-	// ExitDataDivisionBody is called when exiting the dataDivisionBody production.
-	ExitDataDivisionBody(c *DataDivisionBodyContext)
+	// ExitDataDivisionSection is called when exiting the dataDivisionSection production.
+	ExitDataDivisionSection(c *DataDivisionSectionContext)
 
 	// ExitFileSection is called when exiting the fileSection production.
 	ExitFileSection(c *FileSectionContext)
@@ -2494,9 +2497,6 @@ type Cobol85Listener interface {
 	// ExitPictureChars is called when exiting the pictureChars production.
 	ExitPictureChars(c *PictureCharsContext)
 
-	// ExitPictureCharsKeyword is called when exiting the pictureCharsKeyword production.
-	ExitPictureCharsKeyword(c *PictureCharsKeywordContext)
-
 	// ExitPictureCardinality is called when exiting the pictureCardinality production.
 	ExitPictureCardinality(c *PictureCardinalityContext)
 
@@ -2557,6 +2557,21 @@ type Cobol85Listener interface {
 	// ExitProcedureDivisionGivingClause is called when exiting the procedureDivisionGivingClause production.
 	ExitProcedureDivisionGivingClause(c *ProcedureDivisionGivingClauseContext)
 
+	// ExitProcedureDivisionUsingParameter is called when exiting the procedureDivisionUsingParameter production.
+	ExitProcedureDivisionUsingParameter(c *ProcedureDivisionUsingParameterContext)
+
+	// ExitProcedureDivisionByReferencePhrase is called when exiting the procedureDivisionByReferencePhrase production.
+	ExitProcedureDivisionByReferencePhrase(c *ProcedureDivisionByReferencePhraseContext)
+
+	// ExitProcedureDivisionByReference is called when exiting the procedureDivisionByReference production.
+	ExitProcedureDivisionByReference(c *ProcedureDivisionByReferenceContext)
+
+	// ExitProcedureDivisionByValuePhrase is called when exiting the procedureDivisionByValuePhrase production.
+	ExitProcedureDivisionByValuePhrase(c *ProcedureDivisionByValuePhraseContext)
+
+	// ExitProcedureDivisionByValue is called when exiting the procedureDivisionByValue production.
+	ExitProcedureDivisionByValue(c *ProcedureDivisionByValueContext)
+
 	// ExitProcedureDeclaratives is called when exiting the procedureDeclaratives production.
 	ExitProcedureDeclaratives(c *ProcedureDeclarativesContext)
 
@@ -2616,6 +2631,9 @@ type Cobol85Listener interface {
 
 	// ExitAddTo is called when exiting the addTo production.
 	ExitAddTo(c *AddToContext)
+
+	// ExitAddToGiving is called when exiting the addToGiving production.
+	ExitAddToGiving(c *AddToGivingContext)
 
 	// ExitAddGiving is called when exiting the addGiving production.
 	ExitAddGiving(c *AddGivingContext)
@@ -2736,6 +2754,9 @@ type Cobol85Listener interface {
 
 	// ExitDivideGivingPhrase is called when exiting the divideGivingPhrase production.
 	ExitDivideGivingPhrase(c *DivideGivingPhraseContext)
+
+	// ExitDivideInto is called when exiting the divideInto production.
+	ExitDivideInto(c *DivideIntoContext)
 
 	// ExitDivideGiving is called when exiting the divideGiving production.
 	ExitDivideGiving(c *DivideGivingContext)
@@ -2919,6 +2940,9 @@ type Cobol85Listener interface {
 
 	// ExitMoveCorrespondingToStatement is called when exiting the moveCorrespondingToStatement production.
 	ExitMoveCorrespondingToStatement(c *MoveCorrespondingToStatementContext)
+
+	// ExitMoveCorrespondingToSendingArea is called when exiting the moveCorrespondingToSendingArea production.
+	ExitMoveCorrespondingToSendingArea(c *MoveCorrespondingToSendingAreaContext)
 
 	// ExitMultiplyStatement is called when exiting the multiplyStatement production.
 	ExitMultiplyStatement(c *MultiplyStatementContext)

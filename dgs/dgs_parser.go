@@ -1,4 +1,4 @@
-// Generated from DGSParser.g4 by ANTLR 4.7.
+// Code generated from DGSParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package dgs // DGSParser
 import (
@@ -751,14 +751,16 @@ func (p *DGSParser) Event() (localctx IEventContext) {
 	default:
 		panic(antlr.NewNoViableAltException(p, nil, nil, nil, nil, nil))
 	}
-	p.SetState(69)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(69)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == DGSParserEOL || _la == DGSParserCOMMENT) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == DGSParserEOL || _la == DGSParserCOMMENT) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -2053,14 +2055,16 @@ func (p *DGSParser) Attribute() (localctx IAttributeContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == DGSParserPLUS || _la == DGSParserMINUS {
-		p.SetState(112)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(112)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == DGSParserPLUS || _la == DGSParserMINUS) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == DGSParserPLUS || _la == DGSParserMINUS) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -2819,14 +2823,16 @@ func (p *DGSParser) Direction() (localctx IDirectionContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(166)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(166)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == DGSParserLANGLE || _la == DGSParserRANGLE) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == DGSParserLANGLE || _la == DGSParserRANGLE) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -2920,14 +2926,16 @@ func (p *DGSParser) Assign() (localctx IAssignContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(168)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(168)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == DGSParserEQUALS || _la == DGSParserCOLON) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == DGSParserEQUALS || _la == DGSParserCOLON) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

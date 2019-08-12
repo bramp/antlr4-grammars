@@ -28,9 +28,9 @@ import (
 
 var IGNORE_PATHS = []string{"/antlr4/examples/",
 	"/CSharpSharwell/", "/Python/", "/CSharp/", "/JavaScript/", "/two-step-processing/",
-	"/python3-js/", "/python3-py/", "/python3-ts/",
+	"/python2-js/", "/python3-cs/", "/python3-js/", "/python3-py/", "/python3-ts/",
 	".TypeScriptTarget.", ".JavaScriptTarget.", ".PythonTarget.",
-	"/LexBasic.g4", "ecmascript/ECMAScript.g4"}
+	"/LexBasic.g4", "ecmascript/ECMAScript.g4", "/kotlin-formal/", "/turtle-doc/"}
 
 const GRAMMARS_ROOT = "grammars-v4"
 
@@ -58,12 +58,12 @@ MAKEFLAGS += --no-builtin-rules --warn-undefined-variables
 .PHONY: all clean rebuild test
 .DEFAULT_GOAL := all
 .SILENT:
-#.DELETE_ON_ERROR:
+.DELETE_ON_ERROR:
 .SUFFIXES:
 
-ANTLR_BIN := $(HOME)/.m2/repository/org/antlr/antlr4/4.7.1-SNAPSHOT/antlr4-4.7.1-SNAPSHOT-complete.jar
 #ANTLR_BIN := $(PWD)/.bin/antlr-4.7-complete.jar
 ANTLR_URL := http://www.antlr.org/download/antlr-4.7-complete.jar
+ANTLR_BIN := $(HOME)/.m2/repository/org/antlr/antlr4/4.7.2/antlr4-4.7.2-complete.jar
 ANTLR := java -jar $(ANTLR_BIN) -Dlanguage=Go -listener -no-visitor
 
 GRAMMARS :={{ range $name, $grammar := .Grammars }} {{$name}}{{ end }}

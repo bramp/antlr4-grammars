@@ -1,4 +1,4 @@
-// Generated from tnt.g4 by ANTLR 4.7.
+// Code generated from tnt.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package tnt // tnt
 import (
@@ -608,14 +608,16 @@ func (p *tntParser) Variable() (localctx IVariableContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 	}
-	p.SetState(36)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(36)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tntParserA)|(1<<tntParserB)|(1<<tntParserC)|(1<<tntParserD)|(1<<tntParserE))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tntParserA)|(1<<tntParserB)|(1<<tntParserC)|(1<<tntParserD)|(1<<tntParserE))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	p.SetState(40)
 	p.GetErrorHandler().Sync(p)

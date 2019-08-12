@@ -1,4 +1,4 @@
-// Generated from Cobol85Preprocessor.g4 by ANTLR 4.7.
+// Code generated from Cobol85Preprocessor.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package cobol85preprocessor // Cobol85Preprocessor
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -25,6 +25,24 @@ func (s *BaseCobol85PreprocessorListener) EnterStartRule(ctx *StartRuleContext) 
 
 // ExitStartRule is called when production startRule is exited.
 func (s *BaseCobol85PreprocessorListener) ExitStartRule(ctx *StartRuleContext) {}
+
+// EnterCompilerOptions is called when production compilerOptions is entered.
+func (s *BaseCobol85PreprocessorListener) EnterCompilerOptions(ctx *CompilerOptionsContext) {}
+
+// ExitCompilerOptions is called when production compilerOptions is exited.
+func (s *BaseCobol85PreprocessorListener) ExitCompilerOptions(ctx *CompilerOptionsContext) {}
+
+// EnterCompilerXOpts is called when production compilerXOpts is entered.
+func (s *BaseCobol85PreprocessorListener) EnterCompilerXOpts(ctx *CompilerXOptsContext) {}
+
+// ExitCompilerXOpts is called when production compilerXOpts is exited.
+func (s *BaseCobol85PreprocessorListener) ExitCompilerXOpts(ctx *CompilerXOptsContext) {}
+
+// EnterCompilerOption is called when production compilerOption is entered.
+func (s *BaseCobol85PreprocessorListener) EnterCompilerOption(ctx *CompilerOptionContext) {}
+
+// ExitCompilerOption is called when production compilerOption is exited.
+func (s *BaseCobol85PreprocessorListener) ExitCompilerOption(ctx *CompilerOptionContext) {}
 
 // EnterExecCicsStatement is called when production execCicsStatement is entered.
 func (s *BaseCobol85PreprocessorListener) EnterExecCicsStatement(ctx *ExecCicsStatementContext) {}
@@ -55,6 +73,12 @@ func (s *BaseCobol85PreprocessorListener) EnterCopySource(ctx *CopySourceContext
 
 // ExitCopySource is called when production copySource is exited.
 func (s *BaseCobol85PreprocessorListener) ExitCopySource(ctx *CopySourceContext) {}
+
+// EnterCopyLibrary is called when production copyLibrary is entered.
+func (s *BaseCobol85PreprocessorListener) EnterCopyLibrary(ctx *CopyLibraryContext) {}
+
+// ExitCopyLibrary is called when production copyLibrary is exited.
+func (s *BaseCobol85PreprocessorListener) ExitCopyLibrary(ctx *CopyLibraryContext) {}
 
 // EnterReplacingPhrase is called when production replacingPhrase is entered.
 func (s *BaseCobol85PreprocessorListener) EnterReplacingPhrase(ctx *ReplacingPhraseContext) {}
@@ -110,25 +134,23 @@ func (s *BaseCobol85PreprocessorListener) EnterReplacement(ctx *ReplacementConte
 // ExitReplacement is called when production replacement is exited.
 func (s *BaseCobol85PreprocessorListener) ExitReplacement(ctx *ReplacementContext) {}
 
-// EnterControlSpacingStatement is called when production controlSpacingStatement is entered.
-func (s *BaseCobol85PreprocessorListener) EnterControlSpacingStatement(ctx *ControlSpacingStatementContext) {
-}
+// EnterEjectStatement is called when production ejectStatement is entered.
+func (s *BaseCobol85PreprocessorListener) EnterEjectStatement(ctx *EjectStatementContext) {}
 
-// ExitControlSpacingStatement is called when production controlSpacingStatement is exited.
-func (s *BaseCobol85PreprocessorListener) ExitControlSpacingStatement(ctx *ControlSpacingStatementContext) {
-}
+// ExitEjectStatement is called when production ejectStatement is exited.
+func (s *BaseCobol85PreprocessorListener) ExitEjectStatement(ctx *EjectStatementContext) {}
 
-// EnterCobolWord is called when production cobolWord is entered.
-func (s *BaseCobol85PreprocessorListener) EnterCobolWord(ctx *CobolWordContext) {}
+// EnterSkipStatement is called when production skipStatement is entered.
+func (s *BaseCobol85PreprocessorListener) EnterSkipStatement(ctx *SkipStatementContext) {}
 
-// ExitCobolWord is called when production cobolWord is exited.
-func (s *BaseCobol85PreprocessorListener) ExitCobolWord(ctx *CobolWordContext) {}
+// ExitSkipStatement is called when production skipStatement is exited.
+func (s *BaseCobol85PreprocessorListener) ExitSkipStatement(ctx *SkipStatementContext) {}
 
-// EnterLiteral is called when production literal is entered.
-func (s *BaseCobol85PreprocessorListener) EnterLiteral(ctx *LiteralContext) {}
+// EnterTitleStatement is called when production titleStatement is entered.
+func (s *BaseCobol85PreprocessorListener) EnterTitleStatement(ctx *TitleStatementContext) {}
 
-// ExitLiteral is called when production literal is exited.
-func (s *BaseCobol85PreprocessorListener) ExitLiteral(ctx *LiteralContext) {}
+// ExitTitleStatement is called when production titleStatement is exited.
+func (s *BaseCobol85PreprocessorListener) ExitTitleStatement(ctx *TitleStatementContext) {}
 
 // EnterPseudoText is called when production pseudoText is entered.
 func (s *BaseCobol85PreprocessorListener) EnterPseudoText(ctx *PseudoTextContext) {}
@@ -142,11 +164,35 @@ func (s *BaseCobol85PreprocessorListener) EnterCharData(ctx *CharDataContext) {}
 // ExitCharData is called when production charData is exited.
 func (s *BaseCobol85PreprocessorListener) ExitCharData(ctx *CharDataContext) {}
 
+// EnterCharDataSql is called when production charDataSql is entered.
+func (s *BaseCobol85PreprocessorListener) EnterCharDataSql(ctx *CharDataSqlContext) {}
+
+// ExitCharDataSql is called when production charDataSql is exited.
+func (s *BaseCobol85PreprocessorListener) ExitCharDataSql(ctx *CharDataSqlContext) {}
+
 // EnterCharDataLine is called when production charDataLine is entered.
 func (s *BaseCobol85PreprocessorListener) EnterCharDataLine(ctx *CharDataLineContext) {}
 
 // ExitCharDataLine is called when production charDataLine is exited.
 func (s *BaseCobol85PreprocessorListener) ExitCharDataLine(ctx *CharDataLineContext) {}
+
+// EnterCobolWord is called when production cobolWord is entered.
+func (s *BaseCobol85PreprocessorListener) EnterCobolWord(ctx *CobolWordContext) {}
+
+// ExitCobolWord is called when production cobolWord is exited.
+func (s *BaseCobol85PreprocessorListener) ExitCobolWord(ctx *CobolWordContext) {}
+
+// EnterLiteral is called when production literal is entered.
+func (s *BaseCobol85PreprocessorListener) EnterLiteral(ctx *LiteralContext) {}
+
+// ExitLiteral is called when production literal is exited.
+func (s *BaseCobol85PreprocessorListener) ExitLiteral(ctx *LiteralContext) {}
+
+// EnterFilename is called when production filename is entered.
+func (s *BaseCobol85PreprocessorListener) EnterFilename(ctx *FilenameContext) {}
+
+// ExitFilename is called when production filename is exited.
+func (s *BaseCobol85PreprocessorListener) ExitFilename(ctx *FilenameContext) {}
 
 // EnterCharDataKeyword is called when production charDataKeyword is entered.
 func (s *BaseCobol85PreprocessorListener) EnterCharDataKeyword(ctx *CharDataKeywordContext) {}

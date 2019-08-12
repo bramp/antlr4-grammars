@@ -1,4 +1,4 @@
-// Generated from XMLParser.g4 by ANTLR 4.7.
+// Code generated from XMLParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package xml // XMLParser
 import (
@@ -729,12 +729,28 @@ func NewElementContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 
 func (s *ElementContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *ElementContext) AllOPEN() []antlr.TerminalNode {
+	return s.GetTokens(XMLParserOPEN)
+}
+
+func (s *ElementContext) OPEN(i int) antlr.TerminalNode {
+	return s.GetToken(XMLParserOPEN, i)
+}
+
 func (s *ElementContext) AllName() []antlr.TerminalNode {
 	return s.GetTokens(XMLParserName)
 }
 
 func (s *ElementContext) Name(i int) antlr.TerminalNode {
 	return s.GetToken(XMLParserName, i)
+}
+
+func (s *ElementContext) AllCLOSE() []antlr.TerminalNode {
+	return s.GetTokens(XMLParserCLOSE)
+}
+
+func (s *ElementContext) CLOSE(i int) antlr.TerminalNode {
+	return s.GetToken(XMLParserCLOSE, i)
 }
 
 func (s *ElementContext) Content() IContentContext {
@@ -745,6 +761,10 @@ func (s *ElementContext) Content() IContentContext {
 	}
 
 	return t.(IContentContext)
+}
+
+func (s *ElementContext) SLASH() antlr.TerminalNode {
+	return s.GetToken(XMLParserSLASH, 0)
 }
 
 func (s *ElementContext) AllAttribute() []IAttributeContext {
@@ -768,6 +788,10 @@ func (s *ElementContext) Attribute(i int) IAttributeContext {
 	}
 
 	return t.(IAttributeContext)
+}
+
+func (s *ElementContext) SLASH_CLOSE() antlr.TerminalNode {
+	return s.GetToken(XMLParserSLASH_CLOSE, 0)
 }
 
 func (s *ElementContext) GetRuleContext() antlr.RuleContext {
@@ -985,14 +1009,16 @@ func (p *XMLParser) Reference() (localctx IReferenceContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(85)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(85)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == XMLParserEntityRef || _la == XMLParserCharRef) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == XMLParserEntityRef || _la == XMLParserCharRef) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -1038,6 +1064,10 @@ func (s *AttributeContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *AttributeContext) Name() antlr.TerminalNode {
 	return s.GetToken(XMLParserName, 0)
+}
+
+func (s *AttributeContext) EQUALS() antlr.TerminalNode {
+	return s.GetToken(XMLParserEQUALS, 0)
 }
 
 func (s *AttributeContext) STRING() antlr.TerminalNode {
@@ -1189,14 +1219,16 @@ func (p *XMLParser) Chardata() (localctx IChardataContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(91)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(91)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == XMLParserSEA_WS || _la == XMLParserTEXT) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == XMLParserSEA_WS || _la == XMLParserTEXT) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -1294,14 +1326,16 @@ func (p *XMLParser) Misc() (localctx IMiscContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(93)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(93)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<XMLParserCOMMENT)|(1<<XMLParserSEA_WS)|(1<<XMLParserPI))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<XMLParserCOMMENT)|(1<<XMLParserSEA_WS)|(1<<XMLParserPI))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

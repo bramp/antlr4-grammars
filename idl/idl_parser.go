@@ -1,4 +1,4 @@
-// Generated from IDL.g4 by ANTLR 4.7.
+// Code generated from IDL.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package idl // IDL
 import (
@@ -1873,14 +1873,16 @@ func (p *IDLParser) Forward_decl() (localctx IForward_declContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == IDLParserKW_ABSTRACT || _la == IDLParserKW_LOCAL {
-		p.SetState(339)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(339)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == IDLParserKW_ABSTRACT || _la == IDLParserKW_LOCAL) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == IDLParserKW_ABSTRACT || _la == IDLParserKW_LOCAL) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -2007,14 +2009,16 @@ func (p *IDLParser) Interface_header() (localctx IInterface_headerContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == IDLParserKW_ABSTRACT || _la == IDLParserKW_LOCAL {
-		p.SetState(345)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(345)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == IDLParserKW_ABSTRACT || _la == IDLParserKW_LOCAL) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == IDLParserKW_ABSTRACT || _la == IDLParserKW_LOCAL) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -4185,14 +4189,16 @@ func (p *IDLParser) State_member() (localctx IState_memberContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(482)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(482)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == IDLParserKW_PRIVATE || _la == IDLParserKW_PUBLIC) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == IDLParserKW_PRIVATE || _la == IDLParserKW_PUBLIC) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(483)
@@ -5756,14 +5762,16 @@ func (p *IDLParser) Shift_expr() (localctx IShift_exprContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == IDLParserRIGHT_SHIFT || _la == IDLParserLEFT_SHIFT {
-		p.SetState(558)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(558)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == IDLParserRIGHT_SHIFT || _la == IDLParserLEFT_SHIFT) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == IDLParserRIGHT_SHIFT || _la == IDLParserLEFT_SHIFT) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(559)
@@ -5906,14 +5914,16 @@ func (p *IDLParser) Add_expr() (localctx IAdd_exprContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == IDLParserPLUS || _la == IDLParserMINUS {
-		p.SetState(566)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(566)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == IDLParserPLUS || _la == IDLParserMINUS) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == IDLParserPLUS || _la == IDLParserMINUS) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(567)
@@ -5989,6 +5999,14 @@ func (s *Mult_exprContext) Unary_expr(i int) IUnary_exprContext {
 	return t.(IUnary_exprContext)
 }
 
+func (s *Mult_exprContext) AllSTAR() []antlr.TerminalNode {
+	return s.GetTokens(IDLParserSTAR)
+}
+
+func (s *Mult_exprContext) STAR(i int) antlr.TerminalNode {
+	return s.GetToken(IDLParserSTAR, i)
+}
+
 func (s *Mult_exprContext) AllSLASH() []antlr.TerminalNode {
 	return s.GetTokens(IDLParserSLASH)
 }
@@ -6056,14 +6074,16 @@ func (p *IDLParser) Mult_expr() (localctx IMult_exprContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IDLParserSLASH)|(1<<IDLParserSTAR)|(1<<IDLParserPERCENT))) != 0 {
-		p.SetState(574)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(574)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IDLParserSLASH)|(1<<IDLParserSTAR)|(1<<IDLParserPERCENT))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IDLParserSLASH)|(1<<IDLParserSTAR)|(1<<IDLParserPERCENT))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(575)
@@ -6297,14 +6317,16 @@ func (p *IDLParser) Unary_operator() (localctx IUnary_operatorContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(587)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(587)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IDLParserTILDE)|(1<<IDLParserPLUS)|(1<<IDLParserMINUS))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IDLParserTILDE)|(1<<IDLParserPLUS)|(1<<IDLParserMINUS))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -6582,14 +6604,16 @@ func (p *IDLParser) Literal() (localctx ILiteralContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(597)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(597)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IDLParserINTEGER_LITERAL)|(1<<IDLParserHEX_LITERAL)|(1<<IDLParserFLOATING_PT_LITERAL)|(1<<IDLParserFIXED_PT_LITERAL)|(1<<IDLParserWIDE_CHARACTER_LITERAL)|(1<<IDLParserCHARACTER_LITERAL)|(1<<IDLParserWIDE_STRING_LITERAL)|(1<<IDLParserSTRING_LITERAL)|(1<<IDLParserBOOLEAN_LITERAL))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<IDLParserINTEGER_LITERAL)|(1<<IDLParserHEX_LITERAL)|(1<<IDLParserFLOATING_PT_LITERAL)|(1<<IDLParserFIXED_PT_LITERAL)|(1<<IDLParserWIDE_CHARACTER_LITERAL)|(1<<IDLParserCHARACTER_LITERAL)|(1<<IDLParserWIDE_STRING_LITERAL)|(1<<IDLParserSTRING_LITERAL)|(1<<IDLParserBOOLEAN_LITERAL))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -13118,14 +13142,16 @@ func (p *IDLParser) Param_attribute() (localctx IParam_attributeContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(873)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(873)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == IDLParserKW_OUT || _la == IDLParserKW_IN || _la == IDLParserKW_INOUT) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == IDLParserKW_OUT || _la == IDLParserKW_IN || _la == IDLParserKW_INOUT) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

@@ -34,6 +34,14 @@ const MAX_TOKENS = 1000000
 
 var examples = []string{
 	"grammars-v4/c/examples/BinaryDigit.c",
+	"grammars-v4/c/examples/FuncCallAsFuncArgument.c",
+	"grammars-v4/c/examples/FuncCallwithVarArgs.c",
+	"grammars-v4/c/examples/FuncForwardDeclaration.c",
+	"grammars-v4/c/examples/FunctionCall.c",
+	"grammars-v4/c/examples/FunctionPointer.c",
+	"grammars-v4/c/examples/FunctionReturningPointer.c",
+	"grammars-v4/c/examples/ParameterOfPointerType.c",
+	"grammars-v4/c/examples/TypeCast.c",
 	"grammars-v4/c/examples/add.c",
 	"grammars-v4/c/examples/bt.c",
 	"grammars-v4/c/examples/dialog.c",
@@ -91,8 +99,8 @@ func TestCLexer(t *testing.T) {
 		// Try and read all tokens
 		i := 0
 		for ; i < MAX_TOKENS; i++ {
-			t := lexer.NextToken()
-			if t.GetTokenType() == antlr.TokenEOF {
+			tok := lexer.NextToken()
+			if tok.GetTokenType() == antlr.TokenEOF {
 				break
 			}
 		}

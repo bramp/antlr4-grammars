@@ -1,4 +1,4 @@
-// Generated from fol.g4 by ANTLR 4.7.
+// Code generated from fol.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package fol // fol
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -32,50 +32,44 @@ func (s *BasefolListener) EnterFormula(ctx *FormulaContext) {}
 // ExitFormula is called when production formula is exited.
 func (s *BasefolListener) ExitFormula(ctx *FormulaContext) {}
 
-// EnterDisjunction is called when production disjunction is entered.
-func (s *BasefolListener) EnterDisjunction(ctx *DisjunctionContext) {}
-
-// ExitDisjunction is called when production disjunction is exited.
-func (s *BasefolListener) ExitDisjunction(ctx *DisjunctionContext) {}
-
-// EnterConjunction is called when production conjunction is entered.
-func (s *BasefolListener) EnterConjunction(ctx *ConjunctionContext) {}
-
-// ExitConjunction is called when production conjunction is exited.
-func (s *BasefolListener) ExitConjunction(ctx *ConjunctionContext) {}
-
-// EnterNegation is called when production negation is entered.
-func (s *BasefolListener) EnterNegation(ctx *NegationContext) {}
-
-// ExitNegation is called when production negation is exited.
-func (s *BasefolListener) ExitNegation(ctx *NegationContext) {}
-
-// EnterPredicate is called when production predicate is entered.
-func (s *BasefolListener) EnterPredicate(ctx *PredicateContext) {}
-
-// ExitPredicate is called when production predicate is exited.
-func (s *BasefolListener) ExitPredicate(ctx *PredicateContext) {}
-
-// EnterPredicateTuple is called when production predicateTuple is entered.
-func (s *BasefolListener) EnterPredicateTuple(ctx *PredicateTupleContext) {}
-
-// ExitPredicateTuple is called when production predicateTuple is exited.
-func (s *BasefolListener) ExitPredicateTuple(ctx *PredicateTupleContext) {}
-
 // EnterTerm is called when production term is entered.
 func (s *BasefolListener) EnterTerm(ctx *TermContext) {}
 
 // ExitTerm is called when production term is exited.
 func (s *BasefolListener) ExitTerm(ctx *TermContext) {}
 
-// EnterFunction is called when production function is entered.
-func (s *BasefolListener) EnterFunction(ctx *FunctionContext) {}
+// EnterBin_connective is called when production bin_connective is entered.
+func (s *BasefolListener) EnterBin_connective(ctx *Bin_connectiveContext) {}
 
-// ExitFunction is called when production function is exited.
-func (s *BasefolListener) ExitFunction(ctx *FunctionContext) {}
+// ExitBin_connective is called when production bin_connective is exited.
+func (s *BasefolListener) ExitBin_connective(ctx *Bin_connectiveContext) {}
 
-// EnterFunctionTuple is called when production functionTuple is entered.
-func (s *BasefolListener) EnterFunctionTuple(ctx *FunctionTupleContext) {}
+// EnterVariable is called when production variable is entered.
+func (s *BasefolListener) EnterVariable(ctx *VariableContext) {}
 
-// ExitFunctionTuple is called when production functionTuple is exited.
-func (s *BasefolListener) ExitFunctionTuple(ctx *FunctionTupleContext) {}
+// ExitVariable is called when production variable is exited.
+func (s *BasefolListener) ExitVariable(ctx *VariableContext) {}
+
+// EnterPred_constant is called when production pred_constant is entered.
+func (s *BasefolListener) EnterPred_constant(ctx *Pred_constantContext) {}
+
+// ExitPred_constant is called when production pred_constant is exited.
+func (s *BasefolListener) ExitPred_constant(ctx *Pred_constantContext) {}
+
+// EnterInd_constant is called when production ind_constant is entered.
+func (s *BasefolListener) EnterInd_constant(ctx *Ind_constantContext) {}
+
+// ExitInd_constant is called when production ind_constant is exited.
+func (s *BasefolListener) ExitInd_constant(ctx *Ind_constantContext) {}
+
+// EnterFunc_constant is called when production func_constant is entered.
+func (s *BasefolListener) EnterFunc_constant(ctx *Func_constantContext) {}
+
+// ExitFunc_constant is called when production func_constant is exited.
+func (s *BasefolListener) ExitFunc_constant(ctx *Func_constantContext) {}
+
+// EnterSeparator is called when production separator is entered.
+func (s *BasefolListener) EnterSeparator(ctx *SeparatorContext) {}
+
+// ExitSeparator is called when production separator is exited.
+func (s *BasefolListener) ExitSeparator(ctx *SeparatorContext) {}

@@ -1,4 +1,4 @@
-// Generated from Cobol85.g4 by ANTLR 4.7.
+// Code generated from Cobol85.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package cobol85 // Cobol85
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -43,24 +43,6 @@ func (s *BaseCobol85Listener) EnterEndProgramStatement(ctx *EndProgramStatementC
 
 // ExitEndProgramStatement is called when production endProgramStatement is exited.
 func (s *BaseCobol85Listener) ExitEndProgramStatement(ctx *EndProgramStatementContext) {}
-
-// EnterCompilerOptions is called when production compilerOptions is entered.
-func (s *BaseCobol85Listener) EnterCompilerOptions(ctx *CompilerOptionsContext) {}
-
-// ExitCompilerOptions is called when production compilerOptions is exited.
-func (s *BaseCobol85Listener) ExitCompilerOptions(ctx *CompilerOptionsContext) {}
-
-// EnterCompilerOption is called when production compilerOption is entered.
-func (s *BaseCobol85Listener) EnterCompilerOption(ctx *CompilerOptionContext) {}
-
-// ExitCompilerOption is called when production compilerOption is exited.
-func (s *BaseCobol85Listener) ExitCompilerOption(ctx *CompilerOptionContext) {}
-
-// EnterCompilerSubOption is called when production compilerSubOption is entered.
-func (s *BaseCobol85Listener) EnterCompilerSubOption(ctx *CompilerSubOptionContext) {}
-
-// ExitCompilerSubOption is called when production compilerSubOption is exited.
-func (s *BaseCobol85Listener) ExitCompilerSubOption(ctx *CompilerSubOptionContext) {}
 
 // EnterIdentificationDivision is called when production identificationDivision is entered.
 func (s *BaseCobol85Listener) EnterIdentificationDivision(ctx *IdentificationDivisionContext) {}
@@ -521,11 +503,11 @@ func (s *BaseCobol85Listener) EnterDataDivision(ctx *DataDivisionContext) {}
 // ExitDataDivision is called when production dataDivision is exited.
 func (s *BaseCobol85Listener) ExitDataDivision(ctx *DataDivisionContext) {}
 
-// EnterDataDivisionBody is called when production dataDivisionBody is entered.
-func (s *BaseCobol85Listener) EnterDataDivisionBody(ctx *DataDivisionBodyContext) {}
+// EnterDataDivisionSection is called when production dataDivisionSection is entered.
+func (s *BaseCobol85Listener) EnterDataDivisionSection(ctx *DataDivisionSectionContext) {}
 
-// ExitDataDivisionBody is called when production dataDivisionBody is exited.
-func (s *BaseCobol85Listener) ExitDataDivisionBody(ctx *DataDivisionBodyContext) {}
+// ExitDataDivisionSection is called when production dataDivisionSection is exited.
+func (s *BaseCobol85Listener) ExitDataDivisionSection(ctx *DataDivisionSectionContext) {}
 
 // EnterFileSection is called when production fileSection is entered.
 func (s *BaseCobol85Listener) EnterFileSection(ctx *FileSectionContext) {}
@@ -1610,12 +1592,6 @@ func (s *BaseCobol85Listener) EnterPictureChars(ctx *PictureCharsContext) {}
 // ExitPictureChars is called when production pictureChars is exited.
 func (s *BaseCobol85Listener) ExitPictureChars(ctx *PictureCharsContext) {}
 
-// EnterPictureCharsKeyword is called when production pictureCharsKeyword is entered.
-func (s *BaseCobol85Listener) EnterPictureCharsKeyword(ctx *PictureCharsKeywordContext) {}
-
-// ExitPictureCharsKeyword is called when production pictureCharsKeyword is exited.
-func (s *BaseCobol85Listener) ExitPictureCharsKeyword(ctx *PictureCharsKeywordContext) {}
-
 // EnterPictureCardinality is called when production pictureCardinality is entered.
 func (s *BaseCobol85Listener) EnterPictureCardinality(ctx *PictureCardinalityContext) {}
 
@@ -1739,6 +1715,44 @@ func (s *BaseCobol85Listener) EnterProcedureDivisionGivingClause(ctx *ProcedureD
 // ExitProcedureDivisionGivingClause is called when production procedureDivisionGivingClause is exited.
 func (s *BaseCobol85Listener) ExitProcedureDivisionGivingClause(ctx *ProcedureDivisionGivingClauseContext) {
 }
+
+// EnterProcedureDivisionUsingParameter is called when production procedureDivisionUsingParameter is entered.
+func (s *BaseCobol85Listener) EnterProcedureDivisionUsingParameter(ctx *ProcedureDivisionUsingParameterContext) {
+}
+
+// ExitProcedureDivisionUsingParameter is called when production procedureDivisionUsingParameter is exited.
+func (s *BaseCobol85Listener) ExitProcedureDivisionUsingParameter(ctx *ProcedureDivisionUsingParameterContext) {
+}
+
+// EnterProcedureDivisionByReferencePhrase is called when production procedureDivisionByReferencePhrase is entered.
+func (s *BaseCobol85Listener) EnterProcedureDivisionByReferencePhrase(ctx *ProcedureDivisionByReferencePhraseContext) {
+}
+
+// ExitProcedureDivisionByReferencePhrase is called when production procedureDivisionByReferencePhrase is exited.
+func (s *BaseCobol85Listener) ExitProcedureDivisionByReferencePhrase(ctx *ProcedureDivisionByReferencePhraseContext) {
+}
+
+// EnterProcedureDivisionByReference is called when production procedureDivisionByReference is entered.
+func (s *BaseCobol85Listener) EnterProcedureDivisionByReference(ctx *ProcedureDivisionByReferenceContext) {
+}
+
+// ExitProcedureDivisionByReference is called when production procedureDivisionByReference is exited.
+func (s *BaseCobol85Listener) ExitProcedureDivisionByReference(ctx *ProcedureDivisionByReferenceContext) {
+}
+
+// EnterProcedureDivisionByValuePhrase is called when production procedureDivisionByValuePhrase is entered.
+func (s *BaseCobol85Listener) EnterProcedureDivisionByValuePhrase(ctx *ProcedureDivisionByValuePhraseContext) {
+}
+
+// ExitProcedureDivisionByValuePhrase is called when production procedureDivisionByValuePhrase is exited.
+func (s *BaseCobol85Listener) ExitProcedureDivisionByValuePhrase(ctx *ProcedureDivisionByValuePhraseContext) {
+}
+
+// EnterProcedureDivisionByValue is called when production procedureDivisionByValue is entered.
+func (s *BaseCobol85Listener) EnterProcedureDivisionByValue(ctx *ProcedureDivisionByValueContext) {}
+
+// ExitProcedureDivisionByValue is called when production procedureDivisionByValue is exited.
+func (s *BaseCobol85Listener) ExitProcedureDivisionByValue(ctx *ProcedureDivisionByValueContext) {}
 
 // EnterProcedureDeclaratives is called when production procedureDeclaratives is entered.
 func (s *BaseCobol85Listener) EnterProcedureDeclaratives(ctx *ProcedureDeclarativesContext) {}
@@ -1865,6 +1879,12 @@ func (s *BaseCobol85Listener) EnterAddTo(ctx *AddToContext) {}
 
 // ExitAddTo is called when production addTo is exited.
 func (s *BaseCobol85Listener) ExitAddTo(ctx *AddToContext) {}
+
+// EnterAddToGiving is called when production addToGiving is entered.
+func (s *BaseCobol85Listener) EnterAddToGiving(ctx *AddToGivingContext) {}
+
+// ExitAddToGiving is called when production addToGiving is exited.
+func (s *BaseCobol85Listener) ExitAddToGiving(ctx *AddToGivingContext) {}
 
 // EnterAddGiving is called when production addGiving is entered.
 func (s *BaseCobol85Listener) EnterAddGiving(ctx *AddGivingContext) {}
@@ -2111,6 +2131,12 @@ func (s *BaseCobol85Listener) EnterDivideGivingPhrase(ctx *DivideGivingPhraseCon
 
 // ExitDivideGivingPhrase is called when production divideGivingPhrase is exited.
 func (s *BaseCobol85Listener) ExitDivideGivingPhrase(ctx *DivideGivingPhraseContext) {}
+
+// EnterDivideInto is called when production divideInto is entered.
+func (s *BaseCobol85Listener) EnterDivideInto(ctx *DivideIntoContext) {}
+
+// ExitDivideInto is called when production divideInto is exited.
+func (s *BaseCobol85Listener) ExitDivideInto(ctx *DivideIntoContext) {}
 
 // EnterDivideGiving is called when production divideGiving is entered.
 func (s *BaseCobol85Listener) EnterDivideGiving(ctx *DivideGivingContext) {}
@@ -2488,6 +2514,14 @@ func (s *BaseCobol85Listener) EnterMoveCorrespondingToStatement(ctx *MoveCorresp
 
 // ExitMoveCorrespondingToStatement is called when production moveCorrespondingToStatement is exited.
 func (s *BaseCobol85Listener) ExitMoveCorrespondingToStatement(ctx *MoveCorrespondingToStatementContext) {
+}
+
+// EnterMoveCorrespondingToSendingArea is called when production moveCorrespondingToSendingArea is entered.
+func (s *BaseCobol85Listener) EnterMoveCorrespondingToSendingArea(ctx *MoveCorrespondingToSendingAreaContext) {
+}
+
+// ExitMoveCorrespondingToSendingArea is called when production moveCorrespondingToSendingArea is exited.
+func (s *BaseCobol85Listener) ExitMoveCorrespondingToSendingArea(ctx *MoveCorrespondingToSendingAreaContext) {
 }
 
 // EnterMultiplyStatement is called when production multiplyStatement is entered.

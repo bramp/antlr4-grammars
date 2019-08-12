@@ -1,4 +1,4 @@
-// Generated from JavaParser.g4 by ANTLR 4.7.
+// Code generated from JavaParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package java // JavaParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -525,6 +525,12 @@ func (s *BaseJavaParserListener) EnterExpressionList(ctx *ExpressionListContext)
 
 // ExitExpressionList is called when production expressionList is exited.
 func (s *BaseJavaParserListener) ExitExpressionList(ctx *ExpressionListContext) {}
+
+// EnterMethodCall is called when production methodCall is entered.
+func (s *BaseJavaParserListener) EnterMethodCall(ctx *MethodCallContext) {}
+
+// ExitMethodCall is called when production methodCall is exited.
+func (s *BaseJavaParserListener) ExitMethodCall(ctx *MethodCallContext) {}
 
 // EnterExpression is called when production expression is entered.
 func (s *BaseJavaParserListener) EnterExpression(ctx *ExpressionContext) {}

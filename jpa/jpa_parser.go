@@ -1,4 +1,4 @@
-// Generated from JPA.g4 by ANTLR 4.7.
+// Code generated from JPA.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package jpa // JPA
 import (
@@ -4595,14 +4595,16 @@ func (p *JPAParser) Aggregate_expression() (localctx IAggregate_expressionContex
 	switch p.GetTokenStream().LA(1) {
 	case JPAParserT__21, JPAParserT__22, JPAParserT__23, JPAParserT__24:
 		p.EnterOuterAlt(localctx, 1)
-		p.SetState(398)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(398)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<JPAParserT__21)|(1<<JPAParserT__22)|(1<<JPAParserT__23)|(1<<JPAParserT__24))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<JPAParserT__21)|(1<<JPAParserT__22)|(1<<JPAParserT__23)|(1<<JPAParserT__24))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(399)
@@ -5372,14 +5374,16 @@ func (p *JPAParser) Orderby_item() (localctx IOrderby_itemContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == JPAParserT__31 || _la == JPAParserT__32 {
-		p.SetState(450)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(450)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == JPAParserT__31 || _la == JPAParserT__32) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == JPAParserT__31 || _la == JPAParserT__32) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -8263,14 +8267,16 @@ func (p *JPAParser) All_or_any_expression() (localctx IAll_or_any_expressionCont
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(633)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(633)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-45)&-(0x1f+1)) == 0 && ((1<<uint((_la-45)))&((1<<(JPAParserT__44-45))|(1<<(JPAParserT__45-45))|(1<<(JPAParserT__46-45)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-45)&-(0x1f+1)) == 0 && ((1<<uint((_la-45)))&((1<<(JPAParserT__44-45))|(1<<(JPAParserT__45-45))|(1<<(JPAParserT__46-45)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(634)
@@ -8564,14 +8570,16 @@ func (p *JPAParser) Comparison_expression() (localctx IComparison_expressionCont
 			p.SetState(644)
 			p.Boolean_expression()
 		}
-		p.SetState(645)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(645)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == JPAParserT__14 || _la == JPAParserT__47) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == JPAParserT__14 || _la == JPAParserT__47) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		p.SetState(648)
 		p.GetErrorHandler().Sync(p)
@@ -8599,14 +8607,16 @@ func (p *JPAParser) Comparison_expression() (localctx IComparison_expressionCont
 			p.SetState(650)
 			p.Enum_expression()
 		}
-		p.SetState(651)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(651)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == JPAParserT__14 || _la == JPAParserT__47) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == JPAParserT__14 || _la == JPAParserT__47) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		p.SetState(654)
 		p.GetErrorHandler().Sync(p)
@@ -8664,14 +8674,16 @@ func (p *JPAParser) Comparison_expression() (localctx IComparison_expressionCont
 			p.SetState(662)
 			p.Entity_expression()
 		}
-		p.SetState(663)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(663)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == JPAParserT__14 || _la == JPAParserT__47) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == JPAParserT__14 || _la == JPAParserT__47) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		p.SetState(666)
 		p.GetErrorHandler().Sync(p)
@@ -8807,14 +8819,16 @@ func (p *JPAParser) Comparison_operator() (localctx IComparison_operatorContext)
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(676)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(676)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == JPAParserT__14 || (((_la-48)&-(0x1f+1)) == 0 && ((1<<uint((_la-48)))&((1<<(JPAParserT__47-48))|(1<<(JPAParserT__48-48))|(1<<(JPAParserT__49-48))|(1<<(JPAParserT__50-48))|(1<<(JPAParserT__51-48)))) != 0)) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == JPAParserT__14 || (((_la-48)&-(0x1f+1)) == 0 && ((1<<uint((_la-48)))&((1<<(JPAParserT__47-48))|(1<<(JPAParserT__48-48))|(1<<(JPAParserT__49-48))|(1<<(JPAParserT__50-48))|(1<<(JPAParserT__51-48)))) != 0)) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -9061,14 +9075,16 @@ func (p *JPAParser) Simple_arithmetic_expression() (localctx ISimple_arithmetic_
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == JPAParserT__52 || _la == JPAParserT__53 {
-		p.SetState(686)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(686)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == JPAParserT__52 || _la == JPAParserT__53) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == JPAParserT__52 || _la == JPAParserT__53) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(687)
@@ -9196,14 +9212,16 @@ func (p *JPAParser) Arithmetic_term() (localctx IArithmetic_termContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == JPAParserT__54 || _la == JPAParserT__55 {
-		p.SetState(694)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(694)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == JPAParserT__54 || _la == JPAParserT__55) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == JPAParserT__54 || _la == JPAParserT__55) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(695)
@@ -9312,14 +9330,16 @@ func (p *JPAParser) Arithmetic_factor() (localctx IArithmetic_factorContext) {
 	p.GetErrorHandler().Sync(p)
 
 	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 83, p.GetParserRuleContext()) == 1 {
-		p.SetState(701)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(701)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == JPAParserT__52 || _la == JPAParserT__53) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == JPAParserT__52 || _la == JPAParserT__53) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -11266,14 +11286,16 @@ func (p *JPAParser) Functions_returning_datetime() (localctx IFunctions_returnin
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(816)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(816)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-63)&-(0x1f+1)) == 0 && ((1<<uint((_la-63)))&((1<<(JPAParserT__62-63))|(1<<(JPAParserT__63-63))|(1<<(JPAParserT__64-63)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-63)&-(0x1f+1)) == 0 && ((1<<uint((_la-63)))&((1<<(JPAParserT__62-63))|(1<<(JPAParserT__63-63))|(1<<(JPAParserT__64-63)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -11660,14 +11682,16 @@ func (p *JPAParser) Trim_specification() (localctx ITrim_specificationContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(860)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(860)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(JPAParserT__70-71))|(1<<(JPAParserT__71-71))|(1<<(JPAParserT__72-71)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(JPAParserT__70-71))|(1<<(JPAParserT__71-71))|(1<<(JPAParserT__72-71)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -12281,14 +12305,16 @@ func (p *JPAParser) Boolean_literal() (localctx IBoolean_literalContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(878)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(878)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == JPAParserT__75 || _la == JPAParserT__76) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == JPAParserT__75 || _la == JPAParserT__76) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

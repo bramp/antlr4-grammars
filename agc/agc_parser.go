@@ -1,4 +1,4 @@
-// Generated from agc.g4 by ANTLR 4.7.
+// Code generated from agc.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package agc // agc
 import (
@@ -1593,14 +1593,16 @@ func (p *agcParser) Assignment_line() (localctx IAssignment_lineContext) {
 		}
 
 	}
-	p.SetState(117)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(117)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == agcParserT__1 || _la == agcParserT__2) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == agcParserT__1 || _la == agcParserT__2) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	p.SetState(124)
 	p.GetErrorHandler().Sync(p)
@@ -2594,14 +2596,16 @@ func (p *agcParser) Expression() (localctx IExpressionContext) {
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
-			p.SetState(171)
-			_la = p.GetTokenStream().LA(1)
+			{
+				p.SetState(171)
+				_la = p.GetTokenStream().LA(1)
 
-			if !(_la == agcParserPLUS || _la == agcParserMINUS) {
-				p.GetErrorHandler().RecoverInline(p)
-			} else {
-				p.GetErrorHandler().ReportMatch(p)
-				p.Consume()
+				if !(_la == agcParserPLUS || _la == agcParserMINUS) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
 			}
 			{
 				p.SetState(172)
@@ -2745,14 +2749,16 @@ func (p *agcParser) MultiplyingExpression() (localctx IMultiplyingExpressionCont
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == agcParserTIMES || _la == agcParserDIV {
-		p.SetState(179)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(179)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == agcParserTIMES || _la == agcParserDIV) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == agcParserTIMES || _la == agcParserDIV) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(180)
@@ -3071,6 +3077,14 @@ func (s *DecimalContext) DECIMAL() antlr.TerminalNode {
 	return s.GetToken(agcParserDECIMAL, 0)
 }
 
+func (s *DecimalContext) PLUS() antlr.TerminalNode {
+	return s.GetToken(agcParserPLUS, 0)
+}
+
+func (s *DecimalContext) MINUS() antlr.TerminalNode {
+	return s.GetToken(agcParserMINUS, 0)
+}
+
 func (s *DecimalContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -3118,14 +3132,16 @@ func (p *agcParser) Decimal() (localctx IDecimalContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == agcParserPLUS || _la == agcParserMINUS {
-		p.SetState(195)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(195)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == agcParserPLUS || _la == agcParserMINUS) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == agcParserPLUS || _la == agcParserMINUS) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -3216,14 +3232,16 @@ func (p *agcParser) Register() (localctx IRegisterContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(200)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(200)
+		_la = p.GetTokenStream().LA(1)
 
-	if !((((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<agcParserT__3)|(1<<agcParserT__4)|(1<<agcParserT__5)|(1<<agcParserT__6)|(1<<agcParserT__7)|(1<<agcParserT__8)|(1<<agcParserT__9)|(1<<agcParserT__10)|(1<<agcParserT__11)|(1<<agcParserT__12)|(1<<agcParserT__13)|(1<<agcParserT__14)|(1<<agcParserT__15)|(1<<agcParserT__16)|(1<<agcParserT__17)|(1<<agcParserT__18)|(1<<agcParserT__19)|(1<<agcParserT__20)|(1<<agcParserT__21)|(1<<agcParserT__22)|(1<<agcParserT__23)|(1<<agcParserT__24)|(1<<agcParserT__25)|(1<<agcParserT__26)|(1<<agcParserT__27)|(1<<agcParserT__28)|(1<<agcParserT__29)|(1<<agcParserT__30))) != 0) || (((_la-32)&-(0x1f+1)) == 0 && ((1<<uint((_la-32)))&((1<<(agcParserT__31-32))|(1<<(agcParserT__32-32))|(1<<(agcParserT__33-32))|(1<<(agcParserT__34-32))|(1<<(agcParserT__35-32))|(1<<(agcParserT__36-32))|(1<<(agcParserT__37-32))|(1<<(agcParserT__38-32))|(1<<(agcParserT__39-32))|(1<<(agcParserT__40-32))|(1<<(agcParserT__41-32))|(1<<(agcParserT__42-32))|(1<<(agcParserT__43-32))|(1<<(agcParserT__44-32))|(1<<(agcParserT__45-32))|(1<<(agcParserT__46-32))|(1<<(agcParserT__47-32))|(1<<(agcParserT__48-32))|(1<<(agcParserT__49-32))|(1<<(agcParserT__50-32))|(1<<(agcParserT__51-32)))) != 0)) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !((((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<agcParserT__3)|(1<<agcParserT__4)|(1<<agcParserT__5)|(1<<agcParserT__6)|(1<<agcParserT__7)|(1<<agcParserT__8)|(1<<agcParserT__9)|(1<<agcParserT__10)|(1<<agcParserT__11)|(1<<agcParserT__12)|(1<<agcParserT__13)|(1<<agcParserT__14)|(1<<agcParserT__15)|(1<<agcParserT__16)|(1<<agcParserT__17)|(1<<agcParserT__18)|(1<<agcParserT__19)|(1<<agcParserT__20)|(1<<agcParserT__21)|(1<<agcParserT__22)|(1<<agcParserT__23)|(1<<agcParserT__24)|(1<<agcParserT__25)|(1<<agcParserT__26)|(1<<agcParserT__27)|(1<<agcParserT__28)|(1<<agcParserT__29)|(1<<agcParserT__30))) != 0) || (((_la-32)&-(0x1f+1)) == 0 && ((1<<uint((_la-32)))&((1<<(agcParserT__31-32))|(1<<(agcParserT__32-32))|(1<<(agcParserT__33-32))|(1<<(agcParserT__34-32))|(1<<(agcParserT__35-32))|(1<<(agcParserT__36-32))|(1<<(agcParserT__37-32))|(1<<(agcParserT__38-32))|(1<<(agcParserT__39-32))|(1<<(agcParserT__40-32))|(1<<(agcParserT__41-32))|(1<<(agcParserT__42-32))|(1<<(agcParserT__43-32))|(1<<(agcParserT__44-32))|(1<<(agcParserT__45-32))|(1<<(agcParserT__46-32))|(1<<(agcParserT__47-32))|(1<<(agcParserT__48-32))|(1<<(agcParserT__49-32))|(1<<(agcParserT__50-32))|(1<<(agcParserT__51-32)))) != 0)) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -3448,14 +3466,16 @@ func (p *agcParser) Axt_opcode() (localctx IAxt_opcodeContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(207)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(207)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == agcParserT__52 || _la == agcParserT__53) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == agcParserT__52 || _la == agcParserT__53) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -3540,14 +3560,16 @@ func (p *agcParser) Pseudo_opcode() (localctx IPseudo_opcodeContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(209)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(209)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-55)&-(0x1f+1)) == 0 && ((1<<uint((_la-55)))&((1<<(agcParserT__54-55))|(1<<(agcParserT__55-55))|(1<<(agcParserT__56-55))|(1<<(agcParserT__57-55))|(1<<(agcParserT__58-55))|(1<<(agcParserT__59-55))|(1<<(agcParserT__60-55))|(1<<(agcParserT__61-55))|(1<<(agcParserT__62-55))|(1<<(agcParserT__63-55))|(1<<(agcParserT__64-55))|(1<<(agcParserT__65-55))|(1<<(agcParserT__66-55))|(1<<(agcParserT__67-55))|(1<<(agcParserT__68-55))|(1<<(agcParserT__69-55))|(1<<(agcParserT__70-55))|(1<<(agcParserT__71-55))|(1<<(agcParserT__72-55))|(1<<(agcParserT__73-55))|(1<<(agcParserT__74-55))|(1<<(agcParserT__75-55))|(1<<(agcParserT__76-55))|(1<<(agcParserT__77-55))|(1<<(agcParserT__78-55))|(1<<(agcParserT__79-55))|(1<<(agcParserT__80-55))|(1<<(agcParserT__81-55)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-55)&-(0x1f+1)) == 0 && ((1<<uint((_la-55)))&((1<<(agcParserT__54-55))|(1<<(agcParserT__55-55))|(1<<(agcParserT__56-55))|(1<<(agcParserT__57-55))|(1<<(agcParserT__58-55))|(1<<(agcParserT__59-55))|(1<<(agcParserT__60-55))|(1<<(agcParserT__61-55))|(1<<(agcParserT__62-55))|(1<<(agcParserT__63-55))|(1<<(agcParserT__64-55))|(1<<(agcParserT__65-55))|(1<<(agcParserT__66-55))|(1<<(agcParserT__67-55))|(1<<(agcParserT__68-55))|(1<<(agcParserT__69-55))|(1<<(agcParserT__70-55))|(1<<(agcParserT__71-55))|(1<<(agcParserT__72-55))|(1<<(agcParserT__73-55))|(1<<(agcParserT__74-55))|(1<<(agcParserT__75-55))|(1<<(agcParserT__76-55))|(1<<(agcParserT__77-55))|(1<<(agcParserT__78-55))|(1<<(agcParserT__79-55))|(1<<(agcParserT__80-55))|(1<<(agcParserT__81-55)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -3632,14 +3654,16 @@ func (p *agcParser) Standard_opcode() (localctx IStandard_opcodeContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(211)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(211)
+		_la = p.GetTokenStream().LA(1)
 
-	if !((((_la-83)&-(0x1f+1)) == 0 && ((1<<uint((_la-83)))&((1<<(agcParserT__82-83))|(1<<(agcParserT__83-83))|(1<<(agcParserT__84-83))|(1<<(agcParserT__85-83))|(1<<(agcParserT__86-83))|(1<<(agcParserT__87-83))|(1<<(agcParserT__88-83))|(1<<(agcParserT__89-83))|(1<<(agcParserT__90-83))|(1<<(agcParserT__91-83))|(1<<(agcParserT__92-83))|(1<<(agcParserT__93-83))|(1<<(agcParserT__94-83))|(1<<(agcParserT__95-83))|(1<<(agcParserT__96-83))|(1<<(agcParserT__97-83))|(1<<(agcParserT__98-83))|(1<<(agcParserT__99-83))|(1<<(agcParserT__100-83))|(1<<(agcParserT__101-83))|(1<<(agcParserT__102-83))|(1<<(agcParserT__103-83))|(1<<(agcParserT__104-83))|(1<<(agcParserT__105-83))|(1<<(agcParserT__106-83))|(1<<(agcParserT__107-83))|(1<<(agcParserT__108-83))|(1<<(agcParserT__109-83))|(1<<(agcParserT__110-83))|(1<<(agcParserT__111-83))|(1<<(agcParserT__112-83))|(1<<(agcParserT__113-83)))) != 0) || (((_la-115)&-(0x1f+1)) == 0 && ((1<<uint((_la-115)))&((1<<(agcParserT__114-115))|(1<<(agcParserT__115-115))|(1<<(agcParserT__116-115))|(1<<(agcParserT__117-115))|(1<<(agcParserT__118-115))|(1<<(agcParserT__119-115))|(1<<(agcParserT__120-115))|(1<<(agcParserT__121-115))|(1<<(agcParserT__122-115))|(1<<(agcParserT__123-115))|(1<<(agcParserT__124-115))|(1<<(agcParserT__125-115))|(1<<(agcParserT__126-115))|(1<<(agcParserT__127-115))|(1<<(agcParserT__128-115))|(1<<(agcParserT__129-115))|(1<<(agcParserT__130-115))|(1<<(agcParserT__131-115))|(1<<(agcParserT__132-115))|(1<<(agcParserT__133-115))|(1<<(agcParserT__134-115))|(1<<(agcParserT__135-115))|(1<<(agcParserT__136-115))|(1<<(agcParserT__137-115))|(1<<(agcParserT__138-115))|(1<<(agcParserT__139-115))|(1<<(agcParserT__140-115))|(1<<(agcParserT__141-115))|(1<<(agcParserT__142-115))|(1<<(agcParserT__143-115))|(1<<(agcParserT__144-115))|(1<<(agcParserT__145-115)))) != 0) || (((_la-147)&-(0x1f+1)) == 0 && ((1<<uint((_la-147)))&((1<<(agcParserT__146-147))|(1<<(agcParserT__147-147))|(1<<(agcParserT__148-147))|(1<<(agcParserT__149-147))|(1<<(agcParserT__150-147))|(1<<(agcParserT__151-147))|(1<<(agcParserT__152-147))|(1<<(agcParserT__153-147))|(1<<(agcParserT__154-147))|(1<<(agcParserT__155-147))|(1<<(agcParserT__156-147))|(1<<(agcParserT__157-147))|(1<<(agcParserT__158-147))|(1<<(agcParserT__159-147))|(1<<(agcParserT__160-147))|(1<<(agcParserT__161-147))|(1<<(agcParserT__162-147))|(1<<(agcParserT__163-147))|(1<<(agcParserT__164-147))|(1<<(agcParserT__165-147))|(1<<(agcParserT__166-147))|(1<<(agcParserT__167-147))|(1<<(agcParserT__168-147))|(1<<(agcParserT__169-147))|(1<<(agcParserT__170-147))|(1<<(agcParserT__171-147))|(1<<(agcParserT__172-147))|(1<<(agcParserT__173-147))|(1<<(agcParserT__174-147))|(1<<(agcParserT__175-147))|(1<<(agcParserT__176-147))|(1<<(agcParserT__177-147)))) != 0) || (((_la-179)&-(0x1f+1)) == 0 && ((1<<uint((_la-179)))&((1<<(agcParserT__178-179))|(1<<(agcParserT__179-179))|(1<<(agcParserT__180-179))|(1<<(agcParserT__181-179))|(1<<(agcParserT__182-179)))) != 0)) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !((((_la-83)&-(0x1f+1)) == 0 && ((1<<uint((_la-83)))&((1<<(agcParserT__82-83))|(1<<(agcParserT__83-83))|(1<<(agcParserT__84-83))|(1<<(agcParserT__85-83))|(1<<(agcParserT__86-83))|(1<<(agcParserT__87-83))|(1<<(agcParserT__88-83))|(1<<(agcParserT__89-83))|(1<<(agcParserT__90-83))|(1<<(agcParserT__91-83))|(1<<(agcParserT__92-83))|(1<<(agcParserT__93-83))|(1<<(agcParserT__94-83))|(1<<(agcParserT__95-83))|(1<<(agcParserT__96-83))|(1<<(agcParserT__97-83))|(1<<(agcParserT__98-83))|(1<<(agcParserT__99-83))|(1<<(agcParserT__100-83))|(1<<(agcParserT__101-83))|(1<<(agcParserT__102-83))|(1<<(agcParserT__103-83))|(1<<(agcParserT__104-83))|(1<<(agcParserT__105-83))|(1<<(agcParserT__106-83))|(1<<(agcParserT__107-83))|(1<<(agcParserT__108-83))|(1<<(agcParserT__109-83))|(1<<(agcParserT__110-83))|(1<<(agcParserT__111-83))|(1<<(agcParserT__112-83))|(1<<(agcParserT__113-83)))) != 0) || (((_la-115)&-(0x1f+1)) == 0 && ((1<<uint((_la-115)))&((1<<(agcParserT__114-115))|(1<<(agcParserT__115-115))|(1<<(agcParserT__116-115))|(1<<(agcParserT__117-115))|(1<<(agcParserT__118-115))|(1<<(agcParserT__119-115))|(1<<(agcParserT__120-115))|(1<<(agcParserT__121-115))|(1<<(agcParserT__122-115))|(1<<(agcParserT__123-115))|(1<<(agcParserT__124-115))|(1<<(agcParserT__125-115))|(1<<(agcParserT__126-115))|(1<<(agcParserT__127-115))|(1<<(agcParserT__128-115))|(1<<(agcParserT__129-115))|(1<<(agcParserT__130-115))|(1<<(agcParserT__131-115))|(1<<(agcParserT__132-115))|(1<<(agcParserT__133-115))|(1<<(agcParserT__134-115))|(1<<(agcParserT__135-115))|(1<<(agcParserT__136-115))|(1<<(agcParserT__137-115))|(1<<(agcParserT__138-115))|(1<<(agcParserT__139-115))|(1<<(agcParserT__140-115))|(1<<(agcParserT__141-115))|(1<<(agcParserT__142-115))|(1<<(agcParserT__143-115))|(1<<(agcParserT__144-115))|(1<<(agcParserT__145-115)))) != 0) || (((_la-147)&-(0x1f+1)) == 0 && ((1<<uint((_la-147)))&((1<<(agcParserT__146-147))|(1<<(agcParserT__147-147))|(1<<(agcParserT__148-147))|(1<<(agcParserT__149-147))|(1<<(agcParserT__150-147))|(1<<(agcParserT__151-147))|(1<<(agcParserT__152-147))|(1<<(agcParserT__153-147))|(1<<(agcParserT__154-147))|(1<<(agcParserT__155-147))|(1<<(agcParserT__156-147))|(1<<(agcParserT__157-147))|(1<<(agcParserT__158-147))|(1<<(agcParserT__159-147))|(1<<(agcParserT__160-147))|(1<<(agcParserT__161-147))|(1<<(agcParserT__162-147))|(1<<(agcParserT__163-147))|(1<<(agcParserT__164-147))|(1<<(agcParserT__165-147))|(1<<(agcParserT__166-147))|(1<<(agcParserT__167-147))|(1<<(agcParserT__168-147))|(1<<(agcParserT__169-147))|(1<<(agcParserT__170-147))|(1<<(agcParserT__171-147))|(1<<(agcParserT__172-147))|(1<<(agcParserT__173-147))|(1<<(agcParserT__174-147))|(1<<(agcParserT__175-147))|(1<<(agcParserT__176-147))|(1<<(agcParserT__177-147)))) != 0) || (((_la-179)&-(0x1f+1)) == 0 && ((1<<uint((_la-179)))&((1<<(agcParserT__178-179))|(1<<(agcParserT__179-179))|(1<<(agcParserT__180-179))|(1<<(agcParserT__181-179))|(1<<(agcParserT__182-179)))) != 0)) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

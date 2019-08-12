@@ -1,4 +1,4 @@
-// Generated from Cobol85Preprocessor.g4 by ANTLR 4.7.
+// Code generated from Cobol85Preprocessor.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package cobol85preprocessor // Cobol85Preprocessor
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -9,6 +9,15 @@ type Cobol85PreprocessorListener interface {
 
 	// EnterStartRule is called when entering the startRule production.
 	EnterStartRule(c *StartRuleContext)
+
+	// EnterCompilerOptions is called when entering the compilerOptions production.
+	EnterCompilerOptions(c *CompilerOptionsContext)
+
+	// EnterCompilerXOpts is called when entering the compilerXOpts production.
+	EnterCompilerXOpts(c *CompilerXOptsContext)
+
+	// EnterCompilerOption is called when entering the compilerOption production.
+	EnterCompilerOption(c *CompilerOptionContext)
 
 	// EnterExecCicsStatement is called when entering the execCicsStatement production.
 	EnterExecCicsStatement(c *ExecCicsStatementContext)
@@ -24,6 +33,9 @@ type Cobol85PreprocessorListener interface {
 
 	// EnterCopySource is called when entering the copySource production.
 	EnterCopySource(c *CopySourceContext)
+
+	// EnterCopyLibrary is called when entering the copyLibrary production.
+	EnterCopyLibrary(c *CopyLibraryContext)
 
 	// EnterReplacingPhrase is called when entering the replacingPhrase production.
 	EnterReplacingPhrase(c *ReplacingPhraseContext)
@@ -52,14 +64,14 @@ type Cobol85PreprocessorListener interface {
 	// EnterReplacement is called when entering the replacement production.
 	EnterReplacement(c *ReplacementContext)
 
-	// EnterControlSpacingStatement is called when entering the controlSpacingStatement production.
-	EnterControlSpacingStatement(c *ControlSpacingStatementContext)
+	// EnterEjectStatement is called when entering the ejectStatement production.
+	EnterEjectStatement(c *EjectStatementContext)
 
-	// EnterCobolWord is called when entering the cobolWord production.
-	EnterCobolWord(c *CobolWordContext)
+	// EnterSkipStatement is called when entering the skipStatement production.
+	EnterSkipStatement(c *SkipStatementContext)
 
-	// EnterLiteral is called when entering the literal production.
-	EnterLiteral(c *LiteralContext)
+	// EnterTitleStatement is called when entering the titleStatement production.
+	EnterTitleStatement(c *TitleStatementContext)
 
 	// EnterPseudoText is called when entering the pseudoText production.
 	EnterPseudoText(c *PseudoTextContext)
@@ -67,14 +79,35 @@ type Cobol85PreprocessorListener interface {
 	// EnterCharData is called when entering the charData production.
 	EnterCharData(c *CharDataContext)
 
+	// EnterCharDataSql is called when entering the charDataSql production.
+	EnterCharDataSql(c *CharDataSqlContext)
+
 	// EnterCharDataLine is called when entering the charDataLine production.
 	EnterCharDataLine(c *CharDataLineContext)
+
+	// EnterCobolWord is called when entering the cobolWord production.
+	EnterCobolWord(c *CobolWordContext)
+
+	// EnterLiteral is called when entering the literal production.
+	EnterLiteral(c *LiteralContext)
+
+	// EnterFilename is called when entering the filename production.
+	EnterFilename(c *FilenameContext)
 
 	// EnterCharDataKeyword is called when entering the charDataKeyword production.
 	EnterCharDataKeyword(c *CharDataKeywordContext)
 
 	// ExitStartRule is called when exiting the startRule production.
 	ExitStartRule(c *StartRuleContext)
+
+	// ExitCompilerOptions is called when exiting the compilerOptions production.
+	ExitCompilerOptions(c *CompilerOptionsContext)
+
+	// ExitCompilerXOpts is called when exiting the compilerXOpts production.
+	ExitCompilerXOpts(c *CompilerXOptsContext)
+
+	// ExitCompilerOption is called when exiting the compilerOption production.
+	ExitCompilerOption(c *CompilerOptionContext)
 
 	// ExitExecCicsStatement is called when exiting the execCicsStatement production.
 	ExitExecCicsStatement(c *ExecCicsStatementContext)
@@ -90,6 +123,9 @@ type Cobol85PreprocessorListener interface {
 
 	// ExitCopySource is called when exiting the copySource production.
 	ExitCopySource(c *CopySourceContext)
+
+	// ExitCopyLibrary is called when exiting the copyLibrary production.
+	ExitCopyLibrary(c *CopyLibraryContext)
 
 	// ExitReplacingPhrase is called when exiting the replacingPhrase production.
 	ExitReplacingPhrase(c *ReplacingPhraseContext)
@@ -118,14 +154,14 @@ type Cobol85PreprocessorListener interface {
 	// ExitReplacement is called when exiting the replacement production.
 	ExitReplacement(c *ReplacementContext)
 
-	// ExitControlSpacingStatement is called when exiting the controlSpacingStatement production.
-	ExitControlSpacingStatement(c *ControlSpacingStatementContext)
+	// ExitEjectStatement is called when exiting the ejectStatement production.
+	ExitEjectStatement(c *EjectStatementContext)
 
-	// ExitCobolWord is called when exiting the cobolWord production.
-	ExitCobolWord(c *CobolWordContext)
+	// ExitSkipStatement is called when exiting the skipStatement production.
+	ExitSkipStatement(c *SkipStatementContext)
 
-	// ExitLiteral is called when exiting the literal production.
-	ExitLiteral(c *LiteralContext)
+	// ExitTitleStatement is called when exiting the titleStatement production.
+	ExitTitleStatement(c *TitleStatementContext)
 
 	// ExitPseudoText is called when exiting the pseudoText production.
 	ExitPseudoText(c *PseudoTextContext)
@@ -133,8 +169,20 @@ type Cobol85PreprocessorListener interface {
 	// ExitCharData is called when exiting the charData production.
 	ExitCharData(c *CharDataContext)
 
+	// ExitCharDataSql is called when exiting the charDataSql production.
+	ExitCharDataSql(c *CharDataSqlContext)
+
 	// ExitCharDataLine is called when exiting the charDataLine production.
 	ExitCharDataLine(c *CharDataLineContext)
+
+	// ExitCobolWord is called when exiting the cobolWord production.
+	ExitCobolWord(c *CobolWordContext)
+
+	// ExitLiteral is called when exiting the literal production.
+	ExitLiteral(c *LiteralContext)
+
+	// ExitFilename is called when exiting the filename production.
+	ExitFilename(c *FilenameContext)
 
 	// ExitCharDataKeyword is called when exiting the charDataKeyword production.
 	ExitCharDataKeyword(c *CharDataKeywordContext)

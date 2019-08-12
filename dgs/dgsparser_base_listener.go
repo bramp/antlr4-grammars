@@ -1,4 +1,4 @@
-// Generated from DGSParser.g4 by ANTLR 4.7.
+// Code generated from DGSParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package dgs // DGSParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"

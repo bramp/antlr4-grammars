@@ -1,4 +1,4 @@
-// Generated from emailaddress.g4 by ANTLR 4.7.
+// Code generated from emailaddress.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package emailaddress // emailaddress
 import (
@@ -1756,14 +1756,16 @@ func (p *emailaddressParser) Lwspchar() (localctx ILwspcharContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(109)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(109)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == emailaddressParserSPACE || _la == emailaddressParserHTAB) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == emailaddressParserSPACE || _la == emailaddressParserHTAB) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

@@ -20,15 +20,15 @@ MAKEFLAGS += --no-builtin-rules --warn-undefined-variables
 .PHONY: all clean rebuild test
 .DEFAULT_GOAL := all
 .SILENT:
-#.DELETE_ON_ERROR:
+.DELETE_ON_ERROR:
 .SUFFIXES:
 
-ANTLR_BIN := $(HOME)/.m2/repository/org/antlr/antlr4/4.7.1-SNAPSHOT/antlr4-4.7.1-SNAPSHOT-complete.jar
 #ANTLR_BIN := $(PWD)/.bin/antlr-4.7-complete.jar
 ANTLR_URL := http://www.antlr.org/download/antlr-4.7-complete.jar
+ANTLR_BIN := $(HOME)/.m2/repository/org/antlr/antlr4/4.7.2/antlr4-4.7.2-complete.jar
 ANTLR := java -jar $(ANTLR_BIN) -Dlanguage=Go -listener -no-visitor
 
-GRAMMARS := abnf agc altpython3 antlrv3 antlrv4 apex arithmetic asm6502 asn aspectj atl bnf brainfuck c calculator classify clf clif clojure cobol85 cobol85preprocessor cookie cool corundum cpp14 creole csharp csharppreprocessor css3 csv datetime dcm_2_0_grammar dgs dicenotation dot ecmascript emailaddress erlang fasta fol fortran77 fusiontablessql gff3 gml golang graphemes graphql gtin html icalendar idl inf informix iri istc java java8 java9 javadoc javascript jpa json jvmbasic kotlin krl lambda lcc less lexunicode logo lolcode lua m2pim4 masm mdx memcached_protocol metric modelica molecule morsecode mps mu mumath mumps mysql objectivec objectivecpreprocessor oncrpcv2 p pascal pcre pddl pdn pdp7 peoplecode pgn php plsql postalcode powerbuilder prolog propcalc properties protobuf3 python2 python3 quakemap r rcs redcode rfilter robotwar romannumerals rpn scala scss sexpression sharc smalltalk smtlibv2 snobol sparql sqlite st stacktrace stg suokif swift2 swift3 swiftfin telephone tiny tinyc tnsnames tnt tsql turtle ucblogo unicodeclasses url useragent vba verilog2001 vhdl visualbasic6 wavefrontobj webidl xdr xml xpath z zoperator
+GRAMMARS := abnf agc algol60 altpython3 antlrv3 antlrv4 antlrv4lexerpythontarget apex arithmetic asm6502 asm8080 asm8086 asmmasm asmz80 asn asn_3gpp aspectj atl b bnf brainfuck c calculator capnproto classify clf clif clojure clu cmake cobol85 cobol85preprocessor cookie cool corundum cpp14 cql creole csharp csharppreprocessor css3 csv cto dart2 databank datetime dcm_2_0_grammar dgs dicenotation dot ecmascript edif300 emailaddress erlang fasta fen flatbuffers fol fortran77 fusiontablessql gff3 gml golang graphemes graphql gtin guido html http hypertalk icalendar icon idl inf informix iri istc java java8 java9 javadoc javascript jpa json jvmbasic kotlin krl lambda lcc less lexunicode logo lolcode lpc lua m2pim4 masm matlab mdx memcached_protocol metric modelica molecule moo morsecode mps mu muddb mumath mumps mysql objectivec objectivecpreprocessor oncrpcv2 p pascal pcre pddl pdn pdp7 peoplecode pgn php pike pl0 plsql ply postalcode powerbuilder prolog propcalc properties protobuf3 prov_n python2 python3 quakemap r rcs redcode regex rego restructuredtext rexx rfilter robotwar romannumerals rpn scala scss sexpression sgf sharc smalltalk smiles smtlibv2 snobol solidity sparql sqlite st stacktrace stg suokif swift2 swift3 swiftfin sysveriloghdl telephone thrift tiny tinybasic tinyc tinymud tjs tnsnames tnt toml tsql tsv turtle ucblogo unicodeclasses upnp url useragent v vba verilog2001 vhdl visualbasic6 wat wavefrontobj webidl wkt xdr xml xpath z zoperator
 
 LANG_COLOR = \033[0;36m
 NO_COLOR   = \033[m
@@ -127,6 +127,15 @@ agc/doc.go: agc/agc_test.go
 %/agc_test.go: agc/agc_base_listener.go agc/agc_listener.go agc/agc_parser.go agc/agc_lexer.go 
 	${TEST} agc grammars-v4/agc/pom.xml grammars-v4/agc/agc.g4 
 
+algol60: algol60/algol60_test.go algol60/doc.go
+algol60 algol60/algol60_test.go: algol60/algol60_base_listener.go algol60/algol60_listener.go algol60/algol60_parser.go algol60/algol60_lexer.go 
+algol60/doc.go: algol60/algol60_test.go
+
+%/algol60_base_listener.go %/algol60_listener.go %/algol60_parser.go %/algol60_lexer.go: grammars-v4/algol60/algol60.g4 
+	${BUILD} algol60 grammars-v4/algol60/algol60.g4 algol60/algol60_base_listener.go algol60/algol60_listener.go algol60/algol60_parser.go algol60/algol60_lexer.go
+%/algol60_test.go: algol60/algol60_base_listener.go algol60/algol60_listener.go algol60/algol60_parser.go algol60/algol60_lexer.go 
+	${TEST} algol60 grammars-v4/algol60/pom.xml grammars-v4/algol60/algol60.g4 
+
 altpython3: altpython3/altpython3_test.go altpython3/doc.go
 altpython3 altpython3/altpython3_test.go: altpython3/altpython3_base_listener.go altpython3/altpython3_listener.go altpython3/altpython3_parser.go altpython3/altpython3_lexer.go 
 altpython3/doc.go: altpython3/altpython3_test.go
@@ -157,6 +166,15 @@ antlrv4/doc.go: antlrv4/antlrv4_test.go
 %/antlrv4_test.go: antlrv4/antlrv4parser_base_listener.go antlrv4/antlrv4parser_listener.go antlrv4/antlrv4_parser.go antlrv4/antlrv4_lexer.go 
 	${TEST} antlrv4 grammars-v4/antlr4/pom.xml grammars-v4/antlr4/ANTLRv4Parser.g4 grammars-v4/antlr4/ANTLRv4Lexer.g4 
 
+antlrv4lexerpythontarget: antlrv4lexerpythontarget/antlrv4lexerpythontarget_test.go antlrv4lexerpythontarget/doc.go
+antlrv4lexerpythontarget antlrv4lexerpythontarget/antlrv4lexerpythontarget_test.go: antlrv4lexerpythontarget/antlrv4lexerpythontarget_lexer.go 
+antlrv4lexerpythontarget/doc.go: antlrv4lexerpythontarget/antlrv4lexerpythontarget_test.go
+
+%/antlrv4lexerpythontarget_lexer.go: grammars-v4/antlr4/ANTLRv4LexerPythonTarget.g4 
+	${BUILD} antlrv4lexerpythontarget grammars-v4/antlr4/ANTLRv4LexerPythonTarget.g4 antlrv4lexerpythontarget/antlrv4lexerpythontarget_lexer.go
+%/antlrv4lexerpythontarget_test.go: antlrv4lexerpythontarget/antlrv4lexerpythontarget_lexer.go 
+	${TEST} antlrv4lexerpythontarget grammars-v4/antlr4/pom.xml grammars-v4/antlr4/ANTLRv4LexerPythonTarget.g4 
+
 apex: apex/apex_test.go apex/doc.go
 apex apex/apex_test.go: apex/apex_base_listener.go apex/apex_listener.go apex/apex_parser.go apex/apex_lexer.go 
 apex/doc.go: apex/apex_test.go
@@ -184,6 +202,42 @@ asm6502/doc.go: asm6502/asm6502_test.go
 %/asm6502_test.go: asm6502/asm6502_base_listener.go asm6502/asm6502_listener.go asm6502/asm6502_parser.go asm6502/asm6502_lexer.go 
 	${TEST} asm6502 grammars-v4/asm6502/pom.xml grammars-v4/asm6502/asm6502.g4 
 
+asm8080: asm8080/asm8080_test.go asm8080/doc.go
+asm8080 asm8080/asm8080_test.go: asm8080/asm8080_base_listener.go asm8080/asm8080_listener.go asm8080/asm8080_parser.go asm8080/asm8080_lexer.go 
+asm8080/doc.go: asm8080/asm8080_test.go
+
+%/asm8080_base_listener.go %/asm8080_listener.go %/asm8080_parser.go %/asm8080_lexer.go: grammars-v4/asm8080/asm8080.g4 
+	${BUILD} asm8080 grammars-v4/asm8080/asm8080.g4 asm8080/asm8080_base_listener.go asm8080/asm8080_listener.go asm8080/asm8080_parser.go asm8080/asm8080_lexer.go
+%/asm8080_test.go: asm8080/asm8080_base_listener.go asm8080/asm8080_listener.go asm8080/asm8080_parser.go asm8080/asm8080_lexer.go 
+	${TEST} asm8080 grammars-v4/asm8080/pom.xml grammars-v4/asm8080/asm8080.g4 
+
+asm8086: asm8086/asm8086_test.go asm8086/doc.go
+asm8086 asm8086/asm8086_test.go: asm8086/asm8086_base_listener.go asm8086/asm8086_listener.go asm8086/asm8086_parser.go asm8086/asm8086_lexer.go 
+asm8086/doc.go: asm8086/asm8086_test.go
+
+%/asm8086_base_listener.go %/asm8086_listener.go %/asm8086_parser.go %/asm8086_lexer.go: grammars-v4/asm8086/asm8086.g4 
+	${BUILD} asm8086 grammars-v4/asm8086/asm8086.g4 asm8086/asm8086_base_listener.go asm8086/asm8086_listener.go asm8086/asm8086_parser.go asm8086/asm8086_lexer.go
+%/asm8086_test.go: asm8086/asm8086_base_listener.go asm8086/asm8086_listener.go asm8086/asm8086_parser.go asm8086/asm8086_lexer.go 
+	${TEST} asm8086 grammars-v4/asm8086/pom.xml grammars-v4/asm8086/asm8086.g4 
+
+asmmasm: asmmasm/asmmasm_test.go asmmasm/doc.go
+asmmasm asmmasm/asmmasm_test.go: asmmasm/asmmasm_base_listener.go asmmasm/asmmasm_listener.go asmmasm/asmmasm_parser.go asmmasm/asmmasm_lexer.go 
+asmmasm/doc.go: asmmasm/asmmasm_test.go
+
+%/asmmasm_base_listener.go %/asmmasm_listener.go %/asmmasm_parser.go %/asmmasm_lexer.go: grammars-v4/asmMASM/asmMASM.g4 
+	${BUILD} asmmasm grammars-v4/asmMASM/asmMASM.g4 asmmasm/asmmasm_base_listener.go asmmasm/asmmasm_listener.go asmmasm/asmmasm_parser.go asmmasm/asmmasm_lexer.go
+%/asmmasm_test.go: asmmasm/asmmasm_base_listener.go asmmasm/asmmasm_listener.go asmmasm/asmmasm_parser.go asmmasm/asmmasm_lexer.go 
+	${TEST} asmmasm grammars-v4/asmMASM/pom.xml grammars-v4/asmMASM/asmMASM.g4 
+
+asmz80: asmz80/asmz80_test.go asmz80/doc.go
+asmz80 asmz80/asmz80_test.go: asmz80/asmz80_base_listener.go asmz80/asmz80_listener.go asmz80/asmz80_parser.go asmz80/asmz80_lexer.go 
+asmz80/doc.go: asmz80/asmz80_test.go
+
+%/asmz80_base_listener.go %/asmz80_listener.go %/asmz80_parser.go %/asmz80_lexer.go: grammars-v4/asmZ80/asmZ80.g4 
+	${BUILD} asmz80 grammars-v4/asmZ80/asmZ80.g4 asmz80/asmz80_base_listener.go asmz80/asmz80_listener.go asmz80/asmz80_parser.go asmz80/asmz80_lexer.go
+%/asmz80_test.go: asmz80/asmz80_base_listener.go asmz80/asmz80_listener.go asmz80/asmz80_parser.go asmz80/asmz80_lexer.go 
+	${TEST} asmz80 grammars-v4/asmZ80/pom.xml grammars-v4/asmZ80/asmZ80.g4 
+
 asn: asn/asn_test.go asn/doc.go
 asn asn/asn_test.go: asn/asn_base_listener.go asn/asn_listener.go asn/asn_parser.go asn/asn_lexer.go 
 asn/doc.go: asn/asn_test.go
@@ -192,6 +246,15 @@ asn/doc.go: asn/asn_test.go
 	${BUILD} asn grammars-v4/asn/ASN.g4 asn/asn_base_listener.go asn/asn_listener.go asn/asn_parser.go asn/asn_lexer.go
 %/asn_test.go: asn/asn_base_listener.go asn/asn_listener.go asn/asn_parser.go asn/asn_lexer.go 
 	${TEST} asn grammars-v4/asn/pom.xml grammars-v4/asn/ASN.g4 
+
+asn_3gpp: asn_3gpp/asn_3gpp_test.go asn_3gpp/doc.go
+asn_3gpp asn_3gpp/asn_3gpp_test.go: asn_3gpp/asn_3gpp_base_listener.go asn_3gpp/asn_3gpp_listener.go asn_3gpp/asn_3gpp_parser.go asn_3gpp/asn_3gpp_lexer.go 
+asn_3gpp/doc.go: asn_3gpp/asn_3gpp_test.go
+
+%/asn_3gpp_base_listener.go %/asn_3gpp_listener.go %/asn_3gpp_parser.go %/asn_3gpp_lexer.go: grammars-v4/asn_3gpp/ASN_3gpp.g4 
+	${BUILD} asn_3gpp grammars-v4/asn_3gpp/ASN_3gpp.g4 asn_3gpp/asn_3gpp_base_listener.go asn_3gpp/asn_3gpp_listener.go asn_3gpp/asn_3gpp_parser.go asn_3gpp/asn_3gpp_lexer.go
+%/asn_3gpp_test.go: asn_3gpp/asn_3gpp_base_listener.go asn_3gpp/asn_3gpp_listener.go asn_3gpp/asn_3gpp_parser.go asn_3gpp/asn_3gpp_lexer.go 
+	${TEST} asn_3gpp grammars-v4/asn_3gpp/pom.xml grammars-v4/asn_3gpp/ASN_3gpp.g4 
 
 aspectj: aspectj/aspectj_test.go aspectj/doc.go
 aspectj aspectj/aspectj_test.go: aspectj/aspectjparser_base_listener.go aspectj/aspectjparser_listener.go aspectj/aspectj_parser.go aspectj/aspectj_lexer.go 
@@ -213,6 +276,15 @@ atl/doc.go: atl/atl_test.go
 	${BUILD} atl grammars-v4/atl/ATL.g4 atl/atl_base_listener.go atl/atl_listener.go atl/atl_parser.go atl/atl_lexer.go
 %/atl_test.go: atl/atl_base_listener.go atl/atl_listener.go atl/atl_parser.go atl/atl_lexer.go 
 	${TEST} atl grammars-v4/atl/pom.xml grammars-v4/atl/ATL.g4 
+
+b: b/b_test.go b/doc.go
+b b/b_test.go: b/b_base_listener.go b/b_listener.go b/b_parser.go b/b_lexer.go 
+b/doc.go: b/b_test.go
+
+%/b_base_listener.go %/b_listener.go %/b_parser.go %/b_lexer.go: grammars-v4/b/b.g4 
+	${BUILD} b grammars-v4/b/b.g4 b/b_base_listener.go b/b_listener.go b/b_parser.go b/b_lexer.go
+%/b_test.go: b/b_base_listener.go b/b_listener.go b/b_parser.go b/b_lexer.go 
+	${TEST} b grammars-v4/b/pom.xml grammars-v4/b/b.g4 
 
 bnf: bnf/bnf_test.go bnf/doc.go
 bnf bnf/bnf_test.go: bnf/bnf_base_listener.go bnf/bnf_listener.go bnf/bnf_parser.go bnf/bnf_lexer.go 
@@ -250,6 +322,15 @@ calculator/doc.go: calculator/calculator_test.go
 %/calculator_test.go: calculator/calculator_base_listener.go calculator/calculator_listener.go calculator/calculator_parser.go calculator/calculator_lexer.go 
 	${TEST} calculator grammars-v4/calculator/pom.xml grammars-v4/calculator/calculator.g4 
 
+capnproto: capnproto/capnproto_test.go capnproto/doc.go
+capnproto capnproto/capnproto_test.go: capnproto/capnproto_base_listener.go capnproto/capnproto_listener.go capnproto/capnproto_parser.go capnproto/capnproto_lexer.go 
+capnproto/doc.go: capnproto/capnproto_test.go
+
+%/capnproto_base_listener.go %/capnproto_listener.go %/capnproto_parser.go %/capnproto_lexer.go: grammars-v4/capnproto/CapnProto.g4 
+	${BUILD} capnproto grammars-v4/capnproto/CapnProto.g4 capnproto/capnproto_base_listener.go capnproto/capnproto_listener.go capnproto/capnproto_parser.go capnproto/capnproto_lexer.go
+%/capnproto_test.go: capnproto/capnproto_base_listener.go capnproto/capnproto_listener.go capnproto/capnproto_parser.go capnproto/capnproto_lexer.go 
+	${TEST} capnproto grammars-v4/capnproto/pom.xml grammars-v4/capnproto/CapnProto.g4 
+
 classify: classify/classify_test.go classify/doc.go
 classify classify/classify_test.go: classify/classify_base_listener.go classify/classify_listener.go classify/classify_parser.go classify/classify_lexer.go 
 classify/doc.go: classify/classify_test.go
@@ -285,6 +366,24 @@ clojure/doc.go: clojure/clojure_test.go
 	${BUILD} clojure grammars-v4/clojure/Clojure.g4 clojure/clojure_base_listener.go clojure/clojure_listener.go clojure/clojure_parser.go clojure/clojure_lexer.go
 %/clojure_test.go: clojure/clojure_base_listener.go clojure/clojure_listener.go clojure/clojure_parser.go clojure/clojure_lexer.go 
 	${TEST} clojure grammars-v4/clojure/pom.xml grammars-v4/clojure/Clojure.g4 
+
+clu: clu/clu_test.go clu/doc.go
+clu clu/clu_test.go: clu/clu_base_listener.go clu/clu_listener.go clu/clu_parser.go clu/clu_lexer.go 
+clu/doc.go: clu/clu_test.go
+
+%/clu_base_listener.go %/clu_listener.go %/clu_parser.go %/clu_lexer.go: grammars-v4/clu/clu.g4 
+	${BUILD} clu grammars-v4/clu/clu.g4 clu/clu_base_listener.go clu/clu_listener.go clu/clu_parser.go clu/clu_lexer.go
+%/clu_test.go: clu/clu_base_listener.go clu/clu_listener.go clu/clu_parser.go clu/clu_lexer.go 
+	${TEST} clu grammars-v4/clu/pom.xml grammars-v4/clu/clu.g4 
+
+cmake: cmake/cmake_test.go cmake/doc.go
+cmake cmake/cmake_test.go: cmake/cmake_base_listener.go cmake/cmake_listener.go cmake/cmake_parser.go cmake/cmake_lexer.go 
+cmake/doc.go: cmake/cmake_test.go
+
+%/cmake_base_listener.go %/cmake_listener.go %/cmake_parser.go %/cmake_lexer.go: grammars-v4/cmake/CMake.g4 
+	${BUILD} cmake grammars-v4/cmake/CMake.g4 cmake/cmake_base_listener.go cmake/cmake_listener.go cmake/cmake_parser.go cmake/cmake_lexer.go
+%/cmake_test.go: cmake/cmake_base_listener.go cmake/cmake_listener.go cmake/cmake_parser.go cmake/cmake_lexer.go 
+	${TEST} cmake grammars-v4/cmake/pom.xml grammars-v4/cmake/CMake.g4 
 
 cobol85: cobol85/cobol85_test.go cobol85/doc.go
 cobol85 cobol85/cobol85_test.go: cobol85/cobol85_base_listener.go cobol85/cobol85_listener.go cobol85/cobol85_parser.go cobol85/cobol85_lexer.go 
@@ -340,6 +439,18 @@ cpp14/doc.go: cpp14/cpp14_test.go
 %/cpp14_test.go: cpp14/cpp14_base_listener.go cpp14/cpp14_listener.go cpp14/cpp14_parser.go cpp14/cpp14_lexer.go 
 	${TEST} cpp14 grammars-v4/cpp/pom.xml grammars-v4/cpp/CPP14.g4 
 
+cql: cql/cql_test.go cql/doc.go
+cql cql/cql_test.go: cql/cqlparser_base_listener.go cql/cqlparser_listener.go cql/cql_parser.go cql/cql_lexer.go 
+cql/doc.go: cql/cql_test.go
+
+%/cqlparser_base_listener.go %/cqlparser_listener.go %/cql_parser.go: grammars-v4/cql3/CqlParser.g4 cql/cql_lexer.go
+	${BUILD} cql grammars-v4/cql3/CqlParser.g4 cql/cqlparser_base_listener.go cql/cqlparser_listener.go cql/cql_parser.go
+
+%/cql_lexer.go: grammars-v4/cql3/CqlLexer.g4 
+	${BUILD} cql grammars-v4/cql3/CqlLexer.g4 cql/cql_lexer.go
+%/cql_test.go: cql/cqlparser_base_listener.go cql/cqlparser_listener.go cql/cql_parser.go cql/cql_lexer.go 
+	${TEST} cql grammars-v4/cql3/pom.xml grammars-v4/cql3/CqlParser.g4 grammars-v4/cql3/CqlLexer.g4 
+
 creole: creole/creole_test.go creole/doc.go
 creole creole/creole_test.go: creole/creole_base_listener.go creole/creole_listener.go creole/creole_parser.go creole/creole_lexer.go 
 creole/doc.go: creole/creole_test.go
@@ -388,14 +499,44 @@ csv/doc.go: csv/csv_test.go
 %/csv_test.go: csv/csv_base_listener.go csv/csv_listener.go csv/csv_parser.go csv/csv_lexer.go 
 	${TEST} csv grammars-v4/csv/pom.xml grammars-v4/csv/CSV.g4 
 
+cto: cto/cto_test.go cto/doc.go
+cto cto/cto_test.go: cto/ctoparser_base_listener.go cto/ctoparser_listener.go cto/cto_parser.go cto/cto_lexer.go 
+cto/doc.go: cto/cto_test.go
+
+%/ctoparser_base_listener.go %/ctoparser_listener.go %/cto_parser.go: grammars-v4/cto/CtoParser.g4 cto/cto_lexer.go
+	${BUILD} cto grammars-v4/cto/CtoParser.g4 cto/ctoparser_base_listener.go cto/ctoparser_listener.go cto/cto_parser.go
+
+%/cto_lexer.go: grammars-v4/cto/CtoLexer.g4 
+	${BUILD} cto grammars-v4/cto/CtoLexer.g4 cto/cto_lexer.go
+%/cto_test.go: cto/ctoparser_base_listener.go cto/ctoparser_listener.go cto/cto_parser.go cto/cto_lexer.go 
+	${TEST} cto grammars-v4/cto/pom.xml grammars-v4/cto/CtoParser.g4 grammars-v4/cto/CtoLexer.g4 
+
+dart2: dart2/dart2_test.go dart2/doc.go
+dart2 dart2/dart2_test.go: dart2/dart2_base_listener.go dart2/dart2_listener.go dart2/dart2_parser.go dart2/dart2_lexer.go 
+dart2/doc.go: dart2/dart2_test.go
+
+%/dart2_base_listener.go %/dart2_listener.go %/dart2_parser.go %/dart2_lexer.go: grammars-v4/dart2/Dart2.g4 
+	${BUILD} dart2 grammars-v4/dart2/Dart2.g4 dart2/dart2_base_listener.go dart2/dart2_listener.go dart2/dart2_parser.go dart2/dart2_lexer.go
+%/dart2_test.go: dart2/dart2_base_listener.go dart2/dart2_listener.go dart2/dart2_parser.go dart2/dart2_lexer.go 
+	${TEST} dart2 grammars-v4/dart2/pom.xml grammars-v4/dart2/Dart2.g4 
+
+databank: databank/databank_test.go databank/doc.go
+databank databank/databank_test.go: databank/databank_base_listener.go databank/databank_listener.go databank/databank_parser.go databank/databank_lexer.go 
+databank/doc.go: databank/databank_test.go
+
+%/databank_base_listener.go %/databank_listener.go %/databank_parser.go %/databank_lexer.go: grammars-v4/databank/databank.g4 
+	${BUILD} databank grammars-v4/databank/databank.g4 databank/databank_base_listener.go databank/databank_listener.go databank/databank_parser.go databank/databank_lexer.go
+%/databank_test.go: databank/databank_base_listener.go databank/databank_listener.go databank/databank_parser.go databank/databank_lexer.go 
+	${TEST} databank grammars-v4/databank/pom.xml grammars-v4/databank/databank.g4 
+
 datetime: datetime/datetime_test.go datetime/doc.go
 datetime datetime/datetime_test.go: datetime/datetime_base_listener.go datetime/datetime_listener.go datetime/datetime_parser.go datetime/datetime_lexer.go 
 datetime/doc.go: datetime/datetime_test.go
 
-%/datetime_base_listener.go %/datetime_listener.go %/datetime_parser.go %/datetime_lexer.go: grammars-v4/datetime/datetime.g4 
-	${BUILD} datetime grammars-v4/datetime/datetime.g4 datetime/datetime_base_listener.go datetime/datetime_listener.go datetime/datetime_parser.go datetime/datetime_lexer.go
+%/datetime_base_listener.go %/datetime_listener.go %/datetime_parser.go %/datetime_lexer.go: grammars-v4/rfc822-datetime/datetime.g4 
+	${BUILD} datetime grammars-v4/rfc822-datetime/datetime.g4 datetime/datetime_base_listener.go datetime/datetime_listener.go datetime/datetime_parser.go datetime/datetime_lexer.go
 %/datetime_test.go: datetime/datetime_base_listener.go datetime/datetime_listener.go datetime/datetime_parser.go datetime/datetime_lexer.go 
-	${TEST} datetime grammars-v4/datetime/pom.xml grammars-v4/datetime/datetime.g4 
+	${TEST} datetime grammars-v4/rfc822-datetime/pom.xml grammars-v4/rfc822-datetime/datetime.g4 
 
 dcm_2_0_grammar: dcm_2_0_grammar/dcm_2_0_grammar_test.go dcm_2_0_grammar/doc.go
 dcm_2_0_grammar dcm_2_0_grammar/dcm_2_0_grammar_test.go: dcm_2_0_grammar/dcm_2_0_grammar_base_listener.go dcm_2_0_grammar/dcm_2_0_grammar_listener.go dcm_2_0_grammar/dcm_2_0_grammar_parser.go dcm_2_0_grammar/dcm_2_0_grammar_lexer.go 
@@ -448,14 +589,23 @@ ecmascript/doc.go: ecmascript/ecmascript_test.go
 %/ecmascript_test.go: ecmascript/ecmascript_base_listener.go ecmascript/ecmascript_listener.go ecmascript/ecmascript_parser.go ecmascript/ecmascript_lexer.go 
 	${TEST} ecmascript grammars-v4/ecmascript/pom.xml grammars-v4/ecmascript/Go/ECMAScript.g4 
 
+edif300: edif300/edif300_test.go edif300/doc.go
+edif300 edif300/edif300_test.go: edif300/edif300_base_listener.go edif300/edif300_listener.go edif300/edif300_parser.go edif300/edif300_lexer.go 
+edif300/doc.go: edif300/edif300_test.go
+
+%/edif300_base_listener.go %/edif300_listener.go %/edif300_parser.go %/edif300_lexer.go: grammars-v4/edif300/EDIF300.g4 
+	${BUILD} edif300 grammars-v4/edif300/EDIF300.g4 edif300/edif300_base_listener.go edif300/edif300_listener.go edif300/edif300_parser.go edif300/edif300_lexer.go
+%/edif300_test.go: edif300/edif300_base_listener.go edif300/edif300_listener.go edif300/edif300_parser.go edif300/edif300_lexer.go 
+	${TEST} edif300 grammars-v4/edif300/pom.xml grammars-v4/edif300/EDIF300.g4 
+
 emailaddress: emailaddress/emailaddress_test.go emailaddress/doc.go
 emailaddress emailaddress/emailaddress_test.go: emailaddress/emailaddress_base_listener.go emailaddress/emailaddress_listener.go emailaddress/emailaddress_parser.go emailaddress/emailaddress_lexer.go 
 emailaddress/doc.go: emailaddress/emailaddress_test.go
 
-%/emailaddress_base_listener.go %/emailaddress_listener.go %/emailaddress_parser.go %/emailaddress_lexer.go: grammars-v4/emailaddress/emailaddress.g4 
-	${BUILD} emailaddress grammars-v4/emailaddress/emailaddress.g4 emailaddress/emailaddress_base_listener.go emailaddress/emailaddress_listener.go emailaddress/emailaddress_parser.go emailaddress/emailaddress_lexer.go
+%/emailaddress_base_listener.go %/emailaddress_listener.go %/emailaddress_parser.go %/emailaddress_lexer.go: grammars-v4/rfc822-emailaddress/emailaddress.g4 
+	${BUILD} emailaddress grammars-v4/rfc822-emailaddress/emailaddress.g4 emailaddress/emailaddress_base_listener.go emailaddress/emailaddress_listener.go emailaddress/emailaddress_parser.go emailaddress/emailaddress_lexer.go
 %/emailaddress_test.go: emailaddress/emailaddress_base_listener.go emailaddress/emailaddress_listener.go emailaddress/emailaddress_parser.go emailaddress/emailaddress_lexer.go 
-	${TEST} emailaddress grammars-v4/emailaddress/pom.xml grammars-v4/emailaddress/emailaddress.g4 
+	${TEST} emailaddress grammars-v4/rfc822-emailaddress/pom.xml grammars-v4/rfc822-emailaddress/emailaddress.g4 
 
 erlang: erlang/erlang_test.go erlang/doc.go
 erlang erlang/erlang_test.go: erlang/erlang_base_listener.go erlang/erlang_listener.go erlang/erlang_parser.go erlang/erlang_lexer.go 
@@ -475,6 +625,24 @@ fasta/doc.go: fasta/fasta_test.go
 %/fasta_test.go: fasta/fasta_base_listener.go fasta/fasta_listener.go fasta/fasta_parser.go fasta/fasta_lexer.go 
 	${TEST} fasta grammars-v4/fasta/pom.xml grammars-v4/fasta/fasta.g4 
 
+fen: fen/fen_test.go fen/doc.go
+fen fen/fen_test.go: fen/fen_base_listener.go fen/fen_listener.go fen/fen_parser.go fen/fen_lexer.go 
+fen/doc.go: fen/fen_test.go
+
+%/fen_base_listener.go %/fen_listener.go %/fen_parser.go %/fen_lexer.go: grammars-v4/fen/fen.g4 
+	${BUILD} fen grammars-v4/fen/fen.g4 fen/fen_base_listener.go fen/fen_listener.go fen/fen_parser.go fen/fen_lexer.go
+%/fen_test.go: fen/fen_base_listener.go fen/fen_listener.go fen/fen_parser.go fen/fen_lexer.go 
+	${TEST} fen grammars-v4/fen/pom.xml grammars-v4/fen/fen.g4 
+
+flatbuffers: flatbuffers/flatbuffers_test.go flatbuffers/doc.go
+flatbuffers flatbuffers/flatbuffers_test.go: flatbuffers/flatbuffers_base_listener.go flatbuffers/flatbuffers_listener.go flatbuffers/flatbuffers_parser.go flatbuffers/flatbuffers_lexer.go 
+flatbuffers/doc.go: flatbuffers/flatbuffers_test.go
+
+%/flatbuffers_base_listener.go %/flatbuffers_listener.go %/flatbuffers_parser.go %/flatbuffers_lexer.go: grammars-v4/flatbuffers/FlatBuffers.g4 
+	${BUILD} flatbuffers grammars-v4/flatbuffers/FlatBuffers.g4 flatbuffers/flatbuffers_base_listener.go flatbuffers/flatbuffers_listener.go flatbuffers/flatbuffers_parser.go flatbuffers/flatbuffers_lexer.go
+%/flatbuffers_test.go: flatbuffers/flatbuffers_base_listener.go flatbuffers/flatbuffers_listener.go flatbuffers/flatbuffers_parser.go flatbuffers/flatbuffers_lexer.go 
+	${TEST} flatbuffers grammars-v4/flatbuffers/pom.xml grammars-v4/flatbuffers/FlatBuffers.g4 
+
 fol: fol/fol_test.go fol/doc.go
 fol fol/fol_test.go: fol/fol_base_listener.go fol/fol_listener.go fol/fol_parser.go fol/fol_lexer.go 
 fol/doc.go: fol/fol_test.go
@@ -485,13 +653,16 @@ fol/doc.go: fol/fol_test.go
 	${TEST} fol grammars-v4/fol/pom.xml grammars-v4/fol/fol.g4 
 
 fortran77: fortran77/fortran77_test.go fortran77/doc.go
-fortran77 fortran77/fortran77_test.go: fortran77/fortran77_base_listener.go fortran77/fortran77_listener.go fortran77/fortran77_parser.go fortran77/fortran77_lexer.go 
+fortran77 fortran77/fortran77_test.go: fortran77/fortran77parser_base_listener.go fortran77/fortran77parser_listener.go fortran77/fortran77_parser.go fortran77/fortran77_lexer.go 
 fortran77/doc.go: fortran77/fortran77_test.go
 
-%/fortran77_base_listener.go %/fortran77_listener.go %/fortran77_parser.go %/fortran77_lexer.go: grammars-v4/fortran77/fortran77.g4 
-	${BUILD} fortran77 grammars-v4/fortran77/fortran77.g4 fortran77/fortran77_base_listener.go fortran77/fortran77_listener.go fortran77/fortran77_parser.go fortran77/fortran77_lexer.go
-%/fortran77_test.go: fortran77/fortran77_base_listener.go fortran77/fortran77_listener.go fortran77/fortran77_parser.go fortran77/fortran77_lexer.go 
-	${TEST} fortran77 grammars-v4/fortran77/pom.xml grammars-v4/fortran77/fortran77.g4 
+%/fortran77parser_base_listener.go %/fortran77parser_listener.go %/fortran77_parser.go: grammars-v4/fortran77/Fortran77Parser.g4 fortran77/fortran77_lexer.go
+	${BUILD} fortran77 grammars-v4/fortran77/Fortran77Parser.g4 fortran77/fortran77parser_base_listener.go fortran77/fortran77parser_listener.go fortran77/fortran77_parser.go
+
+%/fortran77_lexer.go: grammars-v4/fortran77/Fortran77Lexer.g4 
+	${BUILD} fortran77 grammars-v4/fortran77/Fortran77Lexer.g4 fortran77/fortran77_lexer.go
+%/fortran77_test.go: fortran77/fortran77parser_base_listener.go fortran77/fortran77parser_listener.go fortran77/fortran77_parser.go fortran77/fortran77_lexer.go 
+	${TEST} fortran77 grammars-v4/fortran77/pom.xml grammars-v4/fortran77/Fortran77Parser.g4 grammars-v4/fortran77/Fortran77Lexer.g4 
 
 fusiontablessql: fusiontablessql/fusiontablessql_test.go fusiontablessql/doc.go
 fusiontablessql fusiontablessql/fusiontablessql_test.go: fusiontablessql/fusiontablessql_base_listener.go fusiontablessql/fusiontablessql_listener.go fusiontablessql/fusiontablessql_parser.go fusiontablessql/fusiontablessql_lexer.go 
@@ -556,6 +727,15 @@ gtin/doc.go: gtin/gtin_test.go
 %/gtin_test.go: gtin/gtin_base_listener.go gtin/gtin_listener.go gtin/gtin_parser.go gtin/gtin_lexer.go 
 	${TEST} gtin grammars-v4/gtin/pom.xml grammars-v4/gtin/gtin.g4 
 
+guido: guido/guido_test.go guido/doc.go
+guido guido/guido_test.go: guido/guido_base_listener.go guido/guido_listener.go guido/guido_parser.go guido/guido_lexer.go 
+guido/doc.go: guido/guido_test.go
+
+%/guido_base_listener.go %/guido_listener.go %/guido_parser.go %/guido_lexer.go: grammars-v4/guido/guido.g4 
+	${BUILD} guido grammars-v4/guido/guido.g4 guido/guido_base_listener.go guido/guido_listener.go guido/guido_parser.go guido/guido_lexer.go
+%/guido_test.go: guido/guido_base_listener.go guido/guido_listener.go guido/guido_parser.go guido/guido_lexer.go 
+	${TEST} guido grammars-v4/guido/pom.xml grammars-v4/guido/guido.g4 
+
 html: html/html_test.go html/doc.go
 html html/html_test.go: html/htmlparser_base_listener.go html/htmlparser_listener.go html/html_parser.go html/html_lexer.go 
 html/doc.go: html/html_test.go
@@ -568,6 +748,24 @@ html/doc.go: html/html_test.go
 %/html_test.go: html/htmlparser_base_listener.go html/htmlparser_listener.go html/html_parser.go html/html_lexer.go 
 	${TEST} html grammars-v4/html/pom.xml grammars-v4/html/HTMLParser.g4 grammars-v4/html/HTMLLexer.g4 
 
+http: http/http_test.go http/doc.go
+http http/http_test.go: http/http_base_listener.go http/http_listener.go http/http_parser.go http/http_lexer.go 
+http/doc.go: http/http_test.go
+
+%/http_base_listener.go %/http_listener.go %/http_parser.go %/http_lexer.go: grammars-v4/http/http.g4 
+	${BUILD} http grammars-v4/http/http.g4 http/http_base_listener.go http/http_listener.go http/http_parser.go http/http_lexer.go
+%/http_test.go: http/http_base_listener.go http/http_listener.go http/http_parser.go http/http_lexer.go 
+	${TEST} http grammars-v4/http/pom.xml grammars-v4/http/http.g4 
+
+hypertalk: hypertalk/hypertalk_test.go hypertalk/doc.go
+hypertalk hypertalk/hypertalk_test.go: hypertalk/hypertalk_base_listener.go hypertalk/hypertalk_listener.go hypertalk/hypertalk_parser.go hypertalk/hypertalk_lexer.go 
+hypertalk/doc.go: hypertalk/hypertalk_test.go
+
+%/hypertalk_base_listener.go %/hypertalk_listener.go %/hypertalk_parser.go %/hypertalk_lexer.go: grammars-v4/hypertalk/HyperTalk.g4 
+	${BUILD} hypertalk grammars-v4/hypertalk/HyperTalk.g4 hypertalk/hypertalk_base_listener.go hypertalk/hypertalk_listener.go hypertalk/hypertalk_parser.go hypertalk/hypertalk_lexer.go
+%/hypertalk_test.go: hypertalk/hypertalk_base_listener.go hypertalk/hypertalk_listener.go hypertalk/hypertalk_parser.go hypertalk/hypertalk_lexer.go 
+	${TEST} hypertalk grammars-v4/hypertalk/pom.xml grammars-v4/hypertalk/HyperTalk.g4 
+
 icalendar: icalendar/icalendar_test.go icalendar/doc.go
 icalendar icalendar/icalendar_test.go: icalendar/icalendar_base_listener.go icalendar/icalendar_listener.go icalendar/icalendar_parser.go icalendar/icalendar_lexer.go 
 icalendar/doc.go: icalendar/icalendar_test.go
@@ -576,6 +774,15 @@ icalendar/doc.go: icalendar/icalendar_test.go
 	${BUILD} icalendar grammars-v4/icalendar/ICalendar.g4 icalendar/icalendar_base_listener.go icalendar/icalendar_listener.go icalendar/icalendar_parser.go icalendar/icalendar_lexer.go
 %/icalendar_test.go: icalendar/icalendar_base_listener.go icalendar/icalendar_listener.go icalendar/icalendar_parser.go icalendar/icalendar_lexer.go 
 	${TEST} icalendar grammars-v4/icalendar/pom.xml grammars-v4/icalendar/ICalendar.g4 
+
+icon: icon/icon_test.go icon/doc.go
+icon icon/icon_test.go: icon/icon_base_listener.go icon/icon_listener.go icon/icon_parser.go icon/icon_lexer.go 
+icon/doc.go: icon/icon_test.go
+
+%/icon_base_listener.go %/icon_listener.go %/icon_parser.go %/icon_lexer.go: grammars-v4/icon/icon.g4 
+	${BUILD} icon grammars-v4/icon/icon.g4 icon/icon_base_listener.go icon/icon_listener.go icon/icon_parser.go icon/icon_lexer.go
+%/icon_test.go: icon/icon_base_listener.go icon/icon_listener.go icon/icon_parser.go icon/icon_lexer.go 
+	${TEST} icon grammars-v4/icon/pom.xml grammars-v4/icon/icon.g4 
 
 idl: idl/idl_test.go idl/doc.go
 idl idl/idl_test.go: idl/idl_base_listener.go idl/idl_listener.go idl/idl_parser.go idl/idl_lexer.go 
@@ -781,6 +988,15 @@ lolcode/doc.go: lolcode/lolcode_test.go
 %/lolcode_test.go: lolcode/lolcode_base_listener.go lolcode/lolcode_listener.go lolcode/lolcode_parser.go lolcode/lolcode_lexer.go 
 	${TEST} lolcode grammars-v4/lolcode/pom.xml grammars-v4/lolcode/lolcode.g4 
 
+lpc: lpc/lpc_test.go lpc/doc.go
+lpc lpc/lpc_test.go: lpc/lpc_base_listener.go lpc/lpc_listener.go lpc/lpc_parser.go lpc/lpc_lexer.go 
+lpc/doc.go: lpc/lpc_test.go
+
+%/lpc_base_listener.go %/lpc_listener.go %/lpc_parser.go %/lpc_lexer.go: grammars-v4/lpc/LPC.g4 
+	${BUILD} lpc grammars-v4/lpc/LPC.g4 lpc/lpc_base_listener.go lpc/lpc_listener.go lpc/lpc_parser.go lpc/lpc_lexer.go
+%/lpc_test.go: lpc/lpc_base_listener.go lpc/lpc_listener.go lpc/lpc_parser.go lpc/lpc_lexer.go 
+	${TEST} lpc grammars-v4/lpc/pom.xml grammars-v4/lpc/LPC.g4 
+
 lua: lua/lua_test.go lua/doc.go
 lua lua/lua_test.go: lua/lua_base_listener.go lua/lua_listener.go lua/lua_parser.go lua/lua_lexer.go 
 lua/doc.go: lua/lua_test.go
@@ -807,6 +1023,15 @@ masm/doc.go: masm/masm_test.go
 	${BUILD} masm grammars-v4/masm/MASM.g4 masm/masm_base_listener.go masm/masm_listener.go masm/masm_parser.go masm/masm_lexer.go
 %/masm_test.go: masm/masm_base_listener.go masm/masm_listener.go masm/masm_parser.go masm/masm_lexer.go 
 	${TEST} masm grammars-v4/masm/pom.xml grammars-v4/masm/MASM.g4 
+
+matlab: matlab/matlab_test.go matlab/doc.go
+matlab matlab/matlab_test.go: matlab/matlab_base_listener.go matlab/matlab_listener.go matlab/matlab_parser.go matlab/matlab_lexer.go 
+matlab/doc.go: matlab/matlab_test.go
+
+%/matlab_base_listener.go %/matlab_listener.go %/matlab_parser.go %/matlab_lexer.go: grammars-v4/matlab/matlab.g4 
+	${BUILD} matlab grammars-v4/matlab/matlab.g4 matlab/matlab_base_listener.go matlab/matlab_listener.go matlab/matlab_parser.go matlab/matlab_lexer.go
+%/matlab_test.go: matlab/matlab_base_listener.go matlab/matlab_listener.go matlab/matlab_parser.go matlab/matlab_lexer.go 
+	${TEST} matlab grammars-v4/matlab/pom.xml grammars-v4/matlab/matlab.g4 
 
 mdx: mdx/mdx_test.go mdx/doc.go
 mdx mdx/mdx_test.go: mdx/mdx_base_listener.go mdx/mdx_listener.go mdx/mdx_parser.go mdx/mdx_lexer.go 
@@ -853,6 +1078,15 @@ molecule/doc.go: molecule/molecule_test.go
 %/molecule_test.go: molecule/molecule_base_listener.go molecule/molecule_listener.go molecule/molecule_parser.go molecule/molecule_lexer.go 
 	${TEST} molecule grammars-v4/molecule/pom.xml grammars-v4/molecule/molecule.g4 
 
+moo: moo/moo_test.go moo/doc.go
+moo moo/moo_test.go: moo/moo_base_listener.go moo/moo_listener.go moo/moo_parser.go moo/moo_lexer.go 
+moo/doc.go: moo/moo_test.go
+
+%/moo_base_listener.go %/moo_listener.go %/moo_parser.go %/moo_lexer.go: grammars-v4/moo/moo.g4 
+	${BUILD} moo grammars-v4/moo/moo.g4 moo/moo_base_listener.go moo/moo_listener.go moo/moo_parser.go moo/moo_lexer.go
+%/moo_test.go: moo/moo_base_listener.go moo/moo_listener.go moo/moo_parser.go moo/moo_lexer.go 
+	${TEST} moo grammars-v4/moo/pom.xml grammars-v4/moo/moo.g4 
+
 morsecode: morsecode/morsecode_test.go morsecode/doc.go
 morsecode morsecode/morsecode_test.go: morsecode/morsecode_base_listener.go morsecode/morsecode_listener.go morsecode/morsecode_parser.go morsecode/morsecode_lexer.go 
 morsecode/doc.go: morsecode/morsecode_test.go
@@ -879,6 +1113,15 @@ mu/doc.go: mu/mu_test.go
 	${BUILD} mu grammars-v4/muparser/MuParser.g4 mu/muparser_base_listener.go mu/muparser_listener.go mu/muparser_parser.go mu/muparser_lexer.go
 %/mu_test.go: mu/muparser_base_listener.go mu/muparser_listener.go mu/muparser_parser.go mu/muparser_lexer.go 
 	${TEST} mu grammars-v4/muparser/pom.xml grammars-v4/muparser/MuParser.g4 
+
+muddb: muddb/muddb_test.go muddb/doc.go
+muddb muddb/muddb_test.go: muddb/muddb_base_listener.go muddb/muddb_listener.go muddb/muddb_parser.go muddb/muddb_lexer.go 
+muddb/doc.go: muddb/muddb_test.go
+
+%/muddb_base_listener.go %/muddb_listener.go %/muddb_parser.go %/muddb_lexer.go: grammars-v4/muddb/muddb.g4 
+	${BUILD} muddb grammars-v4/muddb/muddb.g4 muddb/muddb_base_listener.go muddb/muddb_listener.go muddb/muddb_parser.go muddb/muddb_lexer.go
+%/muddb_test.go: muddb/muddb_base_listener.go muddb/muddb_listener.go muddb/muddb_parser.go muddb/muddb_lexer.go 
+	${TEST} muddb grammars-v4/muddb/pom.xml grammars-v4/muddb/muddb.g4 
 
 mumath: mumath/mumath_test.go mumath/doc.go
 mumath mumath/mumath_test.go: mumath/mumath_base_listener.go mumath/mumath_listener.go mumath/mumath_parser.go mumath/mumath_lexer.go 
@@ -1024,6 +1267,24 @@ php/doc.go: php/php_test.go
 %/php_test.go: php/phpparser_base_listener.go php/phpparser_listener.go php/php_parser.go php/php_lexer.go 
 	${TEST} php grammars-v4/php/pom.xml grammars-v4/php/PhpParser.g4 grammars-v4/php/PhpLexer.g4 
 
+pike: pike/pike_test.go pike/doc.go
+pike pike/pike_test.go: pike/pike_base_listener.go pike/pike_listener.go pike/pike_parser.go pike/pike_lexer.go 
+pike/doc.go: pike/pike_test.go
+
+%/pike_base_listener.go %/pike_listener.go %/pike_parser.go %/pike_lexer.go: grammars-v4/pike/pike.g4 
+	${BUILD} pike grammars-v4/pike/pike.g4 pike/pike_base_listener.go pike/pike_listener.go pike/pike_parser.go pike/pike_lexer.go
+%/pike_test.go: pike/pike_base_listener.go pike/pike_listener.go pike/pike_parser.go pike/pike_lexer.go 
+	${TEST} pike grammars-v4/pike/pom.xml grammars-v4/pike/pike.g4 
+
+pl0: pl0/pl0_test.go pl0/doc.go
+pl0 pl0/pl0_test.go: pl0/pl0_base_listener.go pl0/pl0_listener.go pl0/pl0_parser.go pl0/pl0_lexer.go 
+pl0/doc.go: pl0/pl0_test.go
+
+%/pl0_base_listener.go %/pl0_listener.go %/pl0_parser.go %/pl0_lexer.go: grammars-v4/pl0/pl0.g4 
+	${BUILD} pl0 grammars-v4/pl0/pl0.g4 pl0/pl0_base_listener.go pl0/pl0_listener.go pl0/pl0_parser.go pl0/pl0_lexer.go
+%/pl0_test.go: pl0/pl0_base_listener.go pl0/pl0_listener.go pl0/pl0_parser.go pl0/pl0_lexer.go 
+	${TEST} pl0 grammars-v4/pl0/pom.xml grammars-v4/pl0/pl0.g4 
+
 plsql: plsql/plsql_test.go plsql/doc.go
 plsql plsql/plsql_test.go: plsql/plsqlparser_base_listener.go plsql/plsqlparser_listener.go plsql/plsql_parser.go plsql/plsql_lexer.go 
 plsql/doc.go: plsql/plsql_test.go
@@ -1036,6 +1297,15 @@ plsql/doc.go: plsql/plsql_test.go
 %/plsql_test.go: plsql/plsqlparser_base_listener.go plsql/plsqlparser_listener.go plsql/plsql_parser.go plsql/plsql_lexer.go 
 	${TEST} plsql grammars-v4/plsql/pom.xml grammars-v4/plsql/PlSqlParser.g4 grammars-v4/plsql/PlSqlLexer.g4 
 
+ply: ply/ply_test.go ply/doc.go
+ply ply/ply_test.go: ply/ply_base_listener.go ply/ply_listener.go ply/ply_parser.go ply/ply_lexer.go 
+ply/doc.go: ply/ply_test.go
+
+%/ply_base_listener.go %/ply_listener.go %/ply_parser.go %/ply_lexer.go: grammars-v4/ply/ply.g4 
+	${BUILD} ply grammars-v4/ply/ply.g4 ply/ply_base_listener.go ply/ply_listener.go ply/ply_parser.go ply/ply_lexer.go
+%/ply_test.go: ply/ply_base_listener.go ply/ply_listener.go ply/ply_parser.go ply/ply_lexer.go 
+	${TEST} ply grammars-v4/ply/pom.xml grammars-v4/ply/ply.g4 
+
 postalcode: postalcode/postalcode_test.go postalcode/doc.go
 postalcode postalcode/postalcode_test.go: postalcode/postalcode_base_listener.go postalcode/postalcode_listener.go postalcode/postalcode_parser.go postalcode/postalcode_lexer.go 
 postalcode/doc.go: postalcode/postalcode_test.go
@@ -1046,13 +1316,16 @@ postalcode/doc.go: postalcode/postalcode_test.go
 	${TEST} postalcode grammars-v4/postalcode/pom.xml grammars-v4/postalcode/postalcode.g4 
 
 powerbuilder: powerbuilder/powerbuilder_test.go powerbuilder/doc.go
-powerbuilder powerbuilder/powerbuilder_test.go: powerbuilder/powerbuilder_base_listener.go powerbuilder/powerbuilder_listener.go powerbuilder/powerbuilder_parser.go powerbuilder/powerbuilder_lexer.go 
+powerbuilder powerbuilder/powerbuilder_test.go: powerbuilder/powerbuilderparser_base_listener.go powerbuilder/powerbuilderparser_listener.go powerbuilder/powerbuilder_parser.go powerbuilder/powerbuilder_lexer.go 
 powerbuilder/doc.go: powerbuilder/powerbuilder_test.go
 
-%/powerbuilder_base_listener.go %/powerbuilder_listener.go %/powerbuilder_parser.go %/powerbuilder_lexer.go: grammars-v4/powerbuilder/powerbuilder.g4 
-	${BUILD} powerbuilder grammars-v4/powerbuilder/powerbuilder.g4 powerbuilder/powerbuilder_base_listener.go powerbuilder/powerbuilder_listener.go powerbuilder/powerbuilder_parser.go powerbuilder/powerbuilder_lexer.go
-%/powerbuilder_test.go: powerbuilder/powerbuilder_base_listener.go powerbuilder/powerbuilder_listener.go powerbuilder/powerbuilder_parser.go powerbuilder/powerbuilder_lexer.go 
-	${TEST} powerbuilder grammars-v4/powerbuilder/pom.xml grammars-v4/powerbuilder/powerbuilder.g4 
+%/powerbuilderparser_base_listener.go %/powerbuilderparser_listener.go %/powerbuilder_parser.go: grammars-v4/powerbuilder/powerbuilderParser.g4 powerbuilder/powerbuilder_lexer.go
+	${BUILD} powerbuilder grammars-v4/powerbuilder/powerbuilderParser.g4 powerbuilder/powerbuilderparser_base_listener.go powerbuilder/powerbuilderparser_listener.go powerbuilder/powerbuilder_parser.go
+
+%/powerbuilder_lexer.go: grammars-v4/powerbuilder/powerbuilderLexer.g4 
+	${BUILD} powerbuilder grammars-v4/powerbuilder/powerbuilderLexer.g4 powerbuilder/powerbuilder_lexer.go
+%/powerbuilder_test.go: powerbuilder/powerbuilderparser_base_listener.go powerbuilder/powerbuilderparser_listener.go powerbuilder/powerbuilder_parser.go powerbuilder/powerbuilder_lexer.go 
+	${TEST} powerbuilder grammars-v4/powerbuilder/pom.xml grammars-v4/powerbuilder/powerbuilderParser.g4 grammars-v4/powerbuilder/powerbuilderLexer.g4 
 
 prolog: prolog/prolog_test.go prolog/doc.go
 prolog prolog/prolog_test.go: prolog/prolog_base_listener.go prolog/prolog_listener.go prolog/prolog_parser.go prolog/prolog_lexer.go 
@@ -1089,6 +1362,15 @@ protobuf3/doc.go: protobuf3/protobuf3_test.go
 	${BUILD} protobuf3 grammars-v4/protobuf3/Protobuf3.g4 protobuf3/protobuf3_base_listener.go protobuf3/protobuf3_listener.go protobuf3/protobuf3_parser.go protobuf3/protobuf3_lexer.go
 %/protobuf3_test.go: protobuf3/protobuf3_base_listener.go protobuf3/protobuf3_listener.go protobuf3/protobuf3_parser.go protobuf3/protobuf3_lexer.go 
 	${TEST} protobuf3 grammars-v4/protobuf3/pom.xml grammars-v4/protobuf3/Protobuf3.g4 
+
+prov_n: prov_n/prov_n_test.go prov_n/doc.go
+prov_n prov_n/prov_n_test.go: prov_n/prov_n_base_listener.go prov_n/prov_n_listener.go prov_n/prov_n_parser.go prov_n/prov_n_lexer.go 
+prov_n/doc.go: prov_n/prov_n_test.go
+
+%/prov_n_base_listener.go %/prov_n_listener.go %/prov_n_parser.go %/prov_n_lexer.go: grammars-v4/prov-n/PROV_N.g4 
+	${BUILD} prov_n grammars-v4/prov-n/PROV_N.g4 prov_n/prov_n_base_listener.go prov_n/prov_n_listener.go prov_n/prov_n_parser.go prov_n/prov_n_lexer.go
+%/prov_n_test.go: prov_n/prov_n_base_listener.go prov_n/prov_n_listener.go prov_n/prov_n_parser.go prov_n/prov_n_lexer.go 
+	${TEST} prov_n grammars-v4/prov-n/pom.xml grammars-v4/prov-n/PROV_N.g4 
 
 python2: python2/python2_test.go python2/doc.go
 python2 python2/python2_test.go: python2/python2_base_listener.go python2/python2_listener.go python2/python2_parser.go python2/python2_lexer.go 
@@ -1143,6 +1425,51 @@ redcode/doc.go: redcode/redcode_test.go
 	${BUILD} redcode grammars-v4/redcode/redcode.g4 redcode/redcode_base_listener.go redcode/redcode_listener.go redcode/redcode_parser.go redcode/redcode_lexer.go
 %/redcode_test.go: redcode/redcode_base_listener.go redcode/redcode_listener.go redcode/redcode_parser.go redcode/redcode_lexer.go 
 	${TEST} redcode grammars-v4/redcode/pom.xml grammars-v4/redcode/redcode.g4 
+
+regex: regex/regex_test.go regex/doc.go
+regex regex/regex_test.go: regex/regexparser_base_listener.go regex/regexparser_listener.go regex/regex_parser.go regex/regex_lexer.go 
+regex/doc.go: regex/regex_test.go
+
+%/regexparser_base_listener.go %/regexparser_listener.go %/regex_parser.go: grammars-v4/xsd-regex/regexParser.g4 regex/regex_lexer.go
+	${BUILD} regex grammars-v4/xsd-regex/regexParser.g4 regex/regexparser_base_listener.go regex/regexparser_listener.go regex/regex_parser.go
+
+%/regex_lexer.go: grammars-v4/xsd-regex/regexLexer.g4 
+	${BUILD} regex grammars-v4/xsd-regex/regexLexer.g4 regex/regex_lexer.go
+%/regex_test.go: regex/regexparser_base_listener.go regex/regexparser_listener.go regex/regex_parser.go regex/regex_lexer.go 
+	${TEST} regex grammars-v4/xsd-regex/pom.xml grammars-v4/xsd-regex/regexParser.g4 grammars-v4/xsd-regex/regexLexer.g4 
+
+rego: rego/rego_test.go rego/doc.go
+rego rego/rego_test.go: rego/regoparser_base_listener.go rego/regoparser_listener.go rego/rego_parser.go rego/rego_lexer.go 
+rego/doc.go: rego/rego_test.go
+
+%/regoparser_base_listener.go %/regoparser_listener.go %/rego_parser.go: grammars-v4/rego/RegoParser.g4 rego/rego_lexer.go
+	${BUILD} rego grammars-v4/rego/RegoParser.g4 rego/regoparser_base_listener.go rego/regoparser_listener.go rego/rego_parser.go
+
+%/rego_lexer.go: grammars-v4/rego/RegoLexer.g4 
+	${BUILD} rego grammars-v4/rego/RegoLexer.g4 rego/rego_lexer.go
+%/rego_test.go: rego/regoparser_base_listener.go rego/regoparser_listener.go rego/rego_parser.go rego/rego_lexer.go 
+	${TEST} rego grammars-v4/rego/pom.xml grammars-v4/rego/RegoParser.g4 grammars-v4/rego/RegoLexer.g4 
+
+restructuredtext: restructuredtext/restructuredtext_test.go restructuredtext/doc.go
+restructuredtext restructuredtext/restructuredtext_test.go: restructuredtext/restructuredtext_base_listener.go restructuredtext/restructuredtext_listener.go restructuredtext/restructuredtext_parser.go restructuredtext/restructuredtext_lexer.go 
+restructuredtext/doc.go: restructuredtext/restructuredtext_test.go
+
+%/restructuredtext_base_listener.go %/restructuredtext_listener.go %/restructuredtext_parser.go %/restructuredtext_lexer.go: grammars-v4/restructuredtext/ReStructuredText.g4 
+	${BUILD} restructuredtext grammars-v4/restructuredtext/ReStructuredText.g4 restructuredtext/restructuredtext_base_listener.go restructuredtext/restructuredtext_listener.go restructuredtext/restructuredtext_parser.go restructuredtext/restructuredtext_lexer.go
+%/restructuredtext_test.go: restructuredtext/restructuredtext_base_listener.go restructuredtext/restructuredtext_listener.go restructuredtext/restructuredtext_parser.go restructuredtext/restructuredtext_lexer.go 
+	${TEST} restructuredtext grammars-v4/restructuredtext/pom.xml grammars-v4/restructuredtext/ReStructuredText.g4 
+
+rexx: rexx/rexx_test.go rexx/doc.go
+rexx rexx/rexx_test.go: rexx/rexxparser_base_listener.go rexx/rexxparser_listener.go rexx/rexx_parser.go rexx/rexx_lexer.go 
+rexx/doc.go: rexx/rexx_test.go
+
+%/rexxparser_base_listener.go %/rexxparser_listener.go %/rexx_parser.go: grammars-v4/rexx/RexxParser.g4 rexx/rexx_lexer.go
+	${BUILD} rexx grammars-v4/rexx/RexxParser.g4 rexx/rexxparser_base_listener.go rexx/rexxparser_listener.go rexx/rexx_parser.go
+
+%/rexx_lexer.go: grammars-v4/rexx/RexxLexer.g4 
+	${BUILD} rexx grammars-v4/rexx/RexxLexer.g4 rexx/rexx_lexer.go
+%/rexx_test.go: rexx/rexxparser_base_listener.go rexx/rexxparser_listener.go rexx/rexx_parser.go rexx/rexx_lexer.go 
+	${TEST} rexx grammars-v4/rexx/pom.xml grammars-v4/rexx/RexxParser.g4 grammars-v4/rexx/RexxLexer.g4 
 
 rfilter: rfilter/rfilter_test.go rfilter/doc.go
 rfilter rfilter/rfilter_test.go: rfilter/rfilter_base_listener.go rfilter/rfilter_listener.go rfilter/rfilter_parser.go 
@@ -1210,6 +1537,15 @@ sexpression/doc.go: sexpression/sexpression_test.go
 %/sexpression_test.go: sexpression/sexpression_base_listener.go sexpression/sexpression_listener.go sexpression/sexpression_parser.go sexpression/sexpression_lexer.go 
 	${TEST} sexpression grammars-v4/sexpression/pom.xml grammars-v4/sexpression/sexpression.g4 
 
+sgf: sgf/sgf_test.go sgf/doc.go
+sgf sgf/sgf_test.go: sgf/sgf_base_listener.go sgf/sgf_listener.go sgf/sgf_parser.go sgf/sgf_lexer.go 
+sgf/doc.go: sgf/sgf_test.go
+
+%/sgf_base_listener.go %/sgf_listener.go %/sgf_parser.go %/sgf_lexer.go: grammars-v4/sgf/sgf.g4 
+	${BUILD} sgf grammars-v4/sgf/sgf.g4 sgf/sgf_base_listener.go sgf/sgf_listener.go sgf/sgf_parser.go sgf/sgf_lexer.go
+%/sgf_test.go: sgf/sgf_base_listener.go sgf/sgf_listener.go sgf/sgf_parser.go sgf/sgf_lexer.go 
+	${TEST} sgf grammars-v4/sgf/pom.xml grammars-v4/sgf/sgf.g4 
+
 sharc: sharc/sharc_test.go sharc/doc.go
 sharc sharc/sharc_test.go: sharc/sharcparser_base_listener.go sharc/sharcparser_listener.go sharc/sharc_parser.go sharc/sharc_lexer.go 
 sharc/doc.go: sharc/sharc_test.go
@@ -1231,6 +1567,15 @@ smalltalk/doc.go: smalltalk/smalltalk_test.go
 %/smalltalk_test.go: smalltalk/smalltalk_base_listener.go smalltalk/smalltalk_listener.go smalltalk/smalltalk_parser.go smalltalk/smalltalk_lexer.go 
 	${TEST} smalltalk grammars-v4/smalltalk/pom.xml grammars-v4/smalltalk/Smalltalk.g4 
 
+smiles: smiles/smiles_test.go smiles/doc.go
+smiles smiles/smiles_test.go: smiles/smiles_base_listener.go smiles/smiles_listener.go smiles/smiles_parser.go smiles/smiles_lexer.go 
+smiles/doc.go: smiles/smiles_test.go
+
+%/smiles_base_listener.go %/smiles_listener.go %/smiles_parser.go %/smiles_lexer.go: grammars-v4/smiles/smiles.g4 
+	${BUILD} smiles grammars-v4/smiles/smiles.g4 smiles/smiles_base_listener.go smiles/smiles_listener.go smiles/smiles_parser.go smiles/smiles_lexer.go
+%/smiles_test.go: smiles/smiles_base_listener.go smiles/smiles_listener.go smiles/smiles_parser.go smiles/smiles_lexer.go 
+	${TEST} smiles grammars-v4/smiles/pom.xml grammars-v4/smiles/smiles.g4 
+
 smtlibv2: smtlibv2/smtlibv2_test.go smtlibv2/doc.go
 smtlibv2 smtlibv2/smtlibv2_test.go: smtlibv2/smtlibv2_base_listener.go smtlibv2/smtlibv2_listener.go smtlibv2/smtlibv2_parser.go smtlibv2/smtlibv2_lexer.go 
 smtlibv2/doc.go: smtlibv2/smtlibv2_test.go
@@ -1248,6 +1593,15 @@ snobol/doc.go: snobol/snobol_test.go
 	${BUILD} snobol grammars-v4/snobol/snobol.g4 snobol/snobol_base_listener.go snobol/snobol_listener.go snobol/snobol_parser.go snobol/snobol_lexer.go
 %/snobol_test.go: snobol/snobol_base_listener.go snobol/snobol_listener.go snobol/snobol_parser.go snobol/snobol_lexer.go 
 	${TEST} snobol grammars-v4/snobol/pom.xml grammars-v4/snobol/snobol.g4 
+
+solidity: solidity/solidity_test.go solidity/doc.go
+solidity solidity/solidity_test.go: solidity/solidity_base_listener.go solidity/solidity_listener.go solidity/solidity_parser.go solidity/solidity_lexer.go 
+solidity/doc.go: solidity/solidity_test.go
+
+%/solidity_base_listener.go %/solidity_listener.go %/solidity_parser.go %/solidity_lexer.go: grammars-v4/solidity/Solidity.g4 
+	${BUILD} solidity grammars-v4/solidity/Solidity.g4 solidity/solidity_base_listener.go solidity/solidity_listener.go solidity/solidity_parser.go solidity/solidity_lexer.go
+%/solidity_test.go: solidity/solidity_base_listener.go solidity/solidity_listener.go solidity/solidity_parser.go solidity/solidity_lexer.go 
+	${TEST} solidity grammars-v4/solidity/pom.xml grammars-v4/solidity/Solidity.g4 
 
 sparql: sparql/sparql_test.go sparql/doc.go
 sparql sparql/sparql_test.go: sparql/sparql_base_listener.go sparql/sparql_listener.go sparql/sparql_parser.go sparql/sparql_lexer.go 
@@ -1339,6 +1693,15 @@ swiftfin/doc.go: swiftfin/swiftfin_test.go
 %/swiftfin_test.go: swiftfin/swiftfinparser_base_listener.go swiftfin/swiftfinparser_listener.go swiftfin/swiftfin_parser.go swiftfin/swiftfin_lexer.go 
 	${TEST} swiftfin grammars-v4/swift-fin/src/main/antlr4/pom.xml grammars-v4/swift-fin/src/main/antlr4/SwiftFinParser.g4 grammars-v4/swift-fin/src/main/antlr4/SwiftFinLexer.g4 
 
+sysveriloghdl: sysveriloghdl/sysveriloghdl_test.go sysveriloghdl/doc.go
+sysveriloghdl sysveriloghdl/sysveriloghdl_test.go: sysveriloghdl/sysveriloghdl_base_listener.go sysveriloghdl/sysveriloghdl_listener.go sysveriloghdl/sysveriloghdl_parser.go sysveriloghdl/sysveriloghdl_lexer.go 
+sysveriloghdl/doc.go: sysveriloghdl/sysveriloghdl_test.go
+
+%/sysveriloghdl_base_listener.go %/sysveriloghdl_listener.go %/sysveriloghdl_parser.go %/sysveriloghdl_lexer.go: grammars-v4/system_verilog/SysVerilogHDL.g4 
+	${BUILD} sysveriloghdl grammars-v4/system_verilog/SysVerilogHDL.g4 sysveriloghdl/sysveriloghdl_base_listener.go sysveriloghdl/sysveriloghdl_listener.go sysveriloghdl/sysveriloghdl_parser.go sysveriloghdl/sysveriloghdl_lexer.go
+%/sysveriloghdl_test.go: sysveriloghdl/sysveriloghdl_base_listener.go sysveriloghdl/sysveriloghdl_listener.go sysveriloghdl/sysveriloghdl_parser.go sysveriloghdl/sysveriloghdl_lexer.go 
+	${TEST} sysveriloghdl grammars-v4/system_verilog/pom.xml grammars-v4/system_verilog/SysVerilogHDL.g4 
+
 telephone: telephone/telephone_test.go telephone/doc.go
 telephone telephone/telephone_test.go: telephone/telephone_base_listener.go telephone/telephone_listener.go telephone/telephone_parser.go telephone/telephone_lexer.go 
 telephone/doc.go: telephone/telephone_test.go
@@ -1347,6 +1710,15 @@ telephone/doc.go: telephone/telephone_test.go
 	${BUILD} telephone grammars-v4/telephone/telephone.g4 telephone/telephone_base_listener.go telephone/telephone_listener.go telephone/telephone_parser.go telephone/telephone_lexer.go
 %/telephone_test.go: telephone/telephone_base_listener.go telephone/telephone_listener.go telephone/telephone_parser.go telephone/telephone_lexer.go 
 	${TEST} telephone grammars-v4/telephone/pom.xml grammars-v4/telephone/telephone.g4 
+
+thrift: thrift/thrift_test.go thrift/doc.go
+thrift thrift/thrift_test.go: thrift/thrift_base_listener.go thrift/thrift_listener.go thrift/thrift_parser.go thrift/thrift_lexer.go 
+thrift/doc.go: thrift/thrift_test.go
+
+%/thrift_base_listener.go %/thrift_listener.go %/thrift_parser.go %/thrift_lexer.go: grammars-v4/thrift/Thrift.g4 
+	${BUILD} thrift grammars-v4/thrift/Thrift.g4 thrift/thrift_base_listener.go thrift/thrift_listener.go thrift/thrift_parser.go thrift/thrift_lexer.go
+%/thrift_test.go: thrift/thrift_base_listener.go thrift/thrift_listener.go thrift/thrift_parser.go thrift/thrift_lexer.go 
+	${TEST} thrift grammars-v4/thrift/pom.xml grammars-v4/thrift/Thrift.g4 
 
 tiny: tiny/tiny_test.go tiny/doc.go
 tiny tiny/tiny_test.go: tiny/tiny_base_listener.go tiny/tiny_listener.go tiny/tiny_parser.go tiny/tiny_lexer.go 
@@ -1357,6 +1729,15 @@ tiny/doc.go: tiny/tiny_test.go
 %/tiny_test.go: tiny/tiny_base_listener.go tiny/tiny_listener.go tiny/tiny_parser.go tiny/tiny_lexer.go 
 	${TEST} tiny grammars-v4/tiny/pom.xml grammars-v4/tiny/tiny.g4 
 
+tinybasic: tinybasic/tinybasic_test.go tinybasic/doc.go
+tinybasic tinybasic/tinybasic_test.go: tinybasic/tinybasic_base_listener.go tinybasic/tinybasic_listener.go tinybasic/tinybasic_parser.go tinybasic/tinybasic_lexer.go 
+tinybasic/doc.go: tinybasic/tinybasic_test.go
+
+%/tinybasic_base_listener.go %/tinybasic_listener.go %/tinybasic_parser.go %/tinybasic_lexer.go: grammars-v4/tinybasic/tinybasic.g4 
+	${BUILD} tinybasic grammars-v4/tinybasic/tinybasic.g4 tinybasic/tinybasic_base_listener.go tinybasic/tinybasic_listener.go tinybasic/tinybasic_parser.go tinybasic/tinybasic_lexer.go
+%/tinybasic_test.go: tinybasic/tinybasic_base_listener.go tinybasic/tinybasic_listener.go tinybasic/tinybasic_parser.go tinybasic/tinybasic_lexer.go 
+	${TEST} tinybasic grammars-v4/tinybasic/pom.xml grammars-v4/tinybasic/tinybasic.g4 
+
 tinyc: tinyc/tinyc_test.go tinyc/doc.go
 tinyc tinyc/tinyc_test.go: tinyc/tinyc_base_listener.go tinyc/tinyc_listener.go tinyc/tinyc_parser.go tinyc/tinyc_lexer.go 
 tinyc/doc.go: tinyc/tinyc_test.go
@@ -1365,6 +1746,27 @@ tinyc/doc.go: tinyc/tinyc_test.go
 	${BUILD} tinyc grammars-v4/tinyc/tinyc.g4 tinyc/tinyc_base_listener.go tinyc/tinyc_listener.go tinyc/tinyc_parser.go tinyc/tinyc_lexer.go
 %/tinyc_test.go: tinyc/tinyc_base_listener.go tinyc/tinyc_listener.go tinyc/tinyc_parser.go tinyc/tinyc_lexer.go 
 	${TEST} tinyc grammars-v4/tinyc/pom.xml grammars-v4/tinyc/tinyc.g4 
+
+tinymud: tinymud/tinymud_test.go tinymud/doc.go
+tinymud tinymud/tinymud_test.go: tinymud/tinymud_base_listener.go tinymud/tinymud_listener.go tinymud/tinymud_parser.go tinymud/tinymud_lexer.go 
+tinymud/doc.go: tinymud/tinymud_test.go
+
+%/tinymud_base_listener.go %/tinymud_listener.go %/tinymud_parser.go %/tinymud_lexer.go: grammars-v4/tinymud/tinymud.g4 
+	${BUILD} tinymud grammars-v4/tinymud/tinymud.g4 tinymud/tinymud_base_listener.go tinymud/tinymud_listener.go tinymud/tinymud_parser.go tinymud/tinymud_lexer.go
+%/tinymud_test.go: tinymud/tinymud_base_listener.go tinymud/tinymud_listener.go tinymud/tinymud_parser.go tinymud/tinymud_lexer.go 
+	${TEST} tinymud grammars-v4/tinymud/pom.xml grammars-v4/tinymud/tinymud.g4 
+
+tjs: tjs/tjs_test.go tjs/doc.go
+tjs tjs/tjs_test.go: tjs/tjsparser_base_listener.go tjs/tjsparser_listener.go tjs/tjs_parser.go tjs/tjs_lexer.go 
+tjs/doc.go: tjs/tjs_test.go
+
+%/tjsparser_base_listener.go %/tjsparser_listener.go %/tjs_parser.go: grammars-v4/kirikiri-tjs/TJSParser.g4 tjs/tjs_lexer.go
+	${BUILD} tjs grammars-v4/kirikiri-tjs/TJSParser.g4 tjs/tjsparser_base_listener.go tjs/tjsparser_listener.go tjs/tjs_parser.go
+
+%/tjs_lexer.go: grammars-v4/kirikiri-tjs/TJSLexer.g4 
+	${BUILD} tjs grammars-v4/kirikiri-tjs/TJSLexer.g4 tjs/tjs_lexer.go
+%/tjs_test.go: tjs/tjsparser_base_listener.go tjs/tjsparser_listener.go tjs/tjs_parser.go tjs/tjs_lexer.go 
+	${TEST} tjs grammars-v4/kirikiri-tjs/pom.xml grammars-v4/kirikiri-tjs/TJSParser.g4 grammars-v4/kirikiri-tjs/TJSLexer.g4 
 
 tnsnames: tnsnames/tnsnames_test.go tnsnames/doc.go
 tnsnames tnsnames/tnsnames_test.go: tnsnames/tnsnamesparser_base_listener.go tnsnames/tnsnamesparser_listener.go tnsnames/tnsnames_parser.go tnsnames/tnsnames_lexer.go 
@@ -1387,6 +1789,15 @@ tnt/doc.go: tnt/tnt_test.go
 %/tnt_test.go: tnt/tnt_base_listener.go tnt/tnt_listener.go tnt/tnt_parser.go tnt/tnt_lexer.go 
 	${TEST} tnt grammars-v4/tnt/pom.xml grammars-v4/tnt/tnt.g4 
 
+toml: toml/toml_test.go toml/doc.go
+toml toml/toml_test.go: toml/toml_base_listener.go toml/toml_listener.go toml/toml_parser.go toml/toml_lexer.go 
+toml/doc.go: toml/toml_test.go
+
+%/toml_base_listener.go %/toml_listener.go %/toml_parser.go %/toml_lexer.go: grammars-v4/toml/toml.g4 
+	${BUILD} toml grammars-v4/toml/toml.g4 toml/toml_base_listener.go toml/toml_listener.go toml/toml_parser.go toml/toml_lexer.go
+%/toml_test.go: toml/toml_base_listener.go toml/toml_listener.go toml/toml_parser.go toml/toml_lexer.go 
+	${TEST} toml grammars-v4/toml/pom.xml grammars-v4/toml/toml.g4 
+
 tsql: tsql/tsql_test.go tsql/doc.go
 tsql tsql/tsql_test.go: tsql/tsqlparser_base_listener.go tsql/tsqlparser_listener.go tsql/tsql_parser.go tsql/tsql_lexer.go 
 tsql/doc.go: tsql/tsql_test.go
@@ -1398,6 +1809,15 @@ tsql/doc.go: tsql/tsql_test.go
 	${BUILD} tsql grammars-v4/tsql/TSqlLexer.g4 tsql/tsql_lexer.go
 %/tsql_test.go: tsql/tsqlparser_base_listener.go tsql/tsqlparser_listener.go tsql/tsql_parser.go tsql/tsql_lexer.go 
 	${TEST} tsql grammars-v4/tsql/pom.xml grammars-v4/tsql/TSqlParser.g4 grammars-v4/tsql/TSqlLexer.g4 
+
+tsv: tsv/tsv_test.go tsv/doc.go
+tsv tsv/tsv_test.go: tsv/tsv_base_listener.go tsv/tsv_listener.go tsv/tsv_parser.go tsv/tsv_lexer.go 
+tsv/doc.go: tsv/tsv_test.go
+
+%/tsv_base_listener.go %/tsv_listener.go %/tsv_parser.go %/tsv_lexer.go: grammars-v4/tsv/tsv.g4 
+	${BUILD} tsv grammars-v4/tsv/tsv.g4 tsv/tsv_base_listener.go tsv/tsv_listener.go tsv/tsv_parser.go tsv/tsv_lexer.go
+%/tsv_test.go: tsv/tsv_base_listener.go tsv/tsv_listener.go tsv/tsv_parser.go tsv/tsv_lexer.go 
+	${TEST} tsv grammars-v4/tsv/pom.xml grammars-v4/tsv/tsv.g4 
 
 turtle: turtle/turtle_test.go turtle/doc.go
 turtle turtle/turtle_test.go: turtle/turtle_base_listener.go turtle/turtle_listener.go turtle/turtle_parser.go turtle/turtle_lexer.go 
@@ -1426,6 +1846,15 @@ unicodeclasses/doc.go: unicodeclasses/unicodeclasses_test.go
 %/unicodeclasses_test.go: unicodeclasses/unicodeclasses_lexer.go 
 	${TEST} unicodeclasses grammars-v4/kotlin/pom.xml grammars-v4/kotlin/UnicodeClasses.g4 
 
+upnp: upnp/upnp_test.go upnp/doc.go
+upnp upnp/upnp_test.go: upnp/upnp_base_listener.go upnp/upnp_listener.go upnp/upnp_parser.go upnp/upnp_lexer.go 
+upnp/doc.go: upnp/upnp_test.go
+
+%/upnp_base_listener.go %/upnp_listener.go %/upnp_parser.go %/upnp_lexer.go: grammars-v4/upnp/Upnp.g4 
+	${BUILD} upnp grammars-v4/upnp/Upnp.g4 upnp/upnp_base_listener.go upnp/upnp_listener.go upnp/upnp_parser.go upnp/upnp_lexer.go
+%/upnp_test.go: upnp/upnp_base_listener.go upnp/upnp_listener.go upnp/upnp_parser.go upnp/upnp_lexer.go 
+	${TEST} upnp grammars-v4/upnp/pom.xml grammars-v4/upnp/Upnp.g4 
+
 url: url/url_test.go url/doc.go
 url url/url_test.go: url/url_base_listener.go url/url_listener.go url/url_parser.go url/url_lexer.go 
 url/doc.go: url/url_test.go
@@ -1443,6 +1872,15 @@ useragent/doc.go: useragent/useragent_test.go
 	${BUILD} useragent grammars-v4/useragent/useragent.g4 useragent/useragent_base_listener.go useragent/useragent_listener.go useragent/useragent_parser.go useragent/useragent_lexer.go
 %/useragent_test.go: useragent/useragent_base_listener.go useragent/useragent_listener.go useragent/useragent_parser.go useragent/useragent_lexer.go 
 	${TEST} useragent grammars-v4/useragent/pom.xml grammars-v4/useragent/useragent.g4 
+
+v: v/v_test.go v/doc.go
+v v/v_test.go: v/v_base_listener.go v/v_listener.go v/v_parser.go v/v_lexer.go 
+v/doc.go: v/v_test.go
+
+%/v_base_listener.go %/v_listener.go %/v_parser.go %/v_lexer.go: grammars-v4/v/V.g4 
+	${BUILD} v grammars-v4/v/V.g4 v/v_base_listener.go v/v_listener.go v/v_parser.go v/v_lexer.go
+%/v_test.go: v/v_base_listener.go v/v_listener.go v/v_parser.go v/v_lexer.go 
+	${TEST} v grammars-v4/v/pom.xml grammars-v4/v/V.g4 
 
 vba: vba/vba_test.go vba/doc.go
 vba vba/vba_test.go: vba/vba_base_listener.go vba/vba_listener.go vba/vba_parser.go vba/vba_lexer.go 
@@ -1480,6 +1918,18 @@ visualbasic6/doc.go: visualbasic6/visualbasic6_test.go
 %/visualbasic6_test.go: visualbasic6/visualbasic6_base_listener.go visualbasic6/visualbasic6_listener.go visualbasic6/visualbasic6_parser.go visualbasic6/visualbasic6_lexer.go 
 	${TEST} visualbasic6 grammars-v4/vb6/pom.xml grammars-v4/vb6/VisualBasic6.g4 
 
+wat: wat/wat_test.go wat/doc.go
+wat wat/wat_test.go: wat/watparser_base_listener.go wat/watparser_listener.go wat/wat_parser.go wat/wat_lexer.go 
+wat/doc.go: wat/wat_test.go
+
+%/watparser_base_listener.go %/watparser_listener.go %/wat_parser.go: grammars-v4/wat/WatParser.g4 wat/wat_lexer.go
+	${BUILD} wat grammars-v4/wat/WatParser.g4 wat/watparser_base_listener.go wat/watparser_listener.go wat/wat_parser.go
+
+%/wat_lexer.go: grammars-v4/wat/WatLexer.g4 
+	${BUILD} wat grammars-v4/wat/WatLexer.g4 wat/wat_lexer.go
+%/wat_test.go: wat/watparser_base_listener.go wat/watparser_listener.go wat/wat_parser.go wat/wat_lexer.go 
+	${TEST} wat grammars-v4/wat/pom.xml grammars-v4/wat/WatParser.g4 grammars-v4/wat/WatLexer.g4 
+
 wavefrontobj: wavefrontobj/wavefrontobj_test.go wavefrontobj/doc.go
 wavefrontobj wavefrontobj/wavefrontobj_test.go: wavefrontobj/wavefrontobj_base_listener.go wavefrontobj/wavefrontobj_listener.go wavefrontobj/wavefrontobj_parser.go wavefrontobj/wavefrontobj_lexer.go 
 wavefrontobj/doc.go: wavefrontobj/wavefrontobj_test.go
@@ -1497,6 +1947,15 @@ webidl/doc.go: webidl/webidl_test.go
 	${BUILD} webidl grammars-v4/webidl/WebIDL.g4 webidl/webidl_base_listener.go webidl/webidl_listener.go webidl/webidl_parser.go webidl/webidl_lexer.go
 %/webidl_test.go: webidl/webidl_base_listener.go webidl/webidl_listener.go webidl/webidl_parser.go webidl/webidl_lexer.go 
 	${TEST} webidl grammars-v4/webidl/pom.xml grammars-v4/webidl/WebIDL.g4 
+
+wkt: wkt/wkt_test.go wkt/doc.go
+wkt wkt/wkt_test.go: wkt/wkt_base_listener.go wkt/wkt_listener.go wkt/wkt_parser.go wkt/wkt_lexer.go 
+wkt/doc.go: wkt/wkt_test.go
+
+%/wkt_base_listener.go %/wkt_listener.go %/wkt_parser.go %/wkt_lexer.go: grammars-v4/wkt/wkt.g4 
+	${BUILD} wkt grammars-v4/wkt/wkt.g4 wkt/wkt_base_listener.go wkt/wkt_listener.go wkt/wkt_parser.go wkt/wkt_lexer.go
+%/wkt_test.go: wkt/wkt_base_listener.go wkt/wkt_listener.go wkt/wkt_parser.go wkt/wkt_lexer.go 
+	${TEST} wkt grammars-v4/wkt/pom.xml grammars-v4/wkt/wkt.g4 
 
 xdr: xdr/xdr_test.go xdr/doc.go
 xdr xdr/xdr_test.go: xdr/xdr_base_listener.go xdr/xdr_listener.go xdr/xdr_parser.go xdr/xdr_lexer.go 

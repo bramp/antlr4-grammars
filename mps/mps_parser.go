@@ -1,4 +1,4 @@
-// Generated from mps.g4 by ANTLR 4.7.
+// Code generated from mps.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package mps // mps
 import (
@@ -1978,14 +1978,16 @@ func (p *mpsParser) Rhsdatacard() (localctx IRhsdatacardContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(111)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(111)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == mpsParserRHSINDICATORCARD || _la == mpsParserIDENTIFIER) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == mpsParserRHSINDICATORCARD || _la == mpsParserIDENTIFIER) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(112)
@@ -2113,14 +2115,16 @@ func (p *mpsParser) Rangesdatacard() (localctx IRangesdatacardContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(118)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(118)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == mpsParserRANGESINDICATORCARD || _la == mpsParserIDENTIFIER) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == mpsParserRANGESINDICATORCARD || _la == mpsParserIDENTIFIER) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(119)
@@ -2252,14 +2256,16 @@ func (p *mpsParser) Boundsdatacard() (localctx IBoundsdatacardContext) {
 		p.SetState(125)
 		p.Match(mpsParserBOUNDKEY)
 	}
-	p.SetState(126)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(126)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == mpsParserBOUNDSINDICATORCARD || _la == mpsParserIDENTIFIER) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == mpsParserBOUNDSINDICATORCARD || _la == mpsParserIDENTIFIER) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(127)

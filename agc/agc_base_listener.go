@@ -1,4 +1,4 @@
-// Generated from agc.g4 by ANTLR 4.7.
+// Code generated from agc.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package agc // agc
 import "github.com/antlr/antlr4/runtime/Go/antlr"

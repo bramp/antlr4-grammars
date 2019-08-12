@@ -1,4 +1,4 @@
-// Generated from oncrpcv2.g4 by ANTLR 4.7.
+// Code generated from oncrpcv2.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package oncrpcv2 // oncrpcv2
 import (
@@ -1656,14 +1656,16 @@ func (p *oncrpcv2Parser) Constant() (localctx IConstantContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(151)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(151)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-35)&-(0x1f+1)) == 0 && ((1<<uint((_la-35)))&((1<<(oncrpcv2ParserOCTAL-35))|(1<<(oncrpcv2ParserDECIMAL-35))|(1<<(oncrpcv2ParserHEXADECIMAL-35)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-35)&-(0x1f+1)) == 0 && ((1<<uint((_la-35)))&((1<<(oncrpcv2ParserOCTAL-35))|(1<<(oncrpcv2ParserDECIMAL-35))|(1<<(oncrpcv2ParserHEXADECIMAL-35)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

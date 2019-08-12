@@ -1,4 +1,4 @@
-// Generated from robotwar.g4 by ANTLR 4.7.
+// Code generated from robotwar.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package robotwar // robotwar
 import (
@@ -1564,14 +1564,16 @@ func (p *robotwarParser) Ifstatement() (localctx IIfstatementContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if ((_la-49)&-(0x1f+1)) == 0 && ((1<<uint((_la-49)))&((1<<(robotwarParserDOT-49))|(1<<(robotwarParserCOMMA-49))|(1<<(robotwarParserEOL-49)))) != 0 {
-		p.SetState(93)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(93)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-49)&-(0x1f+1)) == 0 && ((1<<uint((_la-49)))&((1<<(robotwarParserDOT-49))|(1<<(robotwarParserCOMMA-49))|(1<<(robotwarParserEOL-49)))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la-49)&-(0x1f+1)) == 0 && ((1<<uint((_la-49)))&((1<<(robotwarParserDOT-49))|(1<<(robotwarParserCOMMA-49))|(1<<(robotwarParserEOL-49)))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -1969,14 +1971,16 @@ func (p *robotwarParser) Operation() (localctx IOperationContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(117)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(117)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<robotwarParserT__9)|(1<<robotwarParserT__10)|(1<<robotwarParserT__11)|(1<<robotwarParserT__12))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<robotwarParserT__9)|(1<<robotwarParserT__10)|(1<<robotwarParserT__11)|(1<<robotwarParserT__12))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -2061,14 +2065,16 @@ func (p *robotwarParser) Comparison() (localctx IComparisonContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(119)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(119)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<robotwarParserT__0)|(1<<robotwarParserT__1)|(1<<robotwarParserT__2)|(1<<robotwarParserT__3))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<robotwarParserT__0)|(1<<robotwarParserT__1)|(1<<robotwarParserT__2)|(1<<robotwarParserT__3))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -2425,14 +2431,16 @@ func (p *robotwarParser) Register() (localctx IRegisterContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(126)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(126)
+		_la = p.GetTokenStream().LA(1)
 
-	if !((((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<robotwarParserA)|(1<<robotwarParserB)|(1<<robotwarParserC)|(1<<robotwarParserD)|(1<<robotwarParserE)|(1<<robotwarParserF)|(1<<robotwarParserG)|(1<<robotwarParserH)|(1<<robotwarParserI)|(1<<robotwarParserJ)|(1<<robotwarParserK)|(1<<robotwarParserL)|(1<<robotwarParserM)|(1<<robotwarParserN)|(1<<robotwarParserO)|(1<<robotwarParserP)|(1<<robotwarParserQ)|(1<<robotwarParserR))) != 0) || (((_la-32)&-(0x1f+1)) == 0 && ((1<<uint((_la-32)))&((1<<(robotwarParserS-32))|(1<<(robotwarParserT-32))|(1<<(robotwarParserU-32))|(1<<(robotwarParserV-32))|(1<<(robotwarParserW-32))|(1<<(robotwarParserX-32))|(1<<(robotwarParserY-32))|(1<<(robotwarParserZ-32))|(1<<(robotwarParserAIM-32))|(1<<(robotwarParserSHOT-32))|(1<<(robotwarParserRADAR-32))|(1<<(robotwarParserDAMAGE-32))|(1<<(robotwarParserSPEEDX-32))|(1<<(robotwarParserSPEEDY-32))|(1<<(robotwarParserRANDOM-32))|(1<<(robotwarParserINDEX-32))|(1<<(robotwarParserDATA-32)))) != 0)) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !((((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<robotwarParserA)|(1<<robotwarParserB)|(1<<robotwarParserC)|(1<<robotwarParserD)|(1<<robotwarParserE)|(1<<robotwarParserF)|(1<<robotwarParserG)|(1<<robotwarParserH)|(1<<robotwarParserI)|(1<<robotwarParserJ)|(1<<robotwarParserK)|(1<<robotwarParserL)|(1<<robotwarParserM)|(1<<robotwarParserN)|(1<<robotwarParserO)|(1<<robotwarParserP)|(1<<robotwarParserQ)|(1<<robotwarParserR))) != 0) || (((_la-32)&-(0x1f+1)) == 0 && ((1<<uint((_la-32)))&((1<<(robotwarParserS-32))|(1<<(robotwarParserT-32))|(1<<(robotwarParserU-32))|(1<<(robotwarParserV-32))|(1<<(robotwarParserW-32))|(1<<(robotwarParserX-32))|(1<<(robotwarParserY-32))|(1<<(robotwarParserZ-32))|(1<<(robotwarParserAIM-32))|(1<<(robotwarParserSHOT-32))|(1<<(robotwarParserRADAR-32))|(1<<(robotwarParserDAMAGE-32))|(1<<(robotwarParserSPEEDX-32))|(1<<(robotwarParserSPEEDY-32))|(1<<(robotwarParserRANDOM-32))|(1<<(robotwarParserINDEX-32))|(1<<(robotwarParserDATA-32)))) != 0)) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -2527,14 +2535,16 @@ func (p *robotwarParser) Number() (localctx INumberContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == robotwarParserT__9 || _la == robotwarParserT__10 {
-		p.SetState(128)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(128)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == robotwarParserT__9 || _la == robotwarParserT__10) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == robotwarParserT__9 || _la == robotwarParserT__10) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}

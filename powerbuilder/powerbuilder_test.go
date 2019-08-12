@@ -32,10 +32,12 @@ import (
 
 const MAX_TOKENS = 1000000
 
-var examples = []string{}
+var examples = []string{
+	"grammars-v4/powerbuilder/examples/example2.txt",
+}
 
 type exampleListener struct {
-	*powerbuilder.BasepowerbuilderListener
+	*powerbuilder.BasepowerbuilderParserListener
 }
 
 func (l *exampleListener) EnterEveryRule(ctx antlr.ParserRuleContext) {
@@ -82,8 +84,8 @@ func TestPowerbuilderLexer(t *testing.T) {
 		// Try and read all tokens
 		i := 0
 		for ; i < MAX_TOKENS; i++ {
-			t := lexer.NextToken()
-			if t.GetTokenType() == antlr.TokenEOF {
+			tok := lexer.NextToken()
+			if tok.GetTokenType() == antlr.TokenEOF {
 				break
 			}
 		}

@@ -1,4 +1,4 @@
-// Generated from mumath.g4 by ANTLR 4.7.
+// Code generated from mumath.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package mumath // mumath
 import (
@@ -417,14 +417,16 @@ func (p *mumathParser) Program() (localctx IProgramContext) {
 			}
 
 		}
-		p.SetState(43)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(43)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == mumathParserSEMI || _la == mumathParserDOLLAR) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == mumathParserSEMI || _la == mumathParserDOLLAR) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 		p.SetState(49)
@@ -1944,14 +1946,16 @@ func (p *mumathParser) RelationalOperator() (localctx IRelationalOperatorContext
 
 	case mumathParserEQUATION, mumathParserNOT_EQUAL, mumathParserLT, mumathParserLE, mumathParserGE, mumathParserGT:
 		p.EnterOuterAlt(localctx, 2)
-		p.SetState(137)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(137)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<mumathParserEQUATION)|(1<<mumathParserNOT_EQUAL)|(1<<mumathParserLT)|(1<<mumathParserLE)|(1<<mumathParserGE)|(1<<mumathParserGT))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<mumathParserEQUATION)|(1<<mumathParserNOT_EQUAL)|(1<<mumathParserLT)|(1<<mumathParserLE)|(1<<mumathParserGE)|(1<<mumathParserGT))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	default:
@@ -2220,14 +2224,16 @@ func (p *mumathParser) AddingOperator() (localctx IAddingOperatorContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(152)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(152)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<mumathParserOR)|(1<<mumathParserPLUS)|(1<<mumathParserMINUS))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<mumathParserOR)|(1<<mumathParserPLUS)|(1<<mumathParserMINUS))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -2485,14 +2491,16 @@ func (p *mumathParser) MultiplyingOperator() (localctx IMultiplyingOperatorConte
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(163)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(163)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-11)&-(0x1f+1)) == 0 && ((1<<uint((_la-11)))&((1<<(mumathParserAND-11))|(1<<(mumathParserMOD-11))|(1<<(mumathParserSTAR-11))|(1<<(mumathParserSLASH-11))|(1<<(mumathParserPOWER-11)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-11)&-(0x1f+1)) == 0 && ((1<<uint((_la-11)))&((1<<(mumathParserAND-11))|(1<<(mumathParserMOD-11))|(1<<(mumathParserSTAR-11))|(1<<(mumathParserSLASH-11))|(1<<(mumathParserPOWER-11)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -3082,14 +3090,16 @@ func (p *mumathParser) Equal() (localctx IEqualContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(199)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(199)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == mumathParserEQF || _la == mumathParserEQC) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == mumathParserEQF || _la == mumathParserEQC) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

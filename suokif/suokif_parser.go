@@ -1,4 +1,4 @@
-// Generated from SUOKIF.g4 by ANTLR 4.7.
+// Code generated from SUOKIF.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package suokif // SUOKIF
 import (
@@ -596,8 +596,16 @@ func NewFuntermContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 
 func (s *FuntermContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *FuntermContext) LPAREN() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserLPAREN, 0)
+}
+
 func (s *FuntermContext) WORD() antlr.TerminalNode {
 	return s.GetToken(SUOKIFParserWORD, 0)
+}
+
+func (s *FuntermContext) RPAREN() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserRPAREN, 0)
 }
 
 func (s *FuntermContext) AllArgument() []IArgumentContext {
@@ -909,6 +917,14 @@ func NewEquationContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 
 func (s *EquationContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *EquationContext) LPAREN() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserLPAREN, 0)
+}
+
+func (s *EquationContext) ASSIGN() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserASSIGN, 0)
+}
+
 func (s *EquationContext) AllTerm() []ITermContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ITermContext)(nil)).Elem())
 	var tst = make([]ITermContext, len(ts))
@@ -930,6 +946,10 @@ func (s *EquationContext) Term(i int) ITermContext {
 	}
 
 	return t.(ITermContext)
+}
+
+func (s *EquationContext) RPAREN() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserRPAREN, 0)
 }
 
 func (s *EquationContext) GetRuleContext() antlr.RuleContext {
@@ -1035,6 +1055,14 @@ func NewRelsentContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 
 func (s *RelsentContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *RelsentContext) LPAREN() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserLPAREN, 0)
+}
+
+func (s *RelsentContext) RPAREN() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserRPAREN, 0)
+}
+
 func (s *RelsentContext) WORD() antlr.TerminalNode {
 	return s.GetToken(SUOKIFParserWORD, 0)
 }
@@ -1112,14 +1140,16 @@ func (p *SUOKIFParser) Relsent() (localctx IRelsentContext) {
 		p.SetState(59)
 		p.Match(SUOKIFParserLPAREN)
 	}
-	p.SetState(60)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(60)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == SUOKIFParserWORD || _la == SUOKIFParserVARIABLE) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == SUOKIFParserWORD || _la == SUOKIFParserVARIABLE) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	p.SetState(62)
 	p.GetErrorHandler().Sync(p)
@@ -1181,6 +1211,10 @@ func NewLogsentContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 
 func (s *LogsentContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *LogsentContext) LPAREN() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserLPAREN, 0)
+}
+
 func (s *LogsentContext) NOT() antlr.TerminalNode {
 	return s.GetToken(SUOKIFParserNOT, 0)
 }
@@ -1208,12 +1242,28 @@ func (s *LogsentContext) Sentence(i int) ISentenceContext {
 	return t.(ISentenceContext)
 }
 
+func (s *LogsentContext) RPAREN() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserRPAREN, 0)
+}
+
 func (s *LogsentContext) AND() antlr.TerminalNode {
 	return s.GetToken(SUOKIFParserAND, 0)
 }
 
 func (s *LogsentContext) OR() antlr.TerminalNode {
 	return s.GetToken(SUOKIFParserOR, 0)
+}
+
+func (s *LogsentContext) ASSIGN() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserASSIGN, 0)
+}
+
+func (s *LogsentContext) GT() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserGT, 0)
+}
+
+func (s *LogsentContext) LT() antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserLT, 0)
 }
 
 func (s *LogsentContext) GetRuleContext() antlr.RuleContext {
@@ -1438,8 +1488,24 @@ func NewQuantsentContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 
 func (s *QuantsentContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *QuantsentContext) AllLPAREN() []antlr.TerminalNode {
+	return s.GetTokens(SUOKIFParserLPAREN)
+}
+
+func (s *QuantsentContext) LPAREN(i int) antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserLPAREN, i)
+}
+
 func (s *QuantsentContext) FORALL() antlr.TerminalNode {
 	return s.GetToken(SUOKIFParserFORALL, 0)
+}
+
+func (s *QuantsentContext) AllRPAREN() []antlr.TerminalNode {
+	return s.GetTokens(SUOKIFParserRPAREN)
+}
+
+func (s *QuantsentContext) RPAREN(i int) antlr.TerminalNode {
+	return s.GetToken(SUOKIFParserRPAREN, i)
 }
 
 func (s *QuantsentContext) Sentence() ISentenceContext {

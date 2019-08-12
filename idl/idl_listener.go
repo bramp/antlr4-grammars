@@ -1,4 +1,4 @@
-// Generated from IDL.g4 by ANTLR 4.7.
+// Code generated from IDL.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package idl // IDL
 import "github.com/antlr/antlr4/runtime/Go/antlr"

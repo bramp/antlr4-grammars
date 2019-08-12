@@ -1,4 +1,4 @@
-// Generated from tiny.g4 by ANTLR 4.7.
+// Code generated from tiny.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package tiny // tiny
 import (
@@ -1607,14 +1607,16 @@ func (p *tinyParser) Op() (localctx IOpContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(98)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(98)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == tinyParserT__6 || _la == tinyParserT__7) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == tinyParserT__6 || _la == tinyParserT__7) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

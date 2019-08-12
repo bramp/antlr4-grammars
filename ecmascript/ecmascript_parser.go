@@ -1,4 +1,4 @@
-// Generated from ECMAScript.g4 by ANTLR 4.7.
+// Code generated from ECMAScript.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package ecmascript // ECMAScript
 import (
@@ -1342,6 +1342,14 @@ func NewBlockContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 
 func (s *BlockContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *BlockContext) OpenBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenBrace, 0)
+}
+
+func (s *BlockContext) CloseBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseBrace, 0)
+}
+
 func (s *BlockContext) StatementList() IStatementListContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementListContext)(nil)).Elem(), 0)
 
@@ -1722,6 +1730,14 @@ func (s *VariableDeclarationListContext) VariableDeclaration(i int) IVariableDec
 	return t.(IVariableDeclarationContext)
 }
 
+func (s *VariableDeclarationListContext) AllComma() []antlr.TerminalNode {
+	return s.GetTokens(ECMAScriptParserComma)
+}
+
+func (s *VariableDeclarationListContext) Comma(i int) antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserComma, i)
+}
+
 func (s *VariableDeclarationListContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -1941,6 +1957,10 @@ func NewInitialiserContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 }
 
 func (s *InitialiserContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *InitialiserContext) Assign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserAssign, 0)
+}
 
 func (s *InitialiserContext) SingleExpression() ISingleExpressionContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISingleExpressionContext)(nil)).Elem(), 0)
@@ -2254,6 +2274,10 @@ func (s *IfStatementContext) If() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserIf, 0)
 }
 
+func (s *IfStatementContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
 func (s *IfStatementContext) ExpressionSequence() IExpressionSequenceContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionSequenceContext)(nil)).Elem(), 0)
 
@@ -2262,6 +2286,10 @@ func (s *IfStatementContext) ExpressionSequence() IExpressionSequenceContext {
 	}
 
 	return t.(IExpressionSequenceContext)
+}
+
+func (s *IfStatementContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
 }
 
 func (s *IfStatementContext) AllStatement() []IStatementContext {
@@ -2456,6 +2484,10 @@ func (s *DoStatementContext) While() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserWhile, 0)
 }
 
+func (s *DoStatementContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
 func (s *DoStatementContext) ExpressionSequence() IExpressionSequenceContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionSequenceContext)(nil)).Elem(), 0)
 
@@ -2464,6 +2496,10 @@ func (s *DoStatementContext) ExpressionSequence() IExpressionSequenceContext {
 	}
 
 	return t.(IExpressionSequenceContext)
+}
+
+func (s *DoStatementContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
 }
 
 func (s *DoStatementContext) Eos() IEosContext {
@@ -2510,6 +2546,10 @@ func (s *ForVarStatementContext) For() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserFor, 0)
 }
 
+func (s *ForVarStatementContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
 func (s *ForVarStatementContext) Var() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserVar, 0)
 }
@@ -2522,6 +2562,18 @@ func (s *ForVarStatementContext) VariableDeclarationList() IVariableDeclarationL
 	}
 
 	return t.(IVariableDeclarationListContext)
+}
+
+func (s *ForVarStatementContext) AllSemiColon() []antlr.TerminalNode {
+	return s.GetTokens(ECMAScriptParserSemiColon)
+}
+
+func (s *ForVarStatementContext) SemiColon(i int) antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserSemiColon, i)
+}
+
+func (s *ForVarStatementContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
 }
 
 func (s *ForVarStatementContext) Statement() IStatementContext {
@@ -2591,6 +2643,10 @@ func (s *ForVarInStatementContext) For() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserFor, 0)
 }
 
+func (s *ForVarInStatementContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
 func (s *ForVarInStatementContext) Var() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserVar, 0)
 }
@@ -2617,6 +2673,10 @@ func (s *ForVarInStatementContext) ExpressionSequence() IExpressionSequenceConte
 	}
 
 	return t.(IExpressionSequenceContext)
+}
+
+func (s *ForVarInStatementContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
 }
 
 func (s *ForVarInStatementContext) Statement() IStatementContext {
@@ -2663,6 +2723,10 @@ func (s *WhileStatementContext) While() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserWhile, 0)
 }
 
+func (s *WhileStatementContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
 func (s *WhileStatementContext) ExpressionSequence() IExpressionSequenceContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionSequenceContext)(nil)).Elem(), 0)
 
@@ -2671,6 +2735,10 @@ func (s *WhileStatementContext) ExpressionSequence() IExpressionSequenceContext 
 	}
 
 	return t.(IExpressionSequenceContext)
+}
+
+func (s *WhileStatementContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
 }
 
 func (s *WhileStatementContext) Statement() IStatementContext {
@@ -2715,6 +2783,22 @@ func (s *ForStatementContext) GetRuleContext() antlr.RuleContext {
 
 func (s *ForStatementContext) For() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserFor, 0)
+}
+
+func (s *ForStatementContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
+func (s *ForStatementContext) AllSemiColon() []antlr.TerminalNode {
+	return s.GetTokens(ECMAScriptParserSemiColon)
+}
+
+func (s *ForStatementContext) SemiColon(i int) antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserSemiColon, i)
+}
+
+func (s *ForStatementContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
 }
 
 func (s *ForStatementContext) Statement() IStatementContext {
@@ -2784,6 +2868,10 @@ func (s *ForInStatementContext) For() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserFor, 0)
 }
 
+func (s *ForInStatementContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
 func (s *ForInStatementContext) SingleExpression() ISingleExpressionContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISingleExpressionContext)(nil)).Elem(), 0)
 
@@ -2806,6 +2894,10 @@ func (s *ForInStatementContext) ExpressionSequence() IExpressionSequenceContext 
 	}
 
 	return t.(IExpressionSequenceContext)
+}
+
+func (s *ForInStatementContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
 }
 
 func (s *ForInStatementContext) Statement() IStatementContext {
@@ -3507,6 +3599,10 @@ func (s *WithStatementContext) With() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserWith, 0)
 }
 
+func (s *WithStatementContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
 func (s *WithStatementContext) ExpressionSequence() IExpressionSequenceContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionSequenceContext)(nil)).Elem(), 0)
 
@@ -3515,6 +3611,10 @@ func (s *WithStatementContext) ExpressionSequence() IExpressionSequenceContext {
 	}
 
 	return t.(IExpressionSequenceContext)
+}
+
+func (s *WithStatementContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
 }
 
 func (s *WithStatementContext) Statement() IStatementContext {
@@ -3634,6 +3734,10 @@ func (s *SwitchStatementContext) Switch() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserSwitch, 0)
 }
 
+func (s *SwitchStatementContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
 func (s *SwitchStatementContext) ExpressionSequence() IExpressionSequenceContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionSequenceContext)(nil)).Elem(), 0)
 
@@ -3642,6 +3746,10 @@ func (s *SwitchStatementContext) ExpressionSequence() IExpressionSequenceContext
 	}
 
 	return t.(IExpressionSequenceContext)
+}
+
+func (s *SwitchStatementContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
 }
 
 func (s *SwitchStatementContext) CaseBlock() ICaseBlockContext {
@@ -3756,6 +3864,14 @@ func NewCaseBlockContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 }
 
 func (s *CaseBlockContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *CaseBlockContext) OpenBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenBrace, 0)
+}
+
+func (s *CaseBlockContext) CloseBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseBrace, 0)
+}
 
 func (s *CaseBlockContext) AllCaseClauses() []ICaseClausesContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ICaseClausesContext)(nil)).Elem())
@@ -4050,6 +4166,10 @@ func (s *CaseClauseContext) ExpressionSequence() IExpressionSequenceContext {
 	return t.(IExpressionSequenceContext)
 }
 
+func (s *CaseClauseContext) Colon() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserColon, 0)
+}
+
 func (s *CaseClauseContext) StatementList() IStatementListContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementListContext)(nil)).Elem(), 0)
 
@@ -4169,6 +4289,10 @@ func (s *DefaultClauseContext) Default() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserDefault, 0)
 }
 
+func (s *DefaultClauseContext) Colon() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserColon, 0)
+}
+
 func (s *DefaultClauseContext) StatementList() IStatementListContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementListContext)(nil)).Elem(), 0)
 
@@ -4282,6 +4406,10 @@ func (s *LabelledStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LabelledStatementContext) Identifier() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserIdentifier, 0)
+}
+
+func (s *LabelledStatementContext) Colon() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserColon, 0)
 }
 
 func (s *LabelledStatementContext) Statement() IStatementContext {
@@ -4681,8 +4809,16 @@ func (s *CatchProductionContext) Catch() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserCatch, 0)
 }
 
+func (s *CatchProductionContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
 func (s *CatchProductionContext) Identifier() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserIdentifier, 0)
+}
+
+func (s *CatchProductionContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
 }
 
 func (s *CatchProductionContext) Block() IBlockContext {
@@ -5016,6 +5152,18 @@ func (s *FunctionDeclarationContext) Identifier() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserIdentifier, 0)
 }
 
+func (s *FunctionDeclarationContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
+func (s *FunctionDeclarationContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
+}
+
+func (s *FunctionDeclarationContext) OpenBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenBrace, 0)
+}
+
 func (s *FunctionDeclarationContext) FunctionBody() IFunctionBodyContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionBodyContext)(nil)).Elem(), 0)
 
@@ -5024,6 +5172,10 @@ func (s *FunctionDeclarationContext) FunctionBody() IFunctionBodyContext {
 	}
 
 	return t.(IFunctionBodyContext)
+}
+
+func (s *FunctionDeclarationContext) CloseBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseBrace, 0)
 }
 
 func (s *FunctionDeclarationContext) FormalParameterList() IFormalParameterListContext {
@@ -5165,6 +5317,14 @@ func (s *FormalParameterListContext) AllIdentifier() []antlr.TerminalNode {
 
 func (s *FormalParameterListContext) Identifier(i int) antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserIdentifier, i)
+}
+
+func (s *FormalParameterListContext) AllComma() []antlr.TerminalNode {
+	return s.GetTokens(ECMAScriptParserComma)
+}
+
+func (s *FormalParameterListContext) Comma(i int) antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserComma, i)
 }
 
 func (s *FormalParameterListContext) GetRuleContext() antlr.RuleContext {
@@ -5376,6 +5536,14 @@ func NewArrayLiteralContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 
 func (s *ArrayLiteralContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *ArrayLiteralContext) OpenBracket() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenBracket, 0)
+}
+
+func (s *ArrayLiteralContext) CloseBracket() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseBracket, 0)
+}
+
 func (s *ArrayLiteralContext) ElementList() IElementListContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IElementListContext)(nil)).Elem(), 0)
 
@@ -5384,6 +5552,10 @@ func (s *ArrayLiteralContext) ElementList() IElementListContext {
 	}
 
 	return t.(IElementListContext)
+}
+
+func (s *ArrayLiteralContext) Comma() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserComma, 0)
 }
 
 func (s *ArrayLiteralContext) Elision() IElisionContext {
@@ -5565,6 +5737,14 @@ func (s *ElementListContext) Elision(i int) IElisionContext {
 	return t.(IElisionContext)
 }
 
+func (s *ElementListContext) AllComma() []antlr.TerminalNode {
+	return s.GetTokens(ECMAScriptParserComma)
+}
+
+func (s *ElementListContext) Comma(i int) antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserComma, i)
+}
+
 func (s *ElementListContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -5696,6 +5876,15 @@ func NewElisionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 }
 
 func (s *ElisionContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *ElisionContext) AllComma() []antlr.TerminalNode {
+	return s.GetTokens(ECMAScriptParserComma)
+}
+
+func (s *ElisionContext) Comma(i int) antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserComma, i)
+}
+
 func (s *ElisionContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -5794,6 +5983,14 @@ func NewObjectLiteralContext(parser antlr.Parser, parent antlr.ParserRuleContext
 
 func (s *ObjectLiteralContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *ObjectLiteralContext) OpenBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenBrace, 0)
+}
+
+func (s *ObjectLiteralContext) CloseBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseBrace, 0)
+}
+
 func (s *ObjectLiteralContext) PropertyNameAndValueList() IPropertyNameAndValueListContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPropertyNameAndValueListContext)(nil)).Elem(), 0)
 
@@ -5802,6 +5999,10 @@ func (s *ObjectLiteralContext) PropertyNameAndValueList() IPropertyNameAndValueL
 	}
 
 	return t.(IPropertyNameAndValueListContext)
+}
+
+func (s *ObjectLiteralContext) Comma() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserComma, 0)
 }
 
 func (s *ObjectLiteralContext) GetRuleContext() antlr.RuleContext {
@@ -5949,6 +6150,14 @@ func (s *PropertyNameAndValueListContext) PropertyAssignment(i int) IPropertyAss
 	}
 
 	return t.(IPropertyAssignmentContext)
+}
+
+func (s *PropertyNameAndValueListContext) AllComma() []antlr.TerminalNode {
+	return s.GetTokens(ECMAScriptParserComma)
+}
+
+func (s *PropertyNameAndValueListContext) Comma(i int) antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserComma, i)
 }
 
 func (s *PropertyNameAndValueListContext) GetRuleContext() antlr.RuleContext {
@@ -6100,6 +6309,10 @@ func (s *PropertyExpressionAssignmentContext) PropertyName() IPropertyNameContex
 	return t.(IPropertyNameContext)
 }
 
+func (s *PropertyExpressionAssignmentContext) Colon() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserColon, 0)
+}
+
 func (s *PropertyExpressionAssignmentContext) SingleExpression() ISingleExpressionContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISingleExpressionContext)(nil)).Elem(), 0)
 
@@ -6150,6 +6363,10 @@ func (s *PropertySetterContext) Setter() ISetterContext {
 	return t.(ISetterContext)
 }
 
+func (s *PropertySetterContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
 func (s *PropertySetterContext) PropertySetParameterList() IPropertySetParameterListContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPropertySetParameterListContext)(nil)).Elem(), 0)
 
@@ -6160,6 +6377,14 @@ func (s *PropertySetterContext) PropertySetParameterList() IPropertySetParameter
 	return t.(IPropertySetParameterListContext)
 }
 
+func (s *PropertySetterContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
+}
+
+func (s *PropertySetterContext) OpenBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenBrace, 0)
+}
+
 func (s *PropertySetterContext) FunctionBody() IFunctionBodyContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionBodyContext)(nil)).Elem(), 0)
 
@@ -6168,6 +6393,10 @@ func (s *PropertySetterContext) FunctionBody() IFunctionBodyContext {
 	}
 
 	return t.(IFunctionBodyContext)
+}
+
+func (s *PropertySetterContext) CloseBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseBrace, 0)
 }
 
 func (s *PropertySetterContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -6210,6 +6439,18 @@ func (s *PropertyGetterContext) Getter() IGetterContext {
 	return t.(IGetterContext)
 }
 
+func (s *PropertyGetterContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
+func (s *PropertyGetterContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
+}
+
+func (s *PropertyGetterContext) OpenBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenBrace, 0)
+}
+
 func (s *PropertyGetterContext) FunctionBody() IFunctionBodyContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionBodyContext)(nil)).Elem(), 0)
 
@@ -6218,6 +6459,10 @@ func (s *PropertyGetterContext) FunctionBody() IFunctionBodyContext {
 	}
 
 	return t.(IFunctionBodyContext)
+}
+
+func (s *PropertyGetterContext) CloseBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseBrace, 0)
 }
 
 func (s *PropertyGetterContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -6599,6 +6844,14 @@ func NewArgumentsContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 
 func (s *ArgumentsContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *ArgumentsContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
+func (s *ArgumentsContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
+}
+
 func (s *ArgumentsContext) ArgumentList() IArgumentListContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IArgumentListContext)(nil)).Elem(), 0)
 
@@ -6735,6 +6988,14 @@ func (s *ArgumentListContext) SingleExpression(i int) ISingleExpressionContext {
 	return t.(ISingleExpressionContext)
 }
 
+func (s *ArgumentListContext) AllComma() []antlr.TerminalNode {
+	return s.GetTokens(ECMAScriptParserComma)
+}
+
+func (s *ArgumentListContext) Comma(i int) antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserComma, i)
+}
+
 func (s *ArgumentListContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -6862,6 +7123,14 @@ func (s *ExpressionSequenceContext) SingleExpression(i int) ISingleExpressionCon
 	}
 
 	return t.(ISingleExpressionContext)
+}
+
+func (s *ExpressionSequenceContext) AllComma() []antlr.TerminalNode {
+	return s.GetTokens(ECMAScriptParserComma)
+}
+
+func (s *ExpressionSequenceContext) Comma(i int) antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserComma, i)
 }
 
 func (s *ExpressionSequenceContext) GetRuleContext() antlr.RuleContext {
@@ -7026,6 +7295,14 @@ func (s *TernaryExpressionContext) SingleExpression(i int) ISingleExpressionCont
 	return t.(ISingleExpressionContext)
 }
 
+func (s *TernaryExpressionContext) QuestionMark() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserQuestionMark, 0)
+}
+
+func (s *TernaryExpressionContext) Colon() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserColon, 0)
+}
+
 func (s *TernaryExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ECMAScriptListener); ok {
 		listenerT.EnterTernaryExpression(s)
@@ -7079,6 +7356,10 @@ func (s *LogicalAndExpressionContext) SingleExpression(i int) ISingleExpressionC
 	return t.(ISingleExpressionContext)
 }
 
+func (s *LogicalAndExpressionContext) And() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserAnd, 0)
+}
+
 func (s *LogicalAndExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ECMAScriptListener); ok {
 		listenerT.EnterLogicalAndExpression(s)
@@ -7107,6 +7388,10 @@ func NewPreIncrementExpressionContext(parser antlr.Parser, ctx antlr.ParserRuleC
 
 func (s *PreIncrementExpressionContext) GetRuleContext() antlr.RuleContext {
 	return s
+}
+
+func (s *PreIncrementExpressionContext) PlusPlus() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserPlusPlus, 0)
 }
 
 func (s *PreIncrementExpressionContext) SingleExpression() ISingleExpressionContext {
@@ -7269,6 +7554,10 @@ func (s *LogicalOrExpressionContext) SingleExpression(i int) ISingleExpressionCo
 	return t.(ISingleExpressionContext)
 }
 
+func (s *LogicalOrExpressionContext) Or() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOr, 0)
+}
+
 func (s *LogicalOrExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ECMAScriptListener); ok {
 		listenerT.EnterLogicalOrExpression(s)
@@ -7297,6 +7586,10 @@ func NewNotExpressionContext(parser antlr.Parser, ctx antlr.ParserRuleContext) *
 
 func (s *NotExpressionContext) GetRuleContext() antlr.RuleContext {
 	return s
+}
+
+func (s *NotExpressionContext) Not() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserNot, 0)
 }
 
 func (s *NotExpressionContext) SingleExpression() ISingleExpressionContext {
@@ -7337,6 +7630,10 @@ func NewPreDecreaseExpressionContext(parser antlr.Parser, ctx antlr.ParserRuleCo
 
 func (s *PreDecreaseExpressionContext) GetRuleContext() antlr.RuleContext {
 	return s
+}
+
+func (s *PreDecreaseExpressionContext) MinusMinus() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserMinusMinus, 0)
 }
 
 func (s *PreDecreaseExpressionContext) SingleExpression() ISingleExpressionContext {
@@ -7467,6 +7764,18 @@ func (s *FunctionExpressionContext) Function() antlr.TerminalNode {
 	return s.GetToken(ECMAScriptParserFunction, 0)
 }
 
+func (s *FunctionExpressionContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
+func (s *FunctionExpressionContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
+}
+
+func (s *FunctionExpressionContext) OpenBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenBrace, 0)
+}
+
 func (s *FunctionExpressionContext) FunctionBody() IFunctionBodyContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionBodyContext)(nil)).Elem(), 0)
 
@@ -7475,6 +7784,10 @@ func (s *FunctionExpressionContext) FunctionBody() IFunctionBodyContext {
 	}
 
 	return t.(IFunctionBodyContext)
+}
+
+func (s *FunctionExpressionContext) CloseBrace() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseBrace, 0)
 }
 
 func (s *FunctionExpressionContext) Identifier() antlr.TerminalNode {
@@ -7519,6 +7832,10 @@ func NewUnaryMinusExpressionContext(parser antlr.Parser, ctx antlr.ParserRuleCon
 
 func (s *UnaryMinusExpressionContext) GetRuleContext() antlr.RuleContext {
 	return s
+}
+
+func (s *UnaryMinusExpressionContext) Minus() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserMinus, 0)
 }
 
 func (s *UnaryMinusExpressionContext) SingleExpression() ISingleExpressionContext {
@@ -7584,6 +7901,10 @@ func (s *AssignmentExpressionContext) SingleExpression(i int) ISingleExpressionC
 	return t.(ISingleExpressionContext)
 }
 
+func (s *AssignmentExpressionContext) Assign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserAssign, 0)
+}
+
 func (s *AssignmentExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ECMAScriptListener); ok {
 		listenerT.EnterAssignmentExpression(s)
@@ -7622,6 +7943,10 @@ func (s *PostDecreaseExpressionContext) SingleExpression() ISingleExpressionCont
 	}
 
 	return t.(ISingleExpressionContext)
+}
+
+func (s *PostDecreaseExpressionContext) MinusMinus() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserMinusMinus, 0)
 }
 
 func (s *PostDecreaseExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -7755,6 +8080,10 @@ func (s *UnaryPlusExpressionContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
+func (s *UnaryPlusExpressionContext) Plus() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserPlus, 0)
+}
+
 func (s *UnaryPlusExpressionContext) SingleExpression() ISingleExpressionContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISingleExpressionContext)(nil)).Elem(), 0)
 
@@ -7862,6 +8191,22 @@ func (s *EqualityExpressionContext) SingleExpression(i int) ISingleExpressionCon
 	return t.(ISingleExpressionContext)
 }
 
+func (s *EqualityExpressionContext) Equals() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserEquals, 0)
+}
+
+func (s *EqualityExpressionContext) NotEquals() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserNotEquals, 0)
+}
+
+func (s *EqualityExpressionContext) IdentityEquals() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserIdentityEquals, 0)
+}
+
+func (s *EqualityExpressionContext) IdentityNotEquals() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserIdentityNotEquals, 0)
+}
+
 func (s *EqualityExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ECMAScriptListener); ok {
 		listenerT.EnterEqualityExpression(s)
@@ -7913,6 +8258,10 @@ func (s *BitXOrExpressionContext) SingleExpression(i int) ISingleExpressionConte
 	}
 
 	return t.(ISingleExpressionContext)
+}
+
+func (s *BitXOrExpressionContext) BitXOr() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserBitXOr, 0)
 }
 
 func (s *BitXOrExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -7968,6 +8317,18 @@ func (s *MultiplicativeExpressionContext) SingleExpression(i int) ISingleExpress
 	return t.(ISingleExpressionContext)
 }
 
+func (s *MultiplicativeExpressionContext) Multiply() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserMultiply, 0)
+}
+
+func (s *MultiplicativeExpressionContext) Divide() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserDivide, 0)
+}
+
+func (s *MultiplicativeExpressionContext) Modulus() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserModulus, 0)
+}
+
 func (s *MultiplicativeExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ECMAScriptListener); ok {
 		listenerT.EnterMultiplicativeExpression(s)
@@ -8021,6 +8382,18 @@ func (s *BitShiftExpressionContext) SingleExpression(i int) ISingleExpressionCon
 	return t.(ISingleExpressionContext)
 }
 
+func (s *BitShiftExpressionContext) LeftShiftArithmetic() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserLeftShiftArithmetic, 0)
+}
+
+func (s *BitShiftExpressionContext) RightShiftArithmetic() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserRightShiftArithmetic, 0)
+}
+
+func (s *BitShiftExpressionContext) RightShiftLogical() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserRightShiftLogical, 0)
+}
+
 func (s *BitShiftExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ECMAScriptListener); ok {
 		listenerT.EnterBitShiftExpression(s)
@@ -8051,6 +8424,10 @@ func (s *ParenthesizedExpressionContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
+func (s *ParenthesizedExpressionContext) OpenParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenParen, 0)
+}
+
 func (s *ParenthesizedExpressionContext) ExpressionSequence() IExpressionSequenceContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionSequenceContext)(nil)).Elem(), 0)
 
@@ -8059,6 +8436,10 @@ func (s *ParenthesizedExpressionContext) ExpressionSequence() IExpressionSequenc
 	}
 
 	return t.(IExpressionSequenceContext)
+}
+
+func (s *ParenthesizedExpressionContext) CloseParen() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseParen, 0)
 }
 
 func (s *ParenthesizedExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -8114,6 +8495,14 @@ func (s *AdditiveExpressionContext) SingleExpression(i int) ISingleExpressionCon
 	return t.(ISingleExpressionContext)
 }
 
+func (s *AdditiveExpressionContext) Plus() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserPlus, 0)
+}
+
+func (s *AdditiveExpressionContext) Minus() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserMinus, 0)
+}
+
 func (s *AdditiveExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ECMAScriptListener); ok {
 		listenerT.EnterAdditiveExpression(s)
@@ -8167,6 +8556,22 @@ func (s *RelationalExpressionContext) SingleExpression(i int) ISingleExpressionC
 	return t.(ISingleExpressionContext)
 }
 
+func (s *RelationalExpressionContext) LessThan() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserLessThan, 0)
+}
+
+func (s *RelationalExpressionContext) MoreThan() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserMoreThan, 0)
+}
+
+func (s *RelationalExpressionContext) LessThanEquals() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserLessThanEquals, 0)
+}
+
+func (s *RelationalExpressionContext) GreaterThanEquals() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserGreaterThanEquals, 0)
+}
+
 func (s *RelationalExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ECMAScriptListener); ok {
 		listenerT.EnterRelationalExpression(s)
@@ -8207,6 +8612,10 @@ func (s *PostIncrementExpressionContext) SingleExpression() ISingleExpressionCon
 	return t.(ISingleExpressionContext)
 }
 
+func (s *PostIncrementExpressionContext) PlusPlus() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserPlusPlus, 0)
+}
+
 func (s *PostIncrementExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ECMAScriptListener); ok {
 		listenerT.EnterPostIncrementExpression(s)
@@ -8235,6 +8644,10 @@ func NewBitNotExpressionContext(parser antlr.Parser, ctx antlr.ParserRuleContext
 
 func (s *BitNotExpressionContext) GetRuleContext() antlr.RuleContext {
 	return s
+}
+
+func (s *BitNotExpressionContext) BitNot() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserBitNot, 0)
 }
 
 func (s *BitNotExpressionContext) SingleExpression() ISingleExpressionContext {
@@ -8421,6 +8834,10 @@ func (s *MemberDotExpressionContext) SingleExpression() ISingleExpressionContext
 	return t.(ISingleExpressionContext)
 }
 
+func (s *MemberDotExpressionContext) Dot() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserDot, 0)
+}
+
 func (s *MemberDotExpressionContext) IdentifierName() IIdentifierNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdentifierNameContext)(nil)).Elem(), 0)
 
@@ -8471,6 +8888,10 @@ func (s *MemberIndexExpressionContext) SingleExpression() ISingleExpressionConte
 	return t.(ISingleExpressionContext)
 }
 
+func (s *MemberIndexExpressionContext) OpenBracket() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserOpenBracket, 0)
+}
+
 func (s *MemberIndexExpressionContext) ExpressionSequence() IExpressionSequenceContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionSequenceContext)(nil)).Elem(), 0)
 
@@ -8479,6 +8900,10 @@ func (s *MemberIndexExpressionContext) ExpressionSequence() IExpressionSequenceC
 	}
 
 	return t.(IExpressionSequenceContext)
+}
+
+func (s *MemberIndexExpressionContext) CloseBracket() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserCloseBracket, 0)
 }
 
 func (s *MemberIndexExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -8568,6 +8993,10 @@ func (s *BitAndExpressionContext) SingleExpression(i int) ISingleExpressionConte
 	return t.(ISingleExpressionContext)
 }
 
+func (s *BitAndExpressionContext) BitAnd() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserBitAnd, 0)
+}
+
 func (s *BitAndExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ECMAScriptListener); ok {
 		listenerT.EnterBitAndExpression(s)
@@ -8619,6 +9048,10 @@ func (s *BitOrExpressionContext) SingleExpression(i int) ISingleExpressionContex
 	}
 
 	return t.(ISingleExpressionContext)
+}
+
+func (s *BitOrExpressionContext) BitOr() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserBitOr, 0)
 }
 
 func (s *BitOrExpressionContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -9056,14 +9489,16 @@ func (p *ECMAScriptParser) singleExpression(_p int) (localctx ISingleExpressionC
 				if !(p.Precpred(p.GetParserRuleContext(), 21)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 21)", ""))
 				}
-				p.SetState(513)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(513)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ECMAScriptParserMultiply)|(1<<ECMAScriptParserDivide)|(1<<ECMAScriptParserModulus))) != 0) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ECMAScriptParserMultiply)|(1<<ECMAScriptParserDivide)|(1<<ECMAScriptParserModulus))) != 0) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(514)
@@ -9078,14 +9513,16 @@ func (p *ECMAScriptParser) singleExpression(_p int) (localctx ISingleExpressionC
 				if !(p.Precpred(p.GetParserRuleContext(), 20)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 20)", ""))
 				}
-				p.SetState(516)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(516)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == ECMAScriptParserPlus || _la == ECMAScriptParserMinus) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(_la == ECMAScriptParserPlus || _la == ECMAScriptParserMinus) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(517)
@@ -9100,14 +9537,16 @@ func (p *ECMAScriptParser) singleExpression(_p int) (localctx ISingleExpressionC
 				if !(p.Precpred(p.GetParserRuleContext(), 19)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 19)", ""))
 				}
-				p.SetState(519)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(519)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ECMAScriptParserRightShiftArithmetic)|(1<<ECMAScriptParserLeftShiftArithmetic)|(1<<ECMAScriptParserRightShiftLogical))) != 0) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ECMAScriptParserRightShiftArithmetic)|(1<<ECMAScriptParserLeftShiftArithmetic)|(1<<ECMAScriptParserRightShiftLogical))) != 0) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(520)
@@ -9122,14 +9561,16 @@ func (p *ECMAScriptParser) singleExpression(_p int) (localctx ISingleExpressionC
 				if !(p.Precpred(p.GetParserRuleContext(), 18)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 18)", ""))
 				}
-				p.SetState(522)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(522)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ECMAScriptParserLessThan)|(1<<ECMAScriptParserMoreThan)|(1<<ECMAScriptParserLessThanEquals)|(1<<ECMAScriptParserGreaterThanEquals))) != 0) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ECMAScriptParserLessThan)|(1<<ECMAScriptParserMoreThan)|(1<<ECMAScriptParserLessThanEquals)|(1<<ECMAScriptParserGreaterThanEquals))) != 0) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(523)
@@ -9178,14 +9619,16 @@ func (p *ECMAScriptParser) singleExpression(_p int) (localctx ISingleExpressionC
 				if !(p.Precpred(p.GetParserRuleContext(), 15)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 15)", ""))
 				}
-				p.SetState(531)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(531)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la-31)&-(0x1f+1)) == 0 && ((1<<uint((_la-31)))&((1<<(ECMAScriptParserEquals-31))|(1<<(ECMAScriptParserNotEquals-31))|(1<<(ECMAScriptParserIdentityEquals-31))|(1<<(ECMAScriptParserIdentityNotEquals-31)))) != 0) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(((_la-31)&-(0x1f+1)) == 0 && ((1<<uint((_la-31)))&((1<<(ECMAScriptParserEquals-31))|(1<<(ECMAScriptParserNotEquals-31))|(1<<(ECMAScriptParserIdentityEquals-31))|(1<<(ECMAScriptParserIdentityNotEquals-31)))) != 0) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(532)
@@ -9471,6 +9914,51 @@ func NewAssignmentOperatorContext(parser antlr.Parser, parent antlr.ParserRuleCo
 }
 
 func (s *AssignmentOperatorContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *AssignmentOperatorContext) MultiplyAssign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserMultiplyAssign, 0)
+}
+
+func (s *AssignmentOperatorContext) DivideAssign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserDivideAssign, 0)
+}
+
+func (s *AssignmentOperatorContext) ModulusAssign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserModulusAssign, 0)
+}
+
+func (s *AssignmentOperatorContext) PlusAssign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserPlusAssign, 0)
+}
+
+func (s *AssignmentOperatorContext) MinusAssign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserMinusAssign, 0)
+}
+
+func (s *AssignmentOperatorContext) LeftShiftArithmeticAssign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserLeftShiftArithmeticAssign, 0)
+}
+
+func (s *AssignmentOperatorContext) RightShiftArithmeticAssign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserRightShiftArithmeticAssign, 0)
+}
+
+func (s *AssignmentOperatorContext) RightShiftLogicalAssign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserRightShiftLogicalAssign, 0)
+}
+
+func (s *AssignmentOperatorContext) BitAndAssign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserBitAndAssign, 0)
+}
+
+func (s *AssignmentOperatorContext) BitXorAssign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserBitXorAssign, 0)
+}
+
+func (s *AssignmentOperatorContext) BitOrAssign() antlr.TerminalNode {
+	return s.GetToken(ECMAScriptParserBitOrAssign, 0)
+}
+
 func (s *AssignmentOperatorContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -9513,14 +10001,16 @@ func (p *ECMAScriptParser) AssignmentOperator() (localctx IAssignmentOperatorCon
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(582)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(582)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-40)&-(0x1f+1)) == 0 && ((1<<uint((_la-40)))&((1<<(ECMAScriptParserMultiplyAssign-40))|(1<<(ECMAScriptParserDivideAssign-40))|(1<<(ECMAScriptParserModulusAssign-40))|(1<<(ECMAScriptParserPlusAssign-40))|(1<<(ECMAScriptParserMinusAssign-40))|(1<<(ECMAScriptParserLeftShiftArithmeticAssign-40))|(1<<(ECMAScriptParserRightShiftArithmeticAssign-40))|(1<<(ECMAScriptParserRightShiftLogicalAssign-40))|(1<<(ECMAScriptParserBitAndAssign-40))|(1<<(ECMAScriptParserBitXorAssign-40))|(1<<(ECMAScriptParserBitOrAssign-40)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-40)&-(0x1f+1)) == 0 && ((1<<uint((_la-40)))&((1<<(ECMAScriptParserMultiplyAssign-40))|(1<<(ECMAScriptParserDivideAssign-40))|(1<<(ECMAScriptParserModulusAssign-40))|(1<<(ECMAScriptParserPlusAssign-40))|(1<<(ECMAScriptParserMinusAssign-40))|(1<<(ECMAScriptParserLeftShiftArithmeticAssign-40))|(1<<(ECMAScriptParserRightShiftArithmeticAssign-40))|(1<<(ECMAScriptParserRightShiftLogicalAssign-40))|(1<<(ECMAScriptParserBitAndAssign-40))|(1<<(ECMAScriptParserBitXorAssign-40))|(1<<(ECMAScriptParserBitOrAssign-40)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -9637,14 +10127,16 @@ func (p *ECMAScriptParser) Literal() (localctx ILiteralContext) {
 	switch p.GetTokenStream().LA(1) {
 	case ECMAScriptParserRegularExpressionLiteral, ECMAScriptParserNullLiteral, ECMAScriptParserBooleanLiteral, ECMAScriptParserStringLiteral:
 		p.EnterOuterAlt(localctx, 1)
-		p.SetState(584)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(584)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == ECMAScriptParserRegularExpressionLiteral || _la == ECMAScriptParserNullLiteral || _la == ECMAScriptParserBooleanLiteral || _la == ECMAScriptParserStringLiteral) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == ECMAScriptParserRegularExpressionLiteral || _la == ECMAScriptParserNullLiteral || _la == ECMAScriptParserBooleanLiteral || _la == ECMAScriptParserStringLiteral) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	case ECMAScriptParserDecimalLiteral, ECMAScriptParserHexIntegerLiteral, ECMAScriptParserOctalIntegerLiteral:
@@ -9753,14 +10245,16 @@ func (p *ECMAScriptParser) NumericLiteral() (localctx INumericLiteralContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(588)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(588)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-53)&-(0x1f+1)) == 0 && ((1<<uint((_la-53)))&((1<<(ECMAScriptParserDecimalLiteral-53))|(1<<(ECMAScriptParserHexIntegerLiteral-53))|(1<<(ECMAScriptParserOctalIntegerLiteral-53)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-53)&-(0x1f+1)) == 0 && ((1<<uint((_la-53)))&((1<<(ECMAScriptParserDecimalLiteral-53))|(1<<(ECMAScriptParserHexIntegerLiteral-53))|(1<<(ECMAScriptParserOctalIntegerLiteral-53)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -10010,14 +10504,16 @@ func (p *ECMAScriptParser) ReservedWord() (localctx IReservedWordContext) {
 
 	case ECMAScriptParserNullLiteral, ECMAScriptParserBooleanLiteral:
 		p.EnterOuterAlt(localctx, 3)
-		p.SetState(596)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(596)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == ECMAScriptParserNullLiteral || _la == ECMAScriptParserBooleanLiteral) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == ECMAScriptParserNullLiteral || _la == ECMAScriptParserBooleanLiteral) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	default:
@@ -10211,14 +10707,16 @@ func (p *ECMAScriptParser) Keyword() (localctx IKeywordContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(599)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(599)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-56)&-(0x1f+1)) == 0 && ((1<<uint((_la-56)))&((1<<(ECMAScriptParserBreak-56))|(1<<(ECMAScriptParserDo-56))|(1<<(ECMAScriptParserInstanceof-56))|(1<<(ECMAScriptParserTypeof-56))|(1<<(ECMAScriptParserCase-56))|(1<<(ECMAScriptParserElse-56))|(1<<(ECMAScriptParserNew-56))|(1<<(ECMAScriptParserVar-56))|(1<<(ECMAScriptParserCatch-56))|(1<<(ECMAScriptParserFinally-56))|(1<<(ECMAScriptParserReturn-56))|(1<<(ECMAScriptParserVoid-56))|(1<<(ECMAScriptParserContinue-56))|(1<<(ECMAScriptParserFor-56))|(1<<(ECMAScriptParserSwitch-56))|(1<<(ECMAScriptParserWhile-56))|(1<<(ECMAScriptParserDebugger-56))|(1<<(ECMAScriptParserFunction-56))|(1<<(ECMAScriptParserThis-56))|(1<<(ECMAScriptParserWith-56))|(1<<(ECMAScriptParserDefault-56))|(1<<(ECMAScriptParserIf-56))|(1<<(ECMAScriptParserThrow-56))|(1<<(ECMAScriptParserDelete-56))|(1<<(ECMAScriptParserIn-56))|(1<<(ECMAScriptParserTry-56)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-56)&-(0x1f+1)) == 0 && ((1<<uint((_la-56)))&((1<<(ECMAScriptParserBreak-56))|(1<<(ECMAScriptParserDo-56))|(1<<(ECMAScriptParserInstanceof-56))|(1<<(ECMAScriptParserTypeof-56))|(1<<(ECMAScriptParserCase-56))|(1<<(ECMAScriptParserElse-56))|(1<<(ECMAScriptParserNew-56))|(1<<(ECMAScriptParserVar-56))|(1<<(ECMAScriptParserCatch-56))|(1<<(ECMAScriptParserFinally-56))|(1<<(ECMAScriptParserReturn-56))|(1<<(ECMAScriptParserVoid-56))|(1<<(ECMAScriptParserContinue-56))|(1<<(ECMAScriptParserFor-56))|(1<<(ECMAScriptParserSwitch-56))|(1<<(ECMAScriptParserWhile-56))|(1<<(ECMAScriptParserDebugger-56))|(1<<(ECMAScriptParserFunction-56))|(1<<(ECMAScriptParserThis-56))|(1<<(ECMAScriptParserWith-56))|(1<<(ECMAScriptParserDefault-56))|(1<<(ECMAScriptParserIf-56))|(1<<(ECMAScriptParserThrow-56))|(1<<(ECMAScriptParserDelete-56))|(1<<(ECMAScriptParserIn-56))|(1<<(ECMAScriptParserTry-56)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -10368,14 +10866,16 @@ func (p *ECMAScriptParser) FutureReservedWord() (localctx IFutureReservedWordCon
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(601)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(601)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-82)&-(0x1f+1)) == 0 && ((1<<uint((_la-82)))&((1<<(ECMAScriptParserClass-82))|(1<<(ECMAScriptParserEnum-82))|(1<<(ECMAScriptParserExtends-82))|(1<<(ECMAScriptParserSuper-82))|(1<<(ECMAScriptParserConst-82))|(1<<(ECMAScriptParserExport-82))|(1<<(ECMAScriptParserImport-82))|(1<<(ECMAScriptParserImplements-82))|(1<<(ECMAScriptParserLet-82))|(1<<(ECMAScriptParserPrivate-82))|(1<<(ECMAScriptParserPublic-82))|(1<<(ECMAScriptParserInterface-82))|(1<<(ECMAScriptParserPackage-82))|(1<<(ECMAScriptParserProtected-82))|(1<<(ECMAScriptParserStatic-82))|(1<<(ECMAScriptParserYield-82)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-82)&-(0x1f+1)) == 0 && ((1<<uint((_la-82)))&((1<<(ECMAScriptParserClass-82))|(1<<(ECMAScriptParserEnum-82))|(1<<(ECMAScriptParserExtends-82))|(1<<(ECMAScriptParserSuper-82))|(1<<(ECMAScriptParserConst-82))|(1<<(ECMAScriptParserExport-82))|(1<<(ECMAScriptParserImport-82))|(1<<(ECMAScriptParserImplements-82))|(1<<(ECMAScriptParserLet-82))|(1<<(ECMAScriptParserPrivate-82))|(1<<(ECMAScriptParserPublic-82))|(1<<(ECMAScriptParserInterface-82))|(1<<(ECMAScriptParserPackage-82))|(1<<(ECMAScriptParserProtected-82))|(1<<(ECMAScriptParserStatic-82))|(1<<(ECMAScriptParserYield-82)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

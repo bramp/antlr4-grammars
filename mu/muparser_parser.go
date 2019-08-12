@@ -1,4 +1,4 @@
-// Generated from MuParser.g4 by ANTLR 4.7.
+// Code generated from MuParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package mu // MuParser
 import (
@@ -1266,21 +1266,23 @@ func (p *MuParserParser) expr(_p int) (localctx IExprContext) {
 			p.SetState(35)
 			p.Match(MuParserParserID)
 		}
-		p.SetState(36)
+		{
+			p.SetState(36)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*AssignExprContext).op = _lt
+			localctx.(*AssignExprContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<MuParserParserASSIGN)|(1<<MuParserParserASSIGNADD)|(1<<MuParserParserASSIGNSUB)|(1<<MuParserParserASSIGNMUL)|(1<<MuParserParserASSIGNDIV))) != 0) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<MuParserParserASSIGN)|(1<<MuParserParserASSIGNADD)|(1<<MuParserParserASSIGNSUB)|(1<<MuParserParserASSIGNMUL)|(1<<MuParserParserASSIGNDIV))) != 0) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*AssignExprContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*AssignExprContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(37)
@@ -1327,21 +1329,23 @@ func (p *MuParserParser) expr(_p int) (localctx IExprContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 11)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 11)", ""))
 				}
-				p.SetState(44)
+				{
+					p.SetState(44)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*MulDivExprContext).op = _lt
+					localctx.(*MulDivExprContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == MuParserParserMUL || _la == MuParserParserDIV) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(_la == MuParserParserMUL || _la == MuParserParserDIV) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*MulDivExprContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*MulDivExprContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(45)
@@ -1356,21 +1360,23 @@ func (p *MuParserParser) expr(_p int) (localctx IExprContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 10)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 10)", ""))
 				}
-				p.SetState(47)
+				{
+					p.SetState(47)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*AddSubExprContext).op = _lt
+					localctx.(*AddSubExprContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == MuParserParserADD || _la == MuParserParserSUB) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(_la == MuParserParserADD || _la == MuParserParserSUB) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*AddSubExprContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*AddSubExprContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(48)
@@ -1385,21 +1391,23 @@ func (p *MuParserParser) expr(_p int) (localctx IExprContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 9)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 9)", ""))
 				}
-				p.SetState(50)
+				{
+					p.SetState(50)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*RelationalExprContext).op = _lt
+					localctx.(*RelationalExprContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<MuParserParserLTEQ)|(1<<MuParserParserGTEQ)|(1<<MuParserParserLT)|(1<<MuParserParserGT))) != 0) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<MuParserParserLTEQ)|(1<<MuParserParserGTEQ)|(1<<MuParserParserLT)|(1<<MuParserParserGT))) != 0) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*RelationalExprContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*RelationalExprContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(51)
@@ -1414,21 +1422,23 @@ func (p *MuParserParser) expr(_p int) (localctx IExprContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 8)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 8)", ""))
 				}
-				p.SetState(53)
+				{
+					p.SetState(53)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*EqualityExprContext).op = _lt
+					localctx.(*EqualityExprContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == MuParserParserNEQ || _la == MuParserParserEQ) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(_la == MuParserParserNEQ || _la == MuParserParserEQ) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*EqualityExprContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*EqualityExprContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(54)
@@ -1795,40 +1805,46 @@ func (p *MuParserParser) Atom() (localctx IAtomContext) {
 	case MuParserParserINT, MuParserParserFLOAT:
 		localctx = NewNumberAtomContext(p, localctx)
 		p.EnterOuterAlt(localctx, 2)
-		p.SetState(76)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(76)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == MuParserParserINT || _la == MuParserParserFLOAT) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == MuParserParserINT || _la == MuParserParserFLOAT) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	case MuParserParserTRUE, MuParserParserFALSE:
 		localctx = NewBooleanAtomContext(p, localctx)
 		p.EnterOuterAlt(localctx, 3)
-		p.SetState(77)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(77)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == MuParserParserTRUE || _la == MuParserParserFALSE) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == MuParserParserTRUE || _la == MuParserParserFALSE) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	case MuParserParserE, MuParserParserPI:
 		localctx = NewPredefinedConstantAtomContext(p, localctx)
 		p.EnterOuterAlt(localctx, 4)
-		p.SetState(78)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(78)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == MuParserParserE || _la == MuParserParserPI) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == MuParserParserE || _la == MuParserParserPI) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	case MuParserParserID:

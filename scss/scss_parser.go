@@ -1,4 +1,4 @@
-// Generated from ScssParser.g4 by ANTLR 4.7.
+// Code generated from ScssParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package scss // ScssParser
 import (
@@ -1367,6 +1367,10 @@ func NewMixinDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleCont
 
 func (s *MixinDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *MixinDeclarationContext) MIXIN() antlr.TerminalNode {
+	return s.GetToken(ScssParserMIXIN, 0)
+}
+
 func (s *MixinDeclarationContext) Identifier() antlr.TerminalNode {
 	return s.GetToken(ScssParserIdentifier, 0)
 }
@@ -1527,6 +1531,10 @@ func (s *IncludeDeclarationContext) INCLUDE() antlr.TerminalNode {
 
 func (s *IncludeDeclarationContext) Identifier() antlr.TerminalNode {
 	return s.GetToken(ScssParserIdentifier, 0)
+}
+
+func (s *IncludeDeclarationContext) SEMI() antlr.TerminalNode {
+	return s.GetToken(ScssParserSEMI, 0)
 }
 
 func (s *IncludeDeclarationContext) LPAREN() antlr.TerminalNode {
@@ -1710,6 +1718,10 @@ func NewFunctionDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleC
 }
 
 func (s *FunctionDeclarationContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *FunctionDeclarationContext) FUNCTION() antlr.TerminalNode {
+	return s.GetToken(ScssParserFUNCTION, 0)
+}
 
 func (s *FunctionDeclarationContext) Identifier() antlr.TerminalNode {
 	return s.GetToken(ScssParserIdentifier, 0)
@@ -2016,6 +2028,10 @@ func NewFunctionReturnContext(parser antlr.Parser, parent antlr.ParserRuleContex
 
 func (s *FunctionReturnContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *FunctionReturnContext) RETURN() antlr.TerminalNode {
+	return s.GetToken(ScssParserRETURN, 0)
+}
+
 func (s *FunctionReturnContext) CommandStatement() ICommandStatementContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICommandStatementContext)(nil)).Elem(), 0)
 
@@ -2024,6 +2040,10 @@ func (s *FunctionReturnContext) CommandStatement() ICommandStatementContext {
 	}
 
 	return t.(ICommandStatementContext)
+}
+
+func (s *FunctionReturnContext) SEMI() antlr.TerminalNode {
+	return s.GetToken(ScssParserSEMI, 0)
 }
 
 func (s *FunctionReturnContext) GetRuleContext() antlr.RuleContext {
@@ -2129,6 +2149,10 @@ func (s *FunctionStatementContext) CommandStatement() ICommandStatementContext {
 	}
 
 	return t.(ICommandStatementContext)
+}
+
+func (s *FunctionStatementContext) SEMI() antlr.TerminalNode {
+	return s.GetToken(ScssParserSEMI, 0)
 }
 
 func (s *FunctionStatementContext) Statement() IStatementContext {
@@ -2245,6 +2269,10 @@ func NewCommandStatementContext(parser antlr.Parser, parent antlr.ParserRuleCont
 
 func (s *CommandStatementContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *CommandStatementContext) LPAREN() antlr.TerminalNode {
+	return s.GetToken(ScssParserLPAREN, 0)
+}
+
 func (s *CommandStatementContext) CommandStatement() ICommandStatementContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICommandStatementContext)(nil)).Elem(), 0)
 
@@ -2253,6 +2281,10 @@ func (s *CommandStatementContext) CommandStatement() ICommandStatementContext {
 	}
 
 	return t.(ICommandStatementContext)
+}
+
+func (s *CommandStatementContext) RPAREN() antlr.TerminalNode {
+	return s.GetToken(ScssParserRPAREN, 0)
 }
 
 func (s *CommandStatementContext) MathStatement() IMathStatementContext {
@@ -2482,14 +2514,16 @@ func (p *ScssParser) MathCharacter() (localctx IMathCharacterContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(221)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(221)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ScssParserPLUS)|(1<<ScssParserTIMES)|(1<<ScssParserDIV)|(1<<ScssParserMINUS)|(1<<ScssParserPERC))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ScssParserPLUS)|(1<<ScssParserTIMES)|(1<<ScssParserDIV)|(1<<ScssParserMINUS)|(1<<ScssParserPERC))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -3424,6 +3458,10 @@ func (s *ConditionContext) Conditions() IConditionsContext {
 	return t.(IConditionsContext)
 }
 
+func (s *ConditionContext) EQEQ() antlr.TerminalNode {
+	return s.GetToken(ScssParserEQEQ, 0)
+}
+
 func (s *ConditionContext) LT() antlr.TerminalNode {
 	return s.GetToken(ScssParserLT, 0)
 }
@@ -3432,8 +3470,16 @@ func (s *ConditionContext) GT() antlr.TerminalNode {
 	return s.GetToken(ScssParserGT, 0)
 }
 
+func (s *ConditionContext) NOTEQ() antlr.TerminalNode {
+	return s.GetToken(ScssParserNOTEQ, 0)
+}
+
 func (s *ConditionContext) LPAREN() antlr.TerminalNode {
 	return s.GetToken(ScssParserLPAREN, 0)
+}
+
+func (s *ConditionContext) RPAREN() antlr.TerminalNode {
+	return s.GetToken(ScssParserRPAREN, 0)
 }
 
 func (s *ConditionContext) GetRuleContext() antlr.RuleContext {
@@ -3491,14 +3537,16 @@ func (p *ScssParser) Condition() (localctx IConditionContext) {
 		_la = p.GetTokenStream().LA(1)
 
 		if ((_la-13)&-(0x1f+1)) == 0 && ((1<<uint((_la-13)))&((1<<(ScssParserGT-13))|(1<<(ScssParserLT-13))|(1<<(ScssParserEQEQ-13))|(1<<(ScssParserNOTEQ-13)))) != 0 {
-			p.SetState(265)
-			_la = p.GetTokenStream().LA(1)
+			{
+				p.SetState(265)
+				_la = p.GetTokenStream().LA(1)
 
-			if !(((_la-13)&-(0x1f+1)) == 0 && ((1<<uint((_la-13)))&((1<<(ScssParserGT-13))|(1<<(ScssParserLT-13))|(1<<(ScssParserEQEQ-13))|(1<<(ScssParserNOTEQ-13)))) != 0) {
-				p.GetErrorHandler().RecoverInline(p)
-			} else {
-				p.GetErrorHandler().ReportMatch(p)
-				p.Consume()
+				if !(((_la-13)&-(0x1f+1)) == 0 && ((1<<uint((_la-13)))&((1<<(ScssParserGT-13))|(1<<(ScssParserLT-13))|(1<<(ScssParserEQEQ-13))|(1<<(ScssParserNOTEQ-13)))) != 0) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
 			}
 			{
 				p.SetState(266)
@@ -3587,6 +3635,14 @@ func (s *VariableDeclarationContext) Values() IValuesContext {
 	}
 
 	return t.(IValuesContext)
+}
+
+func (s *VariableDeclarationContext) SEMI() antlr.TerminalNode {
+	return s.GetToken(ScssParserSEMI, 0)
+}
+
+func (s *VariableDeclarationContext) POUND_DEFAULT() antlr.TerminalNode {
+	return s.GetToken(ScssParserPOUND_DEFAULT, 0)
 }
 
 func (s *VariableDeclarationContext) GetRuleContext() antlr.RuleContext {
@@ -3714,6 +3770,10 @@ func (s *ForDeclarationContext) VariableName() IVariableNameContext {
 	return t.(IVariableNameContext)
 }
 
+func (s *ForDeclarationContext) FROM() antlr.TerminalNode {
+	return s.GetToken(ScssParserFROM, 0)
+}
+
 func (s *ForDeclarationContext) FromNumber() IFromNumberContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFromNumberContext)(nil)).Elem(), 0)
 
@@ -3722,6 +3782,10 @@ func (s *ForDeclarationContext) FromNumber() IFromNumberContext {
 	}
 
 	return t.(IFromNumberContext)
+}
+
+func (s *ForDeclarationContext) THROUGH() antlr.TerminalNode {
+	return s.GetToken(ScssParserTHROUGH, 0)
 }
 
 func (s *ForDeclarationContext) ThroughNumber() IThroughNumberContext {
@@ -4796,6 +4860,10 @@ func NewImportDeclarationContext(parser antlr.Parser, parent antlr.ParserRuleCon
 
 func (s *ImportDeclarationContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *ImportDeclarationContext) IMPORT() antlr.TerminalNode {
+	return s.GetToken(ScssParserIMPORT, 0)
+}
+
 func (s *ImportDeclarationContext) ReferenceUrl() IReferenceUrlContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IReferenceUrlContext)(nil)).Elem(), 0)
 
@@ -4804,6 +4872,10 @@ func (s *ImportDeclarationContext) ReferenceUrl() IReferenceUrlContext {
 	}
 
 	return t.(IReferenceUrlContext)
+}
+
+func (s *ImportDeclarationContext) SEMI() antlr.TerminalNode {
+	return s.GetToken(ScssParserSEMI, 0)
 }
 
 func (s *ImportDeclarationContext) MediaTypes() IMediaTypesContext {
@@ -5172,6 +5244,10 @@ func NewNestedContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 
 func (s *NestedContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *NestedContext) AT() antlr.TerminalNode {
+	return s.GetToken(ScssParserAT, 0)
+}
+
 func (s *NestedContext) Nest() INestContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*INestContext)(nil)).Elem(), 0)
 
@@ -5325,6 +5401,10 @@ func (s *NestContext) Identifier(i int) antlr.TerminalNode {
 	return s.GetToken(ScssParserIdentifier, i)
 }
 
+func (s *NestContext) AND() antlr.TerminalNode {
+	return s.GetToken(ScssParserAND, 0)
+}
+
 func (s *NestContext) AllPseudo() []IPseudoContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IPseudoContext)(nil)).Elem())
 	var tst = make([]IPseudoContext, len(ts))
@@ -5392,14 +5472,16 @@ func (p *ScssParser) Nest() (localctx INestContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(374)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(374)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == ScssParserAND || _la == ScssParserIdentifier) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == ScssParserAND || _la == ScssParserIdentifier) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	p.SetState(378)
 	p.GetErrorHandler().Sync(p)
@@ -5613,6 +5695,14 @@ func (s *BlockContext) Property(i int) IPropertyContext {
 	}
 
 	return t.(IPropertyContext)
+}
+
+func (s *BlockContext) AllSEMI() []antlr.TerminalNode {
+	return s.GetTokens(ScssParserSEMI)
+}
+
+func (s *BlockContext) SEMI(i int) antlr.TerminalNode {
+	return s.GetToken(ScssParserSEMI, i)
 }
 
 func (s *BlockContext) AllStatement() []IStatementContext {
@@ -6186,14 +6276,16 @@ func (p *ScssParser) SelectorPrefix() (localctx ISelectorPrefixContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(435)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(435)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ScssParserGT)|(1<<ScssParserTIL)|(1<<ScssParserPLUS))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<ScssParserGT)|(1<<ScssParserTIL)|(1<<ScssParserPLUS))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -6245,6 +6337,22 @@ func (s *ElementContext) Identifier() IIdentifierContext {
 	}
 
 	return t.(IIdentifierContext)
+}
+
+func (s *ElementContext) HASH() antlr.TerminalNode {
+	return s.GetToken(ScssParserHASH, 0)
+}
+
+func (s *ElementContext) DOT() antlr.TerminalNode {
+	return s.GetToken(ScssParserDOT, 0)
+}
+
+func (s *ElementContext) AND() antlr.TerminalNode {
+	return s.GetToken(ScssParserAND, 0)
+}
+
+func (s *ElementContext) TIMES() antlr.TerminalNode {
+	return s.GetToken(ScssParserTIMES, 0)
 }
 
 func (s *ElementContext) GetRuleContext() antlr.RuleContext {
@@ -6447,14 +6555,16 @@ func (p *ScssParser) Pseudo() (localctx IPseudoContext) {
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 48, p.GetParserRuleContext()) {
 	case 1:
 		p.EnterOuterAlt(localctx, 1)
-		p.SetState(446)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(446)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == ScssParserCOLON || _la == ScssParserCOLONCOLON) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == ScssParserCOLON || _la == ScssParserCOLONCOLON) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(447)
@@ -6463,14 +6573,16 @@ func (p *ScssParser) Pseudo() (localctx IPseudoContext) {
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
-		p.SetState(448)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(448)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == ScssParserCOLON || _la == ScssParserCOLONCOLON) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == ScssParserCOLON || _la == ScssParserCOLONCOLON) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(449)
@@ -6520,12 +6632,20 @@ func NewAttribContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 
 func (s *AttribContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *AttribContext) LBRACK() antlr.TerminalNode {
+	return s.GetToken(ScssParserLBRACK, 0)
+}
+
 func (s *AttribContext) AllIdentifier() []antlr.TerminalNode {
 	return s.GetTokens(ScssParserIdentifier)
 }
 
 func (s *AttribContext) Identifier(i int) antlr.TerminalNode {
 	return s.GetToken(ScssParserIdentifier, i)
+}
+
+func (s *AttribContext) RBRACK() antlr.TerminalNode {
+	return s.GetToken(ScssParserRBRACK, 0)
 }
 
 func (s *AttribContext) AttribRelate() IAttribRelateContext {
@@ -6601,14 +6721,16 @@ func (p *ScssParser) Attrib() (localctx IAttribContext) {
 			p.SetState(454)
 			p.AttribRelate()
 		}
-		p.SetState(455)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(455)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == ScssParserIdentifier || _la == ScssParserStringLiteral) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == ScssParserIdentifier || _la == ScssParserStringLiteral) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -6657,6 +6779,19 @@ func NewAttribRelateContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 }
 
 func (s *AttribRelateContext) GetParser() antlr.Parser { return s.parser }
+
+func (s *AttribRelateContext) EQ() antlr.TerminalNode {
+	return s.GetToken(ScssParserEQ, 0)
+}
+
+func (s *AttribRelateContext) TILD_EQ() antlr.TerminalNode {
+	return s.GetToken(ScssParserTILD_EQ, 0)
+}
+
+func (s *AttribRelateContext) PIPE_EQ() antlr.TerminalNode {
+	return s.GetToken(ScssParserPIPE_EQ, 0)
+}
+
 func (s *AttribRelateContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
@@ -6699,14 +6834,16 @@ func (p *ScssParser) AttribRelate() (localctx IAttribRelateContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(461)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(461)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(ScssParserEQ-33))|(1<<(ScssParserPIPE_EQ-33))|(1<<(ScssParserTILD_EQ-33)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(ScssParserEQ-33))|(1<<(ScssParserPIPE_EQ-33))|(1<<(ScssParserTILD_EQ-33)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -7126,14 +7263,16 @@ func (p *ScssParser) IdentifierVariableName() (localctx IIdentifierVariableNameC
 		p.SetState(488)
 		p.Match(ScssParserDOLLAR)
 	}
-	p.SetState(489)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(489)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == ScssParserIdentifier || _la == ScssParserIdentifierAfter) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == ScssParserIdentifier || _la == ScssParserIdentifierAfter) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

@@ -1,4 +1,4 @@
-// Generated from XMLParser.g4 by ANTLR 4.7.
+// Code generated from XMLParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package xml // XMLParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"

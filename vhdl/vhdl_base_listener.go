@@ -1,4 +1,4 @@
-// Generated from vhdl.g4 by ANTLR 4.7.
+// Code generated from vhdl.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package vhdl // vhdl
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -942,31 +942,37 @@ func (s *BasevhdlListener) EnterName_part(ctx *Name_partContext) {}
 // ExitName_part is called when production name_part is exited.
 func (s *BasevhdlListener) ExitName_part(ctx *Name_partContext) {}
 
-// EnterName_attribute_part is called when production name_attribute_part is entered.
-func (s *BasevhdlListener) EnterName_attribute_part(ctx *Name_attribute_partContext) {}
-
-// ExitName_attribute_part is called when production name_attribute_part is exited.
-func (s *BasevhdlListener) ExitName_attribute_part(ctx *Name_attribute_partContext) {}
-
-// EnterName_function_call_or_indexed_part is called when production name_function_call_or_indexed_part is entered.
-func (s *BasevhdlListener) EnterName_function_call_or_indexed_part(ctx *Name_function_call_or_indexed_partContext) {
-}
-
-// ExitName_function_call_or_indexed_part is called when production name_function_call_or_indexed_part is exited.
-func (s *BasevhdlListener) ExitName_function_call_or_indexed_part(ctx *Name_function_call_or_indexed_partContext) {
-}
-
-// EnterName_slice_part is called when production name_slice_part is entered.
-func (s *BasevhdlListener) EnterName_slice_part(ctx *Name_slice_partContext) {}
-
-// ExitName_slice_part is called when production name_slice_part is exited.
-func (s *BasevhdlListener) ExitName_slice_part(ctx *Name_slice_partContext) {}
-
 // EnterSelected_name is called when production selected_name is entered.
 func (s *BasevhdlListener) EnterSelected_name(ctx *Selected_nameContext) {}
 
 // ExitSelected_name is called when production selected_name is exited.
 func (s *BasevhdlListener) ExitSelected_name(ctx *Selected_nameContext) {}
+
+// EnterSelected_name_part is called when production selected_name_part is entered.
+func (s *BasevhdlListener) EnterSelected_name_part(ctx *Selected_name_partContext) {}
+
+// ExitSelected_name_part is called when production selected_name_part is exited.
+func (s *BasevhdlListener) ExitSelected_name_part(ctx *Selected_name_partContext) {}
+
+// EnterFunction_call_or_indexed_name_part is called when production function_call_or_indexed_name_part is entered.
+func (s *BasevhdlListener) EnterFunction_call_or_indexed_name_part(ctx *Function_call_or_indexed_name_partContext) {
+}
+
+// ExitFunction_call_or_indexed_name_part is called when production function_call_or_indexed_name_part is exited.
+func (s *BasevhdlListener) ExitFunction_call_or_indexed_name_part(ctx *Function_call_or_indexed_name_partContext) {
+}
+
+// EnterSlice_name_part is called when production slice_name_part is entered.
+func (s *BasevhdlListener) EnterSlice_name_part(ctx *Slice_name_partContext) {}
+
+// ExitSlice_name_part is called when production slice_name_part is exited.
+func (s *BasevhdlListener) ExitSlice_name_part(ctx *Slice_name_partContext) {}
+
+// EnterAttribute_name_part is called when production attribute_name_part is entered.
+func (s *BasevhdlListener) EnterAttribute_name_part(ctx *Attribute_name_partContext) {}
+
+// ExitAttribute_name_part is called when production attribute_name_part is exited.
+func (s *BasevhdlListener) ExitAttribute_name_part(ctx *Attribute_name_partContext) {}
 
 // EnterNature_declaration is called when production nature_declaration is entered.
 func (s *BasevhdlListener) EnterNature_declaration(ctx *Nature_declarationContext) {}

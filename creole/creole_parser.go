@@ -1,4 +1,4 @@
-// Generated from creole.g4 by ANTLR 4.7.
+// Code generated from creole.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package creole // creole
 import (
@@ -840,14 +840,16 @@ func (p *creoleParser) Text() (localctx ITextContext) {
 	for ok := true; ok; ok = _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		switch _alt {
 		case 1:
-			p.SetState(55)
-			_la = p.GetTokenStream().LA(1)
+			{
+				p.SetState(55)
+				_la = p.GetTokenStream().LA(1)
 
-			if !(_la == creoleParserTEXT || _la == creoleParserRSLASH) {
-				p.GetErrorHandler().RecoverInline(p)
-			} else {
-				p.GetErrorHandler().ReportMatch(p)
-				p.Consume()
+				if !(_la == creoleParserTEXT || _la == creoleParserRSLASH) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
 			}
 
 		default:
@@ -1631,6 +1633,14 @@ func (s *ListitemContext) Markup() IMarkupContext {
 	}
 
 	return t.(IMarkupContext)
+}
+
+func (s *ListitemContext) AllHASH() []antlr.TerminalNode {
+	return s.GetTokens(creoleParserHASH)
+}
+
+func (s *ListitemContext) HASH(i int) antlr.TerminalNode {
+	return s.GetToken(creoleParserHASH, i)
 }
 
 func (s *ListitemContext) GetRuleContext() antlr.RuleContext {

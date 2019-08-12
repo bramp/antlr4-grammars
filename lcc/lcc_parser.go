@@ -1,4 +1,4 @@
-// Generated from lcc.g4 by ANTLR 4.7.
+// Code generated from lcc.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package lcc // lcc
 import (

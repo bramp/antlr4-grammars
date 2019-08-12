@@ -1,4 +1,4 @@
-// Generated from ATL.g4 by ANTLR 4.7.
+// Code generated from ATL.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package atl // ATL
 import (
@@ -1043,14 +1043,16 @@ func (p *ATLParser) Module() (localctx IModuleContext) {
 		p.SetState(191)
 		p.Match(ATLParserT__0)
 	}
-	p.SetState(192)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(192)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == ATLParserSTRING || _la == ATLParserIDENTIFIER) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == ATLParserSTRING || _la == ATLParserIDENTIFIER) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(193)
@@ -1445,14 +1447,16 @@ func (p *ATLParser) TransformationMode() (localctx ITransformationModeContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(227)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(227)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == ATLParserT__4 || _la == ATLParserT__5) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == ATLParserT__4 || _la == ATLParserT__5) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -1596,14 +1600,16 @@ func (p *ATLParser) Library() (localctx ILibraryContext) {
 		p.SetState(229)
 		p.Match(ATLParserT__6)
 	}
-	p.SetState(230)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(230)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == ATLParserSTRING || _la == ATLParserIDENTIFIER) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == ATLParserSTRING || _la == ATLParserIDENTIFIER) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(231)
@@ -1789,14 +1795,16 @@ func (p *ATLParser) Query() (localctx IQueryContext) {
 		p.SetState(244)
 		p.Match(ATLParserT__7)
 	}
-	p.SetState(245)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(245)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == ATLParserSTRING || _la == ATLParserIDENTIFIER) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == ATLParserSTRING || _la == ATLParserIDENTIFIER) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(246)
@@ -6201,14 +6209,16 @@ func (p *ATLParser) OclModelElement() (localctx IOclModelElementContext) {
 		p.SetState(581)
 		p.Match(ATLParserT__36)
 	}
-	p.SetState(582)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(582)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == ATLParserSTRING || _la == ATLParserIDENTIFIER) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == ATLParserSTRING || _la == ATLParserIDENTIFIER) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -7591,14 +7601,16 @@ func (p *ATLParser) BooleanExp() (localctx IBooleanExpContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(661)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(661)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == ATLParserT__40 || _la == ATLParserT__41) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == ATLParserT__40 || _la == ATLParserT__41) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

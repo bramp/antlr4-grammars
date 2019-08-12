@@ -1,4 +1,4 @@
-// Generated from Corundum.g4 by ANTLR 4.7.
+// Code generated from Corundum.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package corundum // Corundum
 import (
@@ -6641,21 +6641,23 @@ func (p *CorundumParser) Assignment() (localctx IAssignmentContext) {
 
 			localctx.(*AssignmentContext).var_id = _x
 		}
-		p.SetState(465)
+		{
+			p.SetState(465)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*AssignmentContext).op = _lt
+			localctx.(*AssignmentContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(CorundumParserPLUS_ASSIGN-33))|(1<<(CorundumParserMINUS_ASSIGN-33))|(1<<(CorundumParserMUL_ASSIGN-33))|(1<<(CorundumParserDIV_ASSIGN-33))|(1<<(CorundumParserMOD_ASSIGN-33))|(1<<(CorundumParserEXP_ASSIGN-33)))) != 0) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(CorundumParserPLUS_ASSIGN-33))|(1<<(CorundumParserMINUS_ASSIGN-33))|(1<<(CorundumParserMUL_ASSIGN-33))|(1<<(CorundumParserDIV_ASSIGN-33))|(1<<(CorundumParserMOD_ASSIGN-33))|(1<<(CorundumParserEXP_ASSIGN-33)))) != 0) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*AssignmentContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*AssignmentContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(466)
@@ -6849,21 +6851,23 @@ func (p *CorundumParser) Dynamic_assignment() (localctx IDynamic_assignmentConte
 
 			localctx.(*Dynamic_assignmentContext).var_id = _x
 		}
-		p.SetState(475)
+		{
+			p.SetState(475)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*Dynamic_assignmentContext).op = _lt
+			localctx.(*Dynamic_assignmentContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(CorundumParserPLUS_ASSIGN-33))|(1<<(CorundumParserMINUS_ASSIGN-33))|(1<<(CorundumParserMUL_ASSIGN-33))|(1<<(CorundumParserDIV_ASSIGN-33))|(1<<(CorundumParserMOD_ASSIGN-33))|(1<<(CorundumParserEXP_ASSIGN-33)))) != 0) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(CorundumParserPLUS_ASSIGN-33))|(1<<(CorundumParserMINUS_ASSIGN-33))|(1<<(CorundumParserMUL_ASSIGN-33))|(1<<(CorundumParserDIV_ASSIGN-33))|(1<<(CorundumParserMOD_ASSIGN-33))|(1<<(CorundumParserEXP_ASSIGN-33)))) != 0) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*Dynamic_assignmentContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*Dynamic_assignmentContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(476)
@@ -7057,21 +7061,23 @@ func (p *CorundumParser) Int_assignment() (localctx IInt_assignmentContext) {
 
 			localctx.(*Int_assignmentContext).var_id = _x
 		}
-		p.SetState(485)
+		{
+			p.SetState(485)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*Int_assignmentContext).op = _lt
+			localctx.(*Int_assignmentContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(CorundumParserPLUS_ASSIGN-33))|(1<<(CorundumParserMINUS_ASSIGN-33))|(1<<(CorundumParserMUL_ASSIGN-33))|(1<<(CorundumParserDIV_ASSIGN-33))|(1<<(CorundumParserMOD_ASSIGN-33))|(1<<(CorundumParserEXP_ASSIGN-33)))) != 0) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(CorundumParserPLUS_ASSIGN-33))|(1<<(CorundumParserMINUS_ASSIGN-33))|(1<<(CorundumParserMUL_ASSIGN-33))|(1<<(CorundumParserDIV_ASSIGN-33))|(1<<(CorundumParserMOD_ASSIGN-33))|(1<<(CorundumParserEXP_ASSIGN-33)))) != 0) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*Int_assignmentContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*Int_assignmentContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(486)
@@ -7265,21 +7271,23 @@ func (p *CorundumParser) Float_assignment() (localctx IFloat_assignmentContext) 
 
 			localctx.(*Float_assignmentContext).var_id = _x
 		}
-		p.SetState(495)
+		{
+			p.SetState(495)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*Float_assignmentContext).op = _lt
+			localctx.(*Float_assignmentContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(CorundumParserPLUS_ASSIGN-33))|(1<<(CorundumParserMINUS_ASSIGN-33))|(1<<(CorundumParserMUL_ASSIGN-33))|(1<<(CorundumParserDIV_ASSIGN-33))|(1<<(CorundumParserMOD_ASSIGN-33))|(1<<(CorundumParserEXP_ASSIGN-33)))) != 0) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(CorundumParserPLUS_ASSIGN-33))|(1<<(CorundumParserMINUS_ASSIGN-33))|(1<<(CorundumParserMUL_ASSIGN-33))|(1<<(CorundumParserDIV_ASSIGN-33))|(1<<(CorundumParserMOD_ASSIGN-33))|(1<<(CorundumParserEXP_ASSIGN-33)))) != 0) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*Float_assignmentContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*Float_assignmentContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(496)
@@ -8481,21 +8489,23 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 			p.SetState(558)
 			p.int_result(0)
 		}
-		p.SetState(559)
+		{
+			p.SetState(559)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*Dynamic_resultContext).op = _lt
+			localctx.(*Dynamic_resultContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*Dynamic_resultContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*Dynamic_resultContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(560)
@@ -8507,21 +8517,23 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 			p.SetState(562)
 			p.float_result(0)
 		}
-		p.SetState(563)
+		{
+			p.SetState(563)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*Dynamic_resultContext).op = _lt
+			localctx.(*Dynamic_resultContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*Dynamic_resultContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*Dynamic_resultContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(564)
@@ -8550,21 +8562,23 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 			p.SetState(570)
 			p.int_result(0)
 		}
-		p.SetState(571)
+		{
+			p.SetState(571)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*Dynamic_resultContext).op = _lt
+			localctx.(*Dynamic_resultContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*Dynamic_resultContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*Dynamic_resultContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(572)
@@ -8576,21 +8590,23 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 			p.SetState(574)
 			p.float_result(0)
 		}
-		p.SetState(575)
+		{
+			p.SetState(575)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*Dynamic_resultContext).op = _lt
+			localctx.(*Dynamic_resultContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*Dynamic_resultContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*Dynamic_resultContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(576)
@@ -8640,21 +8656,23 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 				if !(p.Precpred(p.GetParserRuleContext(), 10)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 10)", ""))
 				}
-				p.SetState(586)
+				{
+					p.SetState(586)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Dynamic_resultContext).op = _lt
+					localctx.(*Dynamic_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Dynamic_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Dynamic_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(587)
@@ -8669,21 +8687,23 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 				if !(p.Precpred(p.GetParserRuleContext(), 3)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 3)", ""))
 				}
-				p.SetState(589)
+				{
+					p.SetState(589)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Dynamic_resultContext).op = _lt
+					localctx.(*Dynamic_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Dynamic_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Dynamic_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(590)
@@ -8698,21 +8718,23 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 				if !(p.Precpred(p.GetParserRuleContext(), 14)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 14)", ""))
 				}
-				p.SetState(592)
+				{
+					p.SetState(592)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Dynamic_resultContext).op = _lt
+					localctx.(*Dynamic_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Dynamic_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Dynamic_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(593)
@@ -8727,21 +8749,23 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 				if !(p.Precpred(p.GetParserRuleContext(), 12)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 12)", ""))
 				}
-				p.SetState(595)
+				{
+					p.SetState(595)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Dynamic_resultContext).op = _lt
+					localctx.(*Dynamic_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Dynamic_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Dynamic_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(596)
@@ -8776,21 +8800,23 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 				if !(p.Precpred(p.GetParserRuleContext(), 7)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 7)", ""))
 				}
-				p.SetState(601)
+				{
+					p.SetState(601)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Dynamic_resultContext).op = _lt
+					localctx.(*Dynamic_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Dynamic_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Dynamic_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(602)
@@ -8805,21 +8831,23 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 5)", ""))
 				}
-				p.SetState(604)
+				{
+					p.SetState(604)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Dynamic_resultContext).op = _lt
+					localctx.(*Dynamic_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Dynamic_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Dynamic_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(605)
@@ -9186,21 +9214,23 @@ func (p *CorundumParser) int_result(_p int) (localctx IInt_resultContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 4)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 4)", ""))
 				}
-				p.SetState(625)
+				{
+					p.SetState(625)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Int_resultContext).op = _lt
+					localctx.(*Int_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Int_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Int_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(626)
@@ -9215,21 +9245,23 @@ func (p *CorundumParser) int_result(_p int) (localctx IInt_resultContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 3)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 3)", ""))
 				}
-				p.SetState(628)
+				{
+					p.SetState(628)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Int_resultContext).op = _lt
+					localctx.(*Int_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Int_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Int_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(629)
@@ -9428,21 +9460,23 @@ func (p *CorundumParser) float_result(_p int) (localctx IFloat_resultContext) {
 			p.SetState(636)
 			p.int_result(0)
 		}
-		p.SetState(637)
+		{
+			p.SetState(637)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*Float_resultContext).op = _lt
+			localctx.(*Float_resultContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*Float_resultContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*Float_resultContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(638)
@@ -9454,21 +9488,23 @@ func (p *CorundumParser) float_result(_p int) (localctx IFloat_resultContext) {
 			p.SetState(640)
 			p.int_result(0)
 		}
-		p.SetState(641)
+		{
+			p.SetState(641)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*Float_resultContext).op = _lt
+			localctx.(*Float_resultContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*Float_resultContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*Float_resultContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(642)
@@ -9518,21 +9554,23 @@ func (p *CorundumParser) float_result(_p int) (localctx IFloat_resultContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 8)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 8)", ""))
 				}
-				p.SetState(652)
+				{
+					p.SetState(652)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Float_resultContext).op = _lt
+					localctx.(*Float_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Float_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Float_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(653)
@@ -9547,21 +9585,23 @@ func (p *CorundumParser) float_result(_p int) (localctx IFloat_resultContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 5)", ""))
 				}
-				p.SetState(655)
+				{
+					p.SetState(655)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Float_resultContext).op = _lt
+					localctx.(*Float_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Float_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Float_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(656)
@@ -9576,21 +9616,23 @@ func (p *CorundumParser) float_result(_p int) (localctx IFloat_resultContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 6)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 6)", ""))
 				}
-				p.SetState(658)
+				{
+					p.SetState(658)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Float_resultContext).op = _lt
+					localctx.(*Float_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Float_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Float_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(659)
@@ -9605,21 +9647,23 @@ func (p *CorundumParser) float_result(_p int) (localctx IFloat_resultContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 3)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 3)", ""))
 				}
-				p.SetState(661)
+				{
+					p.SetState(661)
 
-				var _lt = p.GetTokenStream().LT(1)
+					var _lt = p.GetTokenStream().LT(1)
 
-				localctx.(*Float_resultContext).op = _lt
+					localctx.(*Float_resultContext).op = _lt
 
-				_la = p.GetTokenStream().LA(1)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
-					var _ri = p.GetErrorHandler().RecoverInline(p)
+					if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
+						var _ri = p.GetErrorHandler().RecoverInline(p)
 
-					localctx.(*Float_resultContext).op = _ri
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+						localctx.(*Float_resultContext).op = _ri
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(662)
@@ -10336,21 +10380,23 @@ func (p *CorundumParser) Comparison() (localctx IComparisonContext) {
 
 			localctx.(*ComparisonContext).left = _x
 		}
-		p.SetState(711)
+		{
+			p.SetState(711)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*ComparisonContext).op = _lt
+			localctx.(*ComparisonContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserGREATER)|(1<<CorundumParserLESS)|(1<<CorundumParserLESS_EQUAL)|(1<<CorundumParserGREATER_EQUAL))) != 0) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserGREATER)|(1<<CorundumParserLESS)|(1<<CorundumParserLESS_EQUAL)|(1<<CorundumParserGREATER_EQUAL))) != 0) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*ComparisonContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*ComparisonContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(712)
@@ -10369,21 +10415,23 @@ func (p *CorundumParser) Comparison() (localctx IComparisonContext) {
 
 			localctx.(*ComparisonContext).left = _x
 		}
-		p.SetState(715)
+		{
+			p.SetState(715)
 
-		var _lt = p.GetTokenStream().LT(1)
+			var _lt = p.GetTokenStream().LT(1)
 
-		localctx.(*ComparisonContext).op = _lt
+			localctx.(*ComparisonContext).op = _lt
 
-		_la = p.GetTokenStream().LA(1)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == CorundumParserEQUAL || _la == CorundumParserNOT_EQUAL) {
-			var _ri = p.GetErrorHandler().RecoverInline(p)
+			if !(_la == CorundumParserEQUAL || _la == CorundumParserNOT_EQUAL) {
+				var _ri = p.GetErrorHandler().RecoverInline(p)
 
-			localctx.(*ComparisonContext).op = _ri
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+				localctx.(*ComparisonContext).op = _ri
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(716)
@@ -11146,14 +11194,16 @@ func (p *CorundumParser) rvalue(_p int) (localctx IRvalueContext) {
 		}
 
 	case 20:
-		p.SetState(747)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(747)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == CorundumParserBIT_NOT || _la == CorundumParserNOT) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == CorundumParserBIT_NOT || _la == CorundumParserNOT) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(748)
@@ -11214,14 +11264,16 @@ func (p *CorundumParser) rvalue(_p int) (localctx IRvalueContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 9)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 9)", ""))
 				}
-				p.SetState(759)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(759)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserMUL)|(1<<CorundumParserDIV)|(1<<CorundumParserMOD))) != 0) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(760)
@@ -11236,14 +11288,16 @@ func (p *CorundumParser) rvalue(_p int) (localctx IRvalueContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 8)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 8)", ""))
 				}
-				p.SetState(762)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(762)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(_la == CorundumParserPLUS || _la == CorundumParserMINUS) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(763)
@@ -11258,14 +11312,16 @@ func (p *CorundumParser) rvalue(_p int) (localctx IRvalueContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 7)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 7)", ""))
 				}
-				p.SetState(765)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(765)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == CorundumParserBIT_SHL || _la == CorundumParserBIT_SHR) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(_la == CorundumParserBIT_SHL || _la == CorundumParserBIT_SHR) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(766)
@@ -11297,14 +11353,16 @@ func (p *CorundumParser) rvalue(_p int) (localctx IRvalueContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 5)", ""))
 				}
-				p.SetState(771)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(771)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == CorundumParserBIT_OR || _la == CorundumParserBIT_XOR) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(_la == CorundumParserBIT_OR || _la == CorundumParserBIT_XOR) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(772)
@@ -11319,14 +11377,16 @@ func (p *CorundumParser) rvalue(_p int) (localctx IRvalueContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 4)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 4)", ""))
 				}
-				p.SetState(774)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(774)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserGREATER)|(1<<CorundumParserLESS)|(1<<CorundumParserLESS_EQUAL)|(1<<CorundumParserGREATER_EQUAL))) != 0) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<CorundumParserGREATER)|(1<<CorundumParserLESS)|(1<<CorundumParserLESS_EQUAL)|(1<<CorundumParserGREATER_EQUAL))) != 0) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(775)
@@ -11341,14 +11401,16 @@ func (p *CorundumParser) rvalue(_p int) (localctx IRvalueContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 3)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 3)", ""))
 				}
-				p.SetState(777)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(777)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == CorundumParserEQUAL || _la == CorundumParserNOT_EQUAL) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(_la == CorundumParserEQUAL || _la == CorundumParserNOT_EQUAL) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(778)
@@ -11363,14 +11425,16 @@ func (p *CorundumParser) rvalue(_p int) (localctx IRvalueContext) {
 				if !(p.Precpred(p.GetParserRuleContext(), 2)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 2)", ""))
 				}
-				p.SetState(780)
-				_la = p.GetTokenStream().LA(1)
+				{
+					p.SetState(780)
+					_la = p.GetTokenStream().LA(1)
 
-				if !(_la == CorundumParserAND || _la == CorundumParserOR) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
+					if !(_la == CorundumParserAND || _la == CorundumParserOR) {
+						p.GetErrorHandler().RecoverInline(p)
+					} else {
+						p.GetErrorHandler().ReportMatch(p)
+						p.Consume()
+					}
 				}
 				{
 					p.SetState(781)
@@ -11840,14 +11904,16 @@ func (p *CorundumParser) Bool_t() (localctx IBool_tContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(795)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(795)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == CorundumParserTRUE || _la == CorundumParserFALSE) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == CorundumParserTRUE || _la == CorundumParserFALSE) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

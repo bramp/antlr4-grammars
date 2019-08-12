@@ -40,6 +40,7 @@ var examples = []string{
 	"grammars-v4/arithmetic/examples/number5.txt",
 	"grammars-v4/arithmetic/examples/number6.txt",
 	"grammars-v4/arithmetic/examples/paren1.txt",
+	"grammars-v4/arithmetic/examples/paren2.txt",
 	"grammars-v4/arithmetic/examples/pow1.txt",
 	"grammars-v4/arithmetic/examples/precedence1.txt",
 	"grammars-v4/arithmetic/examples/precedence2.txt",
@@ -100,8 +101,8 @@ func TestArithmeticLexer(t *testing.T) {
 		// Try and read all tokens
 		i := 0
 		for ; i < MAX_TOKENS; i++ {
-			t := lexer.NextToken()
-			if t.GetTokenType() == antlr.TokenEOF {
+			tok := lexer.NextToken()
+			if tok.GetTokenType() == antlr.TokenEOF {
 				break
 			}
 		}

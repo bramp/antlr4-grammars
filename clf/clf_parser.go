@@ -1,4 +1,4 @@
-// Generated from clf.g4 by ANTLR 4.7.
+// Code generated from clf.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package clf // clf
 import (
@@ -577,14 +577,16 @@ func (p *clfParser) Host() (localctx IHostContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(45)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(45)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == clfParserIP || _la == clfParserSTRING) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == clfParserIP || _la == clfParserSTRING) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

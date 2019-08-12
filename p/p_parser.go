@@ -1,4 +1,4 @@
-// Generated from p.g4 by ANTLR 4.7.
+// Code generated from p.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package p // p
 import (
@@ -546,14 +546,16 @@ func (p *pParser) Atom() (localctx IAtomContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(25)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(25)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == pParserR || _la == pParserL) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == pParserR || _la == pParserL) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

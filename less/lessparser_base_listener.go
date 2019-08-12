@@ -1,4 +1,4 @@
-// Generated from LessParser.g4 by ANTLR 4.7.
+// Code generated from LessParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package less // LessParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -98,6 +98,12 @@ func (s *BaseLessParserListener) EnterImportDeclaration(ctx *ImportDeclarationCo
 // ExitImportDeclaration is called when production importDeclaration is exited.
 func (s *BaseLessParserListener) ExitImportDeclaration(ctx *ImportDeclarationContext) {}
 
+// EnterImportOption is called when production importOption is entered.
+func (s *BaseLessParserListener) EnterImportOption(ctx *ImportOptionContext) {}
+
+// ExitImportOption is called when production importOption is exited.
+func (s *BaseLessParserListener) ExitImportOption(ctx *ImportOptionContext) {}
+
 // EnterReferenceUrl is called when production referenceUrl is entered.
 func (s *BaseLessParserListener) EnterReferenceUrl(ctx *ReferenceUrlContext) {}
 
@@ -163,6 +169,12 @@ func (s *BaseLessParserListener) EnterAttrib(ctx *AttribContext) {}
 
 // ExitAttrib is called when production attrib is exited.
 func (s *BaseLessParserListener) ExitAttrib(ctx *AttribContext) {}
+
+// EnterNegation is called when production negation is entered.
+func (s *BaseLessParserListener) EnterNegation(ctx *NegationContext) {}
+
+// ExitNegation is called when production negation is exited.
+func (s *BaseLessParserListener) ExitNegation(ctx *NegationContext) {}
 
 // EnterPseudo is called when production pseudo is entered.
 func (s *BaseLessParserListener) EnterPseudo(ctx *PseudoContext) {}

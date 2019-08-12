@@ -1,4 +1,4 @@
-// Generated from DCM_2_0_grammar.g4 by ANTLR 4.7.
+// Code generated from DCM_2_0_grammar.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package dcm_2_0_grammar // DCM_2_0_grammar
 import (
@@ -5042,14 +5042,16 @@ func (p *DCM_2_0_grammarParser) Displayname() (localctx IDisplaynameContext) {
 		p.SetState(484)
 		p.Match(DCM_2_0_grammarParserT__24)
 	}
-	p.SetState(485)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(485)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == DCM_2_0_grammarParserNAME || _la == DCM_2_0_grammarParserTEXT) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == DCM_2_0_grammarParserNAME || _la == DCM_2_0_grammarParserTEXT) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(486)
@@ -6601,14 +6603,16 @@ func (p *DCM_2_0_grammarParser) Realzahl() (localctx IRealzahlContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(585)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(585)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == DCM_2_0_grammarParserINT || _la == DCM_2_0_grammarParserFLOAT) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == DCM_2_0_grammarParserINT || _la == DCM_2_0_grammarParserFLOAT) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

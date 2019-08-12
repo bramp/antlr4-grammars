@@ -1,4 +1,4 @@
-// Generated from tnsnamesParser.g4 by ANTLR 4.7.
+// Code generated from tnsnamesParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package tnsnames // tnsnamesParser
 import (
@@ -4617,14 +4617,16 @@ func (p *tnsnamesParser) Al_failover() (localctx IAl_failoverContext) {
 		p.SetState(394)
 		p.Match(tnsnamesParserEQUAL)
 	}
-	p.SetState(395)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(395)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tnsnamesParserYES_NO)|(1<<tnsnamesParserON_OFF)|(1<<tnsnamesParserTRUE_FALSE))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tnsnamesParserYES_NO)|(1<<tnsnamesParserON_OFF)|(1<<tnsnamesParserTRUE_FALSE))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(396)
@@ -4754,14 +4756,16 @@ func (p *tnsnamesParser) Al_load_balance() (localctx IAl_load_balanceContext) {
 		p.SetState(400)
 		p.Match(tnsnamesParserEQUAL)
 	}
-	p.SetState(401)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(401)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tnsnamesParserYES_NO)|(1<<tnsnamesParserON_OFF)|(1<<tnsnamesParserTRUE_FALSE))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tnsnamesParserYES_NO)|(1<<tnsnamesParserON_OFF)|(1<<tnsnamesParserTRUE_FALSE))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(402)
@@ -4887,14 +4891,16 @@ func (p *tnsnamesParser) Al_source_route() (localctx IAl_source_routeContext) {
 		p.SetState(406)
 		p.Match(tnsnamesParserEQUAL)
 	}
-	p.SetState(407)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(407)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == tnsnamesParserYES_NO || _la == tnsnamesParserON_OFF) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == tnsnamesParserYES_NO || _la == tnsnamesParserON_OFF) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(408)
@@ -11598,14 +11604,16 @@ func (p *tnsnamesParser) Cd_server() (localctx ICd_serverContext) {
 		p.SetState(722)
 		p.Match(tnsnamesParserEQUAL)
 	}
-	p.SetState(723)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(723)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tnsnamesParserDEDICATED)|(1<<tnsnamesParserSHARED)|(1<<tnsnamesParserPOOLED))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tnsnamesParserDEDICATED)|(1<<tnsnamesParserSHARED)|(1<<tnsnamesParserPOOLED))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(724)
@@ -12150,14 +12158,16 @@ func (p *tnsnamesParser) Fo_type() (localctx IFo_typeContext) {
 		p.SetState(746)
 		p.Match(tnsnamesParserEQUAL)
 	}
-	p.SetState(747)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(747)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(tnsnamesParserSESSION-68))|(1<<(tnsnamesParserSELECT-68))|(1<<(tnsnamesParserNONE-68)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(tnsnamesParserSESSION-68))|(1<<(tnsnamesParserSELECT-68))|(1<<(tnsnamesParserNONE-68)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(748)
@@ -12437,14 +12447,16 @@ func (p *tnsnamesParser) Fo_method() (localctx IFo_methodContext) {
 		p.SetState(765)
 		p.Match(tnsnamesParserEQUAL)
 	}
-	p.SetState(766)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(766)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == tnsnamesParserBASIC || _la == tnsnamesParserPRECONNECT) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == tnsnamesParserBASIC || _la == tnsnamesParserPRECONNECT) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(767)

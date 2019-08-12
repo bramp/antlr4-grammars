@@ -49,6 +49,8 @@ var examples = []string{
 	"grammars-v4/cool/examples/list.cl",
 	"grammars-v4/cool/examples/new_complex.cl",
 	"grammars-v4/cool/examples/palindrome.cl",
+	"grammars-v4/cool/examples/pr1154.txt",
+	"grammars-v4/cool/examples/pr1154_2.txt",
 	"grammars-v4/cool/examples/primes.cl",
 	"grammars-v4/cool/examples/sort_list.cl",
 }
@@ -101,8 +103,8 @@ func TestCOOLLexer(t *testing.T) {
 		// Try and read all tokens
 		i := 0
 		for ; i < MAX_TOKENS; i++ {
-			t := lexer.NextToken()
-			if t.GetTokenType() == antlr.TokenEOF {
+			tok := lexer.NextToken()
+			if tok.GetTokenType() == antlr.TokenEOF {
 				break
 			}
 		}

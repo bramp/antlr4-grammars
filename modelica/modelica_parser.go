@@ -1,4 +1,4 @@
-// Generated from modelica.g4 by ANTLR 4.7.
+// Code generated from modelica.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package modelica // modelica
 import (
@@ -1360,14 +1360,16 @@ func (p *modelicaParser) Class_prefixes() (localctx IClass_prefixesContext) {
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == modelicaParserT__14 || _la == modelicaParserT__15 {
-			p.SetState(204)
-			_la = p.GetTokenStream().LA(1)
+			{
+				p.SetState(204)
+				_la = p.GetTokenStream().LA(1)
 
-			if !(_la == modelicaParserT__14 || _la == modelicaParserT__15) {
-				p.GetErrorHandler().RecoverInline(p)
-			} else {
-				p.GetErrorHandler().ReportMatch(p)
-				p.Consume()
+				if !(_la == modelicaParserT__14 || _la == modelicaParserT__15) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
 			}
 
 		}
@@ -4071,14 +4073,16 @@ func (p *modelicaParser) Type_prefix() (localctx IType_prefixContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == modelicaParserT__38 || _la == modelicaParserT__39 {
-		p.SetState(417)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(417)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == modelicaParserT__38 || _la == modelicaParserT__39) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == modelicaParserT__38 || _la == modelicaParserT__39) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -4087,14 +4091,16 @@ func (p *modelicaParser) Type_prefix() (localctx IType_prefixContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if ((_la-41)&-(0x1f+1)) == 0 && ((1<<uint((_la-41)))&((1<<(modelicaParserT__40-41))|(1<<(modelicaParserT__41-41))|(1<<(modelicaParserT__42-41)))) != 0 {
-		p.SetState(420)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(420)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-41)&-(0x1f+1)) == 0 && ((1<<uint((_la-41)))&((1<<(modelicaParserT__40-41))|(1<<(modelicaParserT__41-41))|(1<<(modelicaParserT__42-41)))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la-41)&-(0x1f+1)) == 0 && ((1<<uint((_la-41)))&((1<<(modelicaParserT__40-41))|(1<<(modelicaParserT__41-41))|(1<<(modelicaParserT__42-41)))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -4103,14 +4109,16 @@ func (p *modelicaParser) Type_prefix() (localctx IType_prefixContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == modelicaParserT__43 || _la == modelicaParserT__44 {
-		p.SetState(423)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(423)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == modelicaParserT__43 || _la == modelicaParserT__44) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == modelicaParserT__43 || _la == modelicaParserT__44) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -9620,14 +9628,16 @@ func (p *modelicaParser) Rel_op() (localctx IRel_opContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(851)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(851)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-67)&-(0x1f+1)) == 0 && ((1<<uint((_la-67)))&((1<<(modelicaParserT__66-67))|(1<<(modelicaParserT__67-67))|(1<<(modelicaParserT__68-67))|(1<<(modelicaParserT__69-67))|(1<<(modelicaParserT__70-67))|(1<<(modelicaParserT__71-67)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-67)&-(0x1f+1)) == 0 && ((1<<uint((_la-67)))&((1<<(modelicaParserT__66-67))|(1<<(modelicaParserT__67-67))|(1<<(modelicaParserT__68-67))|(1<<(modelicaParserT__69-67))|(1<<(modelicaParserT__70-67))|(1<<(modelicaParserT__71-67)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -9875,14 +9885,16 @@ func (p *modelicaParser) Add_op() (localctx IAdd_opContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(865)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(865)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-73)&-(0x1f+1)) == 0 && ((1<<uint((_la-73)))&((1<<(modelicaParserT__72-73))|(1<<(modelicaParserT__73-73))|(1<<(modelicaParserT__74-73))|(1<<(modelicaParserT__75-73)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-73)&-(0x1f+1)) == 0 && ((1<<uint((_la-73)))&((1<<(modelicaParserT__72-73))|(1<<(modelicaParserT__73-73))|(1<<(modelicaParserT__74-73))|(1<<(modelicaParserT__75-73)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -10119,14 +10131,16 @@ func (p *modelicaParser) Mul_op() (localctx IMul_opContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(876)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(876)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == modelicaParserT__34 || (((_la-77)&-(0x1f+1)) == 0 && ((1<<uint((_la-77)))&((1<<(modelicaParserT__76-77))|(1<<(modelicaParserT__77-77))|(1<<(modelicaParserT__78-77)))) != 0)) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == modelicaParserT__34 || (((_la-77)&-(0x1f+1)) == 0 && ((1<<uint((_la-77)))&((1<<(modelicaParserT__76-77))|(1<<(modelicaParserT__77-77))|(1<<(modelicaParserT__78-77)))) != 0)) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -10244,14 +10258,16 @@ func (p *modelicaParser) Factor() (localctx IFactorContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == modelicaParserT__79 || _la == modelicaParserT__80 {
-		p.SetState(879)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(879)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == modelicaParserT__79 || _la == modelicaParserT__80) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == modelicaParserT__79 || _la == modelicaParserT__80) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(880)

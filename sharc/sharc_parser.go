@@ -1,4 +1,4 @@
-// Generated from SHARCParser.g4 by ANTLR 4.7.
+// Code generated from SHARCParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package sharc // SHARCParser
 import (
@@ -2961,14 +2961,16 @@ func (p *SHARCParser) Seg_qualifier_1() (localctx ISeg_qualifier_1Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(374)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(374)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == SHARCParserPM || _la == SHARCParserCODE) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == SHARCParserPM || _la == SHARCParserCODE) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -3066,14 +3068,16 @@ func (p *SHARCParser) Seg_qualifier_2() (localctx ISeg_qualifier_2Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(376)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(376)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == SHARCParserDM || _la == SHARCParserDATA || _la == SHARCParserDATA64) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == SHARCParserDM || _la == SHARCParserDATA || _la == SHARCParserDATA64) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -3171,14 +3175,16 @@ func (p *SHARCParser) Seg_qualifier_3() (localctx ISeg_qualifier_3Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(378)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(378)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-395)&-(0x1f+1)) == 0 && ((1<<uint((_la-395)))&((1<<(SHARCParserNO_INIT-395))|(1<<(SHARCParserZERO_INIT-395))|(1<<(SHARCParserRUNTIME_INIT-395)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-395)&-(0x1f+1)) == 0 && ((1<<uint((_la-395)))&((1<<(SHARCParserNO_INIT-395))|(1<<(SHARCParserZERO_INIT-395))|(1<<(SHARCParserRUNTIME_INIT-395)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -5039,14 +5045,16 @@ func (p *SHARCParser) Value_exp2() (localctx IValue_exp2Context) {
 	_la = p.GetTokenStream().LA(1)
 
 	for ((_la-377)&-(0x1f+1)) == 0 && ((1<<uint((_la-377)))&((1<<(SHARCParserPLUS-377))|(1<<(SHARCParserMINUS-377))|(1<<(SHARCParserMULT-377))|(1<<(SHARCParserDIV-377))|(1<<(SHARCParserDIV_MOD-377))|(1<<(SHARCParserI_OR-377))|(1<<(SHARCParserI_XOR-377)))) != 0 {
-		p.SetState(466)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(466)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-377)&-(0x1f+1)) == 0 && ((1<<uint((_la-377)))&((1<<(SHARCParserPLUS-377))|(1<<(SHARCParserMINUS-377))|(1<<(SHARCParserMULT-377))|(1<<(SHARCParserDIV-377))|(1<<(SHARCParserDIV_MOD-377))|(1<<(SHARCParserI_OR-377))|(1<<(SHARCParserI_XOR-377)))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la-377)&-(0x1f+1)) == 0 && ((1<<uint((_la-377)))&((1<<(SHARCParserPLUS-377))|(1<<(SHARCParserMINUS-377))|(1<<(SHARCParserMULT-377))|(1<<(SHARCParserDIV-377))|(1<<(SHARCParserDIV_MOD-377))|(1<<(SHARCParserI_OR-377))|(1<<(SHARCParserI_XOR-377)))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(467)
@@ -9505,14 +9513,16 @@ func (p *SHARCParser) Mem_addr_int_() (localctx IMem_addr_int_Context) {
 			p.SetState(673)
 			p.Atom()
 		}
-		p.SetState(674)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(674)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == SHARCParserPLUS || _la == SHARCParserMINUS) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == SHARCParserPLUS || _la == SHARCParserMINUS) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(675)
@@ -13238,14 +13248,16 @@ func (p *SHARCParser) Mr() (localctx IMrContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1005)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1005)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == SHARCParserMRB || _la == SHARCParserMRF) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == SHARCParserMRB || _la == SHARCParserMRF) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -14451,14 +14463,16 @@ func (p *SHARCParser) Add_or_sub() (localctx IAdd_or_subContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1121)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1121)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == SHARCParserPLUS || _la == SHARCParserMINUS) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == SHARCParserPLUS || _la == SHARCParserMINUS) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -18165,14 +18179,16 @@ func (p *SHARCParser) Jump_modifier_1() (localctx IJump_modifier_1Context) {
 			p.SetState(1295)
 			p.Match(SHARCParserCOMMA)
 		}
-		p.SetState(1296)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(1296)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == SHARCParserCI || _la == SHARCParserLA) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == SHARCParserCI || _la == SHARCParserLA) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	}
@@ -20163,14 +20179,16 @@ func (p *SHARCParser) Misc_exp() (localctx IMisc_expContext) {
 			p.SetState(1377)
 			p.Match(SHARCParserBIT)
 		}
-		p.SetState(1378)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(1378)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == SHARCParserCLR || (((_la-326)&-(0x1f+1)) == 0 && ((1<<uint((_la-326)))&((1<<(SHARCParserSET-326))|(1<<(SHARCParserTGL-326))|(1<<(SHARCParserTST-326)))) != 0) || _la == SHARCParserXOR) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == SHARCParserCLR || (((_la-326)&-(0x1f+1)) == 0 && ((1<<uint((_la-326)))&((1<<(SHARCParserSET-326))|(1<<(SHARCParserTGL-326))|(1<<(SHARCParserTST-326)))) != 0) || _la == SHARCParserXOR) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(1379)
@@ -20449,23 +20467,27 @@ func (p *SHARCParser) Misc_20() (localctx IMisc_20Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1422)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1422)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == SHARCParserPOP || _la == SHARCParserPUSH) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == SHARCParserPOP || _la == SHARCParserPUSH) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
-	p.SetState(1423)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1423)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == SHARCParserLOOP || _la == SHARCParserPCSTK || _la == SHARCParserSTS) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == SHARCParserLOOP || _la == SHARCParserPCSTK || _la == SHARCParserSTS) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -21183,14 +21205,16 @@ func (p *SHARCParser) B_reg() (localctx IB_regContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1493)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1493)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-57)&-(0x1f+1)) == 0 && ((1<<uint((_la-57)))&((1<<(SHARCParserB0-57))|(1<<(SHARCParserB1-57))|(1<<(SHARCParserB2-57))|(1<<(SHARCParserB3-57))|(1<<(SHARCParserB4-57))|(1<<(SHARCParserB5-57))|(1<<(SHARCParserB6-57))|(1<<(SHARCParserB7-57))|(1<<(SHARCParserB8-57))|(1<<(SHARCParserB9-57))|(1<<(SHARCParserB10-57))|(1<<(SHARCParserB11-57))|(1<<(SHARCParserB12-57))|(1<<(SHARCParserB13-57))|(1<<(SHARCParserB14-57))|(1<<(SHARCParserB15-57)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-57)&-(0x1f+1)) == 0 && ((1<<uint((_la-57)))&((1<<(SHARCParserB0-57))|(1<<(SHARCParserB1-57))|(1<<(SHARCParserB2-57))|(1<<(SHARCParserB3-57))|(1<<(SHARCParserB4-57))|(1<<(SHARCParserB5-57))|(1<<(SHARCParserB6-57))|(1<<(SHARCParserB7-57))|(1<<(SHARCParserB8-57))|(1<<(SHARCParserB9-57))|(1<<(SHARCParserB10-57))|(1<<(SHARCParserB11-57))|(1<<(SHARCParserB12-57))|(1<<(SHARCParserB13-57))|(1<<(SHARCParserB14-57))|(1<<(SHARCParserB15-57)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -21340,14 +21364,16 @@ func (p *SHARCParser) L_reg() (localctx IL_regContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1495)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1495)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-190)&-(0x1f+1)) == 0 && ((1<<uint((_la-190)))&((1<<(SHARCParserL0-190))|(1<<(SHARCParserL1-190))|(1<<(SHARCParserL2-190))|(1<<(SHARCParserL3-190))|(1<<(SHARCParserL4-190))|(1<<(SHARCParserL5-190))|(1<<(SHARCParserL6-190))|(1<<(SHARCParserL7-190))|(1<<(SHARCParserL8-190))|(1<<(SHARCParserL9-190))|(1<<(SHARCParserL10-190))|(1<<(SHARCParserL11-190))|(1<<(SHARCParserL12-190))|(1<<(SHARCParserL13-190))|(1<<(SHARCParserL14-190))|(1<<(SHARCParserL15-190)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-190)&-(0x1f+1)) == 0 && ((1<<uint((_la-190)))&((1<<(SHARCParserL0-190))|(1<<(SHARCParserL1-190))|(1<<(SHARCParserL2-190))|(1<<(SHARCParserL3-190))|(1<<(SHARCParserL4-190))|(1<<(SHARCParserL5-190))|(1<<(SHARCParserL6-190))|(1<<(SHARCParserL7-190))|(1<<(SHARCParserL8-190))|(1<<(SHARCParserL9-190))|(1<<(SHARCParserL10-190))|(1<<(SHARCParserL11-190))|(1<<(SHARCParserL12-190))|(1<<(SHARCParserL13-190))|(1<<(SHARCParserL14-190))|(1<<(SHARCParserL15-190)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -21497,14 +21523,16 @@ func (p *SHARCParser) R_reg() (localctx IR_regContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1497)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1497)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-297)&-(0x1f+1)) == 0 && ((1<<uint((_la-297)))&((1<<(SHARCParserR0-297))|(1<<(SHARCParserR1-297))|(1<<(SHARCParserR2-297))|(1<<(SHARCParserR3-297))|(1<<(SHARCParserR4-297))|(1<<(SHARCParserR5-297))|(1<<(SHARCParserR6-297))|(1<<(SHARCParserR7-297))|(1<<(SHARCParserR8-297))|(1<<(SHARCParserR9-297))|(1<<(SHARCParserR10-297))|(1<<(SHARCParserR11-297))|(1<<(SHARCParserR12-297))|(1<<(SHARCParserR13-297))|(1<<(SHARCParserR14-297))|(1<<(SHARCParserR15-297)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-297)&-(0x1f+1)) == 0 && ((1<<uint((_la-297)))&((1<<(SHARCParserR0-297))|(1<<(SHARCParserR1-297))|(1<<(SHARCParserR2-297))|(1<<(SHARCParserR3-297))|(1<<(SHARCParserR4-297))|(1<<(SHARCParserR5-297))|(1<<(SHARCParserR6-297))|(1<<(SHARCParserR7-297))|(1<<(SHARCParserR8-297))|(1<<(SHARCParserR9-297))|(1<<(SHARCParserR10-297))|(1<<(SHARCParserR11-297))|(1<<(SHARCParserR12-297))|(1<<(SHARCParserR13-297))|(1<<(SHARCParserR14-297))|(1<<(SHARCParserR15-297)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -21654,14 +21682,16 @@ func (p *SHARCParser) F_reg() (localctx IF_regContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1499)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1499)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-126)&-(0x1f+1)) == 0 && ((1<<uint((_la-126)))&((1<<(SHARCParserF0-126))|(1<<(SHARCParserF1-126))|(1<<(SHARCParserF2-126))|(1<<(SHARCParserF3-126))|(1<<(SHARCParserF4-126))|(1<<(SHARCParserF5-126))|(1<<(SHARCParserF6-126))|(1<<(SHARCParserF7-126))|(1<<(SHARCParserF8-126))|(1<<(SHARCParserF9-126))|(1<<(SHARCParserF10-126))|(1<<(SHARCParserF11-126))|(1<<(SHARCParserF12-126))|(1<<(SHARCParserF13-126))|(1<<(SHARCParserF14-126))|(1<<(SHARCParserF15-126)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-126)&-(0x1f+1)) == 0 && ((1<<uint((_la-126)))&((1<<(SHARCParserF0-126))|(1<<(SHARCParserF1-126))|(1<<(SHARCParserF2-126))|(1<<(SHARCParserF3-126))|(1<<(SHARCParserF4-126))|(1<<(SHARCParserF5-126))|(1<<(SHARCParserF6-126))|(1<<(SHARCParserF7-126))|(1<<(SHARCParserF8-126))|(1<<(SHARCParserF9-126))|(1<<(SHARCParserF10-126))|(1<<(SHARCParserF11-126))|(1<<(SHARCParserF12-126))|(1<<(SHARCParserF13-126))|(1<<(SHARCParserF14-126))|(1<<(SHARCParserF15-126)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -21783,14 +21813,16 @@ func (p *SHARCParser) S_reg() (localctx IS_regContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1501)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1501)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == SHARCParserASTAT || (((_la-185)&-(0x1f+1)) == 0 && ((1<<uint((_la-185)))&((1<<(SHARCParserIMASK-185))|(1<<(SHARCParserIMASKP-185))|(1<<(SHARCParserIRPTL-185)))) != 0) || _la == SHARCParserMODE1 || _la == SHARCParserMODE2 || (((_la-340)&-(0x1f+1)) == 0 && ((1<<uint((_la-340)))&((1<<(SHARCParserSTKY-340))|(1<<(SHARCParserUSTAT1-340))|(1<<(SHARCParserUSTAT2-340)))) != 0)) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == SHARCParserASTAT || (((_la-185)&-(0x1f+1)) == 0 && ((1<<uint((_la-185)))&((1<<(SHARCParserIMASK-185))|(1<<(SHARCParserIMASKP-185))|(1<<(SHARCParserIRPTL-185)))) != 0) || _la == SHARCParserMODE1 || _la == SHARCParserMODE2 || (((_la-340)&-(0x1f+1)) == 0 && ((1<<uint((_la-340)))&((1<<(SHARCParserSTKY-340))|(1<<(SHARCParserUSTAT1-340))|(1<<(SHARCParserUSTAT2-340)))) != 0)) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -21908,14 +21940,16 @@ func (p *SHARCParser) Ia() (localctx IIaContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1503)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1503)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-164)&-(0x1f+1)) == 0 && ((1<<uint((_la-164)))&((1<<(SHARCParserI0-164))|(1<<(SHARCParserI1-164))|(1<<(SHARCParserI2-164))|(1<<(SHARCParserI3-164))|(1<<(SHARCParserI4-164))|(1<<(SHARCParserI5-164))|(1<<(SHARCParserI6-164))|(1<<(SHARCParserI7-164)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-164)&-(0x1f+1)) == 0 && ((1<<uint((_la-164)))&((1<<(SHARCParserI0-164))|(1<<(SHARCParserI1-164))|(1<<(SHARCParserI2-164))|(1<<(SHARCParserI3-164))|(1<<(SHARCParserI4-164))|(1<<(SHARCParserI5-164))|(1<<(SHARCParserI6-164))|(1<<(SHARCParserI7-164)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -22033,14 +22067,16 @@ func (p *SHARCParser) Mb() (localctx IMbContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1505)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1505)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-223)&-(0x1f+1)) == 0 && ((1<<uint((_la-223)))&((1<<(SHARCParserM0-223))|(1<<(SHARCParserM1-223))|(1<<(SHARCParserM2-223))|(1<<(SHARCParserM3-223))|(1<<(SHARCParserM4-223))|(1<<(SHARCParserM5-223))|(1<<(SHARCParserM6-223))|(1<<(SHARCParserM7-223)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-223)&-(0x1f+1)) == 0 && ((1<<uint((_la-223)))&((1<<(SHARCParserM0-223))|(1<<(SHARCParserM1-223))|(1<<(SHARCParserM2-223))|(1<<(SHARCParserM3-223))|(1<<(SHARCParserM4-223))|(1<<(SHARCParserM5-223))|(1<<(SHARCParserM6-223))|(1<<(SHARCParserM7-223)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -22158,14 +22194,16 @@ func (p *SHARCParser) Ic() (localctx IIcContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1507)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1507)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-172)&-(0x1f+1)) == 0 && ((1<<uint((_la-172)))&((1<<(SHARCParserI8-172))|(1<<(SHARCParserI9-172))|(1<<(SHARCParserI10-172))|(1<<(SHARCParserI11-172))|(1<<(SHARCParserI12-172))|(1<<(SHARCParserI13-172))|(1<<(SHARCParserI14-172))|(1<<(SHARCParserI15-172)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-172)&-(0x1f+1)) == 0 && ((1<<uint((_la-172)))&((1<<(SHARCParserI8-172))|(1<<(SHARCParserI9-172))|(1<<(SHARCParserI10-172))|(1<<(SHARCParserI11-172))|(1<<(SHARCParserI12-172))|(1<<(SHARCParserI13-172))|(1<<(SHARCParserI14-172))|(1<<(SHARCParserI15-172)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -22283,14 +22321,16 @@ func (p *SHARCParser) Md() (localctx IMdContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1509)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1509)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-231)&-(0x1f+1)) == 0 && ((1<<uint((_la-231)))&((1<<(SHARCParserM8-231))|(1<<(SHARCParserM9-231))|(1<<(SHARCParserM10-231))|(1<<(SHARCParserM11-231))|(1<<(SHARCParserM12-231))|(1<<(SHARCParserM13-231))|(1<<(SHARCParserM14-231))|(1<<(SHARCParserM15-231)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-231)&-(0x1f+1)) == 0 && ((1<<uint((_la-231)))&((1<<(SHARCParserM8-231))|(1<<(SHARCParserM9-231))|(1<<(SHARCParserM10-231))|(1<<(SHARCParserM11-231))|(1<<(SHARCParserM12-231))|(1<<(SHARCParserM13-231))|(1<<(SHARCParserM14-231))|(1<<(SHARCParserM15-231)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -23871,14 +23911,16 @@ func (p *SHARCParser) Multi_mod1_() (localctx IMulti_mod1_Context) {
 		p.SetState(1599)
 		p.Match(SHARCParserLPARENTHESE)
 	}
-	p.SetState(1600)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1600)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == SHARCParserSF || _la == SHARCParserSI || _la == SHARCParserUF || _la == SHARCParserUI) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == SHARCParserSF || _la == SHARCParserSI || _la == SHARCParserUF || _la == SHARCParserUI) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(1601)
@@ -24125,14 +24167,16 @@ func (p *SHARCParser) Multi_mod2_() (localctx IMulti_mod2_Context) {
 		p.SetState(1605)
 		p.Match(SHARCParserLPARENTHESE)
 	}
-	p.SetState(1606)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1606)
+		_la = p.GetTokenStream().LA(1)
 
-	if !((((_la-334)&-(0x1f+1)) == 0 && ((1<<uint((_la-334)))&((1<<(SHARCParserSSF-334))|(1<<(SHARCParserSSFR-334))|(1<<(SHARCParserSSI-334))|(1<<(SHARCParserSUF-334))|(1<<(SHARCParserSUFR-334))|(1<<(SHARCParserSUI-334))|(1<<(SHARCParserUSF-334))|(1<<(SHARCParserUSFR-334)))) != 0) || (((_la-366)&-(0x1f+1)) == 0 && ((1<<uint((_la-366)))&((1<<(SHARCParserUSI-366))|(1<<(SHARCParserUUF-366))|(1<<(SHARCParserUUFR-366))|(1<<(SHARCParserUUI-366)))) != 0)) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !((((_la-334)&-(0x1f+1)) == 0 && ((1<<uint((_la-334)))&((1<<(SHARCParserSSF-334))|(1<<(SHARCParserSSFR-334))|(1<<(SHARCParserSSI-334))|(1<<(SHARCParserSUF-334))|(1<<(SHARCParserSUFR-334))|(1<<(SHARCParserSUI-334))|(1<<(SHARCParserUSF-334))|(1<<(SHARCParserUSFR-334)))) != 0) || (((_la-366)&-(0x1f+1)) == 0 && ((1<<uint((_la-366)))&((1<<(SHARCParserUSI-366))|(1<<(SHARCParserUUF-366))|(1<<(SHARCParserUUFR-366))|(1<<(SHARCParserUUI-366)))) != 0)) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(1607)
@@ -24234,14 +24278,16 @@ func (p *SHARCParser) R3_0() (localctx IR3_0Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1609)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1609)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-297)&-(0x1f+1)) == 0 && ((1<<uint((_la-297)))&((1<<(SHARCParserR0-297))|(1<<(SHARCParserR2-297))|(1<<(SHARCParserR3-297)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-297)&-(0x1f+1)) == 0 && ((1<<uint((_la-297)))&((1<<(SHARCParserR0-297))|(1<<(SHARCParserR2-297))|(1<<(SHARCParserR3-297)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -24343,14 +24389,16 @@ func (p *SHARCParser) R7_4() (localctx IR7_4Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1611)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1611)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-301)&-(0x1f+1)) == 0 && ((1<<uint((_la-301)))&((1<<(SHARCParserR4-301))|(1<<(SHARCParserR5-301))|(1<<(SHARCParserR6-301))|(1<<(SHARCParserR7-301)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-301)&-(0x1f+1)) == 0 && ((1<<uint((_la-301)))&((1<<(SHARCParserR4-301))|(1<<(SHARCParserR5-301))|(1<<(SHARCParserR6-301))|(1<<(SHARCParserR7-301)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -24452,14 +24500,16 @@ func (p *SHARCParser) R11_8() (localctx IR11_8Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1613)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1613)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-305)&-(0x1f+1)) == 0 && ((1<<uint((_la-305)))&((1<<(SHARCParserR8-305))|(1<<(SHARCParserR9-305))|(1<<(SHARCParserR10-305))|(1<<(SHARCParserR11-305)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-305)&-(0x1f+1)) == 0 && ((1<<uint((_la-305)))&((1<<(SHARCParserR8-305))|(1<<(SHARCParserR9-305))|(1<<(SHARCParserR10-305))|(1<<(SHARCParserR11-305)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -24561,14 +24611,16 @@ func (p *SHARCParser) R15_12() (localctx IR15_12Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1615)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1615)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-309)&-(0x1f+1)) == 0 && ((1<<uint((_la-309)))&((1<<(SHARCParserR12-309))|(1<<(SHARCParserR13-309))|(1<<(SHARCParserR14-309))|(1<<(SHARCParserR15-309)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-309)&-(0x1f+1)) == 0 && ((1<<uint((_la-309)))&((1<<(SHARCParserR12-309))|(1<<(SHARCParserR13-309))|(1<<(SHARCParserR14-309))|(1<<(SHARCParserR15-309)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -24666,14 +24718,16 @@ func (p *SHARCParser) F3_0() (localctx IF3_0Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1617)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1617)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-126)&-(0x1f+1)) == 0 && ((1<<uint((_la-126)))&((1<<(SHARCParserF0-126))|(1<<(SHARCParserF2-126))|(1<<(SHARCParserF3-126)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-126)&-(0x1f+1)) == 0 && ((1<<uint((_la-126)))&((1<<(SHARCParserF0-126))|(1<<(SHARCParserF2-126))|(1<<(SHARCParserF3-126)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -24775,14 +24829,16 @@ func (p *SHARCParser) F7_4() (localctx IF7_4Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1619)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1619)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-130)&-(0x1f+1)) == 0 && ((1<<uint((_la-130)))&((1<<(SHARCParserF4-130))|(1<<(SHARCParserF5-130))|(1<<(SHARCParserF6-130))|(1<<(SHARCParserF7-130)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-130)&-(0x1f+1)) == 0 && ((1<<uint((_la-130)))&((1<<(SHARCParserF4-130))|(1<<(SHARCParserF5-130))|(1<<(SHARCParserF6-130))|(1<<(SHARCParserF7-130)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -24884,14 +24940,16 @@ func (p *SHARCParser) F11_8() (localctx IF11_8Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1621)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1621)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-134)&-(0x1f+1)) == 0 && ((1<<uint((_la-134)))&((1<<(SHARCParserF8-134))|(1<<(SHARCParserF9-134))|(1<<(SHARCParserF10-134))|(1<<(SHARCParserF11-134)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-134)&-(0x1f+1)) == 0 && ((1<<uint((_la-134)))&((1<<(SHARCParserF8-134))|(1<<(SHARCParserF9-134))|(1<<(SHARCParserF10-134))|(1<<(SHARCParserF11-134)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -24993,14 +25051,16 @@ func (p *SHARCParser) F15_12() (localctx IF15_12Context) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1623)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1623)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(SHARCParserF12-138))|(1<<(SHARCParserF13-138))|(1<<(SHARCParserF14-138))|(1<<(SHARCParserF15-138)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(SHARCParserF12-138))|(1<<(SHARCParserF13-138))|(1<<(SHARCParserF14-138))|(1<<(SHARCParserF15-138)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -25094,14 +25154,16 @@ func (p *SHARCParser) Addr() (localctx IAddrContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1625)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1625)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == SHARCParserINT || _la == SHARCParserID) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == SHARCParserINT || _la == SHARCParserID) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -25199,14 +25261,16 @@ func (p *SHARCParser) Mrf() (localctx IMrfContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1627)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1627)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-248)&-(0x1f+1)) == 0 && ((1<<uint((_la-248)))&((1<<(SHARCParserMR0F-248))|(1<<(SHARCParserMR1F-248))|(1<<(SHARCParserMR2F-248)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-248)&-(0x1f+1)) == 0 && ((1<<uint((_la-248)))&((1<<(SHARCParserMR0F-248))|(1<<(SHARCParserMR1F-248))|(1<<(SHARCParserMR2F-248)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -25304,14 +25368,16 @@ func (p *SHARCParser) Mrb() (localctx IMrbContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(1629)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(1629)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-247)&-(0x1f+1)) == 0 && ((1<<uint((_la-247)))&((1<<(SHARCParserMR0B-247))|(1<<(SHARCParserMR1B-247))|(1<<(SHARCParserMR2B-247)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-247)&-(0x1f+1)) == 0 && ((1<<uint((_la-247)))&((1<<(SHARCParserMR0B-247))|(1<<(SHARCParserMR1B-247))|(1<<(SHARCParserMR2B-247)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

@@ -1,4 +1,4 @@
-// Generated from Graphemes.g4 by ANTLR 4.7.
+// Code generated from Graphemes.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package graphemes // Graphemes
 import (
@@ -215,14 +215,16 @@ func (p *GraphemesParser) Emoji_sequence() (localctx IEmoji_sequenceContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(6)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(6)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<GraphemesParserEmojiCoreSequence)|(1<<GraphemesParserEmojiZWJSequence)|(1<<GraphemesParserEmojiTagSequence))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<GraphemesParserEmojiCoreSequence)|(1<<GraphemesParserEmojiZWJSequence)|(1<<GraphemesParserEmojiTagSequence))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	p.SetState(10)
 	p.GetErrorHandler().Sync(p)
@@ -230,14 +232,16 @@ func (p *GraphemesParser) Emoji_sequence() (localctx IEmoji_sequenceContext) {
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
-			p.SetState(7)
-			_la = p.GetTokenStream().LA(1)
+			{
+				p.SetState(7)
+				_la = p.GetTokenStream().LA(1)
 
-			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<GraphemesParserExtend)|(1<<GraphemesParserZWJ)|(1<<GraphemesParserSpacingMark))) != 0) {
-				p.GetErrorHandler().RecoverInline(p)
-			} else {
-				p.GetErrorHandler().ReportMatch(p)
-				p.Consume()
+				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<GraphemesParserExtend)|(1<<GraphemesParserZWJ)|(1<<GraphemesParserSpacingMark))) != 0) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
 			}
 
 		}
@@ -439,14 +443,16 @@ func (p *GraphemesParser) Grapheme_cluster() (localctx IGrapheme_clusterContext)
 		_la = p.GetTokenStream().LA(1)
 
 		for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<GraphemesParserExtend)|(1<<GraphemesParserZWJ)|(1<<GraphemesParserSpacingMark))) != 0 {
-			p.SetState(25)
-			_la = p.GetTokenStream().LA(1)
+			{
+				p.SetState(25)
+				_la = p.GetTokenStream().LA(1)
 
-			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<GraphemesParserExtend)|(1<<GraphemesParserZWJ)|(1<<GraphemesParserSpacingMark))) != 0) {
-				p.GetErrorHandler().RecoverInline(p)
-			} else {
-				p.GetErrorHandler().ReportMatch(p)
-				p.Consume()
+				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<GraphemesParserExtend)|(1<<GraphemesParserZWJ)|(1<<GraphemesParserSpacingMark))) != 0) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
 			}
 
 			p.SetState(30)

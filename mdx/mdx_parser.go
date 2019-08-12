@@ -1,4 +1,4 @@
-// Generated from mdx.g4 by ANTLR 4.7.
+// Code generated from mdx.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package mdx // mdx
 import (
@@ -3370,14 +3370,16 @@ func (p *mdxParser) Mandatory_cell_property() (localctx IMandatory_cell_property
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(234)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(234)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-25)&-(0x1f+1)) == 0 && ((1<<uint((_la-25)))&((1<<(mdxParserCELL_ORDINAL-25))|(1<<(mdxParserFORMATTED_VALUE-25))|(1<<(mdxParserVALUE-25)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-25)&-(0x1f+1)) == 0 && ((1<<uint((_la-25)))&((1<<(mdxParserCELL_ORDINAL-25))|(1<<(mdxParserFORMATTED_VALUE-25))|(1<<(mdxParserVALUE-25)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -4556,14 +4558,16 @@ func (p *mdxParser) Term2() (localctx ITerm2Context) {
 	_la = p.GetTokenStream().LA(1)
 
 	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<mdxParserCONCAT)|(1<<mdxParserMINUS)|(1<<mdxParserPLUS))) != 0 {
-		p.SetState(283)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(283)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<mdxParserCONCAT)|(1<<mdxParserMINUS)|(1<<mdxParserPLUS))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<mdxParserCONCAT)|(1<<mdxParserMINUS)|(1<<mdxParserPLUS))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(284)
@@ -4706,14 +4710,16 @@ func (p *mdxParser) Term() (localctx ITermContext) {
 	_la = p.GetTokenStream().LA(1)
 
 	for _la == mdxParserASTERISK || _la == mdxParserSOLIDUS {
-		p.SetState(291)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(291)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == mdxParserASTERISK || _la == mdxParserSOLIDUS) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == mdxParserASTERISK || _la == mdxParserSOLIDUS) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(292)
@@ -6132,14 +6138,16 @@ func (p *mdxParser) Comp_op() (localctx IComp_opContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(374)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(374)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<mdxParserEQ)|(1<<mdxParserGE)|(1<<mdxParserGT)|(1<<mdxParserLE)|(1<<mdxParserLT)|(1<<mdxParserNE))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<mdxParserEQ)|(1<<mdxParserGE)|(1<<mdxParserGT)|(1<<mdxParserLE)|(1<<mdxParserLT)|(1<<mdxParserNE))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -6654,14 +6662,16 @@ func (p *mdxParser) Keyword() (localctx IKeywordContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(388)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(388)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == mdxParserDIMENSION || _la == mdxParserPROPERTIES) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == mdxParserDIMENSION || _la == mdxParserPROPERTIES) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

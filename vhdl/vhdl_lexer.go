@@ -1,4 +1,4 @@
-// Generated from vhdl.g4 by ANTLR 4.7.
+// Code generated from vhdl.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package vhdl
 

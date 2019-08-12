@@ -35,8 +35,10 @@ const MAX_TOKENS = 1000000
 var examples = []string{
 	"grammars-v4/brainfuck/examples/collatz.b",
 	"grammars-v4/brainfuck/examples/comments.b",
+	"grammars-v4/brainfuck/examples/empty.b",
 	"grammars-v4/brainfuck/examples/fib.b",
 	"grammars-v4/brainfuck/examples/helloworld.b",
+	"grammars-v4/brainfuck/examples/matched.b",
 }
 
 type exampleListener struct {
@@ -87,8 +89,8 @@ func TestBrainfuckLexer(t *testing.T) {
 		// Try and read all tokens
 		i := 0
 		for ; i < MAX_TOKENS; i++ {
-			t := lexer.NextToken()
-			if t.GetTokenType() == antlr.TokenEOF {
+			tok := lexer.NextToken()
+			if tok.GetTokenType() == antlr.TokenEOF {
 				break
 			}
 		}

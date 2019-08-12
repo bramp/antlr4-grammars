@@ -1,4 +1,4 @@
-// Generated from classify.g4 by ANTLR 4.7.
+// Code generated from classify.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package classify // classify
 import (
@@ -322,14 +322,16 @@ func (p *classifyParser) Codepoint() (localctx ICodepointContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(2)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(2)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<classifyParserCLASSIFY___)|(1<<classifyParserCLASSIFY_Cc)|(1<<classifyParserCLASSIFY_Cf)|(1<<classifyParserCLASSIFY_Cn)|(1<<classifyParserCLASSIFY_Co)|(1<<classifyParserCLASSIFY_Cs)|(1<<classifyParserCLASSIFY_Ll)|(1<<classifyParserCLASSIFY_Lm)|(1<<classifyParserCLASSIFY_Lo)|(1<<classifyParserCLASSIFY_Lt)|(1<<classifyParserCLASSIFY_Lu)|(1<<classifyParserCLASSIFY_Mc)|(1<<classifyParserCLASSIFY_Me)|(1<<classifyParserCLASSIFY_Mn)|(1<<classifyParserCLASSIFY_Nd)|(1<<classifyParserCLASSIFY_Nl)|(1<<classifyParserCLASSIFY_No)|(1<<classifyParserCLASSIFY_Pc)|(1<<classifyParserCLASSIFY_Pd)|(1<<classifyParserCLASSIFY_Pe)|(1<<classifyParserCLASSIFY_Pf)|(1<<classifyParserCLASSIFY_Pi)|(1<<classifyParserCLASSIFY_Po)|(1<<classifyParserCLASSIFY_Ps)|(1<<classifyParserCLASSIFY_Sc)|(1<<classifyParserCLASSIFY_Sk)|(1<<classifyParserCLASSIFY_Sm)|(1<<classifyParserCLASSIFY_So)|(1<<classifyParserCLASSIFY_Zl)|(1<<classifyParserCLASSIFY_Zp)|(1<<classifyParserCLASSIFY_Zs))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<classifyParserCLASSIFY___)|(1<<classifyParserCLASSIFY_Cc)|(1<<classifyParserCLASSIFY_Cf)|(1<<classifyParserCLASSIFY_Cn)|(1<<classifyParserCLASSIFY_Co)|(1<<classifyParserCLASSIFY_Cs)|(1<<classifyParserCLASSIFY_Ll)|(1<<classifyParserCLASSIFY_Lm)|(1<<classifyParserCLASSIFY_Lo)|(1<<classifyParserCLASSIFY_Lt)|(1<<classifyParserCLASSIFY_Lu)|(1<<classifyParserCLASSIFY_Mc)|(1<<classifyParserCLASSIFY_Me)|(1<<classifyParserCLASSIFY_Mn)|(1<<classifyParserCLASSIFY_Nd)|(1<<classifyParserCLASSIFY_Nl)|(1<<classifyParserCLASSIFY_No)|(1<<classifyParserCLASSIFY_Pc)|(1<<classifyParserCLASSIFY_Pd)|(1<<classifyParserCLASSIFY_Pe)|(1<<classifyParserCLASSIFY_Pf)|(1<<classifyParserCLASSIFY_Pi)|(1<<classifyParserCLASSIFY_Po)|(1<<classifyParserCLASSIFY_Ps)|(1<<classifyParserCLASSIFY_Sc)|(1<<classifyParserCLASSIFY_Sk)|(1<<classifyParserCLASSIFY_Sm)|(1<<classifyParserCLASSIFY_So)|(1<<classifyParserCLASSIFY_Zl)|(1<<classifyParserCLASSIFY_Zp)|(1<<classifyParserCLASSIFY_Zs))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

@@ -1,4 +1,4 @@
-// Generated from snobol.g4 by ANTLR 4.7.
+// Code generated from snobol.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package snobol // snobol
 import (
@@ -812,14 +812,16 @@ func (p *snobolParser) Line() (localctx ILineContext) {
 
 	case snobolParserEND, snobolParserCOMMENT:
 		p.EnterOuterAlt(localctx, 3)
-		p.SetState(115)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(115)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(_la == snobolParserEND || _la == snobolParserCOMMENT) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(_la == snobolParserEND || _la == snobolParserCOMMENT) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	default:
@@ -968,6 +970,14 @@ func (s *SubjectContext) STRING(i int) antlr.TerminalNode {
 
 func (s *SubjectContext) AMP() antlr.TerminalNode {
 	return s.GetToken(snobolParserAMP, 0)
+}
+
+func (s *SubjectContext) AllCOMMA() []antlr.TerminalNode {
+	return s.GetTokens(snobolParserCOMMA)
+}
+
+func (s *SubjectContext) COMMA(i int) antlr.TerminalNode {
+	return s.GetToken(snobolParserCOMMA, i)
 }
 
 func (s *SubjectContext) GetRuleContext() antlr.RuleContext {
@@ -1155,14 +1165,16 @@ func (p *snobolParser) Pattern() (localctx IPatternContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(136)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(136)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == snobolParserSTRINGLITERAL1 || _la == snobolParserSTRINGLITERAL2) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == snobolParserSTRINGLITERAL1 || _la == snobolParserSTRINGLITERAL2) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -1299,14 +1311,16 @@ func (p *snobolParser) Expression() (localctx IExpressionContext) {
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
-			p.SetState(139)
-			_la = p.GetTokenStream().LA(1)
+			{
+				p.SetState(139)
+				_la = p.GetTokenStream().LA(1)
 
-			if !(_la == snobolParserPLUS || _la == snobolParserMINUS) {
-				p.GetErrorHandler().RecoverInline(p)
-			} else {
-				p.GetErrorHandler().ReportMatch(p)
-				p.Consume()
+				if !(_la == snobolParserPLUS || _la == snobolParserMINUS) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
 			}
 			{
 				p.SetState(140)
@@ -1453,14 +1467,16 @@ func (p *snobolParser) MultiplyingExpression() (localctx IMultiplyingExpressionC
 
 	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
 		if _alt == 1 {
-			p.SetState(147)
-			_la = p.GetTokenStream().LA(1)
+			{
+				p.SetState(147)
+				_la = p.GetTokenStream().LA(1)
 
-			if !(_la == snobolParserTIMES || _la == snobolParserDIV) {
-				p.GetErrorHandler().RecoverInline(p)
-			} else {
-				p.GetErrorHandler().ReportMatch(p)
-				p.Consume()
+				if !(_la == snobolParserTIMES || _la == snobolParserDIV) {
+					p.GetErrorHandler().RecoverInline(p)
+				} else {
+					p.GetErrorHandler().ReportMatch(p)
+					p.Consume()
+				}
 			}
 			{
 				p.SetState(148)
@@ -1696,6 +1712,14 @@ func (s *AtomContext) Expression(i int) IExpressionContext {
 	return t.(IExpressionContext)
 }
 
+func (s *AtomContext) AllCOMMA() []antlr.TerminalNode {
+	return s.GetTokens(snobolParserCOMMA)
+}
+
+func (s *AtomContext) COMMA(i int) antlr.TerminalNode {
+	return s.GetToken(snobolParserCOMMA, i)
+}
+
 func (s *AtomContext) LPAREN() antlr.TerminalNode {
 	return s.GetToken(snobolParserLPAREN, 0)
 }
@@ -1751,14 +1775,16 @@ func (p *snobolParser) Atom() (localctx IAtomContext) {
 	switch p.GetTokenStream().LA(1) {
 	case snobolParserSTRINGLITERAL1, snobolParserSTRINGLITERAL2, snobolParserINTEGER:
 		p.EnterOuterAlt(localctx, 1)
-		p.SetState(159)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(159)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-48)&-(0x1f+1)) == 0 && ((1<<uint((_la-48)))&((1<<(snobolParserSTRINGLITERAL1-48))|(1<<(snobolParserSTRINGLITERAL2-48))|(1<<(snobolParserINTEGER-48)))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la-48)&-(0x1f+1)) == 0 && ((1<<uint((_la-48)))&((1<<(snobolParserSTRINGLITERAL1-48))|(1<<(snobolParserSTRINGLITERAL2-48))|(1<<(snobolParserINTEGER-48)))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 
 	case snobolParserAMP, snobolParserSTRING:
@@ -6109,14 +6135,16 @@ func (p *snobolParser) Transferpre() (localctx ITransferpreContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(373)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(373)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la-32)&-(0x1f+1)) == 0 && ((1<<uint((_la-32)))&((1<<(snobolParserT__31-32))|(1<<(snobolParserT__32-32))|(1<<(snobolParserT__33-32))|(1<<(snobolParserT__34-32)))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la-32)&-(0x1f+1)) == 0 && ((1<<uint((_la-32)))&((1<<(snobolParserT__31-32))|(1<<(snobolParserT__32-32))|(1<<(snobolParserT__33-32))|(1<<(snobolParserT__34-32)))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

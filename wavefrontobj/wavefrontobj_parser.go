@@ -1,4 +1,4 @@
-// Generated from WavefrontOBJ.g4 by ANTLR 4.7.
+// Code generated from WavefrontOBJ.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package wavefrontobj // WavefrontOBJ
 import (
@@ -702,14 +702,16 @@ func (p *WavefrontOBJParser) Vertex() (localctx IVertexContext) {
 	switch p.GetTokenStream().LA(1) {
 	case WavefrontOBJParserGEOMETRIC_VERTEX, WavefrontOBJParserTEXTURE_VERTEX, WavefrontOBJParserVERTEX_NORMAL:
 		p.EnterOuterAlt(localctx, 1)
-		p.SetState(40)
-		_la = p.GetTokenStream().LA(1)
+		{
+			p.SetState(40)
+			_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<WavefrontOBJParserGEOMETRIC_VERTEX)|(1<<WavefrontOBJParserTEXTURE_VERTEX)|(1<<WavefrontOBJParserVERTEX_NORMAL))) != 0) {
-			p.GetErrorHandler().RecoverInline(p)
-		} else {
-			p.GetErrorHandler().ReportMatch(p)
-			p.Consume()
+			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<WavefrontOBJParserGEOMETRIC_VERTEX)|(1<<WavefrontOBJParserTEXTURE_VERTEX)|(1<<WavefrontOBJParserVERTEX_NORMAL))) != 0) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
 		}
 		{
 			p.SetState(41)
@@ -1149,14 +1151,16 @@ func (p *WavefrontOBJParser) Group() (localctx IGroupContext) {
 		p.SetState(59)
 		p.Match(WavefrontOBJParserSMOOTHING_GROUP)
 	}
-	p.SetState(60)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(60)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == WavefrontOBJParserT__3 || _la == WavefrontOBJParserT__4) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == WavefrontOBJParserT__3 || _la == WavefrontOBJParserT__4) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx

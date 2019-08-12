@@ -1,4 +1,4 @@
-// Generated from PeopleCode.g4 by ANTLR 4.7.
+// Code generated from PeopleCode.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package peoplecode // PeopleCode
 import "github.com/antlr/antlr4/runtime/Go/antlr"

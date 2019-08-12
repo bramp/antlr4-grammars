@@ -1,4 +1,4 @@
-// Generated from DOT.g4 by ANTLR 4.7.
+// Code generated from DOT.g4 by ANTLR 4.7.2. DO NOT EDIT.
 
 package dot // DOT
 import (
@@ -284,14 +284,16 @@ func (p *DOTParser) Graph() (localctx IGraphContext) {
 		}
 
 	}
-	p.SetState(31)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(31)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == DOTParserGRAPH || _la == DOTParserDIGRAPH) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == DOTParserGRAPH || _la == DOTParserDIGRAPH) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	p.SetState(33)
 	p.GetErrorHandler().Sync(p)
@@ -746,14 +748,16 @@ func (p *DOTParser) Attr_stmt() (localctx IAttr_stmtContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(58)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(58)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DOTParserGRAPH)|(1<<DOTParserNODE)|(1<<DOTParserEDGE))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DOTParserGRAPH)|(1<<DOTParserNODE)|(1<<DOTParserEDGE))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 	{
 		p.SetState(59)
@@ -1469,14 +1473,16 @@ func (p *DOTParser) Edgeop() (localctx IEdgeopContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(99)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(99)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(_la == DOTParserT__7 || _la == DOTParserT__8) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(_la == DOTParserT__7 || _la == DOTParserT__8) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
@@ -2088,14 +2094,16 @@ func (p *DOTParser) Id() (localctx IIdContext) {
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(125)
-	_la = p.GetTokenStream().LA(1)
+	{
+		p.SetState(125)
+		_la = p.GetTokenStream().LA(1)
 
-	if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DOTParserNUMBER)|(1<<DOTParserSTRING)|(1<<DOTParserID)|(1<<DOTParserHTML_STRING))) != 0) {
-		p.GetErrorHandler().RecoverInline(p)
-	} else {
-		p.GetErrorHandler().ReportMatch(p)
-		p.Consume()
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DOTParserNUMBER)|(1<<DOTParserSTRING)|(1<<DOTParserID)|(1<<DOTParserHTML_STRING))) != 0) {
+			p.GetErrorHandler().RecoverInline(p)
+		} else {
+			p.GetErrorHandler().ReportMatch(p)
+			p.Consume()
+		}
 	}
 
 	return localctx
