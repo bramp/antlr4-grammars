@@ -26,11 +26,40 @@ import (
 	"text/template"
 )
 
-var IGNORE_PATHS = []string{"/antlr4/examples/",
-	"/CSharpSharwell/", "/Python/", "/CSharp/", "/JavaScript/", "/two-step-processing/",
-	"/python2-js/", "/python3-cs/", "/python3-js/", "/python3-py/", "/python3-ts/",
-	".TypeScriptTarget.", ".JavaScriptTarget.", ".PythonTarget.",
-	"/LexBasic.g4", "ecmascript/ECMAScript.g4", "/kotlin-formal/", "/turtle-doc/"}
+// Sometimes a language has multiple grammars tailored to different languages. We can ignore them here.
+var IGNORE_PATHS = []string{".JavaScriptTarget.",
+	".PythonTarget.",
+	".TypeScriptTarget.",
+	"/_scripts/",
+	"/antlr4/examples/",
+	"/Antlr4cs/",
+	"/Cpp/",
+	"/CSharp/",
+	"/CSharpSharwell/",
+	"/cql/", // Conflicts with cql3
+	"/Dart/",
+	"/ignore/",
+	"/jsx/",
+	"/JavaScript/",
+	"/hive/v2/",
+	"/kotlin-formal/",
+	"/LexBasic.g4",
+	"/origbcpl.g4",
+	"/Python/",
+	"/python2-js/",
+	"/python3-cs/",
+	"/python3-js/",
+	"/python3-py/",
+	"/python3-ts/",
+	"/python3-cpp/",
+	"/python3-without-actions/",
+	"/Python3/",
+	"/tiny-python/",
+	"/turtle-doc/",
+	"/two-step-processing/",
+	"/ecmascript/ECMAScript.g4",
+	"/golang/GoParser.g4", // We prefer golang/Go/GoParser.g4
+}
 
 const GRAMMARS_ROOT = "grammars-v4"
 
@@ -61,9 +90,8 @@ MAKEFLAGS += --no-builtin-rules --warn-undefined-variables
 .DELETE_ON_ERROR:
 .SUFFIXES:
 
-#ANTLR_BIN := $(PWD)/.bin/antlr-4.7-complete.jar
-ANTLR_URL := http://www.antlr.org/download/antlr-4.7-complete.jar
-ANTLR_BIN := $(HOME)/.m2/repository/org/antlr/antlr4/4.7.2/antlr4-4.7.2-complete.jar
+ANTLR_URL := https://www.antlr.org/download/antlr-4.9.3-complete.jar
+ANTLR_BIN := $(PWD)/.bin/antlr-4.9.3-complete.jar
 ANTLR := java -jar $(ANTLR_BIN) -Dlanguage=Go -listener -no-visitor
 
 GRAMMARS :={{ range $name, $grammar := .Grammars }} {{$name}}{{ end }}
@@ -75,7 +103,7 @@ XLOG=printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "❌"
 LOG=printf "| %s  | $(LANG_COLOR)%-15s$(NO_COLOR) | %-75s |\n" "✅"
 
 # This is the default target (which cleans and rebuilds everything)
-all: Makefile
+all: Makefile $(ANTLR_BIN)
 	$(MAKE) -k -j2 rebuild 2> /dev/null
 
 clean:
@@ -192,7 +220,7 @@ func main() {
 
 			name := strings.ToLower(g4.Name)
 			if len(g4s[name]) > 0 {
-				log.Fatalf("Multiple g4 files generate the same grammar:\n%q: %q %q", name, g4s[name][0], path)
+				log.Fatalf("Multiple g4 files generate the same grammar %q:\nThis: %q\nOther: %q", name, path, g4s[name][0].Filename)
 			}
 
 			g4s[name] = append(g4s[name], g4)
@@ -211,9 +239,9 @@ func main() {
 			parser := name + "parser"
 			lexer := name + "lexer"
 
-			if _, found := g4s[lexer]; found {
-				if _, found := g4s[name]; found {
-					log.Fatalf("Can not merge Parser and Lexer for: %q", name)
+			if l, found := g4s[lexer]; found {
+				if m, found := g4s[name]; found {
+					log.Fatalf("Can not merge Parser and Lexer for: %q\nLexer: %q\nBoth: %q", name, l[0].Filename, m[0].Filename)
 				}
 
 				// Merge
@@ -221,8 +249,8 @@ func main() {
 				delete(g4s, parser)
 				delete(g4s, lexer)
 			} else {
-				if _, found := g4s[name]; found {
-					log.Fatalf("Can not shorten Parser name: %q", name)
+				if m, found := g4s[name]; found {
+					log.Fatalf("Can not shorten Parser name: %q\n%q", name, m[0].Filename)
 				}
 
 				g4s[name] = g4s[parser]
@@ -281,5 +309,10 @@ func main() {
 
 	if err := makeTemplate.Execute(out, data); err != nil {
 		log.Fatalf("failed to generate Makefile: %s", err)
+	}
+
+	// Remove write permission
+	if err := out.Chmod(0440); err != nil {
+		log.Fatalf("failed to `chmod -r Makefile`: %s", err)
 	}
 }
