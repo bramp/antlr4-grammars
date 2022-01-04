@@ -1,4 +1,4 @@
-// Code generated from HTMLParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from HTMLParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package html // HTMLParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -9,6 +9,9 @@ type HTMLParserListener interface {
 
 	// EnterHtmlDocument is called when entering the htmlDocument production.
 	EnterHtmlDocument(c *HtmlDocumentContext)
+
+	// EnterScriptletOrSeaWs is called when entering the scriptletOrSeaWs production.
+	EnterScriptletOrSeaWs(c *ScriptletOrSeaWsContext)
 
 	// EnterHtmlElements is called when entering the htmlElements production.
 	EnterHtmlElements(c *HtmlElementsContext)
@@ -22,15 +25,6 @@ type HTMLParserListener interface {
 	// EnterHtmlAttribute is called when entering the htmlAttribute production.
 	EnterHtmlAttribute(c *HtmlAttributeContext)
 
-	// EnterHtmlAttributeName is called when entering the htmlAttributeName production.
-	EnterHtmlAttributeName(c *HtmlAttributeNameContext)
-
-	// EnterHtmlAttributeValue is called when entering the htmlAttributeValue production.
-	EnterHtmlAttributeValue(c *HtmlAttributeValueContext)
-
-	// EnterHtmlTagName is called when entering the htmlTagName production.
-	EnterHtmlTagName(c *HtmlTagNameContext)
-
 	// EnterHtmlChardata is called when entering the htmlChardata production.
 	EnterHtmlChardata(c *HtmlChardataContext)
 
@@ -40,18 +34,6 @@ type HTMLParserListener interface {
 	// EnterHtmlComment is called when entering the htmlComment production.
 	EnterHtmlComment(c *HtmlCommentContext)
 
-	// EnterXhtmlCDATA is called when entering the xhtmlCDATA production.
-	EnterXhtmlCDATA(c *XhtmlCDATAContext)
-
-	// EnterDtd is called when entering the dtd production.
-	EnterDtd(c *DtdContext)
-
-	// EnterXml is called when entering the xml production.
-	EnterXml(c *XmlContext)
-
-	// EnterScriptlet is called when entering the scriptlet production.
-	EnterScriptlet(c *ScriptletContext)
-
 	// EnterScript is called when entering the script production.
 	EnterScript(c *ScriptContext)
 
@@ -60,6 +42,9 @@ type HTMLParserListener interface {
 
 	// ExitHtmlDocument is called when exiting the htmlDocument production.
 	ExitHtmlDocument(c *HtmlDocumentContext)
+
+	// ExitScriptletOrSeaWs is called when exiting the scriptletOrSeaWs production.
+	ExitScriptletOrSeaWs(c *ScriptletOrSeaWsContext)
 
 	// ExitHtmlElements is called when exiting the htmlElements production.
 	ExitHtmlElements(c *HtmlElementsContext)
@@ -73,15 +58,6 @@ type HTMLParserListener interface {
 	// ExitHtmlAttribute is called when exiting the htmlAttribute production.
 	ExitHtmlAttribute(c *HtmlAttributeContext)
 
-	// ExitHtmlAttributeName is called when exiting the htmlAttributeName production.
-	ExitHtmlAttributeName(c *HtmlAttributeNameContext)
-
-	// ExitHtmlAttributeValue is called when exiting the htmlAttributeValue production.
-	ExitHtmlAttributeValue(c *HtmlAttributeValueContext)
-
-	// ExitHtmlTagName is called when exiting the htmlTagName production.
-	ExitHtmlTagName(c *HtmlTagNameContext)
-
 	// ExitHtmlChardata is called when exiting the htmlChardata production.
 	ExitHtmlChardata(c *HtmlChardataContext)
 
@@ -90,18 +66,6 @@ type HTMLParserListener interface {
 
 	// ExitHtmlComment is called when exiting the htmlComment production.
 	ExitHtmlComment(c *HtmlCommentContext)
-
-	// ExitXhtmlCDATA is called when exiting the xhtmlCDATA production.
-	ExitXhtmlCDATA(c *XhtmlCDATAContext)
-
-	// ExitDtd is called when exiting the dtd production.
-	ExitDtd(c *DtdContext)
-
-	// ExitXml is called when exiting the xml production.
-	ExitXml(c *XmlContext)
-
-	// ExitScriptlet is called when exiting the scriptlet production.
-	ExitScriptlet(c *ScriptletContext)
 
 	// ExitScript is called when exiting the script production.
 	ExitScript(c *ScriptContext)

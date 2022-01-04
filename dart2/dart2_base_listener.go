@@ -1,4 +1,4 @@
-// Code generated from Dart2.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Dart2.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package dart2 // Dart2
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -216,11 +216,11 @@ func (s *BaseDart2Listener) EnterOperatorSignature(ctx *OperatorSignatureContext
 // ExitOperatorSignature is called when production operatorSignature is exited.
 func (s *BaseDart2Listener) ExitOperatorSignature(ctx *OperatorSignatureContext) {}
 
-// EnterOperator is called when production operator is entered.
-func (s *BaseDart2Listener) EnterOperator(ctx *OperatorContext) {}
+// EnterOperator_ is called when production operator_ is entered.
+func (s *BaseDart2Listener) EnterOperator_(ctx *Operator_Context) {}
 
-// ExitOperator is called when production operator is exited.
-func (s *BaseDart2Listener) ExitOperator(ctx *OperatorContext) {}
+// ExitOperator_ is called when production operator_ is exited.
+func (s *BaseDart2Listener) ExitOperator_(ctx *Operator_Context) {}
 
 // EnterBinaryOperator is called when production binaryOperator is entered.
 func (s *BaseDart2Listener) EnterBinaryOperator(ctx *BinaryOperatorContext) {}
@@ -275,7 +275,8 @@ func (s *BaseDart2Listener) EnterFactoryConstructorSignature(ctx *FactoryConstru
 }
 
 // ExitFactoryConstructorSignature is called when production factoryConstructorSignature is exited.
-func (s *BaseDart2Listener) ExitFactoryConstructorSignature(ctx *FactoryConstructorSignatureContext) {}
+func (s *BaseDart2Listener) ExitFactoryConstructorSignature(ctx *FactoryConstructorSignatureContext) {
+}
 
 // EnterRedirectingFactoryConstructorSignature is called when production redirectingFactoryConstructorSignature is entered.
 func (s *BaseDart2Listener) EnterRedirectingFactoryConstructorSignature(ctx *RedirectingFactoryConstructorSignatureContext) {

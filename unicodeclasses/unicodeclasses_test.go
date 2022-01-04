@@ -31,9 +31,9 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{
-	"grammars-v4/kotlin/examples/script/hello.kts",
-	"grammars-v4/kotlin/examples/script/preamble_nl.kts",
-	"grammars-v4/kotlin/examples/script/preamble_nl_semi.kts",
+	"grammars-v4/kotlin/kotlin/examples/script/hello.kts",
+	"grammars-v4/kotlin/kotlin/examples/script/preamble_nl.kts",
+	"grammars-v4/kotlin/kotlin/examples/script/preamble_nl_semi.kts",
 }
 
 func Example() {

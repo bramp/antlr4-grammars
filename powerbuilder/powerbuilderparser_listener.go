@@ -1,44 +1,17 @@
-// Code generated from powerbuilderParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from PowerBuilderParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
-package powerbuilder // powerbuilderParser
+package powerbuilder // PowerBuilderParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
 
-// powerbuilderParserListener is a complete listener for a parse tree produced by powerbuilderParser.
-type powerbuilderParserListener interface {
+// PowerBuilderParserListener is a complete listener for a parse tree produced by PowerBuilderParser.
+type PowerBuilderParserListener interface {
 	antlr.ParseTreeListener
 
 	// EnterStart_rule is called when entering the start_rule production.
 	EnterStart_rule(c *Start_ruleContext)
 
-	// EnterHeader_rule is called when entering the header_rule production.
-	EnterHeader_rule(c *Header_ruleContext)
-
 	// EnterBody_rule is called when entering the body_rule production.
 	EnterBody_rule(c *Body_ruleContext)
-
-	// EnterExport_header is called when entering the export_header production.
-	EnterExport_header(c *Export_headerContext)
-
-	// EnterRelease_information is called when entering the release_information production.
-	EnterRelease_information(c *Release_informationContext)
-
-	// EnterWindow_property_line is called when entering the window_property_line production.
-	EnterWindow_property_line(c *Window_property_lineContext)
-
-	// EnterWindow_property is called when entering the window_property production.
-	EnterWindow_property(c *Window_propertyContext)
-
-	// EnterWindow_property_attributes_sub is called when entering the window_property_attributes_sub production.
-	EnterWindow_property_attributes_sub(c *Window_property_attributes_subContext)
-
-	// EnterWindow_property_attribute_sub is called when entering the window_property_attribute_sub production.
-	EnterWindow_property_attribute_sub(c *Window_property_attribute_subContext)
-
-	// EnterAttribute_name is called when entering the attribute_name production.
-	EnterAttribute_name(c *Attribute_nameContext)
-
-	// EnterAttribute_value is called when entering the attribute_value production.
-	EnterAttribute_value(c *Attribute_valueContext)
 
 	// EnterForward_decl is called when entering the forward_decl production.
 	EnterForward_decl(c *Forward_declContext)
@@ -52,11 +25,23 @@ type powerbuilderParserListener interface {
 	// EnterGlobal_variables_decl is called when entering the global_variables_decl production.
 	EnterGlobal_variables_decl(c *Global_variables_declContext)
 
+	// EnterVariable_decl is called when entering the variable_decl production.
+	EnterVariable_decl(c *Variable_declContext)
+
 	// EnterVariable_decl_sub is called when entering the variable_decl_sub production.
 	EnterVariable_decl_sub(c *Variable_decl_subContext)
 
-	// EnterVariable_decl is called when entering the variable_decl production.
-	EnterVariable_decl(c *Variable_declContext)
+	// EnterVariable_decl_sub0 is called when entering the variable_decl_sub0 production.
+	EnterVariable_decl_sub0(c *Variable_decl_sub0Context)
+
+	// EnterVariable_decl_sub1 is called when entering the variable_decl_sub1 production.
+	EnterVariable_decl_sub1(c *Variable_decl_sub1Context)
+
+	// EnterVariable_decl_sub2 is called when entering the variable_decl_sub2 production.
+	EnterVariable_decl_sub2(c *Variable_decl_sub2Context)
+
+	// EnterVariable_decl_event is called when entering the variable_decl_event production.
+	EnterVariable_decl_event(c *Variable_decl_eventContext)
 
 	// EnterDecimal_decl_sub is called when entering the decimal_decl_sub production.
 	EnterDecimal_decl_sub(c *Decimal_decl_subContext)
@@ -73,6 +58,9 @@ type powerbuilderParserListener interface {
 	// EnterFunction_forward_decl is called when entering the function_forward_decl production.
 	EnterFunction_forward_decl(c *Function_forward_declContext)
 
+	// EnterFunction_forward_decl_alias is called when entering the function_forward_decl_alias production.
+	EnterFunction_forward_decl_alias(c *Function_forward_decl_aliasContext)
+
 	// EnterParameter_sub is called when entering the parameter_sub production.
 	EnterParameter_sub(c *Parameter_subContext)
 
@@ -87,9 +75,6 @@ type powerbuilderParserListener interface {
 
 	// EnterOn_body is called when entering the on_body production.
 	EnterOn_body(c *On_bodyContext)
-
-	// EnterEvent_forward_decl_sub is called when entering the event_forward_decl_sub production.
-	EnterEvent_forward_decl_sub(c *Event_forward_decl_subContext)
 
 	// EnterEvent_forward_decl is called when entering the event_forward_decl production.
 	EnterEvent_forward_decl(c *Event_forward_declContext)
@@ -111,6 +96,9 @@ type powerbuilderParserListener interface {
 
 	// EnterExpression is called when entering the expression production.
 	EnterExpression(c *ExpressionContext)
+
+	// EnterValue is called when entering the value production.
+	EnterValue(c *ValueContext)
 
 	// EnterExpression_list is called when entering the expression_list production.
 	EnterExpression_list(c *Expression_listContext)
@@ -142,26 +130,104 @@ type powerbuilderParserListener interface {
 	// EnterStatement is called when entering the statement production.
 	EnterStatement(c *StatementContext)
 
+	// EnterPublic_statement is called when entering the public_statement production.
+	EnterPublic_statement(c *Public_statementContext)
+
+	// EnterThrow_statement is called when entering the throw_statement production.
+	EnterThrow_statement(c *Throw_statementContext)
+
+	// EnterGoto_statement is called when entering the goto_statement production.
+	EnterGoto_statement(c *Goto_statementContext)
+
 	// EnterStatement_sub is called when entering the statement_sub production.
 	EnterStatement_sub(c *Statement_subContext)
 
-	// EnterAssignment_sub is called when entering the assignment_sub production.
-	EnterAssignment_sub(c *Assignment_subContext)
+	// EnterTry_catch_statement is called when entering the try_catch_statement production.
+	EnterTry_catch_statement(c *Try_catch_statementContext)
+
+	// EnterSql_statement is called when entering the sql_statement production.
+	EnterSql_statement(c *Sql_statementContext)
+
+	// EnterSql_insert_statement is called when entering the sql_insert_statement production.
+	EnterSql_insert_statement(c *Sql_insert_statementContext)
+
+	// EnterSql_values is called when entering the sql_values production.
+	EnterSql_values(c *Sql_valuesContext)
+
+	// EnterSql_delete_statement is called when entering the sql_delete_statement production.
+	EnterSql_delete_statement(c *Sql_delete_statementContext)
+
+	// EnterSql_select_statement is called when entering the sql_select_statement production.
+	EnterSql_select_statement(c *Sql_select_statementContext)
+
+	// EnterSql_update_statement is called when entering the sql_update_statement production.
+	EnterSql_update_statement(c *Sql_update_statementContext)
+
+	// EnterSql_connect_statement is called when entering the sql_connect_statement production.
+	EnterSql_connect_statement(c *Sql_connect_statementContext)
+
+	// EnterSet_value is called when entering the set_value production.
+	EnterSet_value(c *Set_valueContext)
+
+	// EnterWhere_clause is called when entering the where_clause production.
+	EnterWhere_clause(c *Where_clauseContext)
+
+	// EnterSelect_clause is called when entering the select_clause production.
+	EnterSelect_clause(c *Select_clauseContext)
+
+	// EnterSql_commit_statement is called when entering the sql_commit_statement production.
+	EnterSql_commit_statement(c *Sql_commit_statementContext)
+
+	// EnterExecute_statement is called when entering the execute_statement production.
+	EnterExecute_statement(c *Execute_statementContext)
+
+	// EnterClose_sql_statement is called when entering the close_sql_statement production.
+	EnterClose_sql_statement(c *Close_sql_statementContext)
+
+	// EnterDeclare_procedure_statement is called when entering the declare_procedure_statement production.
+	EnterDeclare_procedure_statement(c *Declare_procedure_statementContext)
+
+	// EnterDeclare_cursor_statement is called when entering the declare_cursor_statement production.
+	EnterDeclare_cursor_statement(c *Declare_cursor_statementContext)
+
+	// EnterOpen_cursor_statement is called when entering the open_cursor_statement production.
+	EnterOpen_cursor_statement(c *Open_cursor_statementContext)
+
+	// EnterClose_cursor_statement is called when entering the close_cursor_statement production.
+	EnterClose_cursor_statement(c *Close_cursor_statementContext)
+
+	// EnterFetch_into_statement is called when entering the fetch_into_statement production.
+	EnterFetch_into_statement(c *Fetch_into_statementContext)
+
+	// EnterPrepare_sql_stateent is called when entering the prepare_sql_stateent production.
+	EnterPrepare_sql_stateent(c *Prepare_sql_stateentContext)
+
+	// EnterIncrement_decrement_statement is called when entering the increment_decrement_statement production.
+	EnterIncrement_decrement_statement(c *Increment_decrement_statementContext)
+
+	// EnterAssignment_rhs is called when entering the assignment_rhs production.
+	EnterAssignment_rhs(c *Assignment_rhsContext)
+
+	// EnterDescribe_function_call is called when entering the describe_function_call production.
+	EnterDescribe_function_call(c *Describe_function_callContext)
 
 	// EnterAssignment_statement is called when entering the assignment_statement production.
 	EnterAssignment_statement(c *Assignment_statementContext)
 
-	// EnterLvalue_sub is called when entering the lvalue_sub production.
-	EnterLvalue_sub(c *Lvalue_subContext)
-
-	// EnterReturn_sub is called when entering the return_sub production.
-	EnterReturn_sub(c *Return_subContext)
+	// EnterVariable_name is called when entering the variable_name production.
+	EnterVariable_name(c *Variable_nameContext)
 
 	// EnterReturn_statement is called when entering the return_statement production.
 	EnterReturn_statement(c *Return_statementContext)
 
 	// EnterFunction_call_expression_sub is called when entering the function_call_expression_sub production.
 	EnterFunction_call_expression_sub(c *Function_call_expression_subContext)
+
+	// EnterFunction_name is called when entering the function_name production.
+	EnterFunction_name(c *Function_nameContext)
+
+	// EnterFunction_event_call is called when entering the function_event_call production.
+	EnterFunction_event_call(c *Function_event_callContext)
 
 	// EnterFunction_virtual_call_expression_sub is called when entering the function_virtual_call_expression_sub production.
 	EnterFunction_virtual_call_expression_sub(c *Function_virtual_call_expression_subContext)
@@ -175,11 +241,17 @@ type powerbuilderParserListener interface {
 	// EnterFunction_call_statement is called when entering the function_call_statement production.
 	EnterFunction_call_statement(c *Function_call_statementContext)
 
-	// EnterSuper_call_sub is called when entering the super_call_sub production.
-	EnterSuper_call_sub(c *Super_call_subContext)
+	// EnterAncestor_function_call is called when entering the ancestor_function_call production.
+	EnterAncestor_function_call(c *Ancestor_function_callContext)
+
+	// EnterCall_statement is called when entering the call_statement production.
+	EnterCall_statement(c *Call_statementContext)
 
 	// EnterSuper_call_statement is called when entering the super_call_statement production.
 	EnterSuper_call_statement(c *Super_call_statementContext)
+
+	// EnterAncestor_event_call_statement is called when entering the ancestor_event_call_statement production.
+	EnterAncestor_event_call_statement(c *Ancestor_event_call_statementContext)
 
 	// EnterEvent_call_statement_sub is called when entering the event_call_statement_sub production.
 	EnterEvent_call_statement_sub(c *Event_call_statement_subContext)
@@ -211,23 +283,23 @@ type powerbuilderParserListener interface {
 	// EnterIf_statement is called when entering the if_statement production.
 	EnterIf_statement(c *If_statementContext)
 
+	// EnterElseif_statement is called when entering the elseif_statement production.
+	EnterElseif_statement(c *Elseif_statementContext)
+
+	// EnterElse_statement is called when entering the else_statement production.
+	EnterElse_statement(c *Else_statementContext)
+
 	// EnterIf_simple_statement is called when entering the if_simple_statement production.
 	EnterIf_simple_statement(c *If_simple_statementContext)
-
-	// EnterContinue_sub is called when entering the continue_sub production.
-	EnterContinue_sub(c *Continue_subContext)
 
 	// EnterContinue_statement is called when entering the continue_statement production.
 	EnterContinue_statement(c *Continue_statementContext)
 
-	// EnterPost_event_sub is called when entering the post_event_sub production.
-	EnterPost_event_sub(c *Post_event_subContext)
+	// EnterContinue_sub is called when entering the continue_sub production.
+	EnterContinue_sub(c *Continue_subContext)
 
 	// EnterPost_event is called when entering the post_event production.
 	EnterPost_event(c *Post_eventContext)
-
-	// EnterExit_statement_sub is called when entering the exit_statement_sub production.
-	EnterExit_statement_sub(c *Exit_statement_subContext)
 
 	// EnterExit_statement is called when entering the exit_statement production.
 	EnterExit_statement(c *Exit_statementContext)
@@ -241,38 +313,32 @@ type powerbuilderParserListener interface {
 	// EnterChoose_case_cond_sub is called when entering the choose_case_cond_sub production.
 	EnterChoose_case_cond_sub(c *Choose_case_cond_subContext)
 
-	// EnterChoose_case_range_sub is called when entering the choose_case_range_sub production.
-	EnterChoose_case_range_sub(c *Choose_case_range_subContext)
-
 	// EnterChoose_case_else_sub is called when entering the choose_case_else_sub production.
 	EnterChoose_case_else_sub(c *Choose_case_else_subContext)
-
-	// EnterGoto_stat_sub is called when entering the goto_stat_sub production.
-	EnterGoto_stat_sub(c *Goto_stat_subContext)
-
-	// EnterGoto_stat is called when entering the goto_stat production.
-	EnterGoto_stat(c *Goto_statContext)
 
 	// EnterLabel_stat is called when entering the label_stat production.
 	EnterLabel_stat(c *Label_statContext)
 
-	// EnterTry_catch_block is called when entering the try_catch_block production.
-	EnterTry_catch_block(c *Try_catch_blockContext)
-
-	// EnterThrow_stat_sub is called when entering the throw_stat_sub production.
-	EnterThrow_stat_sub(c *Throw_stat_subContext)
-
-	// EnterThrow_stat is called when entering the throw_stat production.
-	EnterThrow_stat(c *Throw_statContext)
-
 	// EnterIdentifier is called when entering the identifier production.
 	EnterIdentifier(c *IdentifierContext)
+
+	// EnterString_literal is called when entering the string_literal production.
+	EnterString_literal(c *String_literalContext)
+
+	// EnterIdentifier_array is called when entering the identifier_array production.
+	EnterIdentifier_array(c *Identifier_arrayContext)
+
+	// EnterOperator is called when entering the operator production.
+	EnterOperator(c *OperatorContext)
+
+	// EnterIdentifier_name_ex is called when entering the identifier_name_ex production.
+	EnterIdentifier_name_ex(c *Identifier_name_exContext)
 
 	// EnterIdentifier_name is called when entering the identifier_name production.
 	EnterIdentifier_name(c *Identifier_nameContext)
 
-	// EnterIdentifier_name_ex is called when entering the identifier_name_ex production.
-	EnterIdentifier_name_ex(c *Identifier_name_exContext)
+	// EnterBind_param is called when entering the bind_param production.
+	EnterBind_param(c *Bind_paramContext)
 
 	// EnterAtom_sub is called when entering the atom_sub production.
 	EnterAtom_sub(c *Atom_subContext)
@@ -280,68 +346,23 @@ type powerbuilderParserListener interface {
 	// EnterAtom_sub_call1 is called when entering the atom_sub_call1 production.
 	EnterAtom_sub_call1(c *Atom_sub_call1Context)
 
-	// EnterAtom_sub_array1 is called when entering the atom_sub_array1 production.
-	EnterAtom_sub_array1(c *Atom_sub_array1Context)
-
-	// EnterAtom_sub_ref1 is called when entering the atom_sub_ref1 production.
-	EnterAtom_sub_ref1(c *Atom_sub_ref1Context)
-
 	// EnterAtom_sub_member1 is called when entering the atom_sub_member1 production.
 	EnterAtom_sub_member1(c *Atom_sub_member1Context)
-
-	// EnterAtom is called when entering the atom production.
-	EnterAtom(c *AtomContext)
 
 	// EnterArray_access_atom is called when entering the array_access_atom production.
 	EnterArray_access_atom(c *Array_access_atomContext)
 
-	// EnterNumeric_atom is called when entering the numeric_atom production.
-	EnterNumeric_atom(c *Numeric_atomContext)
-
-	// EnterBoolean_atom is called when entering the boolean_atom production.
-	EnterBoolean_atom(c *Boolean_atomContext)
-
-	// EnterCast_expression is called when entering the cast_expression production.
-	EnterCast_expression(c *Cast_expressionContext)
-
-	// EnterData_type_sub is called when entering the data_type_sub production.
-	EnterData_type_sub(c *Data_type_subContext)
-
 	// EnterData_type_name is called when entering the data_type_name production.
 	EnterData_type_name(c *Data_type_nameContext)
+
+	// EnterDataTypeSub is called when entering the dataTypeSub production.
+	EnterDataTypeSub(c *DataTypeSubContext)
 
 	// ExitStart_rule is called when exiting the start_rule production.
 	ExitStart_rule(c *Start_ruleContext)
 
-	// ExitHeader_rule is called when exiting the header_rule production.
-	ExitHeader_rule(c *Header_ruleContext)
-
 	// ExitBody_rule is called when exiting the body_rule production.
 	ExitBody_rule(c *Body_ruleContext)
-
-	// ExitExport_header is called when exiting the export_header production.
-	ExitExport_header(c *Export_headerContext)
-
-	// ExitRelease_information is called when exiting the release_information production.
-	ExitRelease_information(c *Release_informationContext)
-
-	// ExitWindow_property_line is called when exiting the window_property_line production.
-	ExitWindow_property_line(c *Window_property_lineContext)
-
-	// ExitWindow_property is called when exiting the window_property production.
-	ExitWindow_property(c *Window_propertyContext)
-
-	// ExitWindow_property_attributes_sub is called when exiting the window_property_attributes_sub production.
-	ExitWindow_property_attributes_sub(c *Window_property_attributes_subContext)
-
-	// ExitWindow_property_attribute_sub is called when exiting the window_property_attribute_sub production.
-	ExitWindow_property_attribute_sub(c *Window_property_attribute_subContext)
-
-	// ExitAttribute_name is called when exiting the attribute_name production.
-	ExitAttribute_name(c *Attribute_nameContext)
-
-	// ExitAttribute_value is called when exiting the attribute_value production.
-	ExitAttribute_value(c *Attribute_valueContext)
 
 	// ExitForward_decl is called when exiting the forward_decl production.
 	ExitForward_decl(c *Forward_declContext)
@@ -355,11 +376,23 @@ type powerbuilderParserListener interface {
 	// ExitGlobal_variables_decl is called when exiting the global_variables_decl production.
 	ExitGlobal_variables_decl(c *Global_variables_declContext)
 
+	// ExitVariable_decl is called when exiting the variable_decl production.
+	ExitVariable_decl(c *Variable_declContext)
+
 	// ExitVariable_decl_sub is called when exiting the variable_decl_sub production.
 	ExitVariable_decl_sub(c *Variable_decl_subContext)
 
-	// ExitVariable_decl is called when exiting the variable_decl production.
-	ExitVariable_decl(c *Variable_declContext)
+	// ExitVariable_decl_sub0 is called when exiting the variable_decl_sub0 production.
+	ExitVariable_decl_sub0(c *Variable_decl_sub0Context)
+
+	// ExitVariable_decl_sub1 is called when exiting the variable_decl_sub1 production.
+	ExitVariable_decl_sub1(c *Variable_decl_sub1Context)
+
+	// ExitVariable_decl_sub2 is called when exiting the variable_decl_sub2 production.
+	ExitVariable_decl_sub2(c *Variable_decl_sub2Context)
+
+	// ExitVariable_decl_event is called when exiting the variable_decl_event production.
+	ExitVariable_decl_event(c *Variable_decl_eventContext)
 
 	// ExitDecimal_decl_sub is called when exiting the decimal_decl_sub production.
 	ExitDecimal_decl_sub(c *Decimal_decl_subContext)
@@ -376,6 +409,9 @@ type powerbuilderParserListener interface {
 	// ExitFunction_forward_decl is called when exiting the function_forward_decl production.
 	ExitFunction_forward_decl(c *Function_forward_declContext)
 
+	// ExitFunction_forward_decl_alias is called when exiting the function_forward_decl_alias production.
+	ExitFunction_forward_decl_alias(c *Function_forward_decl_aliasContext)
+
 	// ExitParameter_sub is called when exiting the parameter_sub production.
 	ExitParameter_sub(c *Parameter_subContext)
 
@@ -390,9 +426,6 @@ type powerbuilderParserListener interface {
 
 	// ExitOn_body is called when exiting the on_body production.
 	ExitOn_body(c *On_bodyContext)
-
-	// ExitEvent_forward_decl_sub is called when exiting the event_forward_decl_sub production.
-	ExitEvent_forward_decl_sub(c *Event_forward_decl_subContext)
 
 	// ExitEvent_forward_decl is called when exiting the event_forward_decl production.
 	ExitEvent_forward_decl(c *Event_forward_declContext)
@@ -414,6 +447,9 @@ type powerbuilderParserListener interface {
 
 	// ExitExpression is called when exiting the expression production.
 	ExitExpression(c *ExpressionContext)
+
+	// ExitValue is called when exiting the value production.
+	ExitValue(c *ValueContext)
 
 	// ExitExpression_list is called when exiting the expression_list production.
 	ExitExpression_list(c *Expression_listContext)
@@ -445,26 +481,104 @@ type powerbuilderParserListener interface {
 	// ExitStatement is called when exiting the statement production.
 	ExitStatement(c *StatementContext)
 
+	// ExitPublic_statement is called when exiting the public_statement production.
+	ExitPublic_statement(c *Public_statementContext)
+
+	// ExitThrow_statement is called when exiting the throw_statement production.
+	ExitThrow_statement(c *Throw_statementContext)
+
+	// ExitGoto_statement is called when exiting the goto_statement production.
+	ExitGoto_statement(c *Goto_statementContext)
+
 	// ExitStatement_sub is called when exiting the statement_sub production.
 	ExitStatement_sub(c *Statement_subContext)
 
-	// ExitAssignment_sub is called when exiting the assignment_sub production.
-	ExitAssignment_sub(c *Assignment_subContext)
+	// ExitTry_catch_statement is called when exiting the try_catch_statement production.
+	ExitTry_catch_statement(c *Try_catch_statementContext)
+
+	// ExitSql_statement is called when exiting the sql_statement production.
+	ExitSql_statement(c *Sql_statementContext)
+
+	// ExitSql_insert_statement is called when exiting the sql_insert_statement production.
+	ExitSql_insert_statement(c *Sql_insert_statementContext)
+
+	// ExitSql_values is called when exiting the sql_values production.
+	ExitSql_values(c *Sql_valuesContext)
+
+	// ExitSql_delete_statement is called when exiting the sql_delete_statement production.
+	ExitSql_delete_statement(c *Sql_delete_statementContext)
+
+	// ExitSql_select_statement is called when exiting the sql_select_statement production.
+	ExitSql_select_statement(c *Sql_select_statementContext)
+
+	// ExitSql_update_statement is called when exiting the sql_update_statement production.
+	ExitSql_update_statement(c *Sql_update_statementContext)
+
+	// ExitSql_connect_statement is called when exiting the sql_connect_statement production.
+	ExitSql_connect_statement(c *Sql_connect_statementContext)
+
+	// ExitSet_value is called when exiting the set_value production.
+	ExitSet_value(c *Set_valueContext)
+
+	// ExitWhere_clause is called when exiting the where_clause production.
+	ExitWhere_clause(c *Where_clauseContext)
+
+	// ExitSelect_clause is called when exiting the select_clause production.
+	ExitSelect_clause(c *Select_clauseContext)
+
+	// ExitSql_commit_statement is called when exiting the sql_commit_statement production.
+	ExitSql_commit_statement(c *Sql_commit_statementContext)
+
+	// ExitExecute_statement is called when exiting the execute_statement production.
+	ExitExecute_statement(c *Execute_statementContext)
+
+	// ExitClose_sql_statement is called when exiting the close_sql_statement production.
+	ExitClose_sql_statement(c *Close_sql_statementContext)
+
+	// ExitDeclare_procedure_statement is called when exiting the declare_procedure_statement production.
+	ExitDeclare_procedure_statement(c *Declare_procedure_statementContext)
+
+	// ExitDeclare_cursor_statement is called when exiting the declare_cursor_statement production.
+	ExitDeclare_cursor_statement(c *Declare_cursor_statementContext)
+
+	// ExitOpen_cursor_statement is called when exiting the open_cursor_statement production.
+	ExitOpen_cursor_statement(c *Open_cursor_statementContext)
+
+	// ExitClose_cursor_statement is called when exiting the close_cursor_statement production.
+	ExitClose_cursor_statement(c *Close_cursor_statementContext)
+
+	// ExitFetch_into_statement is called when exiting the fetch_into_statement production.
+	ExitFetch_into_statement(c *Fetch_into_statementContext)
+
+	// ExitPrepare_sql_stateent is called when exiting the prepare_sql_stateent production.
+	ExitPrepare_sql_stateent(c *Prepare_sql_stateentContext)
+
+	// ExitIncrement_decrement_statement is called when exiting the increment_decrement_statement production.
+	ExitIncrement_decrement_statement(c *Increment_decrement_statementContext)
+
+	// ExitAssignment_rhs is called when exiting the assignment_rhs production.
+	ExitAssignment_rhs(c *Assignment_rhsContext)
+
+	// ExitDescribe_function_call is called when exiting the describe_function_call production.
+	ExitDescribe_function_call(c *Describe_function_callContext)
 
 	// ExitAssignment_statement is called when exiting the assignment_statement production.
 	ExitAssignment_statement(c *Assignment_statementContext)
 
-	// ExitLvalue_sub is called when exiting the lvalue_sub production.
-	ExitLvalue_sub(c *Lvalue_subContext)
-
-	// ExitReturn_sub is called when exiting the return_sub production.
-	ExitReturn_sub(c *Return_subContext)
+	// ExitVariable_name is called when exiting the variable_name production.
+	ExitVariable_name(c *Variable_nameContext)
 
 	// ExitReturn_statement is called when exiting the return_statement production.
 	ExitReturn_statement(c *Return_statementContext)
 
 	// ExitFunction_call_expression_sub is called when exiting the function_call_expression_sub production.
 	ExitFunction_call_expression_sub(c *Function_call_expression_subContext)
+
+	// ExitFunction_name is called when exiting the function_name production.
+	ExitFunction_name(c *Function_nameContext)
+
+	// ExitFunction_event_call is called when exiting the function_event_call production.
+	ExitFunction_event_call(c *Function_event_callContext)
 
 	// ExitFunction_virtual_call_expression_sub is called when exiting the function_virtual_call_expression_sub production.
 	ExitFunction_virtual_call_expression_sub(c *Function_virtual_call_expression_subContext)
@@ -478,11 +592,17 @@ type powerbuilderParserListener interface {
 	// ExitFunction_call_statement is called when exiting the function_call_statement production.
 	ExitFunction_call_statement(c *Function_call_statementContext)
 
-	// ExitSuper_call_sub is called when exiting the super_call_sub production.
-	ExitSuper_call_sub(c *Super_call_subContext)
+	// ExitAncestor_function_call is called when exiting the ancestor_function_call production.
+	ExitAncestor_function_call(c *Ancestor_function_callContext)
+
+	// ExitCall_statement is called when exiting the call_statement production.
+	ExitCall_statement(c *Call_statementContext)
 
 	// ExitSuper_call_statement is called when exiting the super_call_statement production.
 	ExitSuper_call_statement(c *Super_call_statementContext)
+
+	// ExitAncestor_event_call_statement is called when exiting the ancestor_event_call_statement production.
+	ExitAncestor_event_call_statement(c *Ancestor_event_call_statementContext)
 
 	// ExitEvent_call_statement_sub is called when exiting the event_call_statement_sub production.
 	ExitEvent_call_statement_sub(c *Event_call_statement_subContext)
@@ -514,23 +634,23 @@ type powerbuilderParserListener interface {
 	// ExitIf_statement is called when exiting the if_statement production.
 	ExitIf_statement(c *If_statementContext)
 
+	// ExitElseif_statement is called when exiting the elseif_statement production.
+	ExitElseif_statement(c *Elseif_statementContext)
+
+	// ExitElse_statement is called when exiting the else_statement production.
+	ExitElse_statement(c *Else_statementContext)
+
 	// ExitIf_simple_statement is called when exiting the if_simple_statement production.
 	ExitIf_simple_statement(c *If_simple_statementContext)
-
-	// ExitContinue_sub is called when exiting the continue_sub production.
-	ExitContinue_sub(c *Continue_subContext)
 
 	// ExitContinue_statement is called when exiting the continue_statement production.
 	ExitContinue_statement(c *Continue_statementContext)
 
-	// ExitPost_event_sub is called when exiting the post_event_sub production.
-	ExitPost_event_sub(c *Post_event_subContext)
+	// ExitContinue_sub is called when exiting the continue_sub production.
+	ExitContinue_sub(c *Continue_subContext)
 
 	// ExitPost_event is called when exiting the post_event production.
 	ExitPost_event(c *Post_eventContext)
-
-	// ExitExit_statement_sub is called when exiting the exit_statement_sub production.
-	ExitExit_statement_sub(c *Exit_statement_subContext)
 
 	// ExitExit_statement is called when exiting the exit_statement production.
 	ExitExit_statement(c *Exit_statementContext)
@@ -544,38 +664,32 @@ type powerbuilderParserListener interface {
 	// ExitChoose_case_cond_sub is called when exiting the choose_case_cond_sub production.
 	ExitChoose_case_cond_sub(c *Choose_case_cond_subContext)
 
-	// ExitChoose_case_range_sub is called when exiting the choose_case_range_sub production.
-	ExitChoose_case_range_sub(c *Choose_case_range_subContext)
-
 	// ExitChoose_case_else_sub is called when exiting the choose_case_else_sub production.
 	ExitChoose_case_else_sub(c *Choose_case_else_subContext)
-
-	// ExitGoto_stat_sub is called when exiting the goto_stat_sub production.
-	ExitGoto_stat_sub(c *Goto_stat_subContext)
-
-	// ExitGoto_stat is called when exiting the goto_stat production.
-	ExitGoto_stat(c *Goto_statContext)
 
 	// ExitLabel_stat is called when exiting the label_stat production.
 	ExitLabel_stat(c *Label_statContext)
 
-	// ExitTry_catch_block is called when exiting the try_catch_block production.
-	ExitTry_catch_block(c *Try_catch_blockContext)
-
-	// ExitThrow_stat_sub is called when exiting the throw_stat_sub production.
-	ExitThrow_stat_sub(c *Throw_stat_subContext)
-
-	// ExitThrow_stat is called when exiting the throw_stat production.
-	ExitThrow_stat(c *Throw_statContext)
-
 	// ExitIdentifier is called when exiting the identifier production.
 	ExitIdentifier(c *IdentifierContext)
+
+	// ExitString_literal is called when exiting the string_literal production.
+	ExitString_literal(c *String_literalContext)
+
+	// ExitIdentifier_array is called when exiting the identifier_array production.
+	ExitIdentifier_array(c *Identifier_arrayContext)
+
+	// ExitOperator is called when exiting the operator production.
+	ExitOperator(c *OperatorContext)
+
+	// ExitIdentifier_name_ex is called when exiting the identifier_name_ex production.
+	ExitIdentifier_name_ex(c *Identifier_name_exContext)
 
 	// ExitIdentifier_name is called when exiting the identifier_name production.
 	ExitIdentifier_name(c *Identifier_nameContext)
 
-	// ExitIdentifier_name_ex is called when exiting the identifier_name_ex production.
-	ExitIdentifier_name_ex(c *Identifier_name_exContext)
+	// ExitBind_param is called when exiting the bind_param production.
+	ExitBind_param(c *Bind_paramContext)
 
 	// ExitAtom_sub is called when exiting the atom_sub production.
 	ExitAtom_sub(c *Atom_subContext)
@@ -583,33 +697,15 @@ type powerbuilderParserListener interface {
 	// ExitAtom_sub_call1 is called when exiting the atom_sub_call1 production.
 	ExitAtom_sub_call1(c *Atom_sub_call1Context)
 
-	// ExitAtom_sub_array1 is called when exiting the atom_sub_array1 production.
-	ExitAtom_sub_array1(c *Atom_sub_array1Context)
-
-	// ExitAtom_sub_ref1 is called when exiting the atom_sub_ref1 production.
-	ExitAtom_sub_ref1(c *Atom_sub_ref1Context)
-
 	// ExitAtom_sub_member1 is called when exiting the atom_sub_member1 production.
 	ExitAtom_sub_member1(c *Atom_sub_member1Context)
-
-	// ExitAtom is called when exiting the atom production.
-	ExitAtom(c *AtomContext)
 
 	// ExitArray_access_atom is called when exiting the array_access_atom production.
 	ExitArray_access_atom(c *Array_access_atomContext)
 
-	// ExitNumeric_atom is called when exiting the numeric_atom production.
-	ExitNumeric_atom(c *Numeric_atomContext)
-
-	// ExitBoolean_atom is called when exiting the boolean_atom production.
-	ExitBoolean_atom(c *Boolean_atomContext)
-
-	// ExitCast_expression is called when exiting the cast_expression production.
-	ExitCast_expression(c *Cast_expressionContext)
-
-	// ExitData_type_sub is called when exiting the data_type_sub production.
-	ExitData_type_sub(c *Data_type_subContext)
-
 	// ExitData_type_name is called when exiting the data_type_name production.
 	ExitData_type_name(c *Data_type_nameContext)
+
+	// ExitDataTypeSub is called when exiting the dataTypeSub production.
+	ExitDataTypeSub(c *DataTypeSubContext)
 }

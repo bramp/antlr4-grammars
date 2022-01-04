@@ -1,4 +1,4 @@
-// Code generated from metric.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from metric.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package metric // metric
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -38,11 +38,11 @@ func (s *BasemetricListener) EnterExponent(ctx *ExponentContext) {}
 // ExitExponent is called when production exponent is exited.
 func (s *BasemetricListener) ExitExponent(ctx *ExponentContext) {}
 
-// EnterPrefix is called when production prefix is entered.
-func (s *BasemetricListener) EnterPrefix(ctx *PrefixContext) {}
+// EnterPrefix_ is called when production prefix_ is entered.
+func (s *BasemetricListener) EnterPrefix_(ctx *Prefix_Context) {}
 
-// ExitPrefix is called when production prefix is exited.
-func (s *BasemetricListener) ExitPrefix(ctx *PrefixContext) {}
+// ExitPrefix_ is called when production prefix_ is exited.
+func (s *BasemetricListener) ExitPrefix_(ctx *Prefix_Context) {}
 
 // EnterUnit is called when production unit is entered.
 func (s *BasemetricListener) EnterUnit(ctx *UnitContext) {}

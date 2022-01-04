@@ -1,4 +1,4 @@
-// Code generated from PeopleCode.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from PeopleCode.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package peoplecode // PeopleCode
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -169,8 +169,8 @@ type PeopleCodeListener interface {
 	// EnterConstant is called when entering the constant production.
 	EnterConstant(c *ConstantContext)
 
-	// EnterProperty is called when entering the property production.
-	EnterProperty(c *PropertyContext)
+	// EnterProperty_ is called when entering the property_ production.
+	EnterProperty_(c *Property_Context)
 
 	// EnterInstance is called when entering the instance production.
 	EnterInstance(c *InstanceContext)
@@ -229,8 +229,8 @@ type PeopleCodeListener interface {
 	// EnterLiteral is called when entering the literal production.
 	EnterLiteral(c *LiteralContext)
 
-	// EnterId is called when entering the id production.
-	EnterId(c *IdContext)
+	// EnterId_ is called when entering the id_ production.
+	EnterId_(c *Id_Context)
 
 	// ExitProgram is called when exiting the program production.
 	ExitProgram(c *ProgramContext)
@@ -394,8 +394,8 @@ type PeopleCodeListener interface {
 	// ExitConstant is called when exiting the constant production.
 	ExitConstant(c *ConstantContext)
 
-	// ExitProperty is called when exiting the property production.
-	ExitProperty(c *PropertyContext)
+	// ExitProperty_ is called when exiting the property_ production.
+	ExitProperty_(c *Property_Context)
 
 	// ExitInstance is called when exiting the instance production.
 	ExitInstance(c *InstanceContext)
@@ -454,6 +454,6 @@ type PeopleCodeListener interface {
 	// ExitLiteral is called when exiting the literal production.
 	ExitLiteral(c *LiteralContext)
 
-	// ExitId is called when exiting the id production.
-	ExitId(c *IdContext)
+	// ExitId_ is called when exiting the id_ production.
+	ExitId_(c *Id_Context)
 }

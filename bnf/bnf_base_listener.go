@@ -1,4 +1,4 @@
-// Code generated from bnf.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from bnf.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package bnf // bnf
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -62,11 +62,11 @@ func (s *BasebnfListener) EnterElement(ctx *ElementContext) {}
 // ExitElement is called when production element is exited.
 func (s *BasebnfListener) ExitElement(ctx *ElementContext) {}
 
-// EnterOptional is called when production optional is entered.
-func (s *BasebnfListener) EnterOptional(ctx *OptionalContext) {}
+// EnterOptional_ is called when production optional_ is entered.
+func (s *BasebnfListener) EnterOptional_(ctx *Optional_Context) {}
 
-// ExitOptional is called when production optional is exited.
-func (s *BasebnfListener) ExitOptional(ctx *OptionalContext) {}
+// ExitOptional_ is called when production optional_ is exited.
+func (s *BasebnfListener) ExitOptional_(ctx *Optional_Context) {}
 
 // EnterZeroormore is called when production zeroormore is entered.
 func (s *BasebnfListener) EnterZeroormore(ctx *ZeroormoreContext) {}
@@ -80,17 +80,17 @@ func (s *BasebnfListener) EnterOneormore(ctx *OneormoreContext) {}
 // ExitOneormore is called when production oneormore is exited.
 func (s *BasebnfListener) ExitOneormore(ctx *OneormoreContext) {}
 
-// EnterText is called when production text is entered.
-func (s *BasebnfListener) EnterText(ctx *TextContext) {}
+// EnterText_ is called when production text_ is entered.
+func (s *BasebnfListener) EnterText_(ctx *Text_Context) {}
 
-// ExitText is called when production text is exited.
-func (s *BasebnfListener) ExitText(ctx *TextContext) {}
+// ExitText_ is called when production text_ is exited.
+func (s *BasebnfListener) ExitText_(ctx *Text_Context) {}
 
-// EnterId is called when production id is entered.
-func (s *BasebnfListener) EnterId(ctx *IdContext) {}
+// EnterId_ is called when production id_ is entered.
+func (s *BasebnfListener) EnterId_(ctx *Id_Context) {}
 
-// ExitId is called when production id is exited.
-func (s *BasebnfListener) ExitId(ctx *IdContext) {}
+// ExitId_ is called when production id_ is exited.
+func (s *BasebnfListener) ExitId_(ctx *Id_Context) {}
 
 // EnterRuleid is called when production ruleid is entered.
 func (s *BasebnfListener) EnterRuleid(ctx *RuleidContext) {}

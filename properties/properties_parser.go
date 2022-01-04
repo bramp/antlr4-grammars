@@ -1,4 +1,4 @@
-// Code generated from properties.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from properties.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package properties // properties
 import (
@@ -29,9 +29,6 @@ var parserATN = []uint16{
 	2, 28, 29, 7, 4, 2, 2, 29, 9, 3, 2, 2, 2, 30, 31, 9, 2, 2, 2, 31, 11, 3,
 	2, 2, 2, 32, 33, 7, 6, 2, 2, 33, 13, 3, 2, 2, 2, 5, 17, 21, 26,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'='",
 }
@@ -42,21 +39,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"propertiesFile", "row", "decl", "key", "value", "comment",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type propertiesParser struct {
 	*antlr.BaseParser
 }
 
+// NewpropertiesParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *propertiesParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewpropertiesParser(input antlr.TokenStream) *propertiesParser {
 	this := new(propertiesParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -170,6 +171,9 @@ func (s *PropertiesFileContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propertiesParser) PropertiesFile() (localctx IPropertiesFileContext) {
+	this := p
+	_ = this
+
 	localctx = NewPropertiesFileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, propertiesParserRULE_propertiesFile)
 	var _la int
@@ -288,6 +292,9 @@ func (s *RowContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propertiesParser) Row() (localctx IRowContext) {
+	this := p
+	_ = this
+
 	localctx = NewRowContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, propertiesParserRULE_row)
 
@@ -410,6 +417,9 @@ func (s *DeclContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propertiesParser) Decl() (localctx IDeclContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeclContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, propertiesParserRULE_decl)
 
@@ -515,6 +525,9 @@ func (s *KeyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propertiesParser) Key() (localctx IKeyContext) {
+	this := p
+	_ = this
+
 	localctx = NewKeyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, propertiesParserRULE_key)
 
@@ -610,6 +623,9 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propertiesParser) Value() (localctx IValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, propertiesParserRULE_value)
 	var _la int
@@ -709,6 +725,9 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propertiesParser) Comment() (localctx ICommentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, propertiesParserRULE_comment)
 

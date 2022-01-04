@@ -1,4 +1,4 @@
-// Code generated from mumath.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from mumath.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package mumath // mumath
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -32,11 +32,11 @@ func (s *BasemumathListener) EnterAssignment(ctx *AssignmentContext) {}
 // ExitAssignment is called when production assignment is exited.
 func (s *BasemumathListener) ExitAssignment(ctx *AssignmentContext) {}
 
-// EnterList is called when production list is entered.
-func (s *BasemumathListener) EnterList(ctx *ListContext) {}
+// EnterList_ is called when production list_ is entered.
+func (s *BasemumathListener) EnterList_(ctx *List_Context) {}
 
-// ExitList is called when production list is exited.
-func (s *BasemumathListener) ExitList(ctx *ListContext) {}
+// ExitList_ is called when production list_ is exited.
+func (s *BasemumathListener) ExitList_(ctx *List_Context) {}
 
 // EnterFunctionDefinition is called when production functionDefinition is entered.
 func (s *BasemumathListener) EnterFunctionDefinition(ctx *FunctionDefinitionContext) {}

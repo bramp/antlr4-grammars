@@ -1,4 +1,4 @@
-// Code generated from DCM_2_0_grammar.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from DCM_2_0_grammar.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package dcm_2_0_grammar // DCM_2_0_grammar
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -217,7 +217,8 @@ func (s *BaseDCM_2_0_grammarListener) EnterFunktionszugehorigkeit(ctx *Funktions
 }
 
 // ExitFunktionszugehorigkeit is called when production funktionszugehorigkeit is exited.
-func (s *BaseDCM_2_0_grammarListener) ExitFunktionszugehorigkeit(ctx *FunktionszugehorigkeitContext) {}
+func (s *BaseDCM_2_0_grammarListener) ExitFunktionszugehorigkeit(ctx *FunktionszugehorigkeitContext) {
+}
 
 // EnterAnzahl_x is called when production anzahl_x is entered.
 func (s *BaseDCM_2_0_grammarListener) EnterAnzahl_x(ctx *Anzahl_xContext) {}

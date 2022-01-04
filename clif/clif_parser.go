@@ -1,4 +1,4 @@
-// Code generated from CLIF.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from CLIF.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package clif // CLIF
 import (
@@ -110,9 +110,6 @@ var parserATN = []uint16{
 	2, 2, 217, 41, 3, 2, 2, 2, 23, 44, 46, 55, 69, 83, 87, 106, 115, 130, 135,
 	147, 152, 154, 173, 177, 180, 195, 198, 203, 208, 214,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'('", "')'", "'''", "'\"'", "'\\'", "", "", "", "", "'='", "'and'",
 	"'or'", "'iff'", "'if'", "'forall'", "'exists'", "'not'", "'cl-roleset'",
@@ -128,25 +125,29 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"termseq", "interpretedname", "interpretablename", "name", "term", "operator",
+	"termseq", "interpretedname", "interpretablename", "name", "term", "operator_",
 	"equation", "sentence", "atomsent", "atom", "predicate", "boolsent", "quantsent",
 	"boundlist", "commentsent", "module", "phrase", "text", "cltext", "namedtext",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type CLIFParser struct {
 	*antlr.BaseParser
 }
 
+// NewCLIFParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *CLIFParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewCLIFParser(input antlr.TokenStream) *CLIFParser {
 	this := new(CLIFParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -198,7 +199,7 @@ const (
 	CLIFParserRULE_interpretablename = 2
 	CLIFParserRULE_name              = 3
 	CLIFParserRULE_term              = 4
-	CLIFParserRULE_operator          = 5
+	CLIFParserRULE_operator_         = 5
 	CLIFParserRULE_equation          = 6
 	CLIFParserRULE_sentence          = 7
 	CLIFParserRULE_atomsent          = 8
@@ -305,6 +306,9 @@ func (s *TermseqContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Termseq() (localctx ITermseqContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermseqContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, CLIFParserRULE_termseq)
 	var _la int
@@ -426,6 +430,9 @@ func (s *InterpretednameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Interpretedname() (localctx IInterpretednameContext) {
+	this := p
+	_ = this
+
 	localctx = NewInterpretednameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, CLIFParserRULE_interpretedname)
 	var _la int
@@ -529,6 +536,9 @@ func (s *InterpretablenameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Interpretablename() (localctx IInterpretablenameContext) {
+	this := p
+	_ = this
+
 	localctx = NewInterpretablenameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, CLIFParserRULE_interpretablename)
 	var _la int
@@ -644,6 +654,9 @@ func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Name() (localctx INameContext) {
+	this := p
+	_ = this
+
 	localctx = NewNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, CLIFParserRULE_name)
 
@@ -740,14 +753,14 @@ func (s *TermContext) OPEN() antlr.TerminalNode {
 	return s.GetToken(CLIFParserOPEN, 0)
 }
 
-func (s *TermContext) Operator() IOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperatorContext)(nil)).Elem(), 0)
+func (s *TermContext) Operator_() IOperator_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperator_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IOperatorContext)
+	return t.(IOperator_Context)
 }
 
 func (s *TermContext) Termseq() ITermseqContext {
@@ -803,6 +816,9 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Term() (localctx ITermContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, CLIFParserRULE_term)
 
@@ -840,7 +856,7 @@ func (p *CLIFParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(57)
-			p.Operator()
+			p.Operator_()
 		}
 		{
 			p.SetState(58)
@@ -879,45 +895,45 @@ func (p *CLIFParser) Term() (localctx ITermContext) {
 	return localctx
 }
 
-// IOperatorContext is an interface to support dynamic dispatch.
-type IOperatorContext interface {
+// IOperator_Context is an interface to support dynamic dispatch.
+type IOperator_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsOperatorContext differentiates from other interfaces.
-	IsOperatorContext()
+	// IsOperator_Context differentiates from other interfaces.
+	IsOperator_Context()
 }
 
-type OperatorContext struct {
+type Operator_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyOperatorContext() *OperatorContext {
-	var p = new(OperatorContext)
+func NewEmptyOperator_Context() *Operator_Context {
+	var p = new(Operator_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = CLIFParserRULE_operator
+	p.RuleIndex = CLIFParserRULE_operator_
 	return p
 }
 
-func (*OperatorContext) IsOperatorContext() {}
+func (*Operator_Context) IsOperator_Context() {}
 
-func NewOperatorContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *OperatorContext {
-	var p = new(OperatorContext)
+func NewOperator_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Operator_Context {
+	var p = new(Operator_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = CLIFParserRULE_operator
+	p.RuleIndex = CLIFParserRULE_operator_
 
 	return p
 }
 
-func (s *OperatorContext) GetParser() antlr.Parser { return s.parser }
+func (s *Operator_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *OperatorContext) Term() ITermContext {
+func (s *Operator_Context) Term() ITermContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITermContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -927,29 +943,32 @@ func (s *OperatorContext) Term() ITermContext {
 	return t.(ITermContext)
 }
 
-func (s *OperatorContext) GetRuleContext() antlr.RuleContext {
+func (s *Operator_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *OperatorContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Operator_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *OperatorContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Operator_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CLIFListener); ok {
-		listenerT.EnterOperator(s)
+		listenerT.EnterOperator_(s)
 	}
 }
 
-func (s *OperatorContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Operator_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CLIFListener); ok {
-		listenerT.ExitOperator(s)
+		listenerT.ExitOperator_(s)
 	}
 }
 
-func (p *CLIFParser) Operator() (localctx IOperatorContext) {
-	localctx = NewOperatorContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, CLIFParserRULE_operator)
+func (p *CLIFParser) Operator_() (localctx IOperator_Context) {
+	this := p
+	_ = this
+
+	localctx = NewOperator_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 10, CLIFParserRULE_operator_)
 
 	defer func() {
 		p.ExitRule()
@@ -1070,6 +1089,9 @@ func (s *EquationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Equation() (localctx IEquationContext) {
+	this := p
+	_ = this
+
 	localctx = NewEquationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, CLIFParserRULE_equation)
 
@@ -1213,6 +1235,9 @@ func (s *SentenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Sentence() (localctx ISentenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewSentenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, CLIFParserRULE_sentence)
 
@@ -1347,6 +1372,9 @@ func (s *AtomsentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Atomsent() (localctx IAtomsentContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomsentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, CLIFParserRULE_atomsent)
 
@@ -1520,6 +1548,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, CLIFParserRULE_atom)
 
@@ -1680,6 +1711,9 @@ func (s *PredicateContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Predicate() (localctx IPredicateContext) {
+	this := p
+	_ = this
+
 	localctx = NewPredicateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, CLIFParserRULE_predicate)
 
@@ -1818,6 +1852,9 @@ func (s *BoolsentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Boolsent() (localctx IBoolsentContext) {
+	this := p
+	_ = this
+
 	localctx = NewBoolsentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, CLIFParserRULE_boolsent)
 	var _la int
@@ -2036,6 +2073,9 @@ func (s *QuantsentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Quantsent() (localctx IQuantsentContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuantsentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, CLIFParserRULE_quantsent)
 	var _la int
@@ -2228,6 +2268,9 @@ func (s *BoundlistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Boundlist() (localctx IBoundlistContext) {
+	this := p
+	_ = this
+
 	localctx = NewBoundlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, CLIFParserRULE_boundlist)
 	var _la int
@@ -2408,6 +2451,9 @@ func (s *CommentsentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Commentsent() (localctx ICommentsentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentsentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, CLIFParserRULE_commentsent)
 
@@ -2578,6 +2624,9 @@ func (s *ModuleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Module() (localctx IModuleContext) {
+	this := p
+	_ = this
+
 	localctx = NewModuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, CLIFParserRULE_module)
 	var _la int
@@ -2781,6 +2830,9 @@ func (s *PhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Phrase() (localctx IPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, CLIFParserRULE_phrase)
 	var _la int
@@ -2954,6 +3006,9 @@ func (s *TextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Text() (localctx ITextContext) {
+	this := p
+	_ = this
+
 	localctx = NewTextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, CLIFParserRULE_text)
 	var _la int
@@ -3082,6 +3137,9 @@ func (s *CltextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Cltext() (localctx ICltextContext) {
+	this := p
+	_ = this
+
 	localctx = NewCltextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, CLIFParserRULE_cltext)
 
@@ -3221,6 +3279,9 @@ func (s *NamedtextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CLIFParser) Namedtext() (localctx INamedtextContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamedtextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, CLIFParserRULE_namedtext)
 	var _la int

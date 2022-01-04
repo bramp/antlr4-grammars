@@ -1,4 +1,4 @@
-// Code generated from prolog.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from prolog.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package prolog // prolog
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -104,11 +104,11 @@ func (s *BaseprologListener) EnterCurly_bracketed_term(ctx *Curly_bracketed_term
 // ExitCurly_bracketed_term is called when production curly_bracketed_term is exited.
 func (s *BaseprologListener) ExitCurly_bracketed_term(ctx *Curly_bracketed_termContext) {}
 
-// EnterOperator is called when production operator is entered.
-func (s *BaseprologListener) EnterOperator(ctx *OperatorContext) {}
+// EnterOperator_ is called when production operator_ is entered.
+func (s *BaseprologListener) EnterOperator_(ctx *Operator_Context) {}
 
-// ExitOperator is called when production operator is exited.
-func (s *BaseprologListener) ExitOperator(ctx *OperatorContext) {}
+// ExitOperator_ is called when production operator_ is exited.
+func (s *BaseprologListener) ExitOperator_(ctx *Operator_Context) {}
 
 // EnterEmpty_list is called when production empty_list is entered.
 func (s *BaseprologListener) EnterEmpty_list(ctx *Empty_listContext) {}

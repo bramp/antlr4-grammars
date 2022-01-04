@@ -1,4 +1,4 @@
-// Code generated from memcached_protocol.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from memcached_protocol.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package memcached_protocol // memcached_protocol
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -33,7 +33,8 @@ func (s *Basememcached_protocolListener) EnterStorage_command(ctx *Storage_comma
 func (s *Basememcached_protocolListener) ExitStorage_command(ctx *Storage_commandContext) {}
 
 // EnterStorage_command_name is called when production storage_command_name is entered.
-func (s *Basememcached_protocolListener) EnterStorage_command_name(ctx *Storage_command_nameContext) {}
+func (s *Basememcached_protocolListener) EnterStorage_command_name(ctx *Storage_command_nameContext) {
+}
 
 // ExitStorage_command_name is called when production storage_command_name is exited.
 func (s *Basememcached_protocolListener) ExitStorage_command_name(ctx *Storage_command_nameContext) {}
@@ -155,13 +156,15 @@ func (s *Basememcached_protocolListener) EnterGeneral_error(ctx *General_errorCo
 func (s *Basememcached_protocolListener) ExitGeneral_error(ctx *General_errorContext) {}
 
 // EnterClient_error_message is called when production client_error_message is entered.
-func (s *Basememcached_protocolListener) EnterClient_error_message(ctx *Client_error_messageContext) {}
+func (s *Basememcached_protocolListener) EnterClient_error_message(ctx *Client_error_messageContext) {
+}
 
 // ExitClient_error_message is called when production client_error_message is exited.
 func (s *Basememcached_protocolListener) ExitClient_error_message(ctx *Client_error_messageContext) {}
 
 // EnterServer_error_message is called when production server_error_message is entered.
-func (s *Basememcached_protocolListener) EnterServer_error_message(ctx *Server_error_messageContext) {}
+func (s *Basememcached_protocolListener) EnterServer_error_message(ctx *Server_error_messageContext) {
+}
 
 // ExitServer_error_message is called when production server_error_message is exited.
 func (s *Basememcached_protocolListener) ExitServer_error_message(ctx *Server_error_messageContext) {}

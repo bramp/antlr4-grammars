@@ -1,4 +1,4 @@
-// Code generated from agc.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from agc.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package agc // agc
 import (
@@ -110,9 +110,6 @@ var parserATN = []uint16{
 	2, 2, 214, 49, 3, 2, 2, 2, 27, 53, 60, 63, 68, 74, 81, 89, 95, 100, 105,
 	111, 117, 121, 126, 132, 140, 147, 153, 158, 170, 177, 185, 193, 198, 207,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'ERASE'", "'='", "'EQUALS'", "'A'", "'L'", "'Q'", "'EB'", "'FB'",
 	"'Z'", "'BB'", "'ARUPT'", "'LRUPT'", "'QRUPT'", "'BBRUPT'", "'BRUPT'",
@@ -160,23 +157,27 @@ var ruleNames = []string{
 	"prog", "line", "blank_line", "comment_line", "instruction_line", "erase_line",
 	"assignment_line", "opcodes", "argument", "ws", "eol", "comment", "label",
 	"variable", "expression", "multiplyingExpression", "atom", "inte", "decimal",
-	"register", "opcode", "axt_opcode", "pseudo_opcode", "standard_opcode",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"register_", "opcode", "axt_opcode", "pseudo_opcode", "standard_opcode",
 }
 
 type agcParser struct {
 	*antlr.BaseParser
 }
 
+// NewagcParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *agcParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewagcParser(input antlr.TokenStream) *agcParser {
 	this := new(agcParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -410,7 +411,7 @@ const (
 	agcParserRULE_atom                  = 16
 	agcParserRULE_inte                  = 17
 	agcParserRULE_decimal               = 18
-	agcParserRULE_register              = 19
+	agcParserRULE_register_             = 19
 	agcParserRULE_opcode                = 20
 	agcParserRULE_axt_opcode            = 21
 	agcParserRULE_pseudo_opcode         = 22
@@ -499,6 +500,9 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Prog() (localctx IProgContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, agcParserRULE_prog)
 	var _la int
@@ -647,6 +651,9 @@ func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Line() (localctx ILineContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, agcParserRULE_line)
 
@@ -788,6 +795,9 @@ func (s *Blank_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Blank_line() (localctx IBlank_lineContext) {
+	this := p
+	_ = this
+
 	localctx = NewBlank_lineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, agcParserRULE_blank_line)
 	var _la int
@@ -917,6 +927,9 @@ func (s *Comment_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Comment_line() (localctx IComment_lineContext) {
+	this := p
+	_ = this
+
 	localctx = NewComment_lineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, agcParserRULE_comment_line)
 	var _la int
@@ -1106,6 +1119,9 @@ func (s *Instruction_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Instruction_line() (localctx IInstruction_lineContext) {
+	this := p
+	_ = this
+
 	localctx = NewInstruction_lineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, agcParserRULE_instruction_line)
 	var _la int
@@ -1329,6 +1345,9 @@ func (s *Erase_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Erase_line() (localctx IErase_lineContext) {
+	this := p
+	_ = this
+
 	localctx = NewErase_lineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, agcParserRULE_erase_line)
 	var _la int
@@ -1555,6 +1574,9 @@ func (s *Assignment_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Assignment_line() (localctx IAssignment_lineContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignment_lineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, agcParserRULE_assignment_line)
 	var _la int
@@ -1745,6 +1767,9 @@ func (s *OpcodesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Opcodes() (localctx IOpcodesContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpcodesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, agcParserRULE_opcodes)
 
@@ -1902,6 +1927,9 @@ func (s *ArgumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Argument() (localctx IArgumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewArgumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, agcParserRULE_argument)
 
@@ -2025,6 +2053,9 @@ func (s *WsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Ws() (localctx IWsContext) {
+	this := p
+	_ = this
+
 	localctx = NewWsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, agcParserRULE_ws)
 
@@ -2120,6 +2151,9 @@ func (s *EolContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Eol() (localctx IEolContext) {
+	this := p
+	_ = this
+
 	localctx = NewEolContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, agcParserRULE_eol)
 	var _la int
@@ -2223,6 +2257,9 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Comment() (localctx ICommentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, agcParserRULE_comment)
 
@@ -2314,6 +2351,9 @@ func (s *LabelContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Label() (localctx ILabelContext) {
+	this := p
+	_ = this
+
 	localctx = NewLabelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, agcParserRULE_label)
 
@@ -2413,6 +2453,9 @@ func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Variable() (localctx IVariableContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, agcParserRULE_variable)
 
@@ -2563,6 +2606,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, agcParserRULE_expression)
 	var _la int
@@ -2719,6 +2765,9 @@ func (s *MultiplyingExpressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *agcParser) MultiplyingExpression() (localctx IMultiplyingExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultiplyingExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, agcParserRULE_multiplyingExpression)
 	var _la int
@@ -2851,14 +2900,14 @@ func (s *AtomContext) Label() ILabelContext {
 	return t.(ILabelContext)
 }
 
-func (s *AtomContext) Register() IRegisterContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRegisterContext)(nil)).Elem(), 0)
+func (s *AtomContext) Register_() IRegister_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRegister_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IRegisterContext)
+	return t.(IRegister_Context)
 }
 
 func (s *AtomContext) GetRuleContext() antlr.RuleContext {
@@ -2882,6 +2931,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, agcParserRULE_atom)
 
@@ -2936,7 +2988,7 @@ func (p *agcParser) Atom() (localctx IAtomContext) {
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(190)
-			p.Register()
+			p.Register_()
 		}
 
 	}
@@ -3007,6 +3059,9 @@ func (s *InteContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Inte() (localctx IInteContext) {
+	this := p
+	_ = this
+
 	localctx = NewInteContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, agcParserRULE_inte)
 
@@ -3106,6 +3161,9 @@ func (s *DecimalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Decimal() (localctx IDecimalContext) {
+	this := p
+	_ = this
+
 	localctx = NewDecimalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, agcParserRULE_decimal)
 	var _la int
@@ -3153,66 +3211,69 @@ func (p *agcParser) Decimal() (localctx IDecimalContext) {
 	return localctx
 }
 
-// IRegisterContext is an interface to support dynamic dispatch.
-type IRegisterContext interface {
+// IRegister_Context is an interface to support dynamic dispatch.
+type IRegister_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsRegisterContext differentiates from other interfaces.
-	IsRegisterContext()
+	// IsRegister_Context differentiates from other interfaces.
+	IsRegister_Context()
 }
 
-type RegisterContext struct {
+type Register_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyRegisterContext() *RegisterContext {
-	var p = new(RegisterContext)
+func NewEmptyRegister_Context() *Register_Context {
+	var p = new(Register_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = agcParserRULE_register
+	p.RuleIndex = agcParserRULE_register_
 	return p
 }
 
-func (*RegisterContext) IsRegisterContext() {}
+func (*Register_Context) IsRegister_Context() {}
 
-func NewRegisterContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *RegisterContext {
-	var p = new(RegisterContext)
+func NewRegister_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Register_Context {
+	var p = new(Register_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = agcParserRULE_register
+	p.RuleIndex = agcParserRULE_register_
 
 	return p
 }
 
-func (s *RegisterContext) GetParser() antlr.Parser { return s.parser }
-func (s *RegisterContext) GetRuleContext() antlr.RuleContext {
+func (s *Register_Context) GetParser() antlr.Parser { return s.parser }
+func (s *Register_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *RegisterContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Register_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *RegisterContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Register_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(agcListener); ok {
-		listenerT.EnterRegister(s)
+		listenerT.EnterRegister_(s)
 	}
 }
 
-func (s *RegisterContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Register_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(agcListener); ok {
-		listenerT.ExitRegister(s)
+		listenerT.ExitRegister_(s)
 	}
 }
 
-func (p *agcParser) Register() (localctx IRegisterContext) {
-	localctx = NewRegisterContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 38, agcParserRULE_register)
+func (p *agcParser) Register_() (localctx IRegister_Context) {
+	this := p
+	_ = this
+
+	localctx = NewRegister_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 38, agcParserRULE_register_)
 	var _la int
 
 	defer func() {
@@ -3336,6 +3397,9 @@ func (s *OpcodeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Opcode() (localctx IOpcodeContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpcodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, agcParserRULE_opcode)
 
@@ -3445,6 +3509,9 @@ func (s *Axt_opcodeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Axt_opcode() (localctx IAxt_opcodeContext) {
+	this := p
+	_ = this
+
 	localctx = NewAxt_opcodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, agcParserRULE_axt_opcode)
 	var _la int
@@ -3539,6 +3606,9 @@ func (s *Pseudo_opcodeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Pseudo_opcode() (localctx IPseudo_opcodeContext) {
+	this := p
+	_ = this
+
 	localctx = NewPseudo_opcodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, agcParserRULE_pseudo_opcode)
 	var _la int
@@ -3633,6 +3703,9 @@ func (s *Standard_opcodeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *agcParser) Standard_opcode() (localctx IStandard_opcodeContext) {
+	this := p
+	_ = this
+
 	localctx = NewStandard_opcodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, agcParserRULE_standard_opcode)
 	var _la int

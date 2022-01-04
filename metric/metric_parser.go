@@ -1,4 +1,4 @@
-// Code generated from metric.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from metric.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package metric // metric
 import (
@@ -34,9 +34,6 @@ var parserATN = []uint16{
 	40, 41, 9, 4, 2, 2, 41, 13, 3, 2, 2, 2, 42, 43, 9, 5, 2, 2, 43, 15, 3,
 	2, 2, 2, 6, 21, 25, 29, 38,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'*'", "'/'", "'^'", "'E'", "'P'", "'T'", "'G'", "'M'", "'k'", "'h'",
 	"'da'", "'d'", "'c'", "'m'", "'\u00B5'", "'n'", "'p'", "'f'", "'a'", "'g'",
@@ -51,23 +48,27 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"uom", "measure", "exponent", "prefix", "unit", "baseunit", "derivedunit",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"uom", "measure", "exponent", "prefix_", "unit", "baseunit", "derivedunit",
 }
 
 type metricParser struct {
 	*antlr.BaseParser
 }
 
+// NewmetricParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *metricParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewmetricParser(input antlr.TokenStream) *metricParser {
 	this := new(metricParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -137,7 +138,7 @@ const (
 	metricParserRULE_uom         = 0
 	metricParserRULE_measure     = 1
 	metricParserRULE_exponent    = 2
-	metricParserRULE_prefix      = 3
+	metricParserRULE_prefix_     = 3
 	metricParserRULE_unit        = 4
 	metricParserRULE_baseunit    = 5
 	metricParserRULE_derivedunit = 6
@@ -225,6 +226,9 @@ func (s *UomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *metricParser) Uom() (localctx IUomContext) {
+	this := p
+	_ = this
+
 	localctx = NewUomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, metricParserRULE_uom)
 	var _la int
@@ -327,14 +331,14 @@ func (s *MeasureContext) Unit() IUnitContext {
 	return t.(IUnitContext)
 }
 
-func (s *MeasureContext) Prefix() IPrefixContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPrefixContext)(nil)).Elem(), 0)
+func (s *MeasureContext) Prefix_() IPrefix_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPrefix_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IPrefixContext)
+	return t.(IPrefix_Context)
 }
 
 func (s *MeasureContext) Exponent() IExponentContext {
@@ -368,6 +372,9 @@ func (s *MeasureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *metricParser) Measure() (localctx IMeasureContext) {
+	this := p
+	_ = this
+
 	localctx = NewMeasureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, metricParserRULE_measure)
 	var _la int
@@ -395,7 +402,7 @@ func (p *metricParser) Measure() (localctx IMeasureContext) {
 	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 1, p.GetParserRuleContext()) == 1 {
 		{
 			p.SetState(22)
-			p.Prefix()
+			p.Prefix_()
 		}
 
 	}
@@ -481,6 +488,9 @@ func (s *ExponentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *metricParser) Exponent() (localctx IExponentContext) {
+	this := p
+	_ = this
+
 	localctx = NewExponentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, metricParserRULE_exponent)
 
@@ -513,66 +523,69 @@ func (p *metricParser) Exponent() (localctx IExponentContext) {
 	return localctx
 }
 
-// IPrefixContext is an interface to support dynamic dispatch.
-type IPrefixContext interface {
+// IPrefix_Context is an interface to support dynamic dispatch.
+type IPrefix_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsPrefixContext differentiates from other interfaces.
-	IsPrefixContext()
+	// IsPrefix_Context differentiates from other interfaces.
+	IsPrefix_Context()
 }
 
-type PrefixContext struct {
+type Prefix_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyPrefixContext() *PrefixContext {
-	var p = new(PrefixContext)
+func NewEmptyPrefix_Context() *Prefix_Context {
+	var p = new(Prefix_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = metricParserRULE_prefix
+	p.RuleIndex = metricParserRULE_prefix_
 	return p
 }
 
-func (*PrefixContext) IsPrefixContext() {}
+func (*Prefix_Context) IsPrefix_Context() {}
 
-func NewPrefixContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *PrefixContext {
-	var p = new(PrefixContext)
+func NewPrefix_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Prefix_Context {
+	var p = new(Prefix_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = metricParserRULE_prefix
+	p.RuleIndex = metricParserRULE_prefix_
 
 	return p
 }
 
-func (s *PrefixContext) GetParser() antlr.Parser { return s.parser }
-func (s *PrefixContext) GetRuleContext() antlr.RuleContext {
+func (s *Prefix_Context) GetParser() antlr.Parser { return s.parser }
+func (s *Prefix_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *PrefixContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Prefix_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *PrefixContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Prefix_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(metricListener); ok {
-		listenerT.EnterPrefix(s)
+		listenerT.EnterPrefix_(s)
 	}
 }
 
-func (s *PrefixContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Prefix_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(metricListener); ok {
-		listenerT.ExitPrefix(s)
+		listenerT.ExitPrefix_(s)
 	}
 }
 
-func (p *metricParser) Prefix() (localctx IPrefixContext) {
-	localctx = NewPrefixContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, metricParserRULE_prefix)
+func (p *metricParser) Prefix_() (localctx IPrefix_Context) {
+	this := p
+	_ = this
+
+	localctx = NewPrefix_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 6, metricParserRULE_prefix_)
 	var _la int
 
 	defer func() {
@@ -686,6 +699,9 @@ func (s *UnitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *metricParser) Unit() (localctx IUnitContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, metricParserRULE_unit)
 
@@ -788,6 +804,9 @@ func (s *BaseunitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *metricParser) Baseunit() (localctx IBaseunitContext) {
+	this := p
+	_ = this
+
 	localctx = NewBaseunitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, metricParserRULE_baseunit)
 	var _la int
@@ -882,6 +901,9 @@ func (s *DerivedunitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *metricParser) Derivedunit() (localctx IDerivedunitContext) {
+	this := p
+	_ = this
+
 	localctx = NewDerivedunitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, metricParserRULE_derivedunit)
 	var _la int

@@ -1,4 +1,4 @@
-// Code generated from mumath.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from mumath.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package mumath // mumath
 import (
@@ -106,9 +106,6 @@ var parserATN = []uint16{
 	43, 49, 58, 69, 73, 81, 87, 95, 101, 112, 119, 125, 135, 140, 143, 151,
 	162, 176, 184, 193, 197,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'BLOCK'", "'ENDBLOCK'", "'FUNCTION'", "'ENDFUN'", "'EQ'", "'LOOP'",
 	"'ENDLOOP'", "'WHEN'", "'EXIT'", "'OR'", "'AND'", "'NOT'", "'mod'", "",
@@ -124,26 +121,30 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"program", "assignment", "list", "functionDefinition", "actualParameter",
+	"program", "assignment", "list_", "functionDefinition", "actualParameter",
 	"statments", "block", "loop", "when", "expression", "relationalOperator",
 	"simpleExpression", "addingOperator", "term", "multiplyingOperator", "factor",
 	"constant", "functionDesignator", "equal",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type mumathParser struct {
 	*antlr.BaseParser
 }
 
+// NewmumathParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *mumathParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewmumathParser(input antlr.TokenStream) *mumathParser {
 	this := new(mumathParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -202,7 +203,7 @@ const (
 const (
 	mumathParserRULE_program             = 0
 	mumathParserRULE_assignment          = 1
-	mumathParserRULE_list                = 2
+	mumathParserRULE_list_               = 2
 	mumathParserRULE_functionDefinition  = 3
 	mumathParserRULE_actualParameter     = 4
 	mumathParserRULE_statments           = 5
@@ -369,6 +370,9 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) Program() (localctx IProgramContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, mumathParserRULE_program)
 	var _la int
@@ -526,6 +530,9 @@ func (s *AssignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) Assignment() (localctx IAssignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, mumathParserRULE_assignment)
 
@@ -579,91 +586,94 @@ func (p *mumathParser) Assignment() (localctx IAssignmentContext) {
 	return localctx
 }
 
-// IListContext is an interface to support dynamic dispatch.
-type IListContext interface {
+// IList_Context is an interface to support dynamic dispatch.
+type IList_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsListContext differentiates from other interfaces.
-	IsListContext()
+	// IsList_Context differentiates from other interfaces.
+	IsList_Context()
 }
 
-type ListContext struct {
+type List_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyListContext() *ListContext {
-	var p = new(ListContext)
+func NewEmptyList_Context() *List_Context {
+	var p = new(List_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = mumathParserRULE_list
+	p.RuleIndex = mumathParserRULE_list_
 	return p
 }
 
-func (*ListContext) IsListContext() {}
+func (*List_Context) IsList_Context() {}
 
-func NewListContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ListContext {
-	var p = new(ListContext)
+func NewList_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *List_Context {
+	var p = new(List_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = mumathParserRULE_list
+	p.RuleIndex = mumathParserRULE_list_
 
 	return p
 }
 
-func (s *ListContext) GetParser() antlr.Parser { return s.parser }
+func (s *List_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *ListContext) LPAREN() antlr.TerminalNode {
+func (s *List_Context) LPAREN() antlr.TerminalNode {
 	return s.GetToken(mumathParserLPAREN, 0)
 }
 
-func (s *ListContext) RPAREN() antlr.TerminalNode {
+func (s *List_Context) RPAREN() antlr.TerminalNode {
 	return s.GetToken(mumathParserRPAREN, 0)
 }
 
-func (s *ListContext) AllID() []antlr.TerminalNode {
+func (s *List_Context) AllID() []antlr.TerminalNode {
 	return s.GetTokens(mumathParserID)
 }
 
-func (s *ListContext) ID(i int) antlr.TerminalNode {
+func (s *List_Context) ID(i int) antlr.TerminalNode {
 	return s.GetToken(mumathParserID, i)
 }
 
-func (s *ListContext) AllCOMMA() []antlr.TerminalNode {
+func (s *List_Context) AllCOMMA() []antlr.TerminalNode {
 	return s.GetTokens(mumathParserCOMMA)
 }
 
-func (s *ListContext) COMMA(i int) antlr.TerminalNode {
+func (s *List_Context) COMMA(i int) antlr.TerminalNode {
 	return s.GetToken(mumathParserCOMMA, i)
 }
 
-func (s *ListContext) GetRuleContext() antlr.RuleContext {
+func (s *List_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ListContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *List_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ListContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *List_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumathListener); ok {
-		listenerT.EnterList(s)
+		listenerT.EnterList_(s)
 	}
 }
 
-func (s *ListContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *List_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumathListener); ok {
-		listenerT.ExitList(s)
+		listenerT.ExitList_(s)
 	}
 }
 
-func (p *mumathParser) List() (localctx IListContext) {
-	localctx = NewListContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, mumathParserRULE_list)
+func (p *mumathParser) List_() (localctx IList_Context) {
+	this := p
+	_ = this
+
+	localctx = NewList_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 4, mumathParserRULE_list_)
 	var _la int
 
 	defer func() {
@@ -778,14 +788,14 @@ func (s *FunctionDefinitionContext) ID() antlr.TerminalNode {
 	return s.GetToken(mumathParserID, 0)
 }
 
-func (s *FunctionDefinitionContext) List() IListContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IListContext)(nil)).Elem(), 0)
+func (s *FunctionDefinitionContext) List_() IList_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IList_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IListContext)
+	return t.(IList_Context)
 }
 
 func (s *FunctionDefinitionContext) AllCOMMA() []antlr.TerminalNode {
@@ -831,6 +841,9 @@ func (s *FunctionDefinitionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) FunctionDefinition() (localctx IFunctionDefinitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, mumathParserRULE_functionDefinition)
 	var _la int
@@ -862,7 +875,7 @@ func (p *mumathParser) FunctionDefinition() (localctx IFunctionDefinitionContext
 	}
 	{
 		p.SetState(75)
-		p.List()
+		p.List_()
 	}
 	{
 		p.SetState(76)
@@ -970,6 +983,9 @@ func (s *ActualParameterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) ActualParameter() (localctx IActualParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewActualParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, mumathParserRULE_actualParameter)
 
@@ -1161,6 +1177,9 @@ func (s *StatmentsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) Statments() (localctx IStatmentsContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatmentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, mumathParserRULE_statments)
 
@@ -1328,6 +1347,9 @@ func (s *BlockContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) Block() (localctx IBlockContext) {
+	this := p
+	_ = this
+
 	localctx = NewBlockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, mumathParserRULE_block)
 
@@ -1449,6 +1471,9 @@ func (s *LoopContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) Loop() (localctx ILoopContext) {
+	this := p
+	_ = this
+
 	localctx = NewLoopContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, mumathParserRULE_loop)
 	var _la int
@@ -1596,6 +1621,9 @@ func (s *WhenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) When() (localctx IWhenContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, mumathParserRULE_when)
 	var _la int
@@ -1773,6 +1801,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, mumathParserRULE_expression)
 	var _la int
@@ -1913,6 +1944,9 @@ func (s *RelationalOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) RelationalOperator() (localctx IRelationalOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelationalOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, mumathParserRULE_relationalOperator)
 	var _la int
@@ -2074,6 +2108,9 @@ func (s *SimpleExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) SimpleExpression() (localctx ISimpleExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimpleExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, mumathParserRULE_simpleExpression)
 	var _la int
@@ -2203,6 +2240,9 @@ func (s *AddingOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) AddingOperator() (localctx IAddingOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddingOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, mumathParserRULE_addingOperator)
 	var _la int
@@ -2344,6 +2384,9 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) Term() (localctx ITermContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, mumathParserRULE_term)
 	var _la int
@@ -2470,6 +2513,9 @@ func (s *MultiplyingOperatorContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *mumathParser) MultiplyingOperator() (localctx IMultiplyingOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultiplyingOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, mumathParserRULE_multiplyingOperator)
 	var _la int
@@ -2621,6 +2667,9 @@ func (s *FactorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) Factor() (localctx IFactorContext) {
+	this := p
+	_ = this
+
 	localctx = NewFactorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, mumathParserRULE_factor)
 
@@ -2770,6 +2819,9 @@ func (s *ConstantContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) Constant() (localctx IConstantContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstantContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, mumathParserRULE_constant)
 
@@ -2932,6 +2984,9 @@ func (s *FunctionDesignatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) FunctionDesignator() (localctx IFunctionDesignatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionDesignatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, mumathParserRULE_functionDesignator)
 	var _la int
@@ -3069,6 +3124,9 @@ func (s *EqualContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumathParser) Equal() (localctx IEqualContext) {
+	this := p
+	_ = this
+
 	localctx = NewEqualContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, mumathParserRULE_equal)
 	var _la int

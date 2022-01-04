@@ -1,4 +1,4 @@
-// Code generated from IDL.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from IDL.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package idl // IDL
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -68,11 +68,11 @@ func (s *BaseIDLListener) EnterInterface_body(ctx *Interface_bodyContext) {}
 // ExitInterface_body is called when production interface_body is exited.
 func (s *BaseIDLListener) ExitInterface_body(ctx *Interface_bodyContext) {}
 
-// EnterExport is called when production export is entered.
-func (s *BaseIDLListener) EnterExport(ctx *ExportContext) {}
+// EnterExport_ is called when production export_ is entered.
+func (s *BaseIDLListener) EnterExport_(ctx *Export_Context) {}
 
-// ExitExport is called when production export is exited.
-func (s *BaseIDLListener) ExitExport(ctx *ExportContext) {}
+// ExitExport_ is called when production export_ is exited.
+func (s *BaseIDLListener) ExitExport_(ctx *Export_Context) {}
 
 // EnterInterface_inheritance_spec is called when production interface_inheritance_spec is entered.
 func (s *BaseIDLListener) EnterInterface_inheritance_spec(ctx *Interface_inheritance_specContext) {}
@@ -85,6 +85,12 @@ func (s *BaseIDLListener) EnterInterface_name(ctx *Interface_nameContext) {}
 
 // ExitInterface_name is called when production interface_name is exited.
 func (s *BaseIDLListener) ExitInterface_name(ctx *Interface_nameContext) {}
+
+// EnterA_scoped_name is called when production a_scoped_name is entered.
+func (s *BaseIDLListener) EnterA_scoped_name(ctx *A_scoped_nameContext) {}
+
+// ExitA_scoped_name is called when production a_scoped_name is exited.
+func (s *BaseIDLListener) ExitA_scoped_name(ctx *A_scoped_nameContext) {}
 
 // EnterScoped_name is called when production scoped_name is entered.
 func (s *BaseIDLListener) EnterScoped_name(ctx *Scoped_nameContext) {}
@@ -284,6 +290,12 @@ func (s *BaseIDLListener) EnterSimple_type_spec(ctx *Simple_type_specContext) {}
 // ExitSimple_type_spec is called when production simple_type_spec is exited.
 func (s *BaseIDLListener) ExitSimple_type_spec(ctx *Simple_type_specContext) {}
 
+// EnterBitfield_type_spec is called when production bitfield_type_spec is entered.
+func (s *BaseIDLListener) EnterBitfield_type_spec(ctx *Bitfield_type_specContext) {}
+
+// ExitBitfield_type_spec is called when production bitfield_type_spec is exited.
+func (s *BaseIDLListener) ExitBitfield_type_spec(ctx *Bitfield_type_specContext) {}
+
 // EnterBase_type_spec is called when production base_type_spec is entered.
 func (s *BaseIDLListener) EnterBase_type_spec(ctx *Base_type_specContext) {}
 
@@ -301,6 +313,12 @@ func (s *BaseIDLListener) EnterConstr_type_spec(ctx *Constr_type_specContext) {}
 
 // ExitConstr_type_spec is called when production constr_type_spec is exited.
 func (s *BaseIDLListener) ExitConstr_type_spec(ctx *Constr_type_specContext) {}
+
+// EnterSimple_declarators is called when production simple_declarators is entered.
+func (s *BaseIDLListener) EnterSimple_declarators(ctx *Simple_declaratorsContext) {}
+
+// ExitSimple_declarators is called when production simple_declarators is exited.
+func (s *BaseIDLListener) ExitSimple_declarators(ctx *Simple_declaratorsContext) {}
 
 // EnterDeclarators is called when production declarators is entered.
 func (s *BaseIDLListener) EnterDeclarators(ctx *DeclaratorsContext) {}
@@ -344,6 +362,12 @@ func (s *BaseIDLListener) EnterSigned_int(ctx *Signed_intContext) {}
 // ExitSigned_int is called when production signed_int is exited.
 func (s *BaseIDLListener) ExitSigned_int(ctx *Signed_intContext) {}
 
+// EnterSigned_tiny_int is called when production signed_tiny_int is entered.
+func (s *BaseIDLListener) EnterSigned_tiny_int(ctx *Signed_tiny_intContext) {}
+
+// ExitSigned_tiny_int is called when production signed_tiny_int is exited.
+func (s *BaseIDLListener) ExitSigned_tiny_int(ctx *Signed_tiny_intContext) {}
+
 // EnterSigned_short_int is called when production signed_short_int is entered.
 func (s *BaseIDLListener) EnterSigned_short_int(ctx *Signed_short_intContext) {}
 
@@ -367,6 +391,12 @@ func (s *BaseIDLListener) EnterUnsigned_int(ctx *Unsigned_intContext) {}
 
 // ExitUnsigned_int is called when production unsigned_int is exited.
 func (s *BaseIDLListener) ExitUnsigned_int(ctx *Unsigned_intContext) {}
+
+// EnterUnsigned_tiny_int is called when production unsigned_tiny_int is entered.
+func (s *BaseIDLListener) EnterUnsigned_tiny_int(ctx *Unsigned_tiny_intContext) {}
+
+// ExitUnsigned_tiny_int is called when production unsigned_tiny_int is exited.
+func (s *BaseIDLListener) ExitUnsigned_tiny_int(ctx *Unsigned_tiny_intContext) {}
 
 // EnterUnsigned_short_int is called when production unsigned_short_int is entered.
 func (s *BaseIDLListener) EnterUnsigned_short_int(ctx *Unsigned_short_intContext) {}
@@ -421,6 +451,78 @@ func (s *BaseIDLListener) EnterObject_type(ctx *Object_typeContext) {}
 
 // ExitObject_type is called when production object_type is exited.
 func (s *BaseIDLListener) ExitObject_type(ctx *Object_typeContext) {}
+
+// EnterAnnotation_decl is called when production annotation_decl is entered.
+func (s *BaseIDLListener) EnterAnnotation_decl(ctx *Annotation_declContext) {}
+
+// ExitAnnotation_decl is called when production annotation_decl is exited.
+func (s *BaseIDLListener) ExitAnnotation_decl(ctx *Annotation_declContext) {}
+
+// EnterAnnotation_def is called when production annotation_def is entered.
+func (s *BaseIDLListener) EnterAnnotation_def(ctx *Annotation_defContext) {}
+
+// ExitAnnotation_def is called when production annotation_def is exited.
+func (s *BaseIDLListener) ExitAnnotation_def(ctx *Annotation_defContext) {}
+
+// EnterAnnotation_header is called when production annotation_header is entered.
+func (s *BaseIDLListener) EnterAnnotation_header(ctx *Annotation_headerContext) {}
+
+// ExitAnnotation_header is called when production annotation_header is exited.
+func (s *BaseIDLListener) ExitAnnotation_header(ctx *Annotation_headerContext) {}
+
+// EnterAnnotation_inheritance_spec is called when production annotation_inheritance_spec is entered.
+func (s *BaseIDLListener) EnterAnnotation_inheritance_spec(ctx *Annotation_inheritance_specContext) {}
+
+// ExitAnnotation_inheritance_spec is called when production annotation_inheritance_spec is exited.
+func (s *BaseIDLListener) ExitAnnotation_inheritance_spec(ctx *Annotation_inheritance_specContext) {}
+
+// EnterAnnotation_body is called when production annotation_body is entered.
+func (s *BaseIDLListener) EnterAnnotation_body(ctx *Annotation_bodyContext) {}
+
+// ExitAnnotation_body is called when production annotation_body is exited.
+func (s *BaseIDLListener) ExitAnnotation_body(ctx *Annotation_bodyContext) {}
+
+// EnterAnnotation_member is called when production annotation_member is entered.
+func (s *BaseIDLListener) EnterAnnotation_member(ctx *Annotation_memberContext) {}
+
+// ExitAnnotation_member is called when production annotation_member is exited.
+func (s *BaseIDLListener) ExitAnnotation_member(ctx *Annotation_memberContext) {}
+
+// EnterAnnotation_forward_dcl is called when production annotation_forward_dcl is entered.
+func (s *BaseIDLListener) EnterAnnotation_forward_dcl(ctx *Annotation_forward_dclContext) {}
+
+// ExitAnnotation_forward_dcl is called when production annotation_forward_dcl is exited.
+func (s *BaseIDLListener) ExitAnnotation_forward_dcl(ctx *Annotation_forward_dclContext) {}
+
+// EnterBitset_type is called when production bitset_type is entered.
+func (s *BaseIDLListener) EnterBitset_type(ctx *Bitset_typeContext) {}
+
+// ExitBitset_type is called when production bitset_type is exited.
+func (s *BaseIDLListener) ExitBitset_type(ctx *Bitset_typeContext) {}
+
+// EnterBitfield is called when production bitfield is entered.
+func (s *BaseIDLListener) EnterBitfield(ctx *BitfieldContext) {}
+
+// ExitBitfield is called when production bitfield is exited.
+func (s *BaseIDLListener) ExitBitfield(ctx *BitfieldContext) {}
+
+// EnterBitfield_spec is called when production bitfield_spec is entered.
+func (s *BaseIDLListener) EnterBitfield_spec(ctx *Bitfield_specContext) {}
+
+// ExitBitfield_spec is called when production bitfield_spec is exited.
+func (s *BaseIDLListener) ExitBitfield_spec(ctx *Bitfield_specContext) {}
+
+// EnterBitmask_type is called when production bitmask_type is entered.
+func (s *BaseIDLListener) EnterBitmask_type(ctx *Bitmask_typeContext) {}
+
+// ExitBitmask_type is called when production bitmask_type is exited.
+func (s *BaseIDLListener) ExitBitmask_type(ctx *Bitmask_typeContext) {}
+
+// EnterBit_values is called when production bit_values is entered.
+func (s *BaseIDLListener) EnterBit_values(ctx *Bit_valuesContext) {}
+
+// ExitBit_values is called when production bit_values is exited.
+func (s *BaseIDLListener) ExitBit_values(ctx *Bit_valuesContext) {}
 
 // EnterStruct_type is called when production struct_type is entered.
 func (s *BaseIDLListener) EnterStruct_type(ctx *Struct_typeContext) {}
@@ -493,6 +595,18 @@ func (s *BaseIDLListener) EnterSequence_type(ctx *Sequence_typeContext) {}
 
 // ExitSequence_type is called when production sequence_type is exited.
 func (s *BaseIDLListener) ExitSequence_type(ctx *Sequence_typeContext) {}
+
+// EnterSet_type is called when production set_type is entered.
+func (s *BaseIDLListener) EnterSet_type(ctx *Set_typeContext) {}
+
+// ExitSet_type is called when production set_type is exited.
+func (s *BaseIDLListener) ExitSet_type(ctx *Set_typeContext) {}
+
+// EnterMap_type is called when production map_type is entered.
+func (s *BaseIDLListener) EnterMap_type(ctx *Map_typeContext) {}
+
+// ExitMap_type is called when production map_type is exited.
+func (s *BaseIDLListener) ExitMap_type(ctx *Map_typeContext) {}
 
 // EnterString_type is called when production string_type is entered.
 func (s *BaseIDLListener) EnterString_type(ctx *String_typeContext) {}
@@ -841,3 +955,33 @@ func (s *BaseIDLListener) EnterEvent_header(ctx *Event_headerContext) {}
 
 // ExitEvent_header is called when production event_header is exited.
 func (s *BaseIDLListener) ExitEvent_header(ctx *Event_headerContext) {}
+
+// EnterAnnapps is called when production annapps is entered.
+func (s *BaseIDLListener) EnterAnnapps(ctx *AnnappsContext) {}
+
+// ExitAnnapps is called when production annapps is exited.
+func (s *BaseIDLListener) ExitAnnapps(ctx *AnnappsContext) {}
+
+// EnterAnnotation_appl is called when production annotation_appl is entered.
+func (s *BaseIDLListener) EnterAnnotation_appl(ctx *Annotation_applContext) {}
+
+// ExitAnnotation_appl is called when production annotation_appl is exited.
+func (s *BaseIDLListener) ExitAnnotation_appl(ctx *Annotation_applContext) {}
+
+// EnterAnnotation_appl_params is called when production annotation_appl_params is entered.
+func (s *BaseIDLListener) EnterAnnotation_appl_params(ctx *Annotation_appl_paramsContext) {}
+
+// ExitAnnotation_appl_params is called when production annotation_appl_params is exited.
+func (s *BaseIDLListener) ExitAnnotation_appl_params(ctx *Annotation_appl_paramsContext) {}
+
+// EnterAnnotation_appl_param is called when production annotation_appl_param is entered.
+func (s *BaseIDLListener) EnterAnnotation_appl_param(ctx *Annotation_appl_paramContext) {}
+
+// ExitAnnotation_appl_param is called when production annotation_appl_param is exited.
+func (s *BaseIDLListener) ExitAnnotation_appl_param(ctx *Annotation_appl_paramContext) {}
+
+// EnterIdentifier is called when production identifier is entered.
+func (s *BaseIDLListener) EnterIdentifier(ctx *IdentifierContext) {}
+
+// ExitIdentifier is called when production identifier is exited.
+func (s *BaseIDLListener) ExitIdentifier(ctx *IdentifierContext) {}

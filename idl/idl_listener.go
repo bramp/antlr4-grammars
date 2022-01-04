@@ -1,4 +1,4 @@
-// Code generated from IDL.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from IDL.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package idl // IDL
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -31,14 +31,17 @@ type IDLListener interface {
 	// EnterInterface_body is called when entering the interface_body production.
 	EnterInterface_body(c *Interface_bodyContext)
 
-	// EnterExport is called when entering the export production.
-	EnterExport(c *ExportContext)
+	// EnterExport_ is called when entering the export_ production.
+	EnterExport_(c *Export_Context)
 
 	// EnterInterface_inheritance_spec is called when entering the interface_inheritance_spec production.
 	EnterInterface_inheritance_spec(c *Interface_inheritance_specContext)
 
 	// EnterInterface_name is called when entering the interface_name production.
 	EnterInterface_name(c *Interface_nameContext)
+
+	// EnterA_scoped_name is called when entering the a_scoped_name production.
+	EnterA_scoped_name(c *A_scoped_nameContext)
 
 	// EnterScoped_name is called when entering the scoped_name production.
 	EnterScoped_name(c *Scoped_nameContext)
@@ -139,6 +142,9 @@ type IDLListener interface {
 	// EnterSimple_type_spec is called when entering the simple_type_spec production.
 	EnterSimple_type_spec(c *Simple_type_specContext)
 
+	// EnterBitfield_type_spec is called when entering the bitfield_type_spec production.
+	EnterBitfield_type_spec(c *Bitfield_type_specContext)
+
 	// EnterBase_type_spec is called when entering the base_type_spec production.
 	EnterBase_type_spec(c *Base_type_specContext)
 
@@ -147,6 +153,9 @@ type IDLListener interface {
 
 	// EnterConstr_type_spec is called when entering the constr_type_spec production.
 	EnterConstr_type_spec(c *Constr_type_specContext)
+
+	// EnterSimple_declarators is called when entering the simple_declarators production.
+	EnterSimple_declarators(c *Simple_declaratorsContext)
 
 	// EnterDeclarators is called when entering the declarators production.
 	EnterDeclarators(c *DeclaratorsContext)
@@ -169,6 +178,9 @@ type IDLListener interface {
 	// EnterSigned_int is called when entering the signed_int production.
 	EnterSigned_int(c *Signed_intContext)
 
+	// EnterSigned_tiny_int is called when entering the signed_tiny_int production.
+	EnterSigned_tiny_int(c *Signed_tiny_intContext)
+
 	// EnterSigned_short_int is called when entering the signed_short_int production.
 	EnterSigned_short_int(c *Signed_short_intContext)
 
@@ -180,6 +192,9 @@ type IDLListener interface {
 
 	// EnterUnsigned_int is called when entering the unsigned_int production.
 	EnterUnsigned_int(c *Unsigned_intContext)
+
+	// EnterUnsigned_tiny_int is called when entering the unsigned_tiny_int production.
+	EnterUnsigned_tiny_int(c *Unsigned_tiny_intContext)
 
 	// EnterUnsigned_short_int is called when entering the unsigned_short_int production.
 	EnterUnsigned_short_int(c *Unsigned_short_intContext)
@@ -207,6 +222,42 @@ type IDLListener interface {
 
 	// EnterObject_type is called when entering the object_type production.
 	EnterObject_type(c *Object_typeContext)
+
+	// EnterAnnotation_decl is called when entering the annotation_decl production.
+	EnterAnnotation_decl(c *Annotation_declContext)
+
+	// EnterAnnotation_def is called when entering the annotation_def production.
+	EnterAnnotation_def(c *Annotation_defContext)
+
+	// EnterAnnotation_header is called when entering the annotation_header production.
+	EnterAnnotation_header(c *Annotation_headerContext)
+
+	// EnterAnnotation_inheritance_spec is called when entering the annotation_inheritance_spec production.
+	EnterAnnotation_inheritance_spec(c *Annotation_inheritance_specContext)
+
+	// EnterAnnotation_body is called when entering the annotation_body production.
+	EnterAnnotation_body(c *Annotation_bodyContext)
+
+	// EnterAnnotation_member is called when entering the annotation_member production.
+	EnterAnnotation_member(c *Annotation_memberContext)
+
+	// EnterAnnotation_forward_dcl is called when entering the annotation_forward_dcl production.
+	EnterAnnotation_forward_dcl(c *Annotation_forward_dclContext)
+
+	// EnterBitset_type is called when entering the bitset_type production.
+	EnterBitset_type(c *Bitset_typeContext)
+
+	// EnterBitfield is called when entering the bitfield production.
+	EnterBitfield(c *BitfieldContext)
+
+	// EnterBitfield_spec is called when entering the bitfield_spec production.
+	EnterBitfield_spec(c *Bitfield_specContext)
+
+	// EnterBitmask_type is called when entering the bitmask_type production.
+	EnterBitmask_type(c *Bitmask_typeContext)
+
+	// EnterBit_values is called when entering the bit_values production.
+	EnterBit_values(c *Bit_valuesContext)
 
 	// EnterStruct_type is called when entering the struct_type production.
 	EnterStruct_type(c *Struct_typeContext)
@@ -243,6 +294,12 @@ type IDLListener interface {
 
 	// EnterSequence_type is called when entering the sequence_type production.
 	EnterSequence_type(c *Sequence_typeContext)
+
+	// EnterSet_type is called when entering the set_type production.
+	EnterSet_type(c *Set_typeContext)
+
+	// EnterMap_type is called when entering the map_type production.
+	EnterMap_type(c *Map_typeContext)
 
 	// EnterString_type is called when entering the string_type production.
 	EnterString_type(c *String_typeContext)
@@ -418,6 +475,21 @@ type IDLListener interface {
 	// EnterEvent_header is called when entering the event_header production.
 	EnterEvent_header(c *Event_headerContext)
 
+	// EnterAnnapps is called when entering the annapps production.
+	EnterAnnapps(c *AnnappsContext)
+
+	// EnterAnnotation_appl is called when entering the annotation_appl production.
+	EnterAnnotation_appl(c *Annotation_applContext)
+
+	// EnterAnnotation_appl_params is called when entering the annotation_appl_params production.
+	EnterAnnotation_appl_params(c *Annotation_appl_paramsContext)
+
+	// EnterAnnotation_appl_param is called when entering the annotation_appl_param production.
+	EnterAnnotation_appl_param(c *Annotation_appl_paramContext)
+
+	// EnterIdentifier is called when entering the identifier production.
+	EnterIdentifier(c *IdentifierContext)
+
 	// ExitSpecification is called when exiting the specification production.
 	ExitSpecification(c *SpecificationContext)
 
@@ -442,14 +514,17 @@ type IDLListener interface {
 	// ExitInterface_body is called when exiting the interface_body production.
 	ExitInterface_body(c *Interface_bodyContext)
 
-	// ExitExport is called when exiting the export production.
-	ExitExport(c *ExportContext)
+	// ExitExport_ is called when exiting the export_ production.
+	ExitExport_(c *Export_Context)
 
 	// ExitInterface_inheritance_spec is called when exiting the interface_inheritance_spec production.
 	ExitInterface_inheritance_spec(c *Interface_inheritance_specContext)
 
 	// ExitInterface_name is called when exiting the interface_name production.
 	ExitInterface_name(c *Interface_nameContext)
+
+	// ExitA_scoped_name is called when exiting the a_scoped_name production.
+	ExitA_scoped_name(c *A_scoped_nameContext)
 
 	// ExitScoped_name is called when exiting the scoped_name production.
 	ExitScoped_name(c *Scoped_nameContext)
@@ -550,6 +625,9 @@ type IDLListener interface {
 	// ExitSimple_type_spec is called when exiting the simple_type_spec production.
 	ExitSimple_type_spec(c *Simple_type_specContext)
 
+	// ExitBitfield_type_spec is called when exiting the bitfield_type_spec production.
+	ExitBitfield_type_spec(c *Bitfield_type_specContext)
+
 	// ExitBase_type_spec is called when exiting the base_type_spec production.
 	ExitBase_type_spec(c *Base_type_specContext)
 
@@ -558,6 +636,9 @@ type IDLListener interface {
 
 	// ExitConstr_type_spec is called when exiting the constr_type_spec production.
 	ExitConstr_type_spec(c *Constr_type_specContext)
+
+	// ExitSimple_declarators is called when exiting the simple_declarators production.
+	ExitSimple_declarators(c *Simple_declaratorsContext)
 
 	// ExitDeclarators is called when exiting the declarators production.
 	ExitDeclarators(c *DeclaratorsContext)
@@ -580,6 +661,9 @@ type IDLListener interface {
 	// ExitSigned_int is called when exiting the signed_int production.
 	ExitSigned_int(c *Signed_intContext)
 
+	// ExitSigned_tiny_int is called when exiting the signed_tiny_int production.
+	ExitSigned_tiny_int(c *Signed_tiny_intContext)
+
 	// ExitSigned_short_int is called when exiting the signed_short_int production.
 	ExitSigned_short_int(c *Signed_short_intContext)
 
@@ -591,6 +675,9 @@ type IDLListener interface {
 
 	// ExitUnsigned_int is called when exiting the unsigned_int production.
 	ExitUnsigned_int(c *Unsigned_intContext)
+
+	// ExitUnsigned_tiny_int is called when exiting the unsigned_tiny_int production.
+	ExitUnsigned_tiny_int(c *Unsigned_tiny_intContext)
 
 	// ExitUnsigned_short_int is called when exiting the unsigned_short_int production.
 	ExitUnsigned_short_int(c *Unsigned_short_intContext)
@@ -618,6 +705,42 @@ type IDLListener interface {
 
 	// ExitObject_type is called when exiting the object_type production.
 	ExitObject_type(c *Object_typeContext)
+
+	// ExitAnnotation_decl is called when exiting the annotation_decl production.
+	ExitAnnotation_decl(c *Annotation_declContext)
+
+	// ExitAnnotation_def is called when exiting the annotation_def production.
+	ExitAnnotation_def(c *Annotation_defContext)
+
+	// ExitAnnotation_header is called when exiting the annotation_header production.
+	ExitAnnotation_header(c *Annotation_headerContext)
+
+	// ExitAnnotation_inheritance_spec is called when exiting the annotation_inheritance_spec production.
+	ExitAnnotation_inheritance_spec(c *Annotation_inheritance_specContext)
+
+	// ExitAnnotation_body is called when exiting the annotation_body production.
+	ExitAnnotation_body(c *Annotation_bodyContext)
+
+	// ExitAnnotation_member is called when exiting the annotation_member production.
+	ExitAnnotation_member(c *Annotation_memberContext)
+
+	// ExitAnnotation_forward_dcl is called when exiting the annotation_forward_dcl production.
+	ExitAnnotation_forward_dcl(c *Annotation_forward_dclContext)
+
+	// ExitBitset_type is called when exiting the bitset_type production.
+	ExitBitset_type(c *Bitset_typeContext)
+
+	// ExitBitfield is called when exiting the bitfield production.
+	ExitBitfield(c *BitfieldContext)
+
+	// ExitBitfield_spec is called when exiting the bitfield_spec production.
+	ExitBitfield_spec(c *Bitfield_specContext)
+
+	// ExitBitmask_type is called when exiting the bitmask_type production.
+	ExitBitmask_type(c *Bitmask_typeContext)
+
+	// ExitBit_values is called when exiting the bit_values production.
+	ExitBit_values(c *Bit_valuesContext)
 
 	// ExitStruct_type is called when exiting the struct_type production.
 	ExitStruct_type(c *Struct_typeContext)
@@ -654,6 +777,12 @@ type IDLListener interface {
 
 	// ExitSequence_type is called when exiting the sequence_type production.
 	ExitSequence_type(c *Sequence_typeContext)
+
+	// ExitSet_type is called when exiting the set_type production.
+	ExitSet_type(c *Set_typeContext)
+
+	// ExitMap_type is called when exiting the map_type production.
+	ExitMap_type(c *Map_typeContext)
 
 	// ExitString_type is called when exiting the string_type production.
 	ExitString_type(c *String_typeContext)
@@ -828,4 +957,19 @@ type IDLListener interface {
 
 	// ExitEvent_header is called when exiting the event_header production.
 	ExitEvent_header(c *Event_headerContext)
+
+	// ExitAnnapps is called when exiting the annapps production.
+	ExitAnnapps(c *AnnappsContext)
+
+	// ExitAnnotation_appl is called when exiting the annotation_appl production.
+	ExitAnnotation_appl(c *Annotation_applContext)
+
+	// ExitAnnotation_appl_params is called when exiting the annotation_appl_params production.
+	ExitAnnotation_appl_params(c *Annotation_appl_paramsContext)
+
+	// ExitAnnotation_appl_param is called when exiting the annotation_appl_param production.
+	ExitAnnotation_appl_param(c *Annotation_appl_paramContext)
+
+	// ExitIdentifier is called when exiting the identifier production.
+	ExitIdentifier(c *IdentifierContext)
 }

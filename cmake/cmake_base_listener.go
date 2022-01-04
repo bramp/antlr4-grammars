@@ -1,4 +1,4 @@
-// Code generated from CMake.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from CMake.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package cmake // CMake
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -20,11 +20,11 @@ func (s *BaseCMakeListener) EnterEveryRule(ctx antlr.ParserRuleContext) {}
 // ExitEveryRule is called when any rule is exited.
 func (s *BaseCMakeListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
 
-// EnterFile is called when production file is entered.
-func (s *BaseCMakeListener) EnterFile(ctx *FileContext) {}
+// EnterFile_ is called when production file_ is entered.
+func (s *BaseCMakeListener) EnterFile_(ctx *File_Context) {}
 
-// ExitFile is called when production file is exited.
-func (s *BaseCMakeListener) ExitFile(ctx *FileContext) {}
+// ExitFile_ is called when production file_ is exited.
+func (s *BaseCMakeListener) ExitFile_(ctx *File_Context) {}
 
 // EnterCommand_invocation is called when production command_invocation is entered.
 func (s *BaseCMakeListener) EnterCommand_invocation(ctx *Command_invocationContext) {}

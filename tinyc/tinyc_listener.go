@@ -1,4 +1,4 @@
-// Code generated from tinyc.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from tinyc.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package tinyc // tinyc
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -22,14 +22,14 @@ type tinycListener interface {
 	// EnterTest is called when entering the test production.
 	EnterTest(c *TestContext)
 
-	// EnterSum is called when entering the sum production.
-	EnterSum(c *SumContext)
+	// EnterSum_ is called when entering the sum_ production.
+	EnterSum_(c *Sum_Context)
 
 	// EnterTerm is called when entering the term production.
 	EnterTerm(c *TermContext)
 
-	// EnterId is called when entering the id production.
-	EnterId(c *IdContext)
+	// EnterId_ is called when entering the id_ production.
+	EnterId_(c *Id_Context)
 
 	// EnterInteger is called when entering the integer production.
 	EnterInteger(c *IntegerContext)
@@ -49,14 +49,14 @@ type tinycListener interface {
 	// ExitTest is called when exiting the test production.
 	ExitTest(c *TestContext)
 
-	// ExitSum is called when exiting the sum production.
-	ExitSum(c *SumContext)
+	// ExitSum_ is called when exiting the sum_ production.
+	ExitSum_(c *Sum_Context)
 
 	// ExitTerm is called when exiting the term production.
 	ExitTerm(c *TermContext)
 
-	// ExitId is called when exiting the id production.
-	ExitId(c *IdContext)
+	// ExitId_ is called when exiting the id_ production.
+	ExitId_(c *Id_Context)
 
 	// ExitInteger is called when exiting the integer production.
 	ExitInteger(c *IntegerContext)

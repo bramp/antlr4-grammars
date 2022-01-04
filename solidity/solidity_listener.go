@@ -1,4 +1,4 @@
-// Code generated from Solidity.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Solidity.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package solidity // Solidity
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -22,17 +22,17 @@ type SolidityListener interface {
 	// EnterVersion is called when entering the version production.
 	EnterVersion(c *VersionContext)
 
-	// EnterVersionOperator is called when entering the versionOperator production.
-	EnterVersionOperator(c *VersionOperatorContext)
-
 	// EnterVersionConstraint is called when entering the versionConstraint production.
 	EnterVersionConstraint(c *VersionConstraintContext)
 
-	// EnterImportDeclaration is called when entering the importDeclaration production.
-	EnterImportDeclaration(c *ImportDeclarationContext)
+	// EnterVersionOperator is called when entering the versionOperator production.
+	EnterVersionOperator(c *VersionOperatorContext)
 
 	// EnterImportDirective is called when entering the importDirective production.
 	EnterImportDirective(c *ImportDirectiveContext)
+
+	// EnterImportDeclaration is called when entering the importDeclaration production.
+	EnterImportDeclaration(c *ImportDeclarationContext)
 
 	// EnterContractDefinition is called when entering the contractDefinition production.
 	EnterContractDefinition(c *ContractDefinitionContext)
@@ -46,23 +46,23 @@ type SolidityListener interface {
 	// EnterStateVariableDeclaration is called when entering the stateVariableDeclaration production.
 	EnterStateVariableDeclaration(c *StateVariableDeclarationContext)
 
+	// EnterOverrideSpecifier is called when entering the overrideSpecifier production.
+	EnterOverrideSpecifier(c *OverrideSpecifierContext)
+
 	// EnterUsingForDeclaration is called when entering the usingForDeclaration production.
 	EnterUsingForDeclaration(c *UsingForDeclarationContext)
 
 	// EnterStructDefinition is called when entering the structDefinition production.
 	EnterStructDefinition(c *StructDefinitionContext)
 
-	// EnterConstructorDefinition is called when entering the constructorDefinition production.
-	EnterConstructorDefinition(c *ConstructorDefinitionContext)
-
 	// EnterModifierDefinition is called when entering the modifierDefinition production.
 	EnterModifierDefinition(c *ModifierDefinitionContext)
 
-	// EnterModifierInvocation is called when entering the modifierInvocation production.
-	EnterModifierInvocation(c *ModifierInvocationContext)
-
 	// EnterFunctionDefinition is called when entering the functionDefinition production.
 	EnterFunctionDefinition(c *FunctionDefinitionContext)
+
+	// EnterFunctionDescriptor is called when entering the functionDescriptor production.
+	EnterFunctionDescriptor(c *FunctionDescriptorContext)
 
 	// EnterReturnParameters is called when entering the returnParameters production.
 	EnterReturnParameters(c *ReturnParametersContext)
@@ -70,14 +70,17 @@ type SolidityListener interface {
 	// EnterModifierList is called when entering the modifierList production.
 	EnterModifierList(c *ModifierListContext)
 
+	// EnterModifierInvocation is called when entering the modifierInvocation production.
+	EnterModifierInvocation(c *ModifierInvocationContext)
+
 	// EnterEventDefinition is called when entering the eventDefinition production.
 	EnterEventDefinition(c *EventDefinitionContext)
 
-	// EnterEnumValue is called when entering the enumValue production.
-	EnterEnumValue(c *EnumValueContext)
-
 	// EnterEnumDefinition is called when entering the enumDefinition production.
 	EnterEnumDefinition(c *EnumDefinitionContext)
+
+	// EnterEnumValue is called when entering the enumValue production.
+	EnterEnumValue(c *EnumValueContext)
 
 	// EnterParameterList is called when entering the parameterList production.
 	EnterParameterList(c *ParameterListContext)
@@ -90,12 +93,6 @@ type SolidityListener interface {
 
 	// EnterEventParameter is called when entering the eventParameter production.
 	EnterEventParameter(c *EventParameterContext)
-
-	// EnterFunctionTypeParameterList is called when entering the functionTypeParameterList production.
-	EnterFunctionTypeParameterList(c *FunctionTypeParameterListContext)
-
-	// EnterFunctionTypeParameter is called when entering the functionTypeParameter production.
-	EnterFunctionTypeParameter(c *FunctionTypeParameterContext)
 
 	// EnterVariableDeclaration is called when entering the variableDeclaration production.
 	EnterVariableDeclaration(c *VariableDeclarationContext)
@@ -130,14 +127,20 @@ type SolidityListener interface {
 	// EnterIfStatement is called when entering the ifStatement production.
 	EnterIfStatement(c *IfStatementContext)
 
+	// EnterTryStatement is called when entering the tryStatement production.
+	EnterTryStatement(c *TryStatementContext)
+
+	// EnterCatchClause is called when entering the catchClause production.
+	EnterCatchClause(c *CatchClauseContext)
+
 	// EnterWhileStatement is called when entering the whileStatement production.
 	EnterWhileStatement(c *WhileStatementContext)
 
-	// EnterSimpleStatement is called when entering the simpleStatement production.
-	EnterSimpleStatement(c *SimpleStatementContext)
-
 	// EnterForStatement is called when entering the forStatement production.
 	EnterForStatement(c *ForStatementContext)
+
+	// EnterSimpleStatement is called when entering the simpleStatement production.
+	EnterSimpleStatement(c *SimpleStatementContext)
 
 	// EnterInlineAssemblyStatement is called when entering the inlineAssemblyStatement production.
 	EnterInlineAssemblyStatement(c *InlineAssemblyStatementContext)
@@ -193,11 +196,17 @@ type SolidityListener interface {
 	// EnterFunctionCall is called when entering the functionCall production.
 	EnterFunctionCall(c *FunctionCallContext)
 
-	// EnterAssemblyBlock is called when entering the assemblyBlock production.
-	EnterAssemblyBlock(c *AssemblyBlockContext)
+	// EnterTupleExpression is called when entering the tupleExpression production.
+	EnterTupleExpression(c *TupleExpressionContext)
+
+	// EnterTypeNameExpression is called when entering the typeNameExpression production.
+	EnterTypeNameExpression(c *TypeNameExpressionContext)
 
 	// EnterAssemblyItem is called when entering the assemblyItem production.
 	EnterAssemblyItem(c *AssemblyItemContext)
+
+	// EnterAssemblyBlock is called when entering the assemblyBlock production.
+	EnterAssemblyBlock(c *AssemblyBlockContext)
 
 	// EnterAssemblyExpression is called when entering the assemblyExpression production.
 	EnterAssemblyExpression(c *AssemblyExpressionContext)
@@ -210,9 +219,6 @@ type SolidityListener interface {
 
 	// EnterAssemblyAssignment is called when entering the assemblyAssignment production.
 	EnterAssemblyAssignment(c *AssemblyAssignmentContext)
-
-	// EnterAssemblyIdentifierOrList is called when entering the assemblyIdentifierOrList production.
-	EnterAssemblyIdentifierOrList(c *AssemblyIdentifierOrListContext)
 
 	// EnterAssemblyIdentifierList is called when entering the assemblyIdentifierList production.
 	EnterAssemblyIdentifierList(c *AssemblyIdentifierListContext)
@@ -244,20 +250,26 @@ type SolidityListener interface {
 	// EnterAssemblyLiteral is called when entering the assemblyLiteral production.
 	EnterAssemblyLiteral(c *AssemblyLiteralContext)
 
+	// EnterAssemblyTypedVariableList is called when entering the assemblyTypedVariableList production.
+	EnterAssemblyTypedVariableList(c *AssemblyTypedVariableListContext)
+
+	// EnterAssemblyType is called when entering the assemblyType production.
+	EnterAssemblyType(c *AssemblyTypeContext)
+
 	// EnterSubAssembly is called when entering the subAssembly production.
 	EnterSubAssembly(c *SubAssemblyContext)
-
-	// EnterTupleExpression is called when entering the tupleExpression production.
-	EnterTupleExpression(c *TupleExpressionContext)
-
-	// EnterElementaryTypeNameExpression is called when entering the elementaryTypeNameExpression production.
-	EnterElementaryTypeNameExpression(c *ElementaryTypeNameExpressionContext)
 
 	// EnterNumberLiteral is called when entering the numberLiteral production.
 	EnterNumberLiteral(c *NumberLiteralContext)
 
 	// EnterIdentifier is called when entering the identifier production.
 	EnterIdentifier(c *IdentifierContext)
+
+	// EnterHexLiteral is called when entering the hexLiteral production.
+	EnterHexLiteral(c *HexLiteralContext)
+
+	// EnterStringLiteral is called when entering the stringLiteral production.
+	EnterStringLiteral(c *StringLiteralContext)
 
 	// ExitSourceUnit is called when exiting the sourceUnit production.
 	ExitSourceUnit(c *SourceUnitContext)
@@ -274,17 +286,17 @@ type SolidityListener interface {
 	// ExitVersion is called when exiting the version production.
 	ExitVersion(c *VersionContext)
 
-	// ExitVersionOperator is called when exiting the versionOperator production.
-	ExitVersionOperator(c *VersionOperatorContext)
-
 	// ExitVersionConstraint is called when exiting the versionConstraint production.
 	ExitVersionConstraint(c *VersionConstraintContext)
 
-	// ExitImportDeclaration is called when exiting the importDeclaration production.
-	ExitImportDeclaration(c *ImportDeclarationContext)
+	// ExitVersionOperator is called when exiting the versionOperator production.
+	ExitVersionOperator(c *VersionOperatorContext)
 
 	// ExitImportDirective is called when exiting the importDirective production.
 	ExitImportDirective(c *ImportDirectiveContext)
+
+	// ExitImportDeclaration is called when exiting the importDeclaration production.
+	ExitImportDeclaration(c *ImportDeclarationContext)
 
 	// ExitContractDefinition is called when exiting the contractDefinition production.
 	ExitContractDefinition(c *ContractDefinitionContext)
@@ -298,23 +310,23 @@ type SolidityListener interface {
 	// ExitStateVariableDeclaration is called when exiting the stateVariableDeclaration production.
 	ExitStateVariableDeclaration(c *StateVariableDeclarationContext)
 
+	// ExitOverrideSpecifier is called when exiting the overrideSpecifier production.
+	ExitOverrideSpecifier(c *OverrideSpecifierContext)
+
 	// ExitUsingForDeclaration is called when exiting the usingForDeclaration production.
 	ExitUsingForDeclaration(c *UsingForDeclarationContext)
 
 	// ExitStructDefinition is called when exiting the structDefinition production.
 	ExitStructDefinition(c *StructDefinitionContext)
 
-	// ExitConstructorDefinition is called when exiting the constructorDefinition production.
-	ExitConstructorDefinition(c *ConstructorDefinitionContext)
-
 	// ExitModifierDefinition is called when exiting the modifierDefinition production.
 	ExitModifierDefinition(c *ModifierDefinitionContext)
 
-	// ExitModifierInvocation is called when exiting the modifierInvocation production.
-	ExitModifierInvocation(c *ModifierInvocationContext)
-
 	// ExitFunctionDefinition is called when exiting the functionDefinition production.
 	ExitFunctionDefinition(c *FunctionDefinitionContext)
+
+	// ExitFunctionDescriptor is called when exiting the functionDescriptor production.
+	ExitFunctionDescriptor(c *FunctionDescriptorContext)
 
 	// ExitReturnParameters is called when exiting the returnParameters production.
 	ExitReturnParameters(c *ReturnParametersContext)
@@ -322,14 +334,17 @@ type SolidityListener interface {
 	// ExitModifierList is called when exiting the modifierList production.
 	ExitModifierList(c *ModifierListContext)
 
+	// ExitModifierInvocation is called when exiting the modifierInvocation production.
+	ExitModifierInvocation(c *ModifierInvocationContext)
+
 	// ExitEventDefinition is called when exiting the eventDefinition production.
 	ExitEventDefinition(c *EventDefinitionContext)
 
-	// ExitEnumValue is called when exiting the enumValue production.
-	ExitEnumValue(c *EnumValueContext)
-
 	// ExitEnumDefinition is called when exiting the enumDefinition production.
 	ExitEnumDefinition(c *EnumDefinitionContext)
+
+	// ExitEnumValue is called when exiting the enumValue production.
+	ExitEnumValue(c *EnumValueContext)
 
 	// ExitParameterList is called when exiting the parameterList production.
 	ExitParameterList(c *ParameterListContext)
@@ -342,12 +357,6 @@ type SolidityListener interface {
 
 	// ExitEventParameter is called when exiting the eventParameter production.
 	ExitEventParameter(c *EventParameterContext)
-
-	// ExitFunctionTypeParameterList is called when exiting the functionTypeParameterList production.
-	ExitFunctionTypeParameterList(c *FunctionTypeParameterListContext)
-
-	// ExitFunctionTypeParameter is called when exiting the functionTypeParameter production.
-	ExitFunctionTypeParameter(c *FunctionTypeParameterContext)
 
 	// ExitVariableDeclaration is called when exiting the variableDeclaration production.
 	ExitVariableDeclaration(c *VariableDeclarationContext)
@@ -382,14 +391,20 @@ type SolidityListener interface {
 	// ExitIfStatement is called when exiting the ifStatement production.
 	ExitIfStatement(c *IfStatementContext)
 
+	// ExitTryStatement is called when exiting the tryStatement production.
+	ExitTryStatement(c *TryStatementContext)
+
+	// ExitCatchClause is called when exiting the catchClause production.
+	ExitCatchClause(c *CatchClauseContext)
+
 	// ExitWhileStatement is called when exiting the whileStatement production.
 	ExitWhileStatement(c *WhileStatementContext)
 
-	// ExitSimpleStatement is called when exiting the simpleStatement production.
-	ExitSimpleStatement(c *SimpleStatementContext)
-
 	// ExitForStatement is called when exiting the forStatement production.
 	ExitForStatement(c *ForStatementContext)
+
+	// ExitSimpleStatement is called when exiting the simpleStatement production.
+	ExitSimpleStatement(c *SimpleStatementContext)
 
 	// ExitInlineAssemblyStatement is called when exiting the inlineAssemblyStatement production.
 	ExitInlineAssemblyStatement(c *InlineAssemblyStatementContext)
@@ -445,11 +460,17 @@ type SolidityListener interface {
 	// ExitFunctionCall is called when exiting the functionCall production.
 	ExitFunctionCall(c *FunctionCallContext)
 
-	// ExitAssemblyBlock is called when exiting the assemblyBlock production.
-	ExitAssemblyBlock(c *AssemblyBlockContext)
+	// ExitTupleExpression is called when exiting the tupleExpression production.
+	ExitTupleExpression(c *TupleExpressionContext)
+
+	// ExitTypeNameExpression is called when exiting the typeNameExpression production.
+	ExitTypeNameExpression(c *TypeNameExpressionContext)
 
 	// ExitAssemblyItem is called when exiting the assemblyItem production.
 	ExitAssemblyItem(c *AssemblyItemContext)
+
+	// ExitAssemblyBlock is called when exiting the assemblyBlock production.
+	ExitAssemblyBlock(c *AssemblyBlockContext)
 
 	// ExitAssemblyExpression is called when exiting the assemblyExpression production.
 	ExitAssemblyExpression(c *AssemblyExpressionContext)
@@ -462,9 +483,6 @@ type SolidityListener interface {
 
 	// ExitAssemblyAssignment is called when exiting the assemblyAssignment production.
 	ExitAssemblyAssignment(c *AssemblyAssignmentContext)
-
-	// ExitAssemblyIdentifierOrList is called when exiting the assemblyIdentifierOrList production.
-	ExitAssemblyIdentifierOrList(c *AssemblyIdentifierOrListContext)
 
 	// ExitAssemblyIdentifierList is called when exiting the assemblyIdentifierList production.
 	ExitAssemblyIdentifierList(c *AssemblyIdentifierListContext)
@@ -496,18 +514,24 @@ type SolidityListener interface {
 	// ExitAssemblyLiteral is called when exiting the assemblyLiteral production.
 	ExitAssemblyLiteral(c *AssemblyLiteralContext)
 
+	// ExitAssemblyTypedVariableList is called when exiting the assemblyTypedVariableList production.
+	ExitAssemblyTypedVariableList(c *AssemblyTypedVariableListContext)
+
+	// ExitAssemblyType is called when exiting the assemblyType production.
+	ExitAssemblyType(c *AssemblyTypeContext)
+
 	// ExitSubAssembly is called when exiting the subAssembly production.
 	ExitSubAssembly(c *SubAssemblyContext)
-
-	// ExitTupleExpression is called when exiting the tupleExpression production.
-	ExitTupleExpression(c *TupleExpressionContext)
-
-	// ExitElementaryTypeNameExpression is called when exiting the elementaryTypeNameExpression production.
-	ExitElementaryTypeNameExpression(c *ElementaryTypeNameExpressionContext)
 
 	// ExitNumberLiteral is called when exiting the numberLiteral production.
 	ExitNumberLiteral(c *NumberLiteralContext)
 
 	// ExitIdentifier is called when exiting the identifier production.
 	ExitIdentifier(c *IdentifierContext)
+
+	// ExitHexLiteral is called when exiting the hexLiteral production.
+	ExitHexLiteral(c *HexLiteralContext)
+
+	// ExitStringLiteral is called when exiting the stringLiteral production.
+	ExitStringLiteral(c *StringLiteralContext)
 }

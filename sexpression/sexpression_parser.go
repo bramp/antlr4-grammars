@@ -1,4 +1,4 @@
-// Code generated from sexpression.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from sexpression.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package sexpression // sexpression
 import (
@@ -32,9 +32,6 @@ var parserATN = []uint16{
 	34, 32, 3, 2, 2, 2, 35, 36, 7, 8, 2, 2, 36, 7, 3, 2, 2, 2, 37, 38, 9, 2,
 	2, 2, 38, 9, 3, 2, 2, 2, 5, 13, 26, 32,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "", "", "", "'('", "')'", "'.'",
 }
@@ -43,23 +40,27 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"sexpr", "item", "list", "atom",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"sexpr", "item", "list_", "atom",
 }
 
 type sexpressionParser struct {
 	*antlr.BaseParser
 }
 
+// NewsexpressionParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *sexpressionParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewsexpressionParser(input antlr.TokenStream) *sexpressionParser {
 	this := new(sexpressionParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -87,7 +88,7 @@ const (
 const (
 	sexpressionParserRULE_sexpr = 0
 	sexpressionParserRULE_item  = 1
-	sexpressionParserRULE_list  = 2
+	sexpressionParserRULE_list_ = 2
 	sexpressionParserRULE_atom  = 3
 )
 
@@ -177,6 +178,9 @@ func (s *SexprContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *sexpressionParser) Sexpr() (localctx ISexprContext) {
+	this := p
+	_ = this
+
 	localctx = NewSexprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, sexpressionParserRULE_sexpr)
 	var _la int
@@ -268,14 +272,14 @@ func (s *ItemContext) Atom() IAtomContext {
 	return t.(IAtomContext)
 }
 
-func (s *ItemContext) List() IListContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IListContext)(nil)).Elem(), 0)
+func (s *ItemContext) List_() IList_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IList_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IListContext)
+	return t.(IList_Context)
 }
 
 func (s *ItemContext) LPAREN() antlr.TerminalNode {
@@ -334,6 +338,9 @@ func (s *ItemContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *sexpressionParser) Item() (localctx IItemContext) {
+	this := p
+	_ = this
+
 	localctx = NewItemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, sexpressionParserRULE_item)
 
@@ -367,7 +374,7 @@ func (p *sexpressionParser) Item() (localctx IItemContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(17)
-			p.List()
+			p.List_()
 		}
 
 	case 3:
@@ -398,53 +405,53 @@ func (p *sexpressionParser) Item() (localctx IItemContext) {
 	return localctx
 }
 
-// IListContext is an interface to support dynamic dispatch.
-type IListContext interface {
+// IList_Context is an interface to support dynamic dispatch.
+type IList_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsListContext differentiates from other interfaces.
-	IsListContext()
+	// IsList_Context differentiates from other interfaces.
+	IsList_Context()
 }
 
-type ListContext struct {
+type List_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyListContext() *ListContext {
-	var p = new(ListContext)
+func NewEmptyList_Context() *List_Context {
+	var p = new(List_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = sexpressionParserRULE_list
+	p.RuleIndex = sexpressionParserRULE_list_
 	return p
 }
 
-func (*ListContext) IsListContext() {}
+func (*List_Context) IsList_Context() {}
 
-func NewListContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ListContext {
-	var p = new(ListContext)
+func NewList_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *List_Context {
+	var p = new(List_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = sexpressionParserRULE_list
+	p.RuleIndex = sexpressionParserRULE_list_
 
 	return p
 }
 
-func (s *ListContext) GetParser() antlr.Parser { return s.parser }
+func (s *List_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *ListContext) LPAREN() antlr.TerminalNode {
+func (s *List_Context) LPAREN() antlr.TerminalNode {
 	return s.GetToken(sexpressionParserLPAREN, 0)
 }
 
-func (s *ListContext) RPAREN() antlr.TerminalNode {
+func (s *List_Context) RPAREN() antlr.TerminalNode {
 	return s.GetToken(sexpressionParserRPAREN, 0)
 }
 
-func (s *ListContext) AllItem() []IItemContext {
+func (s *List_Context) AllItem() []IItemContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IItemContext)(nil)).Elem())
 	var tst = make([]IItemContext, len(ts))
 
@@ -457,7 +464,7 @@ func (s *ListContext) AllItem() []IItemContext {
 	return tst
 }
 
-func (s *ListContext) Item(i int) IItemContext {
+func (s *List_Context) Item(i int) IItemContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IItemContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -467,29 +474,32 @@ func (s *ListContext) Item(i int) IItemContext {
 	return t.(IItemContext)
 }
 
-func (s *ListContext) GetRuleContext() antlr.RuleContext {
+func (s *List_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ListContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *List_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ListContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *List_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(sexpressionListener); ok {
-		listenerT.EnterList(s)
+		listenerT.EnterList_(s)
 	}
 }
 
-func (s *ListContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *List_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(sexpressionListener); ok {
-		listenerT.ExitList(s)
+		listenerT.ExitList_(s)
 	}
 }
 
-func (p *sexpressionParser) List() (localctx IListContext) {
-	localctx = NewListContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, sexpressionParserRULE_list)
+func (p *sexpressionParser) List_() (localctx IList_Context) {
+	this := p
+	_ = this
+
+	localctx = NewList_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 4, sexpressionParserRULE_list_)
 	var _la int
 
 	defer func() {
@@ -610,6 +620,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *sexpressionParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, sexpressionParserRULE_atom)
 	var _la int

@@ -1,4 +1,4 @@
-// Code generated from emailaddress.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from emailaddress.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package emailaddress // emailaddress
 import (
@@ -86,9 +86,6 @@ var parserATN = []uint16{
 	2, 2, 21, 44, 51, 60, 66, 85, 93, 98, 105, 109, 114, 119, 124, 129, 137,
 	139, 147, 149, 158, 160,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "':'", "';'", "'<'", "'>'", "'@'", "'.'", "'\\'", "'['", "']'", "'''",
 	"'('", "')'", "", "", "", "", "'\n'", "'\r'", "' '", "'\t'", "'\r\n'",
@@ -105,21 +102,25 @@ var ruleNames = []string{
 	"domain", "subdomain", "domainref", "phrase", "word", "lwspchar", "lwsp",
 	"delimeters", "atom", "quotedpair", "domainliteral", "quotedstring", "comment",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type emailaddressParser struct {
 	*antlr.BaseParser
 }
 
+// NewemailaddressParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *emailaddressParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewemailaddressParser(input antlr.TokenStream) *emailaddressParser {
 	this := new(emailaddressParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -265,6 +266,9 @@ func (s *EmailaddressContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Emailaddress() (localctx IEmailaddressContext) {
+	this := p
+	_ = this
+
 	localctx = NewEmailaddressContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, emailaddressParserRULE_emailaddress)
 
@@ -398,6 +402,9 @@ func (s *GroupContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Group() (localctx IGroupContext) {
+	this := p
+	_ = this
+
 	localctx = NewGroupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, emailaddressParserRULE_group)
 	var _la int
@@ -538,6 +545,9 @@ func (s *MailboxContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Mailbox() (localctx IMailboxContext) {
+	this := p
+	_ = this
+
 	localctx = NewMailboxContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, emailaddressParserRULE_mailbox)
 
@@ -675,6 +685,9 @@ func (s *RouteaddrContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Routeaddr() (localctx IRouteaddrContext) {
+	this := p
+	_ = this
+
 	localctx = NewRouteaddrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, emailaddressParserRULE_routeaddr)
 	var _la int
@@ -795,6 +808,9 @@ func (s *RouteContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Route() (localctx IRouteContext) {
+	this := p
+	_ = this
+
 	localctx = NewRouteContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, emailaddressParserRULE_route)
 
@@ -910,6 +926,9 @@ func (s *AddrspecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Addrspec() (localctx IAddrspecContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddrspecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, emailaddressParserRULE_addrspec)
 
@@ -1028,6 +1047,9 @@ func (s *LocalpartContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Localpart() (localctx ILocalpartContext) {
+	this := p
+	_ = this
+
 	localctx = NewLocalpartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, emailaddressParserRULE_localpart)
 	var _la int
@@ -1157,6 +1179,9 @@ func (s *DomainContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Domain() (localctx IDomainContext) {
+	this := p
+	_ = this
+
 	localctx = NewDomainContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, emailaddressParserRULE_domain)
 	var _la int
@@ -1283,6 +1308,9 @@ func (s *SubdomainContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Subdomain() (localctx ISubdomainContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubdomainContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, emailaddressParserRULE_subdomain)
 
@@ -1396,6 +1424,9 @@ func (s *DomainrefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Domainref() (localctx IDomainrefContext) {
+	this := p
+	_ = this
+
 	localctx = NewDomainrefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, emailaddressParserRULE_domainref)
 
@@ -1506,6 +1537,9 @@ func (s *PhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Phrase() (localctx IPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, emailaddressParserRULE_phrase)
 	var _la int
@@ -1624,6 +1658,9 @@ func (s *WordContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Word() (localctx IWordContext) {
+	this := p
+	_ = this
+
 	localctx = NewWordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, emailaddressParserRULE_word)
 
@@ -1735,6 +1772,9 @@ func (s *LwspcharContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Lwspchar() (localctx ILwspcharContext) {
+	this := p
+	_ = this
+
 	localctx = NewLwspcharContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, emailaddressParserRULE_lwspchar)
 	var _la int
@@ -1861,6 +1901,9 @@ func (s *LwspContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Lwsp() (localctx ILwspContext) {
+	this := p
+	_ = this
+
 	localctx = NewLwspContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, emailaddressParserRULE_lwsp)
 	var _la int
@@ -1994,6 +2037,9 @@ func (s *DelimetersContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Delimeters() (localctx IDelimetersContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelimetersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, emailaddressParserRULE_delimeters)
 
@@ -2112,6 +2158,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, emailaddressParserRULE_atom)
 
@@ -2220,6 +2269,9 @@ func (s *QuotedpairContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Quotedpair() (localctx IQuotedpairContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuotedpairContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, emailaddressParserRULE_quotedpair)
 
@@ -2342,6 +2394,9 @@ func (s *DomainliteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Domainliteral() (localctx IDomainliteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewDomainliteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, emailaddressParserRULE_domainliteral)
 	var _la int
@@ -2494,6 +2549,9 @@ func (s *QuotedstringContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Quotedstring() (localctx IQuotedstringContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuotedstringContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, emailaddressParserRULE_quotedstring)
 	var _la int
@@ -2669,6 +2727,9 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *emailaddressParser) Comment() (localctx ICommentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, emailaddressParserRULE_comment)
 	var _la int

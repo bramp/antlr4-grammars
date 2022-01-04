@@ -1,4 +1,4 @@
-// Code generated from redcode.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from redcode.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package redcode // redcode
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -20,11 +20,11 @@ func (s *BaseredcodeListener) EnterEveryRule(ctx antlr.ParserRuleContext) {}
 // ExitEveryRule is called when any rule is exited.
 func (s *BaseredcodeListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
 
-// EnterFile is called when production file is entered.
-func (s *BaseredcodeListener) EnterFile(ctx *FileContext) {}
+// EnterFile_ is called when production file_ is entered.
+func (s *BaseredcodeListener) EnterFile_(ctx *File_Context) {}
 
-// ExitFile is called when production file is exited.
-func (s *BaseredcodeListener) ExitFile(ctx *FileContext) {}
+// ExitFile_ is called when production file_ is exited.
+func (s *BaseredcodeListener) ExitFile_(ctx *File_Context) {}
 
 // EnterLine is called when production line is entered.
 func (s *BaseredcodeListener) EnterLine(ctx *LineContext) {}

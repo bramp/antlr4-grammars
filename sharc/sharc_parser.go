@@ -1,4 +1,4 @@
-// Code generated from SHARCParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from SHARCParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package sharc // SHARCParser
 import (
@@ -816,9 +816,6 @@ var parserATN = []uint16{
 	1377, 1387, 1408, 1419, 1422, 1436, 1450, 1459, 1483, 1493, 1515, 1519,
 	1525, 1529, 1547, 1597,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "", "", "", "'_ADI_'", "'_DATE_'", "'_FILE'", "'.align'", "'.compress'",
 	"'.elif'", "'.else'", "'.endif'", "'.extern'", "'.file'", "'.file_attr'",
@@ -929,7 +926,7 @@ var symbolicNames = []string{
 	"CODE", "DATA", "DATA64", "DMAONLY", "SECTION", "SECTION_INFO", "STMT",
 	"ADDR", "BIT_DATA", "JUMP_INT", "JUMP_PC", "JUMP_MD", "MODIFIER", "MULTI_MOD",
 	"LABLE", "VARDEF", "ARRDEF", "DM_ACCESS", "PM_ACCESS", "CONDITION", "IF_STMT",
-	"VALUE_EXP", "NULL", "CHAR_LITERAL", "STR_LITERAL", "DIRECTIVE", "NEGATE",
+	"VALUE_EXP", "NULL_", "CHAR_LITERAL", "STR_LITERAL", "DIRECTIVE", "NEGATE",
 	"ID", "COMMENT",
 }
 
@@ -965,21 +962,25 @@ var ruleNames = []string{
 	"multi_mod1_", "multi_mod2", "multi_mod2_", "r3_0", "r7_4", "r11_8", "r15_12",
 	"f3_0", "f7_4", "f11_8", "f15_12", "addr", "mrf", "mrb",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type SHARCParser struct {
 	*antlr.BaseParser
 }
 
+// NewSHARCParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *SHARCParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewSHARCParser(input antlr.TokenStream) *SHARCParser {
 	this := new(SHARCParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -1413,7 +1414,7 @@ const (
 	SHARCParserCONDITION           = 417
 	SHARCParserIF_STMT             = 418
 	SHARCParserVALUE_EXP           = 419
-	SHARCParserNULL                = 420
+	SHARCParserNULL_               = 420
 	SHARCParserCHAR_LITERAL        = 421
 	SHARCParserSTR_LITERAL         = 422
 	SHARCParserDIRECTIVE           = 423
@@ -1672,6 +1673,9 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Prog() (localctx IProgContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, SHARCParserRULE_prog)
 	var _la int
@@ -1800,6 +1804,9 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, SHARCParserRULE_statement)
 	var _la int
@@ -1972,6 +1979,9 @@ func (s *Stmt_atomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Stmt_atom() (localctx IStmt_atomContext) {
+	this := p
+	_ = this
+
 	localctx = NewStmt_atomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, SHARCParserRULE_stmt_atom)
 
@@ -2114,6 +2124,9 @@ func (s *SecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Sec() (localctx ISecContext) {
+	this := p
+	_ = this
+
 	localctx = NewSecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, SHARCParserRULE_sec)
 
@@ -2227,6 +2240,9 @@ func (s *SegContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Seg() (localctx ISegContext) {
+	this := p
+	_ = this
+
 	localctx = NewSegContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, SHARCParserRULE_seg)
 
@@ -2326,6 +2342,9 @@ func (s *End_segContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) End_seg() (localctx IEnd_segContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnd_segContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, SHARCParserRULE_end_seg)
 
@@ -2443,6 +2462,9 @@ func (s *Seg_qualifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Seg_qualifier() (localctx ISeg_qualifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewSeg_qualifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, SHARCParserRULE_seg_qualifier)
 
@@ -2622,6 +2644,9 @@ func (s *Seg_qualifier1Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Seg_qualifier1() (localctx ISeg_qualifier1Context) {
+	this := p
+	_ = this
+
 	localctx = NewSeg_qualifier1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, SHARCParserRULE_seg_qualifier1)
 
@@ -2742,6 +2767,9 @@ func (s *Seg_qualifier2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Seg_qualifier2() (localctx ISeg_qualifier2Context) {
+	this := p
+	_ = this
+
 	localctx = NewSeg_qualifier2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, SHARCParserRULE_seg_qualifier2)
 
@@ -2841,6 +2869,9 @@ func (s *Seg_qualifier3Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Seg_qualifier3() (localctx ISeg_qualifier3Context) {
+	this := p
+	_ = this
+
 	localctx = NewSeg_qualifier3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, SHARCParserRULE_seg_qualifier3)
 
@@ -2940,6 +2971,9 @@ func (s *Seg_qualifier_1Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Seg_qualifier_1() (localctx ISeg_qualifier_1Context) {
+	this := p
+	_ = this
+
 	localctx = NewSeg_qualifier_1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, SHARCParserRULE_seg_qualifier_1)
 	var _la int
@@ -3047,6 +3081,9 @@ func (s *Seg_qualifier_2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Seg_qualifier_2() (localctx ISeg_qualifier_2Context) {
+	this := p
+	_ = this
+
 	localctx = NewSeg_qualifier_2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, SHARCParserRULE_seg_qualifier_2)
 	var _la int
@@ -3154,6 +3191,9 @@ func (s *Seg_qualifier_3Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Seg_qualifier_3() (localctx ISeg_qualifier_3Context) {
+	this := p
+	_ = this
+
 	localctx = NewSeg_qualifier_3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, SHARCParserRULE_seg_qualifier_3)
 	var _la int
@@ -3319,6 +3359,9 @@ func (s *StmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Stmt() (localctx IStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, SHARCParserRULE_stmt)
 
@@ -3508,6 +3551,9 @@ func (s *DeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Declaration() (localctx IDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, SHARCParserRULE_declaration)
 
@@ -3645,6 +3691,9 @@ func (s *Declaration_exp1Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Declaration_exp1() (localctx IDeclaration_exp1Context) {
+	this := p
+	_ = this
+
 	localctx = NewDeclaration_exp1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, SHARCParserRULE_declaration_exp1)
 	var _la int
@@ -3786,6 +3835,9 @@ func (s *Declaration_exp2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Declaration_exp2() (localctx IDeclaration_exp2Context) {
+	this := p
+	_ = this
+
 	localctx = NewDeclaration_exp2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, SHARCParserRULE_declaration_exp2)
 	var _la int
@@ -3922,6 +3974,9 @@ func (s *Declaration_exp3Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Declaration_exp3() (localctx IDeclaration_exp3Context) {
+	this := p
+	_ = this
+
 	localctx = NewDeclaration_exp3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, SHARCParserRULE_declaration_exp3)
 	var _la int
@@ -4069,6 +4124,9 @@ func (s *Declaration_exp4Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Declaration_exp4() (localctx IDeclaration_exp4Context) {
+	this := p
+	_ = this
+
 	localctx = NewDeclaration_exp4Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, SHARCParserRULE_declaration_exp4)
 	var _la int
@@ -4202,6 +4260,9 @@ func (s *Declaration_exp5Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Declaration_exp5() (localctx IDeclaration_exp5Context) {
+	this := p
+	_ = this
+
 	localctx = NewDeclaration_exp5Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, SHARCParserRULE_declaration_exp5)
 
@@ -4332,6 +4393,9 @@ func (s *Declaration_exp_f1Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Declaration_exp_f1() (localctx IDeclaration_exp_f1Context) {
+	this := p
+	_ = this
+
 	localctx = NewDeclaration_exp_f1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, SHARCParserRULE_declaration_exp_f1)
 	var _la int
@@ -4472,6 +4536,9 @@ func (s *Declaration_exp_f2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Declaration_exp_f2() (localctx IDeclaration_exp_f2Context) {
+	this := p
+	_ = this
+
 	localctx = NewDeclaration_exp_f2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, SHARCParserRULE_declaration_exp_f2)
 
@@ -4597,6 +4664,9 @@ func (s *InitExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) InitExpression() (localctx IInitExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewInitExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, SHARCParserRULE_initExpression)
 
@@ -4720,6 +4790,9 @@ func (s *Var_addrContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Var_addr() (localctx IVar_addrContext) {
+	this := p
+	_ = this
+
 	localctx = NewVar_addrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, SHARCParserRULE_var_addr)
 
@@ -4849,6 +4922,9 @@ func (s *Value_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Value_exp() (localctx IValue_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewValue_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, SHARCParserRULE_value_exp)
 
@@ -5015,6 +5091,9 @@ func (s *Value_exp2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Value_exp2() (localctx IValue_exp2Context) {
+	this := p
+	_ = this
+
 	localctx = NewValue_exp2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, SHARCParserRULE_value_exp2)
 	var _la int
@@ -5153,6 +5232,9 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Term() (localctx ITermContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, SHARCParserRULE_term)
 	var _la int
@@ -5283,6 +5365,9 @@ func (s *FactorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Factor() (localctx IFactorContext) {
+	this := p
+	_ = this
+
 	localctx = NewFactorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, SHARCParserRULE_factor)
 
@@ -5412,6 +5497,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, SHARCParserRULE_atom)
 
@@ -5572,6 +5660,9 @@ func (s *ComputeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Compute() (localctx IComputeContext) {
+	this := p
+	_ = this
+
 	localctx = NewComputeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, SHARCParserRULE_compute)
 
@@ -5717,6 +5808,9 @@ func (s *If_compute_movContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) If_compute_mov() (localctx IIf_compute_movContext) {
+	this := p
+	_ = this
+
 	localctx = NewIf_compute_movContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, SHARCParserRULE_if_compute_mov)
 
@@ -5832,6 +5926,9 @@ func (s *If_compute_mov_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) If_compute_mov_exp() (localctx IIf_compute_mov_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewIf_compute_mov_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, SHARCParserRULE_if_compute_mov_exp)
 
@@ -6056,6 +6153,9 @@ func (s *Compute_mov_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Compute_mov_exp() (localctx ICompute_mov_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewCompute_mov_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, SHARCParserRULE_compute_mov_exp)
 
@@ -6247,6 +6347,9 @@ func (s *Mov_exp_1Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_1() (localctx IMov_exp_1Context) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, SHARCParserRULE_mov_exp_1)
 
@@ -6366,6 +6469,9 @@ func (s *Mov_exp_1_1Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_1_1() (localctx IMov_exp_1_1Context) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_1_1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, SHARCParserRULE_mov_exp_1_1)
 
@@ -6509,6 +6615,9 @@ func (s *Mov_exp_1_2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_1_2() (localctx IMov_exp_1_2Context) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_1_2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, SHARCParserRULE_mov_exp_1_2)
 
@@ -6662,6 +6771,9 @@ func (s *Mov_exp_3aContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_3a() (localctx IMov_exp_3aContext) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_3aContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, SHARCParserRULE_mov_exp_3a)
 
@@ -6806,6 +6918,9 @@ func (s *Mov_exp_3bContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_3b() (localctx IMov_exp_3bContext) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_3bContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, SHARCParserRULE_mov_exp_3b)
 
@@ -6950,6 +7065,9 @@ func (s *Mov_exp_3cContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_3c() (localctx IMov_exp_3cContext) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_3cContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, SHARCParserRULE_mov_exp_3c)
 
@@ -7094,6 +7212,9 @@ func (s *Mov_exp_3dContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_3d() (localctx IMov_exp_3dContext) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_3dContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, SHARCParserRULE_mov_exp_3d)
 
@@ -7238,6 +7359,9 @@ func (s *Mov_exp_4aContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_4a() (localctx IMov_exp_4aContext) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_4aContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, SHARCParserRULE_mov_exp_4a)
 
@@ -7358,6 +7482,9 @@ func (s *Mov_exp_4bContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_4b() (localctx IMov_exp_4bContext) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_4bContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, SHARCParserRULE_mov_exp_4b)
 
@@ -7479,6 +7606,9 @@ func (s *Mov_exp_4cContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_4c() (localctx IMov_exp_4cContext) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_4cContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, SHARCParserRULE_mov_exp_4c)
 
@@ -7599,6 +7729,9 @@ func (s *Mov_exp_4dContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_4d() (localctx IMov_exp_4dContext) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_4dContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, SHARCParserRULE_mov_exp_4d)
 
@@ -7710,6 +7843,9 @@ func (s *Mov_exp_5Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_5() (localctx IMov_exp_5Context) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_5Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, SHARCParserRULE_mov_exp_5)
 
@@ -7839,6 +7975,9 @@ func (s *Mov_exp_6aContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_6a() (localctx IMov_exp_6aContext) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_6aContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, SHARCParserRULE_mov_exp_6a)
 
@@ -7983,6 +8122,9 @@ func (s *Mov_exp_6bContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_6b() (localctx IMov_exp_6bContext) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_6bContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, SHARCParserRULE_mov_exp_6b)
 
@@ -8149,6 +8291,9 @@ func (s *Mov_exp_7Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mov_exp_7() (localctx IMov_exp_7Context) {
+	this := p
+	_ = this
+
 	localctx = NewMov_exp_7Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, SHARCParserRULE_mov_exp_7)
 
@@ -8316,6 +8461,9 @@ func (s *Mem_addr_ia_mbContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_ia_mb() (localctx IMem_addr_ia_mbContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_ia_mbContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, SHARCParserRULE_mem_addr_ia_mb)
 
@@ -8451,6 +8599,9 @@ func (s *Mem_addr_ic_mdContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_ic_md() (localctx IMem_addr_ic_mdContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_ic_mdContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, SHARCParserRULE_mem_addr_ic_md)
 
@@ -8586,6 +8737,9 @@ func (s *Mem_addr_md_icContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_md_ic() (localctx IMem_addr_md_icContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_md_icContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, SHARCParserRULE_mem_addr_md_ic)
 
@@ -8721,6 +8875,9 @@ func (s *Mem_addr_mb_iaContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_mb_ia() (localctx IMem_addr_mb_iaContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_mb_iaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, SHARCParserRULE_mem_addr_mb_ia)
 
@@ -8856,6 +9013,9 @@ func (s *Mem_addr_ia_intContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_ia_int() (localctx IMem_addr_ia_intContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_ia_intContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, SHARCParserRULE_mem_addr_ia_int)
 
@@ -8991,6 +9151,9 @@ func (s *Mem_addr_ic_intContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_ic_int() (localctx IMem_addr_ic_intContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_ic_intContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, SHARCParserRULE_mem_addr_ic_int)
 
@@ -9126,6 +9289,9 @@ func (s *Mem_addr_int_iaContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_int_ia() (localctx IMem_addr_int_iaContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_int_iaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 108, SHARCParserRULE_mem_addr_int_ia)
 
@@ -9261,6 +9427,9 @@ func (s *Mem_addr_int_icContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_int_ic() (localctx IMem_addr_int_icContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_int_icContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, SHARCParserRULE_mem_addr_int_ic)
 
@@ -9363,6 +9532,9 @@ func (s *Mem_addr_intContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_int() (localctx IMem_addr_intContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_intContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, SHARCParserRULE_mem_addr_int)
 
@@ -9477,6 +9649,9 @@ func (s *Mem_addr_int_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_int_() (localctx IMem_addr_int_Context) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_int_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, SHARCParserRULE_mem_addr_int_)
 	var _la int
@@ -9607,6 +9782,9 @@ func (s *Mem_addr_dm_ia_mbContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_dm_ia_mb() (localctx IMem_addr_dm_ia_mbContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_dm_ia_mbContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, SHARCParserRULE_mem_addr_dm_ia_mb)
 
@@ -9712,6 +9890,9 @@ func (s *Mem_addr_pm_ic_mdContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_pm_ic_md() (localctx IMem_addr_pm_ic_mdContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_pm_ic_mdContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 118, SHARCParserRULE_mem_addr_pm_ic_md)
 
@@ -9817,6 +9998,9 @@ func (s *Mem_addr_dm_mb_iaContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_dm_mb_ia() (localctx IMem_addr_dm_mb_iaContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_dm_mb_iaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, SHARCParserRULE_mem_addr_dm_mb_ia)
 
@@ -9922,6 +10106,9 @@ func (s *Mem_addr_pm_md_icContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_pm_md_ic() (localctx IMem_addr_pm_md_icContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_pm_md_icContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, SHARCParserRULE_mem_addr_pm_md_ic)
 
@@ -10027,6 +10214,9 @@ func (s *Mem_addr_dm_ia_intContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_dm_ia_int() (localctx IMem_addr_dm_ia_intContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_dm_ia_intContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 124, SHARCParserRULE_mem_addr_dm_ia_int)
 
@@ -10132,6 +10322,9 @@ func (s *Mem_addr_pm_ic_intContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_pm_ic_int() (localctx IMem_addr_pm_ic_intContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_pm_ic_intContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, SHARCParserRULE_mem_addr_pm_ic_int)
 
@@ -10237,6 +10430,9 @@ func (s *Mem_addr_dm_int_iaContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_dm_int_ia() (localctx IMem_addr_dm_int_iaContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_dm_int_iaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, SHARCParserRULE_mem_addr_dm_int_ia)
 
@@ -10342,6 +10538,9 @@ func (s *Mem_addr_pm_int_icContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_pm_int_ic() (localctx IMem_addr_pm_int_icContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_pm_int_icContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 130, SHARCParserRULE_mem_addr_pm_int_ic)
 
@@ -10447,6 +10646,9 @@ func (s *Mem_addr_dm_intContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_dm_int() (localctx IMem_addr_dm_intContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_dm_intContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, SHARCParserRULE_mem_addr_dm_int)
 
@@ -10552,6 +10754,9 @@ func (s *Mem_addr_pm_intContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mem_addr_pm_int() (localctx IMem_addr_pm_intContext) {
+	this := p
+	_ = this
+
 	localctx = NewMem_addr_pm_intContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 134, SHARCParserRULE_mem_addr_pm_int)
 
@@ -10696,6 +10901,9 @@ func (s *Fixpoint_alu_opContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Fixpoint_alu_op() (localctx IFixpoint_alu_opContext) {
+	this := p
+	_ = this
+
 	localctx = NewFixpoint_alu_opContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 136, SHARCParserRULE_fixpoint_alu_op)
 
@@ -10962,6 +11170,9 @@ func (s *R_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) R_exp() (localctx IR_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewR_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 138, SHARCParserRULE_r_exp)
 	var _la int
@@ -11506,6 +11717,9 @@ func (s *Floating_point_alu_opContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *SHARCParser) Floating_point_alu_op() (localctx IFloating_point_alu_opContext) {
+	this := p
+	_ = this
+
 	localctx = NewFloating_point_alu_opContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 140, SHARCParserRULE_floating_point_alu_op)
 
@@ -11763,6 +11977,9 @@ func (s *F_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) F_exp() (localctx IF_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewF_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 142, SHARCParserRULE_f_exp)
 	var _la int
@@ -12265,6 +12482,9 @@ func (s *Multi_opContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Multi_op() (localctx IMulti_opContext) {
+	this := p
+	_ = this
+
 	localctx = NewMulti_opContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 144, SHARCParserRULE_multi_op)
 
@@ -12508,6 +12728,9 @@ func (s *Multi_rContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Multi_r() (localctx IMulti_rContext) {
+	this := p
+	_ = this
+
 	localctx = NewMulti_rContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 146, SHARCParserRULE_multi_r)
 	var _la int
@@ -12663,6 +12886,9 @@ func (s *Multi_exp_rContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Multi_exp_r() (localctx IMulti_exp_rContext) {
+	this := p
+	_ = this
+
 	localctx = NewMulti_exp_rContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 148, SHARCParserRULE_multi_exp_r)
 	var _la int
@@ -12865,6 +13091,9 @@ func (s *Multi_exp_mrfContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Multi_exp_mrf() (localctx IMulti_exp_mrfContext) {
+	this := p
+	_ = this
+
 	localctx = NewMulti_exp_mrfContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 150, SHARCParserRULE_multi_exp_mrf)
 	var _la int
@@ -13063,6 +13292,9 @@ func (s *Multi_exp_mrbContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Multi_exp_mrb() (localctx IMulti_exp_mrbContext) {
+	this := p
+	_ = this
+
 	localctx = NewMulti_exp_mrbContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 152, SHARCParserRULE_multi_exp_mrb)
 	var _la int
@@ -13227,6 +13459,9 @@ func (s *MrContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mr() (localctx IMrContext) {
+	this := p
+	_ = this
+
 	localctx = NewMrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 154, SHARCParserRULE_mr)
 	var _la int
@@ -13378,6 +13613,9 @@ func (s *Shifter_opContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Shifter_op() (localctx IShifter_opContext) {
+	this := p
+	_ = this
+
 	localctx = NewShifter_opContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 156, SHARCParserRULE_shifter_op)
 
@@ -13645,6 +13883,9 @@ func (s *Shifter_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Shifter_exp() (localctx IShifter_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewShifter_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 158, SHARCParserRULE_shifter_exp)
 	var _la int
@@ -14090,6 +14331,9 @@ func (s *Sec_opContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Sec_op() (localctx ISec_opContext) {
+	this := p
+	_ = this
+
 	localctx = NewSec_opContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 160, SHARCParserRULE_sec_op)
 
@@ -14224,6 +14468,9 @@ func (s *Sec_op2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Sec_op2() (localctx ISec_op2Context) {
+	this := p
+	_ = this
+
 	localctx = NewSec_op2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 162, SHARCParserRULE_sec_op2)
 
@@ -14339,6 +14586,9 @@ func (s *Bit_dataContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Bit_data() (localctx IBit_dataContext) {
+	this := p
+	_ = this
+
 	localctx = NewBit_dataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 164, SHARCParserRULE_bit_data)
 
@@ -14442,6 +14692,9 @@ func (s *Add_or_subContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Add_or_sub() (localctx IAdd_or_subContext) {
+	this := p
+	_ = this
+
 	localctx = NewAdd_or_subContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 166, SHARCParserRULE_add_or_sub)
 	var _la int
@@ -14557,6 +14810,9 @@ func (s *Dual_opContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Dual_op() (localctx IDual_opContext) {
+	this := p
+	_ = this
+
 	localctx = NewDual_opContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 168, SHARCParserRULE_dual_op)
 
@@ -14700,6 +14956,9 @@ func (s *Dual_add_rContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Dual_add_r() (localctx IDual_add_rContext) {
+	this := p
+	_ = this
+
 	localctx = NewDual_add_rContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 170, SHARCParserRULE_dual_add_r)
 
@@ -14891,6 +15150,9 @@ func (s *Parallel_multiContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Parallel_multi() (localctx IParallel_multiContext) {
+	this := p
+	_ = this
+
 	localctx = NewParallel_multiContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 172, SHARCParserRULE_parallel_multi)
 
@@ -15152,6 +15414,9 @@ func (s *Flow_control_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_control_exp() (localctx IFlow_control_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 174, SHARCParserRULE_flow_control_exp)
 
@@ -15339,6 +15604,9 @@ func (s *Flow_contorl_8Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_contorl_8() (localctx IFlow_contorl_8Context) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_contorl_8Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 176, SHARCParserRULE_flow_contorl_8)
 
@@ -15454,6 +15722,9 @@ func (s *Flow_contorl_8_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_contorl_8_exp() (localctx IFlow_contorl_8_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_contorl_8_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 178, SHARCParserRULE_flow_contorl_8_exp)
 
@@ -15599,6 +15870,9 @@ func (s *Flow_control_9_and_11Context) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *SHARCParser) Flow_control_9_and_11() (localctx IFlow_control_9_and_11Context) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_9_and_11Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 180, SHARCParserRULE_flow_control_9_and_11)
 
@@ -15746,6 +16020,9 @@ func (s *Flow_control_9_and_11_expContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *SHARCParser) Flow_control_9_and_11_exp() (localctx IFlow_control_9_and_11_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_9_and_11_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 182, SHARCParserRULE_flow_control_9_and_11_exp)
 
@@ -15923,6 +16200,9 @@ func (s *Flow_control_10Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_control_10() (localctx IFlow_control_10Context) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_10Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 184, SHARCParserRULE_flow_control_10)
 
@@ -16068,6 +16348,9 @@ func (s *Flow_control_10_fragContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *SHARCParser) Flow_control_10_frag() (localctx IFlow_control_10_fragContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_10_fragContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 186, SHARCParserRULE_flow_control_10_frag)
 
@@ -16212,6 +16495,9 @@ func (s *Flow_control_12Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_control_12() (localctx IFlow_control_12Context) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_12Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 188, SHARCParserRULE_flow_control_12)
 
@@ -16348,6 +16634,9 @@ func (s *Lcntr_vContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Lcntr_v() (localctx ILcntr_vContext) {
+	this := p
+	_ = this
+
 	localctx = NewLcntr_vContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 190, SHARCParserRULE_lcntr_v)
 
@@ -16479,6 +16768,9 @@ func (s *Flow_control_13Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_control_13() (localctx IFlow_control_13Context) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_13Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 192, SHARCParserRULE_flow_control_13)
 
@@ -16602,6 +16894,9 @@ func (s *Flow_control_8aContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_control_8a() (localctx IFlow_control_8aContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_8aContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 194, SHARCParserRULE_flow_control_8a)
 	var _la int
@@ -16729,6 +17024,9 @@ func (s *Flow_control_8bContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_control_8b() (localctx IFlow_control_8bContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_8bContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 196, SHARCParserRULE_flow_control_8b)
 	var _la int
@@ -16870,6 +17168,9 @@ func (s *Flow_control_9aContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_control_9a() (localctx IFlow_control_9aContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_9aContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 198, SHARCParserRULE_flow_control_9a)
 	var _la int
@@ -17025,6 +17326,9 @@ func (s *Flow_control_9bContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_control_9b() (localctx IFlow_control_9bContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_9bContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 200, SHARCParserRULE_flow_control_9b)
 	var _la int
@@ -17170,6 +17474,9 @@ func (s *Flow_control_11aContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_control_11a() (localctx IFlow_control_11aContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_11aContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 202, SHARCParserRULE_flow_control_11a)
 	var _la int
@@ -17311,6 +17618,9 @@ func (s *Flow_control_11bContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Flow_control_11b() (localctx IFlow_control_11bContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlow_control_11bContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 204, SHARCParserRULE_flow_control_11b)
 	var _la int
@@ -17444,6 +17754,9 @@ func (s *Jump_addr_int_or_pcContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *SHARCParser) Jump_addr_int_or_pc() (localctx IJump_addr_int_or_pcContext) {
+	this := p
+	_ = this
+
 	localctx = NewJump_addr_int_or_pcContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 206, SHARCParserRULE_jump_addr_int_or_pc)
 
@@ -17564,6 +17877,9 @@ func (s *Jump_addr_md_or_pcContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Jump_addr_md_or_pc() (localctx IJump_addr_md_or_pcContext) {
+	this := p
+	_ = this
+
 	localctx = NewJump_addr_md_or_pcContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 208, SHARCParserRULE_jump_addr_md_or_pc)
 
@@ -17690,6 +18006,9 @@ func (s *Jump_addr_pcContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Jump_addr_pc() (localctx IJump_addr_pcContext) {
+	this := p
+	_ = this
+
 	localctx = NewJump_addr_pcContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 210, SHARCParserRULE_jump_addr_pc)
 
@@ -17803,6 +18122,9 @@ func (s *Jump_addr_intContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Jump_addr_int() (localctx IJump_addr_intContext) {
+	this := p
+	_ = this
+
 	localctx = NewJump_addr_intContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 212, SHARCParserRULE_jump_addr_int)
 
@@ -17900,6 +18222,9 @@ func (s *Jump_modifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Jump_modifier() (localctx IJump_modifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewJump_modifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 214, SHARCParserRULE_jump_modifier)
 
@@ -18013,6 +18338,9 @@ func (s *Jump_modifier_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Jump_modifier_() (localctx IJump_modifier_Context) {
+	this := p
+	_ = this
+
 	localctx = NewJump_modifier_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 216, SHARCParserRULE_jump_modifier_)
 
@@ -18145,6 +18473,9 @@ func (s *Jump_modifier_1Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Jump_modifier_1() (localctx IJump_modifier_1Context) {
+	this := p
+	_ = this
+
 	localctx = NewJump_modifier_1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 218, SHARCParserRULE_jump_modifier_1)
 	var _la int
@@ -18267,6 +18598,9 @@ func (s *Jump_modifier2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Jump_modifier2() (localctx IJump_modifier2Context) {
+	this := p
+	_ = this
+
 	localctx = NewJump_modifier2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 220, SHARCParserRULE_jump_modifier2)
 
@@ -18372,6 +18706,9 @@ func (s *Jump_modifier3Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Jump_modifier3() (localctx IJump_modifier3Context) {
+	this := p
+	_ = this
+
 	localctx = NewJump_modifier3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 222, SHARCParserRULE_jump_modifier3)
 
@@ -18481,6 +18818,9 @@ func (s *Jump_modifier3_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Jump_modifier3_() (localctx IJump_modifier3_Context) {
+	this := p
+	_ = this
+
 	localctx = NewJump_modifier3_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 224, SHARCParserRULE_jump_modifier3_)
 
@@ -18603,6 +18943,9 @@ func (s *Jump_modifier3_1Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Jump_modifier3_1() (localctx IJump_modifier3_1Context) {
+	this := p
+	_ = this
+
 	localctx = NewJump_modifier3_1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 226, SHARCParserRULE_jump_modifier3_1)
 	var _la int
@@ -18746,6 +19089,9 @@ func (s *Imm_mov_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Imm_mov_exp() (localctx IImm_mov_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewImm_mov_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 228, SHARCParserRULE_imm_mov_exp)
 
@@ -18894,6 +19240,9 @@ func (s *Imm_mov_14aContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Imm_mov_14a() (localctx IImm_mov_14aContext) {
+	this := p
+	_ = this
+
 	localctx = NewImm_mov_14aContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 230, SHARCParserRULE_imm_mov_14a)
 
@@ -19038,6 +19387,9 @@ func (s *Imm_mov_15aContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Imm_mov_15a() (localctx IImm_mov_15aContext) {
+	this := p
+	_ = this
+
 	localctx = NewImm_mov_15aContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 232, SHARCParserRULE_imm_mov_15a)
 
@@ -19182,6 +19534,9 @@ func (s *Imm_mov_14bContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Imm_mov_14b() (localctx IImm_mov_14bContext) {
+	this := p
+	_ = this
+
 	localctx = NewImm_mov_14bContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 234, SHARCParserRULE_imm_mov_14b)
 
@@ -19326,6 +19681,9 @@ func (s *Imm_mov_15bContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Imm_mov_15b() (localctx IImm_mov_15bContext) {
+	this := p
+	_ = this
+
 	localctx = NewImm_mov_15bContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 236, SHARCParserRULE_imm_mov_15b)
 
@@ -19470,6 +19828,9 @@ func (s *Imm_mov_16Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Imm_mov_16() (localctx IImm_mov_16Context) {
+	this := p
+	_ = this
+
 	localctx = NewImm_mov_16Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 238, SHARCParserRULE_imm_mov_16)
 
@@ -19604,6 +19965,9 @@ func (s *Imm_mov_17Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Imm_mov_17() (localctx IImm_mov_17Context) {
+	this := p
+	_ = this
+
 	localctx = NewImm_mov_17Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 240, SHARCParserRULE_imm_mov_17)
 
@@ -19777,6 +20141,9 @@ func (s *U_reg2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) U_reg2() (localctx IU_reg2Context) {
+	this := p
+	_ = this
+
 	localctx = NewU_reg2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 242, SHARCParserRULE_u_reg2)
 
@@ -20150,6 +20517,9 @@ func (s *Misc_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Misc_exp() (localctx IMisc_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewMisc_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 244, SHARCParserRULE_misc_exp)
 	var _la int
@@ -20446,6 +20816,9 @@ func (s *Misc_20Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Misc_20() (localctx IMisc_20Context) {
+	this := p
+	_ = this
+
 	localctx = NewMisc_20Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 246, SHARCParserRULE_misc_20)
 	var _la int
@@ -20710,6 +21083,9 @@ func (s *Directive_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Directive_exp() (localctx IDirective_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewDirective_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 248, SHARCParserRULE_directive_exp)
 	var _la int
@@ -21184,6 +21560,9 @@ func (s *B_regContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) B_reg() (localctx IB_regContext) {
+	this := p
+	_ = this
+
 	localctx = NewB_regContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 250, SHARCParserRULE_b_reg)
 	var _la int
@@ -21343,6 +21722,9 @@ func (s *L_regContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) L_reg() (localctx IL_regContext) {
+	this := p
+	_ = this
+
 	localctx = NewL_regContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 252, SHARCParserRULE_l_reg)
 	var _la int
@@ -21502,6 +21884,9 @@ func (s *R_regContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) R_reg() (localctx IR_regContext) {
+	this := p
+	_ = this
+
 	localctx = NewR_regContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 254, SHARCParserRULE_r_reg)
 	var _la int
@@ -21661,6 +22046,9 @@ func (s *F_regContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) F_reg() (localctx IF_regContext) {
+	this := p
+	_ = this
+
 	localctx = NewF_regContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 256, SHARCParserRULE_f_reg)
 	var _la int
@@ -21792,6 +22180,9 @@ func (s *S_regContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) S_reg() (localctx IS_regContext) {
+	this := p
+	_ = this
+
 	localctx = NewS_regContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 258, SHARCParserRULE_s_reg)
 	var _la int
@@ -21919,6 +22310,9 @@ func (s *IaContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Ia() (localctx IIaContext) {
+	this := p
+	_ = this
+
 	localctx = NewIaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 260, SHARCParserRULE_ia)
 	var _la int
@@ -22046,6 +22440,9 @@ func (s *MbContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mb() (localctx IMbContext) {
+	this := p
+	_ = this
+
 	localctx = NewMbContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 262, SHARCParserRULE_mb)
 	var _la int
@@ -22173,6 +22570,9 @@ func (s *IcContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Ic() (localctx IIcContext) {
+	this := p
+	_ = this
+
 	localctx = NewIcContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 264, SHARCParserRULE_ic)
 	var _la int
@@ -22300,6 +22700,9 @@ func (s *MdContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Md() (localctx IMdContext) {
+	this := p
+	_ = this
+
 	localctx = NewMdContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 266, SHARCParserRULE_md)
 	var _la int
@@ -22415,6 +22818,9 @@ func (s *I_regContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) I_reg() (localctx II_regContext) {
+	this := p
+	_ = this
+
 	localctx = NewI_regContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 268, SHARCParserRULE_i_reg)
 
@@ -22538,6 +22944,9 @@ func (s *M_regContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) M_reg() (localctx IM_regContext) {
+	this := p
+	_ = this
+
 	localctx = NewM_regContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 270, SHARCParserRULE_m_reg)
 
@@ -22681,6 +23090,9 @@ func (s *Dag_regContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Dag_reg() (localctx IDag_regContext) {
+	this := p
+	_ = this
+
 	localctx = NewDag_regContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 272, SHARCParserRULE_dag_reg)
 
@@ -22818,6 +23230,9 @@ func (s *D_regContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) D_reg() (localctx ID_regContext) {
+	this := p
+	_ = this
+
 	localctx = NewD_regContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 274, SHARCParserRULE_d_reg)
 
@@ -23003,6 +23418,9 @@ func (s *U_regContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) U_reg() (localctx IU_regContext) {
+	this := p
+	_ = this
+
 	localctx = NewU_regContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 276, SHARCParserRULE_u_reg)
 
@@ -23214,6 +23632,9 @@ func (s *ConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Condition() (localctx IConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 278, SHARCParserRULE_condition)
 
@@ -23393,6 +23814,9 @@ func (s *CconditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Ccondition() (localctx ICconditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCconditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 280, SHARCParserRULE_ccondition)
 
@@ -23775,6 +24199,9 @@ func (s *Multi_mod1Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Multi_mod1() (localctx IMulti_mod1Context) {
+	this := p
+	_ = this
+
 	localctx = NewMulti_mod1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 282, SHARCParserRULE_multi_mod1)
 
@@ -23886,6 +24313,9 @@ func (s *Multi_mod1_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Multi_mod1_() (localctx IMulti_mod1_Context) {
+	this := p
+	_ = this
+
 	localctx = NewMulti_mod1_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 284, SHARCParserRULE_multi_mod1_)
 	var _la int
@@ -23999,6 +24429,9 @@ func (s *Multi_mod2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Multi_mod2() (localctx IMulti_mod2Context) {
+	this := p
+	_ = this
+
 	localctx = NewMulti_mod2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 286, SHARCParserRULE_multi_mod2)
 
@@ -24142,6 +24575,9 @@ func (s *Multi_mod2_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Multi_mod2_() (localctx IMulti_mod2_Context) {
+	this := p
+	_ = this
+
 	localctx = NewMulti_mod2_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 288, SHARCParserRULE_multi_mod2_)
 	var _la int
@@ -24257,6 +24693,9 @@ func (s *R3_0Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) R3_0() (localctx IR3_0Context) {
+	this := p
+	_ = this
+
 	localctx = NewR3_0Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 290, SHARCParserRULE_r3_0)
 	var _la int
@@ -24368,6 +24807,9 @@ func (s *R7_4Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) R7_4() (localctx IR7_4Context) {
+	this := p
+	_ = this
+
 	localctx = NewR7_4Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 292, SHARCParserRULE_r7_4)
 	var _la int
@@ -24479,6 +24921,9 @@ func (s *R11_8Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) R11_8() (localctx IR11_8Context) {
+	this := p
+	_ = this
+
 	localctx = NewR11_8Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 294, SHARCParserRULE_r11_8)
 	var _la int
@@ -24590,6 +25035,9 @@ func (s *R15_12Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) R15_12() (localctx IR15_12Context) {
+	this := p
+	_ = this
+
 	localctx = NewR15_12Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 296, SHARCParserRULE_r15_12)
 	var _la int
@@ -24697,6 +25145,9 @@ func (s *F3_0Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) F3_0() (localctx IF3_0Context) {
+	this := p
+	_ = this
+
 	localctx = NewF3_0Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 298, SHARCParserRULE_f3_0)
 	var _la int
@@ -24808,6 +25259,9 @@ func (s *F7_4Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) F7_4() (localctx IF7_4Context) {
+	this := p
+	_ = this
+
 	localctx = NewF7_4Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 300, SHARCParserRULE_f7_4)
 	var _la int
@@ -24919,6 +25373,9 @@ func (s *F11_8Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) F11_8() (localctx IF11_8Context) {
+	this := p
+	_ = this
+
 	localctx = NewF11_8Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 302, SHARCParserRULE_f11_8)
 	var _la int
@@ -25030,6 +25487,9 @@ func (s *F15_12Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) F15_12() (localctx IF15_12Context) {
+	this := p
+	_ = this
+
 	localctx = NewF15_12Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 304, SHARCParserRULE_f15_12)
 	var _la int
@@ -25133,6 +25593,9 @@ func (s *AddrContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Addr() (localctx IAddrContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 306, SHARCParserRULE_addr)
 	var _la int
@@ -25240,6 +25703,9 @@ func (s *MrfContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mrf() (localctx IMrfContext) {
+	this := p
+	_ = this
+
 	localctx = NewMrfContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 308, SHARCParserRULE_mrf)
 	var _la int
@@ -25347,6 +25813,9 @@ func (s *MrbContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SHARCParser) Mrb() (localctx IMrbContext) {
+	this := p
+	_ = this
+
 	localctx = NewMrbContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 310, SHARCParserRULE_mrb)
 	var _la int

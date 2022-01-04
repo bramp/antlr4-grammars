@@ -1,4 +1,4 @@
-// Code generated from DOT.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from DOT.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package dot // DOT
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -98,8 +98,8 @@ func (s *BaseDOTListener) EnterSubgraph(ctx *SubgraphContext) {}
 // ExitSubgraph is called when production subgraph is exited.
 func (s *BaseDOTListener) ExitSubgraph(ctx *SubgraphContext) {}
 
-// EnterId is called when production id is entered.
-func (s *BaseDOTListener) EnterId(ctx *IdContext) {}
+// EnterId_ is called when production id_ is entered.
+func (s *BaseDOTListener) EnterId_(ctx *Id_Context) {}
 
-// ExitId is called when production id is exited.
-func (s *BaseDOTListener) ExitId(ctx *IdContext) {}
+// ExitId_ is called when production id_ is exited.
+func (s *BaseDOTListener) ExitId_(ctx *Id_Context) {}

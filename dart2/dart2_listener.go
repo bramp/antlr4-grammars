@@ -1,4 +1,4 @@
-// Code generated from Dart2.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Dart2.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package dart2 // Dart2
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -103,8 +103,8 @@ type Dart2Listener interface {
 	// EnterOperatorSignature is called when entering the operatorSignature production.
 	EnterOperatorSignature(c *OperatorSignatureContext)
 
-	// EnterOperator is called when entering the operator production.
-	EnterOperator(c *OperatorContext)
+	// EnterOperator_ is called when entering the operator_ production.
+	EnterOperator_(c *Operator_Context)
 
 	// EnterBinaryOperator is called when entering the binaryOperator production.
 	EnterBinaryOperator(c *BinaryOperatorContext)
@@ -622,8 +622,8 @@ type Dart2Listener interface {
 	// ExitOperatorSignature is called when exiting the operatorSignature production.
 	ExitOperatorSignature(c *OperatorSignatureContext)
 
-	// ExitOperator is called when exiting the operator production.
-	ExitOperator(c *OperatorContext)
+	// ExitOperator_ is called when exiting the operator_ production.
+	ExitOperator_(c *Operator_Context)
 
 	// ExitBinaryOperator is called when exiting the binaryOperator production.
 	ExitBinaryOperator(c *BinaryOperatorContext)

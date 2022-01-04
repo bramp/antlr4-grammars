@@ -1,4 +1,4 @@
-// Code generated from Cobol85.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Cobol85.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package cobol85 // Cobol85
 import (
@@ -3384,9 +3384,6 @@ var parserATN = []uint16{
 	6064, 6067, 6073, 6077, 6082, 6085, 6088, 6101, 6140, 6152, 6166, 6170,
 	6173, 6177, 6189, 6205, 6212, 6220, 6228, 6247, 6264, 6282, 6287,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
 	"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
@@ -3470,7 +3467,7 @@ var symbolicNames = []string{
 	"LONG_TIME", "LOWER", "LOWLIGHT", "LOW_VALUE", "LOW_VALUES", "MEMORY",
 	"MERGE", "MESSAGE", "MMDDYYYY", "MODE", "MODULES", "MORE_LABELS", "MOVE",
 	"MULTIPLE", "MULTIPLY", "NAMED", "NATIONAL", "NATIONAL_EDITED", "NATIVE",
-	"NEGATIVE", "NETWORK", "NEXT", "NO", "NO_ECHO", "NOT", "NULL", "NULLS",
+	"NEGATIVE", "NETWORK", "NEXT", "NO", "NO_ECHO", "NOT", "NULL_", "NULLS",
 	"NUMBER", "NUMERIC", "NUMERIC_DATE", "NUMERIC_EDITED", "NUMERIC_TIME",
 	"OBJECT_COMPUTER", "OCCURS", "ODT", "OF", "OFF", "OMITTED", "ON", "OPEN",
 	"OPTIONAL", "OR", "ORDER", "ORDERLY", "ORGANIZATION", "OTHER", "OUTPUT",
@@ -3662,7 +3659,7 @@ var ruleNames = []string{
 	"relationSignCondition", "relationArithmeticComparison", "relationCombinedComparison",
 	"relationCombinedCondition", "relationalOperator", "abbreviation", "identifier",
 	"tableCall", "functionCall", "referenceModifier", "characterPosition",
-	"length", "subscript", "argument", "qualifiedDataName", "qualifiedDataNameFormat1",
+	"length", "subscript_", "argument", "qualifiedDataName", "qualifiedDataNameFormat1",
 	"qualifiedDataNameFormat2", "qualifiedDataNameFormat3", "qualifiedDataNameFormat4",
 	"qualifiedInData", "inData", "inFile", "inMnemonic", "inSection", "inLibrary",
 	"inTable", "alphabetName", "assignmentName", "basisName", "cdName", "className",
@@ -3674,21 +3671,25 @@ var ruleNames = []string{
 	"booleanLiteral", "numericLiteral", "integerLiteral", "cicsDfhRespLiteral",
 	"cicsDfhValueLiteral", "figurativeConstant", "specialRegister", "commentEntry",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type Cobol85Parser struct {
 	*antlr.BaseParser
 }
 
+// NewCobol85Parser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *Cobol85Parser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewCobol85Parser(input antlr.TokenStream) *Cobol85Parser {
 	this := new(Cobol85Parser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -4015,7 +4016,7 @@ const (
 	Cobol85ParserNO                     = 310
 	Cobol85ParserNO_ECHO                = 311
 	Cobol85ParserNOT                    = 312
-	Cobol85ParserNULL                   = 313
+	Cobol85ParserNULL_                  = 313
 	Cobol85ParserNULLS                  = 314
 	Cobol85ParserNUMBER                 = 315
 	Cobol85ParserNUMERIC                = 316
@@ -4815,7 +4816,7 @@ const (
 	Cobol85ParserRULE_referenceModifier                             = 540
 	Cobol85ParserRULE_characterPosition                             = 541
 	Cobol85ParserRULE_length                                        = 542
-	Cobol85ParserRULE_subscript                                     = 543
+	Cobol85ParserRULE_subscript_                                    = 543
 	Cobol85ParserRULE_argument                                      = 544
 	Cobol85ParserRULE_qualifiedDataName                             = 545
 	Cobol85ParserRULE_qualifiedDataNameFormat1                      = 546
@@ -4942,6 +4943,9 @@ func (s *StartRuleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) StartRule() (localctx IStartRuleContext) {
+	this := p
+	_ = this
+
 	localctx = NewStartRuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, Cobol85ParserRULE_startRule)
 
@@ -5056,6 +5060,9 @@ func (s *CompilationUnitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CompilationUnit() (localctx ICompilationUnitContext) {
+	this := p
+	_ = this
+
 	localctx = NewCompilationUnitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, Cobol85ParserRULE_compilationUnit)
 	var _la int
@@ -5227,6 +5234,9 @@ func (s *ProgramUnitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ProgramUnit() (localctx IProgramUnitContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramUnitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, Cobol85ParserRULE_programUnit)
 	var _la int
@@ -5398,6 +5408,9 @@ func (s *EndProgramStatementContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) EndProgramStatement() (localctx IEndProgramStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewEndProgramStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, Cobol85ParserRULE_endProgramStatement)
 
@@ -5546,6 +5559,9 @@ func (s *IdentificationDivisionContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) IdentificationDivision() (localctx IIdentificationDivisionContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentificationDivisionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, Cobol85ParserRULE_identificationDivision)
 	var _la int
@@ -5727,6 +5743,9 @@ func (s *IdentificationDivisionBodyContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Cobol85Parser) IdentificationDivisionBody() (localctx IIdentificationDivisionBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentificationDivisionBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, Cobol85ParserRULE_identificationDivisionBody)
 
@@ -5918,6 +5937,9 @@ func (s *ProgramIdParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ProgramIdParagraph() (localctx IProgramIdParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramIdParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, Cobol85ParserRULE_programIdParagraph)
 	var _la int
@@ -6094,6 +6116,9 @@ func (s *AuthorParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AuthorParagraph() (localctx IAuthorParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewAuthorParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, Cobol85ParserRULE_authorParagraph)
 	var _la int
@@ -6215,6 +6240,9 @@ func (s *InstallationParagraphContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) InstallationParagraph() (localctx IInstallationParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewInstallationParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, Cobol85ParserRULE_installationParagraph)
 	var _la int
@@ -6336,6 +6364,9 @@ func (s *DateWrittenParagraphContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) DateWrittenParagraph() (localctx IDateWrittenParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewDateWrittenParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, Cobol85ParserRULE_dateWrittenParagraph)
 	var _la int
@@ -6457,6 +6488,9 @@ func (s *DateCompiledParagraphContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) DateCompiledParagraph() (localctx IDateCompiledParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewDateCompiledParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, Cobol85ParserRULE_dateCompiledParagraph)
 	var _la int
@@ -6578,6 +6612,9 @@ func (s *SecurityParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SecurityParagraph() (localctx ISecurityParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewSecurityParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, Cobol85ParserRULE_securityParagraph)
 	var _la int
@@ -6699,6 +6736,9 @@ func (s *RemarksParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RemarksParagraph() (localctx IRemarksParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewRemarksParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, Cobol85ParserRULE_remarksParagraph)
 	var _la int
@@ -6837,6 +6877,9 @@ func (s *EnvironmentDivisionContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) EnvironmentDivision() (localctx IEnvironmentDivisionContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnvironmentDivisionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, Cobol85ParserRULE_environmentDivision)
 	var _la int
@@ -6977,6 +7020,9 @@ func (s *EnvironmentDivisionBodyContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) EnvironmentDivisionBody() (localctx IEnvironmentDivisionBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnvironmentDivisionBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, Cobol85ParserRULE_environmentDivisionBody)
 
@@ -7122,6 +7168,9 @@ func (s *ConfigurationSectionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) ConfigurationSection() (localctx IConfigurationSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewConfigurationSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, Cobol85ParserRULE_configurationSection)
 
@@ -7265,6 +7314,9 @@ func (s *ConfigurationSectionParagraphContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) ConfigurationSectionParagraph() (localctx IConfigurationSectionParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewConfigurationSectionParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, Cobol85ParserRULE_configurationSectionParagraph)
 
@@ -7409,6 +7461,9 @@ func (s *SourceComputerParagraphContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) SourceComputerParagraph() (localctx ISourceComputerParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewSourceComputerParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, Cobol85ParserRULE_sourceComputerParagraph)
 	var _la int
@@ -7580,6 +7635,9 @@ func (s *ObjectComputerParagraphContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) ObjectComputerParagraph() (localctx IObjectComputerParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectComputerParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, Cobol85ParserRULE_objectComputerParagraph)
 	var _la int
@@ -7744,6 +7802,9 @@ func (s *ObjectComputerClauseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) ObjectComputerClause() (localctx IObjectComputerClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectComputerClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, Cobol85ParserRULE_objectComputerClause)
 
@@ -7908,6 +7969,9 @@ func (s *MemorySizeClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MemorySizeClause() (localctx IMemorySizeClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewMemorySizeClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, Cobol85ParserRULE_memorySizeClause)
 	var _la int
@@ -8084,6 +8148,9 @@ func (s *DiskSizeClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DiskSizeClause() (localctx IDiskSizeClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDiskSizeClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, Cobol85ParserRULE_diskSizeClause)
 	var _la int
@@ -8290,6 +8357,9 @@ func (s *CollatingSequenceClauseContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) CollatingSequenceClause() (localctx ICollatingSequenceClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewCollatingSequenceClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, Cobol85ParserRULE_collatingSequenceClause)
 	var _la int
@@ -8477,6 +8547,9 @@ func (s *CollatingSequenceClauseAlphanumericContext) ExitRule(listener antlr.Par
 }
 
 func (p *Cobol85Parser) CollatingSequenceClauseAlphanumeric() (localctx ICollatingSequenceClauseAlphanumericContext) {
+	this := p
+	_ = this
+
 	localctx = NewCollatingSequenceClauseAlphanumericContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, Cobol85ParserRULE_collatingSequenceClauseAlphanumeric)
 	var _la int
@@ -8613,6 +8686,9 @@ func (s *CollatingSequenceClauseNationalContext) ExitRule(listener antlr.ParseTr
 }
 
 func (p *Cobol85Parser) CollatingSequenceClauseNational() (localctx ICollatingSequenceClauseNationalContext) {
+	this := p
+	_ = this
+
 	localctx = NewCollatingSequenceClauseNationalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, Cobol85ParserRULE_collatingSequenceClauseNational)
 	var _la int
@@ -8745,6 +8821,9 @@ func (s *SegmentLimitClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SegmentLimitClause() (localctx ISegmentLimitClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSegmentLimitClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, Cobol85ParserRULE_segmentLimitClause)
 	var _la int
@@ -8860,6 +8939,9 @@ func (s *CharacterSetClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CharacterSetClause() (localctx ICharacterSetClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharacterSetClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, Cobol85ParserRULE_characterSetClause)
 
@@ -8990,6 +9072,9 @@ func (s *SpecialNamesParagraphContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) SpecialNamesParagraph() (localctx ISpecialNamesParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewSpecialNamesParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, Cobol85ParserRULE_specialNamesParagraph)
 	var _la int
@@ -9217,6 +9302,9 @@ func (s *SpecialNameClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SpecialNameClause() (localctx ISpecialNameClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSpecialNameClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, Cobol85ParserRULE_specialNameClause)
 
@@ -9400,6 +9488,9 @@ func (s *AlphabetClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AlphabetClause() (localctx IAlphabetClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlphabetClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, Cobol85ParserRULE_alphabetClause)
 
@@ -9579,6 +9670,9 @@ func (s *AlphabetClauseFormat1Context) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) AlphabetClauseFormat1() (localctx IAlphabetClauseFormat1Context) {
+	this := p
+	_ = this
+
 	localctx = NewAlphabetClauseFormat1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, Cobol85ParserRULE_alphabetClauseFormat1)
 	var _la int
@@ -9803,6 +9897,9 @@ func (s *AlphabetLiteralsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AlphabetLiterals() (localctx IAlphabetLiteralsContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlphabetLiteralsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, Cobol85ParserRULE_alphabetLiterals)
 	var _la int
@@ -9854,7 +9951,7 @@ func (p *Cobol85Parser) AlphabetLiterals() (localctx IAlphabetLiteralsContext) {
 			_la = p.GetTokenStream().LA(1)
 		}
 
-	case Cobol85ParserABORT, Cobol85ParserALL, Cobol85ParserALPHABET, Cobol85ParserAS, Cobol85ParserASCII, Cobol85ParserASSOCIATED_DATA, Cobol85ParserASSOCIATED_DATA_LENGTH, Cobol85ParserATTRIBUTE, Cobol85ParserAUTO, Cobol85ParserAUTO_SKIP, Cobol85ParserBACKGROUND_COLOR, Cobol85ParserBACKGROUND_COLOUR, Cobol85ParserBEEP, Cobol85ParserBELL, Cobol85ParserBINARY, Cobol85ParserBIT, Cobol85ParserBLINK, Cobol85ParserBOUNDS, Cobol85ParserCAPABLE, Cobol85ParserCCSVERSION, Cobol85ParserCHANGED, Cobol85ParserCHANNEL, Cobol85ParserCLASS, Cobol85ParserCLOSE_DISPOSITION, Cobol85ParserCOBOL, Cobol85ParserCOMMITMENT, Cobol85ParserCONTROL_POINT, Cobol85ParserCONVENTION, Cobol85ParserCRUNCH, Cobol85ParserCURRENCY, Cobol85ParserCURSOR, Cobol85ParserDECIMAL_POINT, Cobol85ParserDEFAULT, Cobol85ParserDEFAULT_DISPLAY, Cobol85ParserDEFINITION, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserDISK, Cobol85ParserDONTCARE, Cobol85ParserDOUBLE, Cobol85ParserEBCDIC, Cobol85ParserEMPTY_CHECK, Cobol85ParserENTER, Cobol85ParserENTRY_PROCEDURE, Cobol85ParserERASE, Cobol85ParserEOL, Cobol85ParserEOS, Cobol85ParserESCAPE, Cobol85ParserEVENT, Cobol85ParserEXCLUSIVE, Cobol85ParserEXPORT, Cobol85ParserEXTENDED, Cobol85ParserFALSE, Cobol85ParserFOREGROUND_COLOR, Cobol85ParserFOREGROUND_COLOUR, Cobol85ParserFULL, Cobol85ParserFUNCTIONNAME, Cobol85ParserFUNCTION_POINTER, Cobol85ParserGRID, Cobol85ParserHIGHLIGHT, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserIMPLICIT, Cobol85ParserIMPORT, Cobol85ParserINTEGER, Cobol85ParserKEPT, Cobol85ParserKEYBOARD, Cobol85ParserLANGUAGE, Cobol85ParserLB, Cobol85ParserLD, Cobol85ParserLEFTLINE, Cobol85ParserLENGTH_CHECK, Cobol85ParserLIBACCESS, Cobol85ParserLIBPARAMETER, Cobol85ParserLIBRARY, Cobol85ParserLIST, Cobol85ParserLOCAL, Cobol85ParserLONG_DATE, Cobol85ParserLONG_TIME, Cobol85ParserLOWER, Cobol85ParserLOWLIGHT, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserMMDDYYYY, Cobol85ParserNAMED, Cobol85ParserNATIONAL, Cobol85ParserNATIONAL_EDITED, Cobol85ParserNETWORK, Cobol85ParserNO_ECHO, Cobol85ParserNULL, Cobol85ParserNULLS, Cobol85ParserNUMERIC_DATE, Cobol85ParserNUMERIC_TIME, Cobol85ParserODT, Cobol85ParserOFF, Cobol85ParserON, Cobol85ParserORDERLY, Cobol85ParserOVERLINE, Cobol85ParserOWN, Cobol85ParserPASSWORD, Cobol85ParserPORT, Cobol85ParserPRINTER, Cobol85ParserPRIVATE, Cobol85ParserPROCESS, Cobol85ParserPROGRAM, Cobol85ParserPROMPT, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserREADER, Cobol85ParserREMOTE, Cobol85ParserREAL, Cobol85ParserRECEIVED, Cobol85ParserRECURSIVE, Cobol85ParserREF, Cobol85ParserREMOVE, Cobol85ParserREQUIRED, Cobol85ParserRESERVE, Cobol85ParserREVERSE_VIDEO, Cobol85ParserSAVE, Cobol85ParserSECURE, Cobol85ParserSHARED, Cobol85ParserSHAREDBYALL, Cobol85ParserSHAREDBYRUNUNIT, Cobol85ParserSHARING, Cobol85ParserSHORT_DATE, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserSYMBOL, Cobol85ParserSYMBOLIC, Cobol85ParserTASK, Cobol85ParserTHREAD, Cobol85ParserTHREAD_LOCAL, Cobol85ParserTIMER, Cobol85ParserTODAYS_DATE, Cobol85ParserTODAYS_NAME, Cobol85ParserTRUE, Cobol85ParserTRUNCATED, Cobol85ParserTYPEDEF, Cobol85ParserUNDERLINE, Cobol85ParserVIRTUAL, Cobol85ParserWAIT, Cobol85ParserYEAR, Cobol85ParserYYYYMMDD, Cobol85ParserYYYYDDD, Cobol85ParserZERO, Cobol85ParserZERO_FILL, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserDOT_FS, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL, Cobol85ParserIDENTIFIER:
+	case Cobol85ParserABORT, Cobol85ParserALL, Cobol85ParserALPHABET, Cobol85ParserAS, Cobol85ParserASCII, Cobol85ParserASSOCIATED_DATA, Cobol85ParserASSOCIATED_DATA_LENGTH, Cobol85ParserATTRIBUTE, Cobol85ParserAUTO, Cobol85ParserAUTO_SKIP, Cobol85ParserBACKGROUND_COLOR, Cobol85ParserBACKGROUND_COLOUR, Cobol85ParserBEEP, Cobol85ParserBELL, Cobol85ParserBINARY, Cobol85ParserBIT, Cobol85ParserBLINK, Cobol85ParserBOUNDS, Cobol85ParserCAPABLE, Cobol85ParserCCSVERSION, Cobol85ParserCHANGED, Cobol85ParserCHANNEL, Cobol85ParserCLASS, Cobol85ParserCLOSE_DISPOSITION, Cobol85ParserCOBOL, Cobol85ParserCOMMITMENT, Cobol85ParserCONTROL_POINT, Cobol85ParserCONVENTION, Cobol85ParserCRUNCH, Cobol85ParserCURRENCY, Cobol85ParserCURSOR, Cobol85ParserDECIMAL_POINT, Cobol85ParserDEFAULT, Cobol85ParserDEFAULT_DISPLAY, Cobol85ParserDEFINITION, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserDISK, Cobol85ParserDONTCARE, Cobol85ParserDOUBLE, Cobol85ParserEBCDIC, Cobol85ParserEMPTY_CHECK, Cobol85ParserENTER, Cobol85ParserENTRY_PROCEDURE, Cobol85ParserERASE, Cobol85ParserEOL, Cobol85ParserEOS, Cobol85ParserESCAPE, Cobol85ParserEVENT, Cobol85ParserEXCLUSIVE, Cobol85ParserEXPORT, Cobol85ParserEXTENDED, Cobol85ParserFALSE, Cobol85ParserFOREGROUND_COLOR, Cobol85ParserFOREGROUND_COLOUR, Cobol85ParserFULL, Cobol85ParserFUNCTIONNAME, Cobol85ParserFUNCTION_POINTER, Cobol85ParserGRID, Cobol85ParserHIGHLIGHT, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserIMPLICIT, Cobol85ParserIMPORT, Cobol85ParserINTEGER, Cobol85ParserKEPT, Cobol85ParserKEYBOARD, Cobol85ParserLANGUAGE, Cobol85ParserLB, Cobol85ParserLD, Cobol85ParserLEFTLINE, Cobol85ParserLENGTH_CHECK, Cobol85ParserLIBACCESS, Cobol85ParserLIBPARAMETER, Cobol85ParserLIBRARY, Cobol85ParserLIST, Cobol85ParserLOCAL, Cobol85ParserLONG_DATE, Cobol85ParserLONG_TIME, Cobol85ParserLOWER, Cobol85ParserLOWLIGHT, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserMMDDYYYY, Cobol85ParserNAMED, Cobol85ParserNATIONAL, Cobol85ParserNATIONAL_EDITED, Cobol85ParserNETWORK, Cobol85ParserNO_ECHO, Cobol85ParserNULL_, Cobol85ParserNULLS, Cobol85ParserNUMERIC_DATE, Cobol85ParserNUMERIC_TIME, Cobol85ParserODT, Cobol85ParserOFF, Cobol85ParserON, Cobol85ParserORDERLY, Cobol85ParserOVERLINE, Cobol85ParserOWN, Cobol85ParserPASSWORD, Cobol85ParserPORT, Cobol85ParserPRINTER, Cobol85ParserPRIVATE, Cobol85ParserPROCESS, Cobol85ParserPROGRAM, Cobol85ParserPROMPT, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserREADER, Cobol85ParserREMOTE, Cobol85ParserREAL, Cobol85ParserRECEIVED, Cobol85ParserRECURSIVE, Cobol85ParserREF, Cobol85ParserREMOVE, Cobol85ParserREQUIRED, Cobol85ParserRESERVE, Cobol85ParserREVERSE_VIDEO, Cobol85ParserSAVE, Cobol85ParserSECURE, Cobol85ParserSHARED, Cobol85ParserSHAREDBYALL, Cobol85ParserSHAREDBYRUNUNIT, Cobol85ParserSHARING, Cobol85ParserSHORT_DATE, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserSYMBOL, Cobol85ParserSYMBOLIC, Cobol85ParserTASK, Cobol85ParserTHREAD, Cobol85ParserTHREAD_LOCAL, Cobol85ParserTIMER, Cobol85ParserTODAYS_DATE, Cobol85ParserTODAYS_NAME, Cobol85ParserTRUE, Cobol85ParserTRUNCATED, Cobol85ParserTYPEDEF, Cobol85ParserUNDERLINE, Cobol85ParserVIRTUAL, Cobol85ParserWAIT, Cobol85ParserYEAR, Cobol85ParserYYYYMMDD, Cobol85ParserYYYYDDD, Cobol85ParserZERO, Cobol85ParserZERO_FILL, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserDOT_FS, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL, Cobol85ParserIDENTIFIER:
 
 	default:
 	}
@@ -9939,6 +10036,9 @@ func (s *AlphabetThroughContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AlphabetThrough() (localctx IAlphabetThroughContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlphabetThroughContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, Cobol85ParserRULE_alphabetThrough)
 	var _la int
@@ -10065,6 +10165,9 @@ func (s *AlphabetAlsoContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AlphabetAlso() (localctx IAlphabetAlsoContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlphabetAlsoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, Cobol85ParserRULE_alphabetAlso)
 
@@ -10217,6 +10320,9 @@ func (s *AlphabetClauseFormat2Context) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) AlphabetClauseFormat2() (localctx IAlphabetClauseFormat2Context) {
+	this := p
+	_ = this
+
 	localctx = NewAlphabetClauseFormat2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, Cobol85ParserRULE_alphabetClauseFormat2)
 	var _la int
@@ -10386,6 +10492,9 @@ func (s *ChannelClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ChannelClause() (localctx IChannelClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewChannelClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, Cobol85ParserRULE_channelClause)
 	var _la int
@@ -10546,6 +10655,9 @@ func (s *ClassClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ClassClause() (localctx IClassClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, Cobol85ParserRULE_classClause)
 	var _la int
@@ -10726,6 +10838,9 @@ func (s *ClassClauseThroughContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ClassClauseThrough() (localctx IClassClauseThroughContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassClauseThroughContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, Cobol85ParserRULE_classClauseThrough)
 	var _la int
@@ -10856,6 +10971,9 @@ func (s *ClassClauseFromContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ClassClauseFrom() (localctx IClassClauseFromContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassClauseFromContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, Cobol85ParserRULE_classClauseFrom)
 
@@ -10976,6 +11094,9 @@ func (s *ClassClauseToContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ClassClauseTo() (localctx IClassClauseToContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassClauseToContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, Cobol85ParserRULE_classClauseTo)
 
@@ -11123,6 +11244,9 @@ func (s *CurrencySignClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CurrencySignClause() (localctx ICurrencySignClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewCurrencySignClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, Cobol85ParserRULE_currencySignClause)
 	var _la int
@@ -11279,6 +11403,9 @@ func (s *DecimalPointClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DecimalPointClause() (localctx IDecimalPointClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDecimalPointClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, Cobol85ParserRULE_decimalPointClause)
 	var _la int
@@ -11418,6 +11545,9 @@ func (s *DefaultComputationalSignClauseContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) DefaultComputationalSignClause() (localctx IDefaultComputationalSignClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefaultComputationalSignClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, Cobol85ParserRULE_defaultComputationalSignClause)
 	var _la int
@@ -11608,6 +11738,9 @@ func (s *DefaultDisplaySignClauseContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) DefaultDisplaySignClause() (localctx IDefaultDisplaySignClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefaultDisplaySignClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, Cobol85ParserRULE_defaultDisplaySignClause)
 	var _la int
@@ -11785,6 +11918,9 @@ func (s *EnvironmentSwitchNameClauseContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) EnvironmentSwitchNameClause() (localctx IEnvironmentSwitchNameClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnvironmentSwitchNameClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, Cobol85ParserRULE_environmentSwitchNameClause)
 	var _la int
@@ -11964,6 +12100,9 @@ func (s *EnvironmentSwitchNameSpecialNamesStatusPhraseContext) ExitRule(listener
 }
 
 func (p *Cobol85Parser) EnvironmentSwitchNameSpecialNamesStatusPhrase() (localctx IEnvironmentSwitchNameSpecialNamesStatusPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnvironmentSwitchNameSpecialNamesStatusPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, Cobol85ParserRULE_environmentSwitchNameSpecialNamesStatusPhrase)
 	var _la int
@@ -12210,6 +12349,9 @@ func (s *OdtClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) OdtClause() (localctx IOdtClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewOdtClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, Cobol85ParserRULE_odtClause)
 	var _la int
@@ -12337,6 +12479,9 @@ func (s *ReserveNetworkClauseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) ReserveNetworkClause() (localctx IReserveNetworkClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReserveNetworkClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, Cobol85ParserRULE_reserveNetworkClause)
 	var _la int
@@ -12529,6 +12674,9 @@ func (s *SymbolicCharactersClauseContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) SymbolicCharactersClause() (localctx ISymbolicCharactersClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolicCharactersClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, Cobol85ParserRULE_symbolicCharactersClause)
 	var _la int
@@ -12746,6 +12894,9 @@ func (s *SymbolicCharactersContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SymbolicCharacters() (localctx ISymbolicCharactersContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolicCharactersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, Cobol85ParserRULE_symbolicCharacters)
 	var _la int
@@ -12911,6 +13062,9 @@ func (s *InputOutputSectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InputOutputSection() (localctx IInputOutputSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewInputOutputSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, Cobol85ParserRULE_inputOutputSection)
 	var _la int
@@ -13041,6 +13195,9 @@ func (s *InputOutputSectionParagraphContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) InputOutputSectionParagraph() (localctx IInputOutputSectionParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewInputOutputSectionParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, Cobol85ParserRULE_inputOutputSectionParagraph)
 
@@ -13179,6 +13336,9 @@ func (s *FileControlParagraphContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) FileControlParagraph() (localctx IFileControlParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewFileControlParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, Cobol85ParserRULE_fileControlParagraph)
 	var _la int
@@ -13333,6 +13493,9 @@ func (s *FileControlEntryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) FileControlEntry() (localctx IFileControlEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewFileControlEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, Cobol85ParserRULE_fileControlEntry)
 	var _la int
@@ -13453,6 +13616,9 @@ func (s *SelectClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SelectClause() (localctx ISelectClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSelectClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 108, Cobol85ParserRULE_selectClause)
 	var _la int
@@ -13666,6 +13832,9 @@ func (s *FileControlClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) FileControlClause() (localctx IFileControlClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewFileControlClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, Cobol85ParserRULE_fileControlClause)
 
@@ -13893,6 +14062,9 @@ func (s *AssignClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AssignClause() (localctx IAssignClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, Cobol85ParserRULE_assignClause)
 	var _la int
@@ -14092,6 +14264,9 @@ func (s *ReserveClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReserveClause() (localctx IReserveClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReserveClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, Cobol85ParserRULE_reserveClause)
 	var _la int
@@ -14259,6 +14434,9 @@ func (s *OrganizationClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) OrganizationClause() (localctx IOrganizationClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewOrganizationClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, Cobol85ParserRULE_organizationClause)
 	var _la int
@@ -14440,6 +14618,9 @@ func (s *PaddingCharacterClauseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) PaddingCharacterClause() (localctx IPaddingCharacterClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewPaddingCharacterClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 118, Cobol85ParserRULE_paddingCharacterClause)
 	var _la int
@@ -14596,6 +14777,9 @@ func (s *RecordDelimiterClauseContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) RecordDelimiterClause() (localctx IRecordDelimiterClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewRecordDelimiterClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, Cobol85ParserRULE_recordDelimiterClause)
 	var _la int
@@ -14749,6 +14933,9 @@ func (s *AccessModeClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AccessModeClause() (localctx IAccessModeClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewAccessModeClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, Cobol85ParserRULE_accessModeClause)
 	var _la int
@@ -14910,6 +15097,9 @@ func (s *RecordKeyClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RecordKeyClause() (localctx IRecordKeyClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewRecordKeyClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 124, Cobol85ParserRULE_recordKeyClause)
 	var _la int
@@ -15100,6 +15290,9 @@ func (s *AlternateRecordKeyClauseContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) AlternateRecordKeyClause() (localctx IAlternateRecordKeyClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlternateRecordKeyClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, Cobol85ParserRULE_alternateRecordKeyClause)
 	var _la int
@@ -15268,6 +15461,9 @@ func (s *PasswordClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PasswordClause() (localctx IPasswordClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewPasswordClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, Cobol85ParserRULE_passwordClause)
 	var _la int
@@ -15406,6 +15602,9 @@ func (s *FileStatusClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) FileStatusClause() (localctx IFileStatusClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewFileStatusClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 130, Cobol85ParserRULE_fileStatusClause)
 	var _la int
@@ -15552,6 +15751,9 @@ func (s *RelativeKeyClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RelativeKeyClause() (localctx IRelativeKeyClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelativeKeyClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, Cobol85ParserRULE_relativeKeyClause)
 	var _la int
@@ -15711,6 +15913,9 @@ func (s *IoControlParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) IoControlParagraph() (localctx IIoControlParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewIoControlParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 134, Cobol85ParserRULE_ioControlParagraph)
 	var _la int
@@ -15882,6 +16087,9 @@ func (s *IoControlClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) IoControlClause() (localctx IIoControlClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewIoControlClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 136, Cobol85ParserRULE_ioControlClause)
 
@@ -16061,6 +16269,9 @@ func (s *RerunClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RerunClause() (localctx IRerunClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewRerunClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 138, Cobol85ParserRULE_rerunClause)
 	var _la int
@@ -16216,6 +16427,9 @@ func (s *RerunEveryRecordsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RerunEveryRecords() (localctx IRerunEveryRecordsContext) {
+	this := p
+	_ = this
+
 	localctx = NewRerunEveryRecordsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 140, Cobol85ParserRULE_rerunEveryRecords)
 
@@ -16337,6 +16551,9 @@ func (s *RerunEveryOfContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RerunEveryOf() (localctx IRerunEveryOfContext) {
+	this := p
+	_ = this
+
 	localctx = NewRerunEveryOfContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 142, Cobol85ParserRULE_rerunEveryOf)
 	var _la int
@@ -16476,6 +16693,9 @@ func (s *RerunEveryClockContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RerunEveryClock() (localctx IRerunEveryClockContext) {
+	this := p
+	_ = this
+
 	localctx = NewRerunEveryClockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 144, Cobol85ParserRULE_rerunEveryClock)
 	var _la int
@@ -16622,6 +16842,9 @@ func (s *SameClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SameClause() (localctx ISameClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSameClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 146, Cobol85ParserRULE_sameClause)
 	var _la int
@@ -16810,6 +17033,9 @@ func (s *MultipleFileClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MultipleFileClause() (localctx IMultipleFileClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultipleFileClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 148, Cobol85ParserRULE_multipleFileClause)
 	var _la int
@@ -16969,6 +17195,9 @@ func (s *MultipleFilePositionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) MultipleFilePosition() (localctx IMultipleFilePositionContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultipleFilePositionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 150, Cobol85ParserRULE_multipleFilePosition)
 	var _la int
@@ -17094,6 +17323,9 @@ func (s *CommitmentControlClauseContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) CommitmentControlClause() (localctx ICommitmentControlClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommitmentControlClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 152, Cobol85ParserRULE_commitmentControlClause)
 	var _la int
@@ -17236,6 +17468,9 @@ func (s *DataDivisionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataDivision() (localctx IDataDivisionContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataDivisionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 154, Cobol85ParserRULE_dataDivision)
 	var _la int
@@ -17436,6 +17671,9 @@ func (s *DataDivisionSectionContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) DataDivisionSection() (localctx IDataDivisionSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataDivisionSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 156, Cobol85ParserRULE_dataDivisionSection)
 
@@ -17623,6 +17861,9 @@ func (s *FileSectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) FileSection() (localctx IFileSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewFileSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 158, Cobol85ParserRULE_fileSection)
 	var _la int
@@ -17805,6 +18046,9 @@ func (s *FileDescriptionEntryContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) FileDescriptionEntry() (localctx IFileDescriptionEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewFileDescriptionEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 160, Cobol85ParserRULE_fileDescriptionEntry)
 	var _la int
@@ -18061,6 +18305,9 @@ func (s *FileDescriptionEntryClauseContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Cobol85Parser) FileDescriptionEntryClause() (localctx IFileDescriptionEntryClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewFileDescriptionEntryClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 162, Cobol85ParserRULE_fileDescriptionEntryClause)
 
@@ -18232,6 +18479,9 @@ func (s *ExternalClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ExternalClause() (localctx IExternalClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewExternalClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 164, Cobol85ParserRULE_externalClause)
 	var _la int
@@ -18339,6 +18589,9 @@ func (s *GlobalClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) GlobalClause() (localctx IGlobalClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewGlobalClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 166, Cobol85ParserRULE_globalClause)
 	var _la int
@@ -18474,6 +18727,9 @@ func (s *BlockContainsClauseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) BlockContainsClause() (localctx IBlockContainsClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewBlockContainsClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 168, Cobol85ParserRULE_blockContainsClause)
 	var _la int
@@ -18620,6 +18876,9 @@ func (s *BlockContainsToContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) BlockContainsTo() (localctx IBlockContainsToContext) {
+	this := p
+	_ = this
+
 	localctx = NewBlockContainsToContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 170, Cobol85ParserRULE_blockContainsTo)
 
@@ -18745,6 +19004,9 @@ func (s *RecordContainsClauseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) RecordContainsClause() (localctx IRecordContainsClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewRecordContainsClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 172, Cobol85ParserRULE_recordContainsClause)
 
@@ -18872,6 +19134,9 @@ func (s *RecordContainsClauseFormat1Context) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) RecordContainsClauseFormat1() (localctx IRecordContainsClauseFormat1Context) {
+	this := p
+	_ = this
+
 	localctx = NewRecordContainsClauseFormat1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 174, Cobol85ParserRULE_recordContainsClauseFormat1)
 	var _la int
@@ -19044,6 +19309,9 @@ func (s *RecordContainsClauseFormat2Context) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) RecordContainsClauseFormat2() (localctx IRecordContainsClauseFormat2Context) {
+	this := p
+	_ = this
+
 	localctx = NewRecordContainsClauseFormat2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 176, Cobol85ParserRULE_recordContainsClauseFormat2)
 	var _la int
@@ -19263,6 +19531,9 @@ func (s *RecordContainsClauseFormat3Context) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) RecordContainsClauseFormat3() (localctx IRecordContainsClauseFormat3Context) {
+	this := p
+	_ = this
+
 	localctx = NewRecordContainsClauseFormat3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 178, Cobol85ParserRULE_recordContainsClauseFormat3)
 	var _la int
@@ -19391,6 +19662,9 @@ func (s *RecordContainsToContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RecordContainsTo() (localctx IRecordContainsToContext) {
+	this := p
+	_ = this
+
 	localctx = NewRecordContainsToContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 180, Cobol85ParserRULE_recordContainsTo)
 
@@ -19533,6 +19807,9 @@ func (s *LabelRecordsClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) LabelRecordsClause() (localctx ILabelRecordsClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewLabelRecordsClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 182, Cobol85ParserRULE_labelRecordsClause)
 	var _la int
@@ -19728,6 +20005,9 @@ func (s *ValueOfClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ValueOfClause() (localctx IValueOfClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueOfClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 184, Cobol85ParserRULE_valueOfClause)
 	var _la int
@@ -19868,6 +20148,9 @@ func (s *ValuePairContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ValuePair() (localctx IValuePairContext) {
+	this := p
+	_ = this
+
 	localctx = NewValuePairContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 186, Cobol85ParserRULE_valuePair)
 	var _la int
@@ -20026,6 +20309,9 @@ func (s *DataRecordsClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataRecordsClause() (localctx IDataRecordsClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataRecordsClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 188, Cobol85ParserRULE_dataRecordsClause)
 	var _la int
@@ -20224,6 +20510,9 @@ func (s *LinageClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) LinageClause() (localctx ILinageClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewLinageClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 190, Cobol85ParserRULE_linageClause)
 	var _la int
@@ -20396,6 +20685,9 @@ func (s *LinageAtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) LinageAt() (localctx ILinageAtContext) {
+	this := p
+	_ = this
+
 	localctx = NewLinageAtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 192, Cobol85ParserRULE_linageAt)
 
@@ -20535,6 +20827,9 @@ func (s *LinageFootingAtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) LinageFootingAt() (localctx ILinageFootingAtContext) {
+	this := p
+	_ = this
+
 	localctx = NewLinageFootingAtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 194, Cobol85ParserRULE_linageFootingAt)
 	var _la int
@@ -20696,6 +20991,9 @@ func (s *LinageLinesAtTopContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) LinageLinesAtTop() (localctx ILinageLinesAtTopContext) {
+	this := p
+	_ = this
+
 	localctx = NewLinageLinesAtTopContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 196, Cobol85ParserRULE_linageLinesAtTop)
 	var _la int
@@ -20857,6 +21155,9 @@ func (s *LinageLinesAtBottomContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) LinageLinesAtBottom() (localctx ILinageLinesAtBottomContext) {
+	this := p
+	_ = this
+
 	localctx = NewLinageLinesAtBottomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 198, Cobol85ParserRULE_linageLinesAtBottom)
 	var _la int
@@ -21008,6 +21309,9 @@ func (s *RecordingModeClauseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) RecordingModeClause() (localctx IRecordingModeClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewRecordingModeClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 200, Cobol85ParserRULE_recordingModeClause)
 	var _la int
@@ -21132,6 +21436,9 @@ func (s *ModeStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ModeStatement() (localctx IModeStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewModeStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 202, Cobol85ParserRULE_modeStatement)
 
@@ -21237,6 +21544,9 @@ func (s *CodeSetClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CodeSetClause() (localctx ICodeSetClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewCodeSetClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 204, Cobol85ParserRULE_codeSetClause)
 	var _la int
@@ -21379,6 +21689,9 @@ func (s *ReportClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReportClause() (localctx IReportClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 206, Cobol85ParserRULE_reportClause)
 	var _la int
@@ -21553,6 +21866,9 @@ func (s *DataBaseSectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataBaseSection() (localctx IDataBaseSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataBaseSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 208, Cobol85ParserRULE_dataBaseSection)
 	var _la int
@@ -21700,6 +22016,9 @@ func (s *DataBaseSectionEntryContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) DataBaseSectionEntry() (localctx IDataBaseSectionEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataBaseSectionEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 210, Cobol85ParserRULE_dataBaseSectionEntry)
 
@@ -21834,6 +22153,9 @@ func (s *WorkingStorageSectionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) WorkingStorageSection() (localctx IWorkingStorageSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewWorkingStorageSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 212, Cobol85ParserRULE_workingStorageSection)
 	var _la int
@@ -21979,6 +22301,9 @@ func (s *LinkageSectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) LinkageSection() (localctx ILinkageSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewLinkageSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 214, Cobol85ParserRULE_linkageSection)
 	var _la int
@@ -22147,6 +22472,9 @@ func (s *CommunicationSectionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) CommunicationSection() (localctx ICommunicationSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommunicationSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 216, Cobol85ParserRULE_communicationSection)
 	var _la int
@@ -22302,6 +22630,9 @@ func (s *CommunicationDescriptionEntryContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) CommunicationDescriptionEntry() (localctx ICommunicationDescriptionEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommunicationDescriptionEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 218, Cobol85ParserRULE_communicationDescriptionEntry)
 
@@ -22669,6 +23000,9 @@ func (s *CommunicationDescriptionEntryFormat1Context) ExitRule(listener antlr.Pa
 }
 
 func (p *Cobol85Parser) CommunicationDescriptionEntryFormat1() (localctx ICommunicationDescriptionEntryFormat1Context) {
+	this := p
+	_ = this
+
 	localctx = NewCommunicationDescriptionEntryFormat1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 220, Cobol85ParserRULE_communicationDescriptionEntryFormat1)
 	var _la int
@@ -23038,6 +23372,9 @@ func (s *CommunicationDescriptionEntryFormat2Context) ExitRule(listener antlr.Pa
 }
 
 func (p *Cobol85Parser) CommunicationDescriptionEntryFormat2() (localctx ICommunicationDescriptionEntryFormat2Context) {
+	this := p
+	_ = this
+
 	localctx = NewCommunicationDescriptionEntryFormat2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 222, Cobol85ParserRULE_communicationDescriptionEntryFormat2)
 	var _la int
@@ -23390,6 +23727,9 @@ func (s *CommunicationDescriptionEntryFormat3Context) ExitRule(listener antlr.Pa
 }
 
 func (p *Cobol85Parser) CommunicationDescriptionEntryFormat3() (localctx ICommunicationDescriptionEntryFormat3Context) {
+	this := p
+	_ = this
+
 	localctx = NewCommunicationDescriptionEntryFormat3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 224, Cobol85ParserRULE_communicationDescriptionEntryFormat3)
 	var _la int
@@ -23592,6 +23932,9 @@ func (s *DestinationCountClauseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) DestinationCountClause() (localctx IDestinationCountClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDestinationCountClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 226, Cobol85ParserRULE_destinationCountClause)
 	var _la int
@@ -23756,6 +24099,9 @@ func (s *DestinationTableClauseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) DestinationTableClause() (localctx IDestinationTableClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDestinationTableClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 228, Cobol85ParserRULE_destinationTableClause)
 	var _la int
@@ -23911,6 +24257,9 @@ func (s *EndKeyClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EndKeyClause() (localctx IEndKeyClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewEndKeyClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 230, Cobol85ParserRULE_endKeyClause)
 	var _la int
@@ -24040,6 +24389,9 @@ func (s *ErrorKeyClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ErrorKeyClause() (localctx IErrorKeyClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewErrorKeyClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 232, Cobol85ParserRULE_errorKeyClause)
 	var _la int
@@ -24169,6 +24521,9 @@ func (s *MessageCountClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MessageCountClause() (localctx IMessageCountClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewMessageCountClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 234, Cobol85ParserRULE_messageCountClause)
 	var _la int
@@ -24305,6 +24660,9 @@ func (s *MessageDateClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MessageDateClause() (localctx IMessageDateClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewMessageDateClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 236, Cobol85ParserRULE_messageDateClause)
 	var _la int
@@ -24434,6 +24792,9 @@ func (s *MessageTimeClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MessageTimeClause() (localctx IMessageTimeClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewMessageTimeClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 238, Cobol85ParserRULE_messageTimeClause)
 	var _la int
@@ -24563,6 +24924,9 @@ func (s *StatusKeyClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) StatusKeyClause() (localctx IStatusKeyClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatusKeyClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 240, Cobol85ParserRULE_statusKeyClause)
 	var _la int
@@ -24692,6 +25056,9 @@ func (s *SymbolicDestinationClauseContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) SymbolicDestinationClause() (localctx ISymbolicDestinationClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolicDestinationClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 242, Cobol85ParserRULE_symbolicDestinationClause)
 	var _la int
@@ -24828,6 +25195,9 @@ func (s *SymbolicQueueClauseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) SymbolicQueueClause() (localctx ISymbolicQueueClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolicQueueClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 244, Cobol85ParserRULE_symbolicQueueClause)
 	var _la int
@@ -24964,6 +25334,9 @@ func (s *SymbolicSourceClauseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) SymbolicSourceClause() (localctx ISymbolicSourceClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolicSourceClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 246, Cobol85ParserRULE_symbolicSourceClause)
 	var _la int
@@ -25100,6 +25473,9 @@ func (s *SymbolicTerminalClauseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) SymbolicTerminalClause() (localctx ISymbolicTerminalClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolicTerminalClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 248, Cobol85ParserRULE_symbolicTerminalClause)
 	var _la int
@@ -25244,6 +25620,9 @@ func (s *SymbolicSubQueueClauseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) SymbolicSubQueueClause() (localctx ISymbolicSubQueueClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolicSubQueueClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 250, Cobol85ParserRULE_symbolicSubQueueClause)
 	var _la int
@@ -25387,6 +25766,9 @@ func (s *TextLengthClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) TextLengthClause() (localctx ITextLengthClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewTextLengthClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 252, Cobol85ParserRULE_textLengthClause)
 	var _la int
@@ -25547,6 +25929,9 @@ func (s *LocalStorageSectionContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) LocalStorageSection() (localctx ILocalStorageSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewLocalStorageSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 254, Cobol85ParserRULE_localStorageSection)
 	var _la int
@@ -25711,6 +26096,9 @@ func (s *ScreenSectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ScreenSection() (localctx IScreenSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 256, Cobol85ParserRULE_screenSection)
 	var _la int
@@ -26487,6 +26875,9 @@ func (s *ScreenDescriptionEntryContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) ScreenDescriptionEntry() (localctx IScreenDescriptionEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 258, Cobol85ParserRULE_screenDescriptionEntry)
 	var _la int
@@ -26798,6 +27189,9 @@ func (s *ScreenDescriptionBlankClauseContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ScreenDescriptionBlankClause() (localctx IScreenDescriptionBlankClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionBlankClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 260, Cobol85ParserRULE_screenDescriptionBlankClause)
 	var _la int
@@ -26905,6 +27299,9 @@ func (s *ScreenDescriptionBellClauseContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) ScreenDescriptionBellClause() (localctx IScreenDescriptionBellClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionBellClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 262, Cobol85ParserRULE_screenDescriptionBellClause)
 	var _la int
@@ -27004,6 +27401,9 @@ func (s *ScreenDescriptionBlinkClauseContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ScreenDescriptionBlinkClause() (localctx IScreenDescriptionBlinkClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionBlinkClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 264, Cobol85ParserRULE_screenDescriptionBlinkClause)
 
@@ -27103,6 +27503,9 @@ func (s *ScreenDescriptionEraseClauseContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ScreenDescriptionEraseClause() (localctx IScreenDescriptionEraseClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionEraseClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 266, Cobol85ParserRULE_screenDescriptionEraseClause)
 	var _la int
@@ -27210,6 +27613,9 @@ func (s *ScreenDescriptionLightClauseContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ScreenDescriptionLightClause() (localctx IScreenDescriptionLightClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionLightClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 268, Cobol85ParserRULE_screenDescriptionLightClause)
 	var _la int
@@ -27317,6 +27723,9 @@ func (s *ScreenDescriptionGridClauseContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) ScreenDescriptionGridClause() (localctx IScreenDescriptionGridClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionGridClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 270, Cobol85ParserRULE_screenDescriptionGridClause)
 	var _la int
@@ -27416,6 +27825,9 @@ func (s *ScreenDescriptionReverseVideoClauseContext) ExitRule(listener antlr.Par
 }
 
 func (p *Cobol85Parser) ScreenDescriptionReverseVideoClause() (localctx IScreenDescriptionReverseVideoClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionReverseVideoClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 272, Cobol85ParserRULE_screenDescriptionReverseVideoClause)
 
@@ -27507,6 +27919,9 @@ func (s *ScreenDescriptionUnderlineClauseContext) ExitRule(listener antlr.ParseT
 }
 
 func (p *Cobol85Parser) ScreenDescriptionUnderlineClause() (localctx IScreenDescriptionUnderlineClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionUnderlineClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 274, Cobol85ParserRULE_screenDescriptionUnderlineClause)
 
@@ -27622,6 +28037,9 @@ func (s *ScreenDescriptionSizeClauseContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) ScreenDescriptionSizeClause() (localctx IScreenDescriptionSizeClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionSizeClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 276, Cobol85ParserRULE_screenDescriptionSizeClause)
 	var _la int
@@ -27781,6 +28199,9 @@ func (s *ScreenDescriptionLineClauseContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) ScreenDescriptionLineClause() (localctx IScreenDescriptionLineClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionLineClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 278, Cobol85ParserRULE_screenDescriptionLineClause)
 	var _la int
@@ -27973,6 +28394,9 @@ func (s *ScreenDescriptionColumnClauseContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) ScreenDescriptionColumnClause() (localctx IScreenDescriptionColumnClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionColumnClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 280, Cobol85ParserRULE_screenDescriptionColumnClause)
 	var _la int
@@ -28157,6 +28581,9 @@ func (s *ScreenDescriptionForegroundColorClauseContext) ExitRule(listener antlr.
 }
 
 func (p *Cobol85Parser) ScreenDescriptionForegroundColorClause() (localctx IScreenDescriptionForegroundColorClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionForegroundColorClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 282, Cobol85ParserRULE_screenDescriptionForegroundColorClause)
 	var _la int
@@ -28312,6 +28739,9 @@ func (s *ScreenDescriptionBackgroundColorClauseContext) ExitRule(listener antlr.
 }
 
 func (p *Cobol85Parser) ScreenDescriptionBackgroundColorClause() (localctx IScreenDescriptionBackgroundColorClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionBackgroundColorClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 284, Cobol85ParserRULE_screenDescriptionBackgroundColorClause)
 	var _la int
@@ -28452,6 +28882,9 @@ func (s *ScreenDescriptionControlClauseContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) ScreenDescriptionControlClause() (localctx IScreenDescriptionControlClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionControlClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 286, Cobol85ParserRULE_screenDescriptionControlClause)
 	var _la int
@@ -28573,6 +29006,9 @@ func (s *ScreenDescriptionValueClauseContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ScreenDescriptionValueClause() (localctx IScreenDescriptionValueClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionValueClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 288, Cobol85ParserRULE_screenDescriptionValueClause)
 	var _la int
@@ -28699,6 +29135,9 @@ func (s *ScreenDescriptionPictureClauseContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) ScreenDescriptionPictureClause() (localctx IScreenDescriptionPictureClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionPictureClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 290, Cobol85ParserRULE_screenDescriptionPictureClause)
 	var _la int
@@ -28843,6 +29282,9 @@ func (s *ScreenDescriptionFromClauseContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) ScreenDescriptionFromClause() (localctx IScreenDescriptionFromClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionFromClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 292, Cobol85ParserRULE_screenDescriptionFromClause)
 	var _la int
@@ -28972,6 +29414,9 @@ func (s *ScreenDescriptionToClauseContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) ScreenDescriptionToClause() (localctx IScreenDescriptionToClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionToClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 294, Cobol85ParserRULE_screenDescriptionToClause)
 
@@ -29077,6 +29522,9 @@ func (s *ScreenDescriptionUsingClauseContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ScreenDescriptionUsingClause() (localctx IScreenDescriptionUsingClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionUsingClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 296, Cobol85ParserRULE_screenDescriptionUsingClause)
 
@@ -29184,6 +29632,9 @@ func (s *ScreenDescriptionUsageClauseContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ScreenDescriptionUsageClause() (localctx IScreenDescriptionUsageClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionUsageClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 298, Cobol85ParserRULE_screenDescriptionUsageClause)
 	var _la int
@@ -29307,6 +29758,9 @@ func (s *ScreenDescriptionBlankWhenZeroClauseContext) ExitRule(listener antlr.Pa
 }
 
 func (p *Cobol85Parser) ScreenDescriptionBlankWhenZeroClause() (localctx IScreenDescriptionBlankWhenZeroClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionBlankWhenZeroClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 300, Cobol85ParserRULE_screenDescriptionBlankWhenZeroClause)
 	var _la int
@@ -29422,6 +29876,9 @@ func (s *ScreenDescriptionJustifiedClauseContext) ExitRule(listener antlr.ParseT
 }
 
 func (p *Cobol85Parser) ScreenDescriptionJustifiedClause() (localctx IScreenDescriptionJustifiedClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionJustifiedClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 302, Cobol85ParserRULE_screenDescriptionJustifiedClause)
 	var _la int
@@ -29552,6 +30009,9 @@ func (s *ScreenDescriptionSignClauseContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) ScreenDescriptionSignClause() (localctx IScreenDescriptionSignClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionSignClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 304, Cobol85ParserRULE_screenDescriptionSignClause)
 	var _la int
@@ -29699,6 +30159,9 @@ func (s *ScreenDescriptionAutoClauseContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) ScreenDescriptionAutoClause() (localctx IScreenDescriptionAutoClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionAutoClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 306, Cobol85ParserRULE_screenDescriptionAutoClause)
 	var _la int
@@ -29802,6 +30265,9 @@ func (s *ScreenDescriptionSecureClauseContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) ScreenDescriptionSecureClause() (localctx IScreenDescriptionSecureClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionSecureClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 308, Cobol85ParserRULE_screenDescriptionSecureClause)
 	var _la int
@@ -29905,6 +30371,9 @@ func (s *ScreenDescriptionRequiredClauseContext) ExitRule(listener antlr.ParseTr
 }
 
 func (p *Cobol85Parser) ScreenDescriptionRequiredClause() (localctx IScreenDescriptionRequiredClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionRequiredClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 310, Cobol85ParserRULE_screenDescriptionRequiredClause)
 	var _la int
@@ -30042,6 +30511,9 @@ func (s *ScreenDescriptionPromptClauseContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) ScreenDescriptionPromptClause() (localctx IScreenDescriptionPromptClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionPromptClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 312, Cobol85ParserRULE_screenDescriptionPromptClause)
 	var _la int
@@ -30197,6 +30669,9 @@ func (s *ScreenDescriptionPromptOccursClauseContext) ExitRule(listener antlr.Par
 }
 
 func (p *Cobol85Parser) ScreenDescriptionPromptOccursClause() (localctx IScreenDescriptionPromptOccursClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionPromptOccursClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 314, Cobol85ParserRULE_screenDescriptionPromptOccursClause)
 	var _la int
@@ -30308,6 +30783,9 @@ func (s *ScreenDescriptionFullClauseContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) ScreenDescriptionFullClause() (localctx IScreenDescriptionFullClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionFullClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 316, Cobol85ParserRULE_screenDescriptionFullClause)
 	var _la int
@@ -30407,6 +30885,9 @@ func (s *ScreenDescriptionZeroFillClauseContext) ExitRule(listener antlr.ParseTr
 }
 
 func (p *Cobol85Parser) ScreenDescriptionZeroFillClause() (localctx IScreenDescriptionZeroFillClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenDescriptionZeroFillClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 318, Cobol85ParserRULE_screenDescriptionZeroFillClause)
 
@@ -30529,6 +31010,9 @@ func (s *ReportSectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReportSection() (localctx IReportSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 320, Cobol85ParserRULE_reportSection)
 	var _la int
@@ -30672,6 +31156,9 @@ func (s *ReportDescriptionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReportDescription() (localctx IReportDescriptionContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportDescriptionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 322, Cobol85ParserRULE_reportDescription)
 	var _la int
@@ -30852,6 +31339,9 @@ func (s *ReportDescriptionEntryContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) ReportDescriptionEntry() (localctx IReportDescriptionEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportDescriptionEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 324, Cobol85ParserRULE_reportDescriptionEntry)
 	var _la int
@@ -31022,6 +31512,9 @@ func (s *ReportDescriptionGlobalClauseContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) ReportDescriptionGlobalClause() (localctx IReportDescriptionGlobalClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportDescriptionGlobalClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 326, Cobol85ParserRULE_reportDescriptionGlobalClause)
 	var _la int
@@ -31159,6 +31652,9 @@ func (s *ReportDescriptionPageLimitClauseContext) ExitRule(listener antlr.ParseT
 }
 
 func (p *Cobol85Parser) ReportDescriptionPageLimitClause() (localctx IReportDescriptionPageLimitClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportDescriptionPageLimitClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 328, Cobol85ParserRULE_reportDescriptionPageLimitClause)
 	var _la int
@@ -31325,6 +31821,9 @@ func (s *ReportDescriptionHeadingClauseContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) ReportDescriptionHeadingClause() (localctx IReportDescriptionHeadingClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportDescriptionHeadingClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 330, Cobol85ParserRULE_reportDescriptionHeadingClause)
 
@@ -31434,6 +31933,9 @@ func (s *ReportDescriptionFirstDetailClauseContext) ExitRule(listener antlr.Pars
 }
 
 func (p *Cobol85Parser) ReportDescriptionFirstDetailClause() (localctx IReportDescriptionFirstDetailClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportDescriptionFirstDetailClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 332, Cobol85ParserRULE_reportDescriptionFirstDetailClause)
 
@@ -31547,6 +32049,9 @@ func (s *ReportDescriptionLastDetailClauseContext) ExitRule(listener antlr.Parse
 }
 
 func (p *Cobol85Parser) ReportDescriptionLastDetailClause() (localctx IReportDescriptionLastDetailClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportDescriptionLastDetailClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 334, Cobol85ParserRULE_reportDescriptionLastDetailClause)
 
@@ -31656,6 +32161,9 @@ func (s *ReportDescriptionFootingClauseContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) ReportDescriptionFootingClause() (localctx IReportDescriptionFootingClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportDescriptionFootingClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 336, Cobol85ParserRULE_reportDescriptionFootingClause)
 
@@ -31777,6 +32285,9 @@ func (s *ReportGroupDescriptionEntryContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) ReportGroupDescriptionEntry() (localctx IReportGroupDescriptionEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupDescriptionEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 338, Cobol85ParserRULE_reportGroupDescriptionEntry)
 
@@ -31948,6 +32459,9 @@ func (s *ReportGroupDescriptionEntryFormat1Context) ExitRule(listener antlr.Pars
 }
 
 func (p *Cobol85Parser) ReportGroupDescriptionEntryFormat1() (localctx IReportGroupDescriptionEntryFormat1Context) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupDescriptionEntryFormat1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 340, Cobol85ParserRULE_reportGroupDescriptionEntryFormat1)
 	var _la int
@@ -32125,6 +32639,9 @@ func (s *ReportGroupDescriptionEntryFormat2Context) ExitRule(listener antlr.Pars
 }
 
 func (p *Cobol85Parser) ReportGroupDescriptionEntryFormat2() (localctx IReportGroupDescriptionEntryFormat2Context) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupDescriptionEntryFormat2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 342, Cobol85ParserRULE_reportGroupDescriptionEntryFormat2)
 	var _la int
@@ -32543,6 +33060,9 @@ func (s *ReportGroupDescriptionEntryFormat3Context) ExitRule(listener antlr.Pars
 }
 
 func (p *Cobol85Parser) ReportGroupDescriptionEntryFormat3() (localctx IReportGroupDescriptionEntryFormat3Context) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupDescriptionEntryFormat3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 344, Cobol85ParserRULE_reportGroupDescriptionEntryFormat3)
 	var _la int
@@ -32756,6 +33276,9 @@ func (s *ReportGroupBlankWhenZeroClauseContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) ReportGroupBlankWhenZeroClause() (localctx IReportGroupBlankWhenZeroClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupBlankWhenZeroClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 346, Cobol85ParserRULE_reportGroupBlankWhenZeroClause)
 	var _la int
@@ -32881,6 +33404,9 @@ func (s *ReportGroupColumnNumberClauseContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) ReportGroupColumnNumberClause() (localctx IReportGroupColumnNumberClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupColumnNumberClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 348, Cobol85ParserRULE_reportGroupColumnNumberClause)
 	var _la int
@@ -33003,6 +33529,9 @@ func (s *ReportGroupIndicateClauseContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) ReportGroupIndicateClause() (localctx IReportGroupIndicateClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupIndicateClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 350, Cobol85ParserRULE_reportGroupIndicateClause)
 	var _la int
@@ -33114,6 +33643,9 @@ func (s *ReportGroupJustifiedClauseContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Cobol85Parser) ReportGroupJustifiedClause() (localctx IReportGroupJustifiedClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupJustifiedClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 352, Cobol85ParserRULE_reportGroupJustifiedClause)
 	var _la int
@@ -33252,6 +33784,9 @@ func (s *ReportGroupLineNumberClauseContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) ReportGroupLineNumberClause() (localctx IReportGroupLineNumberClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupLineNumberClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 354, Cobol85ParserRULE_reportGroupLineNumberClause)
 	var _la int
@@ -33410,6 +33945,9 @@ func (s *ReportGroupLineNumberNextPageContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) ReportGroupLineNumberNextPage() (localctx IReportGroupLineNumberNextPageContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupLineNumberNextPageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 356, Cobol85ParserRULE_reportGroupLineNumberNextPage)
 	var _la int
@@ -33537,6 +34075,9 @@ func (s *ReportGroupLineNumberPlusContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) ReportGroupLineNumberPlus() (localctx IReportGroupLineNumberPlusContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupLineNumberPlusContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 358, Cobol85ParserRULE_reportGroupLineNumberPlus)
 
@@ -33670,6 +34211,9 @@ func (s *ReportGroupNextGroupClauseContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Cobol85Parser) ReportGroupNextGroupClause() (localctx IReportGroupNextGroupClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupNextGroupClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 360, Cobol85ParserRULE_reportGroupNextGroupClause)
 	var _la int
@@ -33812,6 +34356,9 @@ func (s *ReportGroupNextGroupPlusContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) ReportGroupNextGroupPlus() (localctx IReportGroupNextGroupPlusContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupNextGroupPlusContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 362, Cobol85ParserRULE_reportGroupNextGroupPlus)
 
@@ -33911,6 +34458,9 @@ func (s *ReportGroupNextGroupNextPageContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ReportGroupNextGroupNextPage() (localctx IReportGroupNextGroupNextPageContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupNextGroupNextPageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 364, Cobol85ParserRULE_reportGroupNextGroupNextPage)
 
@@ -34024,6 +34574,9 @@ func (s *ReportGroupPictureClauseContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) ReportGroupPictureClause() (localctx IReportGroupPictureClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupPictureClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 366, Cobol85ParserRULE_reportGroupPictureClause)
 	var _la int
@@ -34156,6 +34709,9 @@ func (s *ReportGroupResetClauseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) ReportGroupResetClause() (localctx IReportGroupResetClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupResetClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 368, Cobol85ParserRULE_reportGroupResetClause)
 	var _la int
@@ -34298,6 +34854,9 @@ func (s *ReportGroupSignClauseContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) ReportGroupSignClause() (localctx IReportGroupSignClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupSignClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 370, Cobol85ParserRULE_reportGroupSignClause)
 	var _la int
@@ -34441,6 +35000,9 @@ func (s *ReportGroupSourceClauseContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) ReportGroupSourceClause() (localctx IReportGroupSourceClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupSourceClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 372, Cobol85ParserRULE_reportGroupSourceClause)
 	var _la int
@@ -34606,6 +35168,9 @@ func (s *ReportGroupSumClauseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) ReportGroupSumClause() (localctx IReportGroupSumClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupSumClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 374, Cobol85ParserRULE_reportGroupSumClause)
 	var _la int
@@ -34845,6 +35410,9 @@ func (s *ReportGroupTypeClauseContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) ReportGroupTypeClause() (localctx IReportGroupTypeClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupTypeClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 376, Cobol85ParserRULE_reportGroupTypeClause)
 	var _la int
@@ -35002,6 +35570,9 @@ func (s *ReportGroupTypeReportHeadingContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ReportGroupTypeReportHeading() (localctx IReportGroupTypeReportHeadingContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupTypeReportHeadingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 378, Cobol85ParserRULE_reportGroupTypeReportHeading)
 
@@ -35121,6 +35692,9 @@ func (s *ReportGroupTypePageHeadingContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Cobol85Parser) ReportGroupTypePageHeading() (localctx IReportGroupTypePageHeadingContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupTypePageHeadingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 380, Cobol85ParserRULE_reportGroupTypePageHeading)
 
@@ -35254,6 +35828,9 @@ func (s *ReportGroupTypeControlHeadingContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) ReportGroupTypeControlHeading() (localctx IReportGroupTypeControlHeadingContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupTypeControlHeadingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 382, Cobol85ParserRULE_reportGroupTypeControlHeading)
 
@@ -35387,6 +35964,9 @@ func (s *ReportGroupTypeDetailContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) ReportGroupTypeDetail() (localctx IReportGroupTypeDetailContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupTypeDetailContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 384, Cobol85ParserRULE_reportGroupTypeDetail)
 	var _la int
@@ -35508,6 +36088,9 @@ func (s *ReportGroupTypeControlFootingContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) ReportGroupTypeControlFooting() (localctx IReportGroupTypeControlFootingContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupTypeControlFootingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 386, Cobol85ParserRULE_reportGroupTypeControlFooting)
 
@@ -35649,6 +36232,9 @@ func (s *ReportGroupUsageClauseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) ReportGroupUsageClause() (localctx IReportGroupUsageClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupUsageClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 388, Cobol85ParserRULE_reportGroupUsageClause)
 	var _la int
@@ -35778,6 +36364,9 @@ func (s *ReportGroupTypePageFootingContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Cobol85Parser) ReportGroupTypePageFooting() (localctx IReportGroupTypePageFootingContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupTypePageFootingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 390, Cobol85ParserRULE_reportGroupTypePageFooting)
 
@@ -35897,6 +36486,9 @@ func (s *ReportGroupTypeReportFootingContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ReportGroupTypeReportFooting() (localctx IReportGroupTypeReportFootingContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupTypeReportFootingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 392, Cobol85ParserRULE_reportGroupTypeReportFooting)
 
@@ -36022,6 +36614,9 @@ func (s *ReportGroupValueClauseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) ReportGroupValueClause() (localctx IReportGroupValueClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportGroupValueClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 394, Cobol85ParserRULE_reportGroupValueClause)
 	var _la int
@@ -36160,6 +36755,9 @@ func (s *ProgramLibrarySectionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) ProgramLibrarySection() (localctx IProgramLibrarySectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramLibrarySectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 396, Cobol85ParserRULE_programLibrarySection)
 	var _la int
@@ -36290,6 +36888,9 @@ func (s *LibraryDescriptionEntryContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) LibraryDescriptionEntry() (localctx ILibraryDescriptionEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryDescriptionEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 398, Cobol85ParserRULE_libraryDescriptionEntry)
 
@@ -36431,6 +37032,9 @@ func (s *LibraryDescriptionEntryFormat1Context) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) LibraryDescriptionEntryFormat1() (localctx ILibraryDescriptionEntryFormat1Context) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryDescriptionEntryFormat1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 400, Cobol85ParserRULE_libraryDescriptionEntryFormat1)
 	var _la int
@@ -36633,6 +37237,9 @@ func (s *LibraryDescriptionEntryFormat2Context) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) LibraryDescriptionEntryFormat2() (localctx ILibraryDescriptionEntryFormat2Context) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryDescriptionEntryFormat2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 402, Cobol85ParserRULE_libraryDescriptionEntryFormat2)
 	var _la int
@@ -36807,6 +37414,9 @@ func (s *LibraryAttributeClauseFormat1Context) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) LibraryAttributeClauseFormat1() (localctx ILibraryAttributeClauseFormat1Context) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryAttributeClauseFormat1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 404, Cobol85ParserRULE_libraryAttributeClauseFormat1)
 	var _la int
@@ -36978,6 +37588,9 @@ func (s *LibraryAttributeClauseFormat2Context) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) LibraryAttributeClauseFormat2() (localctx ILibraryAttributeClauseFormat2Context) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryAttributeClauseFormat2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 406, Cobol85ParserRULE_libraryAttributeClauseFormat2)
 	var _la int
@@ -37150,6 +37763,9 @@ func (s *LibraryAttributeFunctionContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) LibraryAttributeFunction() (localctx ILibraryAttributeFunctionContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryAttributeFunctionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 408, Cobol85ParserRULE_libraryAttributeFunction)
 
@@ -37263,6 +37879,9 @@ func (s *LibraryAttributeParameterContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) LibraryAttributeParameter() (localctx ILibraryAttributeParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryAttributeParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 410, Cobol85ParserRULE_libraryAttributeParameter)
 	var _la int
@@ -37384,6 +38003,9 @@ func (s *LibraryAttributeTitleContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) LibraryAttributeTitle() (localctx ILibraryAttributeTitleContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryAttributeTitleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 412, Cobol85ParserRULE_libraryAttributeTitle)
 	var _la int
@@ -37511,6 +38133,9 @@ func (s *LibraryEntryProcedureClauseFormat1Context) ExitRule(listener antlr.Pars
 }
 
 func (p *Cobol85Parser) LibraryEntryProcedureClauseFormat1() (localctx ILibraryEntryProcedureClauseFormat1Context) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryEntryProcedureClauseFormat1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 414, Cobol85ParserRULE_libraryEntryProcedureClauseFormat1)
 	var _la int
@@ -37668,6 +38293,9 @@ func (s *LibraryEntryProcedureClauseFormat2Context) ExitRule(listener antlr.Pars
 }
 
 func (p *Cobol85Parser) LibraryEntryProcedureClauseFormat2() (localctx ILibraryEntryProcedureClauseFormat2Context) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryEntryProcedureClauseFormat2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 416, Cobol85ParserRULE_libraryEntryProcedureClauseFormat2)
 	var _la int
@@ -37818,6 +38446,9 @@ func (s *LibraryEntryProcedureForClauseContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) LibraryEntryProcedureForClause() (localctx ILibraryEntryProcedureForClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryEntryProcedureForClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 418, Cobol85ParserRULE_libraryEntryProcedureForClause)
 
@@ -37923,6 +38554,9 @@ func (s *LibraryEntryProcedureGivingClauseContext) ExitRule(listener antlr.Parse
 }
 
 func (p *Cobol85Parser) LibraryEntryProcedureGivingClause() (localctx ILibraryEntryProcedureGivingClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryEntryProcedureGivingClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 420, Cobol85ParserRULE_libraryEntryProcedureGivingClause)
 
@@ -38041,6 +38675,9 @@ func (s *LibraryEntryProcedureUsingClauseContext) ExitRule(listener antlr.ParseT
 }
 
 func (p *Cobol85Parser) LibraryEntryProcedureUsingClause() (localctx ILibraryEntryProcedureUsingClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryEntryProcedureUsingClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 422, Cobol85ParserRULE_libraryEntryProcedureUsingClause)
 
@@ -38169,6 +38806,9 @@ func (s *LibraryEntryProcedureUsingNameContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) LibraryEntryProcedureUsingName() (localctx ILibraryEntryProcedureUsingNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryEntryProcedureUsingNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 424, Cobol85ParserRULE_libraryEntryProcedureUsingName)
 
@@ -38296,6 +38936,9 @@ func (s *LibraryEntryProcedureWithClauseContext) ExitRule(listener antlr.ParseTr
 }
 
 func (p *Cobol85Parser) LibraryEntryProcedureWithClause() (localctx ILibraryEntryProcedureWithClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryEntryProcedureWithClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 426, Cobol85ParserRULE_libraryEntryProcedureWithClause)
 
@@ -38424,6 +39067,9 @@ func (s *LibraryEntryProcedureWithNameContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) LibraryEntryProcedureWithName() (localctx ILibraryEntryProcedureWithNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryEntryProcedureWithNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 428, Cobol85ParserRULE_libraryEntryProcedureWithName)
 
@@ -38532,6 +39178,9 @@ func (s *LibraryIsCommonClauseContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) LibraryIsCommonClause() (localctx ILibraryIsCommonClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryIsCommonClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 430, Cobol85ParserRULE_libraryIsCommonClause)
 	var _la int
@@ -38639,6 +39288,9 @@ func (s *LibraryIsGlobalClauseContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) LibraryIsGlobalClause() (localctx ILibraryIsGlobalClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryIsGlobalClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 432, Cobol85ParserRULE_libraryIsGlobalClause)
 	var _la int
@@ -38778,6 +39430,9 @@ func (s *DataDescriptionEntryContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) DataDescriptionEntry() (localctx IDataDescriptionEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataDescriptionEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 434, Cobol85ParserRULE_dataDescriptionEntry)
 
@@ -39404,6 +40059,9 @@ func (s *DataDescriptionEntryFormat1Context) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) DataDescriptionEntryFormat1() (localctx IDataDescriptionEntryFormat1Context) {
+	this := p
+	_ = this
+
 	localctx = NewDataDescriptionEntryFormat1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 436, Cobol85ParserRULE_dataDescriptionEntryFormat1)
 	var _la int
@@ -39456,7 +40114,7 @@ func (p *Cobol85Parser) DataDescriptionEntryFormat1() (localctx IDataDescription
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserALIGNED)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLANK-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserBY-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCOMMON-68))|(1<<(Cobol85ParserCOMP-68))|(1<<(Cobol85ParserCOMP_1-68))|(1<<(Cobol85ParserCOMP_2-68))|(1<<(Cobol85ParserCOMP_3-68))|(1<<(Cobol85ParserCOMP_4-68))|(1<<(Cobol85ParserCOMP_5-68))|(1<<(Cobol85ParserCOMPUTATIONAL-68))|(1<<(Cobol85ParserCOMPUTATIONAL_1-68))|(1<<(Cobol85ParserCOMPUTATIONAL_2-68))|(1<<(Cobol85ParserCOMPUTATIONAL_3-68))|(1<<(Cobol85ParserCOMPUTATIONAL_4-68))|(1<<(Cobol85ParserCOMPUTATIONAL_5-68))|(1<<(Cobol85ParserCONTENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDISPLAY-138))|(1<<(Cobol85ParserDISPLAY_1-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserEXTERNAL-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGLOBAL-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213))|(1<<(Cobol85ParserINDEX-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserIS-250))|(1<<(Cobol85ParserJUST-250))|(1<<(Cobol85ParserJUSTIFIED-250))|(1<<(Cobol85ParserKANJI-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEADING-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLOCK-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserOCCURS-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPACKED_DECIMAL-317))|(1<<(Cobol85ParserPASSWORD-317))|(1<<(Cobol85ParserPIC-317))|(1<<(Cobol85ParserPICTURE-317)))) != 0) || (((_la-349)&-(0x1f+1)) == 0 && ((1<<uint((_la-349)))&((1<<(Cobol85ParserPOINTER-349))|(1<<(Cobol85ParserPORT-349))|(1<<(Cobol85ParserPRINTER-349))|(1<<(Cobol85ParserPRIVATE-349))|(1<<(Cobol85ParserPROCEDURE_POINTER-349))|(1<<(Cobol85ParserPROCESS-349))|(1<<(Cobol85ParserPROGRAM-349))|(1<<(Cobol85ParserPROMPT-349))|(1<<(Cobol85ParserQUOTE-349))|(1<<(Cobol85ParserQUOTES-349))|(1<<(Cobol85ParserREADER-349))|(1<<(Cobol85ParserREMOTE-349))|(1<<(Cobol85ParserREAL-349))|(1<<(Cobol85ParserRECEIVED-349))|(1<<(Cobol85ParserRECORD-349))|(1<<(Cobol85ParserRECURSIVE-349)))) != 0) || (((_la-381)&-(0x1f+1)) == 0 && ((1<<uint((_la-381)))&((1<<(Cobol85ParserREDEFINES-381))|(1<<(Cobol85ParserREF-381))|(1<<(Cobol85ParserREFERENCE-381))|(1<<(Cobol85ParserREMOVE-381))|(1<<(Cobol85ParserREQUIRED-381))|(1<<(Cobol85ParserREVERSE_VIDEO-381)))) != 0) || (((_la-415)&-(0x1f+1)) == 0 && ((1<<uint((_la-415)))&((1<<(Cobol85ParserSAVE-415))|(1<<(Cobol85ParserSECURE-415))|(1<<(Cobol85ParserSHARED-415))|(1<<(Cobol85ParserSHAREDBYALL-415))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-415))|(1<<(Cobol85ParserSHARING-415))|(1<<(Cobol85ParserSHORT_DATE-415))|(1<<(Cobol85ParserSIGN-415)))) != 0) || (((_la-450)&-(0x1f+1)) == 0 && ((1<<uint((_la-450)))&((1<<(Cobol85ParserSPACE-450))|(1<<(Cobol85ParserSPACES-450))|(1<<(Cobol85ParserSTRING-450))|(1<<(Cobol85ParserSYMBOL-450))|(1<<(Cobol85ParserSYNC-450))|(1<<(Cobol85ParserSYNCHRONIZED-450))|(1<<(Cobol85ParserTASK-450))|(1<<(Cobol85ParserTHREAD-450)))) != 0) || (((_la-482)&-(0x1f+1)) == 0 && ((1<<uint((_la-482)))&((1<<(Cobol85ParserTHREAD_LOCAL-482))|(1<<(Cobol85ParserTIMER-482))|(1<<(Cobol85ParserTODAYS_DATE-482))|(1<<(Cobol85ParserTODAYS_NAME-482))|(1<<(Cobol85ParserTRAILING-482))|(1<<(Cobol85ParserTRUE-482))|(1<<(Cobol85ParserTRUNCATED-482))|(1<<(Cobol85ParserTYPE-482))|(1<<(Cobol85ParserTYPEDEF-482))|(1<<(Cobol85ParserUNDERLINE-482))|(1<<(Cobol85ParserUSAGE-482))|(1<<(Cobol85ParserUSING-482))|(1<<(Cobol85ParserVALUE-482))|(1<<(Cobol85ParserVALUES-482))|(1<<(Cobol85ParserVIRTUAL-482))|(1<<(Cobol85ParserWAIT-482)))) != 0) || (((_la-514)&-(0x1f+1)) == 0 && ((1<<uint((_la-514)))&((1<<(Cobol85ParserWITH-514))|(1<<(Cobol85ParserYEAR-514))|(1<<(Cobol85ParserYYYYMMDD-514))|(1<<(Cobol85ParserYYYYDDD-514))|(1<<(Cobol85ParserZERO-514))|(1<<(Cobol85ParserZERO_FILL-514))|(1<<(Cobol85ParserZEROS-514))|(1<<(Cobol85ParserZEROES-514)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
+	for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserALIGNED)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLANK-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserBY-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCOMMON-68))|(1<<(Cobol85ParserCOMP-68))|(1<<(Cobol85ParserCOMP_1-68))|(1<<(Cobol85ParserCOMP_2-68))|(1<<(Cobol85ParserCOMP_3-68))|(1<<(Cobol85ParserCOMP_4-68))|(1<<(Cobol85ParserCOMP_5-68))|(1<<(Cobol85ParserCOMPUTATIONAL-68))|(1<<(Cobol85ParserCOMPUTATIONAL_1-68))|(1<<(Cobol85ParserCOMPUTATIONAL_2-68))|(1<<(Cobol85ParserCOMPUTATIONAL_3-68))|(1<<(Cobol85ParserCOMPUTATIONAL_4-68))|(1<<(Cobol85ParserCOMPUTATIONAL_5-68))|(1<<(Cobol85ParserCONTENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDISPLAY-138))|(1<<(Cobol85ParserDISPLAY_1-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserEXTERNAL-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGLOBAL-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213))|(1<<(Cobol85ParserINDEX-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserIS-250))|(1<<(Cobol85ParserJUST-250))|(1<<(Cobol85ParserJUSTIFIED-250))|(1<<(Cobol85ParserKANJI-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEADING-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLOCK-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserOCCURS-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPACKED_DECIMAL-317))|(1<<(Cobol85ParserPASSWORD-317))|(1<<(Cobol85ParserPIC-317))|(1<<(Cobol85ParserPICTURE-317)))) != 0) || (((_la-349)&-(0x1f+1)) == 0 && ((1<<uint((_la-349)))&((1<<(Cobol85ParserPOINTER-349))|(1<<(Cobol85ParserPORT-349))|(1<<(Cobol85ParserPRINTER-349))|(1<<(Cobol85ParserPRIVATE-349))|(1<<(Cobol85ParserPROCEDURE_POINTER-349))|(1<<(Cobol85ParserPROCESS-349))|(1<<(Cobol85ParserPROGRAM-349))|(1<<(Cobol85ParserPROMPT-349))|(1<<(Cobol85ParserQUOTE-349))|(1<<(Cobol85ParserQUOTES-349))|(1<<(Cobol85ParserREADER-349))|(1<<(Cobol85ParserREMOTE-349))|(1<<(Cobol85ParserREAL-349))|(1<<(Cobol85ParserRECEIVED-349))|(1<<(Cobol85ParserRECORD-349))|(1<<(Cobol85ParserRECURSIVE-349)))) != 0) || (((_la-381)&-(0x1f+1)) == 0 && ((1<<uint((_la-381)))&((1<<(Cobol85ParserREDEFINES-381))|(1<<(Cobol85ParserREF-381))|(1<<(Cobol85ParserREFERENCE-381))|(1<<(Cobol85ParserREMOVE-381))|(1<<(Cobol85ParserREQUIRED-381))|(1<<(Cobol85ParserREVERSE_VIDEO-381)))) != 0) || (((_la-415)&-(0x1f+1)) == 0 && ((1<<uint((_la-415)))&((1<<(Cobol85ParserSAVE-415))|(1<<(Cobol85ParserSECURE-415))|(1<<(Cobol85ParserSHARED-415))|(1<<(Cobol85ParserSHAREDBYALL-415))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-415))|(1<<(Cobol85ParserSHARING-415))|(1<<(Cobol85ParserSHORT_DATE-415))|(1<<(Cobol85ParserSIGN-415)))) != 0) || (((_la-450)&-(0x1f+1)) == 0 && ((1<<uint((_la-450)))&((1<<(Cobol85ParserSPACE-450))|(1<<(Cobol85ParserSPACES-450))|(1<<(Cobol85ParserSTRING-450))|(1<<(Cobol85ParserSYMBOL-450))|(1<<(Cobol85ParserSYNC-450))|(1<<(Cobol85ParserSYNCHRONIZED-450))|(1<<(Cobol85ParserTASK-450))|(1<<(Cobol85ParserTHREAD-450)))) != 0) || (((_la-482)&-(0x1f+1)) == 0 && ((1<<uint((_la-482)))&((1<<(Cobol85ParserTHREAD_LOCAL-482))|(1<<(Cobol85ParserTIMER-482))|(1<<(Cobol85ParserTODAYS_DATE-482))|(1<<(Cobol85ParserTODAYS_NAME-482))|(1<<(Cobol85ParserTRAILING-482))|(1<<(Cobol85ParserTRUE-482))|(1<<(Cobol85ParserTRUNCATED-482))|(1<<(Cobol85ParserTYPE-482))|(1<<(Cobol85ParserTYPEDEF-482))|(1<<(Cobol85ParserUNDERLINE-482))|(1<<(Cobol85ParserUSAGE-482))|(1<<(Cobol85ParserUSING-482))|(1<<(Cobol85ParserVALUE-482))|(1<<(Cobol85ParserVALUES-482))|(1<<(Cobol85ParserVIRTUAL-482))|(1<<(Cobol85ParserWAIT-482)))) != 0) || (((_la-514)&-(0x1f+1)) == 0 && ((1<<uint((_la-514)))&((1<<(Cobol85ParserWITH-514))|(1<<(Cobol85ParserYEAR-514))|(1<<(Cobol85ParserYYYYMMDD-514))|(1<<(Cobol85ParserYYYYDDD-514))|(1<<(Cobol85ParserZERO-514))|(1<<(Cobol85ParserZERO_FILL-514))|(1<<(Cobol85ParserZEROS-514))|(1<<(Cobol85ParserZEROES-514)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
 		p.SetState(3179)
 		p.GetErrorHandler().Sync(p)
 		switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 391, p.GetParserRuleContext()) {
@@ -39687,6 +40345,9 @@ func (s *DataDescriptionEntryFormat2Context) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) DataDescriptionEntryFormat2() (localctx IDataDescriptionEntryFormat2Context) {
+	this := p
+	_ = this
+
 	localctx = NewDataDescriptionEntryFormat2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 438, Cobol85ParserRULE_dataDescriptionEntryFormat2)
 
@@ -39814,6 +40475,9 @@ func (s *DataDescriptionEntryFormat3Context) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) DataDescriptionEntryFormat3() (localctx IDataDescriptionEntryFormat3Context) {
+	this := p
+	_ = this
+
 	localctx = NewDataDescriptionEntryFormat3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 440, Cobol85ParserRULE_dataDescriptionEntryFormat3)
 
@@ -39925,6 +40589,9 @@ func (s *DataDescriptionEntryExecSqlContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) DataDescriptionEntryExecSql() (localctx IDataDescriptionEntryExecSqlContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataDescriptionEntryExecSqlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 442, Cobol85ParserRULE_dataDescriptionEntryExecSql)
 	var _la int
@@ -40045,6 +40712,9 @@ func (s *DataAlignedClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataAlignedClause() (localctx IDataAlignedClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataAlignedClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 444, Cobol85ParserRULE_dataAlignedClause)
 
@@ -40152,6 +40822,9 @@ func (s *DataBlankWhenZeroClauseContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) DataBlankWhenZeroClause() (localctx IDataBlankWhenZeroClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataBlankWhenZeroClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 446, Cobol85ParserRULE_dataBlankWhenZeroClause)
 	var _la int
@@ -40274,6 +40947,9 @@ func (s *DataCommonOwnLocalClauseContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) DataCommonOwnLocalClause() (localctx IDataCommonOwnLocalClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataCommonOwnLocalClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 448, Cobol85ParserRULE_dataCommonOwnLocalClause)
 	var _la int
@@ -40391,6 +41067,9 @@ func (s *DataExternalClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataExternalClause() (localctx IDataExternalClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataExternalClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 450, Cobol85ParserRULE_dataExternalClause)
 	var _la int
@@ -40512,6 +41191,9 @@ func (s *DataGlobalClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataGlobalClause() (localctx IDataGlobalClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataGlobalClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 452, Cobol85ParserRULE_dataGlobalClause)
 	var _la int
@@ -40619,6 +41301,9 @@ func (s *DataIntegerStringClauseContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) DataIntegerStringClause() (localctx IDataIntegerStringClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataIntegerStringClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 454, Cobol85ParserRULE_dataIntegerStringClause)
 	var _la int
@@ -40726,6 +41411,9 @@ func (s *DataJustifiedClauseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) DataJustifiedClause() (localctx IDataJustifiedClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataJustifiedClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 456, Cobol85ParserRULE_dataJustifiedClause)
 	var _la int
@@ -40936,6 +41624,9 @@ func (s *DataOccursClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataOccursClause() (localctx IDataOccursClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataOccursClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 458, Cobol85ParserRULE_dataOccursClause)
 	var _la int
@@ -41157,6 +41848,9 @@ func (s *DataOccursToContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataOccursTo() (localctx IDataOccursToContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataOccursToContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 460, Cobol85ParserRULE_dataOccursTo)
 
@@ -41287,6 +41981,9 @@ func (s *DataOccursSortContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataOccursSort() (localctx IDataOccursSortContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataOccursSortContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 462, Cobol85ParserRULE_dataOccursSort)
 	var _la int
@@ -41447,6 +42144,9 @@ func (s *DataPictureClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataPictureClause() (localctx IDataPictureClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataPictureClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 464, Cobol85ParserRULE_dataPictureClause)
 	var _la int
@@ -41603,6 +42303,9 @@ func (s *PictureStringContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PictureString() (localctx IPictureStringContext) {
+	this := p
+	_ = this
+
 	localctx = NewPictureStringContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 466, Cobol85ParserRULE_pictureString)
 
@@ -41802,6 +42505,9 @@ func (s *PictureCharsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PictureChars() (localctx IPictureCharsContext) {
+	this := p
+	_ = this
+
 	localctx = NewPictureCharsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 468, Cobol85ParserRULE_pictureChars)
 
@@ -42021,6 +42727,9 @@ func (s *PictureCardinalityContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PictureCardinality() (localctx IPictureCardinalityContext) {
+	this := p
+	_ = this
+
 	localctx = NewPictureCardinalityContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 470, Cobol85ParserRULE_pictureCardinality)
 
@@ -42136,6 +42845,9 @@ func (s *DataReceivedByClauseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) DataReceivedByClause() (localctx IDataReceivedByClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataReceivedByClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 472, Cobol85ParserRULE_dataReceivedByClause)
 	var _la int
@@ -42261,6 +42973,9 @@ func (s *DataRecordAreaClauseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) DataRecordAreaClause() (localctx IDataRecordAreaClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataRecordAreaClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 474, Cobol85ParserRULE_dataRecordAreaClause)
 
@@ -42366,6 +43081,9 @@ func (s *DataRedefinesClauseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) DataRedefinesClause() (localctx IDataRedefinesClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataRedefinesClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 476, Cobol85ParserRULE_dataRedefinesClause)
 
@@ -42492,6 +43210,9 @@ func (s *DataRenamesClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataRenamesClause() (localctx IDataRenamesClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataRenamesClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 478, Cobol85ParserRULE_dataRenamesClause)
 	var _la int
@@ -42630,6 +43351,9 @@ func (s *DataSignClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataSignClause() (localctx IDataSignClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataSignClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 480, Cobol85ParserRULE_dataSignClause)
 	var _la int
@@ -42785,6 +43509,9 @@ func (s *DataSynchronizedClauseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) DataSynchronizedClause() (localctx IDataSynchronizedClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataSynchronizedClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 482, Cobol85ParserRULE_dataSynchronizedClause)
 	var _la int
@@ -42906,6 +43633,9 @@ func (s *DataThreadLocalClauseContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) DataThreadLocalClause() (localctx IDataThreadLocalClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataThreadLocalClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 484, Cobol85ParserRULE_dataThreadLocalClause)
 	var _la int
@@ -43033,6 +43763,9 @@ func (s *DataTypeClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataTypeClause() (localctx IDataTypeClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataTypeClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 486, Cobol85ParserRULE_dataTypeClause)
 	var _la int
@@ -43151,6 +43884,9 @@ func (s *DataTypeDefClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataTypeDefClause() (localctx IDataTypeDefClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataTypeDefClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 488, Cobol85ParserRULE_dataTypeDefClause)
 	var _la int
@@ -43386,6 +44122,9 @@ func (s *DataUsageClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataUsageClause() (localctx IDataUsageClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataUsageClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 490, Cobol85ParserRULE_dataUsageClause)
 	var _la int
@@ -43732,6 +44471,9 @@ func (s *DataUsingClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataUsingClause() (localctx IDataUsingClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataUsingClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 492, Cobol85ParserRULE_dataUsingClause)
 	var _la int
@@ -43905,6 +44647,9 @@ func (s *DataValueClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataValueClause() (localctx IDataValueClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataValueClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 494, Cobol85ParserRULE_dataValueClause)
 	var _la int
@@ -43966,7 +44711,7 @@ func (p *Cobol85Parser) DataValueClause() (localctx IDataValueClauseContext) {
 
 		}
 
-	case Cobol85ParserABORT, Cobol85ParserALL, Cobol85ParserAS, Cobol85ParserASCII, Cobol85ParserASSOCIATED_DATA, Cobol85ParserASSOCIATED_DATA_LENGTH, Cobol85ParserATTRIBUTE, Cobol85ParserAUTO, Cobol85ParserAUTO_SKIP, Cobol85ParserBACKGROUND_COLOR, Cobol85ParserBACKGROUND_COLOUR, Cobol85ParserBEEP, Cobol85ParserBELL, Cobol85ParserBINARY, Cobol85ParserBIT, Cobol85ParserBLINK, Cobol85ParserBOUNDS, Cobol85ParserCAPABLE, Cobol85ParserCCSVERSION, Cobol85ParserCHANGED, Cobol85ParserCHANNEL, Cobol85ParserCLOSE_DISPOSITION, Cobol85ParserCOBOL, Cobol85ParserCOMMITMENT, Cobol85ParserCONTROL_POINT, Cobol85ParserCONVENTION, Cobol85ParserCRUNCH, Cobol85ParserCURSOR, Cobol85ParserDEFAULT, Cobol85ParserDEFAULT_DISPLAY, Cobol85ParserDEFINITION, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserDISK, Cobol85ParserDONTCARE, Cobol85ParserDOUBLE, Cobol85ParserEBCDIC, Cobol85ParserEMPTY_CHECK, Cobol85ParserENTER, Cobol85ParserENTRY_PROCEDURE, Cobol85ParserERASE, Cobol85ParserEOL, Cobol85ParserEOS, Cobol85ParserESCAPE, Cobol85ParserEVENT, Cobol85ParserEXCLUSIVE, Cobol85ParserEXPORT, Cobol85ParserEXTENDED, Cobol85ParserFALSE, Cobol85ParserFOREGROUND_COLOR, Cobol85ParserFOREGROUND_COLOUR, Cobol85ParserFULL, Cobol85ParserFUNCTIONNAME, Cobol85ParserFUNCTION_POINTER, Cobol85ParserGRID, Cobol85ParserHIGHLIGHT, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserIMPLICIT, Cobol85ParserIMPORT, Cobol85ParserINTEGER, Cobol85ParserKEPT, Cobol85ParserKEYBOARD, Cobol85ParserLANGUAGE, Cobol85ParserLB, Cobol85ParserLD, Cobol85ParserLEFTLINE, Cobol85ParserLENGTH_CHECK, Cobol85ParserLIBACCESS, Cobol85ParserLIBPARAMETER, Cobol85ParserLIBRARY, Cobol85ParserLIST, Cobol85ParserLOCAL, Cobol85ParserLONG_DATE, Cobol85ParserLONG_TIME, Cobol85ParserLOWER, Cobol85ParserLOWLIGHT, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserMMDDYYYY, Cobol85ParserNAMED, Cobol85ParserNATIONAL, Cobol85ParserNATIONAL_EDITED, Cobol85ParserNETWORK, Cobol85ParserNO_ECHO, Cobol85ParserNULL, Cobol85ParserNULLS, Cobol85ParserNUMERIC_DATE, Cobol85ParserNUMERIC_TIME, Cobol85ParserODT, Cobol85ParserORDERLY, Cobol85ParserOVERLINE, Cobol85ParserOWN, Cobol85ParserPASSWORD, Cobol85ParserPORT, Cobol85ParserPRINTER, Cobol85ParserPRIVATE, Cobol85ParserPROCESS, Cobol85ParserPROGRAM, Cobol85ParserPROMPT, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserREADER, Cobol85ParserREMOTE, Cobol85ParserREAL, Cobol85ParserRECEIVED, Cobol85ParserRECURSIVE, Cobol85ParserREF, Cobol85ParserREMOVE, Cobol85ParserREQUIRED, Cobol85ParserREVERSE_VIDEO, Cobol85ParserSAVE, Cobol85ParserSECURE, Cobol85ParserSHARED, Cobol85ParserSHAREDBYALL, Cobol85ParserSHAREDBYRUNUNIT, Cobol85ParserSHARING, Cobol85ParserSHORT_DATE, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserSYMBOL, Cobol85ParserTASK, Cobol85ParserTHREAD, Cobol85ParserTHREAD_LOCAL, Cobol85ParserTIMER, Cobol85ParserTODAYS_DATE, Cobol85ParserTODAYS_NAME, Cobol85ParserTRUE, Cobol85ParserTRUNCATED, Cobol85ParserTYPEDEF, Cobol85ParserUNDERLINE, Cobol85ParserVIRTUAL, Cobol85ParserWAIT, Cobol85ParserYEAR, Cobol85ParserYYYYMMDD, Cobol85ParserYYYYDDD, Cobol85ParserZERO, Cobol85ParserZERO_FILL, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL, Cobol85ParserIDENTIFIER:
+	case Cobol85ParserABORT, Cobol85ParserALL, Cobol85ParserAS, Cobol85ParserASCII, Cobol85ParserASSOCIATED_DATA, Cobol85ParserASSOCIATED_DATA_LENGTH, Cobol85ParserATTRIBUTE, Cobol85ParserAUTO, Cobol85ParserAUTO_SKIP, Cobol85ParserBACKGROUND_COLOR, Cobol85ParserBACKGROUND_COLOUR, Cobol85ParserBEEP, Cobol85ParserBELL, Cobol85ParserBINARY, Cobol85ParserBIT, Cobol85ParserBLINK, Cobol85ParserBOUNDS, Cobol85ParserCAPABLE, Cobol85ParserCCSVERSION, Cobol85ParserCHANGED, Cobol85ParserCHANNEL, Cobol85ParserCLOSE_DISPOSITION, Cobol85ParserCOBOL, Cobol85ParserCOMMITMENT, Cobol85ParserCONTROL_POINT, Cobol85ParserCONVENTION, Cobol85ParserCRUNCH, Cobol85ParserCURSOR, Cobol85ParserDEFAULT, Cobol85ParserDEFAULT_DISPLAY, Cobol85ParserDEFINITION, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserDISK, Cobol85ParserDONTCARE, Cobol85ParserDOUBLE, Cobol85ParserEBCDIC, Cobol85ParserEMPTY_CHECK, Cobol85ParserENTER, Cobol85ParserENTRY_PROCEDURE, Cobol85ParserERASE, Cobol85ParserEOL, Cobol85ParserEOS, Cobol85ParserESCAPE, Cobol85ParserEVENT, Cobol85ParserEXCLUSIVE, Cobol85ParserEXPORT, Cobol85ParserEXTENDED, Cobol85ParserFALSE, Cobol85ParserFOREGROUND_COLOR, Cobol85ParserFOREGROUND_COLOUR, Cobol85ParserFULL, Cobol85ParserFUNCTIONNAME, Cobol85ParserFUNCTION_POINTER, Cobol85ParserGRID, Cobol85ParserHIGHLIGHT, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserIMPLICIT, Cobol85ParserIMPORT, Cobol85ParserINTEGER, Cobol85ParserKEPT, Cobol85ParserKEYBOARD, Cobol85ParserLANGUAGE, Cobol85ParserLB, Cobol85ParserLD, Cobol85ParserLEFTLINE, Cobol85ParserLENGTH_CHECK, Cobol85ParserLIBACCESS, Cobol85ParserLIBPARAMETER, Cobol85ParserLIBRARY, Cobol85ParserLIST, Cobol85ParserLOCAL, Cobol85ParserLONG_DATE, Cobol85ParserLONG_TIME, Cobol85ParserLOWER, Cobol85ParserLOWLIGHT, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserMMDDYYYY, Cobol85ParserNAMED, Cobol85ParserNATIONAL, Cobol85ParserNATIONAL_EDITED, Cobol85ParserNETWORK, Cobol85ParserNO_ECHO, Cobol85ParserNULL_, Cobol85ParserNULLS, Cobol85ParserNUMERIC_DATE, Cobol85ParserNUMERIC_TIME, Cobol85ParserODT, Cobol85ParserORDERLY, Cobol85ParserOVERLINE, Cobol85ParserOWN, Cobol85ParserPASSWORD, Cobol85ParserPORT, Cobol85ParserPRINTER, Cobol85ParserPRIVATE, Cobol85ParserPROCESS, Cobol85ParserPROGRAM, Cobol85ParserPROMPT, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserREADER, Cobol85ParserREMOTE, Cobol85ParserREAL, Cobol85ParserRECEIVED, Cobol85ParserRECURSIVE, Cobol85ParserREF, Cobol85ParserREMOVE, Cobol85ParserREQUIRED, Cobol85ParserREVERSE_VIDEO, Cobol85ParserSAVE, Cobol85ParserSECURE, Cobol85ParserSHARED, Cobol85ParserSHAREDBYALL, Cobol85ParserSHAREDBYRUNUNIT, Cobol85ParserSHARING, Cobol85ParserSHORT_DATE, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserSYMBOL, Cobol85ParserTASK, Cobol85ParserTHREAD, Cobol85ParserTHREAD_LOCAL, Cobol85ParserTIMER, Cobol85ParserTODAYS_DATE, Cobol85ParserTODAYS_NAME, Cobol85ParserTRUE, Cobol85ParserTRUNCATED, Cobol85ParserTYPEDEF, Cobol85ParserUNDERLINE, Cobol85ParserVIRTUAL, Cobol85ParserWAIT, Cobol85ParserYEAR, Cobol85ParserYYYYMMDD, Cobol85ParserYYYYDDD, Cobol85ParserZERO, Cobol85ParserZERO_FILL, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL, Cobol85ParserIDENTIFIER:
 
 	default:
 	}
@@ -44084,6 +44829,9 @@ func (s *DataValueIntervalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataValueInterval() (localctx IDataValueIntervalContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataValueIntervalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 496, Cobol85ParserRULE_dataValueInterval)
 	var _la int
@@ -44203,6 +44951,9 @@ func (s *DataValueIntervalFromContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) DataValueIntervalFrom() (localctx IDataValueIntervalFromContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataValueIntervalFromContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 498, Cobol85ParserRULE_dataValueIntervalFrom)
 
@@ -44321,6 +45072,9 @@ func (s *DataValueIntervalToContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) DataValueIntervalTo() (localctx IDataValueIntervalToContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataValueIntervalToContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 500, Cobol85ParserRULE_dataValueIntervalTo)
 	var _la int
@@ -44432,6 +45186,9 @@ func (s *DataWithLowerBoundsClauseContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) DataWithLowerBoundsClause() (localctx IDataWithLowerBoundsClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataWithLowerBoundsClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 502, Cobol85ParserRULE_dataWithLowerBoundsClause)
 	var _la int
@@ -44587,6 +45344,9 @@ func (s *ProcedureDivisionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ProcedureDivision() (localctx IProcedureDivisionContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDivisionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 504, Cobol85ParserRULE_procedureDivision)
 	var _la int
@@ -44751,6 +45511,9 @@ func (s *ProcedureDivisionUsingClauseContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ProcedureDivisionUsingClause() (localctx IProcedureDivisionUsingClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDivisionUsingClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 506, Cobol85ParserRULE_procedureDivisionUsingClause)
 	var _la int
@@ -44878,6 +45641,9 @@ func (s *ProcedureDivisionGivingClauseContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Cobol85Parser) ProcedureDivisionGivingClause() (localctx IProcedureDivisionGivingClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDivisionGivingClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 508, Cobol85ParserRULE_procedureDivisionGivingClause)
 	var _la int
@@ -44997,6 +45763,9 @@ func (s *ProcedureDivisionUsingParameterContext) ExitRule(listener antlr.ParseTr
 }
 
 func (p *Cobol85Parser) ProcedureDivisionUsingParameter() (localctx IProcedureDivisionUsingParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDivisionUsingParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 510, Cobol85ParserRULE_procedureDivisionUsingParameter)
 
@@ -45128,6 +45897,9 @@ func (s *ProcedureDivisionByReferencePhraseContext) ExitRule(listener antlr.Pars
 }
 
 func (p *Cobol85Parser) ProcedureDivisionByReferencePhrase() (localctx IProcedureDivisionByReferencePhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDivisionByReferencePhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 512, Cobol85ParserRULE_procedureDivisionByReferencePhrase)
 	var _la int
@@ -45283,6 +46055,9 @@ func (s *ProcedureDivisionByReferenceContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) ProcedureDivisionByReference() (localctx IProcedureDivisionByReferenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDivisionByReferenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 514, Cobol85ParserRULE_procedureDivisionByReference)
 	var _la int
@@ -45441,6 +46216,9 @@ func (s *ProcedureDivisionByValuePhraseContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) ProcedureDivisionByValuePhrase() (localctx IProcedureDivisionByValuePhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDivisionByValuePhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 516, Cobol85ParserRULE_procedureDivisionByValuePhrase)
 	var _la int
@@ -45585,6 +46363,9 @@ func (s *ProcedureDivisionByValueContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) ProcedureDivisionByValue() (localctx IProcedureDivisionByValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDivisionByValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 518, Cobol85ParserRULE_procedureDivisionByValue)
 
@@ -45735,6 +46516,9 @@ func (s *ProcedureDeclarativesContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) ProcedureDeclaratives() (localctx IProcedureDeclarativesContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDeclarativesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 520, Cobol85ParserRULE_procedureDeclaratives)
 	var _la int
@@ -45891,6 +46675,9 @@ func (s *ProcedureDeclarativeContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) ProcedureDeclarative() (localctx IProcedureDeclarativeContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDeclarativeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 522, Cobol85ParserRULE_procedureDeclarative)
 
@@ -46018,6 +46805,9 @@ func (s *ProcedureSectionHeaderContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) ProcedureSectionHeader() (localctx IProcedureSectionHeaderContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureSectionHeaderContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 524, Cobol85ParserRULE_procedureSectionHeader)
 	var _la int
@@ -46154,6 +46944,9 @@ func (s *ProcedureDivisionBodyContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) ProcedureDivisionBody() (localctx IProcedureDivisionBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDivisionBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 526, Cobol85ParserRULE_procedureDivisionBody)
 	var _la int
@@ -46280,6 +47073,9 @@ func (s *ProcedureSectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ProcedureSection() (localctx IProcedureSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 528, Cobol85ParserRULE_procedureSection)
 
@@ -46421,6 +47217,9 @@ func (s *ParagraphsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Paragraphs() (localctx IParagraphsContext) {
+	this := p
+	_ = this
+
 	localctx = NewParagraphsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 530, Cobol85ParserRULE_paragraphs)
 	var _la int
@@ -46584,6 +47383,9 @@ func (s *ParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Paragraph() (localctx IParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 532, Cobol85ParserRULE_paragraph)
 	var _la int
@@ -46729,6 +47531,9 @@ func (s *SentenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Sentence() (localctx ISentenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewSentenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 534, Cobol85ParserRULE_sentence)
 	var _la int
@@ -47321,6 +48126,9 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 536, Cobol85ParserRULE_statement)
 
@@ -47831,6 +48639,9 @@ func (s *AcceptStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AcceptStatement() (localctx IAcceptStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAcceptStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 538, Cobol85ParserRULE_acceptStatement)
 
@@ -48028,6 +48839,9 @@ func (s *AcceptFromDateStatementContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) AcceptFromDateStatement() (localctx IAcceptFromDateStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAcceptFromDateStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 540, Cobol85ParserRULE_acceptFromDateStatement)
 	var _la int
@@ -48230,6 +49044,9 @@ func (s *AcceptFromMnemonicStatementContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) AcceptFromMnemonicStatement() (localctx IAcceptFromMnemonicStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAcceptFromMnemonicStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 542, Cobol85ParserRULE_acceptFromMnemonicStatement)
 
@@ -48333,6 +49150,9 @@ func (s *AcceptFromEscapeKeyStatementContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) AcceptFromEscapeKeyStatement() (localctx IAcceptFromEscapeKeyStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAcceptFromEscapeKeyStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 544, Cobol85ParserRULE_acceptFromEscapeKeyStatement)
 
@@ -48436,6 +49256,9 @@ func (s *AcceptMessageCountStatementContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) AcceptMessageCountStatement() (localctx IAcceptMessageCountStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAcceptMessageCountStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 546, Cobol85ParserRULE_acceptMessageCountStatement)
 	var _la int
@@ -48593,6 +49416,9 @@ func (s *AddStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AddStatement() (localctx IAddStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 548, Cobol85ParserRULE_addStatement)
 
@@ -48782,6 +49608,9 @@ func (s *AddToStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AddToStatement() (localctx IAddToStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddToStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 550, Cobol85ParserRULE_addToStatement)
 	var _la int
@@ -48807,7 +49636,7 @@ func (p *Cobol85Parser) AddToStatement() (localctx IAddToStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
 		{
 			p.SetState(3706)
 			p.AddFrom()
@@ -48975,6 +49804,9 @@ func (s *AddToGivingStatementContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) AddToGivingStatement() (localctx IAddToGivingStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddToGivingStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 552, Cobol85ParserRULE_addToGivingStatement)
 	var _la int
@@ -49000,7 +49832,7 @@ func (p *Cobol85Parser) AddToGivingStatement() (localctx IAddToGivingStatementCo
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
 		{
 			p.SetState(3717)
 			p.AddFrom()
@@ -49023,7 +49855,7 @@ func (p *Cobol85Parser) AddToGivingStatement() (localctx IAddToGivingStatementCo
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
+		for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
 			{
 				p.SetState(3723)
 				p.AddToGiving()
@@ -49148,6 +49980,9 @@ func (s *AddCorrespondingStatementContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) AddCorrespondingStatement() (localctx IAddCorrespondingStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddCorrespondingStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 554, Cobol85ParserRULE_addCorrespondingStatement)
 	var _la int
@@ -49275,6 +50110,9 @@ func (s *AddFromContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AddFrom() (localctx IAddFromContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddFromContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 556, Cobol85ParserRULE_addFrom)
 
@@ -49389,6 +50227,9 @@ func (s *AddToContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AddTo() (localctx IAddToContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddToContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 558, Cobol85ParserRULE_addTo)
 	var _la int
@@ -49508,6 +50349,9 @@ func (s *AddToGivingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AddToGiving() (localctx IAddToGivingContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddToGivingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 560, Cobol85ParserRULE_addToGiving)
 
@@ -49622,6 +50466,9 @@ func (s *AddGivingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AddGiving() (localctx IAddGivingContext) {
+	this := p
+	_ = this
+
 	localctx = NewAddGivingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 562, Cobol85ParserRULE_addGiving)
 	var _la int
@@ -49733,6 +50580,9 @@ func (s *AlteredGoToContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AlteredGoTo() (localctx IAlteredGoToContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlteredGoToContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 564, Cobol85ParserRULE_alteredGoTo)
 	var _la int
@@ -49863,6 +50713,9 @@ func (s *AlterStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AlterStatement() (localctx IAlterStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlterStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 566, Cobol85ParserRULE_alterStatement)
 	var _la int
@@ -50000,6 +50853,9 @@ func (s *AlterProceedToContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AlterProceedTo() (localctx IAlterProceedToContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlterProceedToContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 568, Cobol85ParserRULE_alterProceedTo)
 	var _la int
@@ -50189,6 +51045,9 @@ func (s *CallStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CallStatement() (localctx ICallStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewCallStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 570, Cobol85ParserRULE_callStatement)
 	var _la int
@@ -50382,6 +51241,9 @@ func (s *CallUsingPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CallUsingPhrase() (localctx ICallUsingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewCallUsingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 572, Cobol85ParserRULE_callUsingPhrase)
 
@@ -50520,6 +51382,9 @@ func (s *CallUsingParameterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CallUsingParameter() (localctx ICallUsingParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewCallUsingParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 574, Cobol85ParserRULE_callUsingParameter)
 
@@ -50658,6 +51523,9 @@ func (s *CallByReferencePhraseContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) CallByReferencePhrase() (localctx ICallByReferencePhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewCallByReferencePhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 576, Cobol85ParserRULE_callByReferencePhrase)
 	var _la int
@@ -50835,6 +51703,9 @@ func (s *CallByReferenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CallByReference() (localctx ICallByReferenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewCallByReferenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 578, Cobol85ParserRULE_callByReference)
 
@@ -50858,7 +51729,7 @@ func (p *Cobol85Parser) CallByReference() (localctx ICallByReferenceContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case Cobol85ParserABORT, Cobol85ParserADDRESS, Cobol85ParserALL, Cobol85ParserAS, Cobol85ParserASCII, Cobol85ParserASSOCIATED_DATA, Cobol85ParserASSOCIATED_DATA_LENGTH, Cobol85ParserATTRIBUTE, Cobol85ParserAUTO, Cobol85ParserAUTO_SKIP, Cobol85ParserBACKGROUND_COLOR, Cobol85ParserBACKGROUND_COLOUR, Cobol85ParserBEEP, Cobol85ParserBELL, Cobol85ParserBINARY, Cobol85ParserBIT, Cobol85ParserBLINK, Cobol85ParserBOUNDS, Cobol85ParserCAPABLE, Cobol85ParserCCSVERSION, Cobol85ParserCHANGED, Cobol85ParserCHANNEL, Cobol85ParserCLOSE_DISPOSITION, Cobol85ParserCOBOL, Cobol85ParserCOMMITMENT, Cobol85ParserCONTROL_POINT, Cobol85ParserCONVENTION, Cobol85ParserCRUNCH, Cobol85ParserCURSOR, Cobol85ParserDATE, Cobol85ParserDAY, Cobol85ParserDAY_OF_WEEK, Cobol85ParserDEBUG_CONTENTS, Cobol85ParserDEBUG_ITEM, Cobol85ParserDEBUG_LINE, Cobol85ParserDEBUG_NAME, Cobol85ParserDEBUG_SUB_1, Cobol85ParserDEBUG_SUB_2, Cobol85ParserDEBUG_SUB_3, Cobol85ParserDEFAULT, Cobol85ParserDEFAULT_DISPLAY, Cobol85ParserDEFINITION, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserDISK, Cobol85ParserDONTCARE, Cobol85ParserDOUBLE, Cobol85ParserEBCDIC, Cobol85ParserEMPTY_CHECK, Cobol85ParserENTER, Cobol85ParserENTRY_PROCEDURE, Cobol85ParserERASE, Cobol85ParserEOL, Cobol85ParserEOS, Cobol85ParserESCAPE, Cobol85ParserEVENT, Cobol85ParserEXCLUSIVE, Cobol85ParserEXPORT, Cobol85ParserEXTENDED, Cobol85ParserFALSE, Cobol85ParserFOREGROUND_COLOR, Cobol85ParserFOREGROUND_COLOUR, Cobol85ParserFULL, Cobol85ParserFUNCTION, Cobol85ParserFUNCTIONNAME, Cobol85ParserFUNCTION_POINTER, Cobol85ParserGRID, Cobol85ParserHIGHLIGHT, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserIMPLICIT, Cobol85ParserIMPORT, Cobol85ParserINTEGER, Cobol85ParserKEPT, Cobol85ParserKEYBOARD, Cobol85ParserLANGUAGE, Cobol85ParserLB, Cobol85ParserLD, Cobol85ParserLEFTLINE, Cobol85ParserLENGTH, Cobol85ParserLENGTH_CHECK, Cobol85ParserLIBACCESS, Cobol85ParserLIBPARAMETER, Cobol85ParserLIBRARY, Cobol85ParserLINAGE_COUNTER, Cobol85ParserLINE_COUNTER, Cobol85ParserLIST, Cobol85ParserLOCAL, Cobol85ParserLONG_DATE, Cobol85ParserLONG_TIME, Cobol85ParserLOWER, Cobol85ParserLOWLIGHT, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserMMDDYYYY, Cobol85ParserNAMED, Cobol85ParserNATIONAL, Cobol85ParserNATIONAL_EDITED, Cobol85ParserNETWORK, Cobol85ParserNO_ECHO, Cobol85ParserNULL, Cobol85ParserNULLS, Cobol85ParserNUMERIC_DATE, Cobol85ParserNUMERIC_TIME, Cobol85ParserODT, Cobol85ParserORDERLY, Cobol85ParserOVERLINE, Cobol85ParserOWN, Cobol85ParserPAGE_COUNTER, Cobol85ParserPASSWORD, Cobol85ParserPORT, Cobol85ParserPRINTER, Cobol85ParserPRIVATE, Cobol85ParserPROCESS, Cobol85ParserPROGRAM, Cobol85ParserPROMPT, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserREADER, Cobol85ParserREMOTE, Cobol85ParserREAL, Cobol85ParserRECEIVED, Cobol85ParserRECURSIVE, Cobol85ParserREF, Cobol85ParserREMOVE, Cobol85ParserREQUIRED, Cobol85ParserREVERSE_VIDEO, Cobol85ParserRETURN_CODE, Cobol85ParserSAVE, Cobol85ParserSECURE, Cobol85ParserSHARED, Cobol85ParserSHAREDBYALL, Cobol85ParserSHAREDBYRUNUNIT, Cobol85ParserSHARING, Cobol85ParserSHIFT_IN, Cobol85ParserSHIFT_OUT, Cobol85ParserSHORT_DATE, Cobol85ParserSORT_CONTROL, Cobol85ParserSORT_CORE_SIZE, Cobol85ParserSORT_FILE_SIZE, Cobol85ParserSORT_MESSAGE, Cobol85ParserSORT_MODE_SIZE, Cobol85ParserSORT_RETURN, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserSTRING, Cobol85ParserSYMBOL, Cobol85ParserTALLY, Cobol85ParserTASK, Cobol85ParserTHREAD, Cobol85ParserTHREAD_LOCAL, Cobol85ParserTIME, Cobol85ParserTIMER, Cobol85ParserTODAYS_DATE, Cobol85ParserTODAYS_NAME, Cobol85ParserTRUE, Cobol85ParserTRUNCATED, Cobol85ParserTYPEDEF, Cobol85ParserUNDERLINE, Cobol85ParserVIRTUAL, Cobol85ParserWAIT, Cobol85ParserWHEN_COMPILED, Cobol85ParserYEAR, Cobol85ParserYYYYMMDD, Cobol85ParserYYYYDDD, Cobol85ParserZERO, Cobol85ParserZERO_FILL, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL, Cobol85ParserIDENTIFIER:
+	case Cobol85ParserABORT, Cobol85ParserADDRESS, Cobol85ParserALL, Cobol85ParserAS, Cobol85ParserASCII, Cobol85ParserASSOCIATED_DATA, Cobol85ParserASSOCIATED_DATA_LENGTH, Cobol85ParserATTRIBUTE, Cobol85ParserAUTO, Cobol85ParserAUTO_SKIP, Cobol85ParserBACKGROUND_COLOR, Cobol85ParserBACKGROUND_COLOUR, Cobol85ParserBEEP, Cobol85ParserBELL, Cobol85ParserBINARY, Cobol85ParserBIT, Cobol85ParserBLINK, Cobol85ParserBOUNDS, Cobol85ParserCAPABLE, Cobol85ParserCCSVERSION, Cobol85ParserCHANGED, Cobol85ParserCHANNEL, Cobol85ParserCLOSE_DISPOSITION, Cobol85ParserCOBOL, Cobol85ParserCOMMITMENT, Cobol85ParserCONTROL_POINT, Cobol85ParserCONVENTION, Cobol85ParserCRUNCH, Cobol85ParserCURSOR, Cobol85ParserDATE, Cobol85ParserDAY, Cobol85ParserDAY_OF_WEEK, Cobol85ParserDEBUG_CONTENTS, Cobol85ParserDEBUG_ITEM, Cobol85ParserDEBUG_LINE, Cobol85ParserDEBUG_NAME, Cobol85ParserDEBUG_SUB_1, Cobol85ParserDEBUG_SUB_2, Cobol85ParserDEBUG_SUB_3, Cobol85ParserDEFAULT, Cobol85ParserDEFAULT_DISPLAY, Cobol85ParserDEFINITION, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserDISK, Cobol85ParserDONTCARE, Cobol85ParserDOUBLE, Cobol85ParserEBCDIC, Cobol85ParserEMPTY_CHECK, Cobol85ParserENTER, Cobol85ParserENTRY_PROCEDURE, Cobol85ParserERASE, Cobol85ParserEOL, Cobol85ParserEOS, Cobol85ParserESCAPE, Cobol85ParserEVENT, Cobol85ParserEXCLUSIVE, Cobol85ParserEXPORT, Cobol85ParserEXTENDED, Cobol85ParserFALSE, Cobol85ParserFOREGROUND_COLOR, Cobol85ParserFOREGROUND_COLOUR, Cobol85ParserFULL, Cobol85ParserFUNCTION, Cobol85ParserFUNCTIONNAME, Cobol85ParserFUNCTION_POINTER, Cobol85ParserGRID, Cobol85ParserHIGHLIGHT, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserIMPLICIT, Cobol85ParserIMPORT, Cobol85ParserINTEGER, Cobol85ParserKEPT, Cobol85ParserKEYBOARD, Cobol85ParserLANGUAGE, Cobol85ParserLB, Cobol85ParserLD, Cobol85ParserLEFTLINE, Cobol85ParserLENGTH, Cobol85ParserLENGTH_CHECK, Cobol85ParserLIBACCESS, Cobol85ParserLIBPARAMETER, Cobol85ParserLIBRARY, Cobol85ParserLINAGE_COUNTER, Cobol85ParserLINE_COUNTER, Cobol85ParserLIST, Cobol85ParserLOCAL, Cobol85ParserLONG_DATE, Cobol85ParserLONG_TIME, Cobol85ParserLOWER, Cobol85ParserLOWLIGHT, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserMMDDYYYY, Cobol85ParserNAMED, Cobol85ParserNATIONAL, Cobol85ParserNATIONAL_EDITED, Cobol85ParserNETWORK, Cobol85ParserNO_ECHO, Cobol85ParserNULL_, Cobol85ParserNULLS, Cobol85ParserNUMERIC_DATE, Cobol85ParserNUMERIC_TIME, Cobol85ParserODT, Cobol85ParserORDERLY, Cobol85ParserOVERLINE, Cobol85ParserOWN, Cobol85ParserPAGE_COUNTER, Cobol85ParserPASSWORD, Cobol85ParserPORT, Cobol85ParserPRINTER, Cobol85ParserPRIVATE, Cobol85ParserPROCESS, Cobol85ParserPROGRAM, Cobol85ParserPROMPT, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserREADER, Cobol85ParserREMOTE, Cobol85ParserREAL, Cobol85ParserRECEIVED, Cobol85ParserRECURSIVE, Cobol85ParserREF, Cobol85ParserREMOVE, Cobol85ParserREQUIRED, Cobol85ParserREVERSE_VIDEO, Cobol85ParserRETURN_CODE, Cobol85ParserSAVE, Cobol85ParserSECURE, Cobol85ParserSHARED, Cobol85ParserSHAREDBYALL, Cobol85ParserSHAREDBYRUNUNIT, Cobol85ParserSHARING, Cobol85ParserSHIFT_IN, Cobol85ParserSHIFT_OUT, Cobol85ParserSHORT_DATE, Cobol85ParserSORT_CONTROL, Cobol85ParserSORT_CORE_SIZE, Cobol85ParserSORT_FILE_SIZE, Cobol85ParserSORT_MESSAGE, Cobol85ParserSORT_MODE_SIZE, Cobol85ParserSORT_RETURN, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserSTRING, Cobol85ParserSYMBOL, Cobol85ParserTALLY, Cobol85ParserTASK, Cobol85ParserTHREAD, Cobol85ParserTHREAD_LOCAL, Cobol85ParserTIME, Cobol85ParserTIMER, Cobol85ParserTODAYS_DATE, Cobol85ParserTODAYS_NAME, Cobol85ParserTRUE, Cobol85ParserTRUNCATED, Cobol85ParserTYPEDEF, Cobol85ParserUNDERLINE, Cobol85ParserVIRTUAL, Cobol85ParserWAIT, Cobol85ParserWHEN_COMPILED, Cobol85ParserYEAR, Cobol85ParserYYYYMMDD, Cobol85ParserYYYYDDD, Cobol85ParserZERO, Cobol85ParserZERO_FILL, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL, Cobol85ParserIDENTIFIER:
 		p.EnterOuterAlt(localctx, 1)
 		p.SetState(3831)
 		p.GetErrorHandler().Sync(p)
@@ -51013,6 +51884,9 @@ func (s *CallByValuePhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CallByValuePhrase() (localctx ICallByValuePhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewCallByValuePhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 580, Cobol85ParserRULE_callByValuePhrase)
 	var _la int
@@ -51165,6 +52039,9 @@ func (s *CallByValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CallByValue() (localctx ICallByValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewCallByValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 582, Cobol85ParserRULE_callByValue)
 	var _la int
@@ -51327,6 +52204,9 @@ func (s *CallByContentPhraseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) CallByContentPhrase() (localctx ICallByContentPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewCallByContentPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 584, Cobol85ParserRULE_callByContentPhrase)
 	var _la int
@@ -51483,6 +52363,9 @@ func (s *CallByContentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CallByContent() (localctx ICallByContentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCallByContentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 586, Cobol85ParserRULE_callByContent)
 	var _la int
@@ -51640,6 +52523,9 @@ func (s *CallGivingPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CallGivingPhrase() (localctx ICallGivingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewCallGivingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 588, Cobol85ParserRULE_callGivingPhrase)
 	var _la int
@@ -51766,6 +52652,9 @@ func (s *CancelStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CancelStatement() (localctx ICancelStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewCancelStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 590, Cobol85ParserRULE_cancelStatement)
 	var _la int
@@ -51795,7 +52684,7 @@ func (p *Cobol85Parser) CancelStatement() (localctx ICancelStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
 		{
 			p.SetState(3883)
 			p.CancelCall()
@@ -51906,6 +52795,9 @@ func (s *CancelCallContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CancelCall() (localctx ICancelCallContext) {
+	this := p
+	_ = this
+
 	localctx = NewCancelCallContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 592, Cobol85ParserRULE_cancelCall)
 	var _la int
@@ -52052,6 +52944,9 @@ func (s *CloseStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CloseStatement() (localctx ICloseStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewCloseStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 594, Cobol85ParserRULE_closeStatement)
 	var _la int
@@ -52194,6 +53089,9 @@ func (s *CloseFileContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CloseFile() (localctx ICloseFileContext) {
+	this := p
+	_ = this
+
 	localctx = NewCloseFileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 596, Cobol85ParserRULE_closeFile)
 
@@ -52335,6 +53233,9 @@ func (s *CloseReelUnitStatementContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) CloseReelUnitStatement() (localctx ICloseReelUnitStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewCloseReelUnitStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 598, Cobol85ParserRULE_closeReelUnitStatement)
 	var _la int
@@ -52508,6 +53409,9 @@ func (s *CloseRelativeStatementContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) CloseRelativeStatement() (localctx ICloseRelativeStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewCloseRelativeStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 600, Cobol85ParserRULE_closeRelativeStatement)
 	var _la int
@@ -52665,6 +53569,9 @@ func (s *ClosePortFileIOStatementContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) ClosePortFileIOStatement() (localctx IClosePortFileIOStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewClosePortFileIOStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 602, Cobol85ParserRULE_closePortFileIOStatement)
 	var _la int
@@ -52846,6 +53753,9 @@ func (s *ClosePortFileIOUsingContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) ClosePortFileIOUsing() (localctx IClosePortFileIOUsingContext) {
+	this := p
+	_ = this
+
 	localctx = NewClosePortFileIOUsingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 604, Cobol85ParserRULE_closePortFileIOUsing)
 
@@ -52972,6 +53882,9 @@ func (s *ClosePortFileIOUsingCloseDispositionContext) ExitRule(listener antlr.Pa
 }
 
 func (p *Cobol85Parser) ClosePortFileIOUsingCloseDisposition() (localctx IClosePortFileIOUsingCloseDispositionContext) {
+	this := p
+	_ = this
+
 	localctx = NewClosePortFileIOUsingCloseDispositionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 606, Cobol85ParserRULE_closePortFileIOUsingCloseDisposition)
 	var _la int
@@ -53106,6 +54019,9 @@ func (s *ClosePortFileIOUsingAssociatedDataContext) ExitRule(listener antlr.Pars
 }
 
 func (p *Cobol85Parser) ClosePortFileIOUsingAssociatedData() (localctx IClosePortFileIOUsingAssociatedDataContext) {
+	this := p
+	_ = this
+
 	localctx = NewClosePortFileIOUsingAssociatedDataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 608, Cobol85ParserRULE_closePortFileIOUsingAssociatedData)
 
@@ -53238,6 +54154,9 @@ func (s *ClosePortFileIOUsingAssociatedDataLengthContext) ExitRule(listener antl
 }
 
 func (p *Cobol85Parser) ClosePortFileIOUsingAssociatedDataLength() (localctx IClosePortFileIOUsingAssociatedDataLengthContext) {
+	this := p
+	_ = this
+
 	localctx = NewClosePortFileIOUsingAssociatedDataLengthContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 610, Cobol85ParserRULE_closePortFileIOUsingAssociatedDataLength)
 	var _la int
@@ -53422,6 +54341,9 @@ func (s *ComputeStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ComputeStatement() (localctx IComputeStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewComputeStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 612, Cobol85ParserRULE_computeStatement)
 	var _la int
@@ -53583,6 +54505,9 @@ func (s *ComputeStoreContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ComputeStore() (localctx IComputeStoreContext) {
+	this := p
+	_ = this
+
 	localctx = NewComputeStoreContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 614, Cobol85ParserRULE_computeStore)
 	var _la int
@@ -53686,6 +54611,9 @@ func (s *ContinueStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ContinueStatement() (localctx IContinueStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewContinueStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 616, Cobol85ParserRULE_continueStatement)
 
@@ -53815,6 +54743,9 @@ func (s *DeleteStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DeleteStatement() (localctx IDeleteStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeleteStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 618, Cobol85ParserRULE_deleteStatement)
 	var _la int
@@ -54006,6 +54937,9 @@ func (s *DisableStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DisableStatement() (localctx IDisableStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewDisableStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 620, Cobol85ParserRULE_disableStatement)
 	var _la int
@@ -54226,6 +55160,9 @@ func (s *DisplayStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DisplayStatement() (localctx IDisplayStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewDisplayStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 622, Cobol85ParserRULE_displayStatement)
 	var _la int
@@ -54255,7 +55192,7 @@ func (p *Cobol85Parser) DisplayStatement() (localctx IDisplayStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
 		{
 			p.SetState(4030)
 			p.DisplayOperand()
@@ -54379,6 +55316,9 @@ func (s *DisplayOperandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DisplayOperand() (localctx IDisplayOperandContext) {
+	this := p
+	_ = this
+
 	localctx = NewDisplayOperandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 624, Cobol85ParserRULE_displayOperand)
 
@@ -54503,6 +55443,9 @@ func (s *DisplayAtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DisplayAt() (localctx IDisplayAtContext) {
+	this := p
+	_ = this
+
 	localctx = NewDisplayAtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 626, Cobol85ParserRULE_displayAt)
 
@@ -54630,6 +55573,9 @@ func (s *DisplayUponContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DisplayUpon() (localctx IDisplayUponContext) {
+	this := p
+	_ = this
+
 	localctx = NewDisplayUponContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 628, Cobol85ParserRULE_displayUpon)
 
@@ -54745,6 +55691,9 @@ func (s *DisplayWithContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DisplayWith() (localctx IDisplayWithContext) {
+	this := p
+	_ = this
+
 	localctx = NewDisplayWithContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 630, Cobol85ParserRULE_displayWith)
 	var _la int
@@ -54936,6 +55885,9 @@ func (s *DivideStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DivideStatement() (localctx IDivideStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewDivideStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 632, Cobol85ParserRULE_divideStatement)
 	var _la int
@@ -55130,6 +56082,9 @@ func (s *DivideIntoStatementContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) DivideIntoStatement() (localctx IDivideIntoStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewDivideIntoStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 634, Cobol85ParserRULE_divideIntoStatement)
 	var _la int
@@ -55266,6 +56221,9 @@ func (s *DivideIntoGivingStatementContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) DivideIntoGivingStatement() (localctx IDivideIntoGivingStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewDivideIntoGivingStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 636, Cobol85ParserRULE_divideIntoGivingStatement)
 	var _la int
@@ -55415,6 +56373,9 @@ func (s *DivideByGivingStatementContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) DivideByGivingStatement() (localctx IDivideByGivingStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewDivideByGivingStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 638, Cobol85ParserRULE_divideByGivingStatement)
 	var _la int
@@ -55557,6 +56518,9 @@ func (s *DivideGivingPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DivideGivingPhrase() (localctx IDivideGivingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDivideGivingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 640, Cobol85ParserRULE_divideGivingPhrase)
 	var _la int
@@ -55673,6 +56637,9 @@ func (s *DivideIntoContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DivideInto() (localctx IDivideIntoContext) {
+	this := p
+	_ = this
+
 	localctx = NewDivideIntoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 642, Cobol85ParserRULE_divideInto)
 	var _la int
@@ -55786,6 +56753,9 @@ func (s *DivideGivingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DivideGiving() (localctx IDivideGivingContext) {
+	this := p
+	_ = this
+
 	localctx = NewDivideGivingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 644, Cobol85ParserRULE_divideGiving)
 	var _la int
@@ -55899,6 +56869,9 @@ func (s *DivideRemainderContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DivideRemainder() (localctx IDivideRemainderContext) {
+	this := p
+	_ = this
+
 	localctx = NewDivideRemainderContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 646, Cobol85ParserRULE_divideRemainder)
 
@@ -56048,6 +57021,9 @@ func (s *EnableStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EnableStatement() (localctx IEnableStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnableStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 648, Cobol85ParserRULE_enableStatement)
 	var _la int
@@ -56252,6 +57228,9 @@ func (s *EntryStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EntryStatement() (localctx IEntryStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewEntryStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 650, Cobol85ParserRULE_entryStatement)
 	var _la int
@@ -56443,6 +57422,9 @@ func (s *EvaluateStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EvaluateStatement() (localctx IEvaluateStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewEvaluateStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 652, Cobol85ParserRULE_evaluateStatement)
 	var _la int
@@ -56630,6 +57612,9 @@ func (s *EvaluateSelectContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EvaluateSelect() (localctx IEvaluateSelectContext) {
+	this := p
+	_ = this
+
 	localctx = NewEvaluateSelectContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 654, Cobol85ParserRULE_evaluateSelect)
 
@@ -56758,6 +57743,9 @@ func (s *EvaluateAlsoSelectContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EvaluateAlsoSelect() (localctx IEvaluateAlsoSelectContext) {
+	this := p
+	_ = this
+
 	localctx = NewEvaluateAlsoSelectContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 656, Cobol85ParserRULE_evaluateAlsoSelect)
 
@@ -56895,6 +57883,9 @@ func (s *EvaluateWhenPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EvaluateWhenPhrase() (localctx IEvaluateWhenPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewEvaluateWhenPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 658, Cobol85ParserRULE_evaluateWhenPhrase)
 
@@ -57052,6 +58043,9 @@ func (s *EvaluateWhenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EvaluateWhen() (localctx IEvaluateWhenContext) {
+	this := p
+	_ = this
+
 	localctx = NewEvaluateWhenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 660, Cobol85ParserRULE_evaluateWhen)
 	var _la int
@@ -57206,6 +58200,9 @@ func (s *EvaluateConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EvaluateCondition() (localctx IEvaluateConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewEvaluateConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 662, Cobol85ParserRULE_evaluateCondition)
 	var _la int
@@ -57361,6 +58358,9 @@ func (s *EvaluateThroughContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EvaluateThrough() (localctx IEvaluateThroughContext) {
+	this := p
+	_ = this
+
 	localctx = NewEvaluateThroughContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 664, Cobol85ParserRULE_evaluateThrough)
 	var _la int
@@ -57474,6 +58474,9 @@ func (s *EvaluateAlsoConditionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) EvaluateAlsoCondition() (localctx IEvaluateAlsoConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewEvaluateAlsoConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 666, Cobol85ParserRULE_evaluateAlsoCondition)
 
@@ -57596,6 +58599,9 @@ func (s *EvaluateWhenOtherContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EvaluateWhenOther() (localctx IEvaluateWhenOtherContext) {
+	this := p
+	_ = this
+
 	localctx = NewEvaluateWhenOtherContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 668, Cobol85ParserRULE_evaluateWhenOther)
 
@@ -57735,6 +58741,9 @@ func (s *EvaluateValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EvaluateValue() (localctx IEvaluateValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewEvaluateValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 670, Cobol85ParserRULE_evaluateValue)
 
@@ -57850,6 +58859,9 @@ func (s *ExecCicsStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ExecCicsStatement() (localctx IExecCicsStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewExecCicsStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 672, Cobol85ParserRULE_execCicsStatement)
 
@@ -57962,6 +58974,9 @@ func (s *ExecSqlStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ExecSqlStatement() (localctx IExecSqlStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewExecSqlStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 674, Cobol85ParserRULE_execSqlStatement)
 
@@ -58074,6 +59089,9 @@ func (s *ExecSqlImsStatementContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) ExecSqlImsStatement() (localctx IExecSqlImsStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewExecSqlImsStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 676, Cobol85ParserRULE_execSqlImsStatement)
 
@@ -58213,6 +59231,9 @@ func (s *ExhibitStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ExhibitStatement() (localctx IExhibitStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewExhibitStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 678, Cobol85ParserRULE_exhibitStatement)
 	var _la int
@@ -58262,7 +59283,7 @@ func (p *Cobol85Parser) ExhibitStatement() (localctx IExhibitStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
 		{
 			p.SetState(4254)
 			p.ExhibitOperand()
@@ -58355,6 +59376,9 @@ func (s *ExhibitOperandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ExhibitOperand() (localctx IExhibitOperandContext) {
+	this := p
+	_ = this
+
 	localctx = NewExhibitOperandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 680, Cobol85ParserRULE_exhibitOperand)
 
@@ -58463,6 +59487,9 @@ func (s *ExitStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ExitStatement() (localctx IExitStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewExitStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 682, Cobol85ParserRULE_exitStatement)
 	var _la int
@@ -58576,6 +59603,9 @@ func (s *GenerateStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) GenerateStatement() (localctx IGenerateStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewGenerateStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 684, Cobol85ParserRULE_generateStatement)
 
@@ -58671,6 +59701,9 @@ func (s *GobackStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) GobackStatement() (localctx IGobackStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewGobackStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 686, Cobol85ParserRULE_gobackStatement)
 
@@ -58786,6 +59819,9 @@ func (s *GoToStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) GoToStatement() (localctx IGoToStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewGoToStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 688, Cobol85ParserRULE_goToStatement)
 	var _la int
@@ -58911,6 +59947,9 @@ func (s *GoToStatementSimpleContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) GoToStatementSimple() (localctx IGoToStatementSimpleContext) {
+	this := p
+	_ = this
+
 	localctx = NewGoToStatementSimpleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 690, Cobol85ParserRULE_goToStatementSimple)
 
@@ -59043,6 +60082,9 @@ func (s *GoToDependingOnStatementContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) GoToDependingOnStatement() (localctx IGoToDependingOnStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewGoToDependingOnStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 692, Cobol85ParserRULE_goToDependingOnStatement)
 	var _la int
@@ -59221,6 +60263,9 @@ func (s *IfStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) IfStatement() (localctx IIfStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewIfStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 694, Cobol85ParserRULE_ifStatement)
 
@@ -59371,6 +60416,9 @@ func (s *IfThenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) IfThen() (localctx IIfThenContext) {
+	this := p
+	_ = this
+
 	localctx = NewIfThenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 696, Cobol85ParserRULE_ifThen)
 	var _la int
@@ -59538,6 +60586,9 @@ func (s *IfElseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) IfElse() (localctx IIfElseContext) {
+	this := p
+	_ = this
+
 	localctx = NewIfElseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 698, Cobol85ParserRULE_ifElse)
 
@@ -59699,6 +60750,9 @@ func (s *InitializeStatementContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) InitializeStatement() (localctx IInitializeStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewInitializeStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 700, Cobol85ParserRULE_initializeStatement)
 	var _la int
@@ -59839,6 +60893,9 @@ func (s *InitializeReplacingPhraseContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) InitializeReplacingPhrase() (localctx IInitializeReplacingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewInitializeReplacingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 702, Cobol85ParserRULE_initializeReplacingPhrase)
 	var _la int
@@ -60005,6 +61062,9 @@ func (s *InitializeReplacingByContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) InitializeReplacingBy() (localctx IInitializeReplacingByContext) {
+	this := p
+	_ = this
+
 	localctx = NewInitializeReplacingByContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 704, Cobol85ParserRULE_initializeReplacingBy)
 	var _la int
@@ -60158,6 +61218,9 @@ func (s *InitiateStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InitiateStatement() (localctx IInitiateStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewInitiateStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 706, Cobol85ParserRULE_initiateStatement)
 	var _la int
@@ -60314,6 +61377,9 @@ func (s *InspectStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InspectStatement() (localctx IInspectStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 708, Cobol85ParserRULE_inspectStatement)
 
@@ -60460,6 +61526,9 @@ func (s *InspectTallyingPhraseContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) InspectTallyingPhrase() (localctx IInspectTallyingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectTallyingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 710, Cobol85ParserRULE_inspectTallyingPhrase)
 	var _la int
@@ -60612,6 +61681,9 @@ func (s *InspectReplacingPhraseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) InspectReplacingPhrase() (localctx IInspectReplacingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectReplacingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 712, Cobol85ParserRULE_inspectReplacingPhrase)
 	var _la int
@@ -60779,6 +61851,9 @@ func (s *InspectTallyingReplacingPhraseContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) InspectTallyingReplacingPhrase() (localctx IInspectTallyingReplacingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectTallyingReplacingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 714, Cobol85ParserRULE_inspectTallyingReplacingPhrase)
 	var _la int
@@ -60952,6 +62027,9 @@ func (s *InspectConvertingPhraseContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) InspectConvertingPhrase() (localctx IInspectConvertingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectConvertingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 716, Cobol85ParserRULE_inspectConvertingPhrase)
 	var _la int
@@ -61134,6 +62212,9 @@ func (s *InspectForContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InspectFor() (localctx IInspectForContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectForContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 718, Cobol85ParserRULE_inspectFor)
 	var _la int
@@ -61282,6 +62363,9 @@ func (s *InspectCharactersContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InspectCharacters() (localctx IInspectCharactersContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectCharactersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 720, Cobol85ParserRULE_inspectCharacters)
 	var _la int
@@ -61421,6 +62505,9 @@ func (s *InspectReplacingCharactersContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Cobol85Parser) InspectReplacingCharacters() (localctx IInspectReplacingCharactersContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectReplacingCharactersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 722, Cobol85ParserRULE_inspectReplacingCharacters)
 	var _la int
@@ -61558,6 +62645,9 @@ func (s *InspectAllLeadingsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InspectAllLeadings() (localctx IInspectAllLeadingsContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectAllLeadingsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 724, Cobol85ParserRULE_inspectAllLeadings)
 	var _la int
@@ -61709,6 +62799,9 @@ func (s *InspectReplacingAllLeadingsContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) InspectReplacingAllLeadings() (localctx IInspectReplacingAllLeadingsContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectReplacingAllLeadingsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 726, Cobol85ParserRULE_inspectReplacingAllLeadings)
 	var _la int
@@ -61868,6 +62961,9 @@ func (s *InspectAllLeadingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InspectAllLeading() (localctx IInspectAllLeadingContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectAllLeadingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 728, Cobol85ParserRULE_inspectAllLeading)
 	var _la int
@@ -62035,6 +63131,9 @@ func (s *InspectReplacingAllLeadingContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Cobol85Parser) InspectReplacingAllLeading() (localctx IInspectReplacingAllLeadingContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectReplacingAllLeadingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 730, Cobol85ParserRULE_inspectReplacingAllLeading)
 	var _la int
@@ -62177,6 +63276,9 @@ func (s *InspectByContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InspectBy() (localctx IInspectByContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectByContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 732, Cobol85ParserRULE_inspectBy)
 
@@ -62304,6 +63406,9 @@ func (s *InspectToContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InspectTo() (localctx IInspectToContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectToContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 734, Cobol85ParserRULE_inspectTo)
 
@@ -62439,6 +63544,9 @@ func (s *InspectBeforeAfterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InspectBeforeAfter() (localctx IInspectBeforeAfterContext) {
+	this := p
+	_ = this
+
 	localctx = NewInspectBeforeAfterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 736, Cobol85ParserRULE_inspectBeforeAfter)
 	var _la int
@@ -62664,6 +63772,9 @@ func (s *MergeStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MergeStatement() (localctx IMergeStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewMergeStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 738, Cobol85ParserRULE_mergeStatement)
 	var _la int
@@ -62866,6 +63977,9 @@ func (s *MergeOnKeyClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MergeOnKeyClause() (localctx IMergeOnKeyClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewMergeOnKeyClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 740, Cobol85ParserRULE_mergeOnKeyClause)
 	var _la int
@@ -63052,6 +64166,9 @@ func (s *MergeCollatingSequencePhraseContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) MergeCollatingSequencePhrase() (localctx IMergeCollatingSequencePhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewMergeCollatingSequencePhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 742, Cobol85ParserRULE_mergeCollatingSequencePhrase)
 	var _la int
@@ -63226,6 +64343,9 @@ func (s *MergeCollatingAlphanumericContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Cobol85Parser) MergeCollatingAlphanumeric() (localctx IMergeCollatingAlphanumericContext) {
+	this := p
+	_ = this
+
 	localctx = NewMergeCollatingAlphanumericContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 744, Cobol85ParserRULE_mergeCollatingAlphanumeric)
 	var _la int
@@ -63355,6 +64475,9 @@ func (s *MergeCollatingNationalContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) MergeCollatingNational() (localctx IMergeCollatingNationalContext) {
+	this := p
+	_ = this
+
 	localctx = NewMergeCollatingNationalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 746, Cobol85ParserRULE_mergeCollatingNational)
 	var _la int
@@ -63496,6 +64619,9 @@ func (s *MergeUsingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MergeUsing() (localctx IMergeUsingContext) {
+	this := p
+	_ = this
+
 	localctx = NewMergeUsingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 748, Cobol85ParserRULE_mergeUsing)
 	var _la int
@@ -63630,6 +64756,9 @@ func (s *MergeOutputProcedurePhraseContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Cobol85Parser) MergeOutputProcedurePhrase() (localctx IMergeOutputProcedurePhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewMergeOutputProcedurePhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 750, Cobol85ParserRULE_mergeOutputProcedurePhrase)
 	var _la int
@@ -63766,6 +64895,9 @@ func (s *MergeOutputThroughContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MergeOutputThrough() (localctx IMergeOutputThroughContext) {
+	this := p
+	_ = this
+
 	localctx = NewMergeOutputThroughContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 752, Cobol85ParserRULE_mergeOutputThrough)
 	var _la int
@@ -63892,6 +65024,9 @@ func (s *MergeGivingPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MergeGivingPhrase() (localctx IMergeGivingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewMergeGivingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 754, Cobol85ParserRULE_mergeGivingPhrase)
 	var _la int
@@ -64036,6 +65171,9 @@ func (s *MergeGivingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MergeGiving() (localctx IMergeGivingContext) {
+	this := p
+	_ = this
+
 	localctx = NewMergeGivingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 756, Cobol85ParserRULE_mergeGiving)
 
@@ -64203,6 +65341,9 @@ func (s *MoveStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MoveStatement() (localctx IMoveStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewMoveStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 758, Cobol85ParserRULE_moveStatement)
 
@@ -64241,7 +65382,7 @@ func (p *Cobol85Parser) MoveStatement() (localctx IMoveStatementContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case Cobol85ParserABORT, Cobol85ParserADDRESS, Cobol85ParserALL, Cobol85ParserAS, Cobol85ParserASCII, Cobol85ParserASSOCIATED_DATA, Cobol85ParserASSOCIATED_DATA_LENGTH, Cobol85ParserATTRIBUTE, Cobol85ParserAUTO, Cobol85ParserAUTO_SKIP, Cobol85ParserBACKGROUND_COLOR, Cobol85ParserBACKGROUND_COLOUR, Cobol85ParserBEEP, Cobol85ParserBELL, Cobol85ParserBINARY, Cobol85ParserBIT, Cobol85ParserBLINK, Cobol85ParserBOUNDS, Cobol85ParserCAPABLE, Cobol85ParserCCSVERSION, Cobol85ParserCHANGED, Cobol85ParserCHANNEL, Cobol85ParserCLOSE_DISPOSITION, Cobol85ParserCOBOL, Cobol85ParserCOMMITMENT, Cobol85ParserCONTROL_POINT, Cobol85ParserCONVENTION, Cobol85ParserCRUNCH, Cobol85ParserCURSOR, Cobol85ParserDATE, Cobol85ParserDAY, Cobol85ParserDAY_OF_WEEK, Cobol85ParserDEBUG_CONTENTS, Cobol85ParserDEBUG_ITEM, Cobol85ParserDEBUG_LINE, Cobol85ParserDEBUG_NAME, Cobol85ParserDEBUG_SUB_1, Cobol85ParserDEBUG_SUB_2, Cobol85ParserDEBUG_SUB_3, Cobol85ParserDEFAULT, Cobol85ParserDEFAULT_DISPLAY, Cobol85ParserDEFINITION, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserDISK, Cobol85ParserDONTCARE, Cobol85ParserDOUBLE, Cobol85ParserEBCDIC, Cobol85ParserEMPTY_CHECK, Cobol85ParserENTER, Cobol85ParserENTRY_PROCEDURE, Cobol85ParserERASE, Cobol85ParserEOL, Cobol85ParserEOS, Cobol85ParserESCAPE, Cobol85ParserEVENT, Cobol85ParserEXCLUSIVE, Cobol85ParserEXPORT, Cobol85ParserEXTENDED, Cobol85ParserFALSE, Cobol85ParserFOREGROUND_COLOR, Cobol85ParserFOREGROUND_COLOUR, Cobol85ParserFULL, Cobol85ParserFUNCTION, Cobol85ParserFUNCTIONNAME, Cobol85ParserFUNCTION_POINTER, Cobol85ParserGRID, Cobol85ParserHIGHLIGHT, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserIMPLICIT, Cobol85ParserIMPORT, Cobol85ParserINTEGER, Cobol85ParserKEPT, Cobol85ParserKEYBOARD, Cobol85ParserLANGUAGE, Cobol85ParserLB, Cobol85ParserLD, Cobol85ParserLEFTLINE, Cobol85ParserLENGTH, Cobol85ParserLENGTH_CHECK, Cobol85ParserLIBACCESS, Cobol85ParserLIBPARAMETER, Cobol85ParserLIBRARY, Cobol85ParserLINAGE_COUNTER, Cobol85ParserLINE_COUNTER, Cobol85ParserLIST, Cobol85ParserLOCAL, Cobol85ParserLONG_DATE, Cobol85ParserLONG_TIME, Cobol85ParserLOWER, Cobol85ParserLOWLIGHT, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserMMDDYYYY, Cobol85ParserNAMED, Cobol85ParserNATIONAL, Cobol85ParserNATIONAL_EDITED, Cobol85ParserNETWORK, Cobol85ParserNO_ECHO, Cobol85ParserNULL, Cobol85ParserNULLS, Cobol85ParserNUMERIC_DATE, Cobol85ParserNUMERIC_TIME, Cobol85ParserODT, Cobol85ParserORDERLY, Cobol85ParserOVERLINE, Cobol85ParserOWN, Cobol85ParserPAGE_COUNTER, Cobol85ParserPASSWORD, Cobol85ParserPORT, Cobol85ParserPRINTER, Cobol85ParserPRIVATE, Cobol85ParserPROCESS, Cobol85ParserPROGRAM, Cobol85ParserPROMPT, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserREADER, Cobol85ParserREMOTE, Cobol85ParserREAL, Cobol85ParserRECEIVED, Cobol85ParserRECURSIVE, Cobol85ParserREF, Cobol85ParserREMOVE, Cobol85ParserREQUIRED, Cobol85ParserREVERSE_VIDEO, Cobol85ParserRETURN_CODE, Cobol85ParserSAVE, Cobol85ParserSECURE, Cobol85ParserSHARED, Cobol85ParserSHAREDBYALL, Cobol85ParserSHAREDBYRUNUNIT, Cobol85ParserSHARING, Cobol85ParserSHIFT_IN, Cobol85ParserSHIFT_OUT, Cobol85ParserSHORT_DATE, Cobol85ParserSORT_CONTROL, Cobol85ParserSORT_CORE_SIZE, Cobol85ParserSORT_FILE_SIZE, Cobol85ParserSORT_MESSAGE, Cobol85ParserSORT_MODE_SIZE, Cobol85ParserSORT_RETURN, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserSYMBOL, Cobol85ParserTALLY, Cobol85ParserTASK, Cobol85ParserTHREAD, Cobol85ParserTHREAD_LOCAL, Cobol85ParserTIME, Cobol85ParserTIMER, Cobol85ParserTODAYS_DATE, Cobol85ParserTODAYS_NAME, Cobol85ParserTRUE, Cobol85ParserTRUNCATED, Cobol85ParserTYPEDEF, Cobol85ParserUNDERLINE, Cobol85ParserVIRTUAL, Cobol85ParserWAIT, Cobol85ParserWHEN_COMPILED, Cobol85ParserYEAR, Cobol85ParserYYYYMMDD, Cobol85ParserYYYYDDD, Cobol85ParserZERO, Cobol85ParserZERO_FILL, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL, Cobol85ParserIDENTIFIER:
+	case Cobol85ParserABORT, Cobol85ParserADDRESS, Cobol85ParserALL, Cobol85ParserAS, Cobol85ParserASCII, Cobol85ParserASSOCIATED_DATA, Cobol85ParserASSOCIATED_DATA_LENGTH, Cobol85ParserATTRIBUTE, Cobol85ParserAUTO, Cobol85ParserAUTO_SKIP, Cobol85ParserBACKGROUND_COLOR, Cobol85ParserBACKGROUND_COLOUR, Cobol85ParserBEEP, Cobol85ParserBELL, Cobol85ParserBINARY, Cobol85ParserBIT, Cobol85ParserBLINK, Cobol85ParserBOUNDS, Cobol85ParserCAPABLE, Cobol85ParserCCSVERSION, Cobol85ParserCHANGED, Cobol85ParserCHANNEL, Cobol85ParserCLOSE_DISPOSITION, Cobol85ParserCOBOL, Cobol85ParserCOMMITMENT, Cobol85ParserCONTROL_POINT, Cobol85ParserCONVENTION, Cobol85ParserCRUNCH, Cobol85ParserCURSOR, Cobol85ParserDATE, Cobol85ParserDAY, Cobol85ParserDAY_OF_WEEK, Cobol85ParserDEBUG_CONTENTS, Cobol85ParserDEBUG_ITEM, Cobol85ParserDEBUG_LINE, Cobol85ParserDEBUG_NAME, Cobol85ParserDEBUG_SUB_1, Cobol85ParserDEBUG_SUB_2, Cobol85ParserDEBUG_SUB_3, Cobol85ParserDEFAULT, Cobol85ParserDEFAULT_DISPLAY, Cobol85ParserDEFINITION, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserDISK, Cobol85ParserDONTCARE, Cobol85ParserDOUBLE, Cobol85ParserEBCDIC, Cobol85ParserEMPTY_CHECK, Cobol85ParserENTER, Cobol85ParserENTRY_PROCEDURE, Cobol85ParserERASE, Cobol85ParserEOL, Cobol85ParserEOS, Cobol85ParserESCAPE, Cobol85ParserEVENT, Cobol85ParserEXCLUSIVE, Cobol85ParserEXPORT, Cobol85ParserEXTENDED, Cobol85ParserFALSE, Cobol85ParserFOREGROUND_COLOR, Cobol85ParserFOREGROUND_COLOUR, Cobol85ParserFULL, Cobol85ParserFUNCTION, Cobol85ParserFUNCTIONNAME, Cobol85ParserFUNCTION_POINTER, Cobol85ParserGRID, Cobol85ParserHIGHLIGHT, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserIMPLICIT, Cobol85ParserIMPORT, Cobol85ParserINTEGER, Cobol85ParserKEPT, Cobol85ParserKEYBOARD, Cobol85ParserLANGUAGE, Cobol85ParserLB, Cobol85ParserLD, Cobol85ParserLEFTLINE, Cobol85ParserLENGTH, Cobol85ParserLENGTH_CHECK, Cobol85ParserLIBACCESS, Cobol85ParserLIBPARAMETER, Cobol85ParserLIBRARY, Cobol85ParserLINAGE_COUNTER, Cobol85ParserLINE_COUNTER, Cobol85ParserLIST, Cobol85ParserLOCAL, Cobol85ParserLONG_DATE, Cobol85ParserLONG_TIME, Cobol85ParserLOWER, Cobol85ParserLOWLIGHT, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserMMDDYYYY, Cobol85ParserNAMED, Cobol85ParserNATIONAL, Cobol85ParserNATIONAL_EDITED, Cobol85ParserNETWORK, Cobol85ParserNO_ECHO, Cobol85ParserNULL_, Cobol85ParserNULLS, Cobol85ParserNUMERIC_DATE, Cobol85ParserNUMERIC_TIME, Cobol85ParserODT, Cobol85ParserORDERLY, Cobol85ParserOVERLINE, Cobol85ParserOWN, Cobol85ParserPAGE_COUNTER, Cobol85ParserPASSWORD, Cobol85ParserPORT, Cobol85ParserPRINTER, Cobol85ParserPRIVATE, Cobol85ParserPROCESS, Cobol85ParserPROGRAM, Cobol85ParserPROMPT, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserREADER, Cobol85ParserREMOTE, Cobol85ParserREAL, Cobol85ParserRECEIVED, Cobol85ParserRECURSIVE, Cobol85ParserREF, Cobol85ParserREMOVE, Cobol85ParserREQUIRED, Cobol85ParserREVERSE_VIDEO, Cobol85ParserRETURN_CODE, Cobol85ParserSAVE, Cobol85ParserSECURE, Cobol85ParserSHARED, Cobol85ParserSHAREDBYALL, Cobol85ParserSHAREDBYRUNUNIT, Cobol85ParserSHARING, Cobol85ParserSHIFT_IN, Cobol85ParserSHIFT_OUT, Cobol85ParserSHORT_DATE, Cobol85ParserSORT_CONTROL, Cobol85ParserSORT_CORE_SIZE, Cobol85ParserSORT_FILE_SIZE, Cobol85ParserSORT_MESSAGE, Cobol85ParserSORT_MODE_SIZE, Cobol85ParserSORT_RETURN, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserSYMBOL, Cobol85ParserTALLY, Cobol85ParserTASK, Cobol85ParserTHREAD, Cobol85ParserTHREAD_LOCAL, Cobol85ParserTIME, Cobol85ParserTIMER, Cobol85ParserTODAYS_DATE, Cobol85ParserTODAYS_NAME, Cobol85ParserTRUE, Cobol85ParserTRUNCATED, Cobol85ParserTYPEDEF, Cobol85ParserUNDERLINE, Cobol85ParserVIRTUAL, Cobol85ParserWAIT, Cobol85ParserWHEN_COMPILED, Cobol85ParserYEAR, Cobol85ParserYYYYMMDD, Cobol85ParserYYYYDDD, Cobol85ParserZERO, Cobol85ParserZERO_FILL, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL, Cobol85ParserIDENTIFIER:
 		{
 			p.SetState(4589)
 			p.MoveToStatement()
@@ -64356,6 +65497,9 @@ func (s *MoveToStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MoveToStatement() (localctx IMoveToStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewMoveToStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 760, Cobol85ParserRULE_moveToStatement)
 	var _la int
@@ -64482,6 +65626,9 @@ func (s *MoveToSendingAreaContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MoveToSendingArea() (localctx IMoveToSendingAreaContext) {
+	this := p
+	_ = this
+
 	localctx = NewMoveToSendingAreaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 762, Cobol85ParserRULE_moveToSendingArea)
 
@@ -64627,6 +65774,9 @@ func (s *MoveCorrespondingToStatementContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) MoveCorrespondingToStatement() (localctx IMoveCorrespondingToStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewMoveCorrespondingToStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 764, Cobol85ParserRULE_moveCorrespondingToStatement)
 	var _la int
@@ -64754,6 +65904,9 @@ func (s *MoveCorrespondingToSendingAreaContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) MoveCorrespondingToSendingArea() (localctx IMoveCorrespondingToSendingAreaContext) {
+	this := p
+	_ = this
+
 	localctx = NewMoveCorrespondingToSendingAreaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 766, Cobol85ParserRULE_moveCorrespondingToSendingArea)
 
@@ -64913,6 +66066,9 @@ func (s *MultiplyStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MultiplyStatement() (localctx IMultiplyStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultiplyStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 768, Cobol85ParserRULE_multiplyStatement)
 
@@ -65089,6 +66245,9 @@ func (s *MultiplyRegularContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MultiplyRegular() (localctx IMultiplyRegularContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultiplyRegularContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 770, Cobol85ParserRULE_multiplyRegular)
 	var _la int
@@ -65201,6 +66360,9 @@ func (s *MultiplyRegularOperandContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) MultiplyRegularOperand() (localctx IMultiplyRegularOperandContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultiplyRegularOperandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 772, Cobol85ParserRULE_multiplyRegularOperand)
 	var _la int
@@ -65337,6 +66499,9 @@ func (s *MultiplyGivingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MultiplyGiving() (localctx IMultiplyGivingContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultiplyGivingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 774, Cobol85ParserRULE_multiplyGiving)
 	var _la int
@@ -65463,6 +66628,9 @@ func (s *MultiplyGivingOperandContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) MultiplyGivingOperand() (localctx IMultiplyGivingOperandContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultiplyGivingOperandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 776, Cobol85ParserRULE_multiplyGivingOperand)
 
@@ -65577,6 +66745,9 @@ func (s *MultiplyGivingResultContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) MultiplyGivingResult() (localctx IMultiplyGivingResultContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultiplyGivingResultContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 778, Cobol85ParserRULE_multiplyGivingResult)
 	var _la int
@@ -65772,6 +66943,9 @@ func (s *OpenStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) OpenStatement() (localctx IOpenStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpenStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 780, Cobol85ParserRULE_openStatement)
 	var _la int
@@ -65928,6 +67102,9 @@ func (s *OpenInputStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) OpenInputStatement() (localctx IOpenInputStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpenInputStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 782, Cobol85ParserRULE_openInputStatement)
 	var _la int
@@ -66056,6 +67233,9 @@ func (s *OpenInputContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) OpenInput() (localctx IOpenInputContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpenInputContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 784, Cobol85ParserRULE_openInput)
 	var _la int
@@ -66202,6 +67382,9 @@ func (s *OpenOutputStatementContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) OpenOutputStatement() (localctx IOpenOutputStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpenOutputStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 786, Cobol85ParserRULE_openOutputStatement)
 	var _la int
@@ -66326,6 +67509,9 @@ func (s *OpenOutputContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) OpenOutput() (localctx IOpenOutputContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpenOutputContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 788, Cobol85ParserRULE_openOutput)
 	var _la int
@@ -66466,6 +67652,9 @@ func (s *OpenIOStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) OpenIOStatement() (localctx IOpenIOStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpenIOStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 790, Cobol85ParserRULE_openIOStatement)
 	var _la int
@@ -66595,6 +67784,9 @@ func (s *OpenExtendStatementContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) OpenExtendStatement() (localctx IOpenExtendStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpenExtendStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 792, Cobol85ParserRULE_openExtendStatement)
 	var _la int
@@ -66721,6 +67913,9 @@ func (s *PerformStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PerformStatement() (localctx IPerformStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 794, Cobol85ParserRULE_performStatement)
 
@@ -66861,6 +68056,9 @@ func (s *PerformInlineStatementContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) PerformInlineStatement() (localctx IPerformInlineStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformInlineStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 796, Cobol85ParserRULE_performInlineStatement)
 	var _la int
@@ -67015,6 +68213,9 @@ func (s *PerformProcedureStatementContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) PerformProcedureStatement() (localctx IPerformProcedureStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformProcedureStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 798, Cobol85ParserRULE_performProcedureStatement)
 	var _la int
@@ -67165,6 +68366,9 @@ func (s *PerformTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PerformType() (localctx IPerformTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 800, Cobol85ParserRULE_performType)
 
@@ -67296,6 +68500,9 @@ func (s *PerformTimesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PerformTimes() (localctx IPerformTimesContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformTimesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 802, Cobol85ParserRULE_performTimes)
 
@@ -67423,6 +68630,9 @@ func (s *PerformUntilContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PerformUntil() (localctx IPerformUntilContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformUntilContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 804, Cobol85ParserRULE_performUntil)
 	var _la int
@@ -67546,6 +68756,9 @@ func (s *PerformVaryingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PerformVarying() (localctx IPerformVaryingContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformVaryingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 806, Cobol85ParserRULE_performVarying)
 
@@ -67700,6 +68913,9 @@ func (s *PerformVaryingClauseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) PerformVaryingClause() (localctx IPerformVaryingClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformVaryingClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 808, Cobol85ParserRULE_performVaryingClause)
 	var _la int
@@ -67856,6 +69072,9 @@ func (s *PerformVaryingPhraseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) PerformVaryingPhrase() (localctx IPerformVaryingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformVaryingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 810, Cobol85ParserRULE_performVaryingPhrase)
 
@@ -67981,6 +69200,9 @@ func (s *PerformAfterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PerformAfter() (localctx IPerformAfterContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformAfterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 812, Cobol85ParserRULE_performAfter)
 
@@ -68106,6 +69328,9 @@ func (s *PerformFromContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PerformFrom() (localctx IPerformFromContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformFromContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 814, Cobol85ParserRULE_performFrom)
 
@@ -68249,6 +69474,9 @@ func (s *PerformByContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PerformBy() (localctx IPerformByContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformByContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 816, Cobol85ParserRULE_performBy)
 
@@ -68374,6 +69602,9 @@ func (s *PerformTestClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PerformTestClause() (localctx IPerformTestClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewPerformTestClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 818, Cobol85ParserRULE_performTestClause)
 	var _la int
@@ -68511,6 +69742,9 @@ func (s *PurgeStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PurgeStatement() (localctx IPurgeStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewPurgeStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 820, Cobol85ParserRULE_purgeStatement)
 	var _la int
@@ -68709,6 +69943,9 @@ func (s *ReadStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReadStatement() (localctx IReadStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewReadStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 822, Cobol85ParserRULE_readStatement)
 	var _la int
@@ -68919,6 +70156,9 @@ func (s *ReadIntoContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReadInto() (localctx IReadIntoContext) {
+	this := p
+	_ = this
+
 	localctx = NewReadIntoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 824, Cobol85ParserRULE_readInto)
 
@@ -69030,6 +70270,9 @@ func (s *ReadWithContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReadWith() (localctx IReadWithContext) {
+	this := p
+	_ = this
+
 	localctx = NewReadWithContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 826, Cobol85ParserRULE_readWith)
 	var _la int
@@ -69173,6 +70416,9 @@ func (s *ReadKeyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReadKey() (localctx IReadKeyContext) {
+	this := p
+	_ = this
+
 	localctx = NewReadKeyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 828, Cobol85ParserRULE_readKey)
 	var _la int
@@ -69324,6 +70570,9 @@ func (s *ReceiveStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReceiveStatement() (localctx IReceiveStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewReceiveStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 830, Cobol85ParserRULE_receiveStatement)
 
@@ -69596,6 +70845,9 @@ func (s *ReceiveFromStatementContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) ReceiveFromStatement() (localctx IReceiveFromStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewReceiveFromStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 832, Cobol85ParserRULE_receiveFromStatement)
 
@@ -69764,6 +71016,9 @@ func (s *ReceiveFromContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReceiveFrom() (localctx IReceiveFromContext) {
+	this := p
+	_ = this
+
 	localctx = NewReceiveFromContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 834, Cobol85ParserRULE_receiveFrom)
 
@@ -69938,6 +71193,9 @@ func (s *ReceiveIntoStatementContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) ReceiveIntoStatement() (localctx IReceiveIntoStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewReceiveIntoStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 836, Cobol85ParserRULE_receiveIntoStatement)
 	var _la int
@@ -70104,6 +71362,9 @@ func (s *ReceiveNoDataContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReceiveNoData() (localctx IReceiveNoDataContext) {
+	this := p
+	_ = this
+
 	localctx = NewReceiveNoDataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 838, Cobol85ParserRULE_receiveNoData)
 
@@ -70244,6 +71505,9 @@ func (s *ReceiveWithDataContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReceiveWithData() (localctx IReceiveWithDataContext) {
+	this := p
+	_ = this
+
 	localctx = NewReceiveWithDataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 840, Cobol85ParserRULE_receiveWithData)
 
@@ -70381,6 +71645,9 @@ func (s *ReceiveBeforeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReceiveBefore() (localctx IReceiveBeforeContext) {
+	this := p
+	_ = this
+
 	localctx = NewReceiveBeforeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 842, Cobol85ParserRULE_receiveBefore)
 
@@ -70506,6 +71773,9 @@ func (s *ReceiveWithContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReceiveWith() (localctx IReceiveWithContext) {
+	this := p
+	_ = this
+
 	localctx = NewReceiveWithContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 844, Cobol85ParserRULE_receiveWith)
 	var _la int
@@ -70627,6 +71897,9 @@ func (s *ReceiveThreadContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReceiveThread() (localctx IReceiveThreadContext) {
+	this := p
+	_ = this
+
 	localctx = NewReceiveThreadContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 846, Cobol85ParserRULE_receiveThread)
 	var _la int
@@ -70758,6 +72031,9 @@ func (s *ReceiveSizeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReceiveSize() (localctx IReceiveSizeContext) {
+	this := p
+	_ = this
+
 	localctx = NewReceiveSizeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 848, Cobol85ParserRULE_receiveSize)
 	var _la int
@@ -70891,6 +72167,9 @@ func (s *ReceiveStatusContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReceiveStatus() (localctx IReceiveStatusContext) {
+	this := p
+	_ = this
+
 	localctx = NewReceiveStatusContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 850, Cobol85ParserRULE_receiveStatus)
 	var _la int
@@ -71023,6 +72302,9 @@ func (s *ReleaseStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReleaseStatement() (localctx IReleaseStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewReleaseStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 852, Cobol85ParserRULE_releaseStatement)
 	var _la int
@@ -71182,6 +72464,9 @@ func (s *ReturnStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReturnStatement() (localctx IReturnStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewReturnStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 854, Cobol85ParserRULE_returnStatement)
 	var _la int
@@ -71334,6 +72619,9 @@ func (s *ReturnIntoContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReturnInto() (localctx IReturnIntoContext) {
+	this := p
+	_ = this
+
 	localctx = NewReturnIntoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 856, Cobol85ParserRULE_returnInto)
 
@@ -71473,6 +72761,9 @@ func (s *RewriteStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RewriteStatement() (localctx IRewriteStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewRewriteStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 858, Cobol85ParserRULE_rewriteStatement)
 	var _la int
@@ -71620,6 +72911,9 @@ func (s *RewriteFromContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RewriteFrom() (localctx IRewriteFromContext) {
+	this := p
+	_ = this
+
 	localctx = NewRewriteFromContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 860, Cobol85ParserRULE_rewriteFrom)
 
@@ -71776,6 +73070,9 @@ func (s *SearchStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SearchStatement() (localctx ISearchStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSearchStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 862, Cobol85ParserRULE_searchStatement)
 	var _la int
@@ -71946,6 +73243,9 @@ func (s *SearchVaryingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SearchVarying() (localctx ISearchVaryingContext) {
+	this := p
+	_ = this
+
 	localctx = NewSearchVaryingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 864, Cobol85ParserRULE_searchVarying)
 
@@ -72082,6 +73382,9 @@ func (s *SearchWhenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SearchWhen() (localctx ISearchWhenContext) {
+	this := p
+	_ = this
+
 	localctx = NewSearchWhenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 866, Cobol85ParserRULE_searchWhen)
 
@@ -72254,6 +73557,9 @@ func (s *SendStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SendStatement() (localctx ISendStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSendStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 868, Cobol85ParserRULE_sendStatement)
 
@@ -72282,7 +73588,7 @@ func (p *Cobol85Parser) SendStatement() (localctx ISendStatementContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case Cobol85ParserABORT, Cobol85ParserADDRESS, Cobol85ParserALL, Cobol85ParserAS, Cobol85ParserASCII, Cobol85ParserASSOCIATED_DATA, Cobol85ParserASSOCIATED_DATA_LENGTH, Cobol85ParserATTRIBUTE, Cobol85ParserAUTO, Cobol85ParserAUTO_SKIP, Cobol85ParserBACKGROUND_COLOR, Cobol85ParserBACKGROUND_COLOUR, Cobol85ParserBEEP, Cobol85ParserBELL, Cobol85ParserBINARY, Cobol85ParserBIT, Cobol85ParserBLINK, Cobol85ParserBOUNDS, Cobol85ParserCAPABLE, Cobol85ParserCCSVERSION, Cobol85ParserCHANGED, Cobol85ParserCHANNEL, Cobol85ParserCLOSE_DISPOSITION, Cobol85ParserCOBOL, Cobol85ParserCOMMITMENT, Cobol85ParserCONTROL_POINT, Cobol85ParserCONVENTION, Cobol85ParserCRUNCH, Cobol85ParserCURSOR, Cobol85ParserDATE, Cobol85ParserDAY, Cobol85ParserDAY_OF_WEEK, Cobol85ParserDEBUG_CONTENTS, Cobol85ParserDEBUG_ITEM, Cobol85ParserDEBUG_LINE, Cobol85ParserDEBUG_NAME, Cobol85ParserDEBUG_SUB_1, Cobol85ParserDEBUG_SUB_2, Cobol85ParserDEBUG_SUB_3, Cobol85ParserDEFAULT, Cobol85ParserDEFAULT_DISPLAY, Cobol85ParserDEFINITION, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserDISK, Cobol85ParserDONTCARE, Cobol85ParserDOUBLE, Cobol85ParserEBCDIC, Cobol85ParserEMPTY_CHECK, Cobol85ParserENTER, Cobol85ParserENTRY_PROCEDURE, Cobol85ParserERASE, Cobol85ParserEOL, Cobol85ParserEOS, Cobol85ParserESCAPE, Cobol85ParserEVENT, Cobol85ParserEXCLUSIVE, Cobol85ParserEXPORT, Cobol85ParserEXTENDED, Cobol85ParserFALSE, Cobol85ParserFOREGROUND_COLOR, Cobol85ParserFOREGROUND_COLOUR, Cobol85ParserFULL, Cobol85ParserFUNCTION, Cobol85ParserFUNCTIONNAME, Cobol85ParserFUNCTION_POINTER, Cobol85ParserGRID, Cobol85ParserHIGHLIGHT, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserIMPLICIT, Cobol85ParserIMPORT, Cobol85ParserINTEGER, Cobol85ParserKEPT, Cobol85ParserKEYBOARD, Cobol85ParserLANGUAGE, Cobol85ParserLB, Cobol85ParserLD, Cobol85ParserLEFTLINE, Cobol85ParserLENGTH, Cobol85ParserLENGTH_CHECK, Cobol85ParserLIBACCESS, Cobol85ParserLIBPARAMETER, Cobol85ParserLIBRARY, Cobol85ParserLINAGE_COUNTER, Cobol85ParserLINE_COUNTER, Cobol85ParserLIST, Cobol85ParserLOCAL, Cobol85ParserLONG_DATE, Cobol85ParserLONG_TIME, Cobol85ParserLOWER, Cobol85ParserLOWLIGHT, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserMMDDYYYY, Cobol85ParserNAMED, Cobol85ParserNATIONAL, Cobol85ParserNATIONAL_EDITED, Cobol85ParserNETWORK, Cobol85ParserNO_ECHO, Cobol85ParserNULL, Cobol85ParserNULLS, Cobol85ParserNUMERIC_DATE, Cobol85ParserNUMERIC_TIME, Cobol85ParserODT, Cobol85ParserORDERLY, Cobol85ParserOVERLINE, Cobol85ParserOWN, Cobol85ParserPAGE_COUNTER, Cobol85ParserPASSWORD, Cobol85ParserPORT, Cobol85ParserPRINTER, Cobol85ParserPRIVATE, Cobol85ParserPROCESS, Cobol85ParserPROGRAM, Cobol85ParserPROMPT, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserREADER, Cobol85ParserREMOTE, Cobol85ParserREAL, Cobol85ParserRECEIVED, Cobol85ParserRECURSIVE, Cobol85ParserREF, Cobol85ParserREMOVE, Cobol85ParserREQUIRED, Cobol85ParserREVERSE_VIDEO, Cobol85ParserRETURN_CODE, Cobol85ParserSAVE, Cobol85ParserSECURE, Cobol85ParserSHARED, Cobol85ParserSHAREDBYALL, Cobol85ParserSHAREDBYRUNUNIT, Cobol85ParserSHARING, Cobol85ParserSHIFT_IN, Cobol85ParserSHIFT_OUT, Cobol85ParserSHORT_DATE, Cobol85ParserSORT_CONTROL, Cobol85ParserSORT_CORE_SIZE, Cobol85ParserSORT_FILE_SIZE, Cobol85ParserSORT_MESSAGE, Cobol85ParserSORT_MODE_SIZE, Cobol85ParserSORT_RETURN, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserSYMBOL, Cobol85ParserTALLY, Cobol85ParserTASK, Cobol85ParserTHREAD, Cobol85ParserTHREAD_LOCAL, Cobol85ParserTIME, Cobol85ParserTIMER, Cobol85ParserTODAYS_DATE, Cobol85ParserTODAYS_NAME, Cobol85ParserTRUE, Cobol85ParserTRUNCATED, Cobol85ParserTYPEDEF, Cobol85ParserUNDERLINE, Cobol85ParserVIRTUAL, Cobol85ParserWAIT, Cobol85ParserWHEN_COMPILED, Cobol85ParserYEAR, Cobol85ParserYYYYMMDD, Cobol85ParserYYYYDDD, Cobol85ParserZERO, Cobol85ParserZERO_FILL, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL, Cobol85ParserIDENTIFIER:
+	case Cobol85ParserABORT, Cobol85ParserADDRESS, Cobol85ParserALL, Cobol85ParserAS, Cobol85ParserASCII, Cobol85ParserASSOCIATED_DATA, Cobol85ParserASSOCIATED_DATA_LENGTH, Cobol85ParserATTRIBUTE, Cobol85ParserAUTO, Cobol85ParserAUTO_SKIP, Cobol85ParserBACKGROUND_COLOR, Cobol85ParserBACKGROUND_COLOUR, Cobol85ParserBEEP, Cobol85ParserBELL, Cobol85ParserBINARY, Cobol85ParserBIT, Cobol85ParserBLINK, Cobol85ParserBOUNDS, Cobol85ParserCAPABLE, Cobol85ParserCCSVERSION, Cobol85ParserCHANGED, Cobol85ParserCHANNEL, Cobol85ParserCLOSE_DISPOSITION, Cobol85ParserCOBOL, Cobol85ParserCOMMITMENT, Cobol85ParserCONTROL_POINT, Cobol85ParserCONVENTION, Cobol85ParserCRUNCH, Cobol85ParserCURSOR, Cobol85ParserDATE, Cobol85ParserDAY, Cobol85ParserDAY_OF_WEEK, Cobol85ParserDEBUG_CONTENTS, Cobol85ParserDEBUG_ITEM, Cobol85ParserDEBUG_LINE, Cobol85ParserDEBUG_NAME, Cobol85ParserDEBUG_SUB_1, Cobol85ParserDEBUG_SUB_2, Cobol85ParserDEBUG_SUB_3, Cobol85ParserDEFAULT, Cobol85ParserDEFAULT_DISPLAY, Cobol85ParserDEFINITION, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserDISK, Cobol85ParserDONTCARE, Cobol85ParserDOUBLE, Cobol85ParserEBCDIC, Cobol85ParserEMPTY_CHECK, Cobol85ParserENTER, Cobol85ParserENTRY_PROCEDURE, Cobol85ParserERASE, Cobol85ParserEOL, Cobol85ParserEOS, Cobol85ParserESCAPE, Cobol85ParserEVENT, Cobol85ParserEXCLUSIVE, Cobol85ParserEXPORT, Cobol85ParserEXTENDED, Cobol85ParserFALSE, Cobol85ParserFOREGROUND_COLOR, Cobol85ParserFOREGROUND_COLOUR, Cobol85ParserFULL, Cobol85ParserFUNCTION, Cobol85ParserFUNCTIONNAME, Cobol85ParserFUNCTION_POINTER, Cobol85ParserGRID, Cobol85ParserHIGHLIGHT, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserIMPLICIT, Cobol85ParserIMPORT, Cobol85ParserINTEGER, Cobol85ParserKEPT, Cobol85ParserKEYBOARD, Cobol85ParserLANGUAGE, Cobol85ParserLB, Cobol85ParserLD, Cobol85ParserLEFTLINE, Cobol85ParserLENGTH, Cobol85ParserLENGTH_CHECK, Cobol85ParserLIBACCESS, Cobol85ParserLIBPARAMETER, Cobol85ParserLIBRARY, Cobol85ParserLINAGE_COUNTER, Cobol85ParserLINE_COUNTER, Cobol85ParserLIST, Cobol85ParserLOCAL, Cobol85ParserLONG_DATE, Cobol85ParserLONG_TIME, Cobol85ParserLOWER, Cobol85ParserLOWLIGHT, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserMMDDYYYY, Cobol85ParserNAMED, Cobol85ParserNATIONAL, Cobol85ParserNATIONAL_EDITED, Cobol85ParserNETWORK, Cobol85ParserNO_ECHO, Cobol85ParserNULL_, Cobol85ParserNULLS, Cobol85ParserNUMERIC_DATE, Cobol85ParserNUMERIC_TIME, Cobol85ParserODT, Cobol85ParserORDERLY, Cobol85ParserOVERLINE, Cobol85ParserOWN, Cobol85ParserPAGE_COUNTER, Cobol85ParserPASSWORD, Cobol85ParserPORT, Cobol85ParserPRINTER, Cobol85ParserPRIVATE, Cobol85ParserPROCESS, Cobol85ParserPROGRAM, Cobol85ParserPROMPT, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserREADER, Cobol85ParserREMOTE, Cobol85ParserREAL, Cobol85ParserRECEIVED, Cobol85ParserRECURSIVE, Cobol85ParserREF, Cobol85ParserREMOVE, Cobol85ParserREQUIRED, Cobol85ParserREVERSE_VIDEO, Cobol85ParserRETURN_CODE, Cobol85ParserSAVE, Cobol85ParserSECURE, Cobol85ParserSHARED, Cobol85ParserSHAREDBYALL, Cobol85ParserSHAREDBYRUNUNIT, Cobol85ParserSHARING, Cobol85ParserSHIFT_IN, Cobol85ParserSHIFT_OUT, Cobol85ParserSHORT_DATE, Cobol85ParserSORT_CONTROL, Cobol85ParserSORT_CORE_SIZE, Cobol85ParserSORT_FILE_SIZE, Cobol85ParserSORT_MESSAGE, Cobol85ParserSORT_MODE_SIZE, Cobol85ParserSORT_RETURN, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserSYMBOL, Cobol85ParserTALLY, Cobol85ParserTASK, Cobol85ParserTHREAD, Cobol85ParserTHREAD_LOCAL, Cobol85ParserTIME, Cobol85ParserTIMER, Cobol85ParserTODAYS_DATE, Cobol85ParserTODAYS_NAME, Cobol85ParserTRUE, Cobol85ParserTRUNCATED, Cobol85ParserTYPEDEF, Cobol85ParserUNDERLINE, Cobol85ParserVIRTUAL, Cobol85ParserWAIT, Cobol85ParserWHEN_COMPILED, Cobol85ParserYEAR, Cobol85ParserYYYYMMDD, Cobol85ParserYYYYDDD, Cobol85ParserZERO, Cobol85ParserZERO_FILL, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL, Cobol85ParserIDENTIFIER:
 		{
 			p.SetState(5022)
 			p.SendStatementSync()
@@ -72440,6 +73746,9 @@ func (s *SendStatementSyncContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SendStatementSync() (localctx ISendStatementSyncContext) {
+	this := p
+	_ = this
+
 	localctx = NewSendStatementSyncContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 870, Cobol85ParserRULE_sendStatementSync)
 	var _la int
@@ -72605,6 +73914,9 @@ func (s *SendStatementAsyncContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SendStatementAsync() (localctx ISendStatementAsyncContext) {
+	this := p
+	_ = this
+
 	localctx = NewSendStatementAsyncContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 872, Cobol85ParserRULE_sendStatementAsync)
 	var _la int
@@ -72722,6 +74034,9 @@ func (s *SendFromPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SendFromPhrase() (localctx ISendFromPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSendFromPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 874, Cobol85ParserRULE_sendFromPhrase)
 
@@ -72839,6 +74154,9 @@ func (s *SendWithPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SendWithPhrase() (localctx ISendWithPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSendWithPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 876, Cobol85ParserRULE_sendWithPhrase)
 
@@ -72965,6 +74283,9 @@ func (s *SendReplacingPhraseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) SendReplacingPhrase() (localctx ISendReplacingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSendReplacingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 878, Cobol85ParserRULE_sendReplacingPhrase)
 	var _la int
@@ -73106,6 +74427,9 @@ func (s *SendAdvancingPhraseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) SendAdvancingPhrase() (localctx ISendAdvancingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSendAdvancingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 880, Cobol85ParserRULE_sendAdvancingPhrase)
 	var _la int
@@ -73238,6 +74562,9 @@ func (s *SendAdvancingPageContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SendAdvancingPage() (localctx ISendAdvancingPageContext) {
+	this := p
+	_ = this
+
 	localctx = NewSendAdvancingPageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 882, Cobol85ParserRULE_sendAdvancingPage)
 
@@ -73353,6 +74680,9 @@ func (s *SendAdvancingLinesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SendAdvancingLines() (localctx ISendAdvancingLinesContext) {
+	this := p
+	_ = this
+
 	localctx = NewSendAdvancingLinesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 884, Cobol85ParserRULE_sendAdvancingLines)
 	var _la int
@@ -73481,6 +74811,9 @@ func (s *SendAdvancingMnemonicContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) SendAdvancingMnemonic() (localctx ISendAdvancingMnemonicContext) {
+	this := p
+	_ = this
+
 	localctx = NewSendAdvancingMnemonicContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 886, Cobol85ParserRULE_sendAdvancingMnemonic)
 
@@ -73605,6 +74938,9 @@ func (s *SetStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SetStatement() (localctx ISetStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 888, Cobol85ParserRULE_setStatement)
 	var _la int
@@ -73769,6 +75105,9 @@ func (s *SetToStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SetToStatement() (localctx ISetToStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetToStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 890, Cobol85ParserRULE_setToStatement)
 	var _la int
@@ -73937,6 +75276,9 @@ func (s *SetUpDownByStatementContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) SetUpDownByStatement() (localctx ISetUpDownByStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetUpDownByStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 892, Cobol85ParserRULE_setUpDownByStatement)
 	var _la int
@@ -74076,6 +75418,9 @@ func (s *SetToContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SetTo() (localctx ISetToContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetToContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 894, Cobol85ParserRULE_setTo)
 
@@ -74195,6 +75540,9 @@ func (s *SetToValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SetToValue() (localctx ISetToValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetToValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 896, Cobol85ParserRULE_setToValue)
 
@@ -74352,6 +75700,9 @@ func (s *SetByValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SetByValue() (localctx ISetByValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetByValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 898, Cobol85ParserRULE_setByValue)
 
@@ -74575,6 +75926,9 @@ func (s *SortStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SortStatement() (localctx ISortStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 900, Cobol85ParserRULE_sortStatement)
 	var _la int
@@ -74798,6 +76152,9 @@ func (s *SortOnKeyClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SortOnKeyClause() (localctx ISortOnKeyClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortOnKeyClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 902, Cobol85ParserRULE_sortOnKeyClause)
 	var _la int
@@ -74945,6 +76302,9 @@ func (s *SortDuplicatesPhraseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) SortDuplicatesPhrase() (localctx ISortDuplicatesPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortDuplicatesPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 904, Cobol85ParserRULE_sortDuplicatesPhrase)
 	var _la int
@@ -75121,6 +76481,9 @@ func (s *SortCollatingSequencePhraseContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) SortCollatingSequencePhrase() (localctx ISortCollatingSequencePhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortCollatingSequencePhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 906, Cobol85ParserRULE_sortCollatingSequencePhrase)
 	var _la int
@@ -75295,6 +76658,9 @@ func (s *SortCollatingAlphanumericContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) SortCollatingAlphanumeric() (localctx ISortCollatingAlphanumericContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortCollatingAlphanumericContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 908, Cobol85ParserRULE_sortCollatingAlphanumeric)
 	var _la int
@@ -75424,6 +76790,9 @@ func (s *SortCollatingNationalContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) SortCollatingNational() (localctx ISortCollatingNationalContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortCollatingNationalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 910, Cobol85ParserRULE_sortCollatingNational)
 	var _la int
@@ -75570,6 +76939,9 @@ func (s *SortInputProcedurePhraseContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) SortInputProcedurePhrase() (localctx ISortInputProcedurePhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortInputProcedurePhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 912, Cobol85ParserRULE_sortInputProcedurePhrase)
 	var _la int
@@ -75706,6 +77078,9 @@ func (s *SortInputThroughContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SortInputThrough() (localctx ISortInputThroughContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortInputThroughContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 914, Cobol85ParserRULE_sortInputThrough)
 	var _la int
@@ -75832,6 +77207,9 @@ func (s *SortUsingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SortUsing() (localctx ISortUsingContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortUsingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 916, Cobol85ParserRULE_sortUsing)
 	var _la int
@@ -75966,6 +77344,9 @@ func (s *SortOutputProcedurePhraseContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) SortOutputProcedurePhrase() (localctx ISortOutputProcedurePhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortOutputProcedurePhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 918, Cobol85ParserRULE_sortOutputProcedurePhrase)
 	var _la int
@@ -76102,6 +77483,9 @@ func (s *SortOutputThroughContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SortOutputThrough() (localctx ISortOutputThroughContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortOutputThroughContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 920, Cobol85ParserRULE_sortOutputThrough)
 	var _la int
@@ -76228,6 +77612,9 @@ func (s *SortGivingPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SortGivingPhrase() (localctx ISortGivingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortGivingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 922, Cobol85ParserRULE_sortGivingPhrase)
 	var _la int
@@ -76372,6 +77759,9 @@ func (s *SortGivingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SortGiving() (localctx ISortGivingContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortGivingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 924, Cobol85ParserRULE_sortGiving)
 
@@ -76559,6 +77949,9 @@ func (s *StartStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) StartStatement() (localctx IStartStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStartStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 926, Cobol85ParserRULE_startStatement)
 	var _la int
@@ -76754,6 +78147,9 @@ func (s *StartKeyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) StartKey() (localctx IStartKeyContext) {
+	this := p
+	_ = this
+
 	localctx = NewStartKeyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 928, Cobol85ParserRULE_startKey)
 	var _la int
@@ -76998,6 +78394,9 @@ func (s *StopStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) StopStatement() (localctx IStopStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStopStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 930, Cobol85ParserRULE_stopStatement)
 
@@ -77032,7 +78431,7 @@ func (p *Cobol85Parser) StopStatement() (localctx IStopStatementContext) {
 			p.Match(Cobol85ParserRUN)
 		}
 
-	case Cobol85ParserALL, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserFALSE, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserNULL, Cobol85ParserNULLS, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserTRUE, Cobol85ParserZERO, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL:
+	case Cobol85ParserALL, Cobol85ParserDFHRESP, Cobol85ParserDFHVALUE, Cobol85ParserFALSE, Cobol85ParserHIGH_VALUE, Cobol85ParserHIGH_VALUES, Cobol85ParserLOW_VALUE, Cobol85ParserLOW_VALUES, Cobol85ParserNULL_, Cobol85ParserNULLS, Cobol85ParserQUOTE, Cobol85ParserQUOTES, Cobol85ParserSPACE, Cobol85ParserSPACES, Cobol85ParserTRUE, Cobol85ParserZERO, Cobol85ParserZEROS, Cobol85ParserZEROES, Cobol85ParserNONNUMERICLITERAL, Cobol85ParserLEVEL_NUMBER_66, Cobol85ParserLEVEL_NUMBER_77, Cobol85ParserLEVEL_NUMBER_88, Cobol85ParserINTEGERLITERAL, Cobol85ParserNUMERICLITERAL:
 		{
 			p.SetState(5322)
 			p.Literal()
@@ -77175,6 +78574,9 @@ func (s *StringStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) StringStatement() (localctx IStringStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 932, Cobol85ParserRULE_stringStatement)
 	var _la int
@@ -77204,7 +78606,7 @@ func (p *Cobol85Parser) StringStatement() (localctx IStringStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
 		{
 			p.SetState(5326)
 			p.StringSendingPhrase()
@@ -77364,6 +78766,9 @@ func (s *StringSendingPhraseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) StringSendingPhrase() (localctx IStringSendingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringSendingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 934, Cobol85ParserRULE_stringSendingPhrase)
 	var _la int
@@ -77389,7 +78794,7 @@ func (p *Cobol85Parser) StringSendingPhrase() (localctx IStringSendingPhraseCont
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
 		{
 			p.SetState(5344)
 			p.StringSending()
@@ -77501,6 +78906,9 @@ func (s *StringSendingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) StringSending() (localctx IStringSendingContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringSendingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 936, Cobol85ParserRULE_stringSending)
 
@@ -77633,6 +79041,9 @@ func (s *StringDelimitedByPhraseContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) StringDelimitedByPhrase() (localctx IStringDelimitedByPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringDelimitedByPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 938, Cobol85ParserRULE_stringDelimitedByPhrase)
 	var _la int
@@ -77778,6 +79189,9 @@ func (s *StringForPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) StringForPhrase() (localctx IStringForPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringForPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 940, Cobol85ParserRULE_stringForPhrase)
 
@@ -77895,6 +79309,9 @@ func (s *StringIntoPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) StringIntoPhrase() (localctx IStringIntoPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringIntoPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 942, Cobol85ParserRULE_stringIntoPhrase)
 
@@ -78004,6 +79421,9 @@ func (s *StringWithPointerPhraseContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Cobol85Parser) StringWithPointerPhrase() (localctx IStringWithPointerPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringWithPointerPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 944, Cobol85ParserRULE_stringWithPointerPhrase)
 	var _la int
@@ -78165,6 +79585,9 @@ func (s *SubtractStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SubtractStatement() (localctx ISubtractStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtractStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 946, Cobol85ParserRULE_subtractStatement)
 
@@ -78354,6 +79777,9 @@ func (s *SubtractFromStatementContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) SubtractFromStatement() (localctx ISubtractFromStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtractFromStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 948, Cobol85ParserRULE_subtractFromStatement)
 	var _la int
@@ -78379,7 +79805,7 @@ func (p *Cobol85Parser) SubtractFromStatement() (localctx ISubtractFromStatement
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
 		{
 			p.SetState(5395)
 			p.SubtractSubtrahend()
@@ -78534,6 +79960,9 @@ func (s *SubtractFromGivingStatementContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Cobol85Parser) SubtractFromGivingStatement() (localctx ISubtractFromGivingStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtractFromGivingStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 950, Cobol85ParserRULE_subtractFromGivingStatement)
 	var _la int
@@ -78559,7 +79988,7 @@ func (p *Cobol85Parser) SubtractFromGivingStatement() (localctx ISubtractFromGiv
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-551)&-(0x1f+1)) == 0 && ((1<<uint((_la-551)))&((1<<(Cobol85ParserNONNUMERICLITERAL-551))|(1<<(Cobol85ParserLEVEL_NUMBER_66-551))|(1<<(Cobol85ParserLEVEL_NUMBER_77-551))|(1<<(Cobol85ParserLEVEL_NUMBER_88-551))|(1<<(Cobol85ParserINTEGERLITERAL-551))|(1<<(Cobol85ParserNUMERICLITERAL-551))|(1<<(Cobol85ParserIDENTIFIER-551)))) != 0) {
 		{
 			p.SetState(5406)
 			p.SubtractSubtrahend()
@@ -78690,6 +80119,9 @@ func (s *SubtractCorrespondingStatementContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Cobol85Parser) SubtractCorrespondingStatement() (localctx ISubtractCorrespondingStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtractCorrespondingStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 952, Cobol85ParserRULE_subtractCorrespondingStatement)
 	var _la int
@@ -78817,6 +80249,9 @@ func (s *SubtractSubtrahendContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SubtractSubtrahend() (localctx ISubtractSubtrahendContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtractSubtrahendContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 954, Cobol85ParserRULE_subtractSubtrahend)
 
@@ -78931,6 +80366,9 @@ func (s *SubtractMinuendContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SubtractMinuend() (localctx ISubtractMinuendContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtractMinuendContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 956, Cobol85ParserRULE_subtractMinuend)
 	var _la int
@@ -79050,6 +80488,9 @@ func (s *SubtractMinuendGivingContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) SubtractMinuendGiving() (localctx ISubtractMinuendGivingContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtractMinuendGivingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 958, Cobol85ParserRULE_subtractMinuendGiving)
 
@@ -79164,6 +80605,9 @@ func (s *SubtractGivingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SubtractGiving() (localctx ISubtractGivingContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtractGivingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 960, Cobol85ParserRULE_subtractGiving)
 	var _la int
@@ -79277,6 +80721,9 @@ func (s *SubtractMinuendCorrespondingContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) SubtractMinuendCorresponding() (localctx ISubtractMinuendCorrespondingContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtractMinuendCorrespondingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 962, Cobol85ParserRULE_subtractMinuendCorresponding)
 	var _la int
@@ -79390,6 +80837,9 @@ func (s *TerminateStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) TerminateStatement() (localctx ITerminateStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewTerminateStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 964, Cobol85ParserRULE_terminateStatement)
 
@@ -79549,6 +80999,9 @@ func (s *UnstringStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) UnstringStatement() (localctx IUnstringStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnstringStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 966, Cobol85ParserRULE_unstringStatement)
 	var _la int
@@ -79739,6 +81192,9 @@ func (s *UnstringSendingPhraseContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) UnstringSendingPhrase() (localctx IUnstringSendingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnstringSendingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 968, Cobol85ParserRULE_unstringSendingPhrase)
 	var _la int
@@ -79884,6 +81340,9 @@ func (s *UnstringDelimitedByPhraseContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) UnstringDelimitedByPhrase() (localctx IUnstringDelimitedByPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnstringDelimitedByPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 970, Cobol85ParserRULE_unstringDelimitedByPhrase)
 	var _la int
@@ -80037,6 +81496,9 @@ func (s *UnstringOrAllPhraseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) UnstringOrAllPhrase() (localctx IUnstringOrAllPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnstringOrAllPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 972, Cobol85ParserRULE_unstringOrAllPhrase)
 
@@ -80177,6 +81639,9 @@ func (s *UnstringIntoPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) UnstringIntoPhrase() (localctx IUnstringIntoPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnstringIntoPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 974, Cobol85ParserRULE_unstringIntoPhrase)
 	var _la int
@@ -80309,6 +81774,9 @@ func (s *UnstringIntoContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) UnstringInto() (localctx IUnstringIntoContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnstringIntoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 976, Cobol85ParserRULE_unstringInto)
 	var _la int
@@ -80437,6 +81905,9 @@ func (s *UnstringDelimiterInContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) UnstringDelimiterIn() (localctx IUnstringDelimiterInContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnstringDelimiterInContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 978, Cobol85ParserRULE_unstringDelimiterIn)
 	var _la int
@@ -80558,6 +82029,9 @@ func (s *UnstringCountInContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) UnstringCountIn() (localctx IUnstringCountInContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnstringCountInContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 980, Cobol85ParserRULE_unstringCountIn)
 	var _la int
@@ -80679,6 +82153,9 @@ func (s *UnstringWithPointerPhraseContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) UnstringWithPointerPhrase() (localctx IUnstringWithPointerPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnstringWithPointerPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 982, Cobol85ParserRULE_unstringWithPointerPhrase)
 	var _la int
@@ -80800,6 +82277,9 @@ func (s *UnstringTallyingPhraseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) UnstringTallyingPhrase() (localctx IUnstringTallyingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnstringTallyingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 984, Cobol85ParserRULE_unstringTallyingPhrase)
 	var _la int
@@ -80927,6 +82407,9 @@ func (s *UseStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) UseStatement() (localctx IUseStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewUseStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 986, Cobol85ParserRULE_useStatement)
 
@@ -81071,6 +82554,9 @@ func (s *UseAfterClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) UseAfterClause() (localctx IUseAfterClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewUseAfterClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 988, Cobol85ParserRULE_useAfterClause)
 	var _la int
@@ -81250,6 +82736,9 @@ func (s *UseAfterOnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) UseAfterOn() (localctx IUseAfterOnContext) {
+	this := p
+	_ = this
+
 	localctx = NewUseAfterOnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 990, Cobol85ParserRULE_useAfterOn)
 	var _la int
@@ -81420,6 +82909,9 @@ func (s *UseDebugClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) UseDebugClause() (localctx IUseDebugClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewUseDebugClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 992, Cobol85ParserRULE_useDebugClause)
 	var _la int
@@ -81590,6 +83082,9 @@ func (s *UseDebugOnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) UseDebugOn() (localctx IUseDebugOnContext) {
+	this := p
+	_ = this
+
 	localctx = NewUseDebugOnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 994, Cobol85ParserRULE_useDebugOn)
 	var _la int
@@ -81813,6 +83308,9 @@ func (s *WriteStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) WriteStatement() (localctx IWriteStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewWriteStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 996, Cobol85ParserRULE_writeStatement)
 	var _la int
@@ -82001,6 +83499,9 @@ func (s *WriteFromPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) WriteFromPhrase() (localctx IWriteFromPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewWriteFromPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 998, Cobol85ParserRULE_writeFromPhrase)
 
@@ -82146,6 +83647,9 @@ func (s *WriteAdvancingPhraseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) WriteAdvancingPhrase() (localctx IWriteAdvancingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewWriteAdvancingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1000, Cobol85ParserRULE_writeAdvancingPhrase)
 	var _la int
@@ -82278,6 +83782,9 @@ func (s *WriteAdvancingPageContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) WriteAdvancingPage() (localctx IWriteAdvancingPageContext) {
+	this := p
+	_ = this
+
 	localctx = NewWriteAdvancingPageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1002, Cobol85ParserRULE_writeAdvancingPage)
 
@@ -82393,6 +83900,9 @@ func (s *WriteAdvancingLinesContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) WriteAdvancingLines() (localctx IWriteAdvancingLinesContext) {
+	this := p
+	_ = this
+
 	localctx = NewWriteAdvancingLinesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1004, Cobol85ParserRULE_writeAdvancingLines)
 	var _la int
@@ -82521,6 +84031,9 @@ func (s *WriteAdvancingMnemonicContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) WriteAdvancingMnemonic() (localctx IWriteAdvancingMnemonicContext) {
+	this := p
+	_ = this
+
 	localctx = NewWriteAdvancingMnemonicContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1006, Cobol85ParserRULE_writeAdvancingMnemonic)
 
@@ -82643,6 +84156,9 @@ func (s *WriteAtEndOfPagePhraseContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) WriteAtEndOfPagePhrase() (localctx IWriteAtEndOfPagePhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewWriteAtEndOfPagePhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1008, Cobol85ParserRULE_writeAtEndOfPagePhrase)
 	var _la int
@@ -82806,6 +84322,9 @@ func (s *WriteNotAtEndOfPagePhraseContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) WriteNotAtEndOfPagePhrase() (localctx IWriteNotAtEndOfPagePhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewWriteNotAtEndOfPagePhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1010, Cobol85ParserRULE_writeNotAtEndOfPagePhrase)
 	var _la int
@@ -82965,6 +84484,9 @@ func (s *AtEndPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AtEndPhrase() (localctx IAtEndPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtEndPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1012, Cobol85ParserRULE_atEndPhrase)
 	var _la int
@@ -83117,6 +84639,9 @@ func (s *NotAtEndPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) NotAtEndPhrase() (localctx INotAtEndPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewNotAtEndPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1014, Cobol85ParserRULE_notAtEndPhrase)
 	var _la int
@@ -83269,6 +84794,9 @@ func (s *InvalidKeyPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InvalidKeyPhrase() (localctx IInvalidKeyPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewInvalidKeyPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1016, Cobol85ParserRULE_invalidKeyPhrase)
 	var _la int
@@ -83421,6 +84949,9 @@ func (s *NotInvalidKeyPhraseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) NotInvalidKeyPhrase() (localctx INotInvalidKeyPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewNotInvalidKeyPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1018, Cobol85ParserRULE_notInvalidKeyPhrase)
 	var _la int
@@ -83573,6 +85104,9 @@ func (s *OnOverflowPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) OnOverflowPhrase() (localctx IOnOverflowPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewOnOverflowPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1020, Cobol85ParserRULE_onOverflowPhrase)
 	var _la int
@@ -83725,6 +85259,9 @@ func (s *NotOnOverflowPhraseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) NotOnOverflowPhrase() (localctx INotOnOverflowPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewNotOnOverflowPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1022, Cobol85ParserRULE_notOnOverflowPhrase)
 	var _la int
@@ -83881,6 +85418,9 @@ func (s *OnSizeErrorPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) OnSizeErrorPhrase() (localctx IOnSizeErrorPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewOnSizeErrorPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1024, Cobol85ParserRULE_onSizeErrorPhrase)
 	var _la int
@@ -84041,6 +85581,9 @@ func (s *NotOnSizeErrorPhraseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) NotOnSizeErrorPhrase() (localctx INotOnSizeErrorPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewNotOnSizeErrorPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1026, Cobol85ParserRULE_notOnSizeErrorPhrase)
 	var _la int
@@ -84197,6 +85740,9 @@ func (s *OnExceptionClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) OnExceptionClause() (localctx IOnExceptionClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewOnExceptionClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1028, Cobol85ParserRULE_onExceptionClause)
 	var _la int
@@ -84349,6 +85895,9 @@ func (s *NotOnExceptionClauseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) NotOnExceptionClause() (localctx INotOnExceptionClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewNotOnExceptionClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1030, Cobol85ParserRULE_notOnExceptionClause)
 	var _la int
@@ -84503,6 +86052,9 @@ func (s *ArithmeticExpressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Cobol85Parser) ArithmeticExpression() (localctx IArithmeticExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewArithmeticExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1032, Cobol85ParserRULE_arithmeticExpression)
 
@@ -84626,6 +86178,9 @@ func (s *PlusMinusContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) PlusMinus() (localctx IPlusMinusContext) {
+	this := p
+	_ = this
+
 	localctx = NewPlusMinusContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1034, Cobol85ParserRULE_plusMinus)
 	var _la int
@@ -84758,6 +86313,9 @@ func (s *MultDivsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MultDivs() (localctx IMultDivsContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultDivsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1036, Cobol85ParserRULE_multDivs)
 	var _la int
@@ -84878,6 +86436,9 @@ func (s *MultDivContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MultDiv() (localctx IMultDivContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultDivContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1038, Cobol85ParserRULE_multDiv)
 	var _la int
@@ -85018,6 +86579,9 @@ func (s *PowersContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Powers() (localctx IPowersContext) {
+	this := p
+	_ = this
+
 	localctx = NewPowersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1040, Cobol85ParserRULE_powers)
 	var _la int
@@ -85152,6 +86716,9 @@ func (s *PowerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Power() (localctx IPowerContext) {
+	this := p
+	_ = this
+
 	localctx = NewPowerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1042, Cobol85ParserRULE_power)
 
@@ -85281,6 +86848,9 @@ func (s *BasisContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Basis() (localctx IBasisContext) {
+	this := p
+	_ = this
+
 	localctx = NewBasisContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1044, Cobol85ParserRULE_basis)
 
@@ -85429,6 +86999,9 @@ func (s *ConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Condition() (localctx IConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1046, Cobol85ParserRULE_condition)
 	var _la int
@@ -85572,6 +87145,9 @@ func (s *AndOrConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AndOrCondition() (localctx IAndOrConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAndOrConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1048, Cobol85ParserRULE_andOrCondition)
 	var _la int
@@ -85714,6 +87290,9 @@ func (s *CombinableConditionContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) CombinableCondition() (localctx ICombinableConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCombinableConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1050, Cobol85ParserRULE_combinableCondition)
 	var _la int
@@ -85861,6 +87440,9 @@ func (s *SimpleConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SimpleCondition() (localctx ISimpleConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimpleConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1052, Cobol85ParserRULE_simpleCondition)
 
@@ -86035,6 +87617,9 @@ func (s *ClassConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ClassCondition() (localctx IClassConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1054, Cobol85ParserRULE_classCondition)
 	var _la int
@@ -86283,6 +87868,9 @@ func (s *ConditionNameReferenceContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Cobol85Parser) ConditionNameReference() (localctx IConditionNameReferenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditionNameReferenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1056, Cobol85ParserRULE_conditionNameReference)
 	var _la int
@@ -86419,27 +88007,27 @@ func (s *ConditionNameSubscriptReferenceContext) LPARENCHAR() antlr.TerminalNode
 	return s.GetToken(Cobol85ParserLPARENCHAR, 0)
 }
 
-func (s *ConditionNameSubscriptReferenceContext) AllSubscript() []ISubscriptContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISubscriptContext)(nil)).Elem())
-	var tst = make([]ISubscriptContext, len(ts))
+func (s *ConditionNameSubscriptReferenceContext) AllSubscript_() []ISubscript_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISubscript_Context)(nil)).Elem())
+	var tst = make([]ISubscript_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(ISubscriptContext)
+			tst[i] = t.(ISubscript_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *ConditionNameSubscriptReferenceContext) Subscript(i int) ISubscriptContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISubscriptContext)(nil)).Elem(), i)
+func (s *ConditionNameSubscriptReferenceContext) Subscript_(i int) ISubscript_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISubscript_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ISubscriptContext)
+	return t.(ISubscript_Context)
 }
 
 func (s *ConditionNameSubscriptReferenceContext) RPARENCHAR() antlr.TerminalNode {
@@ -86475,6 +88063,9 @@ func (s *ConditionNameSubscriptReferenceContext) ExitRule(listener antlr.ParseTr
 }
 
 func (p *Cobol85Parser) ConditionNameSubscriptReference() (localctx IConditionNameSubscriptReferenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditionNameSubscriptReferenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1058, Cobol85ParserRULE_conditionNameSubscriptReference)
 	var _la int
@@ -86502,13 +88093,13 @@ func (p *Cobol85Parser) ConditionNameSubscriptReference() (localctx IConditionNa
 	}
 	{
 		p.SetState(5875)
-		p.Subscript()
+		p.Subscript_()
 	}
 	p.SetState(5882)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498))|(1<<(Cobol85ParserCOMMACHAR-498)))) != 0) || (((_la-542)&-(0x1f+1)) == 0 && ((1<<uint((_la-542)))&((1<<(Cobol85ParserLPARENCHAR-542))|(1<<(Cobol85ParserMINUSCHAR-542))|(1<<(Cobol85ParserPLUSCHAR-542))|(1<<(Cobol85ParserNONNUMERICLITERAL-542))|(1<<(Cobol85ParserLEVEL_NUMBER_66-542))|(1<<(Cobol85ParserLEVEL_NUMBER_77-542))|(1<<(Cobol85ParserLEVEL_NUMBER_88-542))|(1<<(Cobol85ParserINTEGERLITERAL-542))|(1<<(Cobol85ParserNUMERICLITERAL-542))|(1<<(Cobol85ParserIDENTIFIER-542)))) != 0) {
+	for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498))|(1<<(Cobol85ParserCOMMACHAR-498)))) != 0) || (((_la-542)&-(0x1f+1)) == 0 && ((1<<uint((_la-542)))&((1<<(Cobol85ParserLPARENCHAR-542))|(1<<(Cobol85ParserMINUSCHAR-542))|(1<<(Cobol85ParserPLUSCHAR-542))|(1<<(Cobol85ParserNONNUMERICLITERAL-542))|(1<<(Cobol85ParserLEVEL_NUMBER_66-542))|(1<<(Cobol85ParserLEVEL_NUMBER_77-542))|(1<<(Cobol85ParserLEVEL_NUMBER_88-542))|(1<<(Cobol85ParserINTEGERLITERAL-542))|(1<<(Cobol85ParserNUMERICLITERAL-542))|(1<<(Cobol85ParserIDENTIFIER-542)))) != 0) {
 		p.SetState(5877)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
@@ -86522,7 +88113,7 @@ func (p *Cobol85Parser) ConditionNameSubscriptReference() (localctx IConditionNa
 		}
 		{
 			p.SetState(5879)
-			p.Subscript()
+			p.Subscript_()
 		}
 
 		p.SetState(5884)
@@ -86626,6 +88217,9 @@ func (s *RelationConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RelationCondition() (localctx IRelationConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelationConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1060, Cobol85ParserRULE_relationCondition)
 
@@ -86763,6 +88357,9 @@ func (s *RelationSignConditionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Cobol85Parser) RelationSignCondition() (localctx IRelationSignConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelationSignConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1062, Cobol85ParserRULE_relationSignCondition)
 	var _la int
@@ -86917,6 +88514,9 @@ func (s *RelationArithmeticComparisonContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Cobol85Parser) RelationArithmeticComparison() (localctx IRelationArithmeticComparisonContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelationArithmeticComparisonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1064, Cobol85ParserRULE_relationArithmeticComparison)
 
@@ -87050,6 +88650,9 @@ func (s *RelationCombinedComparisonContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Cobol85Parser) RelationCombinedComparison() (localctx IRelationCombinedComparisonContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelationCombinedComparisonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1066, Cobol85ParserRULE_relationCombinedComparison)
 
@@ -87192,6 +88795,9 @@ func (s *RelationCombinedConditionContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Cobol85Parser) RelationCombinedCondition() (localctx IRelationCombinedConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelationCombinedConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1068, Cobol85ParserRULE_relationCombinedCondition)
 	var _la int
@@ -87365,6 +88971,9 @@ func (s *RelationalOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RelationalOperator() (localctx IRelationalOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelationalOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1070, Cobol85ParserRULE_relationalOperator)
 	var _la int
@@ -87692,6 +89301,9 @@ func (s *AbbreviationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Abbreviation() (localctx IAbbreviationContext) {
+	this := p
+	_ = this
+
 	localctx = NewAbbreviationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1072, Cobol85ParserRULE_abbreviation)
 	var _la int
@@ -87865,6 +89477,9 @@ func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Identifier() (localctx IIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1074, Cobol85ParserRULE_identifier)
 
@@ -87976,27 +89591,27 @@ func (s *TableCallContext) LPARENCHAR(i int) antlr.TerminalNode {
 	return s.GetToken(Cobol85ParserLPARENCHAR, i)
 }
 
-func (s *TableCallContext) AllSubscript() []ISubscriptContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISubscriptContext)(nil)).Elem())
-	var tst = make([]ISubscriptContext, len(ts))
+func (s *TableCallContext) AllSubscript_() []ISubscript_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISubscript_Context)(nil)).Elem())
+	var tst = make([]ISubscript_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(ISubscriptContext)
+			tst[i] = t.(ISubscript_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *TableCallContext) Subscript(i int) ISubscriptContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISubscriptContext)(nil)).Elem(), i)
+func (s *TableCallContext) Subscript_(i int) ISubscript_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISubscript_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ISubscriptContext)
+	return t.(ISubscript_Context)
 }
 
 func (s *TableCallContext) AllRPARENCHAR() []antlr.TerminalNode {
@@ -88046,6 +89661,9 @@ func (s *TableCallContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) TableCall() (localctx ITableCallContext) {
+	this := p
+	_ = this
+
 	localctx = NewTableCallContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1076, Cobol85ParserRULE_tableCall)
 	var _la int
@@ -88085,13 +89703,13 @@ func (p *Cobol85Parser) TableCall() (localctx ITableCallContext) {
 			}
 			{
 				p.SetState(5986)
-				p.Subscript()
+				p.Subscript_()
 			}
 			p.SetState(5993)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
-			for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498))|(1<<(Cobol85ParserCOMMACHAR-498)))) != 0) || (((_la-542)&-(0x1f+1)) == 0 && ((1<<uint((_la-542)))&((1<<(Cobol85ParserLPARENCHAR-542))|(1<<(Cobol85ParserMINUSCHAR-542))|(1<<(Cobol85ParserPLUSCHAR-542))|(1<<(Cobol85ParserNONNUMERICLITERAL-542))|(1<<(Cobol85ParserLEVEL_NUMBER_66-542))|(1<<(Cobol85ParserLEVEL_NUMBER_77-542))|(1<<(Cobol85ParserLEVEL_NUMBER_88-542))|(1<<(Cobol85ParserINTEGERLITERAL-542))|(1<<(Cobol85ParserNUMERICLITERAL-542))|(1<<(Cobol85ParserIDENTIFIER-542)))) != 0) {
+			for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498))|(1<<(Cobol85ParserCOMMACHAR-498)))) != 0) || (((_la-542)&-(0x1f+1)) == 0 && ((1<<uint((_la-542)))&((1<<(Cobol85ParserLPARENCHAR-542))|(1<<(Cobol85ParserMINUSCHAR-542))|(1<<(Cobol85ParserPLUSCHAR-542))|(1<<(Cobol85ParserNONNUMERICLITERAL-542))|(1<<(Cobol85ParserLEVEL_NUMBER_66-542))|(1<<(Cobol85ParserLEVEL_NUMBER_77-542))|(1<<(Cobol85ParserLEVEL_NUMBER_88-542))|(1<<(Cobol85ParserINTEGERLITERAL-542))|(1<<(Cobol85ParserNUMERICLITERAL-542))|(1<<(Cobol85ParserIDENTIFIER-542)))) != 0) {
 				p.SetState(5988)
 				p.GetErrorHandler().Sync(p)
 				_la = p.GetTokenStream().LA(1)
@@ -88105,7 +89723,7 @@ func (p *Cobol85Parser) TableCall() (localctx ITableCallContext) {
 				}
 				{
 					p.SetState(5990)
-					p.Subscript()
+					p.Subscript_()
 				}
 
 				p.SetState(5995)
@@ -88266,6 +89884,9 @@ func (s *FunctionCallContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) FunctionCall() (localctx IFunctionCallContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionCallContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1078, Cobol85ParserRULE_functionCall)
 	var _la int
@@ -88315,7 +89936,7 @@ func (p *Cobol85Parser) FunctionCall() (localctx IFunctionCallContext) {
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
-			for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498))|(1<<(Cobol85ParserCOMMACHAR-498)))) != 0) || (((_la-542)&-(0x1f+1)) == 0 && ((1<<uint((_la-542)))&((1<<(Cobol85ParserLPARENCHAR-542))|(1<<(Cobol85ParserMINUSCHAR-542))|(1<<(Cobol85ParserPLUSCHAR-542))|(1<<(Cobol85ParserNONNUMERICLITERAL-542))|(1<<(Cobol85ParserLEVEL_NUMBER_66-542))|(1<<(Cobol85ParserLEVEL_NUMBER_77-542))|(1<<(Cobol85ParserLEVEL_NUMBER_88-542))|(1<<(Cobol85ParserINTEGERLITERAL-542))|(1<<(Cobol85ParserNUMERICLITERAL-542))|(1<<(Cobol85ParserIDENTIFIER-542)))) != 0) {
+			for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498))|(1<<(Cobol85ParserCOMMACHAR-498)))) != 0) || (((_la-542)&-(0x1f+1)) == 0 && ((1<<uint((_la-542)))&((1<<(Cobol85ParserLPARENCHAR-542))|(1<<(Cobol85ParserMINUSCHAR-542))|(1<<(Cobol85ParserPLUSCHAR-542))|(1<<(Cobol85ParserNONNUMERICLITERAL-542))|(1<<(Cobol85ParserLEVEL_NUMBER_66-542))|(1<<(Cobol85ParserLEVEL_NUMBER_77-542))|(1<<(Cobol85ParserLEVEL_NUMBER_88-542))|(1<<(Cobol85ParserINTEGERLITERAL-542))|(1<<(Cobol85ParserNUMERICLITERAL-542))|(1<<(Cobol85ParserIDENTIFIER-542)))) != 0) {
 				p.SetState(6011)
 				p.GetErrorHandler().Sync(p)
 				_la = p.GetTokenStream().LA(1)
@@ -88451,6 +90072,9 @@ func (s *ReferenceModifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReferenceModifier() (localctx IReferenceModifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewReferenceModifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1080, Cobol85ParserRULE_referenceModifier)
 	var _la int
@@ -88488,7 +90112,7 @@ func (p *Cobol85Parser) ReferenceModifier() (localctx IReferenceModifierContext)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-542)&-(0x1f+1)) == 0 && ((1<<uint((_la-542)))&((1<<(Cobol85ParserLPARENCHAR-542))|(1<<(Cobol85ParserMINUSCHAR-542))|(1<<(Cobol85ParserPLUSCHAR-542))|(1<<(Cobol85ParserNONNUMERICLITERAL-542))|(1<<(Cobol85ParserLEVEL_NUMBER_66-542))|(1<<(Cobol85ParserLEVEL_NUMBER_77-542))|(1<<(Cobol85ParserLEVEL_NUMBER_88-542))|(1<<(Cobol85ParserINTEGERLITERAL-542))|(1<<(Cobol85ParserNUMERICLITERAL-542))|(1<<(Cobol85ParserIDENTIFIER-542)))) != 0) {
+	if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Cobol85ParserABORT)|(1<<Cobol85ParserADDRESS)|(1<<Cobol85ParserALL)|(1<<Cobol85ParserAS)|(1<<Cobol85ParserASCII)|(1<<Cobol85ParserASSOCIATED_DATA)|(1<<Cobol85ParserASSOCIATED_DATA_LENGTH)|(1<<Cobol85ParserATTRIBUTE))) != 0) || (((_la-33)&-(0x1f+1)) == 0 && ((1<<uint((_la-33)))&((1<<(Cobol85ParserAUTO-33))|(1<<(Cobol85ParserAUTO_SKIP-33))|(1<<(Cobol85ParserBACKGROUND_COLOR-33))|(1<<(Cobol85ParserBACKGROUND_COLOUR-33))|(1<<(Cobol85ParserBEEP-33))|(1<<(Cobol85ParserBELL-33))|(1<<(Cobol85ParserBINARY-33))|(1<<(Cobol85ParserBIT-33))|(1<<(Cobol85ParserBLINK-33))|(1<<(Cobol85ParserBOUNDS-33))|(1<<(Cobol85ParserCAPABLE-33))|(1<<(Cobol85ParserCCSVERSION-33))|(1<<(Cobol85ParserCHANGED-33))|(1<<(Cobol85ParserCHANNEL-33)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(Cobol85ParserCLOSE_DISPOSITION-68))|(1<<(Cobol85ParserCOBOL-68))|(1<<(Cobol85ParserCOMMITMENT-68))|(1<<(Cobol85ParserCONTROL_POINT-68)))) != 0) || (((_la-100)&-(0x1f+1)) == 0 && ((1<<uint((_la-100)))&((1<<(Cobol85ParserCONVENTION-100))|(1<<(Cobol85ParserCRUNCH-100))|(1<<(Cobol85ParserCURSOR-100))|(1<<(Cobol85ParserDATE-100))|(1<<(Cobol85ParserDAY-100))|(1<<(Cobol85ParserDAY_OF_WEEK-100))|(1<<(Cobol85ParserDEBUG_CONTENTS-100))|(1<<(Cobol85ParserDEBUG_ITEM-100))|(1<<(Cobol85ParserDEBUG_LINE-100))|(1<<(Cobol85ParserDEBUG_NAME-100))|(1<<(Cobol85ParserDEBUG_SUB_1-100))|(1<<(Cobol85ParserDEBUG_SUB_2-100))|(1<<(Cobol85ParserDEBUG_SUB_3-100))|(1<<(Cobol85ParserDEFAULT-100))|(1<<(Cobol85ParserDEFAULT_DISPLAY-100))|(1<<(Cobol85ParserDEFINITION-100)))) != 0) || (((_la-138)&-(0x1f+1)) == 0 && ((1<<uint((_la-138)))&((1<<(Cobol85ParserDFHRESP-138))|(1<<(Cobol85ParserDFHVALUE-138))|(1<<(Cobol85ParserDISK-138))|(1<<(Cobol85ParserDONTCARE-138))|(1<<(Cobol85ParserDOUBLE-138))|(1<<(Cobol85ParserEBCDIC-138))|(1<<(Cobol85ParserEMPTY_CHECK-138)))) != 0) || (((_la-181)&-(0x1f+1)) == 0 && ((1<<uint((_la-181)))&((1<<(Cobol85ParserENTER-181))|(1<<(Cobol85ParserENTRY_PROCEDURE-181))|(1<<(Cobol85ParserERASE-181))|(1<<(Cobol85ParserEOL-181))|(1<<(Cobol85ParserEOS-181))|(1<<(Cobol85ParserESCAPE-181))|(1<<(Cobol85ParserEVENT-181))|(1<<(Cobol85ParserEXCLUSIVE-181))|(1<<(Cobol85ParserEXPORT-181))|(1<<(Cobol85ParserEXTENDED-181))|(1<<(Cobol85ParserFALSE-181)))) != 0) || (((_la-213)&-(0x1f+1)) == 0 && ((1<<uint((_la-213)))&((1<<(Cobol85ParserFOREGROUND_COLOR-213))|(1<<(Cobol85ParserFOREGROUND_COLOUR-213))|(1<<(Cobol85ParserFULL-213))|(1<<(Cobol85ParserFUNCTION-213))|(1<<(Cobol85ParserFUNCTIONNAME-213))|(1<<(Cobol85ParserFUNCTION_POINTER-213))|(1<<(Cobol85ParserGRID-213))|(1<<(Cobol85ParserHIGHLIGHT-213))|(1<<(Cobol85ParserHIGH_VALUE-213))|(1<<(Cobol85ParserHIGH_VALUES-213))|(1<<(Cobol85ParserIMPLICIT-213))|(1<<(Cobol85ParserIMPORT-213)))) != 0) || (((_la-250)&-(0x1f+1)) == 0 && ((1<<uint((_la-250)))&((1<<(Cobol85ParserINTEGER-250))|(1<<(Cobol85ParserKEPT-250))|(1<<(Cobol85ParserKEYBOARD-250))|(1<<(Cobol85ParserLANGUAGE-250))|(1<<(Cobol85ParserLB-250))|(1<<(Cobol85ParserLD-250))|(1<<(Cobol85ParserLEFTLINE-250))|(1<<(Cobol85ParserLENGTH-250))|(1<<(Cobol85ParserLENGTH_CHECK-250))|(1<<(Cobol85ParserLIBACCESS-250))|(1<<(Cobol85ParserLIBPARAMETER-250))|(1<<(Cobol85ParserLIBRARY-250))|(1<<(Cobol85ParserLINAGE_COUNTER-250))|(1<<(Cobol85ParserLINE_COUNTER-250)))) != 0) || (((_la-283)&-(0x1f+1)) == 0 && ((1<<uint((_la-283)))&((1<<(Cobol85ParserLIST-283))|(1<<(Cobol85ParserLOCAL-283))|(1<<(Cobol85ParserLONG_DATE-283))|(1<<(Cobol85ParserLONG_TIME-283))|(1<<(Cobol85ParserLOWER-283))|(1<<(Cobol85ParserLOWLIGHT-283))|(1<<(Cobol85ParserLOW_VALUE-283))|(1<<(Cobol85ParserLOW_VALUES-283))|(1<<(Cobol85ParserMMDDYYYY-283))|(1<<(Cobol85ParserNAMED-283))|(1<<(Cobol85ParserNATIONAL-283))|(1<<(Cobol85ParserNATIONAL_EDITED-283))|(1<<(Cobol85ParserNETWORK-283))|(1<<(Cobol85ParserNO_ECHO-283))|(1<<(Cobol85ParserNULL_-283))|(1<<(Cobol85ParserNULLS-283)))) != 0) || (((_la-317)&-(0x1f+1)) == 0 && ((1<<uint((_la-317)))&((1<<(Cobol85ParserNUMERIC_DATE-317))|(1<<(Cobol85ParserNUMERIC_TIME-317))|(1<<(Cobol85ParserODT-317))|(1<<(Cobol85ParserORDERLY-317))|(1<<(Cobol85ParserOVERLINE-317))|(1<<(Cobol85ParserOWN-317))|(1<<(Cobol85ParserPAGE_COUNTER-317))|(1<<(Cobol85ParserPASSWORD-317)))) != 0) || (((_la-352)&-(0x1f+1)) == 0 && ((1<<uint((_la-352)))&((1<<(Cobol85ParserPORT-352))|(1<<(Cobol85ParserPRINTER-352))|(1<<(Cobol85ParserPRIVATE-352))|(1<<(Cobol85ParserPROCESS-352))|(1<<(Cobol85ParserPROGRAM-352))|(1<<(Cobol85ParserPROMPT-352))|(1<<(Cobol85ParserQUOTE-352))|(1<<(Cobol85ParserQUOTES-352))|(1<<(Cobol85ParserREADER-352))|(1<<(Cobol85ParserREMOTE-352))|(1<<(Cobol85ParserREAL-352))|(1<<(Cobol85ParserRECEIVED-352))|(1<<(Cobol85ParserRECURSIVE-352))|(1<<(Cobol85ParserREF-352)))) != 0) || (((_la-391)&-(0x1f+1)) == 0 && ((1<<uint((_la-391)))&((1<<(Cobol85ParserREMOVE-391))|(1<<(Cobol85ParserREQUIRED-391))|(1<<(Cobol85ParserREVERSE_VIDEO-391))|(1<<(Cobol85ParserRETURN_CODE-391))|(1<<(Cobol85ParserSAVE-391))|(1<<(Cobol85ParserSECURE-391)))) != 0) || (((_la-431)&-(0x1f+1)) == 0 && ((1<<uint((_la-431)))&((1<<(Cobol85ParserSHARED-431))|(1<<(Cobol85ParserSHAREDBYALL-431))|(1<<(Cobol85ParserSHAREDBYRUNUNIT-431))|(1<<(Cobol85ParserSHARING-431))|(1<<(Cobol85ParserSHIFT_IN-431))|(1<<(Cobol85ParserSHIFT_OUT-431))|(1<<(Cobol85ParserSHORT_DATE-431))|(1<<(Cobol85ParserSORT_CONTROL-431))|(1<<(Cobol85ParserSORT_CORE_SIZE-431))|(1<<(Cobol85ParserSORT_FILE_SIZE-431))|(1<<(Cobol85ParserSORT_MESSAGE-431))|(1<<(Cobol85ParserSORT_MODE_SIZE-431))|(1<<(Cobol85ParserSORT_RETURN-431))|(1<<(Cobol85ParserSPACE-431))|(1<<(Cobol85ParserSPACES-431)))) != 0) || (((_la-466)&-(0x1f+1)) == 0 && ((1<<uint((_la-466)))&((1<<(Cobol85ParserSYMBOL-466))|(1<<(Cobol85ParserTALLY-466))|(1<<(Cobol85ParserTASK-466))|(1<<(Cobol85ParserTHREAD-466))|(1<<(Cobol85ParserTHREAD_LOCAL-466))|(1<<(Cobol85ParserTIME-466))|(1<<(Cobol85ParserTIMER-466))|(1<<(Cobol85ParserTODAYS_DATE-466))|(1<<(Cobol85ParserTODAYS_NAME-466))|(1<<(Cobol85ParserTRUE-466))|(1<<(Cobol85ParserTRUNCATED-466))|(1<<(Cobol85ParserTYPEDEF-466)))) != 0) || (((_la-498)&-(0x1f+1)) == 0 && ((1<<uint((_la-498)))&((1<<(Cobol85ParserUNDERLINE-498))|(1<<(Cobol85ParserVIRTUAL-498))|(1<<(Cobol85ParserWAIT-498))|(1<<(Cobol85ParserWHEN_COMPILED-498))|(1<<(Cobol85ParserYEAR-498))|(1<<(Cobol85ParserYYYYMMDD-498))|(1<<(Cobol85ParserYYYYDDD-498))|(1<<(Cobol85ParserZERO-498))|(1<<(Cobol85ParserZERO_FILL-498))|(1<<(Cobol85ParserZEROS-498))|(1<<(Cobol85ParserZEROES-498)))) != 0) || (((_la-542)&-(0x1f+1)) == 0 && ((1<<uint((_la-542)))&((1<<(Cobol85ParserLPARENCHAR-542))|(1<<(Cobol85ParserMINUSCHAR-542))|(1<<(Cobol85ParserPLUSCHAR-542))|(1<<(Cobol85ParserNONNUMERICLITERAL-542))|(1<<(Cobol85ParserLEVEL_NUMBER_66-542))|(1<<(Cobol85ParserLEVEL_NUMBER_77-542))|(1<<(Cobol85ParserLEVEL_NUMBER_88-542))|(1<<(Cobol85ParserINTEGERLITERAL-542))|(1<<(Cobol85ParserNUMERICLITERAL-542))|(1<<(Cobol85ParserIDENTIFIER-542)))) != 0) {
 		{
 			p.SetState(6032)
 			p.Length()
@@ -88572,6 +90196,9 @@ func (s *CharacterPositionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CharacterPosition() (localctx ICharacterPositionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharacterPositionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1082, Cobol85ParserRULE_characterPosition)
 
@@ -88669,6 +90296,9 @@ func (s *LengthContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Length() (localctx ILengthContext) {
+	this := p
+	_ = this
+
 	localctx = NewLengthContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1084, Cobol85ParserRULE_length)
 
@@ -88697,49 +90327,49 @@ func (p *Cobol85Parser) Length() (localctx ILengthContext) {
 	return localctx
 }
 
-// ISubscriptContext is an interface to support dynamic dispatch.
-type ISubscriptContext interface {
+// ISubscript_Context is an interface to support dynamic dispatch.
+type ISubscript_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsSubscriptContext differentiates from other interfaces.
-	IsSubscriptContext()
+	// IsSubscript_Context differentiates from other interfaces.
+	IsSubscript_Context()
 }
 
-type SubscriptContext struct {
+type Subscript_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptySubscriptContext() *SubscriptContext {
-	var p = new(SubscriptContext)
+func NewEmptySubscript_Context() *Subscript_Context {
+	var p = new(Subscript_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = Cobol85ParserRULE_subscript
+	p.RuleIndex = Cobol85ParserRULE_subscript_
 	return p
 }
 
-func (*SubscriptContext) IsSubscriptContext() {}
+func (*Subscript_Context) IsSubscript_Context() {}
 
-func NewSubscriptContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SubscriptContext {
-	var p = new(SubscriptContext)
+func NewSubscript_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Subscript_Context {
+	var p = new(Subscript_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = Cobol85ParserRULE_subscript
+	p.RuleIndex = Cobol85ParserRULE_subscript_
 
 	return p
 }
 
-func (s *SubscriptContext) GetParser() antlr.Parser { return s.parser }
+func (s *Subscript_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *SubscriptContext) ALL() antlr.TerminalNode {
+func (s *Subscript_Context) ALL() antlr.TerminalNode {
 	return s.GetToken(Cobol85ParserALL, 0)
 }
 
-func (s *SubscriptContext) IntegerLiteral() IIntegerLiteralContext {
+func (s *Subscript_Context) IntegerLiteral() IIntegerLiteralContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIntegerLiteralContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -88749,7 +90379,7 @@ func (s *SubscriptContext) IntegerLiteral() IIntegerLiteralContext {
 	return t.(IIntegerLiteralContext)
 }
 
-func (s *SubscriptContext) QualifiedDataName() IQualifiedDataNameContext {
+func (s *Subscript_Context) QualifiedDataName() IQualifiedDataNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IQualifiedDataNameContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -88759,7 +90389,7 @@ func (s *SubscriptContext) QualifiedDataName() IQualifiedDataNameContext {
 	return t.(IQualifiedDataNameContext)
 }
 
-func (s *SubscriptContext) IndexName() IIndexNameContext {
+func (s *Subscript_Context) IndexName() IIndexNameContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIndexNameContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -88769,7 +90399,7 @@ func (s *SubscriptContext) IndexName() IIndexNameContext {
 	return t.(IIndexNameContext)
 }
 
-func (s *SubscriptContext) ArithmeticExpression() IArithmeticExpressionContext {
+func (s *Subscript_Context) ArithmeticExpression() IArithmeticExpressionContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IArithmeticExpressionContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -88779,29 +90409,32 @@ func (s *SubscriptContext) ArithmeticExpression() IArithmeticExpressionContext {
 	return t.(IArithmeticExpressionContext)
 }
 
-func (s *SubscriptContext) GetRuleContext() antlr.RuleContext {
+func (s *Subscript_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *SubscriptContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Subscript_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *SubscriptContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Subscript_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85Listener); ok {
-		listenerT.EnterSubscript(s)
+		listenerT.EnterSubscript_(s)
 	}
 }
 
-func (s *SubscriptContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Subscript_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Cobol85Listener); ok {
-		listenerT.ExitSubscript(s)
+		listenerT.ExitSubscript_(s)
 	}
 }
 
-func (p *Cobol85Parser) Subscript() (localctx ISubscriptContext) {
-	localctx = NewSubscriptContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 1086, Cobol85ParserRULE_subscript)
+func (p *Cobol85Parser) Subscript_() (localctx ISubscript_Context) {
+	this := p
+	_ = this
+
+	localctx = NewSubscript_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 1086, Cobol85ParserRULE_subscript_)
 
 	defer func() {
 		p.ExitRule()
@@ -89001,6 +90634,9 @@ func (s *ArgumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Argument() (localctx IArgumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewArgumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1088, Cobol85ParserRULE_argument)
 
@@ -89182,6 +90818,9 @@ func (s *QualifiedDataNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) QualifiedDataName() (localctx IQualifiedDataNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewQualifiedDataNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1090, Cobol85ParserRULE_qualifiedDataName)
 
@@ -89349,6 +90988,9 @@ func (s *QualifiedDataNameFormat1Context) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) QualifiedDataNameFormat1() (localctx IQualifiedDataNameFormat1Context) {
+	this := p
+	_ = this
+
 	localctx = NewQualifiedDataNameFormat1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1092, Cobol85ParserRULE_qualifiedDataNameFormat1)
 
@@ -89511,6 +91153,9 @@ func (s *QualifiedDataNameFormat2Context) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) QualifiedDataNameFormat2() (localctx IQualifiedDataNameFormat2Context) {
+	this := p
+	_ = this
+
 	localctx = NewQualifiedDataNameFormat2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1094, Cobol85ParserRULE_qualifiedDataNameFormat2)
 
@@ -89622,6 +91267,9 @@ func (s *QualifiedDataNameFormat3Context) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) QualifiedDataNameFormat3() (localctx IQualifiedDataNameFormat3Context) {
+	this := p
+	_ = this
+
 	localctx = NewQualifiedDataNameFormat3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1096, Cobol85ParserRULE_qualifiedDataNameFormat3)
 
@@ -89727,6 +91375,9 @@ func (s *QualifiedDataNameFormat4Context) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Cobol85Parser) QualifiedDataNameFormat4() (localctx IQualifiedDataNameFormat4Context) {
+	this := p
+	_ = this
+
 	localctx = NewQualifiedDataNameFormat4Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1098, Cobol85ParserRULE_qualifiedDataNameFormat4)
 
@@ -89838,6 +91489,9 @@ func (s *QualifiedInDataContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) QualifiedInData() (localctx IQualifiedInDataContext) {
+	this := p
+	_ = this
+
 	localctx = NewQualifiedInDataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1100, Cobol85ParserRULE_qualifiedInData)
 
@@ -89956,6 +91610,9 @@ func (s *InDataContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InData() (localctx IInDataContext) {
+	this := p
+	_ = this
+
 	localctx = NewInDataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1102, Cobol85ParserRULE_inData)
 	var _la int
@@ -90073,6 +91730,9 @@ func (s *InFileContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InFile() (localctx IInFileContext) {
+	this := p
+	_ = this
+
 	localctx = NewInFileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1104, Cobol85ParserRULE_inFile)
 	var _la int
@@ -90190,6 +91850,9 @@ func (s *InMnemonicContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InMnemonic() (localctx IInMnemonicContext) {
+	this := p
+	_ = this
+
 	localctx = NewInMnemonicContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1106, Cobol85ParserRULE_inMnemonic)
 	var _la int
@@ -90307,6 +91970,9 @@ func (s *InSectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InSection() (localctx IInSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewInSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1108, Cobol85ParserRULE_inSection)
 	var _la int
@@ -90424,6 +92090,9 @@ func (s *InLibraryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InLibrary() (localctx IInLibraryContext) {
+	this := p
+	_ = this
+
 	localctx = NewInLibraryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1110, Cobol85ParserRULE_inLibrary)
 	var _la int
@@ -90541,6 +92210,9 @@ func (s *InTableContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) InTable() (localctx IInTableContext) {
+	this := p
+	_ = this
+
 	localctx = NewInTableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1112, Cobol85ParserRULE_inTable)
 	var _la int
@@ -90650,6 +92322,9 @@ func (s *AlphabetNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AlphabetName() (localctx IAlphabetNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlphabetNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1114, Cobol85ParserRULE_alphabetName)
 
@@ -90747,6 +92422,9 @@ func (s *AssignmentNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) AssignmentName() (localctx IAssignmentNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignmentNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1116, Cobol85ParserRULE_assignmentName)
 
@@ -90844,6 +92522,9 @@ func (s *BasisNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) BasisName() (localctx IBasisNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewBasisNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1118, Cobol85ParserRULE_basisName)
 
@@ -90941,6 +92622,9 @@ func (s *CdNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CdName() (localctx ICdNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewCdNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1120, Cobol85ParserRULE_cdName)
 
@@ -91038,6 +92722,9 @@ func (s *ClassNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ClassName() (localctx IClassNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1122, Cobol85ParserRULE_className)
 
@@ -91135,6 +92822,9 @@ func (s *ComputerNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ComputerName() (localctx IComputerNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewComputerNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1124, Cobol85ParserRULE_computerName)
 
@@ -91232,6 +92922,9 @@ func (s *ConditionNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ConditionName() (localctx IConditionNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditionNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1126, Cobol85ParserRULE_conditionName)
 
@@ -91329,6 +93022,9 @@ func (s *DataNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataName() (localctx IDataNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1128, Cobol85ParserRULE_dataName)
 
@@ -91434,6 +93130,9 @@ func (s *DataDescNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) DataDescName() (localctx IDataDescNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewDataDescNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1130, Cobol85ParserRULE_dataDescName)
 
@@ -91551,6 +93250,9 @@ func (s *EnvironmentNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) EnvironmentName() (localctx IEnvironmentNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnvironmentNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1132, Cobol85ParserRULE_environmentName)
 
@@ -91648,6 +93350,9 @@ func (s *FileNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) FileName() (localctx IFileNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewFileNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1134, Cobol85ParserRULE_fileName)
 
@@ -91765,6 +93470,9 @@ func (s *FunctionNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) FunctionName() (localctx IFunctionNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1136, Cobol85ParserRULE_functionName)
 
@@ -91903,6 +93611,9 @@ func (s *IndexNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) IndexName() (localctx IIndexNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewIndexNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1138, Cobol85ParserRULE_indexName)
 
@@ -92000,6 +93711,9 @@ func (s *LanguageNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) LanguageName() (localctx ILanguageNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewLanguageNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1140, Cobol85ParserRULE_languageName)
 
@@ -92097,6 +93811,9 @@ func (s *LibraryNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) LibraryName() (localctx ILibraryNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1142, Cobol85ParserRULE_libraryName)
 
@@ -92194,6 +93911,9 @@ func (s *LocalNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) LocalName() (localctx ILocalNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewLocalNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1144, Cobol85ParserRULE_localName)
 
@@ -92291,6 +94011,9 @@ func (s *MnemonicNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) MnemonicName() (localctx IMnemonicNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewMnemonicNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1146, Cobol85ParserRULE_mnemonicName)
 
@@ -92398,6 +94121,9 @@ func (s *ParagraphNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ParagraphName() (localctx IParagraphNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewParagraphNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1148, Cobol85ParserRULE_paragraphName)
 
@@ -92531,6 +94257,9 @@ func (s *ProcedureNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ProcedureName() (localctx IProcedureNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1150, Cobol85ParserRULE_procedureName)
 	var _la int
@@ -92657,6 +94386,9 @@ func (s *ProgramNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ProgramName() (localctx IProgramNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1152, Cobol85ParserRULE_programName)
 
@@ -92770,6 +94502,9 @@ func (s *RecordNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RecordName() (localctx IRecordNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewRecordNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1154, Cobol85ParserRULE_recordName)
 
@@ -92867,6 +94602,9 @@ func (s *ReportNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ReportName() (localctx IReportNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewReportNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1156, Cobol85ParserRULE_reportName)
 
@@ -92964,6 +94702,9 @@ func (s *RoutineNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) RoutineName() (localctx IRoutineNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewRoutineNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1158, Cobol85ParserRULE_routineName)
 
@@ -93061,6 +94802,9 @@ func (s *ScreenNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) ScreenName() (localctx IScreenNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewScreenNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1160, Cobol85ParserRULE_screenName)
 
@@ -93168,6 +94912,9 @@ func (s *SectionNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SectionName() (localctx ISectionNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewSectionNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1162, Cobol85ParserRULE_sectionName)
 
@@ -93281,6 +95028,9 @@ func (s *SystemNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SystemName() (localctx ISystemNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewSystemNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1164, Cobol85ParserRULE_systemName)
 
@@ -93378,6 +95128,9 @@ func (s *SymbolicCharacterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SymbolicCharacter() (localctx ISymbolicCharacterContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolicCharacterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1166, Cobol85ParserRULE_symbolicCharacter)
 
@@ -93475,6 +95228,9 @@ func (s *TextNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) TextName() (localctx ITextNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewTextNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1168, Cobol85ParserRULE_textName)
 
@@ -94062,6 +95818,9 @@ func (s *CobolWordContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CobolWord() (localctx ICobolWordContext) {
+	this := p
+	_ = this
+
 	localctx = NewCobolWordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1170, Cobol85ParserRULE_cobolWord)
 	var _la int
@@ -94211,6 +95970,9 @@ func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) Literal() (localctx ILiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1172, Cobol85ParserRULE_literal)
 
@@ -94347,6 +96109,9 @@ func (s *BooleanLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) BooleanLiteral() (localctx IBooleanLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewBooleanLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1174, Cobol85ParserRULE_booleanLiteral)
 	var _la int
@@ -94460,6 +96225,9 @@ func (s *NumericLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) NumericLiteral() (localctx INumericLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumericLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1176, Cobol85ParserRULE_numericLiteral)
 
@@ -94586,6 +96354,9 @@ func (s *IntegerLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) IntegerLiteral() (localctx IIntegerLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntegerLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1178, Cobol85ParserRULE_integerLiteral)
 	var _la int
@@ -94713,6 +96484,9 @@ func (s *CicsDfhRespLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CicsDfhRespLiteral() (localctx ICicsDfhRespLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewCicsDfhRespLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1180, Cobol85ParserRULE_cicsDfhRespLiteral)
 
@@ -94856,6 +96630,9 @@ func (s *CicsDfhValueLiteralContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85Parser) CicsDfhValueLiteral() (localctx ICicsDfhValueLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewCicsDfhValueLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1182, Cobol85ParserRULE_cicsDfhValueLiteral)
 
@@ -94976,8 +96753,8 @@ func (s *FigurativeConstantContext) LOW_VALUES() antlr.TerminalNode {
 	return s.GetToken(Cobol85ParserLOW_VALUES, 0)
 }
 
-func (s *FigurativeConstantContext) NULL() antlr.TerminalNode {
-	return s.GetToken(Cobol85ParserNULL, 0)
+func (s *FigurativeConstantContext) NULL_() antlr.TerminalNode {
+	return s.GetToken(Cobol85ParserNULL_, 0)
 }
 
 func (s *FigurativeConstantContext) NULLS() antlr.TerminalNode {
@@ -95033,6 +96810,9 @@ func (s *FigurativeConstantContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) FigurativeConstant() (localctx IFigurativeConstantContext) {
+	this := p
+	_ = this
+
 	localctx = NewFigurativeConstantContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1184, Cobol85ParserRULE_figurativeConstant)
 
@@ -95095,11 +96875,11 @@ func (p *Cobol85Parser) FigurativeConstant() (localctx IFigurativeConstantContex
 			p.Match(Cobol85ParserLOW_VALUES)
 		}
 
-	case Cobol85ParserNULL:
+	case Cobol85ParserNULL_:
 		p.EnterOuterAlt(localctx, 6)
 		{
 			p.SetState(6236)
-			p.Match(Cobol85ParserNULL)
+			p.Match(Cobol85ParserNULL_)
 		}
 
 	case Cobol85ParserNULLS:
@@ -95346,6 +97126,9 @@ func (s *SpecialRegisterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) SpecialRegister() (localctx ISpecialRegisterContext) {
+	this := p
+	_ = this
+
 	localctx = NewSpecialRegisterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1186, Cobol85ParserRULE_specialRegister)
 	var _la int
@@ -95656,6 +97439,9 @@ func (s *CommentEntryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85Parser) CommentEntry() (localctx ICommentEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 1188, Cobol85ParserRULE_commentEntry)
 	var _la int

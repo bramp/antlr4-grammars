@@ -1,4 +1,4 @@
-// Code generated from mumps.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from mumps.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package mumps // mumps
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -55,8 +55,8 @@ type mumpsListener interface {
 	// EnterVariable is called when entering the variable production.
 	EnterVariable(c *VariableContext)
 
-	// EnterFunction is called when entering the function production.
-	EnterFunction(c *FunctionContext)
+	// EnterFunction_ is called when entering the function_ production.
+	EnterFunction_(c *Function_Context)
 
 	// EnterBreak_ is called when entering the break_ production.
 	EnterBreak_(c *Break_Context)
@@ -160,8 +160,8 @@ type mumpsListener interface {
 	// ExitVariable is called when exiting the variable production.
 	ExitVariable(c *VariableContext)
 
-	// ExitFunction is called when exiting the function production.
-	ExitFunction(c *FunctionContext)
+	// ExitFunction_ is called when exiting the function_ production.
+	ExitFunction_(c *Function_Context)
 
 	// ExitBreak_ is called when exiting the break_ production.
 	ExitBreak_(c *Break_Context)

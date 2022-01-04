@@ -1,4 +1,4 @@
-// Code generated from Dart2.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Dart2.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package dart2 // Dart2
 import (
@@ -892,9 +892,6 @@ var parserATN = []uint16{
 	1707, 1716, 1723, 1732, 1750, 1759, 1770, 1782, 1786, 1790, 1801, 1812,
 	1818,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "','", "'final'", "'const'", "'var'", "'='", "'void'", "'async'", "'=>'",
 	"';'", "'async*'", "'sync*'", "'{'", "'}'", "'('", "')'", "'['", "']'",
@@ -934,18 +931,19 @@ var ruleNames = []string{
 	"fieldFormalParameter", "defaultFormalParameter", "defaultNamedParameter",
 	"classDefinition", "mixins", "classMemberDefinition", "methodSignature",
 	"declaration", "staticFinalDeclarationList", "staticFinalDeclaration",
-	"operatorSignature", "operator", "binaryOperator", "getterSignature", "setterSignature",
-	"constructorSignature", "redirection", "initializers", "initializerListEntry",
-	"fieldInitializer", "factoryConstructorSignature", "redirectingFactoryConstructorSignature",
-	"constantConstructorSignature", "superclass", "interfaces", "mixinApplicationClass",
-	"mixinApplication", "enumType", "enumEntry", "typeParameter", "typeParameters",
-	"metadata", "expression", "expressionWithoutCascade", "expressionList",
-	"primary", "literal", "nullLiteral", "numericLiteral", "booleanLiteral",
-	"stringLiteral", "stringInterpolation", "symbolLiteral", "listLiteral",
-	"mapLiteral", "mapLiteralEntry", "throwExpression", "throwExpressionWithoutCascade",
-	"functionExpression", "thisExpression", "nayaExpression", "constObjectExpression",
-	"arguments", "argumentList", "namedArgument", "cascadeSection", "cascadeSelector",
-	"argumentPart", "assignmentOperator", "compoundAssignmentOperator", "conditionalExpression",
+	"operatorSignature", "operator_", "binaryOperator", "getterSignature",
+	"setterSignature", "constructorSignature", "redirection", "initializers",
+	"initializerListEntry", "fieldInitializer", "factoryConstructorSignature",
+	"redirectingFactoryConstructorSignature", "constantConstructorSignature",
+	"superclass", "interfaces", "mixinApplicationClass", "mixinApplication",
+	"enumType", "enumEntry", "typeParameter", "typeParameters", "metadata",
+	"expression", "expressionWithoutCascade", "expressionList", "primary",
+	"literal", "nullLiteral", "numericLiteral", "booleanLiteral", "stringLiteral",
+	"stringInterpolation", "symbolLiteral", "listLiteral", "mapLiteral", "mapLiteralEntry",
+	"throwExpression", "throwExpressionWithoutCascade", "functionExpression",
+	"thisExpression", "nayaExpression", "constObjectExpression", "arguments",
+	"argumentList", "namedArgument", "cascadeSection", "cascadeSelector", "argumentPart",
+	"assignmentOperator", "compoundAssignmentOperator", "conditionalExpression",
 	"ifNullExpression", "logicalOrExpression", "logicalAndExpression", "equalityExpression",
 	"equalityOperator", "relationalExpression", "relationalOperator", "bitwiseOrExpression",
 	"bitwiseXorExpression", "bitwiseAndExpression", "bitwiseOperator", "shiftExpression",
@@ -968,21 +966,25 @@ var ruleNames = []string{
 	"configurationUri", "uriTest", "dtype", "typeName", "typeArguments", "typeList",
 	"typeAlias", "typeAliasBody", "functionTypeAlias", "functionPrefix",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type Dart2Parser struct {
 	*antlr.BaseParser
 }
 
+// NewDart2Parser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *Dart2Parser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewDart2Parser(input antlr.TokenStream) *Dart2Parser {
 	this := new(Dart2Parser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -1159,7 +1161,7 @@ const (
 	Dart2ParserRULE_staticFinalDeclarationList             = 29
 	Dart2ParserRULE_staticFinalDeclaration                 = 30
 	Dart2ParserRULE_operatorSignature                      = 31
-	Dart2ParserRULE_operator                               = 32
+	Dart2ParserRULE_operator_                              = 32
 	Dart2ParserRULE_binaryOperator                         = 33
 	Dart2ParserRULE_getterSignature                        = 34
 	Dart2ParserRULE_setterSignature                        = 35
@@ -1381,6 +1383,9 @@ func (s *CompilationUnitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) CompilationUnit() (localctx ICompilationUnitContext) {
+	this := p
+	_ = this
+
 	localctx = NewCompilationUnitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, Dart2ParserRULE_compilationUnit)
 
@@ -1514,6 +1519,9 @@ func (s *VariableDeclarationContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Dart2Parser) VariableDeclaration() (localctx IVariableDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, Dart2ParserRULE_variableDeclaration)
 	var _la int
@@ -1650,6 +1658,9 @@ func (s *DeclaredIdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) DeclaredIdentifier() (localctx IDeclaredIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeclaredIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, Dart2ParserRULE_declaredIdentifier)
 
@@ -1765,6 +1776,9 @@ func (s *FinalConstVarOrTypeContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Dart2Parser) FinalConstVarOrType() (localctx IFinalConstVarOrTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewFinalConstVarOrTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, Dart2ParserRULE_finalConstVarOrType)
 
@@ -1905,6 +1919,9 @@ func (s *VarOrTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) VarOrType() (localctx IVarOrTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewVarOrTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, Dart2ParserRULE_varOrType)
 
@@ -2051,6 +2068,9 @@ func (s *InitializedVariableDeclarationContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *Dart2Parser) InitializedVariableDeclaration() (localctx IInitializedVariableDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewInitializedVariableDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, Dart2ParserRULE_initializedVariableDeclaration)
 	var _la int
@@ -2192,6 +2212,9 @@ func (s *InitializedIdentifierContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Dart2Parser) InitializedIdentifier() (localctx IInitializedIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewInitializedIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, Dart2ParserRULE_initializedIdentifier)
 	var _la int
@@ -2318,6 +2341,9 @@ func (s *InitializedIdentifierListContext) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *Dart2Parser) InitializedIdentifierList() (localctx IInitializedIdentifierListContext) {
+	this := p
+	_ = this
+
 	localctx = NewInitializedIdentifierListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, Dart2ParserRULE_initializedIdentifierList)
 	var _la int
@@ -2464,6 +2490,9 @@ func (s *FunctionSignatureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) FunctionSignature() (localctx IFunctionSignatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionSignatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, Dart2ParserRULE_functionSignature)
 
@@ -2589,6 +2618,9 @@ func (s *FormalParameterPartContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Dart2Parser) FormalParameterPart() (localctx IFormalParameterPartContext) {
+	this := p
+	_ = this
+
 	localctx = NewFormalParameterPartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, Dart2ParserRULE_formalParameterPart)
 	var _la int
@@ -2698,6 +2730,9 @@ func (s *ReturnTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ReturnType() (localctx IReturnTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewReturnTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, Dart2ParserRULE_returnType)
 
@@ -2818,6 +2853,9 @@ func (s *FunctionBodyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) FunctionBody() (localctx IFunctionBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, Dart2ParserRULE_functionBody)
 	var _la int
@@ -2966,6 +3004,9 @@ func (s *BlockContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Block() (localctx IBlockContext) {
+	this := p
+	_ = this
+
 	localctx = NewBlockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, Dart2ParserRULE_block)
 
@@ -3081,6 +3122,9 @@ func (s *FormalParameterListContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Dart2Parser) FormalParameterList() (localctx IFormalParameterListContext) {
+	this := p
+	_ = this
+
 	localctx = NewFormalParameterListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, Dart2ParserRULE_formalParameterList)
 	var _la int
@@ -3262,6 +3306,9 @@ func (s *NormalFormalParametersContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Dart2Parser) NormalFormalParameters() (localctx INormalFormalParametersContext) {
+	this := p
+	_ = this
+
 	localctx = NewNormalFormalParametersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, Dart2ParserRULE_normalFormalParameters)
 
@@ -3391,6 +3438,9 @@ func (s *OptionalFormalParametersContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Dart2Parser) OptionalFormalParameters() (localctx IOptionalFormalParametersContext) {
+	this := p
+	_ = this
+
 	localctx = NewOptionalFormalParametersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, Dart2ParserRULE_optionalFormalParameters)
 
@@ -3517,6 +3567,9 @@ func (s *OptionalPositionalFormalParametersContext) ExitRule(listener antlr.Pars
 }
 
 func (p *Dart2Parser) OptionalPositionalFormalParameters() (localctx IOptionalPositionalFormalParametersContext) {
+	this := p
+	_ = this
+
 	localctx = NewOptionalPositionalFormalParametersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, Dart2ParserRULE_optionalPositionalFormalParameters)
 	var _la int
@@ -3669,6 +3722,9 @@ func (s *NamedFormalParametersContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Dart2Parser) NamedFormalParameters() (localctx INamedFormalParametersContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamedFormalParametersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, Dart2ParserRULE_namedFormalParameters)
 	var _la int
@@ -3828,6 +3884,9 @@ func (s *NormalFormalParameterContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Dart2Parser) NormalFormalParameter() (localctx INormalFormalParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewNormalFormalParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, Dart2ParserRULE_normalFormalParameter)
 
@@ -3975,6 +4034,9 @@ func (s *FunctionFormalParameterContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Dart2Parser) FunctionFormalParameter() (localctx IFunctionFormalParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionFormalParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, Dart2ParserRULE_functionFormalParameter)
 	var _la int
@@ -4122,6 +4184,9 @@ func (s *SimpleFormalParameterContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Dart2Parser) SimpleFormalParameter() (localctx ISimpleFormalParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimpleFormalParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, Dart2ParserRULE_simpleFormalParameter)
 	var _la int
@@ -4278,6 +4343,9 @@ func (s *FieldFormalParameterContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Dart2Parser) FieldFormalParameter() (localctx IFieldFormalParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewFieldFormalParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, Dart2ParserRULE_fieldFormalParameter)
 	var _la int
@@ -4420,6 +4488,9 @@ func (s *DefaultFormalParameterContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Dart2Parser) DefaultFormalParameter() (localctx IDefaultFormalParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefaultFormalParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, Dart2ParserRULE_defaultFormalParameter)
 	var _la int
@@ -4543,6 +4614,9 @@ func (s *DefaultNamedParameterContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Dart2Parser) DefaultNamedParameter() (localctx IDefaultNamedParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefaultNamedParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, Dart2ParserRULE_defaultNamedParameter)
 	var _la int
@@ -4780,6 +4854,9 @@ func (s *ClassDefinitionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ClassDefinition() (localctx IClassDefinitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, Dart2ParserRULE_classDefinition)
 	var _la int
@@ -4999,6 +5076,9 @@ func (s *MixinsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Mixins() (localctx IMixinsContext) {
+	this := p
+	_ = this
+
 	localctx = NewMixinsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, Dart2ParserRULE_mixins)
 
@@ -5120,6 +5200,9 @@ func (s *ClassMemberDefinitionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Dart2Parser) ClassMemberDefinition() (localctx IClassMemberDefinitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassMemberDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, Dart2ParserRULE_classMemberDefinition)
 
@@ -5298,6 +5381,9 @@ func (s *MethodSignatureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) MethodSignature() (localctx IMethodSignatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewMethodSignatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, Dart2ParserRULE_methodSignature)
 	var _la int
@@ -5581,6 +5667,9 @@ func (s *DeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Declaration() (localctx IDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, Dart2ParserRULE_declaration)
 	var _la int
@@ -5961,6 +6050,9 @@ func (s *StaticFinalDeclarationListContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Dart2Parser) StaticFinalDeclarationList() (localctx IStaticFinalDeclarationListContext) {
+	this := p
+	_ = this
+
 	localctx = NewStaticFinalDeclarationListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, Dart2ParserRULE_staticFinalDeclarationList)
 	var _la int
@@ -6087,6 +6179,9 @@ func (s *StaticFinalDeclarationContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Dart2Parser) StaticFinalDeclaration() (localctx IStaticFinalDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewStaticFinalDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, Dart2ParserRULE_staticFinalDeclaration)
 
@@ -6161,14 +6256,14 @@ func NewOperatorSignatureContext(parser antlr.Parser, parent antlr.ParserRuleCon
 
 func (s *OperatorSignatureContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *OperatorSignatureContext) Operator() IOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperatorContext)(nil)).Elem(), 0)
+func (s *OperatorSignatureContext) Operator_() IOperator_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperator_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IOperatorContext)
+	return t.(IOperator_Context)
 }
 
 func (s *OperatorSignatureContext) FormalParameterList() IFormalParameterListContext {
@@ -6212,6 +6307,9 @@ func (s *OperatorSignatureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) OperatorSignature() (localctx IOperatorSignatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewOperatorSignatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, Dart2ParserRULE_operatorSignature)
 	var _la int
@@ -6250,7 +6348,7 @@ func (p *Dart2Parser) OperatorSignature() (localctx IOperatorSignatureContext) {
 	}
 	{
 		p.SetState(691)
-		p.Operator()
+		p.Operator_()
 	}
 	{
 		p.SetState(692)
@@ -6260,45 +6358,45 @@ func (p *Dart2Parser) OperatorSignature() (localctx IOperatorSignatureContext) {
 	return localctx
 }
 
-// IOperatorContext is an interface to support dynamic dispatch.
-type IOperatorContext interface {
+// IOperator_Context is an interface to support dynamic dispatch.
+type IOperator_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsOperatorContext differentiates from other interfaces.
-	IsOperatorContext()
+	// IsOperator_Context differentiates from other interfaces.
+	IsOperator_Context()
 }
 
-type OperatorContext struct {
+type Operator_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyOperatorContext() *OperatorContext {
-	var p = new(OperatorContext)
+func NewEmptyOperator_Context() *Operator_Context {
+	var p = new(Operator_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = Dart2ParserRULE_operator
+	p.RuleIndex = Dart2ParserRULE_operator_
 	return p
 }
 
-func (*OperatorContext) IsOperatorContext() {}
+func (*Operator_Context) IsOperator_Context() {}
 
-func NewOperatorContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *OperatorContext {
-	var p = new(OperatorContext)
+func NewOperator_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Operator_Context {
+	var p = new(Operator_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = Dart2ParserRULE_operator
+	p.RuleIndex = Dart2ParserRULE_operator_
 
 	return p
 }
 
-func (s *OperatorContext) GetParser() antlr.Parser { return s.parser }
+func (s *Operator_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *OperatorContext) BinaryOperator() IBinaryOperatorContext {
+func (s *Operator_Context) BinaryOperator() IBinaryOperatorContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IBinaryOperatorContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -6308,29 +6406,32 @@ func (s *OperatorContext) BinaryOperator() IBinaryOperatorContext {
 	return t.(IBinaryOperatorContext)
 }
 
-func (s *OperatorContext) GetRuleContext() antlr.RuleContext {
+func (s *Operator_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *OperatorContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Operator_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *OperatorContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Operator_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Dart2Listener); ok {
-		listenerT.EnterOperator(s)
+		listenerT.EnterOperator_(s)
 	}
 }
 
-func (s *OperatorContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Operator_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(Dart2Listener); ok {
-		listenerT.ExitOperator(s)
+		listenerT.ExitOperator_(s)
 	}
 }
 
-func (p *Dart2Parser) Operator() (localctx IOperatorContext) {
-	localctx = NewOperatorContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 64, Dart2ParserRULE_operator)
+func (p *Dart2Parser) Operator_() (localctx IOperator_Context) {
+	this := p
+	_ = this
+
+	localctx = NewOperator_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 64, Dart2ParserRULE_operator_)
 
 	defer func() {
 		p.ExitRule()
@@ -6496,6 +6597,9 @@ func (s *BinaryOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) BinaryOperator() (localctx IBinaryOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewBinaryOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, Dart2ParserRULE_binaryOperator)
 
@@ -6647,6 +6751,9 @@ func (s *GetterSignatureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) GetterSignature() (localctx IGetterSignatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewGetterSignatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, Dart2ParserRULE_getterSignature)
 	var _la int
@@ -6780,6 +6887,9 @@ func (s *SetterSignatureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) SetterSignature() (localctx ISetterSignatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetterSignatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, Dart2ParserRULE_setterSignature)
 	var _la int
@@ -6920,6 +7030,9 @@ func (s *ConstructorSignatureContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Dart2Parser) ConstructorSignature() (localctx IConstructorSignatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstructorSignatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, Dart2ParserRULE_constructorSignature)
 	var _la int
@@ -7047,6 +7160,9 @@ func (s *RedirectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Redirection() (localctx IRedirectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewRedirectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, Dart2ParserRULE_redirection)
 	var _la int
@@ -7181,6 +7297,9 @@ func (s *InitializersContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Initializers() (localctx IInitializersContext) {
+	this := p
+	_ = this
+
 	localctx = NewInitializersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, Dart2ParserRULE_initializers)
 	var _la int
@@ -7331,6 +7450,9 @@ func (s *InitializerListEntryContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Dart2Parser) InitializerListEntry() (localctx IInitializerListEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewInitializerListEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, Dart2ParserRULE_initializerListEntry)
 
@@ -7504,6 +7626,9 @@ func (s *FieldInitializerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) FieldInitializer() (localctx IFieldInitializerContext) {
+	this := p
+	_ = this
+
 	localctx = NewFieldInitializerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, Dart2ParserRULE_fieldInitializer)
 	var _la int
@@ -7662,6 +7787,9 @@ func (s *FactoryConstructorSignatureContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *Dart2Parser) FactoryConstructorSignature() (localctx IFactoryConstructorSignatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewFactoryConstructorSignatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, Dart2ParserRULE_factoryConstructorSignature)
 	var _la int
@@ -7817,6 +7945,9 @@ func (s *RedirectingFactoryConstructorSignatureContext) ExitRule(listener antlr.
 }
 
 func (p *Dart2Parser) RedirectingFactoryConstructorSignature() (localctx IRedirectingFactoryConstructorSignatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewRedirectingFactoryConstructorSignatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, Dart2ParserRULE_redirectingFactoryConstructorSignature)
 	var _la int
@@ -7982,6 +8113,9 @@ func (s *ConstantConstructorSignatureContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *Dart2Parser) ConstantConstructorSignature() (localctx IConstantConstructorSignatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstantConstructorSignatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, Dart2ParserRULE_constantConstructorSignature)
 
@@ -8087,6 +8221,9 @@ func (s *SuperclassContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Superclass() (localctx ISuperclassContext) {
+	this := p
+	_ = this
+
 	localctx = NewSuperclassContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, Dart2ParserRULE_superclass)
 
@@ -8188,6 +8325,9 @@ func (s *InterfacesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Interfaces() (localctx IInterfacesContext) {
+	this := p
+	_ = this
+
 	localctx = NewInterfacesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, Dart2ParserRULE_interfaces)
 
@@ -8309,6 +8449,9 @@ func (s *MixinApplicationClassContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Dart2Parser) MixinApplicationClass() (localctx IMixinApplicationClassContext) {
+	this := p
+	_ = this
+
 	localctx = NewMixinApplicationClassContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, Dart2ParserRULE_mixinApplicationClass)
 	var _la int
@@ -8450,6 +8593,9 @@ func (s *MixinApplicationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) MixinApplication() (localctx IMixinApplicationContext) {
+	this := p
+	_ = this
+
 	localctx = NewMixinApplicationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, Dart2ParserRULE_mixinApplication)
 	var _la int
@@ -8596,6 +8742,9 @@ func (s *EnumTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) EnumType() (localctx IEnumTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, Dart2ParserRULE_enumType)
 	var _la int
@@ -8757,6 +8906,9 @@ func (s *EnumEntryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) EnumEntry() (localctx IEnumEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, Dart2ParserRULE_enumEntry)
 
@@ -8878,6 +9030,9 @@ func (s *TypeParameterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TypeParameter() (localctx ITypeParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, Dart2ParserRULE_typeParameter)
 	var _la int
@@ -9008,6 +9163,9 @@ func (s *TypeParametersContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TypeParameters() (localctx ITypeParametersContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeParametersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, Dart2ParserRULE_typeParameters)
 	var _la int
@@ -9191,6 +9349,9 @@ func (s *MetadataContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Metadata() (localctx IMetadataContext) {
+	this := p
+	_ = this
+
 	localctx = NewMetadataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, Dart2ParserRULE_metadata)
 	var _la int
@@ -9396,6 +9557,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, Dart2ParserRULE_expression)
 	var _la int
@@ -9576,6 +9740,9 @@ func (s *ExpressionWithoutCascadeContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Dart2Parser) ExpressionWithoutCascade() (localctx IExpressionWithoutCascadeContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionWithoutCascadeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 108, Dart2ParserRULE_expressionWithoutCascade)
 
@@ -9714,6 +9881,9 @@ func (s *ExpressionListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ExpressionList() (localctx IExpressionListContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, Dart2ParserRULE_expressionList)
 
@@ -9903,6 +10073,9 @@ func (s *PrimaryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Primary() (localctx IPrimaryContext) {
+	this := p
+	_ = this
+
 	localctx = NewPrimaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, Dart2ParserRULE_primary)
 
@@ -10127,6 +10300,9 @@ func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Literal() (localctx ILiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, Dart2ParserRULE_literal)
 
@@ -10261,6 +10437,9 @@ func (s *NullLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) NullLiteral() (localctx INullLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewNullLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, Dart2ParserRULE_nullLiteral)
 
@@ -10356,6 +10535,9 @@ func (s *NumericLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) NumericLiteral() (localctx INumericLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumericLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 118, Dart2ParserRULE_numericLiteral)
 	var _la int
@@ -10450,6 +10632,9 @@ func (s *BooleanLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) BooleanLiteral() (localctx IBooleanLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewBooleanLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, Dart2ParserRULE_booleanLiteral)
 	var _la int
@@ -10561,6 +10746,9 @@ func (s *StringLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) StringLiteral() (localctx IStringLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, Dart2ParserRULE_stringLiteral)
 	var _la int
@@ -10686,6 +10874,9 @@ func (s *StringInterpolationContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Dart2Parser) StringInterpolation() (localctx IStringInterpolationContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringInterpolationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 124, Dart2ParserRULE_stringInterpolation)
 
@@ -10780,14 +10971,14 @@ func NewSymbolLiteralContext(parser antlr.Parser, parent antlr.ParserRuleContext
 
 func (s *SymbolLiteralContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *SymbolLiteralContext) Operator() IOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperatorContext)(nil)).Elem(), 0)
+func (s *SymbolLiteralContext) Operator_() IOperator_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperator_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IOperatorContext)
+	return t.(IOperator_Context)
 }
 
 func (s *SymbolLiteralContext) AllIdentifier() []IIdentifierContext {
@@ -10834,6 +11025,9 @@ func (s *SymbolLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) SymbolLiteral() (localctx ISymbolLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, Dart2ParserRULE_symbolLiteral)
 
@@ -10867,7 +11061,7 @@ func (p *Dart2Parser) SymbolLiteral() (localctx ISymbolLiteralContext) {
 	case Dart2ParserT__27, Dart2ParserT__28, Dart2ParserT__29, Dart2ParserT__30, Dart2ParserT__38, Dart2ParserT__39, Dart2ParserT__67, Dart2ParserT__68, Dart2ParserT__69, Dart2ParserT__70, Dart2ParserT__71, Dart2ParserT__72, Dart2ParserT__73, Dart2ParserT__74, Dart2ParserT__75, Dart2ParserT__76, Dart2ParserT__77, Dart2ParserT__78, Dart2ParserT__79, Dart2ParserT__80:
 		{
 			p.SetState(940)
-			p.Operator()
+			p.Operator_()
 		}
 
 	case Dart2ParserIDENTIFIER:
@@ -10982,6 +11176,9 @@ func (s *ListLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ListLiteral() (localctx IListLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewListLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, Dart2ParserRULE_listLiteral)
 	var _la int
@@ -11151,6 +11348,9 @@ func (s *MapLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) MapLiteral() (localctx IMapLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewMapLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 130, Dart2ParserRULE_mapLiteral)
 	var _la int
@@ -11332,6 +11532,9 @@ func (s *MapLiteralEntryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) MapLiteralEntry() (localctx IMapLiteralEntryContext) {
+	this := p
+	_ = this
+
 	localctx = NewMapLiteralEntryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, Dart2ParserRULE_mapLiteralEntry)
 
@@ -11437,6 +11640,9 @@ func (s *ThrowExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ThrowExpression() (localctx IThrowExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewThrowExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 134, Dart2ParserRULE_throwExpression)
 
@@ -11538,6 +11744,9 @@ func (s *ThrowExpressionWithoutCascadeContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *Dart2Parser) ThrowExpressionWithoutCascade() (localctx IThrowExpressionWithoutCascadeContext) {
+	this := p
+	_ = this
+
 	localctx = NewThrowExpressionWithoutCascadeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 136, Dart2ParserRULE_throwExpressionWithoutCascade)
 
@@ -11649,6 +11858,9 @@ func (s *FunctionExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) FunctionExpression() (localctx IFunctionExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 138, Dart2ParserRULE_functionExpression)
 
@@ -11739,6 +11951,9 @@ func (s *ThisExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ThisExpression() (localctx IThisExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewThisExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 140, Dart2ParserRULE_thisExpression)
 
@@ -11856,6 +12071,9 @@ func (s *NayaExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) NayaExpression() (localctx INayaExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewNayaExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 142, Dart2ParserRULE_nayaExpression)
 	var _la int
@@ -11997,6 +12215,9 @@ func (s *ConstObjectExpressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Dart2Parser) ConstObjectExpression() (localctx IConstObjectExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstObjectExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 144, Dart2ParserRULE_constObjectExpression)
 	var _la int
@@ -12118,6 +12339,9 @@ func (s *ArgumentsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Arguments() (localctx IArgumentsContext) {
+	this := p
+	_ = this
+
 	localctx = NewArgumentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 146, Dart2ParserRULE_arguments)
 	var _la int
@@ -12265,6 +12489,9 @@ func (s *ArgumentListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ArgumentList() (localctx IArgumentListContext) {
+	this := p
+	_ = this
+
 	localctx = NewArgumentListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 148, Dart2ParserRULE_argumentList)
 
@@ -12427,6 +12654,9 @@ func (s *NamedArgumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) NamedArgument() (localctx INamedArgumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamedArgumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 150, Dart2ParserRULE_namedArgument)
 
@@ -12594,6 +12824,9 @@ func (s *CascadeSectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) CascadeSection() (localctx ICascadeSectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCascadeSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 152, Dart2ParserRULE_cascadeSection)
 	var _la int
@@ -12765,6 +12998,9 @@ func (s *CascadeSelectorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) CascadeSelector() (localctx ICascadeSelectorContext) {
+	this := p
+	_ = this
+
 	localctx = NewCascadeSelectorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 154, Dart2ParserRULE_cascadeSelector)
 
@@ -12896,6 +13132,9 @@ func (s *ArgumentPartContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ArgumentPart() (localctx IArgumentPartContext) {
+	this := p
+	_ = this
+
 	localctx = NewArgumentPartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 156, Dart2ParserRULE_argumentPart)
 	var _la int
@@ -13005,6 +13244,9 @@ func (s *AssignmentOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) AssignmentOperator() (localctx IAssignmentOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignmentOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 158, Dart2ParserRULE_assignmentOperator)
 
@@ -13107,6 +13349,9 @@ func (s *CompoundAssignmentOperatorContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *Dart2Parser) CompoundAssignmentOperator() (localctx ICompoundAssignmentOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewCompoundAssignmentOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 160, Dart2ParserRULE_compoundAssignmentOperator)
 	var _la int
@@ -13235,6 +13480,9 @@ func (s *ConditionalExpressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *Dart2Parser) ConditionalExpression() (localctx IConditionalExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditionalExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 162, Dart2ParserRULE_conditionalExpression)
 	var _la int
@@ -13369,6 +13617,9 @@ func (s *IfNullExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) IfNullExpression() (localctx IIfNullExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewIfNullExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 164, Dart2ParserRULE_ifNullExpression)
 	var _la int
@@ -13498,6 +13749,9 @@ func (s *LogicalOrExpressionContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Dart2Parser) LogicalOrExpression() (localctx ILogicalOrExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewLogicalOrExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 166, Dart2ParserRULE_logicalOrExpression)
 	var _la int
@@ -13627,6 +13881,9 @@ func (s *LogicalAndExpressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Dart2Parser) LogicalAndExpression() (localctx ILogicalAndExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewLogicalAndExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 168, Dart2ParserRULE_logicalAndExpression)
 	var _la int
@@ -13766,6 +14023,9 @@ func (s *EqualityExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) EqualityExpression() (localctx IEqualityExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewEqualityExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 170, Dart2ParserRULE_equalityExpression)
 	var _la int
@@ -13889,6 +14149,9 @@ func (s *EqualityOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) EqualityOperator() (localctx IEqualityOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewEqualityOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 172, Dart2ParserRULE_equalityOperator)
 	var _la int
@@ -14037,6 +14300,9 @@ func (s *RelationalExpressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Dart2Parser) RelationalExpression() (localctx IRelationalExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelationalExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 174, Dart2ParserRULE_relationalExpression)
 
@@ -14174,6 +14440,9 @@ func (s *RelationalOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) RelationalOperator() (localctx IRelationalOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelationalOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 176, Dart2ParserRULE_relationalOperator)
 	var _la int
@@ -14315,6 +14584,9 @@ func (s *BitwiseOrExpressionContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Dart2Parser) BitwiseOrExpression() (localctx IBitwiseOrExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewBitwiseOrExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 178, Dart2ParserRULE_bitwiseOrExpression)
 
@@ -14483,6 +14755,9 @@ func (s *BitwiseXorExpressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Dart2Parser) BitwiseXorExpression() (localctx IBitwiseXorExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewBitwiseXorExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 180, Dart2ParserRULE_bitwiseXorExpression)
 	var _la int
@@ -14643,6 +14918,9 @@ func (s *BitwiseAndExpressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Dart2Parser) BitwiseAndExpression() (localctx IBitwiseAndExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewBitwiseAndExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 182, Dart2ParserRULE_bitwiseAndExpression)
 	var _la int
@@ -14779,6 +15057,9 @@ func (s *BitwiseOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) BitwiseOperator() (localctx IBitwiseOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewBitwiseOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 184, Dart2ParserRULE_bitwiseOperator)
 	var _la int
@@ -14920,6 +15201,9 @@ func (s *ShiftExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ShiftExpression() (localctx IShiftExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewShiftExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 186, Dart2ParserRULE_shiftExpression)
 	var _la int
@@ -15056,6 +15340,9 @@ func (s *ShiftOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ShiftOperator() (localctx IShiftOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewShiftOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 188, Dart2ParserRULE_shiftOperator)
 	var _la int
@@ -15197,6 +15484,9 @@ func (s *AdditiveExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) AdditiveExpression() (localctx IAdditiveExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAdditiveExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 190, Dart2ParserRULE_additiveExpression)
 	var _la int
@@ -15333,6 +15623,9 @@ func (s *AdditiveOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) AdditiveOperator() (localctx IAdditiveOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewAdditiveOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 192, Dart2ParserRULE_additiveOperator)
 	var _la int
@@ -15474,6 +15767,9 @@ func (s *MultiplicativeExpressionContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Dart2Parser) MultiplicativeExpression() (localctx IMultiplicativeExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultiplicativeExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 194, Dart2ParserRULE_multiplicativeExpression)
 	var _la int
@@ -15610,6 +15906,9 @@ func (s *MultiplicativeOperatorContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *Dart2Parser) MultiplicativeOperator() (localctx IMultiplicativeOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultiplicativeOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 196, Dart2ParserRULE_multiplicativeOperator)
 	var _la int
@@ -15785,6 +16084,9 @@ func (s *UnaryExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) UnaryExpression() (localctx IUnaryExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnaryExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 198, Dart2ParserRULE_unaryExpression)
 
@@ -15963,6 +16265,9 @@ func (s *PrefixOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) PrefixOperator() (localctx IPrefixOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewPrefixOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 200, Dart2ParserRULE_prefixOperator)
 
@@ -16072,6 +16377,9 @@ func (s *MinusOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) MinusOperator() (localctx IMinusOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewMinusOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 202, Dart2ParserRULE_minusOperator)
 
@@ -16158,6 +16466,9 @@ func (s *NegationOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) NegationOperator() (localctx INegationOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewNegationOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 204, Dart2ParserRULE_negationOperator)
 
@@ -16244,6 +16555,9 @@ func (s *TildeOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TildeOperator() (localctx ITildeOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewTildeOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 206, Dart2ParserRULE_tildeOperator)
 
@@ -16341,6 +16655,9 @@ func (s *AwaitExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) AwaitExpression() (localctx IAwaitExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAwaitExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 208, Dart2ParserRULE_awaitExpression)
 
@@ -16485,6 +16802,9 @@ func (s *PostfixExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) PostfixExpression() (localctx IPostfixExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewPostfixExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 210, Dart2ParserRULE_postfixExpression)
 
@@ -16617,6 +16937,9 @@ func (s *PostfixOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) PostfixOperator() (localctx IPostfixOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewPostfixOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 212, Dart2ParserRULE_postfixOperator)
 
@@ -16724,6 +17047,9 @@ func (s *SelectorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Selector() (localctx ISelectorContext) {
+	this := p
+	_ = this
+
 	localctx = NewSelectorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 214, Dart2ParserRULE_selector)
 
@@ -16826,6 +17152,9 @@ func (s *IncrementOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) IncrementOperator() (localctx IIncrementOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewIncrementOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 216, Dart2ParserRULE_incrementOperator)
 	var _la int
@@ -16984,6 +17313,9 @@ func (s *AssignableExpressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Dart2Parser) AssignableExpression() (localctx IAssignableExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignableExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 218, Dart2ParserRULE_assignableExpression)
 	var _la int
@@ -17137,6 +17469,9 @@ func (s *UnconditionalAssignableSelectorContext) ExitRule(listener antlr.ParseTr
 }
 
 func (p *Dart2Parser) UnconditionalAssignableSelector() (localctx IUnconditionalAssignableSelectorContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnconditionalAssignableSelectorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 220, Dart2ParserRULE_unconditionalAssignableSelector)
 
@@ -17272,6 +17607,9 @@ func (s *AssignableSelectorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) AssignableSelector() (localctx IAssignableSelectorContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignableSelectorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 222, Dart2ParserRULE_assignableSelector)
 
@@ -17383,6 +17721,9 @@ func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Identifier() (localctx IIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 224, Dart2ParserRULE_identifier)
 
@@ -17493,6 +17834,9 @@ func (s *QualifiedContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Qualified() (localctx IQualifiedContext) {
+	this := p
+	_ = this
+
 	localctx = NewQualifiedContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 226, Dart2ParserRULE_qualified)
 
@@ -17614,6 +17958,9 @@ func (s *TypeTestContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TypeTest() (localctx ITypeTestContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeTestContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 228, Dart2ParserRULE_typeTest)
 
@@ -17704,6 +18051,9 @@ func (s *IsOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) IsOperator() (localctx IIsOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewIsOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 230, Dart2ParserRULE_isOperator)
 	var _la int
@@ -17823,6 +18173,9 @@ func (s *TypeCastContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TypeCast() (localctx ITypeCastContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeCastContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 232, Dart2ParserRULE_typeCast)
 
@@ -17913,6 +18266,9 @@ func (s *AsOperatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) AsOperator() (localctx IAsOperatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewAsOperatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 234, Dart2ParserRULE_asOperator)
 
@@ -18023,6 +18379,9 @@ func (s *StatementsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Statements() (localctx IStatementsContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 236, Dart2ParserRULE_statements)
 
@@ -18157,6 +18516,9 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 238, Dart2ParserRULE_statement)
 
@@ -18432,6 +18794,9 @@ func (s *NonLabledStatmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) NonLabledStatment() (localctx INonLabledStatmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewNonLabledStatmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 240, Dart2ParserRULE_nonLabledStatment)
 
@@ -18647,6 +19012,9 @@ func (s *ExpressionStatementContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Dart2Parser) ExpressionStatement() (localctx IExpressionStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 242, Dart2ParserRULE_expressionStatement)
 	var _la int
@@ -18756,6 +19124,9 @@ func (s *LocalVariableDeclarationContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Dart2Parser) LocalVariableDeclaration() (localctx ILocalVariableDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewLocalVariableDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 244, Dart2ParserRULE_localVariableDeclaration)
 
@@ -18867,6 +19238,9 @@ func (s *LocalFunctionDeclarationContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *Dart2Parser) LocalFunctionDeclaration() (localctx ILocalFunctionDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewLocalFunctionDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 246, Dart2ParserRULE_localFunctionDeclaration)
 
@@ -18991,6 +19365,9 @@ func (s *IfStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) IfStatement() (localctx IIfStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewIfStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 248, Dart2ParserRULE_ifStatement)
 
@@ -19128,6 +19505,9 @@ func (s *ForStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ForStatement() (localctx IForStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewForStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 250, Dart2ParserRULE_forStatement)
 	var _la int
@@ -19293,6 +19673,9 @@ func (s *ForLoopPartsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ForLoopParts() (localctx IForLoopPartsContext) {
+	this := p
+	_ = this
+
 	localctx = NewForLoopPartsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 252, Dart2ParserRULE_forLoopParts)
 	var _la int
@@ -19463,6 +19846,9 @@ func (s *ForInitializerStatementContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *Dart2Parser) ForInitializerStatement() (localctx IForInitializerStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewForInitializerStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 254, Dart2ParserRULE_forInitializerStatement)
 	var _la int
@@ -19595,6 +19981,9 @@ func (s *WhileStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) WhileStatement() (localctx IWhileStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhileStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 256, Dart2ParserRULE_whileStatement)
 
@@ -19718,6 +20107,9 @@ func (s *DoStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) DoStatement() (localctx IDoStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewDoStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 258, Dart2ParserRULE_doStatement)
 
@@ -19872,6 +20264,9 @@ func (s *SwitchStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) SwitchStatement() (localctx ISwitchStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSwitchStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 260, Dart2ParserRULE_switchStatement)
 	var _la int
@@ -20052,6 +20447,9 @@ func (s *SwitchCaseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) SwitchCase() (localctx ISwitchCaseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSwitchCaseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 262, Dart2ParserRULE_switchCase)
 	var _la int
@@ -20199,6 +20597,9 @@ func (s *DefaultCaseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) DefaultCase() (localctx IDefaultCaseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefaultCaseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 264, Dart2ParserRULE_defaultCase)
 	var _la int
@@ -20308,6 +20709,9 @@ func (s *RethrowStatmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) RethrowStatment() (localctx IRethrowStatmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewRethrowStatmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 266, Dart2ParserRULE_rethrowStatment)
 
@@ -20442,6 +20846,9 @@ func (s *TryStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TryStatement() (localctx ITryStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewTryStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 268, Dart2ParserRULE_tryStatement)
 	var _la int
@@ -20604,6 +21011,9 @@ func (s *OnPartContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) OnPart() (localctx IOnPartContext) {
+	this := p
+	_ = this
+
 	localctx = NewOnPartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 270, Dart2ParserRULE_onPart)
 	var _la int
@@ -20754,6 +21164,9 @@ func (s *CatchPartContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) CatchPart() (localctx ICatchPartContext) {
+	this := p
+	_ = this
+
 	localctx = NewCatchPartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 272, Dart2ParserRULE_catchPart)
 	var _la int
@@ -20879,6 +21292,9 @@ func (s *FinallyPartContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) FinallyPart() (localctx IFinallyPartContext) {
+	this := p
+	_ = this
+
 	localctx = NewFinallyPartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 274, Dart2ParserRULE_finallyPart)
 
@@ -20980,6 +21396,9 @@ func (s *ReturnStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ReturnStatement() (localctx IReturnStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewReturnStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 276, Dart2ParserRULE_returnStatement)
 	var _la int
@@ -21093,6 +21512,9 @@ func (s *LabelContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Label() (localctx ILabelContext) {
+	this := p
+	_ = this
+
 	localctx = NewLabelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 278, Dart2ParserRULE_label)
 
@@ -21194,6 +21616,9 @@ func (s *BreakStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) BreakStatement() (localctx IBreakStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewBreakStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 280, Dart2ParserRULE_breakStatement)
 	var _la int
@@ -21307,6 +21732,9 @@ func (s *ContinueStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ContinueStatement() (localctx IContinueStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewContinueStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 282, Dart2ParserRULE_continueStatement)
 	var _la int
@@ -21420,6 +21848,9 @@ func (s *YieldStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) YieldStatement() (localctx IYieldStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewYieldStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 284, Dart2ParserRULE_yieldStatement)
 
@@ -21525,6 +21956,9 @@ func (s *YieldEachStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) YieldEachStatement() (localctx IYieldEachStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewYieldEachStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 286, Dart2ParserRULE_yieldEachStatement)
 
@@ -21630,6 +22064,9 @@ func (s *AssertStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) AssertStatement() (localctx IAssertStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssertStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 288, Dart2ParserRULE_assertStatement)
 
@@ -21744,6 +22181,9 @@ func (s *AssertionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Assertion() (localctx IAssertionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssertionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 290, Dart2ParserRULE_assertion)
 	var _la int
@@ -21999,6 +22439,9 @@ func (s *TopLevelDefinitionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TopLevelDefinition() (localctx ITopLevelDefinitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewTopLevelDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 292, Dart2ParserRULE_topLevelDefinition)
 	var _la int
@@ -22282,6 +22725,9 @@ func (s *GetOrSetContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) GetOrSet() (localctx IGetOrSetContext) {
+	this := p
+	_ = this
+
 	localctx = NewGetOrSetContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 294, Dart2ParserRULE_getOrSet)
 	var _la int
@@ -22466,6 +22912,9 @@ func (s *LibraryDefinitionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) LibraryDefinition() (localctx ILibraryDefinitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 296, Dart2ParserRULE_libraryDefinition)
 	var _la int
@@ -22627,6 +23076,9 @@ func (s *ScriptTagContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ScriptTag() (localctx IScriptTagContext) {
+	this := p
+	_ = this
+
 	localctx = NewScriptTagContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 298, Dart2ParserRULE_scriptTag)
 	var _la int
@@ -22760,6 +23212,9 @@ func (s *LibraryNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) LibraryName() (localctx ILibraryNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 300, Dart2ParserRULE_libraryName)
 
@@ -22879,6 +23334,9 @@ func (s *ImportOrExportContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ImportOrExport() (localctx IImportOrExportContext) {
+	this := p
+	_ = this
+
 	localctx = NewImportOrExportContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 302, Dart2ParserRULE_importOrExport)
 
@@ -23002,6 +23460,9 @@ func (s *DottedIdentifierListContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *Dart2Parser) DottedIdentifierList() (localctx IDottedIdentifierListContext) {
+	this := p
+	_ = this
+
 	localctx = NewDottedIdentifierListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 304, Dart2ParserRULE_dottedIdentifierList)
 	var _la int
@@ -23128,6 +23589,9 @@ func (s *LibraryimportContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Libraryimport() (localctx ILibraryimportContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryimportContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 306, Dart2ParserRULE_libraryimport)
 
@@ -23262,6 +23726,9 @@ func (s *ImportSpecificationContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Dart2Parser) ImportSpecification() (localctx IImportSpecificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewImportSpecificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 308, Dart2ParserRULE_importSpecification)
 	var _la int
@@ -23397,6 +23864,9 @@ func (s *CombinatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Combinator() (localctx ICombinatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewCombinatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 310, Dart2ParserRULE_combinator)
 
@@ -23531,6 +24001,9 @@ func (s *IdentifierListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) IdentifierList() (localctx IIdentifierListContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentifierListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 312, Dart2ParserRULE_identifierList)
 	var _la int
@@ -23680,6 +24153,9 @@ func (s *LibraryExportContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) LibraryExport() (localctx ILibraryExportContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryExportContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 314, Dart2ParserRULE_libraryExport)
 	var _la int
@@ -23814,6 +24290,9 @@ func (s *PartDirectiveContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) PartDirective() (localctx IPartDirectiveContext) {
+	this := p
+	_ = this
+
 	localctx = NewPartDirectiveContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 316, Dart2ParserRULE_partDirective)
 
@@ -23946,6 +24425,9 @@ func (s *PartHeaderContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) PartHeader() (localctx IPartHeaderContext) {
+	this := p
+	_ = this
+
 	localctx = NewPartHeaderContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 318, Dart2ParserRULE_partHeader)
 	var _la int
@@ -24105,6 +24587,9 @@ func (s *PartDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) PartDeclaration() (localctx IPartDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewPartDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 320, Dart2ParserRULE_partDeclaration)
 	var _la int
@@ -24221,6 +24706,9 @@ func (s *UriContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Uri() (localctx IUriContext) {
+	this := p
+	_ = this
+
 	localctx = NewUriContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 322, Dart2ParserRULE_uri)
 
@@ -24341,6 +24829,9 @@ func (s *ConfigurableUriContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ConfigurableUri() (localctx IConfigurableUriContext) {
+	this := p
+	_ = this
+
 	localctx = NewConfigurableUriContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 324, Dart2ParserRULE_configurableUri)
 	var _la int
@@ -24463,6 +24954,9 @@ func (s *ConfigurationUriContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) ConfigurationUri() (localctx IConfigurationUriContext) {
+	this := p
+	_ = this
+
 	localctx = NewConfigurationUriContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 326, Dart2ParserRULE_configurationUri)
 
@@ -24586,6 +25080,9 @@ func (s *UriTestContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) UriTest() (localctx IUriTestContext) {
+	this := p
+	_ = this
+
 	localctx = NewUriTestContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 328, Dart2ParserRULE_uriTest)
 	var _la int
@@ -24709,6 +25206,9 @@ func (s *DtypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) Dtype() (localctx IDtypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewDtypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 330, Dart2ParserRULE_dtype)
 	var _la int
@@ -24818,6 +25318,9 @@ func (s *TypeNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TypeName() (localctx ITypeNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 332, Dart2ParserRULE_typeName)
 
@@ -24931,6 +25434,9 @@ func (s *TypeArgumentsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TypeArguments() (localctx ITypeArgumentsContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeArgumentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 334, Dart2ParserRULE_typeArguments)
 
@@ -25049,6 +25555,9 @@ func (s *TypeListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TypeList() (localctx ITypeListContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 336, Dart2ParserRULE_typeList)
 	var _la int
@@ -25175,6 +25684,9 @@ func (s *TypeAliasContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TypeAlias() (localctx ITypeAliasContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeAliasContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 338, Dart2ParserRULE_typeAlias)
 
@@ -25280,6 +25792,9 @@ func (s *TypeAliasBodyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) TypeAliasBody() (localctx ITypeAliasBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeAliasBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 340, Dart2ParserRULE_typeAliasBody)
 
@@ -25397,6 +25912,9 @@ func (s *FunctionTypeAliasContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) FunctionTypeAlias() (localctx IFunctionTypeAliasContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionTypeAliasContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 342, Dart2ParserRULE_functionTypeAlias)
 	var _la int
@@ -25524,6 +26042,9 @@ func (s *FunctionPrefixContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Dart2Parser) FunctionPrefix() (localctx IFunctionPrefixContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctionPrefixContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 344, Dart2ParserRULE_functionPrefix)
 

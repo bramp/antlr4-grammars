@@ -1,4 +1,4 @@
-// Code generated from FusionTablesSql.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from FusionTablesSql.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package fusiontablessql // FusionTablesSql
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -100,8 +100,8 @@ type FusionTablesSqlListener interface {
 	// EnterKeyword is called when entering the keyword production.
 	EnterKeyword(c *KeywordContext)
 
-	// EnterOperator is called when entering the operator production.
-	EnterOperator(c *OperatorContext)
+	// EnterOperator_ is called when entering the operator_ production.
+	EnterOperator_(c *Operator_Context)
 
 	// EnterLiteral is called when entering the literal production.
 	EnterLiteral(c *LiteralContext)
@@ -229,8 +229,8 @@ type FusionTablesSqlListener interface {
 	// ExitKeyword is called when exiting the keyword production.
 	ExitKeyword(c *KeywordContext)
 
-	// ExitOperator is called when exiting the operator production.
-	ExitOperator(c *OperatorContext)
+	// ExitOperator_ is called when exiting the operator_ production.
+	ExitOperator_(c *Operator_Context)
 
 	// ExitLiteral is called when exiting the literal production.
 	ExitLiteral(c *LiteralContext)

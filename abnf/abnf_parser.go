@@ -1,4 +1,4 @@
-// Code generated from Abnf.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Abnf.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package abnf // Abnf
 import (
@@ -50,9 +50,6 @@ var parserATN = []uint16{
 	8, 2, 2, 80, 81, 5, 8, 5, 2, 81, 82, 7, 9, 2, 2, 82, 21, 3, 2, 2, 2, 11,
 	25, 33, 44, 50, 53, 59, 63, 65, 73,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'='", "'/'", "'*'", "'('", "')'", "'['", "']'",
 }
@@ -63,23 +60,27 @@ var symbolicNames = []string{
 
 var ruleNames = []string{
 	"rulelist", "rule_", "elements", "alternation", "concatenation", "repetition",
-	"repeat", "element", "group", "option",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"repeat_", "element", "group", "option",
 }
 
 type AbnfParser struct {
 	*antlr.BaseParser
 }
 
+// NewAbnfParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *AbnfParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewAbnfParser(input antlr.TokenStream) *AbnfParser {
 	this := new(AbnfParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -118,7 +119,7 @@ const (
 	AbnfParserRULE_alternation   = 3
 	AbnfParserRULE_concatenation = 4
 	AbnfParserRULE_repetition    = 5
-	AbnfParserRULE_repeat        = 6
+	AbnfParserRULE_repeat_       = 6
 	AbnfParserRULE_element       = 7
 	AbnfParserRULE_group         = 8
 	AbnfParserRULE_option        = 9
@@ -210,6 +211,9 @@ func (s *RulelistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *AbnfParser) Rulelist() (localctx IRulelistContext) {
+	this := p
+	_ = this
+
 	localctx = NewRulelistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, AbnfParserRULE_rulelist)
 	var _la int
@@ -326,6 +330,9 @@ func (s *Rule_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *AbnfParser) Rule_() (localctx IRule_Context) {
+	this := p
+	_ = this
+
 	localctx = NewRule_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, AbnfParserRULE_rule_)
 	var _la int
@@ -443,6 +450,9 @@ func (s *ElementsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *AbnfParser) Elements() (localctx IElementsContext) {
+	this := p
+	_ = this
+
 	localctx = NewElementsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, AbnfParserRULE_elements)
 
@@ -553,6 +563,9 @@ func (s *AlternationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *AbnfParser) Alternation() (localctx IAlternationContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlternationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, AbnfParserRULE_alternation)
 	var _la int
@@ -682,6 +695,9 @@ func (s *ConcatenationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *AbnfParser) Concatenation() (localctx IConcatenationContext) {
+	this := p
+	_ = this
+
 	localctx = NewConcatenationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, AbnfParserRULE_concatenation)
 
@@ -775,14 +791,14 @@ func (s *RepetitionContext) Element() IElementContext {
 	return t.(IElementContext)
 }
 
-func (s *RepetitionContext) Repeat() IRepeatContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRepeatContext)(nil)).Elem(), 0)
+func (s *RepetitionContext) Repeat_() IRepeat_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRepeat_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IRepeatContext)
+	return t.(IRepeat_Context)
 }
 
 func (s *RepetitionContext) GetRuleContext() antlr.RuleContext {
@@ -806,6 +822,9 @@ func (s *RepetitionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *AbnfParser) Repetition() (localctx IRepetitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewRepetitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, AbnfParserRULE_repetition)
 	var _la int
@@ -834,7 +853,7 @@ func (p *AbnfParser) Repetition() (localctx IRepetitionContext) {
 	if _la == AbnfParserT__2 || _la == AbnfParserINT {
 		{
 			p.SetState(50)
-			p.Repeat()
+			p.Repeat_()
 		}
 
 	}
@@ -846,75 +865,78 @@ func (p *AbnfParser) Repetition() (localctx IRepetitionContext) {
 	return localctx
 }
 
-// IRepeatContext is an interface to support dynamic dispatch.
-type IRepeatContext interface {
+// IRepeat_Context is an interface to support dynamic dispatch.
+type IRepeat_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsRepeatContext differentiates from other interfaces.
-	IsRepeatContext()
+	// IsRepeat_Context differentiates from other interfaces.
+	IsRepeat_Context()
 }
 
-type RepeatContext struct {
+type Repeat_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyRepeatContext() *RepeatContext {
-	var p = new(RepeatContext)
+func NewEmptyRepeat_Context() *Repeat_Context {
+	var p = new(Repeat_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = AbnfParserRULE_repeat
+	p.RuleIndex = AbnfParserRULE_repeat_
 	return p
 }
 
-func (*RepeatContext) IsRepeatContext() {}
+func (*Repeat_Context) IsRepeat_Context() {}
 
-func NewRepeatContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *RepeatContext {
-	var p = new(RepeatContext)
+func NewRepeat_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Repeat_Context {
+	var p = new(Repeat_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = AbnfParserRULE_repeat
+	p.RuleIndex = AbnfParserRULE_repeat_
 
 	return p
 }
 
-func (s *RepeatContext) GetParser() antlr.Parser { return s.parser }
+func (s *Repeat_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *RepeatContext) AllINT() []antlr.TerminalNode {
+func (s *Repeat_Context) AllINT() []antlr.TerminalNode {
 	return s.GetTokens(AbnfParserINT)
 }
 
-func (s *RepeatContext) INT(i int) antlr.TerminalNode {
+func (s *Repeat_Context) INT(i int) antlr.TerminalNode {
 	return s.GetToken(AbnfParserINT, i)
 }
 
-func (s *RepeatContext) GetRuleContext() antlr.RuleContext {
+func (s *Repeat_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *RepeatContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Repeat_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *RepeatContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Repeat_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(AbnfListener); ok {
-		listenerT.EnterRepeat(s)
+		listenerT.EnterRepeat_(s)
 	}
 }
 
-func (s *RepeatContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Repeat_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(AbnfListener); ok {
-		listenerT.ExitRepeat(s)
+		listenerT.ExitRepeat_(s)
 	}
 }
 
-func (p *AbnfParser) Repeat() (localctx IRepeatContext) {
-	localctx = NewRepeatContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, AbnfParserRULE_repeat)
+func (p *AbnfParser) Repeat_() (localctx IRepeat_Context) {
+	this := p
+	_ = this
+
+	localctx = NewRepeat_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 12, AbnfParserRULE_repeat_)
 	var _la int
 
 	defer func() {
@@ -1072,6 +1094,9 @@ func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *AbnfParser) Element() (localctx IElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, AbnfParserRULE_element)
 
@@ -1213,6 +1238,9 @@ func (s *GroupContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *AbnfParser) Group() (localctx IGroupContext) {
+	this := p
+	_ = this
+
 	localctx = NewGroupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, AbnfParserRULE_group)
 
@@ -1318,6 +1346,9 @@ func (s *OptionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *AbnfParser) Option() (localctx IOptionContext) {
+	this := p
+	_ = this
+
 	localctx = NewOptionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, AbnfParserRULE_option)
 

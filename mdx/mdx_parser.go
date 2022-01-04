@@ -1,4 +1,4 @@
-// Code generated from mdx.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from mdx.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package mdx // mdx
 import (
@@ -120,7 +120,7 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 216, 217, 5, 52, 27, 2, 217, 41, 3, 2, 2, 2, 218, 220, 7, 26,
 	2, 2, 219, 218, 3, 2, 2, 2, 219, 220, 3, 2, 2, 2, 220, 221, 3, 2, 2, 2,
 	221, 222, 7, 41, 2, 2, 222, 223, 5, 44, 23, 2, 223, 43, 3, 2, 2, 2, 224,
-	225, 5, 46, 24, 2, 225, 229, 7, 7, 2, 2, 226, 228, 5, 46, 24, 2, 227, 226,
+	229, 5, 46, 24, 2, 225, 226, 7, 7, 2, 2, 226, 228, 5, 46, 24, 2, 227, 225,
 	3, 2, 2, 2, 228, 231, 3, 2, 2, 2, 229, 227, 3, 2, 2, 2, 229, 230, 3, 2,
 	2, 2, 230, 45, 3, 2, 2, 2, 231, 229, 3, 2, 2, 2, 232, 235, 5, 48, 25, 2,
 	233, 235, 5, 50, 26, 2, 234, 232, 3, 2, 2, 2, 234, 233, 3, 2, 2, 2, 235,
@@ -186,9 +186,6 @@ var parserATN = []uint16{
 	251, 253, 267, 273, 281, 289, 297, 305, 310, 320, 324, 334, 341, 348, 353,
 	356, 360, 368, 380, 384,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'''", "'*'", "':'", "';'", "','", "'||'", "'.'", "'='", "'>='", "'>'",
 	"'{'", "'<='", "'('", "'<'", "'-'", "'<>'", "'+'", "'}'", "')'", "'/'",
@@ -213,29 +210,33 @@ var ruleNames = []string{
 	"set_specification", "member_specification", "axis_specification_list",
 	"member_property_def_list", "member_name", "member_property_definition",
 	"set_name", "compound_id", "axis_specification", "axis_name", "dim_props",
-	"property_list", "property", "cube_specification", "cube_name", "slicer_specification",
+	"property_list", "property_", "cube_specification", "cube_name", "slicer_specification",
 	"cell_props", "cell_property_list", "cell_property", "mandatory_cell_property",
 	"provider_specific_cell_property", "expression", "value_expression", "value_xor_expression",
 	"value_or_expression", "term5", "term4", "term3", "term2", "term", "factor",
-	"function", "value_expression_primary", "value_expression_primary0", "exp_list",
+	"function_", "value_expression_primary", "value_expression_primary0", "exp_list",
 	"case_expression", "when_list", "when_clause", "comp_op", "identifier",
 	"unquoted_identifier", "amp_quoted_identifier", "quoted_identifier", "keyword",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type mdxParser struct {
 	*antlr.BaseParser
 }
 
+// NewmdxParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *mdxParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewmdxParser(input antlr.TokenStream) *mdxParser {
 	this := new(mdxParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -325,7 +326,7 @@ const (
 	mdxParserRULE_axis_name                       = 13
 	mdxParserRULE_dim_props                       = 14
 	mdxParserRULE_property_list                   = 15
-	mdxParserRULE_property                        = 16
+	mdxParserRULE_property_                       = 16
 	mdxParserRULE_cube_specification              = 17
 	mdxParserRULE_cube_name                       = 18
 	mdxParserRULE_slicer_specification            = 19
@@ -344,7 +345,7 @@ const (
 	mdxParserRULE_term2                           = 32
 	mdxParserRULE_term                            = 33
 	mdxParserRULE_factor                          = 34
-	mdxParserRULE_function                        = 35
+	mdxParserRULE_function_                       = 35
 	mdxParserRULE_value_expression_primary        = 36
 	mdxParserRULE_value_expression_primary0       = 37
 	mdxParserRULE_exp_list                        = 38
@@ -432,6 +433,9 @@ func (s *Mdx_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Mdx_statement() (localctx IMdx_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewMdx_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, mdxParserRULE_mdx_statement)
 
@@ -590,6 +594,9 @@ func (s *Select_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Select_statement() (localctx ISelect_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSelect_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, mdxParserRULE_select_statement)
 	var _la int
@@ -761,6 +768,9 @@ func (s *Formula_specificationContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *mdxParser) Formula_specification() (localctx IFormula_specificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewFormula_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, mdxParserRULE_formula_specification)
 	var _la int
@@ -879,6 +889,9 @@ func (s *Single_formula_specificationContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *mdxParser) Single_formula_specification() (localctx ISingle_formula_specificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewSingle_formula_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, mdxParserRULE_single_formula_specification)
 
@@ -1018,6 +1031,9 @@ func (s *Set_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Set_specification() (localctx ISet_specificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewSet_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, mdxParserRULE_set_specification)
 
@@ -1190,6 +1206,9 @@ func (s *Member_specificationContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *mdxParser) Member_specification() (localctx IMember_specificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewMember_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, mdxParserRULE_member_specification)
 	var _la int
@@ -1360,6 +1379,9 @@ func (s *Axis_specification_listContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *mdxParser) Axis_specification_list() (localctx IAxis_specification_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewAxis_specification_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, mdxParserRULE_axis_specification_list)
 	var _la int
@@ -1497,6 +1519,9 @@ func (s *Member_property_def_listContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *mdxParser) Member_property_def_list() (localctx IMember_property_def_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewMember_property_def_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, mdxParserRULE_member_property_def_list)
 	var _la int
@@ -1613,6 +1638,9 @@ func (s *Member_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Member_name() (localctx IMember_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewMember_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, mdxParserRULE_member_name)
 
@@ -1724,6 +1752,9 @@ func (s *Member_property_definitionContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *mdxParser) Member_property_definition() (localctx IMember_property_definitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewMember_property_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, mdxParserRULE_member_property_definition)
 
@@ -1829,6 +1860,9 @@ func (s *Set_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Set_name() (localctx ISet_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewSet_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, mdxParserRULE_set_name)
 
@@ -1947,6 +1981,9 @@ func (s *Compound_idContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Compound_id() (localctx ICompound_idContext) {
+	this := p
+	_ = this
+
 	localctx = NewCompound_idContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, mdxParserRULE_compound_id)
 	var _la int
@@ -2095,6 +2132,9 @@ func (s *Axis_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Axis_specification() (localctx IAxis_specificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewAxis_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, mdxParserRULE_axis_specification)
 	var _la int
@@ -2227,6 +2267,9 @@ func (s *Axis_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Axis_name() (localctx IAxis_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewAxis_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, mdxParserRULE_axis_name)
 
@@ -2332,6 +2375,9 @@ func (s *Dim_propsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Dim_props() (localctx IDim_propsContext) {
+	this := p
+	_ = this
+
 	localctx = NewDim_propsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, mdxParserRULE_dim_props)
 	var _la int
@@ -2414,27 +2460,27 @@ func NewProperty_listContext(parser antlr.Parser, parent antlr.ParserRuleContext
 
 func (s *Property_listContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *Property_listContext) AllProperty() []IPropertyContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IPropertyContext)(nil)).Elem())
-	var tst = make([]IPropertyContext, len(ts))
+func (s *Property_listContext) AllProperty_() []IProperty_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IProperty_Context)(nil)).Elem())
+	var tst = make([]IProperty_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IPropertyContext)
+			tst[i] = t.(IProperty_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *Property_listContext) Property(i int) IPropertyContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPropertyContext)(nil)).Elem(), i)
+func (s *Property_listContext) Property_(i int) IProperty_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IProperty_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IPropertyContext)
+	return t.(IProperty_Context)
 }
 
 func (s *Property_listContext) AllCOMMA() []antlr.TerminalNode {
@@ -2466,6 +2512,9 @@ func (s *Property_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Property_list() (localctx IProperty_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewProperty_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, mdxParserRULE_property_list)
 	var _la int
@@ -2489,7 +2538,7 @@ func (p *mdxParser) Property_list() (localctx IProperty_listContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(200)
-		p.Property()
+		p.Property_()
 	}
 	p.SetState(205)
 	p.GetErrorHandler().Sync(p)
@@ -2502,7 +2551,7 @@ func (p *mdxParser) Property_list() (localctx IProperty_listContext) {
 		}
 		{
 			p.SetState(202)
-			p.Property()
+			p.Property_()
 		}
 
 		p.SetState(207)
@@ -2513,45 +2562,45 @@ func (p *mdxParser) Property_list() (localctx IProperty_listContext) {
 	return localctx
 }
 
-// IPropertyContext is an interface to support dynamic dispatch.
-type IPropertyContext interface {
+// IProperty_Context is an interface to support dynamic dispatch.
+type IProperty_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsPropertyContext differentiates from other interfaces.
-	IsPropertyContext()
+	// IsProperty_Context differentiates from other interfaces.
+	IsProperty_Context()
 }
 
-type PropertyContext struct {
+type Property_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyPropertyContext() *PropertyContext {
-	var p = new(PropertyContext)
+func NewEmptyProperty_Context() *Property_Context {
+	var p = new(Property_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = mdxParserRULE_property
+	p.RuleIndex = mdxParserRULE_property_
 	return p
 }
 
-func (*PropertyContext) IsPropertyContext() {}
+func (*Property_Context) IsProperty_Context() {}
 
-func NewPropertyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *PropertyContext {
-	var p = new(PropertyContext)
+func NewProperty_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Property_Context {
+	var p = new(Property_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = mdxParserRULE_property
+	p.RuleIndex = mdxParserRULE_property_
 
 	return p
 }
 
-func (s *PropertyContext) GetParser() antlr.Parser { return s.parser }
+func (s *Property_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *PropertyContext) Compound_id() ICompound_idContext {
+func (s *Property_Context) Compound_id() ICompound_idContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICompound_idContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -2561,29 +2610,32 @@ func (s *PropertyContext) Compound_id() ICompound_idContext {
 	return t.(ICompound_idContext)
 }
 
-func (s *PropertyContext) GetRuleContext() antlr.RuleContext {
+func (s *Property_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *PropertyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Property_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *PropertyContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Property_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mdxListener); ok {
-		listenerT.EnterProperty(s)
+		listenerT.EnterProperty_(s)
 	}
 }
 
-func (s *PropertyContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Property_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mdxListener); ok {
-		listenerT.ExitProperty(s)
+		listenerT.ExitProperty_(s)
 	}
 }
 
-func (p *mdxParser) Property() (localctx IPropertyContext) {
-	localctx = NewPropertyContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, mdxParserRULE_property)
+func (p *mdxParser) Property_() (localctx IProperty_Context) {
+	this := p
+	_ = this
+
+	localctx = NewProperty_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 32, mdxParserRULE_property_)
 
 	defer func() {
 		p.ExitRule()
@@ -2679,6 +2731,9 @@ func (s *Cube_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Cube_specification() (localctx ICube_specificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewCube_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, mdxParserRULE_cube_specification)
 
@@ -2776,6 +2831,9 @@ func (s *Cube_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Cube_name() (localctx ICube_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewCube_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, mdxParserRULE_cube_name)
 
@@ -2873,6 +2931,9 @@ func (s *Slicer_specificationContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *mdxParser) Slicer_specification() (localctx ISlicer_specificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewSlicer_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, mdxParserRULE_slicer_specification)
 
@@ -2978,6 +3039,9 @@ func (s *Cell_propsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Cell_props() (localctx ICell_propsContext) {
+	this := p
+	_ = this
+
 	localctx = NewCell_propsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, mdxParserRULE_cell_props)
 	var _la int
@@ -3083,8 +3147,12 @@ func (s *Cell_property_listContext) Cell_property(i int) ICell_propertyContext {
 	return t.(ICell_propertyContext)
 }
 
-func (s *Cell_property_listContext) COMMA() antlr.TerminalNode {
-	return s.GetToken(mdxParserCOMMA, 0)
+func (s *Cell_property_listContext) AllCOMMA() []antlr.TerminalNode {
+	return s.GetTokens(mdxParserCOMMA)
+}
+
+func (s *Cell_property_listContext) COMMA(i int) antlr.TerminalNode {
+	return s.GetToken(mdxParserCOMMA, i)
 }
 
 func (s *Cell_property_listContext) GetRuleContext() antlr.RuleContext {
@@ -3108,6 +3176,9 @@ func (s *Cell_property_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Cell_property_list() (localctx ICell_property_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewCell_property_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, mdxParserRULE_cell_property_list)
 	var _la int
@@ -3133,15 +3204,15 @@ func (p *mdxParser) Cell_property_list() (localctx ICell_property_listContext) {
 		p.SetState(222)
 		p.Cell_property()
 	}
-	{
-		p.SetState(223)
-		p.Match(mdxParserCOMMA)
-	}
 	p.SetState(227)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ((_la-25)&-(0x1f+1)) == 0 && ((1<<uint((_la-25)))&((1<<(mdxParserCELL_ORDINAL-25))|(1<<(mdxParserDIMENSION-25))|(1<<(mdxParserFORMATTED_VALUE-25))|(1<<(mdxParserPROPERTIES-25))|(1<<(mdxParserVALUE-25))|(1<<(mdxParserID-25))|(1<<(mdxParserQUOTED_ID-25)))) != 0 {
+	for _la == mdxParserCOMMA {
+		{
+			p.SetState(223)
+			p.Match(mdxParserCOMMA)
+		}
 		{
 			p.SetState(224)
 			p.Cell_property()
@@ -3234,6 +3305,9 @@ func (s *Cell_propertyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Cell_property() (localctx ICell_propertyContext) {
+	this := p
+	_ = this
+
 	localctx = NewCell_propertyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, mdxParserRULE_cell_property)
 
@@ -3349,6 +3423,9 @@ func (s *Mandatory_cell_propertyContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *mdxParser) Mandatory_cell_property() (localctx IMandatory_cell_propertyContext) {
+	this := p
+	_ = this
+
 	localctx = NewMandatory_cell_propertyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, mdxParserRULE_mandatory_cell_property)
 	var _la int
@@ -3454,6 +3531,9 @@ func (s *Provider_specific_cell_propertyContext) ExitRule(listener antlr.ParseTr
 }
 
 func (p *mdxParser) Provider_specific_cell_property() (localctx IProvider_specific_cell_propertyContext) {
+	this := p
+	_ = this
+
 	localctx = NewProvider_specific_cell_propertyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, mdxParserRULE_provider_specific_cell_property)
 
@@ -3572,6 +3652,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, mdxParserRULE_expression)
 	var _la int
@@ -3734,6 +3817,9 @@ func (s *Value_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Value_expression() (localctx IValue_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewValue_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, mdxParserRULE_value_expression)
 	var _la int
@@ -3865,6 +3951,9 @@ func (s *Value_xor_expressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *mdxParser) Value_xor_expression() (localctx IValue_xor_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewValue_xor_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, mdxParserRULE_value_xor_expression)
 
@@ -3970,6 +4059,9 @@ func (s *Value_or_expressionContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *mdxParser) Value_or_expression() (localctx IValue_or_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewValue_or_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, mdxParserRULE_value_or_expression)
 
@@ -4092,6 +4184,9 @@ func (s *Term5Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Term5() (localctx ITerm5Context) {
+	this := p
+	_ = this
+
 	localctx = NewTerm5Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, mdxParserRULE_term5)
 	var _la int
@@ -4222,6 +4317,9 @@ func (s *Term4Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Term4() (localctx ITerm4Context) {
+	this := p
+	_ = this
+
 	localctx = NewTerm4Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, mdxParserRULE_term4)
 
@@ -4375,6 +4473,9 @@ func (s *Term3Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Term3() (localctx ITerm3Context) {
+	this := p
+	_ = this
+
 	localctx = NewTerm3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, mdxParserRULE_term3)
 	var _la int
@@ -4528,6 +4629,9 @@ func (s *Term2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Term2() (localctx ITerm2Context) {
+	this := p
+	_ = this
+
 	localctx = NewTerm2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, mdxParserRULE_term2)
 	var _la int
@@ -4680,6 +4784,9 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Term() (localctx ITermContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, mdxParserRULE_term)
 	var _la int
@@ -4811,6 +4918,9 @@ func (s *FactorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Factor() (localctx IFactorContext) {
+	this := p
+	_ = this
+
 	localctx = NewFactorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, mdxParserRULE_factor)
 
@@ -4870,45 +4980,45 @@ func (p *mdxParser) Factor() (localctx IFactorContext) {
 	return localctx
 }
 
-// IFunctionContext is an interface to support dynamic dispatch.
-type IFunctionContext interface {
+// IFunction_Context is an interface to support dynamic dispatch.
+type IFunction_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsFunctionContext differentiates from other interfaces.
-	IsFunctionContext()
+	// IsFunction_Context differentiates from other interfaces.
+	IsFunction_Context()
 }
 
-type FunctionContext struct {
+type Function_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyFunctionContext() *FunctionContext {
-	var p = new(FunctionContext)
+func NewEmptyFunction_Context() *Function_Context {
+	var p = new(Function_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = mdxParserRULE_function
+	p.RuleIndex = mdxParserRULE_function_
 	return p
 }
 
-func (*FunctionContext) IsFunctionContext() {}
+func (*Function_Context) IsFunction_Context() {}
 
-func NewFunctionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FunctionContext {
-	var p = new(FunctionContext)
+func NewFunction_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Function_Context {
+	var p = new(Function_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = mdxParserRULE_function
+	p.RuleIndex = mdxParserRULE_function_
 
 	return p
 }
 
-func (s *FunctionContext) GetParser() antlr.Parser { return s.parser }
+func (s *Function_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *FunctionContext) Identifier() IIdentifierContext {
+func (s *Function_Context) Identifier() IIdentifierContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdentifierContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -4918,15 +5028,15 @@ func (s *FunctionContext) Identifier() IIdentifierContext {
 	return t.(IIdentifierContext)
 }
 
-func (s *FunctionContext) LPAREN() antlr.TerminalNode {
+func (s *Function_Context) LPAREN() antlr.TerminalNode {
 	return s.GetToken(mdxParserLPAREN, 0)
 }
 
-func (s *FunctionContext) RPAREN() antlr.TerminalNode {
+func (s *Function_Context) RPAREN() antlr.TerminalNode {
 	return s.GetToken(mdxParserRPAREN, 0)
 }
 
-func (s *FunctionContext) Exp_list() IExp_listContext {
+func (s *Function_Context) Exp_list() IExp_listContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExp_listContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -4936,29 +5046,32 @@ func (s *FunctionContext) Exp_list() IExp_listContext {
 	return t.(IExp_listContext)
 }
 
-func (s *FunctionContext) GetRuleContext() antlr.RuleContext {
+func (s *Function_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *FunctionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Function_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *FunctionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Function_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mdxListener); ok {
-		listenerT.EnterFunction(s)
+		listenerT.EnterFunction_(s)
 	}
 }
 
-func (s *FunctionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Function_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mdxListener); ok {
-		listenerT.ExitFunction(s)
+		listenerT.ExitFunction_(s)
 	}
 }
 
-func (p *mdxParser) Function() (localctx IFunctionContext) {
-	localctx = NewFunctionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 70, mdxParserRULE_function)
+func (p *mdxParser) Function_() (localctx IFunction_Context) {
+	this := p
+	_ = this
+
+	localctx = NewFunction_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 70, mdxParserRULE_function_)
 	var _la int
 
 	defer func() {
@@ -5130,27 +5243,27 @@ func (s *Value_expression_primaryContext) Amp_quoted_identifier(i int) IAmp_quot
 	return t.(IAmp_quoted_identifierContext)
 }
 
-func (s *Value_expression_primaryContext) AllFunction() []IFunctionContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IFunctionContext)(nil)).Elem())
-	var tst = make([]IFunctionContext, len(ts))
+func (s *Value_expression_primaryContext) AllFunction_() []IFunction_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IFunction_Context)(nil)).Elem())
+	var tst = make([]IFunction_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IFunctionContext)
+			tst[i] = t.(IFunction_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *Value_expression_primaryContext) Function(i int) IFunctionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionContext)(nil)).Elem(), i)
+func (s *Value_expression_primaryContext) Function_(i int) IFunction_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunction_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IFunctionContext)
+	return t.(IFunction_Context)
 }
 
 func (s *Value_expression_primaryContext) GetRuleContext() antlr.RuleContext {
@@ -5174,6 +5287,9 @@ func (s *Value_expression_primaryContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *mdxParser) Value_expression_primary() (localctx IValue_expression_primaryContext) {
+	this := p
+	_ = this
+
 	localctx = NewValue_expression_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, mdxParserRULE_value_expression_primary)
 	var _la int
@@ -5232,7 +5348,7 @@ func (p *mdxParser) Value_expression_primary() (localctx IValue_expression_prima
 		case 4:
 			{
 				p.SetState(317)
-				p.Function()
+				p.Function_()
 			}
 
 		}
@@ -5283,14 +5399,14 @@ func NewValue_expression_primary0Context(parser antlr.Parser, parent antlr.Parse
 
 func (s *Value_expression_primary0Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *Value_expression_primary0Context) Function() IFunctionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionContext)(nil)).Elem(), 0)
+func (s *Value_expression_primary0Context) Function_() IFunction_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunction_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IFunctionContext)
+	return t.(IFunction_Context)
 }
 
 func (s *Value_expression_primary0Context) LPAREN() antlr.TerminalNode {
@@ -5368,6 +5484,9 @@ func (s *Value_expression_primary0Context) ExitRule(listener antlr.ParseTreeList
 }
 
 func (p *mdxParser) Value_expression_primary0() (localctx IValue_expression_primary0Context) {
+	this := p
+	_ = this
+
 	localctx = NewValue_expression_primary0Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, mdxParserRULE_value_expression_primary0)
 	var _la int
@@ -5395,7 +5514,7 @@ func (p *mdxParser) Value_expression_primary0() (localctx IValue_expression_prim
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(325)
-			p.Function()
+			p.Function_()
 		}
 
 	case 2:
@@ -5558,6 +5677,9 @@ func (s *Exp_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Exp_list() (localctx IExp_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewExp_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, mdxParserRULE_exp_list)
 	var _la int
@@ -5709,6 +5831,9 @@ func (s *Case_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Case_expression() (localctx ICase_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCase_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, mdxParserRULE_case_expression)
 	var _la int
@@ -5861,6 +5986,9 @@ func (s *When_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) When_list() (localctx IWhen_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhen_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, mdxParserRULE_when_list)
 	var _la int
@@ -5994,6 +6122,9 @@ func (s *When_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) When_clause() (localctx IWhen_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhen_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, mdxParserRULE_when_clause)
 
@@ -6117,6 +6248,9 @@ func (s *Comp_opContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Comp_op() (localctx IComp_opContext) {
+	this := p
+	_ = this
+
 	localctx = NewComp_opContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, mdxParserRULE_comp_op)
 	var _la int
@@ -6232,6 +6366,9 @@ func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Identifier() (localctx IIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, mdxParserRULE_identifier)
 
@@ -6348,6 +6485,9 @@ func (s *Unquoted_identifierContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *mdxParser) Unquoted_identifier() (localctx IUnquoted_identifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnquoted_identifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, mdxParserRULE_unquoted_identifier)
 
@@ -6455,6 +6595,9 @@ func (s *Amp_quoted_identifierContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *mdxParser) Amp_quoted_identifier() (localctx IAmp_quoted_identifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewAmp_quoted_identifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, mdxParserRULE_amp_quoted_identifier)
 
@@ -6546,6 +6689,9 @@ func (s *Quoted_identifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Quoted_identifier() (localctx IQuoted_identifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuoted_identifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, mdxParserRULE_quoted_identifier)
 
@@ -6641,6 +6787,9 @@ func (s *KeywordContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mdxParser) Keyword() (localctx IKeywordContext) {
+	this := p
+	_ = this
+
 	localctx = NewKeywordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, mdxParserRULE_keyword)
 	var _la int

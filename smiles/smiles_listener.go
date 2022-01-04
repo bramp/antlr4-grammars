@@ -1,4 +1,4 @@
-// Code generated from smiles.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from smiles.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package smiles // smiles
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -22,17 +22,17 @@ type smilesListener interface {
 	// EnterBracket_atom is called when entering the bracket_atom production.
 	EnterBracket_atom(c *Bracket_atomContext)
 
-	// EnterSymbol is called when entering the symbol production.
-	EnterSymbol(c *SymbolContext)
-
 	// EnterIsotope is called when entering the isotope production.
 	EnterIsotope(c *IsotopeContext)
+
+	// EnterSymbol is called when entering the symbol production.
+	EnterSymbol(c *SymbolContext)
 
 	// EnterElement_symbols is called when entering the element_symbols production.
 	EnterElement_symbols(c *Element_symbolsContext)
 
-	// EnterAromatic_symbols is called when entering the aromatic_symbols production.
-	EnterAromatic_symbols(c *Aromatic_symbolsContext)
+	// EnterAromatic_symbol is called when entering the aromatic_symbol production.
+	EnterAromatic_symbol(c *Aromatic_symbolContext)
 
 	// EnterChiral is called when entering the chiral production.
 	EnterChiral(c *ChiralContext)
@@ -79,17 +79,17 @@ type smilesListener interface {
 	// ExitBracket_atom is called when exiting the bracket_atom production.
 	ExitBracket_atom(c *Bracket_atomContext)
 
-	// ExitSymbol is called when exiting the symbol production.
-	ExitSymbol(c *SymbolContext)
-
 	// ExitIsotope is called when exiting the isotope production.
 	ExitIsotope(c *IsotopeContext)
+
+	// ExitSymbol is called when exiting the symbol production.
+	ExitSymbol(c *SymbolContext)
 
 	// ExitElement_symbols is called when exiting the element_symbols production.
 	ExitElement_symbols(c *Element_symbolsContext)
 
-	// ExitAromatic_symbols is called when exiting the aromatic_symbols production.
-	ExitAromatic_symbols(c *Aromatic_symbolsContext)
+	// ExitAromatic_symbol is called when exiting the aromatic_symbol production.
+	ExitAromatic_symbol(c *Aromatic_symbolContext)
 
 	// ExitChiral is called when exiting the chiral production.
 	ExitChiral(c *ChiralContext)

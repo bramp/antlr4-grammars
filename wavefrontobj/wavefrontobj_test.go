@@ -33,8 +33,36 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{
-	"grammars-v4/wavefront/examples/example1.txt",
-	"grammars-v4/wavefront/examples/example2.txt",
+	"grammars-v4/wavefront/examples/b1_14_bezier_in_u_direction_with_b_spline_in_v_direction_with_basis_matrix.txt",
+	"grammars-v4/wavefront/examples/b1_14_cubic_bezier_surface_with_basis_matrix.txt",
+	"grammars-v4/wavefront/examples/b1_14_hermite_curve_with_basis_matrix.txt",
+	"grammars-v4/wavefront/examples/b1_20_cube.txt",
+	"grammars-v4/wavefront/examples/b1_20_square.txt",
+	"grammars-v4/wavefront/examples/b1_21_cube_with_negative_reference_numbers.txt",
+	"grammars-v4/wavefront/examples/b1_27_taylor_curve.txt",
+	"grammars-v4/wavefront/examples/b1_28_bezier_curve.txt",
+	"grammars-v4/wavefront/examples/b1_29_b_spline_surface.txt",
+	"grammars-v4/wavefront/examples/b1_30_cardinal_surface.txt",
+	"grammars-v4/wavefront/examples/b1_31_rational_b_spline_surface.txt",
+	"grammars-v4/wavefront/examples/b1_32_trimmed_nurb_surface.txt",
+	"grammars-v4/wavefront/examples/b1_33_two_trimming_regions_with_hole.txt",
+	"grammars-v4/wavefront/examples/b1_35_trimming_with_special_curve.txt",
+	"grammars-v4/wavefront/examples/b1_36_trimming_with_special_points.txt",
+	"grammars-v4/wavefront/examples/b1_39_connectivity_between_two_surfaces.txt",
+	"grammars-v4/wavefront/examples/b1_43_cube_with_group_names.txt",
+	"grammars-v4/wavefront/examples/b1_44_two_adjoining_squares_with_smoothing_group.txt",
+	"grammars-v4/wavefront/examples/b1_45_two_adjoining_squares_with_vertex_normals.txt",
+	"grammars-v4/wavefront/examples/b1_46_merging_group.txt",
+	"grammars-v4/wavefront/examples/b1_55_cube_with_materials.txt",
+	"grammars-v4/wavefront/examples/b1_56_cube_casting_shadow.txt",
+	"grammars-v4/wavefront/examples/b1_57_cube_casting_reflection.txt",
+	"grammars-v4/wavefront/examples/b1_58_texture_mapped_square.txt",
+	"grammars-v4/wavefront/examples/b1_59_approximation_technique_for_surface.txt",
+	"grammars-v4/wavefront/examples/b1_60_approximation_technique_for_curve.txt",
+	"grammars-v4/wavefront/examples/b1_76_cardinal_curve.txt",
+	"grammars-v4/wavefront/examples/b1_76_cardinal_curve_old.txt",
+	"grammars-v4/wavefront/examples/b1_77_bezier_patch.txt",
+	"grammars-v4/wavefront/examples/b1_77_bezier_patch_old.txt",
 }
 
 type exampleListener struct {

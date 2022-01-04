@@ -1,4 +1,4 @@
-// Code generated from xdr.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from xdr.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package xdr // xdr
 import (
@@ -107,9 +107,6 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 210, 211, 3, 2, 2, 2, 211, 31, 3, 2, 2, 2, 18, 45, 59, 66,
 	74, 78, 83, 87, 98, 114, 131, 148, 156, 170, 201, 205, 210,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'['", "']'", "'<'", "'>'", "'opaque'", "'string'", "'*'", "'void'",
 	"'unsigned'", "'int'", "'hyper'", "'float'", "'double'", "'quadruple'",
@@ -127,21 +124,25 @@ var ruleNames = []string{
 	"structTypeSpec", "structBody", "unionTypeSpec", "unionBody", "caseSpec",
 	"constantDef", "typeDef", "definition", "xdrSpecification",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type xdrParser struct {
 	*antlr.BaseParser
 }
 
+// NewxdrParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *xdrParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewxdrParser(input antlr.TokenStream) *xdrParser {
 	this := new(xdrParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -297,6 +298,9 @@ func (s *DeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) Declaration() (localctx IDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, xdrParserRULE_declaration)
 	var _la int
@@ -567,6 +571,9 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) Value() (localctx IValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, xdrParserRULE_value)
 
@@ -682,6 +689,9 @@ func (s *ConstantContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) Constant() (localctx IConstantContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstantContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, xdrParserRULE_constant)
 	var _la int
@@ -811,6 +821,9 @@ func (s *TypeSpecifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) TypeSpecifier() (localctx ITypeSpecifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeSpecifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, xdrParserRULE_typeSpecifier)
 	var _la int
@@ -1000,6 +1013,9 @@ func (s *EnumTypeSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) EnumTypeSpec() (localctx IEnumTypeSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumTypeSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, xdrParserRULE_enumTypeSpec)
 
@@ -1122,6 +1138,9 @@ func (s *EnumBodyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) EnumBody() (localctx IEnumBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, xdrParserRULE_enumBody)
 	var _la int
@@ -1264,6 +1283,9 @@ func (s *StructTypeSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) StructTypeSpec() (localctx IStructTypeSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewStructTypeSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, xdrParserRULE_structTypeSpec)
 
@@ -1378,6 +1400,9 @@ func (s *StructBodyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) StructBody() (localctx IStructBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewStructBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, xdrParserRULE_structBody)
 	var _la int
@@ -1508,6 +1533,9 @@ func (s *UnionTypeSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) UnionTypeSpec() (localctx IUnionTypeSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnionTypeSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, xdrParserRULE_unionTypeSpec)
 
@@ -1645,6 +1673,9 @@ func (s *UnionBodyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) UnionBody() (localctx IUnionBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnionBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, xdrParserRULE_unionBody)
 	var _la int
@@ -1827,6 +1858,9 @@ func (s *CaseSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) CaseSpec() (localctx ICaseSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewCaseSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, xdrParserRULE_caseSpec)
 	var _la int
@@ -1968,6 +2002,9 @@ func (s *ConstantDefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) ConstantDef() (localctx IConstantDefContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstantDefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, xdrParserRULE_constantDef)
 
@@ -2115,6 +2152,9 @@ func (s *TypeDefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) TypeDef() (localctx ITypeDefContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeDefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, xdrParserRULE_typeDef)
 
@@ -2296,6 +2336,9 @@ func (s *DefinitionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) Definition() (localctx IDefinitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, xdrParserRULE_definition)
 
@@ -2422,6 +2465,9 @@ func (s *XdrSpecificationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *xdrParser) XdrSpecification() (localctx IXdrSpecificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewXdrSpecificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, xdrParserRULE_xdrSpecification)
 	var _la int

@@ -1,4 +1,4 @@
-// Code generated from Solidity.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Solidity.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package solidity // Solidity
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -50,29 +50,29 @@ func (s *BaseSolidityListener) EnterVersion(ctx *VersionContext) {}
 // ExitVersion is called when production version is exited.
 func (s *BaseSolidityListener) ExitVersion(ctx *VersionContext) {}
 
-// EnterVersionOperator is called when production versionOperator is entered.
-func (s *BaseSolidityListener) EnterVersionOperator(ctx *VersionOperatorContext) {}
-
-// ExitVersionOperator is called when production versionOperator is exited.
-func (s *BaseSolidityListener) ExitVersionOperator(ctx *VersionOperatorContext) {}
-
 // EnterVersionConstraint is called when production versionConstraint is entered.
 func (s *BaseSolidityListener) EnterVersionConstraint(ctx *VersionConstraintContext) {}
 
 // ExitVersionConstraint is called when production versionConstraint is exited.
 func (s *BaseSolidityListener) ExitVersionConstraint(ctx *VersionConstraintContext) {}
 
-// EnterImportDeclaration is called when production importDeclaration is entered.
-func (s *BaseSolidityListener) EnterImportDeclaration(ctx *ImportDeclarationContext) {}
+// EnterVersionOperator is called when production versionOperator is entered.
+func (s *BaseSolidityListener) EnterVersionOperator(ctx *VersionOperatorContext) {}
 
-// ExitImportDeclaration is called when production importDeclaration is exited.
-func (s *BaseSolidityListener) ExitImportDeclaration(ctx *ImportDeclarationContext) {}
+// ExitVersionOperator is called when production versionOperator is exited.
+func (s *BaseSolidityListener) ExitVersionOperator(ctx *VersionOperatorContext) {}
 
 // EnterImportDirective is called when production importDirective is entered.
 func (s *BaseSolidityListener) EnterImportDirective(ctx *ImportDirectiveContext) {}
 
 // ExitImportDirective is called when production importDirective is exited.
 func (s *BaseSolidityListener) ExitImportDirective(ctx *ImportDirectiveContext) {}
+
+// EnterImportDeclaration is called when production importDeclaration is entered.
+func (s *BaseSolidityListener) EnterImportDeclaration(ctx *ImportDeclarationContext) {}
+
+// ExitImportDeclaration is called when production importDeclaration is exited.
+func (s *BaseSolidityListener) ExitImportDeclaration(ctx *ImportDeclarationContext) {}
 
 // EnterContractDefinition is called when production contractDefinition is entered.
 func (s *BaseSolidityListener) EnterContractDefinition(ctx *ContractDefinitionContext) {}
@@ -98,6 +98,12 @@ func (s *BaseSolidityListener) EnterStateVariableDeclaration(ctx *StateVariableD
 // ExitStateVariableDeclaration is called when production stateVariableDeclaration is exited.
 func (s *BaseSolidityListener) ExitStateVariableDeclaration(ctx *StateVariableDeclarationContext) {}
 
+// EnterOverrideSpecifier is called when production overrideSpecifier is entered.
+func (s *BaseSolidityListener) EnterOverrideSpecifier(ctx *OverrideSpecifierContext) {}
+
+// ExitOverrideSpecifier is called when production overrideSpecifier is exited.
+func (s *BaseSolidityListener) ExitOverrideSpecifier(ctx *OverrideSpecifierContext) {}
+
 // EnterUsingForDeclaration is called when production usingForDeclaration is entered.
 func (s *BaseSolidityListener) EnterUsingForDeclaration(ctx *UsingForDeclarationContext) {}
 
@@ -110,29 +116,23 @@ func (s *BaseSolidityListener) EnterStructDefinition(ctx *StructDefinitionContex
 // ExitStructDefinition is called when production structDefinition is exited.
 func (s *BaseSolidityListener) ExitStructDefinition(ctx *StructDefinitionContext) {}
 
-// EnterConstructorDefinition is called when production constructorDefinition is entered.
-func (s *BaseSolidityListener) EnterConstructorDefinition(ctx *ConstructorDefinitionContext) {}
-
-// ExitConstructorDefinition is called when production constructorDefinition is exited.
-func (s *BaseSolidityListener) ExitConstructorDefinition(ctx *ConstructorDefinitionContext) {}
-
 // EnterModifierDefinition is called when production modifierDefinition is entered.
 func (s *BaseSolidityListener) EnterModifierDefinition(ctx *ModifierDefinitionContext) {}
 
 // ExitModifierDefinition is called when production modifierDefinition is exited.
 func (s *BaseSolidityListener) ExitModifierDefinition(ctx *ModifierDefinitionContext) {}
 
-// EnterModifierInvocation is called when production modifierInvocation is entered.
-func (s *BaseSolidityListener) EnterModifierInvocation(ctx *ModifierInvocationContext) {}
-
-// ExitModifierInvocation is called when production modifierInvocation is exited.
-func (s *BaseSolidityListener) ExitModifierInvocation(ctx *ModifierInvocationContext) {}
-
 // EnterFunctionDefinition is called when production functionDefinition is entered.
 func (s *BaseSolidityListener) EnterFunctionDefinition(ctx *FunctionDefinitionContext) {}
 
 // ExitFunctionDefinition is called when production functionDefinition is exited.
 func (s *BaseSolidityListener) ExitFunctionDefinition(ctx *FunctionDefinitionContext) {}
+
+// EnterFunctionDescriptor is called when production functionDescriptor is entered.
+func (s *BaseSolidityListener) EnterFunctionDescriptor(ctx *FunctionDescriptorContext) {}
+
+// ExitFunctionDescriptor is called when production functionDescriptor is exited.
+func (s *BaseSolidityListener) ExitFunctionDescriptor(ctx *FunctionDescriptorContext) {}
 
 // EnterReturnParameters is called when production returnParameters is entered.
 func (s *BaseSolidityListener) EnterReturnParameters(ctx *ReturnParametersContext) {}
@@ -146,23 +146,29 @@ func (s *BaseSolidityListener) EnterModifierList(ctx *ModifierListContext) {}
 // ExitModifierList is called when production modifierList is exited.
 func (s *BaseSolidityListener) ExitModifierList(ctx *ModifierListContext) {}
 
+// EnterModifierInvocation is called when production modifierInvocation is entered.
+func (s *BaseSolidityListener) EnterModifierInvocation(ctx *ModifierInvocationContext) {}
+
+// ExitModifierInvocation is called when production modifierInvocation is exited.
+func (s *BaseSolidityListener) ExitModifierInvocation(ctx *ModifierInvocationContext) {}
+
 // EnterEventDefinition is called when production eventDefinition is entered.
 func (s *BaseSolidityListener) EnterEventDefinition(ctx *EventDefinitionContext) {}
 
 // ExitEventDefinition is called when production eventDefinition is exited.
 func (s *BaseSolidityListener) ExitEventDefinition(ctx *EventDefinitionContext) {}
 
-// EnterEnumValue is called when production enumValue is entered.
-func (s *BaseSolidityListener) EnterEnumValue(ctx *EnumValueContext) {}
-
-// ExitEnumValue is called when production enumValue is exited.
-func (s *BaseSolidityListener) ExitEnumValue(ctx *EnumValueContext) {}
-
 // EnterEnumDefinition is called when production enumDefinition is entered.
 func (s *BaseSolidityListener) EnterEnumDefinition(ctx *EnumDefinitionContext) {}
 
 // ExitEnumDefinition is called when production enumDefinition is exited.
 func (s *BaseSolidityListener) ExitEnumDefinition(ctx *EnumDefinitionContext) {}
+
+// EnterEnumValue is called when production enumValue is entered.
+func (s *BaseSolidityListener) EnterEnumValue(ctx *EnumValueContext) {}
+
+// ExitEnumValue is called when production enumValue is exited.
+func (s *BaseSolidityListener) ExitEnumValue(ctx *EnumValueContext) {}
 
 // EnterParameterList is called when production parameterList is entered.
 func (s *BaseSolidityListener) EnterParameterList(ctx *ParameterListContext) {}
@@ -187,18 +193,6 @@ func (s *BaseSolidityListener) EnterEventParameter(ctx *EventParameterContext) {
 
 // ExitEventParameter is called when production eventParameter is exited.
 func (s *BaseSolidityListener) ExitEventParameter(ctx *EventParameterContext) {}
-
-// EnterFunctionTypeParameterList is called when production functionTypeParameterList is entered.
-func (s *BaseSolidityListener) EnterFunctionTypeParameterList(ctx *FunctionTypeParameterListContext) {}
-
-// ExitFunctionTypeParameterList is called when production functionTypeParameterList is exited.
-func (s *BaseSolidityListener) ExitFunctionTypeParameterList(ctx *FunctionTypeParameterListContext) {}
-
-// EnterFunctionTypeParameter is called when production functionTypeParameter is entered.
-func (s *BaseSolidityListener) EnterFunctionTypeParameter(ctx *FunctionTypeParameterContext) {}
-
-// ExitFunctionTypeParameter is called when production functionTypeParameter is exited.
-func (s *BaseSolidityListener) ExitFunctionTypeParameter(ctx *FunctionTypeParameterContext) {}
 
 // EnterVariableDeclaration is called when production variableDeclaration is entered.
 func (s *BaseSolidityListener) EnterVariableDeclaration(ctx *VariableDeclarationContext) {}
@@ -266,23 +260,35 @@ func (s *BaseSolidityListener) EnterIfStatement(ctx *IfStatementContext) {}
 // ExitIfStatement is called when production ifStatement is exited.
 func (s *BaseSolidityListener) ExitIfStatement(ctx *IfStatementContext) {}
 
+// EnterTryStatement is called when production tryStatement is entered.
+func (s *BaseSolidityListener) EnterTryStatement(ctx *TryStatementContext) {}
+
+// ExitTryStatement is called when production tryStatement is exited.
+func (s *BaseSolidityListener) ExitTryStatement(ctx *TryStatementContext) {}
+
+// EnterCatchClause is called when production catchClause is entered.
+func (s *BaseSolidityListener) EnterCatchClause(ctx *CatchClauseContext) {}
+
+// ExitCatchClause is called when production catchClause is exited.
+func (s *BaseSolidityListener) ExitCatchClause(ctx *CatchClauseContext) {}
+
 // EnterWhileStatement is called when production whileStatement is entered.
 func (s *BaseSolidityListener) EnterWhileStatement(ctx *WhileStatementContext) {}
 
 // ExitWhileStatement is called when production whileStatement is exited.
 func (s *BaseSolidityListener) ExitWhileStatement(ctx *WhileStatementContext) {}
 
-// EnterSimpleStatement is called when production simpleStatement is entered.
-func (s *BaseSolidityListener) EnterSimpleStatement(ctx *SimpleStatementContext) {}
-
-// ExitSimpleStatement is called when production simpleStatement is exited.
-func (s *BaseSolidityListener) ExitSimpleStatement(ctx *SimpleStatementContext) {}
-
 // EnterForStatement is called when production forStatement is entered.
 func (s *BaseSolidityListener) EnterForStatement(ctx *ForStatementContext) {}
 
 // ExitForStatement is called when production forStatement is exited.
 func (s *BaseSolidityListener) ExitForStatement(ctx *ForStatementContext) {}
+
+// EnterSimpleStatement is called when production simpleStatement is entered.
+func (s *BaseSolidityListener) EnterSimpleStatement(ctx *SimpleStatementContext) {}
+
+// ExitSimpleStatement is called when production simpleStatement is exited.
+func (s *BaseSolidityListener) ExitSimpleStatement(ctx *SimpleStatementContext) {}
 
 // EnterInlineAssemblyStatement is called when production inlineAssemblyStatement is entered.
 func (s *BaseSolidityListener) EnterInlineAssemblyStatement(ctx *InlineAssemblyStatementContext) {}
@@ -394,17 +400,29 @@ func (s *BaseSolidityListener) EnterFunctionCall(ctx *FunctionCallContext) {}
 // ExitFunctionCall is called when production functionCall is exited.
 func (s *BaseSolidityListener) ExitFunctionCall(ctx *FunctionCallContext) {}
 
-// EnterAssemblyBlock is called when production assemblyBlock is entered.
-func (s *BaseSolidityListener) EnterAssemblyBlock(ctx *AssemblyBlockContext) {}
+// EnterTupleExpression is called when production tupleExpression is entered.
+func (s *BaseSolidityListener) EnterTupleExpression(ctx *TupleExpressionContext) {}
 
-// ExitAssemblyBlock is called when production assemblyBlock is exited.
-func (s *BaseSolidityListener) ExitAssemblyBlock(ctx *AssemblyBlockContext) {}
+// ExitTupleExpression is called when production tupleExpression is exited.
+func (s *BaseSolidityListener) ExitTupleExpression(ctx *TupleExpressionContext) {}
+
+// EnterTypeNameExpression is called when production typeNameExpression is entered.
+func (s *BaseSolidityListener) EnterTypeNameExpression(ctx *TypeNameExpressionContext) {}
+
+// ExitTypeNameExpression is called when production typeNameExpression is exited.
+func (s *BaseSolidityListener) ExitTypeNameExpression(ctx *TypeNameExpressionContext) {}
 
 // EnterAssemblyItem is called when production assemblyItem is entered.
 func (s *BaseSolidityListener) EnterAssemblyItem(ctx *AssemblyItemContext) {}
 
 // ExitAssemblyItem is called when production assemblyItem is exited.
 func (s *BaseSolidityListener) ExitAssemblyItem(ctx *AssemblyItemContext) {}
+
+// EnterAssemblyBlock is called when production assemblyBlock is entered.
+func (s *BaseSolidityListener) EnterAssemblyBlock(ctx *AssemblyBlockContext) {}
+
+// ExitAssemblyBlock is called when production assemblyBlock is exited.
+func (s *BaseSolidityListener) ExitAssemblyBlock(ctx *AssemblyBlockContext) {}
 
 // EnterAssemblyExpression is called when production assemblyExpression is entered.
 func (s *BaseSolidityListener) EnterAssemblyExpression(ctx *AssemblyExpressionContext) {}
@@ -429,12 +447,6 @@ func (s *BaseSolidityListener) EnterAssemblyAssignment(ctx *AssemblyAssignmentCo
 
 // ExitAssemblyAssignment is called when production assemblyAssignment is exited.
 func (s *BaseSolidityListener) ExitAssemblyAssignment(ctx *AssemblyAssignmentContext) {}
-
-// EnterAssemblyIdentifierOrList is called when production assemblyIdentifierOrList is entered.
-func (s *BaseSolidityListener) EnterAssemblyIdentifierOrList(ctx *AssemblyIdentifierOrListContext) {}
-
-// ExitAssemblyIdentifierOrList is called when production assemblyIdentifierOrList is exited.
-func (s *BaseSolidityListener) ExitAssemblyIdentifierOrList(ctx *AssemblyIdentifierOrListContext) {}
 
 // EnterAssemblyIdentifierList is called when production assemblyIdentifierList is entered.
 func (s *BaseSolidityListener) EnterAssemblyIdentifierList(ctx *AssemblyIdentifierListContext) {}
@@ -498,25 +510,24 @@ func (s *BaseSolidityListener) EnterAssemblyLiteral(ctx *AssemblyLiteralContext)
 // ExitAssemblyLiteral is called when production assemblyLiteral is exited.
 func (s *BaseSolidityListener) ExitAssemblyLiteral(ctx *AssemblyLiteralContext) {}
 
+// EnterAssemblyTypedVariableList is called when production assemblyTypedVariableList is entered.
+func (s *BaseSolidityListener) EnterAssemblyTypedVariableList(ctx *AssemblyTypedVariableListContext) {
+}
+
+// ExitAssemblyTypedVariableList is called when production assemblyTypedVariableList is exited.
+func (s *BaseSolidityListener) ExitAssemblyTypedVariableList(ctx *AssemblyTypedVariableListContext) {}
+
+// EnterAssemblyType is called when production assemblyType is entered.
+func (s *BaseSolidityListener) EnterAssemblyType(ctx *AssemblyTypeContext) {}
+
+// ExitAssemblyType is called when production assemblyType is exited.
+func (s *BaseSolidityListener) ExitAssemblyType(ctx *AssemblyTypeContext) {}
+
 // EnterSubAssembly is called when production subAssembly is entered.
 func (s *BaseSolidityListener) EnterSubAssembly(ctx *SubAssemblyContext) {}
 
 // ExitSubAssembly is called when production subAssembly is exited.
 func (s *BaseSolidityListener) ExitSubAssembly(ctx *SubAssemblyContext) {}
-
-// EnterTupleExpression is called when production tupleExpression is entered.
-func (s *BaseSolidityListener) EnterTupleExpression(ctx *TupleExpressionContext) {}
-
-// ExitTupleExpression is called when production tupleExpression is exited.
-func (s *BaseSolidityListener) ExitTupleExpression(ctx *TupleExpressionContext) {}
-
-// EnterElementaryTypeNameExpression is called when production elementaryTypeNameExpression is entered.
-func (s *BaseSolidityListener) EnterElementaryTypeNameExpression(ctx *ElementaryTypeNameExpressionContext) {
-}
-
-// ExitElementaryTypeNameExpression is called when production elementaryTypeNameExpression is exited.
-func (s *BaseSolidityListener) ExitElementaryTypeNameExpression(ctx *ElementaryTypeNameExpressionContext) {
-}
 
 // EnterNumberLiteral is called when production numberLiteral is entered.
 func (s *BaseSolidityListener) EnterNumberLiteral(ctx *NumberLiteralContext) {}
@@ -529,3 +540,15 @@ func (s *BaseSolidityListener) EnterIdentifier(ctx *IdentifierContext) {}
 
 // ExitIdentifier is called when production identifier is exited.
 func (s *BaseSolidityListener) ExitIdentifier(ctx *IdentifierContext) {}
+
+// EnterHexLiteral is called when production hexLiteral is entered.
+func (s *BaseSolidityListener) EnterHexLiteral(ctx *HexLiteralContext) {}
+
+// ExitHexLiteral is called when production hexLiteral is exited.
+func (s *BaseSolidityListener) ExitHexLiteral(ctx *HexLiteralContext) {}
+
+// EnterStringLiteral is called when production stringLiteral is entered.
+func (s *BaseSolidityListener) EnterStringLiteral(ctx *StringLiteralContext) {}
+
+// ExitStringLiteral is called when production stringLiteral is exited.
+func (s *BaseSolidityListener) ExitStringLiteral(ctx *StringLiteralContext) {}

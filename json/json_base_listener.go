@@ -1,4 +1,4 @@
-// Code generated from JSON.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from JSON.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package json // JSON
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -38,11 +38,11 @@ func (s *BaseJSONListener) EnterPair(ctx *PairContext) {}
 // ExitPair is called when production pair is exited.
 func (s *BaseJSONListener) ExitPair(ctx *PairContext) {}
 
-// EnterArray is called when production array is entered.
-func (s *BaseJSONListener) EnterArray(ctx *ArrayContext) {}
+// EnterArr is called when production arr is entered.
+func (s *BaseJSONListener) EnterArr(ctx *ArrContext) {}
 
-// ExitArray is called when production array is exited.
-func (s *BaseJSONListener) ExitArray(ctx *ArrayContext) {}
+// ExitArr is called when production arr is exited.
+func (s *BaseJSONListener) ExitArr(ctx *ArrContext) {}
 
 // EnterValue is called when production value is entered.
 func (s *BaseJSONListener) EnterValue(ctx *ValueContext) {}

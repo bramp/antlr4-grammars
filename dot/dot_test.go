@@ -35,6 +35,7 @@ const MAX_TOKENS = 1000000
 var examples = []string{
 	"grammars-v4/dot/examples/cluster.dot",
 	"grammars-v4/dot/examples/crazy.dot",
+	"grammars-v4/dot/examples/dg.dot",
 }
 
 type exampleListener struct {

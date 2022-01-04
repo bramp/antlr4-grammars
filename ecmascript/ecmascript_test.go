@@ -33,9 +33,9 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{
-	"grammars-v4/ecmascript/examples/helloworld.js",
-	"grammars-v4/ecmascript/examples/helloworld.txt",
-	"grammars-v4/ecmascript/examples/nn.js",
+	"grammars-v4/javascript/ecmascript/examples/helloworld.js",
+	"grammars-v4/javascript/ecmascript/examples/helloworld.txt",
+	"grammars-v4/javascript/ecmascript/examples/nn.js",
 }
 
 type exampleListener struct {

@@ -1,4 +1,4 @@
-// Code generated from mps.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from mps.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package mps // mps
 import (
@@ -77,9 +77,6 @@ var parserATN = []uint16{
 	2, 2, 147, 148, 7, 12, 2, 2, 148, 41, 3, 2, 2, 2, 17, 47, 50, 57, 60, 66,
 	87, 89, 94, 99, 104, 111, 118, 125, 131, 137,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'NAME'", "'ROWS'", "'COLUMNS'", "'RHS'", "'RANGES'", "'BOUNDS'", "'ENDATA'",
 	"''MARKER''", "''INTORG''", "''INTEND''", "'FREE'",
@@ -97,21 +94,25 @@ var ruleNames = []string{
 	"columndatacard", "rhsdatacard", "rangesdatacard", "boundsdatacard", "intblock",
 	"startmarker", "endmarker",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type mpsParser struct {
 	*antlr.BaseParser
 }
 
+// NewmpsParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *mpsParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewmpsParser(input antlr.TokenStream) *mpsParser {
 	this := new(mpsParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -302,6 +303,9 @@ func (s *ModellContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Modell() (localctx IModellContext) {
+	this := p
+	_ = this
+
 	localctx = NewModellContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, mpsParserRULE_modell)
 	var _la int
@@ -444,6 +448,9 @@ func (s *FirstrowContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Firstrow() (localctx IFirstrowContext) {
+	this := p
+	_ = this
+
 	localctx = NewFirstrowContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, mpsParserRULE_firstrow)
 	var _la int
@@ -581,6 +588,9 @@ func (s *RowsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Rows() (localctx IRowsContext) {
+	this := p
+	_ = this
+
 	localctx = NewRowsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, mpsParserRULE_rows)
 	var _la int
@@ -697,6 +707,9 @@ func (s *ColumnsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Columns() (localctx IColumnsContext) {
+	this := p
+	_ = this
+
 	localctx = NewColumnsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, mpsParserRULE_columns)
 
@@ -802,6 +815,9 @@ func (s *RhsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Rhs() (localctx IRhsContext) {
+	this := p
+	_ = this
+
 	localctx = NewRhsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, mpsParserRULE_rhs)
 
@@ -907,6 +923,9 @@ func (s *RangesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Ranges() (localctx IRangesContext) {
+	this := p
+	_ = this
+
 	localctx = NewRangesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, mpsParserRULE_ranges)
 
@@ -1012,6 +1031,9 @@ func (s *BoundsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Bounds() (localctx IBoundsContext) {
+	this := p
+	_ = this
+
 	localctx = NewBoundsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, mpsParserRULE_bounds)
 
@@ -1107,6 +1129,9 @@ func (s *EndataContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Endata() (localctx IEndataContext) {
+	this := p
+	_ = this
+
 	localctx = NewEndataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, mpsParserRULE_endata)
 
@@ -1202,6 +1227,9 @@ func (s *RowdatacardContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Rowdatacard() (localctx IRowdatacardContext) {
+	this := p
+	_ = this
+
 	localctx = NewRowdatacardContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, mpsParserRULE_rowdatacard)
 
@@ -1339,6 +1367,9 @@ func (s *ColumndatacardsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Columndatacards() (localctx IColumndatacardsContext) {
+	this := p
+	_ = this
+
 	localctx = NewColumndatacardsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, mpsParserRULE_columndatacards)
 	var _la int
@@ -1472,6 +1503,9 @@ func (s *RhsdatacardsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Rhsdatacards() (localctx IRhsdatacardsContext) {
+	this := p
+	_ = this
+
 	localctx = NewRhsdatacardsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, mpsParserRULE_rhsdatacards)
 	var _la int
@@ -1593,6 +1627,9 @@ func (s *RangesdatacardsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Rangesdatacards() (localctx IRangesdatacardsContext) {
+	this := p
+	_ = this
+
 	localctx = NewRangesdatacardsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, mpsParserRULE_rangesdatacards)
 	var _la int
@@ -1714,6 +1751,9 @@ func (s *BoundsdatacardsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Boundsdatacards() (localctx IBoundsdatacardsContext) {
+	this := p
+	_ = this
+
 	localctx = NewBoundsdatacardsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, mpsParserRULE_boundsdatacards)
 	var _la int
@@ -1828,6 +1868,9 @@ func (s *ColumndatacardContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Columndatacard() (localctx IColumndatacardContext) {
+	this := p
+	_ = this
+
 	localctx = NewColumndatacardContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, mpsParserRULE_columndatacard)
 
@@ -1957,6 +2000,9 @@ func (s *RhsdatacardContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Rhsdatacard() (localctx IRhsdatacardContext) {
+	this := p
+	_ = this
+
 	localctx = NewRhsdatacardContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, mpsParserRULE_rhsdatacard)
 	var _la int
@@ -2094,6 +2140,9 @@ func (s *RangesdatacardContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Rangesdatacard() (localctx IRangesdatacardContext) {
+	this := p
+	_ = this
+
 	localctx = NewRangesdatacardContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, mpsParserRULE_rangesdatacard)
 	var _la int
@@ -2231,6 +2280,9 @@ func (s *BoundsdatacardContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Boundsdatacard() (localctx IBoundsdatacardContext) {
+	this := p
+	_ = this
+
 	localctx = NewBoundsdatacardContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, mpsParserRULE_boundsdatacard)
 	var _la int
@@ -2388,6 +2440,9 @@ func (s *IntblockContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Intblock() (localctx IIntblockContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntblockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, mpsParserRULE_intblock)
 
@@ -2512,6 +2567,9 @@ func (s *StartmarkerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Startmarker() (localctx IStartmarkerContext) {
+	this := p
+	_ = this
+
 	localctx = NewStartmarkerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, mpsParserRULE_startmarker)
 
@@ -2619,6 +2677,9 @@ func (s *EndmarkerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mpsParser) Endmarker() (localctx IEndmarkerContext) {
+	this := p
+	_ = this
+
 	localctx = NewEndmarkerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, mpsParserRULE_endmarker)
 

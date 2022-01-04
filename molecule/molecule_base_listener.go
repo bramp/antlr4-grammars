@@ -1,4 +1,4 @@
-// Code generated from molecule.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from molecule.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package molecule // molecule
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -26,11 +26,11 @@ func (s *BasemoleculeListener) EnterMolecule(ctx *MoleculeContext) {}
 // ExitMolecule is called when production molecule is exited.
 func (s *BasemoleculeListener) ExitMolecule(ctx *MoleculeContext) {}
 
-// EnterPart is called when production part is entered.
-func (s *BasemoleculeListener) EnterPart(ctx *PartContext) {}
+// EnterPart_ is called when production part_ is entered.
+func (s *BasemoleculeListener) EnterPart_(ctx *Part_Context) {}
 
-// ExitPart is called when production part is exited.
-func (s *BasemoleculeListener) ExitPart(ctx *PartContext) {}
+// ExitPart_ is called when production part_ is exited.
+func (s *BasemoleculeListener) ExitPart_(ctx *Part_Context) {}
 
 // EnterStructure is called when production structure is entered.
 func (s *BasemoleculeListener) EnterStructure(ctx *StructureContext) {}

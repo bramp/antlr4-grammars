@@ -33,15 +33,15 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{
-	"grammars-v4/rfc822-emailaddress/examples/example1.txt",
-	"grammars-v4/rfc822-emailaddress/examples/example2.txt",
-	"grammars-v4/rfc822-emailaddress/examples/example3.txt",
-	"grammars-v4/rfc822-emailaddress/examples/example4.txt",
-	"grammars-v4/rfc822-emailaddress/examples/example5.txt",
-	"grammars-v4/rfc822-emailaddress/examples/example6.txt",
-	"grammars-v4/rfc822-emailaddress/examples/example7.txt",
-	"grammars-v4/rfc822-emailaddress/examples/example8.txt",
-	"grammars-v4/rfc822-emailaddress/examples/example9.txt",
+	"grammars-v4/rfc822/rfc822-emailaddress/examples/example1.txt",
+	"grammars-v4/rfc822/rfc822-emailaddress/examples/example2.txt",
+	"grammars-v4/rfc822/rfc822-emailaddress/examples/example3.txt",
+	"grammars-v4/rfc822/rfc822-emailaddress/examples/example4.txt",
+	"grammars-v4/rfc822/rfc822-emailaddress/examples/example5.txt",
+	"grammars-v4/rfc822/rfc822-emailaddress/examples/example6.txt",
+	"grammars-v4/rfc822/rfc822-emailaddress/examples/example7.txt",
+	"grammars-v4/rfc822/rfc822-emailaddress/examples/example8.txt",
+	"grammars-v4/rfc822/rfc822-emailaddress/examples/example9.txt",
 }
 
 type exampleListener struct {

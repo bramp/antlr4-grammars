@@ -1,4 +1,4 @@
-// Code generated from tinybasic.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from tinybasic.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package tinybasic // tinybasic
 import (
@@ -15,7 +15,7 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 28, 136,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 27, 134,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 3, 2,
 	7, 2, 26, 10, 2, 12, 2, 14, 2, 29, 11, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
@@ -28,88 +28,87 @@ var parserATN = []uint16{
 	3, 7, 7, 7, 99, 10, 7, 12, 7, 14, 7, 102, 11, 7, 3, 8, 3, 8, 3, 8, 7, 8,
 	107, 10, 8, 12, 8, 14, 8, 110, 11, 8, 3, 9, 3, 9, 5, 9, 114, 10, 9, 3,
 	10, 3, 10, 3, 11, 6, 11, 119, 10, 11, 13, 11, 14, 11, 120, 3, 12, 3, 12,
-	5, 12, 125, 10, 12, 3, 12, 3, 12, 5, 12, 129, 10, 12, 3, 12, 3, 12, 3,
-	12, 5, 12, 134, 10, 12, 3, 12, 2, 2, 13, 2, 4, 6, 8, 10, 12, 14, 16, 18,
-	20, 22, 2, 8, 3, 2, 17, 19, 3, 2, 17, 18, 3, 2, 20, 21, 4, 2, 24, 24, 26,
-	26, 5, 2, 9, 9, 19, 19, 23, 23, 5, 2, 9, 9, 19, 19, 22, 22, 2, 153, 2,
-	27, 3, 2, 2, 2, 4, 37, 3, 2, 2, 2, 6, 68, 3, 2, 2, 2, 8, 72, 3, 2, 2, 2,
-	10, 84, 3, 2, 2, 2, 12, 93, 3, 2, 2, 2, 14, 103, 3, 2, 2, 2, 16, 113, 3,
-	2, 2, 2, 18, 115, 3, 2, 2, 2, 20, 118, 3, 2, 2, 2, 22, 133, 3, 2, 2, 2,
-	24, 26, 5, 4, 3, 2, 25, 24, 3, 2, 2, 2, 26, 29, 3, 2, 2, 2, 27, 25, 3,
-	2, 2, 2, 27, 28, 3, 2, 2, 2, 28, 3, 3, 2, 2, 2, 29, 27, 3, 2, 2, 2, 30,
-	31, 5, 20, 11, 2, 31, 32, 5, 6, 4, 2, 32, 33, 7, 27, 2, 2, 33, 38, 3, 2,
-	2, 2, 34, 35, 5, 6, 4, 2, 35, 36, 7, 27, 2, 2, 36, 38, 3, 2, 2, 2, 37,
-	30, 3, 2, 2, 2, 37, 34, 3, 2, 2, 2, 38, 5, 3, 2, 2, 2, 39, 40, 7, 3, 2,
-	2, 40, 69, 5, 8, 5, 2, 41, 42, 7, 4, 2, 2, 42, 43, 5, 12, 7, 2, 43, 44,
-	5, 22, 12, 2, 44, 46, 5, 12, 7, 2, 45, 47, 7, 5, 2, 2, 46, 45, 3, 2, 2,
-	2, 46, 47, 3, 2, 2, 2, 47, 48, 3, 2, 2, 2, 48, 49, 5, 6, 4, 2, 49, 69,
-	3, 2, 2, 2, 50, 51, 7, 6, 2, 2, 51, 69, 5, 20, 11, 2, 52, 53, 7, 7, 2,
-	2, 53, 69, 5, 10, 6, 2, 54, 56, 7, 8, 2, 2, 55, 54, 3, 2, 2, 2, 55, 56,
-	3, 2, 2, 2, 56, 57, 3, 2, 2, 2, 57, 58, 5, 18, 10, 2, 58, 59, 7, 9, 2,
-	2, 59, 60, 5, 12, 7, 2, 60, 69, 3, 2, 2, 2, 61, 62, 7, 10, 2, 2, 62, 69,
-	5, 12, 7, 2, 63, 69, 7, 11, 2, 2, 64, 69, 7, 12, 2, 2, 65, 69, 7, 13, 2,
-	2, 66, 69, 7, 14, 2, 2, 67, 69, 7, 15, 2, 2, 68, 39, 3, 2, 2, 2, 68, 41,
-	3, 2, 2, 2, 68, 50, 3, 2, 2, 2, 68, 52, 3, 2, 2, 2, 68, 55, 3, 2, 2, 2,
-	68, 61, 3, 2, 2, 2, 68, 63, 3, 2, 2, 2, 68, 64, 3, 2, 2, 2, 68, 65, 3,
-	2, 2, 2, 68, 66, 3, 2, 2, 2, 68, 67, 3, 2, 2, 2, 69, 7, 3, 2, 2, 2, 70,
-	73, 7, 24, 2, 2, 71, 73, 5, 12, 7, 2, 72, 70, 3, 2, 2, 2, 72, 71, 3, 2,
-	2, 2, 73, 81, 3, 2, 2, 2, 74, 77, 7, 16, 2, 2, 75, 78, 7, 24, 2, 2, 76,
-	78, 5, 12, 7, 2, 77, 75, 3, 2, 2, 2, 77, 76, 3, 2, 2, 2, 78, 80, 3, 2,
-	2, 2, 79, 74, 3, 2, 2, 2, 80, 83, 3, 2, 2, 2, 81, 79, 3, 2, 2, 2, 81, 82,
-	3, 2, 2, 2, 82, 9, 3, 2, 2, 2, 83, 81, 3, 2, 2, 2, 84, 89, 5, 18, 10, 2,
-	85, 86, 7, 16, 2, 2, 86, 88, 5, 18, 10, 2, 87, 85, 3, 2, 2, 2, 88, 91,
-	3, 2, 2, 2, 89, 87, 3, 2, 2, 2, 89, 90, 3, 2, 2, 2, 90, 11, 3, 2, 2, 2,
-	91, 89, 3, 2, 2, 2, 92, 94, 9, 2, 2, 2, 93, 92, 3, 2, 2, 2, 93, 94, 3,
-	2, 2, 2, 94, 95, 3, 2, 2, 2, 95, 100, 5, 14, 8, 2, 96, 97, 9, 3, 2, 2,
-	97, 99, 5, 14, 8, 2, 98, 96, 3, 2, 2, 2, 99, 102, 3, 2, 2, 2, 100, 98,
-	3, 2, 2, 2, 100, 101, 3, 2, 2, 2, 101, 13, 3, 2, 2, 2, 102, 100, 3, 2,
-	2, 2, 103, 108, 5, 16, 9, 2, 104, 105, 9, 4, 2, 2, 105, 107, 5, 16, 9,
-	2, 106, 104, 3, 2, 2, 2, 107, 110, 3, 2, 2, 2, 108, 106, 3, 2, 2, 2, 108,
-	109, 3, 2, 2, 2, 109, 15, 3, 2, 2, 2, 110, 108, 3, 2, 2, 2, 111, 114, 5,
-	18, 10, 2, 112, 114, 5, 20, 11, 2, 113, 111, 3, 2, 2, 2, 113, 112, 3, 2,
-	2, 2, 114, 17, 3, 2, 2, 2, 115, 116, 9, 5, 2, 2, 116, 19, 3, 2, 2, 2, 117,
-	119, 7, 25, 2, 2, 118, 117, 3, 2, 2, 2, 119, 120, 3, 2, 2, 2, 120, 118,
-	3, 2, 2, 2, 120, 121, 3, 2, 2, 2, 121, 21, 3, 2, 2, 2, 122, 124, 7, 22,
-	2, 2, 123, 125, 9, 6, 2, 2, 124, 123, 3, 2, 2, 2, 124, 125, 3, 2, 2, 2,
-	125, 134, 3, 2, 2, 2, 126, 128, 7, 23, 2, 2, 127, 129, 9, 7, 2, 2, 128,
-	127, 3, 2, 2, 2, 128, 129, 3, 2, 2, 2, 129, 134, 3, 2, 2, 2, 130, 134,
-	7, 9, 2, 2, 131, 134, 7, 17, 2, 2, 132, 134, 7, 18, 2, 2, 133, 122, 3,
-	2, 2, 2, 133, 126, 3, 2, 2, 2, 133, 130, 3, 2, 2, 2, 133, 131, 3, 2, 2,
-	2, 133, 132, 3, 2, 2, 2, 134, 23, 3, 2, 2, 2, 19, 27, 37, 46, 55, 68, 72,
-	77, 81, 89, 93, 100, 108, 113, 120, 124, 128, 133,
+	5, 12, 125, 10, 12, 3, 12, 3, 12, 5, 12, 129, 10, 12, 3, 12, 5, 12, 132,
+	10, 12, 3, 12, 2, 2, 13, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 2, 7,
+	3, 2, 17, 18, 3, 2, 19, 20, 4, 2, 23, 23, 25, 25, 4, 2, 9, 9, 22, 22, 4,
+	2, 9, 9, 21, 21, 2, 149, 2, 27, 3, 2, 2, 2, 4, 37, 3, 2, 2, 2, 6, 68, 3,
+	2, 2, 2, 8, 72, 3, 2, 2, 2, 10, 84, 3, 2, 2, 2, 12, 93, 3, 2, 2, 2, 14,
+	103, 3, 2, 2, 2, 16, 113, 3, 2, 2, 2, 18, 115, 3, 2, 2, 2, 20, 118, 3,
+	2, 2, 2, 22, 131, 3, 2, 2, 2, 24, 26, 5, 4, 3, 2, 25, 24, 3, 2, 2, 2, 26,
+	29, 3, 2, 2, 2, 27, 25, 3, 2, 2, 2, 27, 28, 3, 2, 2, 2, 28, 3, 3, 2, 2,
+	2, 29, 27, 3, 2, 2, 2, 30, 31, 5, 20, 11, 2, 31, 32, 5, 6, 4, 2, 32, 33,
+	7, 26, 2, 2, 33, 38, 3, 2, 2, 2, 34, 35, 5, 6, 4, 2, 35, 36, 7, 26, 2,
+	2, 36, 38, 3, 2, 2, 2, 37, 30, 3, 2, 2, 2, 37, 34, 3, 2, 2, 2, 38, 5, 3,
+	2, 2, 2, 39, 40, 7, 3, 2, 2, 40, 69, 5, 8, 5, 2, 41, 42, 7, 4, 2, 2, 42,
+	43, 5, 12, 7, 2, 43, 44, 5, 22, 12, 2, 44, 46, 5, 12, 7, 2, 45, 47, 7,
+	5, 2, 2, 46, 45, 3, 2, 2, 2, 46, 47, 3, 2, 2, 2, 47, 48, 3, 2, 2, 2, 48,
+	49, 5, 6, 4, 2, 49, 69, 3, 2, 2, 2, 50, 51, 7, 6, 2, 2, 51, 69, 5, 20,
+	11, 2, 52, 53, 7, 7, 2, 2, 53, 69, 5, 10, 6, 2, 54, 56, 7, 8, 2, 2, 55,
+	54, 3, 2, 2, 2, 55, 56, 3, 2, 2, 2, 56, 57, 3, 2, 2, 2, 57, 58, 5, 18,
+	10, 2, 58, 59, 7, 9, 2, 2, 59, 60, 5, 12, 7, 2, 60, 69, 3, 2, 2, 2, 61,
+	62, 7, 10, 2, 2, 62, 69, 5, 12, 7, 2, 63, 69, 7, 11, 2, 2, 64, 69, 7, 12,
+	2, 2, 65, 69, 7, 13, 2, 2, 66, 69, 7, 14, 2, 2, 67, 69, 7, 15, 2, 2, 68,
+	39, 3, 2, 2, 2, 68, 41, 3, 2, 2, 2, 68, 50, 3, 2, 2, 2, 68, 52, 3, 2, 2,
+	2, 68, 55, 3, 2, 2, 2, 68, 61, 3, 2, 2, 2, 68, 63, 3, 2, 2, 2, 68, 64,
+	3, 2, 2, 2, 68, 65, 3, 2, 2, 2, 68, 66, 3, 2, 2, 2, 68, 67, 3, 2, 2, 2,
+	69, 7, 3, 2, 2, 2, 70, 73, 7, 23, 2, 2, 71, 73, 5, 12, 7, 2, 72, 70, 3,
+	2, 2, 2, 72, 71, 3, 2, 2, 2, 73, 81, 3, 2, 2, 2, 74, 77, 7, 16, 2, 2, 75,
+	78, 7, 23, 2, 2, 76, 78, 5, 12, 7, 2, 77, 75, 3, 2, 2, 2, 77, 76, 3, 2,
+	2, 2, 78, 80, 3, 2, 2, 2, 79, 74, 3, 2, 2, 2, 80, 83, 3, 2, 2, 2, 81, 79,
+	3, 2, 2, 2, 81, 82, 3, 2, 2, 2, 82, 9, 3, 2, 2, 2, 83, 81, 3, 2, 2, 2,
+	84, 89, 5, 18, 10, 2, 85, 86, 7, 16, 2, 2, 86, 88, 5, 18, 10, 2, 87, 85,
+	3, 2, 2, 2, 88, 91, 3, 2, 2, 2, 89, 87, 3, 2, 2, 2, 89, 90, 3, 2, 2, 2,
+	90, 11, 3, 2, 2, 2, 91, 89, 3, 2, 2, 2, 92, 94, 9, 2, 2, 2, 93, 92, 3,
+	2, 2, 2, 93, 94, 3, 2, 2, 2, 94, 95, 3, 2, 2, 2, 95, 100, 5, 14, 8, 2,
+	96, 97, 9, 2, 2, 2, 97, 99, 5, 14, 8, 2, 98, 96, 3, 2, 2, 2, 99, 102, 3,
+	2, 2, 2, 100, 98, 3, 2, 2, 2, 100, 101, 3, 2, 2, 2, 101, 13, 3, 2, 2, 2,
+	102, 100, 3, 2, 2, 2, 103, 108, 5, 16, 9, 2, 104, 105, 9, 3, 2, 2, 105,
+	107, 5, 16, 9, 2, 106, 104, 3, 2, 2, 2, 107, 110, 3, 2, 2, 2, 108, 106,
+	3, 2, 2, 2, 108, 109, 3, 2, 2, 2, 109, 15, 3, 2, 2, 2, 110, 108, 3, 2,
+	2, 2, 111, 114, 5, 18, 10, 2, 112, 114, 5, 20, 11, 2, 113, 111, 3, 2, 2,
+	2, 113, 112, 3, 2, 2, 2, 114, 17, 3, 2, 2, 2, 115, 116, 9, 4, 2, 2, 116,
+	19, 3, 2, 2, 2, 117, 119, 7, 24, 2, 2, 118, 117, 3, 2, 2, 2, 119, 120,
+	3, 2, 2, 2, 120, 118, 3, 2, 2, 2, 120, 121, 3, 2, 2, 2, 121, 21, 3, 2,
+	2, 2, 122, 124, 7, 21, 2, 2, 123, 125, 9, 5, 2, 2, 124, 123, 3, 2, 2, 2,
+	124, 125, 3, 2, 2, 2, 125, 132, 3, 2, 2, 2, 126, 128, 7, 22, 2, 2, 127,
+	129, 9, 6, 2, 2, 128, 127, 3, 2, 2, 2, 128, 129, 3, 2, 2, 2, 129, 132,
+	3, 2, 2, 2, 130, 132, 7, 9, 2, 2, 131, 122, 3, 2, 2, 2, 131, 126, 3, 2,
+	2, 2, 131, 130, 3, 2, 2, 2, 132, 23, 3, 2, 2, 2, 19, 27, 37, 46, 55, 68,
+	72, 77, 81, 89, 93, 100, 108, 113, 120, 124, 128, 131,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'PRINT'", "'IF'", "'THEN'", "'GOTO'", "'INPUT'", "'LET'", "'='", "'GOSUB'",
 	"'RETURN'", "'CLEAR'", "'LIST'", "'RUN'", "'END'", "','", "'+'", "'-'",
-	"'\u03B5'", "'*'", "'/'", "'<'", "'>'",
+	"'*'", "'/'", "'<'", "'>'",
 }
 var symbolicNames = []string{
 	"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-	"", "", "", "", "STRING", "DIGIT", "VAR", "CR", "WS",
+	"", "", "", "STRING", "DIGIT", "VAR", "CR", "WS",
 }
 
 var ruleNames = []string{
 	"program", "line", "statement", "exprlist", "varlist", "expression", "term",
 	"factor", "vara", "number", "relop",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type tinybasicParser struct {
 	*antlr.BaseParser
 }
 
+// NewtinybasicParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *tinybasicParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewtinybasicParser(input antlr.TokenStream) *tinybasicParser {
 	this := new(tinybasicParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -144,12 +143,11 @@ const (
 	tinybasicParserT__17  = 18
 	tinybasicParserT__18  = 19
 	tinybasicParserT__19  = 20
-	tinybasicParserT__20  = 21
-	tinybasicParserSTRING = 22
-	tinybasicParserDIGIT  = 23
-	tinybasicParserVAR    = 24
-	tinybasicParserCR     = 25
-	tinybasicParserWS     = 26
+	tinybasicParserSTRING = 21
+	tinybasicParserDIGIT  = 22
+	tinybasicParserVAR    = 23
+	tinybasicParserCR     = 24
+	tinybasicParserWS     = 25
 )
 
 // tinybasicParser rules.
@@ -249,6 +247,9 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinybasicParser) Program() (localctx IProgramContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, tinybasicParserRULE_program)
 	var _la int
@@ -371,6 +372,9 @@ func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinybasicParser) Line() (localctx ILineContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, tinybasicParserRULE_line)
 
@@ -569,6 +573,9 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinybasicParser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, tinybasicParserRULE_statement)
 	var _la int
@@ -829,6 +836,9 @@ func (s *ExprlistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinybasicParser) Exprlist() (localctx IExprlistContext) {
+	this := p
+	_ = this
+
 	localctx = NewExprlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, tinybasicParserRULE_exprlist)
 	var _la int
@@ -982,6 +992,9 @@ func (s *VarlistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinybasicParser) Varlist() (localctx IVarlistContext) {
+	this := p
+	_ = this
+
 	localctx = NewVarlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, tinybasicParserRULE_varlist)
 	var _la int
@@ -1111,6 +1124,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinybasicParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, tinybasicParserRULE_expression)
 	var _la int
@@ -1131,19 +1147,17 @@ func (p *tinybasicParser) Expression() (localctx IExpressionContext) {
 		}
 	}()
 
-	var _alt int
-
 	p.EnterOuterAlt(localctx, 1)
 	p.SetState(91)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tinybasicParserT__14)|(1<<tinybasicParserT__15)|(1<<tinybasicParserT__16))) != 0 {
+	if _la == tinybasicParserT__14 || _la == tinybasicParserT__15 {
 		{
 			p.SetState(90)
 			_la = p.GetTokenStream().LA(1)
 
-			if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tinybasicParserT__14)|(1<<tinybasicParserT__15)|(1<<tinybasicParserT__16))) != 0) {
+			if !(_la == tinybasicParserT__14 || _la == tinybasicParserT__15) {
 				p.GetErrorHandler().RecoverInline(p)
 			} else {
 				p.GetErrorHandler().ReportMatch(p)
@@ -1158,30 +1172,28 @@ func (p *tinybasicParser) Expression() (localctx IExpressionContext) {
 	}
 	p.SetState(98)
 	p.GetErrorHandler().Sync(p)
-	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 10, p.GetParserRuleContext())
+	_la = p.GetTokenStream().LA(1)
 
-	for _alt != 2 && _alt != antlr.ATNInvalidAltNumber {
-		if _alt == 1 {
-			{
-				p.SetState(94)
-				_la = p.GetTokenStream().LA(1)
+	for _la == tinybasicParserT__14 || _la == tinybasicParserT__15 {
+		{
+			p.SetState(94)
+			_la = p.GetTokenStream().LA(1)
 
-				if !(_la == tinybasicParserT__14 || _la == tinybasicParserT__15) {
-					p.GetErrorHandler().RecoverInline(p)
-				} else {
-					p.GetErrorHandler().ReportMatch(p)
-					p.Consume()
-				}
+			if !(_la == tinybasicParserT__14 || _la == tinybasicParserT__15) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
 			}
-			{
-				p.SetState(95)
-				p.Term()
-			}
-
 		}
+		{
+			p.SetState(95)
+			p.Term()
+		}
+
 		p.SetState(100)
 		p.GetErrorHandler().Sync(p)
-		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 10, p.GetParserRuleContext())
+		_la = p.GetTokenStream().LA(1)
 	}
 
 	return localctx
@@ -1269,6 +1281,9 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinybasicParser) Term() (localctx ITermContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, tinybasicParserRULE_term)
 	var _la int
@@ -1298,12 +1313,12 @@ func (p *tinybasicParser) Term() (localctx ITermContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == tinybasicParserT__17 || _la == tinybasicParserT__18 {
+	for _la == tinybasicParserT__16 || _la == tinybasicParserT__17 {
 		{
 			p.SetState(102)
 			_la = p.GetTokenStream().LA(1)
 
-			if !(_la == tinybasicParserT__17 || _la == tinybasicParserT__18) {
+			if !(_la == tinybasicParserT__16 || _la == tinybasicParserT__17) {
 				p.GetErrorHandler().RecoverInline(p)
 			} else {
 				p.GetErrorHandler().ReportMatch(p)
@@ -1402,6 +1417,9 @@ func (s *FactorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinybasicParser) Factor() (localctx IFactorContext) {
+	this := p
+	_ = this
+
 	localctx = NewFactorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, tinybasicParserRULE_factor)
 
@@ -1513,6 +1531,9 @@ func (s *VaraContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinybasicParser) Vara() (localctx IVaraContext) {
+	this := p
+	_ = this
+
 	localctx = NewVaraContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, tinybasicParserRULE_vara)
 	var _la int
@@ -1616,6 +1637,9 @@ func (s *NumberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinybasicParser) Number() (localctx INumberContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, tinybasicParserRULE_number)
 	var _la int
@@ -1713,6 +1737,9 @@ func (s *RelopContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinybasicParser) Relop() (localctx IRelopContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelopContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, tinybasicParserRULE_relop)
 	var _la int
@@ -1733,25 +1760,26 @@ func (p *tinybasicParser) Relop() (localctx IRelopContext) {
 		}
 	}()
 
-	p.SetState(131)
+	p.SetState(129)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case tinybasicParserT__19:
+	case tinybasicParserT__18:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(120)
-			p.Match(tinybasicParserT__19)
+			p.Match(tinybasicParserT__18)
 		}
 		p.SetState(122)
 		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
 
-		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 14, p.GetParserRuleContext()) == 1 {
+		if _la == tinybasicParserT__6 || _la == tinybasicParserT__19 {
 			{
 				p.SetState(121)
 				_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tinybasicParserT__6)|(1<<tinybasicParserT__16)|(1<<tinybasicParserT__20))) != 0) {
+				if !(_la == tinybasicParserT__6 || _la == tinybasicParserT__19) {
 					p.GetErrorHandler().RecoverInline(p)
 				} else {
 					p.GetErrorHandler().ReportMatch(p)
@@ -1761,21 +1789,22 @@ func (p *tinybasicParser) Relop() (localctx IRelopContext) {
 
 		}
 
-	case tinybasicParserT__20:
+	case tinybasicParserT__19:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(124)
-			p.Match(tinybasicParserT__20)
+			p.Match(tinybasicParserT__19)
 		}
 		p.SetState(126)
 		p.GetErrorHandler().Sync(p)
+		_la = p.GetTokenStream().LA(1)
 
-		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 15, p.GetParserRuleContext()) == 1 {
+		if _la == tinybasicParserT__6 || _la == tinybasicParserT__18 {
 			{
 				p.SetState(125)
 				_la = p.GetTokenStream().LA(1)
 
-				if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<tinybasicParserT__6)|(1<<tinybasicParserT__16)|(1<<tinybasicParserT__19))) != 0) {
+				if !(_la == tinybasicParserT__6 || _la == tinybasicParserT__18) {
 					p.GetErrorHandler().RecoverInline(p)
 				} else {
 					p.GetErrorHandler().ReportMatch(p)
@@ -1790,20 +1819,6 @@ func (p *tinybasicParser) Relop() (localctx IRelopContext) {
 		{
 			p.SetState(128)
 			p.Match(tinybasicParserT__6)
-		}
-
-	case tinybasicParserT__14:
-		p.EnterOuterAlt(localctx, 4)
-		{
-			p.SetState(129)
-			p.Match(tinybasicParserT__14)
-		}
-
-	case tinybasicParserT__15:
-		p.EnterOuterAlt(localctx, 5)
-		{
-			p.SetState(130)
-			p.Match(tinybasicParserT__15)
 		}
 
 	default:

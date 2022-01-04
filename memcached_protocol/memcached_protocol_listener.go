@@ -1,4 +1,4 @@
-// Code generated from memcached_protocol.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from memcached_protocol.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package memcached_protocol // memcached_protocol
 import "github.com/antlr/antlr4/runtime/Go/antlr"

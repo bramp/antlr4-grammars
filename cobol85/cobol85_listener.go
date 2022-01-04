@@ -1,4 +1,4 @@
-// Code generated from Cobol85.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Cobol85.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package cobol85 // Cobol85
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -1636,8 +1636,8 @@ type Cobol85Listener interface {
 	// EnterLength is called when entering the length production.
 	EnterLength(c *LengthContext)
 
-	// EnterSubscript is called when entering the subscript production.
-	EnterSubscript(c *SubscriptContext)
+	// EnterSubscript_ is called when entering the subscript_ production.
+	EnterSubscript_(c *Subscript_Context)
 
 	// EnterArgument is called when entering the argument production.
 	EnterArgument(c *ArgumentContext)
@@ -3421,8 +3421,8 @@ type Cobol85Listener interface {
 	// ExitLength is called when exiting the length production.
 	ExitLength(c *LengthContext)
 
-	// ExitSubscript is called when exiting the subscript production.
-	ExitSubscript(c *SubscriptContext)
+	// ExitSubscript_ is called when exiting the subscript_ production.
+	ExitSubscript_(c *Subscript_Context)
 
 	// ExitArgument is called when exiting the argument production.
 	ExitArgument(c *ArgumentContext)

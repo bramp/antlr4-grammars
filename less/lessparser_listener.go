@@ -1,4 +1,4 @@
-// Code generated from LessParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from LessParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package less // LessParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -28,8 +28,8 @@ type LessParserListener interface {
 	// EnterExpression is called when entering the expression production.
 	EnterExpression(c *ExpressionContext)
 
-	// EnterFunction is called when entering the function production.
-	EnterFunction(c *FunctionContext)
+	// EnterFunction_ is called when entering the function_ production.
+	EnterFunction_(c *Function_Context)
 
 	// EnterConditions is called when entering the conditions production.
 	EnterConditions(c *ConditionsContext)
@@ -106,8 +106,8 @@ type LessParserListener interface {
 	// EnterIdentifierVariableName is called when entering the identifierVariableName production.
 	EnterIdentifierVariableName(c *IdentifierVariableNameContext)
 
-	// EnterProperty is called when entering the property production.
-	EnterProperty(c *PropertyContext)
+	// EnterProperty_ is called when entering the property_ production.
+	EnterProperty_(c *Property_Context)
 
 	// EnterValues is called when entering the values production.
 	EnterValues(c *ValuesContext)
@@ -139,8 +139,8 @@ type LessParserListener interface {
 	// ExitExpression is called when exiting the expression production.
 	ExitExpression(c *ExpressionContext)
 
-	// ExitFunction is called when exiting the function production.
-	ExitFunction(c *FunctionContext)
+	// ExitFunction_ is called when exiting the function_ production.
+	ExitFunction_(c *Function_Context)
 
 	// ExitConditions is called when exiting the conditions production.
 	ExitConditions(c *ConditionsContext)
@@ -217,8 +217,8 @@ type LessParserListener interface {
 	// ExitIdentifierVariableName is called when exiting the identifierVariableName production.
 	ExitIdentifierVariableName(c *IdentifierVariableNameContext)
 
-	// ExitProperty is called when exiting the property production.
-	ExitProperty(c *PropertyContext)
+	// ExitProperty_ is called when exiting the property_ production.
+	ExitProperty_(c *Property_Context)
 
 	// ExitValues is called when exiting the values production.
 	ExitValues(c *ValuesContext)

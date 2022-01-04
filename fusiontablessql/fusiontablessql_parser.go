@@ -1,4 +1,4 @@
-// Code generated from FusionTablesSql.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from FusionTablesSql.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package fusiontablessql // FusionTablesSql
 import (
@@ -255,9 +255,6 @@ var parserATN = []uint16{
 	243, 248, 257, 260, 269, 272, 278, 280, 290, 293, 311, 316, 331, 350, 356,
 	366, 373, 383, 394, 396, 406, 487, 493,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "';'", "'*'", "','", "'.'", "", "", "", "", "", "", "", "", "", "",
 	"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
@@ -288,25 +285,29 @@ var ruleNames = []string{
 	"ordering_term", "join_clause", "result_column", "qualified_column_name",
 	"aggregate_exp", "expr", "column_name_beginning_expr", "column_name_in_dml",
 	"and_or_or", "geometry", "circle", "rectangle", "coordinate", "keyword",
-	"operator", "literal", "error_message", "identifier", "column_alias", "table_name",
-	"column_name", "new_table_name", "view_name", "table_alias", "numeric_literal",
-	"string_literal",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"operator_", "literal", "error_message", "identifier", "column_alias",
+	"table_name", "column_name", "new_table_name", "view_name", "table_alias",
+	"numeric_literal", "string_literal",
 }
 
 type FusionTablesSqlParser struct {
 	*antlr.BaseParser
 }
 
+// NewFusionTablesSqlParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *FusionTablesSqlParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewFusionTablesSqlParser(input antlr.TokenStream) *FusionTablesSqlParser {
 	this := new(FusionTablesSqlParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -434,7 +435,7 @@ const (
 	FusionTablesSqlParserRULE_rectangle                   = 28
 	FusionTablesSqlParserRULE_coordinate                  = 29
 	FusionTablesSqlParserRULE_keyword                     = 30
-	FusionTablesSqlParserRULE_operator                    = 31
+	FusionTablesSqlParserRULE_operator_                   = 31
 	FusionTablesSqlParserRULE_literal                     = 32
 	FusionTablesSqlParserRULE_error_message               = 33
 	FusionTablesSqlParserRULE_identifier                  = 34
@@ -530,6 +531,9 @@ func (s *FusionTablesSqlContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) FusionTablesSql() (localctx IFusionTablesSqlContext) {
+	this := p
+	_ = this
+
 	localctx = NewFusionTablesSqlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, FusionTablesSqlParserRULE_fusionTablesSql)
 	var _la int
@@ -728,6 +732,9 @@ func (s *Sql_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Sql_stmt() (localctx ISql_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewSql_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, FusionTablesSqlParserRULE_sql_stmt)
 
@@ -889,6 +896,9 @@ func (s *Table_name_in_ddlContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Table_name_in_ddl() (localctx ITable_name_in_ddlContext) {
+	this := p
+	_ = this
+
 	localctx = NewTable_name_in_ddlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, FusionTablesSqlParserRULE_table_name_in_ddl)
 
@@ -986,6 +996,9 @@ func (s *Table_name_in_dmlContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Table_name_in_dml() (localctx ITable_name_in_dmlContext) {
+	this := p
+	_ = this
+
 	localctx = NewTable_name_in_dmlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, FusionTablesSqlParserRULE_table_name_in_dml)
 
@@ -1113,6 +1126,9 @@ func (s *Create_table_as_select_stmtContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *FusionTablesSqlParser) Create_table_as_select_stmt() (localctx ICreate_table_as_select_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewCreate_table_as_select_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, FusionTablesSqlParserRULE_create_table_as_select_stmt)
 
@@ -1242,6 +1258,9 @@ func (s *Describe_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Describe_stmt() (localctx IDescribe_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewDescribe_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, FusionTablesSqlParserRULE_describe_stmt)
 
@@ -1341,6 +1360,9 @@ func (s *Show_tables_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Show_tables_stmt() (localctx IShow_tables_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewShow_tables_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, FusionTablesSqlParserRULE_show_tables_stmt)
 
@@ -1468,6 +1490,9 @@ func (s *Alter_table_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Alter_table_stmt() (localctx IAlter_table_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlter_table_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, FusionTablesSqlParserRULE_alter_table_stmt)
 
@@ -1684,6 +1709,9 @@ func (s *Create_view_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Create_view_stmt() (localctx ICreate_view_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewCreate_view_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, FusionTablesSqlParserRULE_create_view_stmt)
 	var _la int
@@ -1876,6 +1904,9 @@ func (s *Drop_table_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Drop_table_stmt() (localctx IDrop_table_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewDrop_table_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, FusionTablesSqlParserRULE_drop_table_stmt)
 
@@ -2055,6 +2086,9 @@ func (s *Insert_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Insert_stmt() (localctx IInsert_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewInsert_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, FusionTablesSqlParserRULE_insert_stmt)
 	var _la int
@@ -2272,6 +2306,9 @@ func (s *Update_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Update_stmt() (localctx IUpdate_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewUpdate_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, FusionTablesSqlParserRULE_update_stmt)
 	var _la int
@@ -2422,6 +2459,9 @@ func (s *Column_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Column_assignment() (localctx IColumn_assignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewColumn_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, FusionTablesSqlParserRULE_column_assignment)
 
@@ -2563,6 +2603,9 @@ func (s *Delete_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Delete_stmt() (localctx IDelete_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelete_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, FusionTablesSqlParserRULE_delete_stmt)
 	var _la int
@@ -2706,6 +2749,9 @@ func (s *Eq_comparisonContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Eq_comparison() (localctx IEq_comparisonContext) {
+	this := p
+	_ = this
+
 	localctx = NewEq_comparisonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, FusionTablesSqlParserRULE_eq_comparison)
 
@@ -2825,6 +2871,9 @@ func (s *Table_name_with_aliasContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *FusionTablesSqlParser) Table_name_with_alias() (localctx ITable_name_with_aliasContext) {
+	this := p
+	_ = this
+
 	localctx = NewTable_name_with_aliasContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, FusionTablesSqlParserRULE_table_name_with_alias)
 	var _la int
@@ -3099,6 +3148,9 @@ func (s *Select_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Select_stmt() (localctx ISelect_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewSelect_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, FusionTablesSqlParserRULE_select_stmt)
 	var _la int
@@ -3390,6 +3442,9 @@ func (s *Ordering_termContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Ordering_term() (localctx IOrdering_termContext) {
+	this := p
+	_ = this
+
 	localctx = NewOrdering_termContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, FusionTablesSqlParserRULE_ordering_term)
 	var _la int
@@ -3584,6 +3639,9 @@ func (s *Join_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Join_clause() (localctx IJoin_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewJoin_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, FusionTablesSqlParserRULE_join_clause)
 
@@ -3729,6 +3787,9 @@ func (s *Result_columnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Result_column() (localctx IResult_columnContext) {
+	this := p
+	_ = this
+
 	localctx = NewResult_columnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, FusionTablesSqlParserRULE_result_column)
 
@@ -3871,6 +3932,9 @@ func (s *Qualified_column_nameContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *FusionTablesSqlParser) Qualified_column_name() (localctx IQualified_column_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewQualified_column_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, FusionTablesSqlParserRULE_qualified_column_name)
 
@@ -4010,6 +4074,9 @@ func (s *Aggregate_expContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Aggregate_exp() (localctx IAggregate_expContext) {
+	this := p
+	_ = this
+
 	localctx = NewAggregate_expContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, FusionTablesSqlParserRULE_aggregate_exp)
 	var _la int
@@ -4129,14 +4196,14 @@ func (s *ExprContext) Literal(i int) ILiteralContext {
 	return t.(ILiteralContext)
 }
 
-func (s *ExprContext) Operator() IOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperatorContext)(nil)).Elem(), 0)
+func (s *ExprContext) Operator_() IOperator_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperator_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IOperatorContext)
+	return t.(IOperator_Context)
 }
 
 func (s *ExprContext) And_or_or() IAnd_or_orContext {
@@ -4299,6 +4366,9 @@ func (s *ExprContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Expr() (localctx IExprContext) {
+	this := p
+	_ = this
+
 	localctx = NewExprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, FusionTablesSqlParserRULE_expr)
 	var _la int
@@ -4331,7 +4401,7 @@ func (p *FusionTablesSqlParser) Expr() (localctx IExprContext) {
 
 		{
 			p.SetState(324)
-			p.Operator()
+			p.Operator_()
 		}
 
 		{
@@ -4674,6 +4744,9 @@ func (s *Column_name_beginning_exprContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *FusionTablesSqlParser) Column_name_beginning_expr() (localctx IColumn_name_beginning_exprContext) {
+	this := p
+	_ = this
+
 	localctx = NewColumn_name_beginning_exprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, FusionTablesSqlParserRULE_column_name_beginning_expr)
 
@@ -4771,6 +4844,9 @@ func (s *Column_name_in_dmlContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Column_name_in_dml() (localctx IColumn_name_in_dmlContext) {
+	this := p
+	_ = this
+
 	localctx = NewColumn_name_in_dmlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, FusionTablesSqlParserRULE_column_name_in_dml)
 
@@ -4866,6 +4942,9 @@ func (s *And_or_orContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) And_or_or() (localctx IAnd_or_orContext) {
+	this := p
+	_ = this
+
 	localctx = NewAnd_or_orContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, FusionTablesSqlParserRULE_and_or_or)
 	var _la int
@@ -4981,6 +5060,9 @@ func (s *GeometryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Geometry() (localctx IGeometryContext) {
+	this := p
+	_ = this
+
 	localctx = NewGeometryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, FusionTablesSqlParserRULE_geometry)
 
@@ -5116,6 +5198,9 @@ func (s *CircleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Circle() (localctx ICircleContext) {
+	this := p
+	_ = this
+
 	localctx = NewCircleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, FusionTablesSqlParserRULE_circle)
 
@@ -5258,6 +5343,9 @@ func (s *RectangleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Rectangle() (localctx IRectangleContext) {
+	this := p
+	_ = this
+
 	localctx = NewRectangleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, FusionTablesSqlParserRULE_rectangle)
 
@@ -5400,6 +5488,9 @@ func (s *CoordinateContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Coordinate() (localctx ICoordinateContext) {
+	this := p
+	_ = this
+
 	localctx = NewCoordinateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, FusionTablesSqlParserRULE_coordinate)
 
@@ -5735,6 +5826,9 @@ func (s *KeywordContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Keyword() (localctx IKeywordContext) {
+	this := p
+	_ = this
+
 	localctx = NewKeywordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, FusionTablesSqlParserRULE_keyword)
 
@@ -6167,87 +6261,90 @@ func (p *FusionTablesSqlParser) Keyword() (localctx IKeywordContext) {
 	return localctx
 }
 
-// IOperatorContext is an interface to support dynamic dispatch.
-type IOperatorContext interface {
+// IOperator_Context is an interface to support dynamic dispatch.
+type IOperator_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsOperatorContext differentiates from other interfaces.
-	IsOperatorContext()
+	// IsOperator_Context differentiates from other interfaces.
+	IsOperator_Context()
 }
 
-type OperatorContext struct {
+type Operator_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyOperatorContext() *OperatorContext {
-	var p = new(OperatorContext)
+func NewEmptyOperator_Context() *Operator_Context {
+	var p = new(Operator_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = FusionTablesSqlParserRULE_operator
+	p.RuleIndex = FusionTablesSqlParserRULE_operator_
 	return p
 }
 
-func (*OperatorContext) IsOperatorContext() {}
+func (*Operator_Context) IsOperator_Context() {}
 
-func NewOperatorContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *OperatorContext {
-	var p = new(OperatorContext)
+func NewOperator_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Operator_Context {
+	var p = new(Operator_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = FusionTablesSqlParserRULE_operator
+	p.RuleIndex = FusionTablesSqlParserRULE_operator_
 
 	return p
 }
 
-func (s *OperatorContext) GetParser() antlr.Parser { return s.parser }
+func (s *Operator_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *OperatorContext) LT() antlr.TerminalNode {
+func (s *Operator_Context) LT() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserLT, 0)
 }
 
-func (s *OperatorContext) LT_EQ() antlr.TerminalNode {
+func (s *Operator_Context) LT_EQ() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserLT_EQ, 0)
 }
 
-func (s *OperatorContext) GT() antlr.TerminalNode {
+func (s *Operator_Context) GT() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserGT, 0)
 }
 
-func (s *OperatorContext) GT_EQ() antlr.TerminalNode {
+func (s *Operator_Context) GT_EQ() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserGT_EQ, 0)
 }
 
-func (s *OperatorContext) EQ() antlr.TerminalNode {
+func (s *Operator_Context) EQ() antlr.TerminalNode {
 	return s.GetToken(FusionTablesSqlParserEQ, 0)
 }
 
-func (s *OperatorContext) GetRuleContext() antlr.RuleContext {
+func (s *Operator_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *OperatorContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Operator_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *OperatorContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Operator_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
-		listenerT.EnterOperator(s)
+		listenerT.EnterOperator_(s)
 	}
 }
 
-func (s *OperatorContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Operator_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(FusionTablesSqlListener); ok {
-		listenerT.ExitOperator(s)
+		listenerT.ExitOperator_(s)
 	}
 }
 
-func (p *FusionTablesSqlParser) Operator() (localctx IOperatorContext) {
-	localctx = NewOperatorContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 62, FusionTablesSqlParserRULE_operator)
+func (p *FusionTablesSqlParser) Operator_() (localctx IOperator_Context) {
+	this := p
+	_ = this
+
+	localctx = NewOperator_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 62, FusionTablesSqlParserRULE_operator_)
 	var _la int
 
 	defer func() {
@@ -6361,6 +6458,9 @@ func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Literal() (localctx ILiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, FusionTablesSqlParserRULE_literal)
 
@@ -6474,6 +6574,9 @@ func (s *Error_messageContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Error_message() (localctx IError_messageContext) {
+	this := p
+	_ = this
+
 	localctx = NewError_messageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, FusionTablesSqlParserRULE_error_message)
 
@@ -6571,6 +6674,9 @@ func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Identifier() (localctx IIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, FusionTablesSqlParserRULE_identifier)
 
@@ -6668,6 +6774,9 @@ func (s *Column_aliasContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Column_alias() (localctx IColumn_aliasContext) {
+	this := p
+	_ = this
+
 	localctx = NewColumn_aliasContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, FusionTablesSqlParserRULE_column_alias)
 
@@ -6765,6 +6874,9 @@ func (s *Table_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Table_name() (localctx ITable_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewTable_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, FusionTablesSqlParserRULE_table_name)
 
@@ -6862,6 +6974,9 @@ func (s *Column_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Column_name() (localctx IColumn_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewColumn_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, FusionTablesSqlParserRULE_column_name)
 
@@ -6959,6 +7074,9 @@ func (s *New_table_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) New_table_name() (localctx INew_table_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewNew_table_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, FusionTablesSqlParserRULE_new_table_name)
 
@@ -7056,6 +7174,9 @@ func (s *View_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) View_name() (localctx IView_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewView_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, FusionTablesSqlParserRULE_view_name)
 
@@ -7153,6 +7274,9 @@ func (s *Table_aliasContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Table_alias() (localctx ITable_aliasContext) {
+	this := p
+	_ = this
+
 	localctx = NewTable_aliasContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, FusionTablesSqlParserRULE_table_alias)
 
@@ -7244,6 +7368,9 @@ func (s *Numeric_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) Numeric_literal() (localctx INumeric_literalContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumeric_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, FusionTablesSqlParserRULE_numeric_literal)
 
@@ -7335,6 +7462,9 @@ func (s *String_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *FusionTablesSqlParser) String_literal() (localctx IString_literalContext) {
+	this := p
+	_ = this
+
 	localctx = NewString_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, FusionTablesSqlParserRULE_string_literal)
 

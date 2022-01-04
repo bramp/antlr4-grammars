@@ -1,4 +1,4 @@
-// Code generated from robotwar.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from robotwar.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package robotwar // robotwar
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -116,11 +116,11 @@ func (s *BaserobotwarListener) EnterArgument(ctx *ArgumentContext) {}
 // ExitArgument is called when production argument is exited.
 func (s *BaserobotwarListener) ExitArgument(ctx *ArgumentContext) {}
 
-// EnterRegister is called when production register is entered.
-func (s *BaserobotwarListener) EnterRegister(ctx *RegisterContext) {}
+// EnterRegister_ is called when production register_ is entered.
+func (s *BaserobotwarListener) EnterRegister_(ctx *Register_Context) {}
 
-// ExitRegister is called when production register is exited.
-func (s *BaserobotwarListener) ExitRegister(ctx *RegisterContext) {}
+// ExitRegister_ is called when production register_ is exited.
+func (s *BaserobotwarListener) ExitRegister_(ctx *Register_Context) {}
 
 // EnterNumber is called when production number is entered.
 func (s *BaserobotwarListener) EnterNumber(ctx *NumberContext) {}

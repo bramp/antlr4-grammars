@@ -1,4 +1,4 @@
-// Code generated from tinyc.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from tinyc.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package tinyc // tinyc
 import (
@@ -57,9 +57,6 @@ var parserATN = []uint16{
 	2, 2, 98, 99, 7, 17, 2, 2, 99, 19, 3, 2, 2, 2, 10, 23, 49, 57, 68, 75,
 	86, 88, 94,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'if'", "'else'", "'while'", "'do'", "';'", "'{'", "'}'", "'('", "')'",
 	"'='", "'<'", "'+'", "'-'",
@@ -70,24 +67,28 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"program", "statement", "paren_expr", "expr", "test", "sum", "term", "id",
+	"program", "statement", "paren_expr", "expr", "test", "sum_", "term", "id_",
 	"integer",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type tinycParser struct {
 	*antlr.BaseParser
 }
 
+// NewtinycParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *tinycParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewtinycParser(input antlr.TokenStream) *tinycParser {
 	this := new(tinycParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -127,9 +128,9 @@ const (
 	tinycParserRULE_paren_expr = 2
 	tinycParserRULE_expr       = 3
 	tinycParserRULE_test       = 4
-	tinycParserRULE_sum        = 5
+	tinycParserRULE_sum_       = 5
 	tinycParserRULE_term       = 6
-	tinycParserRULE_id         = 7
+	tinycParserRULE_id_        = 7
 	tinycParserRULE_integer    = 8
 )
 
@@ -215,6 +216,9 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinycParser) Program() (localctx IProgramContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, tinycParserRULE_program)
 	var _la int
@@ -356,6 +360,9 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinycParser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, tinycParserRULE_statement)
 	var _la int
@@ -572,6 +579,9 @@ func (s *Paren_exprContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinycParser) Paren_expr() (localctx IParen_exprContext) {
+	this := p
+	_ = this
+
 	localctx = NewParen_exprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, tinycParserRULE_paren_expr)
 
@@ -656,14 +666,14 @@ func (s *ExprContext) Test() ITestContext {
 	return t.(ITestContext)
 }
 
-func (s *ExprContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *ExprContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *ExprContext) Expr() IExprContext {
@@ -697,6 +707,9 @@ func (s *ExprContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinycParser) Expr() (localctx IExprContext) {
+	this := p
+	_ = this
+
 	localctx = NewExprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, tinycParserRULE_expr)
 
@@ -730,7 +743,7 @@ func (p *tinycParser) Expr() (localctx IExprContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(62)
-			p.Id()
+			p.Id_()
 		}
 		{
 			p.SetState(63)
@@ -784,27 +797,27 @@ func NewTestContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 
 func (s *TestContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *TestContext) AllSum() []ISumContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISumContext)(nil)).Elem())
-	var tst = make([]ISumContext, len(ts))
+func (s *TestContext) AllSum_() []ISum_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISum_Context)(nil)).Elem())
+	var tst = make([]ISum_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(ISumContext)
+			tst[i] = t.(ISum_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *TestContext) Sum(i int) ISumContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISumContext)(nil)).Elem(), i)
+func (s *TestContext) Sum_(i int) ISum_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISum_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ISumContext)
+	return t.(ISum_Context)
 }
 
 func (s *TestContext) GetRuleContext() antlr.RuleContext {
@@ -828,6 +841,9 @@ func (s *TestContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinycParser) Test() (localctx ITestContext) {
+	this := p
+	_ = this
+
 	localctx = NewTestContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, tinycParserRULE_test)
 
@@ -854,14 +870,14 @@ func (p *tinycParser) Test() (localctx ITestContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(68)
-			p.sum(0)
+			p.sum_(0)
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(69)
-			p.sum(0)
+			p.sum_(0)
 		}
 		{
 			p.SetState(70)
@@ -869,7 +885,7 @@ func (p *tinycParser) Test() (localctx ITestContext) {
 		}
 		{
 			p.SetState(71)
-			p.sum(0)
+			p.sum_(0)
 		}
 
 	}
@@ -877,45 +893,45 @@ func (p *tinycParser) Test() (localctx ITestContext) {
 	return localctx
 }
 
-// ISumContext is an interface to support dynamic dispatch.
-type ISumContext interface {
+// ISum_Context is an interface to support dynamic dispatch.
+type ISum_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsSumContext differentiates from other interfaces.
-	IsSumContext()
+	// IsSum_Context differentiates from other interfaces.
+	IsSum_Context()
 }
 
-type SumContext struct {
+type Sum_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptySumContext() *SumContext {
-	var p = new(SumContext)
+func NewEmptySum_Context() *Sum_Context {
+	var p = new(Sum_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = tinycParserRULE_sum
+	p.RuleIndex = tinycParserRULE_sum_
 	return p
 }
 
-func (*SumContext) IsSumContext() {}
+func (*Sum_Context) IsSum_Context() {}
 
-func NewSumContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SumContext {
-	var p = new(SumContext)
+func NewSum_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Sum_Context {
+	var p = new(Sum_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = tinycParserRULE_sum
+	p.RuleIndex = tinycParserRULE_sum_
 
 	return p
 }
 
-func (s *SumContext) GetParser() antlr.Parser { return s.parser }
+func (s *Sum_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *SumContext) Term() ITermContext {
+func (s *Sum_Context) Term() ITermContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITermContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -925,48 +941,51 @@ func (s *SumContext) Term() ITermContext {
 	return t.(ITermContext)
 }
 
-func (s *SumContext) Sum() ISumContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISumContext)(nil)).Elem(), 0)
+func (s *Sum_Context) Sum_() ISum_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISum_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ISumContext)
+	return t.(ISum_Context)
 }
 
-func (s *SumContext) GetRuleContext() antlr.RuleContext {
+func (s *Sum_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *SumContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Sum_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *SumContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Sum_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinycListener); ok {
-		listenerT.EnterSum(s)
+		listenerT.EnterSum_(s)
 	}
 }
 
-func (s *SumContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Sum_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinycListener); ok {
-		listenerT.ExitSum(s)
+		listenerT.ExitSum_(s)
 	}
 }
 
-func (p *tinycParser) Sum() (localctx ISumContext) {
-	return p.sum(0)
+func (p *tinycParser) Sum_() (localctx ISum_Context) {
+	return p.sum_(0)
 }
 
-func (p *tinycParser) sum(_p int) (localctx ISumContext) {
+func (p *tinycParser) sum_(_p int) (localctx ISum_Context) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
-	localctx = NewSumContext(p, p.GetParserRuleContext(), _parentState)
-	var _prevctx ISumContext = localctx
+	localctx = NewSum_Context(p, p.GetParserRuleContext(), _parentState)
+	var _prevctx ISum_Context = localctx
 	var _ antlr.ParserRuleContext = _prevctx // TODO: To prevent unused variable warning.
 	_startState := 10
-	p.EnterRecursionRule(localctx, 10, tinycParserRULE_sum, _p)
+	p.EnterRecursionRule(localctx, 10, tinycParserRULE_sum_, _p)
 
 	defer func() {
 		p.UnrollRecursionContexts(_parentctx)
@@ -1007,8 +1026,8 @@ func (p *tinycParser) sum(_p int) (localctx ISumContext) {
 			p.GetErrorHandler().Sync(p)
 			switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 5, p.GetParserRuleContext()) {
 			case 1:
-				localctx = NewSumContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, tinycParserRULE_sum)
+				localctx = NewSum_Context(p, _parentctx, _parentState)
+				p.PushNewRecursionContext(localctx, _startState, tinycParserRULE_sum_)
 				p.SetState(78)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 2)) {
@@ -1024,8 +1043,8 @@ func (p *tinycParser) sum(_p int) (localctx ISumContext) {
 				}
 
 			case 2:
-				localctx = NewSumContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, tinycParserRULE_sum)
+				localctx = NewSum_Context(p, _parentctx, _parentState)
+				p.PushNewRecursionContext(localctx, _startState, tinycParserRULE_sum_)
 				p.SetState(81)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 1)) {
@@ -1089,14 +1108,14 @@ func NewTermContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 
 func (s *TermContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *TermContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *TermContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *TermContext) Integer() IIntegerContext {
@@ -1140,6 +1159,9 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinycParser) Term() (localctx ITermContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, tinycParserRULE_term)
 
@@ -1167,7 +1189,7 @@ func (p *tinycParser) Term() (localctx ITermContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(89)
-			p.Id()
+			p.Id_()
 		}
 
 	case tinycParserINT:
@@ -1191,71 +1213,74 @@ func (p *tinycParser) Term() (localctx ITermContext) {
 	return localctx
 }
 
-// IIdContext is an interface to support dynamic dispatch.
-type IIdContext interface {
+// IId_Context is an interface to support dynamic dispatch.
+type IId_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsIdContext differentiates from other interfaces.
-	IsIdContext()
+	// IsId_Context differentiates from other interfaces.
+	IsId_Context()
 }
 
-type IdContext struct {
+type Id_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyIdContext() *IdContext {
-	var p = new(IdContext)
+func NewEmptyId_Context() *Id_Context {
+	var p = new(Id_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = tinycParserRULE_id
+	p.RuleIndex = tinycParserRULE_id_
 	return p
 }
 
-func (*IdContext) IsIdContext() {}
+func (*Id_Context) IsId_Context() {}
 
-func NewIdContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *IdContext {
-	var p = new(IdContext)
+func NewId_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Id_Context {
+	var p = new(Id_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = tinycParserRULE_id
+	p.RuleIndex = tinycParserRULE_id_
 
 	return p
 }
 
-func (s *IdContext) GetParser() antlr.Parser { return s.parser }
+func (s *Id_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *IdContext) STRING() antlr.TerminalNode {
+func (s *Id_Context) STRING() antlr.TerminalNode {
 	return s.GetToken(tinycParserSTRING, 0)
 }
 
-func (s *IdContext) GetRuleContext() antlr.RuleContext {
+func (s *Id_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *IdContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Id_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *IdContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Id_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinycListener); ok {
-		listenerT.EnterId(s)
+		listenerT.EnterId_(s)
 	}
 }
 
-func (s *IdContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Id_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(tinycListener); ok {
-		listenerT.ExitId(s)
+		listenerT.ExitId_(s)
 	}
 }
 
-func (p *tinycParser) Id() (localctx IIdContext) {
-	localctx = NewIdContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, tinycParserRULE_id)
+func (p *tinycParser) Id_() (localctx IId_Context) {
+	this := p
+	_ = this
+
+	localctx = NewId_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 14, tinycParserRULE_id_)
 
 	defer func() {
 		p.ExitRule()
@@ -1345,6 +1370,9 @@ func (s *IntegerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinycParser) Integer() (localctx IIntegerContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntegerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, tinycParserRULE_integer)
 
@@ -1376,18 +1404,21 @@ func (p *tinycParser) Integer() (localctx IIntegerContext) {
 func (p *tinycParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int) bool {
 	switch ruleIndex {
 	case 5:
-		var t *SumContext = nil
+		var t *Sum_Context = nil
 		if localctx != nil {
-			t = localctx.(*SumContext)
+			t = localctx.(*Sum_Context)
 		}
-		return p.Sum_Sempred(t, predIndex)
+		return p.Sum__Sempred(t, predIndex)
 
 	default:
 		panic("No predicate with index: " + fmt.Sprint(ruleIndex))
 	}
 }
 
-func (p *tinycParser) Sum_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+func (p *tinycParser) Sum__Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 2)

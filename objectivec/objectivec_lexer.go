@@ -1,4 +1,4 @@
-// Code generated from ObjectiveCLexer.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ObjectiveCLexer.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package objectivec
 
@@ -1199,9 +1199,6 @@ var serializedLexerAtn = []uint16{
 	2, 9, 220, 2, 9, 221, 2,
 }
 
-var lexerDeserializer = antlr.NewATNDeserializer(nil)
-var lexerAtn = lexerDeserializer.DeserializeFromUInt16(serializedLexerAtn)
-
 var lexerChannelNames = []string{
 	"DEFAULT_TOKEN_CHANNEL", "HIDDEN", "COMMENTS_CHANNEL", "DIRECTIVE_CHANNEL",
 	"IGNORED_MACROS",
@@ -1247,7 +1244,7 @@ var lexerSymbolicNames = []string{
 	"INT", "LONG", "REGISTER", "RESTRICT", "RETURN", "SHORT", "SIGNED", "SIZEOF",
 	"STATIC", "STRUCT", "SWITCH", "TYPEDEF", "UNION", "UNSIGNED", "VOID", "VOLATILE",
 	"WHILE", "BOOL_", "COMPLEX", "IMAGINERY", "TRUE", "FALSE", "BOOL", "Class",
-	"BYCOPY", "BYREF", "ID", "IMP", "IN", "INOUT", "NIL", "NO", "NULL", "ONEWAY",
+	"BYCOPY", "BYREF", "ID", "IMP", "IN", "INOUT", "NIL", "NO", "NULL_", "ONEWAY",
 	"OUT", "PROTOCOL_", "SEL", "SELF", "SUPER", "YES", "AUTORELEASEPOOL", "CATCH",
 	"CLASS", "DYNAMIC", "ENCODE", "END", "FINALLY", "IMPLEMENTATION", "INTERFACE",
 	"IMPORT", "PACKAGE", "PROTOCOL", "OPTIONAL", "PRIVATE", "PROPERTY", "PROTECTED",
@@ -1287,7 +1284,7 @@ var lexerRuleNames = []string{
 	"INT", "LONG", "REGISTER", "RESTRICT", "RETURN", "SHORT", "SIGNED", "SIZEOF",
 	"STATIC", "STRUCT", "SWITCH", "TYPEDEF", "UNION", "UNSIGNED", "VOID", "VOLATILE",
 	"WHILE", "BOOL_", "COMPLEX", "IMAGINERY", "TRUE", "FALSE", "BOOL", "Class",
-	"BYCOPY", "BYREF", "ID", "IMP", "IN", "INOUT", "NIL", "NO", "NULL", "ONEWAY",
+	"BYCOPY", "BYREF", "ID", "IMP", "IN", "INOUT", "NIL", "NO", "NULL_", "ONEWAY",
 	"OUT", "PROTOCOL_", "SEL", "SELF", "SUPER", "YES", "AUTORELEASEPOOL", "CATCH",
 	"CLASS", "DYNAMIC", "ENCODE", "END", "FINALLY", "IMPLEMENTATION", "INTERFACE",
 	"IMPORT", "PACKAGE", "PROTOCOL", "OPTIONAL", "PRIVATE", "PROPERTY", "PROTECTED",
@@ -1334,18 +1331,20 @@ type ObjectiveCLexer struct {
 	// TODO: EOF string
 }
 
-var lexerDecisionToDFA = make([]*antlr.DFA, len(lexerAtn.DecisionToState))
-
-func init() {
+// NewObjectiveCLexer produces a new lexer instance for the optional input antlr.CharStream.
+//
+// The *ObjectiveCLexer instance produced may be reused by calling the SetInputStream method.
+// The initial lexer configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
+func NewObjectiveCLexer(input antlr.CharStream) *ObjectiveCLexer {
+	l := new(ObjectiveCLexer)
+	lexerDeserializer := antlr.NewATNDeserializer(nil)
+	lexerAtn := lexerDeserializer.DeserializeFromUInt16(serializedLexerAtn)
+	lexerDecisionToDFA := make([]*antlr.DFA, len(lexerAtn.DecisionToState))
 	for index, ds := range lexerAtn.DecisionToState {
 		lexerDecisionToDFA[index] = antlr.NewDFA(ds, index)
 	}
-}
-
-func NewObjectiveCLexer(input antlr.CharStream) *ObjectiveCLexer {
-
-	l := new(ObjectiveCLexer)
-
 	l.BaseLexer = antlr.NewBaseLexer(input)
 	l.Interpreter = antlr.NewLexerATNSimulator(l, lexerAtn, lexerDecisionToDFA, antlr.NewPredictionContextCache())
 
@@ -1411,7 +1410,7 @@ const (
 	ObjectiveCLexerINOUT                       = 47
 	ObjectiveCLexerNIL                         = 48
 	ObjectiveCLexerNO                          = 49
-	ObjectiveCLexerNULL                        = 50
+	ObjectiveCLexerNULL_                       = 50
 	ObjectiveCLexerONEWAY                      = 51
 	ObjectiveCLexerOUT                         = 52
 	ObjectiveCLexerPROTOCOL_                   = 53

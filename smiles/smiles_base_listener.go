@@ -1,4 +1,4 @@
-// Code generated from smiles.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from smiles.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package smiles // smiles
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -50,17 +50,17 @@ func (s *BasesmilesListener) EnterBracket_atom(ctx *Bracket_atomContext) {}
 // ExitBracket_atom is called when production bracket_atom is exited.
 func (s *BasesmilesListener) ExitBracket_atom(ctx *Bracket_atomContext) {}
 
-// EnterSymbol is called when production symbol is entered.
-func (s *BasesmilesListener) EnterSymbol(ctx *SymbolContext) {}
-
-// ExitSymbol is called when production symbol is exited.
-func (s *BasesmilesListener) ExitSymbol(ctx *SymbolContext) {}
-
 // EnterIsotope is called when production isotope is entered.
 func (s *BasesmilesListener) EnterIsotope(ctx *IsotopeContext) {}
 
 // ExitIsotope is called when production isotope is exited.
 func (s *BasesmilesListener) ExitIsotope(ctx *IsotopeContext) {}
+
+// EnterSymbol is called when production symbol is entered.
+func (s *BasesmilesListener) EnterSymbol(ctx *SymbolContext) {}
+
+// ExitSymbol is called when production symbol is exited.
+func (s *BasesmilesListener) ExitSymbol(ctx *SymbolContext) {}
 
 // EnterElement_symbols is called when production element_symbols is entered.
 func (s *BasesmilesListener) EnterElement_symbols(ctx *Element_symbolsContext) {}
@@ -68,11 +68,11 @@ func (s *BasesmilesListener) EnterElement_symbols(ctx *Element_symbolsContext) {
 // ExitElement_symbols is called when production element_symbols is exited.
 func (s *BasesmilesListener) ExitElement_symbols(ctx *Element_symbolsContext) {}
 
-// EnterAromatic_symbols is called when production aromatic_symbols is entered.
-func (s *BasesmilesListener) EnterAromatic_symbols(ctx *Aromatic_symbolsContext) {}
+// EnterAromatic_symbol is called when production aromatic_symbol is entered.
+func (s *BasesmilesListener) EnterAromatic_symbol(ctx *Aromatic_symbolContext) {}
 
-// ExitAromatic_symbols is called when production aromatic_symbols is exited.
-func (s *BasesmilesListener) ExitAromatic_symbols(ctx *Aromatic_symbolsContext) {}
+// ExitAromatic_symbol is called when production aromatic_symbol is exited.
+func (s *BasesmilesListener) ExitAromatic_symbol(ctx *Aromatic_symbolContext) {}
 
 // EnterChiral is called when production chiral is entered.
 func (s *BasesmilesListener) EnterChiral(ctx *ChiralContext) {}

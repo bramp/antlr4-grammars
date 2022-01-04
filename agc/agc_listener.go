@@ -1,4 +1,4 @@
-// Code generated from agc.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from agc.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package agc // agc
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -64,8 +64,8 @@ type agcListener interface {
 	// EnterDecimal is called when entering the decimal production.
 	EnterDecimal(c *DecimalContext)
 
-	// EnterRegister is called when entering the register production.
-	EnterRegister(c *RegisterContext)
+	// EnterRegister_ is called when entering the register_ production.
+	EnterRegister_(c *Register_Context)
 
 	// EnterOpcode is called when entering the opcode production.
 	EnterOpcode(c *OpcodeContext)
@@ -136,8 +136,8 @@ type agcListener interface {
 	// ExitDecimal is called when exiting the decimal production.
 	ExitDecimal(c *DecimalContext)
 
-	// ExitRegister is called when exiting the register production.
-	ExitRegister(c *RegisterContext)
+	// ExitRegister_ is called when exiting the register_ production.
+	ExitRegister_(c *Register_Context)
 
 	// ExitOpcode is called when exiting the opcode production.
 	ExitOpcode(c *OpcodeContext)

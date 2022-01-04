@@ -1,4 +1,4 @@
-// Code generated from mdx.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from mdx.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package mdx // mdx
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -43,7 +43,8 @@ func (s *BasemdxListener) EnterSingle_formula_specification(ctx *Single_formula_
 }
 
 // ExitSingle_formula_specification is called when production single_formula_specification is exited.
-func (s *BasemdxListener) ExitSingle_formula_specification(ctx *Single_formula_specificationContext) {}
+func (s *BasemdxListener) ExitSingle_formula_specification(ctx *Single_formula_specificationContext) {
+}
 
 // EnterSet_specification is called when production set_specification is entered.
 func (s *BasemdxListener) EnterSet_specification(ctx *Set_specificationContext) {}
@@ -117,11 +118,11 @@ func (s *BasemdxListener) EnterProperty_list(ctx *Property_listContext) {}
 // ExitProperty_list is called when production property_list is exited.
 func (s *BasemdxListener) ExitProperty_list(ctx *Property_listContext) {}
 
-// EnterProperty is called when production property is entered.
-func (s *BasemdxListener) EnterProperty(ctx *PropertyContext) {}
+// EnterProperty_ is called when production property_ is entered.
+func (s *BasemdxListener) EnterProperty_(ctx *Property_Context) {}
 
-// ExitProperty is called when production property is exited.
-func (s *BasemdxListener) ExitProperty(ctx *PropertyContext) {}
+// ExitProperty_ is called when production property_ is exited.
+func (s *BasemdxListener) ExitProperty_(ctx *Property_Context) {}
 
 // EnterCube_specification is called when production cube_specification is entered.
 func (s *BasemdxListener) EnterCube_specification(ctx *Cube_specificationContext) {}
@@ -233,11 +234,11 @@ func (s *BasemdxListener) EnterFactor(ctx *FactorContext) {}
 // ExitFactor is called when production factor is exited.
 func (s *BasemdxListener) ExitFactor(ctx *FactorContext) {}
 
-// EnterFunction is called when production function is entered.
-func (s *BasemdxListener) EnterFunction(ctx *FunctionContext) {}
+// EnterFunction_ is called when production function_ is entered.
+func (s *BasemdxListener) EnterFunction_(ctx *Function_Context) {}
 
-// ExitFunction is called when production function is exited.
-func (s *BasemdxListener) ExitFunction(ctx *FunctionContext) {}
+// ExitFunction_ is called when production function_ is exited.
+func (s *BasemdxListener) ExitFunction_(ctx *Function_Context) {}
 
 // EnterValue_expression_primary is called when production value_expression_primary is entered.
 func (s *BasemdxListener) EnterValue_expression_primary(ctx *Value_expression_primaryContext) {}

@@ -1,4 +1,4 @@
-// Code generated from DOT.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from DOT.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package dot // DOT
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -46,8 +46,8 @@ type DOTListener interface {
 	// EnterSubgraph is called when entering the subgraph production.
 	EnterSubgraph(c *SubgraphContext)
 
-	// EnterId is called when entering the id production.
-	EnterId(c *IdContext)
+	// EnterId_ is called when entering the id_ production.
+	EnterId_(c *Id_Context)
 
 	// ExitGraph is called when exiting the graph production.
 	ExitGraph(c *GraphContext)
@@ -88,6 +88,6 @@ type DOTListener interface {
 	// ExitSubgraph is called when exiting the subgraph production.
 	ExitSubgraph(c *SubgraphContext)
 
-	// ExitId is called when exiting the id production.
-	ExitId(c *IdContext)
+	// ExitId_ is called when exiting the id_ production.
+	ExitId_(c *Id_Context)
 }

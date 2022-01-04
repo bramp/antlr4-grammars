@@ -1,4 +1,4 @@
-// Code generated from modelica.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from modelica.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package modelica // modelica
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -466,11 +466,11 @@ func (s *BasemodelicaListener) EnterArray_subscripts(ctx *Array_subscriptsContex
 // ExitArray_subscripts is called when production array_subscripts is exited.
 func (s *BasemodelicaListener) ExitArray_subscripts(ctx *Array_subscriptsContext) {}
 
-// EnterSubscript is called when production subscript is entered.
-func (s *BasemodelicaListener) EnterSubscript(ctx *SubscriptContext) {}
+// EnterSubscript_ is called when production subscript_ is entered.
+func (s *BasemodelicaListener) EnterSubscript_(ctx *Subscript_Context) {}
 
-// ExitSubscript is called when production subscript is exited.
-func (s *BasemodelicaListener) ExitSubscript(ctx *SubscriptContext) {}
+// ExitSubscript_ is called when production subscript_ is exited.
+func (s *BasemodelicaListener) ExitSubscript_(ctx *Subscript_Context) {}
 
 // EnterComment is called when production comment is entered.
 func (s *BasemodelicaListener) EnterComment(ctx *CommentContext) {}

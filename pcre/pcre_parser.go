@@ -1,4 +1,4 @@
-// Code generated from PCRE.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from PCRE.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package pcre // PCRE
 import (
@@ -448,9 +448,6 @@ var parserATN = []uint16{
 	518, 532, 545, 557, 571, 588, 605, 617, 621, 638, 647, 723, 786, 798, 826,
 	835, 841, 855, 883, 896, 903, 911, 916, 918, 924,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "", "'\\a'", "'\\c'", "'\\e'", "'\\f'", "'\\n'", "'\\r'", "'\\t'",
 	"'\\'", "", "'.'", "'\\C'", "'\\d'", "'\\D'", "'\\h'", "'\\H'", "'\\N'",
@@ -496,21 +493,25 @@ var ruleNames = []string{
 	"number", "octal_char", "octal_digit", "digits", "digit", "name", "alpha_nums",
 	"non_close_parens", "non_close_paren", "letter",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type PCREParser struct {
 	*antlr.BaseParser
 }
 
+// NewPCREParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *PCREParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewPCREParser(input antlr.TokenStream) *PCREParser {
 	this := new(PCREParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -766,6 +767,9 @@ func (s *ParseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Parse() (localctx IParseContext) {
+	this := p
+	_ = this
+
 	localctx = NewParseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, PCREParserRULE_parse)
 
@@ -888,6 +892,9 @@ func (s *AlternationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Alternation() (localctx IAlternationContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlternationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, PCREParserRULE_alternation)
 
@@ -1020,6 +1027,9 @@ func (s *ExprContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Expr() (localctx IExprContext) {
+	this := p
+	_ = this
+
 	localctx = NewExprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, PCREParserRULE_expr)
 	var _la int
@@ -1138,6 +1148,9 @@ func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Element() (localctx IElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, PCREParserRULE_element)
 
@@ -1292,6 +1305,9 @@ func (s *QuantifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Quantifier() (localctx IQuantifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuantifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, PCREParserRULE_quantifier)
 
@@ -1488,6 +1504,9 @@ func (s *Quantifier_typeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Quantifier_type() (localctx IQuantifier_typeContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuantifier_typeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, PCREParserRULE_quantifier_type)
 
@@ -1637,6 +1656,9 @@ func (s *Character_classContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Character_class() (localctx ICharacter_classContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharacter_classContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, PCREParserRULE_character_class)
 	var _la int
@@ -1996,6 +2018,9 @@ func (s *BackreferenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Backreference() (localctx IBackreferenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewBackreferenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, PCREParserRULE_backreference)
 
@@ -2269,6 +2294,9 @@ func (s *Backreference_or_octalContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *PCREParser) Backreference_or_octal() (localctx IBackreference_or_octalContext) {
+	this := p
+	_ = this
+
 	localctx = NewBackreference_or_octalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, PCREParserRULE_backreference_or_octal)
 
@@ -2425,6 +2453,9 @@ func (s *CaptureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Capture() (localctx ICaptureContext) {
+	this := p
+	_ = this
+
 	localctx = NewCaptureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, PCREParserRULE_capture)
 
@@ -2667,6 +2698,9 @@ func (s *Non_captureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Non_capture() (localctx INon_captureContext) {
+	this := p
+	_ = this
+
 	localctx = NewNon_captureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, PCREParserRULE_non_capture)
 
@@ -2875,6 +2909,9 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Comment() (localctx ICommentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, PCREParserRULE_comment)
 
@@ -3089,6 +3126,9 @@ func (s *OptionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Option() (localctx IOptionContext) {
+	this := p
+	_ = this
+
 	localctx = NewOptionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, PCREParserRULE_option)
 
@@ -3423,6 +3463,9 @@ func (s *Option_flagsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Option_flags() (localctx IOption_flagsContext) {
+	this := p
+	_ = this
+
 	localctx = NewOption_flagsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, PCREParserRULE_option_flags)
 	var _la int
@@ -3545,6 +3588,9 @@ func (s *Option_flagContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Option_flag() (localctx IOption_flagContext) {
+	this := p
+	_ = this
+
 	localctx = NewOption_flagContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, PCREParserRULE_option_flag)
 	var _la int
@@ -3674,6 +3720,9 @@ func (s *Look_aroundContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Look_around() (localctx ILook_aroundContext) {
+	this := p
+	_ = this
+
 	localctx = NewLook_aroundContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, PCREParserRULE_look_around)
 
@@ -3932,6 +3981,9 @@ func (s *Subroutine_referenceContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *PCREParser) Subroutine_reference() (localctx ISubroutine_referenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubroutine_referenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, PCREParserRULE_subroutine_reference)
 
@@ -4467,6 +4519,9 @@ func (s *ConditionalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Conditional() (localctx IConditionalContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditionalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, PCREParserRULE_conditional)
 	var _la int
@@ -5236,6 +5291,9 @@ func (s *Backtrack_controlContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Backtrack_control() (localctx IBacktrack_controlContext) {
+	this := p
+	_ = this
+
 	localctx = NewBacktrack_controlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, PCREParserRULE_backtrack_control)
 	var _la int
@@ -5827,6 +5885,9 @@ func (s *Newline_conventionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Newline_convention() (localctx INewline_conventionContext) {
+	this := p
+	_ = this
+
 	localctx = NewNewline_conventionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, PCREParserRULE_newline_convention)
 
@@ -6204,6 +6265,9 @@ func (s *CalloutContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Callout() (localctx ICalloutContext) {
+	this := p
+	_ = this
+
 	localctx = NewCalloutContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, PCREParserRULE_callout)
 
@@ -6520,6 +6584,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, PCREParserRULE_atom)
 
@@ -6835,6 +6902,9 @@ func (s *Cc_atomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Cc_atom() (localctx ICc_atomContext) {
+	this := p
+	_ = this
+
 	localctx = NewCc_atomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, PCREParserRULE_cc_atom)
 
@@ -7025,6 +7095,9 @@ func (s *Shared_atomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Shared_atom() (localctx IShared_atomContext) {
+	this := p
+	_ = this
+
 	localctx = NewShared_atomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, PCREParserRULE_shared_atom)
 	var _la int
@@ -7134,6 +7207,9 @@ func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Literal() (localctx ILiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, PCREParserRULE_literal)
 
@@ -7291,6 +7367,9 @@ func (s *Cc_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Cc_literal() (localctx ICc_literalContext) {
+	this := p
+	_ = this
+
 	localctx = NewCc_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, PCREParserRULE_cc_literal)
 
@@ -7586,6 +7665,9 @@ func (s *Shared_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Shared_literal() (localctx IShared_literalContext) {
+	this := p
+	_ = this
+
 	localctx = NewShared_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, PCREParserRULE_shared_literal)
 
@@ -7867,6 +7949,9 @@ func (s *NumberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Number() (localctx INumberContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, PCREParserRULE_number)
 
@@ -7997,6 +8082,9 @@ func (s *Octal_charContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Octal_char() (localctx IOctal_charContext) {
+	this := p
+	_ = this
+
 	localctx = NewOctal_charContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, PCREParserRULE_octal_char)
 	var _la int
@@ -8156,6 +8244,9 @@ func (s *Octal_digitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Octal_digit() (localctx IOctal_digitContext) {
+	this := p
+	_ = this
+
 	localctx = NewOctal_digitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, PCREParserRULE_octal_digit)
 	var _la int
@@ -8274,6 +8365,9 @@ func (s *DigitsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Digits() (localctx IDigitsContext) {
+	this := p
+	_ = this
+
 	localctx = NewDigitsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, PCREParserRULE_digits)
 
@@ -8418,6 +8512,9 @@ func (s *DigitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Digit() (localctx IDigitContext) {
+	this := p
+	_ = this
+
 	localctx = NewDigitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, PCREParserRULE_digit)
 	var _la int
@@ -8523,6 +8620,9 @@ func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Name() (localctx INameContext) {
+	this := p
+	_ = this
+
 	localctx = NewNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, PCREParserRULE_name)
 
@@ -8664,6 +8764,9 @@ func (s *Alpha_numsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Alpha_nums() (localctx IAlpha_numsContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlpha_numsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, PCREParserRULE_alpha_nums)
 	var _la int
@@ -8825,6 +8928,9 @@ func (s *Non_close_parensContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Non_close_parens() (localctx INon_close_parensContext) {
+	this := p
+	_ = this
+
 	localctx = NewNon_close_parensContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, PCREParserRULE_non_close_parens)
 	var _la int
@@ -8927,6 +9033,9 @@ func (s *Non_close_parenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Non_close_paren() (localctx INon_close_parenContext) {
+	this := p
+	_ = this
+
 	localctx = NewNon_close_parenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, PCREParserRULE_non_close_paren)
 	var _la int
@@ -9230,6 +9339,9 @@ func (s *LetterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PCREParser) Letter() (localctx ILetterContext) {
+	this := p
+	_ = this
+
 	localctx = NewLetterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, PCREParserRULE_letter)
 	var _la int

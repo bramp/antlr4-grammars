@@ -1,4 +1,4 @@
-// Code generated from matlab.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from matlab.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package matlab // matlab
 import (
@@ -204,9 +204,6 @@ var parserATN = []uint16{
 	168, 170, 188, 190, 202, 204, 215, 226, 237, 253, 262, 272, 287, 294, 303,
 	336, 350, 377, 383, 391, 401, 409, 420, 427,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'('", "')'", "'['", "']'", "':'", "','", "'+'", "'-'", "'~'", "'*'",
 	"'/'", "'\\'", "'^'", "'<'", "'>'", "'&'", "'|'", "'='", "';'", "'.*'",
@@ -233,21 +230,25 @@ var ruleNames = []string{
 	"jump_statement", "translation_unit", "func_ident_list", "func_return_list",
 	"function_declare_lhs", "function_declare",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type matlabParser struct {
 	*antlr.BaseParser
 }
 
+// NewmatlabParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *matlabParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewmatlabParser(input antlr.TokenStream) *matlabParser {
 	this := new(matlabParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -438,6 +439,9 @@ func (s *Primary_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Primary_expression() (localctx IPrimary_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewPrimary_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, matlabParserRULE_primary_expression)
 
@@ -628,6 +632,9 @@ func (p *matlabParser) Postfix_expression() (localctx IPostfix_expressionContext
 }
 
 func (p *matlabParser) postfix_expression(_p int) (localctx IPostfix_expressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewPostfix_expressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -791,6 +798,9 @@ func (s *Index_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Index_expression() (localctx IIndex_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewIndex_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, matlabParserRULE_index_expression)
 
@@ -918,6 +928,9 @@ func (p *matlabParser) Index_expression_list() (localctx IIndex_expression_listC
 }
 
 func (p *matlabParser) index_expression_list(_p int) (localctx IIndex_expression_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewIndex_expression_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -1059,6 +1072,9 @@ func (s *Array_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Array_expression() (localctx IArray_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewArray_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, matlabParserRULE_array_expression)
 
@@ -1178,6 +1194,9 @@ func (s *Unary_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Unary_expression() (localctx IUnary_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnary_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, matlabParserRULE_unary_expression)
 
@@ -1284,6 +1303,9 @@ func (s *Unary_operatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Unary_operator() (localctx IUnary_operatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnary_operatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, matlabParserRULE_unary_operator)
 	var _la int
@@ -1419,6 +1441,9 @@ func (p *matlabParser) Multiplicative_expression() (localctx IMultiplicative_exp
 }
 
 func (p *matlabParser) multiplicative_expression(_p int) (localctx IMultiplicative_expressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewMultiplicative_expressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -1695,6 +1720,9 @@ func (p *matlabParser) Additive_expression() (localctx IAdditive_expressionConte
 }
 
 func (p *matlabParser) additive_expression(_p int) (localctx IAdditive_expressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewAdditive_expressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -1877,6 +1905,9 @@ func (p *matlabParser) Relational_expression() (localctx IRelational_expressionC
 }
 
 func (p *matlabParser) relational_expression(_p int) (localctx IRelational_expressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewRelational_expressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -2093,6 +2124,9 @@ func (p *matlabParser) Equality_expression() (localctx IEquality_expressionConte
 }
 
 func (p *matlabParser) equality_expression(_p int) (localctx IEquality_expressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewEquality_expressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -2267,6 +2301,9 @@ func (p *matlabParser) And_expression() (localctx IAnd_expressionContext) {
 }
 
 func (p *matlabParser) and_expression(_p int) (localctx IAnd_expressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewAnd_expressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -2418,6 +2455,9 @@ func (p *matlabParser) Or_expression() (localctx IOr_expressionContext) {
 }
 
 func (p *matlabParser) or_expression(_p int) (localctx IOr_expressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewOr_expressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -2569,6 +2609,9 @@ func (p *matlabParser) Expression() (localctx IExpressionContext) {
 }
 
 func (p *matlabParser) expression(_p int) (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -2716,6 +2759,9 @@ func (s *Assignment_expressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *matlabParser) Assignment_expression() (localctx IAssignment_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignment_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, matlabParserRULE_assignment_expression)
 
@@ -2815,6 +2861,9 @@ func (s *EostmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Eostmt() (localctx IEostmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewEostmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, matlabParserRULE_eostmt)
 	var _la int
@@ -2980,6 +3029,9 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, matlabParserRULE_statement)
 
@@ -3139,6 +3191,9 @@ func (p *matlabParser) Statement_list() (localctx IStatement_listContext) {
 }
 
 func (p *matlabParser) statement_list(_p int) (localctx IStatement_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewStatement_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -3280,6 +3335,9 @@ func (p *matlabParser) Identifier_list() (localctx IIdentifier_listContext) {
 }
 
 func (p *matlabParser) identifier_list(_p int) (localctx IIdentifier_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewIdentifier_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -3427,6 +3485,9 @@ func (s *Global_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Global_statement() (localctx IGlobal_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewGlobal_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, matlabParserRULE_global_statement)
 
@@ -3546,6 +3607,9 @@ func (s *Clear_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Clear_statement() (localctx IClear_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewClear_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, matlabParserRULE_clear_statement)
 
@@ -3661,6 +3725,9 @@ func (s *Expression_statementContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *matlabParser) Expression_statement() (localctx IExpression_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpression_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, matlabParserRULE_expression_statement)
 
@@ -3788,6 +3855,9 @@ func (s *Assignment_statementContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *matlabParser) Assignment_statement() (localctx IAssignment_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignment_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, matlabParserRULE_assignment_statement)
 
@@ -3899,6 +3969,9 @@ func (s *Array_elementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Array_element() (localctx IArray_elementContext) {
+	this := p
+	_ = this
+
 	localctx = NewArray_elementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, matlabParserRULE_array_element)
 
@@ -4023,6 +4096,9 @@ func (p *matlabParser) Array_list() (localctx IArray_listContext) {
 }
 
 func (p *matlabParser) array_list(_p int) (localctx IArray_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewArray_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -4211,6 +4287,9 @@ func (s *Selection_statementContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *matlabParser) Selection_statement() (localctx ISelection_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSelection_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, matlabParserRULE_selection_statement)
 
@@ -4451,6 +4530,9 @@ func (p *matlabParser) Elseif_clause() (localctx IElseif_clauseContext) {
 }
 
 func (p *matlabParser) elseif_clause(_p int) (localctx IElseif_clauseContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewElseif_clauseContext(p, p.GetParserRuleContext(), _parentState)
@@ -4636,6 +4718,9 @@ func (s *Iteration_statementContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *matlabParser) Iteration_statement() (localctx IIteration_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewIteration_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, matlabParserRULE_iteration_statement)
 
@@ -4833,6 +4918,9 @@ func (s *Jump_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Jump_statement() (localctx IJump_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewJump_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, matlabParserRULE_jump_statement)
 
@@ -4978,6 +5066,9 @@ func (s *Translation_unitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Translation_unit() (localctx ITranslation_unitContext) {
+	this := p
+	_ = this
+
 	localctx = NewTranslation_unitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, matlabParserRULE_translation_unit)
 
@@ -5111,6 +5202,9 @@ func (p *matlabParser) Func_ident_list() (localctx IFunc_ident_listContext) {
 }
 
 func (p *matlabParser) func_ident_list(_p int) (localctx IFunc_ident_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewFunc_ident_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -5252,6 +5346,9 @@ func (s *Func_return_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Func_return_list() (localctx IFunc_return_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunc_return_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, matlabParserRULE_func_return_list)
 
@@ -5377,6 +5474,9 @@ func (s *Function_declare_lhsContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *matlabParser) Function_declare_lhs() (localctx IFunction_declare_lhsContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_declare_lhsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, matlabParserRULE_function_declare_lhs)
 
@@ -5524,6 +5624,9 @@ func (s *Function_declareContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *matlabParser) Function_declare() (localctx IFunction_declareContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_declareContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, matlabParserRULE_function_declare)
 
@@ -5679,6 +5782,9 @@ func (p *matlabParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex 
 }
 
 func (p *matlabParser) Postfix_expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 2)
@@ -5692,6 +5798,9 @@ func (p *matlabParser) Postfix_expression_Sempred(localctx antlr.RuleContext, pr
 }
 
 func (p *matlabParser) Index_expression_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 2:
 		return p.Precpred(p.GetParserRuleContext(), 1)
@@ -5702,6 +5811,9 @@ func (p *matlabParser) Index_expression_list_Sempred(localctx antlr.RuleContext,
 }
 
 func (p *matlabParser) Multiplicative_expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 3:
 		return p.Precpred(p.GetParserRuleContext(), 8)
@@ -5733,6 +5845,9 @@ func (p *matlabParser) Multiplicative_expression_Sempred(localctx antlr.RuleCont
 }
 
 func (p *matlabParser) Additive_expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 11:
 		return p.Precpred(p.GetParserRuleContext(), 2)
@@ -5746,6 +5861,9 @@ func (p *matlabParser) Additive_expression_Sempred(localctx antlr.RuleContext, p
 }
 
 func (p *matlabParser) Relational_expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 13:
 		return p.Precpred(p.GetParserRuleContext(), 4)
@@ -5765,6 +5883,9 @@ func (p *matlabParser) Relational_expression_Sempred(localctx antlr.RuleContext,
 }
 
 func (p *matlabParser) Equality_expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 17:
 		return p.Precpred(p.GetParserRuleContext(), 2)
@@ -5778,6 +5899,9 @@ func (p *matlabParser) Equality_expression_Sempred(localctx antlr.RuleContext, p
 }
 
 func (p *matlabParser) And_expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 19:
 		return p.Precpred(p.GetParserRuleContext(), 1)
@@ -5788,6 +5912,9 @@ func (p *matlabParser) And_expression_Sempred(localctx antlr.RuleContext, predIn
 }
 
 func (p *matlabParser) Or_expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 20:
 		return p.Precpred(p.GetParserRuleContext(), 1)
@@ -5798,6 +5925,9 @@ func (p *matlabParser) Or_expression_Sempred(localctx antlr.RuleContext, predInd
 }
 
 func (p *matlabParser) Expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 21:
 		return p.Precpred(p.GetParserRuleContext(), 1)
@@ -5808,6 +5938,9 @@ func (p *matlabParser) Expression_Sempred(localctx antlr.RuleContext, predIndex 
 }
 
 func (p *matlabParser) Statement_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 22:
 		return p.Precpred(p.GetParserRuleContext(), 1)
@@ -5818,6 +5951,9 @@ func (p *matlabParser) Statement_list_Sempred(localctx antlr.RuleContext, predIn
 }
 
 func (p *matlabParser) Identifier_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 23:
 		return p.Precpred(p.GetParserRuleContext(), 1)
@@ -5828,6 +5964,9 @@ func (p *matlabParser) Identifier_list_Sempred(localctx antlr.RuleContext, predI
 }
 
 func (p *matlabParser) Array_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 24:
 		return p.Precpred(p.GetParserRuleContext(), 1)
@@ -5838,6 +5977,9 @@ func (p *matlabParser) Array_list_Sempred(localctx antlr.RuleContext, predIndex 
 }
 
 func (p *matlabParser) Elseif_clause_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 25:
 		return p.Precpred(p.GetParserRuleContext(), 1)
@@ -5848,6 +5990,9 @@ func (p *matlabParser) Elseif_clause_Sempred(localctx antlr.RuleContext, predInd
 }
 
 func (p *matlabParser) Func_ident_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 26:
 		return p.Precpred(p.GetParserRuleContext(), 1)

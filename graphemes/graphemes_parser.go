@@ -1,4 +1,4 @@
-// Code generated from Graphemes.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Graphemes.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package graphemes // Graphemes
 import (
@@ -35,9 +35,6 @@ var parserATN = []uint16{
 	2, 2, 2, 38, 39, 3, 2, 2, 2, 39, 41, 3, 2, 2, 2, 40, 38, 3, 2, 2, 2, 41,
 	42, 7, 2, 2, 3, 42, 7, 3, 2, 2, 2, 8, 12, 19, 25, 30, 33, 38,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "'\u200D'",
 }
@@ -49,21 +46,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"emoji_sequence", "grapheme_cluster", "graphemes",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type GraphemesParser struct {
 	*antlr.BaseParser
 }
 
+// NewGraphemesParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *GraphemesParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewGraphemesParser(input antlr.TokenStream) *GraphemesParser {
 	this := new(GraphemesParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -192,6 +193,9 @@ func (s *Emoji_sequenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *GraphemesParser) Emoji_sequence() (localctx IEmoji_sequenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewEmoji_sequenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, GraphemesParserRULE_emoji_sequence)
 	var _la int
@@ -366,6 +370,9 @@ func (s *Grapheme_clusterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *GraphemesParser) Grapheme_cluster() (localctx IGrapheme_clusterContext) {
+	this := p
+	_ = this
+
 	localctx = NewGrapheme_clusterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, GraphemesParserRULE_grapheme_cluster)
 	var _la int
@@ -553,6 +560,9 @@ func (s *GraphemesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *GraphemesParser) Graphemes() (localctx IGraphemesContext) {
+	this := p
+	_ = this
+
 	localctx = NewGraphemesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, GraphemesParserRULE_graphemes)
 	var _la int

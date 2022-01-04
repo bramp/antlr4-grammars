@@ -1,4 +1,4 @@
-// Code generated from arithmetic.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from arithmetic.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package arithmetic // arithmetic
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -20,11 +20,11 @@ func (s *BasearithmeticListener) EnterEveryRule(ctx antlr.ParserRuleContext) {}
 // ExitEveryRule is called when any rule is exited.
 func (s *BasearithmeticListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
 
-// EnterFile is called when production file is entered.
-func (s *BasearithmeticListener) EnterFile(ctx *FileContext) {}
+// EnterFile_ is called when production file_ is entered.
+func (s *BasearithmeticListener) EnterFile_(ctx *File_Context) {}
 
-// ExitFile is called when production file is exited.
-func (s *BasearithmeticListener) ExitFile(ctx *FileContext) {}
+// ExitFile_ is called when production file_ is exited.
+func (s *BasearithmeticListener) ExitFile_(ctx *File_Context) {}
 
 // EnterEquation is called when production equation is entered.
 func (s *BasearithmeticListener) EnterEquation(ctx *EquationContext) {}

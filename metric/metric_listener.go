@@ -1,4 +1,4 @@
-// Code generated from metric.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from metric.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package metric // metric
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -16,8 +16,8 @@ type metricListener interface {
 	// EnterExponent is called when entering the exponent production.
 	EnterExponent(c *ExponentContext)
 
-	// EnterPrefix is called when entering the prefix production.
-	EnterPrefix(c *PrefixContext)
+	// EnterPrefix_ is called when entering the prefix_ production.
+	EnterPrefix_(c *Prefix_Context)
 
 	// EnterUnit is called when entering the unit production.
 	EnterUnit(c *UnitContext)
@@ -37,8 +37,8 @@ type metricListener interface {
 	// ExitExponent is called when exiting the exponent production.
 	ExitExponent(c *ExponentContext)
 
-	// ExitPrefix is called when exiting the prefix production.
-	ExitPrefix(c *PrefixContext)
+	// ExitPrefix_ is called when exiting the prefix_ production.
+	ExitPrefix_(c *Prefix_Context)
 
 	// ExitUnit is called when exiting the unit production.
 	ExitUnit(c *UnitContext)

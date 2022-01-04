@@ -1,4 +1,4 @@
-// Code generated from ATL.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ATL.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package atl // ATL
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -50,11 +50,11 @@ func (s *BaseATLListener) EnterTransformationMode(ctx *TransformationModeContext
 // ExitTransformationMode is called when production transformationMode is exited.
 func (s *BaseATLListener) ExitTransformationMode(ctx *TransformationModeContext) {}
 
-// EnterLibrary is called when production library is entered.
-func (s *BaseATLListener) EnterLibrary(ctx *LibraryContext) {}
+// EnterLibrary_ is called when production library_ is entered.
+func (s *BaseATLListener) EnterLibrary_(ctx *Library_Context) {}
 
-// ExitLibrary is called when production library is exited.
-func (s *BaseATLListener) ExitLibrary(ctx *LibraryContext) {}
+// ExitLibrary_ is called when production library_ is exited.
+func (s *BaseATLListener) ExitLibrary_(ctx *Library_Context) {}
 
 // EnterQuery is called when production query is entered.
 func (s *BaseATLListener) EnterQuery(ctx *QueryContext) {}
@@ -277,7 +277,8 @@ func (s *BaseATLListener) EnterNavigationOrAttributeCallExp(ctx *NavigationOrAtt
 }
 
 // ExitNavigationOrAttributeCallExp is called when production navigationOrAttributeCallExp is exited.
-func (s *BaseATLListener) ExitNavigationOrAttributeCallExp(ctx *NavigationOrAttributeCallExpContext) {}
+func (s *BaseATLListener) ExitNavigationOrAttributeCallExp(ctx *NavigationOrAttributeCallExpContext) {
+}
 
 // EnterIterator is called when production iterator is entered.
 func (s *BaseATLListener) EnterIterator(ctx *IteratorContext) {}
@@ -554,7 +555,8 @@ func (s *BaseATLListener) EnterMatchedRule_abstractContents(ctx *MatchedRule_abs
 }
 
 // ExitMatchedRule_abstractContents is called when production matchedRule_abstractContents is exited.
-func (s *BaseATLListener) ExitMatchedRule_abstractContents(ctx *MatchedRule_abstractContentsContext) {}
+func (s *BaseATLListener) ExitMatchedRule_abstractContents(ctx *MatchedRule_abstractContentsContext) {
+}
 
 // EnterOclType_abstractContents is called when production oclType_abstractContents is entered.
 func (s *BaseATLListener) EnterOclType_abstractContents(ctx *OclType_abstractContentsContext) {}

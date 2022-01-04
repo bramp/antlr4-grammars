@@ -1,4 +1,4 @@
-// Code generated from Cobol85.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Cobol85.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package cobol85
 
@@ -2935,9 +2935,6 @@ var serializedLexerAtn = []uint16{
 	5796, 5800, 5811, 5821, 5831, 5841, 5849, 5857, 3, 2, 3, 2,
 }
 
-var lexerDeserializer = antlr.NewATNDeserializer(nil)
-var lexerAtn = lexerDeserializer.DeserializeFromUInt16(serializedLexerAtn)
-
 var lexerChannelNames = []string{
 	"DEFAULT_TOKEN_CHANNEL", "HIDDEN",
 }
@@ -3030,7 +3027,7 @@ var lexerSymbolicNames = []string{
 	"LONG_TIME", "LOWER", "LOWLIGHT", "LOW_VALUE", "LOW_VALUES", "MEMORY",
 	"MERGE", "MESSAGE", "MMDDYYYY", "MODE", "MODULES", "MORE_LABELS", "MOVE",
 	"MULTIPLE", "MULTIPLY", "NAMED", "NATIONAL", "NATIONAL_EDITED", "NATIVE",
-	"NEGATIVE", "NETWORK", "NEXT", "NO", "NO_ECHO", "NOT", "NULL", "NULLS",
+	"NEGATIVE", "NETWORK", "NEXT", "NO", "NO_ECHO", "NOT", "NULL_", "NULLS",
 	"NUMBER", "NUMERIC", "NUMERIC_DATE", "NUMERIC_EDITED", "NUMERIC_TIME",
 	"OBJECT_COMPUTER", "OCCURS", "ODT", "OF", "OFF", "OMITTED", "ON", "OPEN",
 	"OPTIONAL", "OR", "ORDER", "ORDERLY", "ORGANIZATION", "OTHER", "OUTPUT",
@@ -3118,7 +3115,7 @@ var lexerRuleNames = []string{
 	"LONG_TIME", "LOWER", "LOWLIGHT", "LOW_VALUE", "LOW_VALUES", "MEMORY",
 	"MERGE", "MESSAGE", "MMDDYYYY", "MODE", "MODULES", "MORE_LABELS", "MOVE",
 	"MULTIPLE", "MULTIPLY", "NAMED", "NATIONAL", "NATIONAL_EDITED", "NATIVE",
-	"NEGATIVE", "NETWORK", "NEXT", "NO", "NO_ECHO", "NOT", "NULL", "NULLS",
+	"NEGATIVE", "NETWORK", "NEXT", "NO", "NO_ECHO", "NOT", "NULL_", "NULLS",
 	"NUMBER", "NUMERIC", "NUMERIC_DATE", "NUMERIC_EDITED", "NUMERIC_TIME",
 	"OBJECT_COMPUTER", "OCCURS", "ODT", "OF", "OFF", "OMITTED", "ON", "OPEN",
 	"OPTIONAL", "OR", "ORDER", "ORDERLY", "ORGANIZATION", "OTHER", "OUTPUT",
@@ -3169,18 +3166,20 @@ type Cobol85Lexer struct {
 	// TODO: EOF string
 }
 
-var lexerDecisionToDFA = make([]*antlr.DFA, len(lexerAtn.DecisionToState))
-
-func init() {
+// NewCobol85Lexer produces a new lexer instance for the optional input antlr.CharStream.
+//
+// The *Cobol85Lexer instance produced may be reused by calling the SetInputStream method.
+// The initial lexer configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
+func NewCobol85Lexer(input antlr.CharStream) *Cobol85Lexer {
+	l := new(Cobol85Lexer)
+	lexerDeserializer := antlr.NewATNDeserializer(nil)
+	lexerAtn := lexerDeserializer.DeserializeFromUInt16(serializedLexerAtn)
+	lexerDecisionToDFA := make([]*antlr.DFA, len(lexerAtn.DecisionToState))
 	for index, ds := range lexerAtn.DecisionToState {
 		lexerDecisionToDFA[index] = antlr.NewDFA(ds, index)
 	}
-}
-
-func NewCobol85Lexer(input antlr.CharStream) *Cobol85Lexer {
-
-	l := new(Cobol85Lexer)
-
 	l.BaseLexer = antlr.NewBaseLexer(input)
 	l.Interpreter = antlr.NewLexerATNSimulator(l, lexerAtn, lexerDecisionToDFA, antlr.NewPredictionContextCache())
 
@@ -3509,7 +3508,7 @@ const (
 	Cobol85LexerNO                     = 310
 	Cobol85LexerNO_ECHO                = 311
 	Cobol85LexerNOT                    = 312
-	Cobol85LexerNULL                   = 313
+	Cobol85LexerNULL_                  = 313
 	Cobol85LexerNULLS                  = 314
 	Cobol85LexerNUMBER                 = 315
 	Cobol85LexerNUMERIC                = 316

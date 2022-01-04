@@ -1,4 +1,4 @@
-// Code generated from modelica.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from modelica.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package modelica // modelica
 import (
@@ -495,9 +495,6 @@ var parserATN = []uint16{
 	864, 875, 883, 892, 906, 916, 919, 926, 930, 934, 939, 943, 948, 957, 960,
 	965, 975, 980, 983, 987, 991, 999, 1008, 1015, 1019, 1026, 1029,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'within'", "';'", "'final'", "'encapsulated'", "'partial'", "'class'",
 	"'model'", "'operator'", "'record'", "'block'", "'expandable'", "'connector'",
@@ -539,24 +536,28 @@ var ruleNames = []string{
 	"logical_factor", "relation", "rel_op", "arithmetic_expression", "add_op",
 	"term", "mul_op", "factor", "primary", "name", "component_reference", "function_call_args",
 	"function_arguments", "named_arguments", "named_argument", "function_argument",
-	"output_expression_list", "expression_list", "array_subscripts", "subscript",
+	"output_expression_list", "expression_list", "array_subscripts", "subscript_",
 	"comment", "string_comment", "annotation",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type modelicaParser struct {
 	*antlr.BaseParser
 }
 
+// NewmodelicaParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *modelicaParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewmodelicaParser(input antlr.TokenStream) *modelicaParser {
 	this := new(modelicaParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -743,7 +744,7 @@ const (
 	modelicaParserRULE_output_expression_list              = 71
 	modelicaParserRULE_expression_list                     = 72
 	modelicaParserRULE_array_subscripts                    = 73
-	modelicaParserRULE_subscript                           = 74
+	modelicaParserRULE_subscript_                          = 74
 	modelicaParserRULE_comment                             = 75
 	modelicaParserRULE_string_comment                      = 76
 	modelicaParserRULE_annotation                          = 77
@@ -854,6 +855,9 @@ func (s *Stored_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Stored_definition() (localctx IStored_definitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewStored_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, modelicaParserRULE_stored_definition)
 	var _la int
@@ -1016,6 +1020,9 @@ func (s *Class_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Class_definition() (localctx IClass_definitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewClass_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, modelicaParserRULE_class_definition)
 	var _la int
@@ -1149,6 +1156,9 @@ func (s *Class_specifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Class_specifier() (localctx IClass_specifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewClass_specifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, modelicaParserRULE_class_specifier)
 
@@ -1255,6 +1265,9 @@ func (s *Class_prefixesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Class_prefixes() (localctx IClass_prefixesContext) {
+	this := p
+	_ = this
+
 	localctx = NewClass_prefixesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, modelicaParserRULE_class_prefixes)
 	var _la int
@@ -1497,6 +1510,9 @@ func (s *Long_class_specifierContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *modelicaParser) Long_class_specifier() (localctx ILong_class_specifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewLong_class_specifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, modelicaParserRULE_long_class_specifier)
 	var _la int
@@ -1712,6 +1728,9 @@ func (s *Short_class_specifierContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *modelicaParser) Short_class_specifier() (localctx IShort_class_specifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewShort_class_specifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, modelicaParserRULE_short_class_specifier)
 	var _la int
@@ -1925,6 +1944,9 @@ func (s *Der_class_specifierContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *modelicaParser) Der_class_specifier() (localctx IDer_class_specifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewDer_class_specifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, modelicaParserRULE_der_class_specifier)
 	var _la int
@@ -2073,6 +2095,9 @@ func (s *Base_prefixContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Base_prefix() (localctx IBase_prefixContext) {
+	this := p
+	_ = this
+
 	localctx = NewBase_prefixContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, modelicaParserRULE_base_prefix)
 
@@ -2183,6 +2208,9 @@ func (s *Enum_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Enum_list() (localctx IEnum_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnum_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, modelicaParserRULE_enum_list)
 	var _la int
@@ -2303,6 +2331,9 @@ func (s *Enumeration_literalContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *modelicaParser) Enumeration_literal() (localctx IEnumeration_literalContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumeration_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, modelicaParserRULE_enumeration_literal)
 
@@ -2506,6 +2537,9 @@ func (s *CompositionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Composition() (localctx ICompositionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCompositionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, modelicaParserRULE_composition)
 	var _la int
@@ -2707,6 +2741,9 @@ func (s *Language_specificationContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *modelicaParser) Language_specification() (localctx ILanguage_specificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewLanguage_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, modelicaParserRULE_language_specification)
 
@@ -2818,6 +2855,9 @@ func (s *External_function_callContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *modelicaParser) External_function_call() (localctx IExternal_function_callContext) {
+	this := p
+	_ = this
+
 	localctx = NewExternal_function_callContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, modelicaParserRULE_external_function_call)
 	var _la int
@@ -2962,6 +3002,9 @@ func (s *Element_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Element_list() (localctx IElement_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewElement_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, modelicaParserRULE_element_list)
 	var _la int
@@ -3124,6 +3167,9 @@ func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Element() (localctx IElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, modelicaParserRULE_element)
 	var _la int
@@ -3377,6 +3423,9 @@ func (s *Import_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Import_clause() (localctx IImport_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewImport_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, modelicaParserRULE_import_clause)
 
@@ -3528,6 +3577,9 @@ func (s *Import_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Import_list() (localctx IImport_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewImport_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, modelicaParserRULE_import_list)
 	var _la int
@@ -3664,6 +3716,9 @@ func (s *Extends_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Extends_clause() (localctx IExtends_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtends_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, modelicaParserRULE_extends_clause)
 	var _la int
@@ -3798,6 +3853,9 @@ func (s *Constraining_clauseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *modelicaParser) Constraining_clause() (localctx IConstraining_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstraining_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, modelicaParserRULE_constraining_clause)
 	var _la int
@@ -3941,6 +3999,9 @@ func (s *Component_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Component_clause() (localctx IComponent_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponent_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, modelicaParserRULE_component_clause)
 	var _la int
@@ -4047,6 +4108,9 @@ func (s *Type_prefixContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Type_prefix() (localctx IType_prefixContext) {
+	this := p
+	_ = this
+
 	localctx = NewType_prefixContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, modelicaParserRULE_type_prefix)
 	var _la int
@@ -4195,6 +4259,9 @@ func (s *Type_specifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Type_specifier() (localctx IType_specifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewType_specifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, modelicaParserRULE_type_specifier)
 
@@ -4305,6 +4372,9 @@ func (s *Component_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Component_list() (localctx IComponent_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponent_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, modelicaParserRULE_component_list)
 	var _la int
@@ -4441,6 +4511,9 @@ func (s *Component_declarationContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *modelicaParser) Component_declaration() (localctx IComponent_declarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponent_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, modelicaParserRULE_component_declaration)
 	var _la int
@@ -4554,6 +4627,9 @@ func (s *Condition_attributeContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *modelicaParser) Condition_attribute() (localctx ICondition_attributeContext) {
+	this := p
+	_ = this
+
 	localctx = NewCondition_attributeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, modelicaParserRULE_condition_attribute)
 
@@ -4669,6 +4745,9 @@ func (s *DeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Declaration() (localctx IDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, modelicaParserRULE_declaration)
 	var _la int
@@ -4799,6 +4878,9 @@ func (s *ModificationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Modification() (localctx IModificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewModificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, modelicaParserRULE_modification)
 	var _la int
@@ -4943,6 +5025,9 @@ func (s *Class_modificationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Class_modification() (localctx IClass_modificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewClass_modificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, modelicaParserRULE_class_modification)
 	var _la int
@@ -5069,6 +5154,9 @@ func (s *Argument_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Argument_list() (localctx IArgument_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewArgument_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, modelicaParserRULE_argument_list)
 	var _la int
@@ -5195,6 +5283,9 @@ func (s *ArgumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Argument() (localctx IArgumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewArgumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, modelicaParserRULE_argument)
 
@@ -5318,6 +5409,9 @@ func (s *Element_modification_or_replaceableContext) ExitRule(listener antlr.Par
 }
 
 func (p *modelicaParser) Element_modification_or_replaceable() (localctx IElement_modification_or_replaceableContext) {
+	this := p
+	_ = this
+
 	localctx = NewElement_modification_or_replaceableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, modelicaParserRULE_element_modification_or_replaceable)
 	var _la int
@@ -5473,6 +5567,9 @@ func (s *Element_modificationContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *modelicaParser) Element_modification() (localctx IElement_modificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewElement_modificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, modelicaParserRULE_element_modification)
 	var _la int
@@ -5606,6 +5703,9 @@ func (s *Element_redeclarationContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *modelicaParser) Element_redeclaration() (localctx IElement_redeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewElement_redeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, modelicaParserRULE_element_redeclaration)
 	var _la int
@@ -5780,6 +5880,9 @@ func (s *Element_replaceableContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *modelicaParser) Element_replaceable() (localctx IElement_replaceableContext) {
+	this := p
+	_ = this
+
 	localctx = NewElement_replaceableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, modelicaParserRULE_element_replaceable)
 	var _la int
@@ -5928,6 +6031,9 @@ func (s *Component_clause1Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Component_clause1() (localctx IComponent_clause1Context) {
+	this := p
+	_ = this
+
 	localctx = NewComponent_clause1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, modelicaParserRULE_component_clause1)
 
@@ -6043,6 +6149,9 @@ func (s *Component_declaration1Context) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *modelicaParser) Component_declaration1() (localctx IComponent_declaration1Context) {
+	this := p
+	_ = this
+
 	localctx = NewComponent_declaration1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, modelicaParserRULE_component_declaration1)
 
@@ -6154,6 +6263,9 @@ func (s *Short_class_definitionContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *modelicaParser) Short_class_definition() (localctx IShort_class_definitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewShort_class_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, modelicaParserRULE_short_class_definition)
 
@@ -6268,6 +6380,9 @@ func (s *Equation_sectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Equation_section() (localctx IEquation_sectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewEquation_sectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, modelicaParserRULE_equation_section)
 	var _la int
@@ -6412,6 +6527,9 @@ func (s *Algorithm_sectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Algorithm_section() (localctx IAlgorithm_sectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlgorithm_sectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, modelicaParserRULE_algorithm_section)
 	var _la int
@@ -6619,6 +6737,9 @@ func (s *EquationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Equation() (localctx IEquationContext) {
+	this := p
+	_ = this
+
 	localctx = NewEquationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, modelicaParserRULE_equation)
 
@@ -6848,6 +6969,9 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, modelicaParserRULE_statement)
 
@@ -7079,6 +7203,9 @@ func (s *If_equationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) If_equation() (localctx IIf_equationContext) {
+	this := p
+	_ = this
+
 	localctx = NewIf_equationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, modelicaParserRULE_if_equation)
 	var _la int
@@ -7324,6 +7451,9 @@ func (s *If_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) If_statement() (localctx IIf_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewIf_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, modelicaParserRULE_if_statement)
 	var _la int
@@ -7548,6 +7678,9 @@ func (s *For_equationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) For_equation() (localctx IFor_equationContext) {
+	this := p
+	_ = this
+
 	localctx = NewFor_equationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, modelicaParserRULE_for_equation)
 
@@ -7706,6 +7839,9 @@ func (s *For_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) For_statement() (localctx IFor_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewFor_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, modelicaParserRULE_for_statement)
 	var _la int
@@ -7851,6 +7987,9 @@ func (s *For_indicesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) For_indices() (localctx IFor_indicesContext) {
+	this := p
+	_ = this
+
 	localctx = NewFor_indicesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, modelicaParserRULE_for_indices)
 	var _la int
@@ -7971,6 +8110,9 @@ func (s *For_indexContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) For_index() (localctx IFor_indexContext) {
+	this := p
+	_ = this
+
 	localctx = NewFor_indexContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, modelicaParserRULE_for_index)
 	var _la int
@@ -8107,6 +8249,9 @@ func (s *While_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) While_statement() (localctx IWhile_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhile_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, modelicaParserRULE_while_statement)
 	var _la int
@@ -8275,6 +8420,9 @@ func (s *When_equationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) When_equation() (localctx IWhen_equationContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhen_equationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, modelicaParserRULE_when_equation)
 	var _la int
@@ -8489,6 +8637,9 @@ func (s *When_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) When_statement() (localctx IWhen_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhen_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, modelicaParserRULE_when_statement)
 	var _la int
@@ -8674,6 +8825,9 @@ func (s *Connect_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Connect_clause() (localctx IConnect_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewConnect_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, modelicaParserRULE_connect_clause)
 
@@ -8814,6 +8968,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, modelicaParserRULE_expression)
 	var _la int
@@ -8987,6 +9144,9 @@ func (s *Simple_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Simple_expression() (localctx ISimple_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimple_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, modelicaParserRULE_simple_expression)
 	var _la int
@@ -9128,6 +9288,9 @@ func (s *Logical_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Logical_expression() (localctx ILogical_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewLogical_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, modelicaParserRULE_logical_expression)
 	var _la int
@@ -9257,6 +9420,9 @@ func (s *Logical_termContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Logical_term() (localctx ILogical_termContext) {
+	this := p
+	_ = this
+
 	localctx = NewLogical_termContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 108, modelicaParserRULE_logical_term)
 	var _la int
@@ -9373,6 +9539,9 @@ func (s *Logical_factorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Logical_factor() (localctx ILogical_factorContext) {
+	this := p
+	_ = this
+
 	localctx = NewLogical_factorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, modelicaParserRULE_logical_factor)
 	var _la int
@@ -9505,6 +9674,9 @@ func (s *RelationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Relation() (localctx IRelationContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, modelicaParserRULE_relation)
 	var _la int
@@ -9607,6 +9779,9 @@ func (s *Rel_opContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Rel_op() (localctx IRel_opContext) {
+	this := p
+	_ = this
+
 	localctx = NewRel_opContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, modelicaParserRULE_rel_op)
 	var _la int
@@ -9748,6 +9923,9 @@ func (s *Arithmetic_expressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *modelicaParser) Arithmetic_expression() (localctx IArithmetic_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewArithmetic_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, modelicaParserRULE_arithmetic_expression)
 	var _la int
@@ -9864,6 +10042,9 @@ func (s *Add_opContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Add_op() (localctx IAdd_opContext) {
+	this := p
+	_ = this
+
 	localctx = NewAdd_opContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 118, modelicaParserRULE_add_op)
 	var _la int
@@ -10005,6 +10186,9 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Term() (localctx ITermContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, modelicaParserRULE_term)
 	var _la int
@@ -10110,6 +10294,9 @@ func (s *Mul_opContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Mul_op() (localctx IMul_opContext) {
+	this := p
+	_ = this
+
 	localctx = NewMul_opContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, modelicaParserRULE_mul_op)
 	var _la int
@@ -10228,6 +10415,9 @@ func (s *FactorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Factor() (localctx IFactorContext) {
+	this := p
+	_ = this
+
 	localctx = NewFactorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 124, modelicaParserRULE_factor)
 	var _la int
@@ -10419,6 +10609,9 @@ func (s *PrimaryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Primary() (localctx IPrimaryContext) {
+	this := p
+	_ = this
+
 	localctx = NewPrimaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, modelicaParserRULE_primary)
 	var _la int
@@ -10651,6 +10844,9 @@ func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Name() (localctx INameContext) {
+	this := p
+	_ = this
+
 	localctx = NewNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, modelicaParserRULE_name)
 	var _la int
@@ -10799,6 +10995,9 @@ func (s *Component_referenceContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *modelicaParser) Component_reference() (localctx IComponent_referenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponent_referenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 130, modelicaParserRULE_component_reference)
 	var _la int
@@ -10948,6 +11147,9 @@ func (s *Function_call_argsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Function_call_args() (localctx IFunction_call_argsContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_call_argsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, modelicaParserRULE_function_call_args)
 	var _la int
@@ -11091,6 +11293,9 @@ func (s *Function_argumentsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Function_arguments() (localctx IFunction_argumentsContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_argumentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 134, modelicaParserRULE_function_arguments)
 
@@ -11239,6 +11444,9 @@ func (s *Named_argumentsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Named_arguments() (localctx INamed_argumentsContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamed_argumentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 136, modelicaParserRULE_named_arguments)
 	var _la int
@@ -11356,6 +11564,9 @@ func (s *Named_argumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Named_argument() (localctx INamed_argumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamed_argumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 138, modelicaParserRULE_named_argument)
 
@@ -11481,6 +11692,9 @@ func (s *Function_argumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Function_argument() (localctx IFunction_argumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_argumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 140, modelicaParserRULE_function_argument)
 	var _la int
@@ -11631,6 +11845,9 @@ func (s *Output_expression_listContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *modelicaParser) Output_expression_list() (localctx IOutput_expression_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewOutput_expression_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 142, modelicaParserRULE_output_expression_list)
 	var _la int
@@ -11774,6 +11991,9 @@ func (s *Expression_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Expression_list() (localctx IExpression_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpression_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 144, modelicaParserRULE_expression_list)
 	var _la int
@@ -11859,27 +12079,27 @@ func NewArray_subscriptsContext(parser antlr.Parser, parent antlr.ParserRuleCont
 
 func (s *Array_subscriptsContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *Array_subscriptsContext) AllSubscript() []ISubscriptContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISubscriptContext)(nil)).Elem())
-	var tst = make([]ISubscriptContext, len(ts))
+func (s *Array_subscriptsContext) AllSubscript_() []ISubscript_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ISubscript_Context)(nil)).Elem())
+	var tst = make([]ISubscript_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(ISubscriptContext)
+			tst[i] = t.(ISubscript_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *Array_subscriptsContext) Subscript(i int) ISubscriptContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISubscriptContext)(nil)).Elem(), i)
+func (s *Array_subscriptsContext) Subscript_(i int) ISubscript_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ISubscript_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ISubscriptContext)
+	return t.(ISubscript_Context)
 }
 
 func (s *Array_subscriptsContext) GetRuleContext() antlr.RuleContext {
@@ -11903,6 +12123,9 @@ func (s *Array_subscriptsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Array_subscripts() (localctx IArray_subscriptsContext) {
+	this := p
+	_ = this
+
 	localctx = NewArray_subscriptsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 146, modelicaParserRULE_array_subscripts)
 	var _la int
@@ -11930,7 +12153,7 @@ func (p *modelicaParser) Array_subscripts() (localctx IArray_subscriptsContext) 
 	}
 	{
 		p.SetState(1001)
-		p.Subscript()
+		p.Subscript_()
 	}
 	p.SetState(1006)
 	p.GetErrorHandler().Sync(p)
@@ -11943,7 +12166,7 @@ func (p *modelicaParser) Array_subscripts() (localctx IArray_subscriptsContext) 
 		}
 		{
 			p.SetState(1003)
-			p.Subscript()
+			p.Subscript_()
 		}
 
 		p.SetState(1008)
@@ -11958,45 +12181,45 @@ func (p *modelicaParser) Array_subscripts() (localctx IArray_subscriptsContext) 
 	return localctx
 }
 
-// ISubscriptContext is an interface to support dynamic dispatch.
-type ISubscriptContext interface {
+// ISubscript_Context is an interface to support dynamic dispatch.
+type ISubscript_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsSubscriptContext differentiates from other interfaces.
-	IsSubscriptContext()
+	// IsSubscript_Context differentiates from other interfaces.
+	IsSubscript_Context()
 }
 
-type SubscriptContext struct {
+type Subscript_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptySubscriptContext() *SubscriptContext {
-	var p = new(SubscriptContext)
+func NewEmptySubscript_Context() *Subscript_Context {
+	var p = new(Subscript_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = modelicaParserRULE_subscript
+	p.RuleIndex = modelicaParserRULE_subscript_
 	return p
 }
 
-func (*SubscriptContext) IsSubscriptContext() {}
+func (*Subscript_Context) IsSubscript_Context() {}
 
-func NewSubscriptContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *SubscriptContext {
-	var p = new(SubscriptContext)
+func NewSubscript_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Subscript_Context {
+	var p = new(Subscript_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = modelicaParserRULE_subscript
+	p.RuleIndex = modelicaParserRULE_subscript_
 
 	return p
 }
 
-func (s *SubscriptContext) GetParser() antlr.Parser { return s.parser }
+func (s *Subscript_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *SubscriptContext) Expression() IExpressionContext {
+func (s *Subscript_Context) Expression() IExpressionContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -12006,29 +12229,32 @@ func (s *SubscriptContext) Expression() IExpressionContext {
 	return t.(IExpressionContext)
 }
 
-func (s *SubscriptContext) GetRuleContext() antlr.RuleContext {
+func (s *Subscript_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *SubscriptContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Subscript_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *SubscriptContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Subscript_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
-		listenerT.EnterSubscript(s)
+		listenerT.EnterSubscript_(s)
 	}
 }
 
-func (s *SubscriptContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Subscript_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(modelicaListener); ok {
-		listenerT.ExitSubscript(s)
+		listenerT.ExitSubscript_(s)
 	}
 }
 
-func (p *modelicaParser) Subscript() (localctx ISubscriptContext) {
-	localctx = NewSubscriptContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 148, modelicaParserRULE_subscript)
+func (p *modelicaParser) Subscript_() (localctx ISubscript_Context) {
+	this := p
+	_ = this
+
+	localctx = NewSubscript_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 148, modelicaParserRULE_subscript_)
 
 	defer func() {
 		p.ExitRule()
@@ -12150,6 +12376,9 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Comment() (localctx ICommentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 150, modelicaParserRULE_comment)
 	var _la int
@@ -12257,6 +12486,9 @@ func (s *String_commentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) String_comment() (localctx IString_commentContext) {
+	this := p
+	_ = this
+
 	localctx = NewString_commentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 152, modelicaParserRULE_string_comment)
 	var _la int
@@ -12380,6 +12612,9 @@ func (s *AnnotationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *modelicaParser) Annotation() (localctx IAnnotationContext) {
+	this := p
+	_ = this
+
 	localctx = NewAnnotationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 154, modelicaParserRULE_annotation)
 

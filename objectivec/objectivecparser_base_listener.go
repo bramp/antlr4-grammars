@@ -1,4 +1,4 @@
-// Code generated from ObjectiveCParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ObjectiveCParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package objectivec // ObjectiveCParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -187,7 +187,8 @@ func (s *BaseObjectiveCParserListener) ExitImplementationDefinitionList(ctx *Imp
 }
 
 // EnterClassMethodDefinition is called when production classMethodDefinition is entered.
-func (s *BaseObjectiveCParserListener) EnterClassMethodDefinition(ctx *ClassMethodDefinitionContext) {}
+func (s *BaseObjectiveCParserListener) EnterClassMethodDefinition(ctx *ClassMethodDefinitionContext) {
+}
 
 // ExitClassMethodDefinition is called when production classMethodDefinition is exited.
 func (s *BaseObjectiveCParserListener) ExitClassMethodDefinition(ctx *ClassMethodDefinitionContext) {}
@@ -399,7 +400,8 @@ func (s *BaseObjectiveCParserListener) EnterCatchStatement(ctx *CatchStatementCo
 func (s *BaseObjectiveCParserListener) ExitCatchStatement(ctx *CatchStatementContext) {}
 
 // EnterSynchronizedStatement is called when production synchronizedStatement is entered.
-func (s *BaseObjectiveCParserListener) EnterSynchronizedStatement(ctx *SynchronizedStatementContext) {}
+func (s *BaseObjectiveCParserListener) EnterSynchronizedStatement(ctx *SynchronizedStatementContext) {
+}
 
 // ExitSynchronizedStatement is called when production synchronizedStatement is exited.
 func (s *BaseObjectiveCParserListener) ExitSynchronizedStatement(ctx *SynchronizedStatementContext) {}
@@ -513,7 +515,8 @@ func (s *BaseObjectiveCParserListener) EnterTypeDeclarator(ctx *TypeDeclaratorCo
 func (s *BaseObjectiveCParserListener) ExitTypeDeclarator(ctx *TypeDeclaratorContext) {}
 
 // EnterDeclarationSpecifiers is called when production declarationSpecifiers is entered.
-func (s *BaseObjectiveCParserListener) EnterDeclarationSpecifiers(ctx *DeclarationSpecifiersContext) {}
+func (s *BaseObjectiveCParserListener) EnterDeclarationSpecifiers(ctx *DeclarationSpecifiersContext) {
+}
 
 // ExitDeclarationSpecifiers is called when production declarationSpecifiers is exited.
 func (s *BaseObjectiveCParserListener) ExitDeclarationSpecifiers(ctx *DeclarationSpecifiersContext) {}
@@ -565,7 +568,8 @@ func (s *BaseObjectiveCParserListener) EnterIbOutletQualifier(ctx *IbOutletQuali
 func (s *BaseObjectiveCParserListener) ExitIbOutletQualifier(ctx *IbOutletQualifierContext) {}
 
 // EnterArcBehaviourSpecifier is called when production arcBehaviourSpecifier is entered.
-func (s *BaseObjectiveCParserListener) EnterArcBehaviourSpecifier(ctx *ArcBehaviourSpecifierContext) {}
+func (s *BaseObjectiveCParserListener) EnterArcBehaviourSpecifier(ctx *ArcBehaviourSpecifierContext) {
+}
 
 // ExitArcBehaviourSpecifier is called when production arcBehaviourSpecifier is exited.
 func (s *BaseObjectiveCParserListener) ExitArcBehaviourSpecifier(ctx *ArcBehaviourSpecifierContext) {}
@@ -577,7 +581,8 @@ func (s *BaseObjectiveCParserListener) EnterNullabilitySpecifier(ctx *Nullabilit
 func (s *BaseObjectiveCParserListener) ExitNullabilitySpecifier(ctx *NullabilitySpecifierContext) {}
 
 // EnterStorageClassSpecifier is called when production storageClassSpecifier is entered.
-func (s *BaseObjectiveCParserListener) EnterStorageClassSpecifier(ctx *StorageClassSpecifierContext) {}
+func (s *BaseObjectiveCParserListener) EnterStorageClassSpecifier(ctx *StorageClassSpecifierContext) {
+}
 
 // ExitStorageClassSpecifier is called when production storageClassSpecifier is exited.
 func (s *BaseObjectiveCParserListener) ExitStorageClassSpecifier(ctx *StorageClassSpecifierContext) {}

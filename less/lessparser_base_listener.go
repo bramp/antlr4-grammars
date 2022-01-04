@@ -1,4 +1,4 @@
-// Code generated from LessParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from LessParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package less // LessParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -62,11 +62,11 @@ func (s *BaseLessParserListener) EnterExpression(ctx *ExpressionContext) {}
 // ExitExpression is called when production expression is exited.
 func (s *BaseLessParserListener) ExitExpression(ctx *ExpressionContext) {}
 
-// EnterFunction is called when production function is entered.
-func (s *BaseLessParserListener) EnterFunction(ctx *FunctionContext) {}
+// EnterFunction_ is called when production function_ is entered.
+func (s *BaseLessParserListener) EnterFunction_(ctx *Function_Context) {}
 
-// ExitFunction is called when production function is exited.
-func (s *BaseLessParserListener) ExitFunction(ctx *FunctionContext) {}
+// ExitFunction_ is called when production function_ is exited.
+func (s *BaseLessParserListener) ExitFunction_(ctx *Function_Context) {}
 
 // EnterConditions is called when production conditions is entered.
 func (s *BaseLessParserListener) EnterConditions(ctx *ConditionsContext) {}
@@ -218,11 +218,11 @@ func (s *BaseLessParserListener) EnterIdentifierVariableName(ctx *IdentifierVari
 // ExitIdentifierVariableName is called when production identifierVariableName is exited.
 func (s *BaseLessParserListener) ExitIdentifierVariableName(ctx *IdentifierVariableNameContext) {}
 
-// EnterProperty is called when production property is entered.
-func (s *BaseLessParserListener) EnterProperty(ctx *PropertyContext) {}
+// EnterProperty_ is called when production property_ is entered.
+func (s *BaseLessParserListener) EnterProperty_(ctx *Property_Context) {}
 
-// ExitProperty is called when production property is exited.
-func (s *BaseLessParserListener) ExitProperty(ctx *PropertyContext) {}
+// ExitProperty_ is called when production property_ is exited.
+func (s *BaseLessParserListener) ExitProperty_(ctx *Property_Context) {}
 
 // EnterValues is called when production values is entered.
 func (s *BaseLessParserListener) EnterValues(ctx *ValuesContext) {}

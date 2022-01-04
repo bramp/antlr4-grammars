@@ -1,4 +1,4 @@
-// Code generated from Corundum.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Corundum.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package corundum // Corundum
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -160,8 +160,8 @@ type CorundumListener interface {
 	// EnterDynamic_result is called when entering the dynamic_result production.
 	EnterDynamic_result(c *Dynamic_resultContext)
 
-	// EnterDynamic is called when entering the dynamic production.
-	EnterDynamic(c *DynamicContext)
+	// EnterDynamic_ is called when entering the dynamic_ production.
+	EnterDynamic_(c *Dynamic_Context)
 
 	// EnterInt_result is called when entering the int_result production.
 	EnterInt_result(c *Int_resultContext)
@@ -205,8 +205,8 @@ type CorundumListener interface {
 	// EnterNil_t is called when entering the nil_t production.
 	EnterNil_t(c *Nil_tContext)
 
-	// EnterId is called when entering the id production.
-	EnterId(c *IdContext)
+	// EnterId_ is called when entering the id_ production.
+	EnterId_(c *Id_Context)
 
 	// EnterId_global is called when entering the id_global production.
 	EnterId_global(c *Id_globalContext)
@@ -376,8 +376,8 @@ type CorundumListener interface {
 	// ExitDynamic_result is called when exiting the dynamic_result production.
 	ExitDynamic_result(c *Dynamic_resultContext)
 
-	// ExitDynamic is called when exiting the dynamic production.
-	ExitDynamic(c *DynamicContext)
+	// ExitDynamic_ is called when exiting the dynamic_ production.
+	ExitDynamic_(c *Dynamic_Context)
 
 	// ExitInt_result is called when exiting the int_result production.
 	ExitInt_result(c *Int_resultContext)
@@ -421,8 +421,8 @@ type CorundumListener interface {
 	// ExitNil_t is called when exiting the nil_t production.
 	ExitNil_t(c *Nil_tContext)
 
-	// ExitId is called when exiting the id production.
-	ExitId(c *IdContext)
+	// ExitId_ is called when exiting the id_ production.
+	ExitId_(c *Id_Context)
 
 	// ExitId_global is called when exiting the id_global production.
 	ExitId_global(c *Id_globalContext)

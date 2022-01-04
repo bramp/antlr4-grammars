@@ -1,4 +1,4 @@
-// Code generated from gml.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from gml.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package gml // gml
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -10,8 +10,8 @@ type gmlListener interface {
 	// EnterGraph is called when entering the graph production.
 	EnterGraph(c *GraphContext)
 
-	// EnterList is called when entering the list production.
-	EnterList(c *ListContext)
+	// EnterList_ is called when entering the list_ production.
+	EnterList_(c *List_Context)
 
 	// EnterKv is called when entering the kv production.
 	EnterKv(c *KvContext)
@@ -28,8 +28,8 @@ type gmlListener interface {
 	// EnterRealnum is called when entering the realnum production.
 	EnterRealnum(c *RealnumContext)
 
-	// EnterStr is called when entering the str production.
-	EnterStr(c *StrContext)
+	// EnterStr_ is called when entering the str_ production.
+	EnterStr_(c *Str_Context)
 
 	// EnterStringliteral is called when entering the stringliteral production.
 	EnterStringliteral(c *StringliteralContext)
@@ -37,8 +37,8 @@ type gmlListener interface {
 	// ExitGraph is called when exiting the graph production.
 	ExitGraph(c *GraphContext)
 
-	// ExitList is called when exiting the list production.
-	ExitList(c *ListContext)
+	// ExitList_ is called when exiting the list_ production.
+	ExitList_(c *List_Context)
 
 	// ExitKv is called when exiting the kv production.
 	ExitKv(c *KvContext)
@@ -55,8 +55,8 @@ type gmlListener interface {
 	// ExitRealnum is called when exiting the realnum production.
 	ExitRealnum(c *RealnumContext)
 
-	// ExitStr is called when exiting the str production.
-	ExitStr(c *StrContext)
+	// ExitStr_ is called when exiting the str_ production.
+	ExitStr_(c *Str_Context)
 
 	// ExitStringliteral is called when exiting the stringliteral production.
 	ExitStringliteral(c *StringliteralContext)

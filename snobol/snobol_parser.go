@@ -1,4 +1,4 @@
-// Code generated from snobol.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from snobol.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package snobol // snobol
 import (
@@ -177,9 +177,6 @@ var parserATN = []uint16{
 	2, 2, 376, 85, 3, 2, 2, 2, 22, 89, 92, 97, 101, 107, 109, 113, 118, 123,
 	132, 136, 145, 153, 159, 170, 179, 208, 365, 370, 373,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'['", "']'", "'ident'", "'differ'", "'eq'", "'ne'", "'ge'", "'gt'",
 	"'le'", "'lt'", "'integer'", "'lgt'", "'atan'", "'chop'", "'cos'", "'exp'",
@@ -201,23 +198,27 @@ var ruleNames = []string{
 	"powExpression", "atom", "command", "ident", "differ", "eq", "ne", "ge",
 	"gt", "le", "lt", "integer", "lgt", "atan", "chop", "cos", "exp", "ln",
 	"remdr", "sin", "tan", "dupl", "reverse", "date", "replace", "size", "trim",
-	"array", "convert", "table", "sort", "break_", "transfer", "transferpre",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"array_", "convert", "table", "sort", "break_", "transfer", "transferpre",
 }
 
 type snobolParser struct {
 	*antlr.BaseParser
 }
 
+// NewsnobolParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *snobolParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewsnobolParser(input antlr.TokenStream) *snobolParser {
 	this := new(snobolParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -326,7 +327,7 @@ const (
 	snobolParserRULE_replace               = 32
 	snobolParserRULE_size                  = 33
 	snobolParserRULE_trim                  = 34
-	snobolParserRULE_array                 = 35
+	snobolParserRULE_array_                = 35
 	snobolParserRULE_convert               = 36
 	snobolParserRULE_table                 = 37
 	snobolParserRULE_sort                  = 38
@@ -417,6 +418,9 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Prog() (localctx IProgContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, snobolParserRULE_prog)
 	var _la int
@@ -529,6 +533,9 @@ func (s *LinContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Lin() (localctx ILinContext) {
+	this := p
+	_ = this
+
 	localctx = NewLinContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, snobolParserRULE_lin)
 	var _la int
@@ -707,6 +714,9 @@ func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Line() (localctx ILineContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, snobolParserRULE_line)
 	var _la int
@@ -894,6 +904,9 @@ func (s *LabelContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Label() (localctx ILabelContext) {
+	this := p
+	_ = this
+
 	localctx = NewLabelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, snobolParserRULE_label)
 
@@ -1001,6 +1014,9 @@ func (s *SubjectContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Subject() (localctx ISubjectContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubjectContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, snobolParserRULE_subject)
 	var _la int
@@ -1144,6 +1160,9 @@ func (s *PatternContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Pattern() (localctx IPatternContext) {
+	this := p
+	_ = this
+
 	localctx = NewPatternContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, snobolParserRULE_pattern)
 	var _la int
@@ -1278,6 +1297,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, snobolParserRULE_expression)
 	var _la int
@@ -1434,6 +1456,9 @@ func (s *MultiplyingExpressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *snobolParser) MultiplyingExpression() (localctx IMultiplyingExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewMultiplyingExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, snobolParserRULE_multiplyingExpression)
 	var _la int
@@ -1575,6 +1600,9 @@ func (s *PowExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) PowExpression() (localctx IPowExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewPowExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, snobolParserRULE_powExpression)
 	var _la int
@@ -1749,6 +1777,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, snobolParserRULE_atom)
 	var _la int
@@ -2124,14 +2155,14 @@ func (s *CommandContext) Trim() ITrimContext {
 	return t.(ITrimContext)
 }
 
-func (s *CommandContext) Array() IArrayContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IArrayContext)(nil)).Elem(), 0)
+func (s *CommandContext) Array_() IArray_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IArray_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IArrayContext)
+	return t.(IArray_Context)
 }
 
 func (s *CommandContext) Sort() ISortContext {
@@ -2185,6 +2216,9 @@ func (s *CommandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Command() (localctx ICommandContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, snobolParserRULE_command)
 
@@ -2373,7 +2407,7 @@ func (p *snobolParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 24)
 		{
 			p.SetState(202)
-			p.Array()
+			p.Array_()
 		}
 
 	case snobolParserT__29:
@@ -2481,6 +2515,9 @@ func (s *IdentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Ident() (localctx IIdentContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, snobolParserRULE_ident)
 
@@ -2598,6 +2635,9 @@ func (s *DifferContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Differ() (localctx IDifferContext) {
+	this := p
+	_ = this
+
 	localctx = NewDifferContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, snobolParserRULE_differ)
 
@@ -2715,6 +2755,9 @@ func (s *EqContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Eq() (localctx IEqContext) {
+	this := p
+	_ = this
+
 	localctx = NewEqContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, snobolParserRULE_eq)
 
@@ -2832,6 +2875,9 @@ func (s *NeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Ne() (localctx INeContext) {
+	this := p
+	_ = this
+
 	localctx = NewNeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, snobolParserRULE_ne)
 
@@ -2949,6 +2995,9 @@ func (s *GeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Ge() (localctx IGeContext) {
+	this := p
+	_ = this
+
 	localctx = NewGeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, snobolParserRULE_ge)
 
@@ -3066,6 +3115,9 @@ func (s *GtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Gt() (localctx IGtContext) {
+	this := p
+	_ = this
+
 	localctx = NewGtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, snobolParserRULE_gt)
 
@@ -3183,6 +3235,9 @@ func (s *LeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Le() (localctx ILeContext) {
+	this := p
+	_ = this
+
 	localctx = NewLeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, snobolParserRULE_le)
 
@@ -3300,6 +3355,9 @@ func (s *LtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Lt() (localctx ILtContext) {
+	this := p
+	_ = this
+
 	localctx = NewLtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, snobolParserRULE_lt)
 
@@ -3417,6 +3475,9 @@ func (s *IntegerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Integer() (localctx IIntegerContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntegerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, snobolParserRULE_integer)
 
@@ -3534,6 +3595,9 @@ func (s *LgtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Lgt() (localctx ILgtContext) {
+	this := p
+	_ = this
+
 	localctx = NewLgtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, snobolParserRULE_lgt)
 
@@ -3651,6 +3715,9 @@ func (s *AtanContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Atan() (localctx IAtanContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtanContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, snobolParserRULE_atan)
 
@@ -3768,6 +3835,9 @@ func (s *ChopContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Chop() (localctx IChopContext) {
+	this := p
+	_ = this
+
 	localctx = NewChopContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, snobolParserRULE_chop)
 
@@ -3885,6 +3955,9 @@ func (s *CosContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Cos() (localctx ICosContext) {
+	this := p
+	_ = this
+
 	localctx = NewCosContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, snobolParserRULE_cos)
 
@@ -4002,6 +4075,9 @@ func (s *ExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Exp() (localctx IExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, snobolParserRULE_exp)
 
@@ -4119,6 +4195,9 @@ func (s *LnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Ln() (localctx ILnContext) {
+	this := p
+	_ = this
+
 	localctx = NewLnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, snobolParserRULE_ln)
 
@@ -4236,6 +4315,9 @@ func (s *RemdrContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Remdr() (localctx IRemdrContext) {
+	this := p
+	_ = this
+
 	localctx = NewRemdrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, snobolParserRULE_remdr)
 
@@ -4353,6 +4435,9 @@ func (s *SinContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Sin() (localctx ISinContext) {
+	this := p
+	_ = this
+
 	localctx = NewSinContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, snobolParserRULE_sin)
 
@@ -4470,6 +4555,9 @@ func (s *TanContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Tan() (localctx ITanContext) {
+	this := p
+	_ = this
+
 	localctx = NewTanContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, snobolParserRULE_tan)
 
@@ -4604,6 +4692,9 @@ func (s *DuplContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Dupl() (localctx IDuplContext) {
+	this := p
+	_ = this
+
 	localctx = NewDuplContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, snobolParserRULE_dupl)
 
@@ -4729,6 +4820,9 @@ func (s *ReverseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Reverse() (localctx IReverseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReverseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, snobolParserRULE_reverse)
 
@@ -4836,6 +4930,9 @@ func (s *DateContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Date() (localctx IDateContext) {
+	this := p
+	_ = this
+
 	localctx = NewDateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, snobolParserRULE_date)
 
@@ -4970,6 +5067,9 @@ func (s *ReplaceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Replace() (localctx IReplaceContext) {
+	this := p
+	_ = this
+
 	localctx = NewReplaceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, snobolParserRULE_replace)
 
@@ -5103,6 +5203,9 @@ func (s *SizeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Size() (localctx ISizeContext) {
+	this := p
+	_ = this
+
 	localctx = NewSizeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, snobolParserRULE_size)
 
@@ -5220,6 +5323,9 @@ func (s *TrimContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Trim() (localctx ITrimContext) {
+	this := p
+	_ = this
+
 	localctx = NewTrimContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, snobolParserRULE_trim)
 
@@ -5260,49 +5366,49 @@ func (p *snobolParser) Trim() (localctx ITrimContext) {
 	return localctx
 }
 
-// IArrayContext is an interface to support dynamic dispatch.
-type IArrayContext interface {
+// IArray_Context is an interface to support dynamic dispatch.
+type IArray_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsArrayContext differentiates from other interfaces.
-	IsArrayContext()
+	// IsArray_Context differentiates from other interfaces.
+	IsArray_Context()
 }
 
-type ArrayContext struct {
+type Array_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyArrayContext() *ArrayContext {
-	var p = new(ArrayContext)
+func NewEmptyArray_Context() *Array_Context {
+	var p = new(Array_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = snobolParserRULE_array
+	p.RuleIndex = snobolParserRULE_array_
 	return p
 }
 
-func (*ArrayContext) IsArrayContext() {}
+func (*Array_Context) IsArray_Context() {}
 
-func NewArrayContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ArrayContext {
-	var p = new(ArrayContext)
+func NewArray_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Array_Context {
+	var p = new(Array_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = snobolParserRULE_array
+	p.RuleIndex = snobolParserRULE_array_
 
 	return p
 }
 
-func (s *ArrayContext) GetParser() antlr.Parser { return s.parser }
+func (s *Array_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *ArrayContext) LPAREN() antlr.TerminalNode {
+func (s *Array_Context) LPAREN() antlr.TerminalNode {
 	return s.GetToken(snobolParserLPAREN, 0)
 }
 
-func (s *ArrayContext) AllExpression() []IExpressionContext {
+func (s *Array_Context) AllExpression() []IExpressionContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IExpressionContext)(nil)).Elem())
 	var tst = make([]IExpressionContext, len(ts))
 
@@ -5315,7 +5421,7 @@ func (s *ArrayContext) AllExpression() []IExpressionContext {
 	return tst
 }
 
-func (s *ArrayContext) Expression(i int) IExpressionContext {
+func (s *Array_Context) Expression(i int) IExpressionContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IExpressionContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -5325,37 +5431,40 @@ func (s *ArrayContext) Expression(i int) IExpressionContext {
 	return t.(IExpressionContext)
 }
 
-func (s *ArrayContext) COMMA() antlr.TerminalNode {
+func (s *Array_Context) COMMA() antlr.TerminalNode {
 	return s.GetToken(snobolParserCOMMA, 0)
 }
 
-func (s *ArrayContext) RPAREN() antlr.TerminalNode {
+func (s *Array_Context) RPAREN() antlr.TerminalNode {
 	return s.GetToken(snobolParserRPAREN, 0)
 }
 
-func (s *ArrayContext) GetRuleContext() antlr.RuleContext {
+func (s *Array_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ArrayContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Array_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ArrayContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Array_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
-		listenerT.EnterArray(s)
+		listenerT.EnterArray_(s)
 	}
 }
 
-func (s *ArrayContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Array_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(snobolListener); ok {
-		listenerT.ExitArray(s)
+		listenerT.ExitArray_(s)
 	}
 }
 
-func (p *snobolParser) Array() (localctx IArrayContext) {
-	localctx = NewArrayContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 70, snobolParserRULE_array)
+func (p *snobolParser) Array_() (localctx IArray_Context) {
+	this := p
+	_ = this
+
+	localctx = NewArray_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 70, snobolParserRULE_array_)
 
 	defer func() {
 		p.ExitRule()
@@ -5496,6 +5605,9 @@ func (s *ConvertContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Convert() (localctx IConvertContext) {
+	this := p
+	_ = this
+
 	localctx = NewConvertContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, snobolParserRULE_convert)
 
@@ -5621,6 +5733,9 @@ func (s *TableContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Table() (localctx ITableContext) {
+	this := p
+	_ = this
+
 	localctx = NewTableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, snobolParserRULE_table)
 
@@ -5738,6 +5853,9 @@ func (s *SortContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Sort() (localctx ISortContext) {
+	this := p
+	_ = this
+
 	localctx = NewSortContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, snobolParserRULE_sort)
 
@@ -5855,6 +5973,9 @@ func (s *Break_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Break_() (localctx IBreak_Context) {
+	this := p
+	_ = this
+
 	localctx = NewBreak_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, snobolParserRULE_break_)
 
@@ -5986,6 +6107,9 @@ func (s *TransferContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Transfer() (localctx ITransferContext) {
+	this := p
+	_ = this
+
 	localctx = NewTransferContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, snobolParserRULE_transfer)
 	var _la int
@@ -6114,6 +6238,9 @@ func (s *TransferpreContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *snobolParser) Transferpre() (localctx ITransferpreContext) {
+	this := p
+	_ = this
+
 	localctx = NewTransferpreContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, snobolParserRULE_transferpre)
 	var _la int

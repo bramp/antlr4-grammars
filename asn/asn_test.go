@@ -33,8 +33,8 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{
-	"grammars-v4/asn/examples/example1.asn",
-	"grammars-v4/asn/examples/example2.asn",
+	"grammars-v4/asn/asn/examples/example1.asn",
+	"grammars-v4/asn/asn/examples/example2.asn",
 }
 
 type exampleListener struct {

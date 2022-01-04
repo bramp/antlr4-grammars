@@ -1,4 +1,4 @@
-// Code generated from prolog.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from prolog.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package prolog // prolog
 import (
@@ -62,9 +62,6 @@ var parserATN = []uint16{
 	2, 101, 100, 3, 2, 2, 2, 102, 15, 3, 2, 2, 2, 103, 104, 9, 3, 2, 2, 104,
 	17, 3, 2, 2, 2, 11, 20, 22, 39, 49, 53, 68, 77, 85, 101,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "':-'", "'.'", "','", "'('", "')'", "'-'", "'['", "'|'", "']'", "'{'",
 	"'}'", "'-->'", "'?-'", "'dynamic'", "'multifile'", "'discontiguous'",
@@ -83,24 +80,28 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"p_text", "directive", "clause", "termlist", "term", "operator", "atom",
+	"p_text", "directive", "clause", "termlist", "term", "operator_", "atom",
 	"integer",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type prologParser struct {
 	*antlr.BaseParser
 }
 
+// NewprologParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *prologParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewprologParser(input antlr.TokenStream) *prologParser {
 	this := new(prologParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -190,7 +191,7 @@ const (
 	prologParserRULE_clause    = 2
 	prologParserRULE_termlist  = 3
 	prologParserRULE_term      = 4
-	prologParserRULE_operator  = 5
+	prologParserRULE_operator_ = 5
 	prologParserRULE_atom      = 6
 	prologParserRULE_integer   = 7
 )
@@ -304,6 +305,9 @@ func (s *P_textContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *prologParser) P_text() (localctx IP_textContext) {
+	this := p
+	_ = this
+
 	localctx = NewP_textContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, prologParserRULE_p_text)
 	var _la int
@@ -428,6 +432,9 @@ func (s *DirectiveContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *prologParser) Directive() (localctx IDirectiveContext) {
+	this := p
+	_ = this
+
 	localctx = NewDirectiveContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, prologParserRULE_directive)
 
@@ -533,6 +540,9 @@ func (s *ClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *prologParser) Clause() (localctx IClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, prologParserRULE_clause)
 
@@ -647,6 +657,9 @@ func (s *TermlistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *prologParser) Termlist() (localctx ITermlistContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, prologParserRULE_termlist)
 	var _la int
@@ -825,14 +838,14 @@ func (s *Binary_operatorContext) Term(i int) ITermContext {
 	return t.(ITermContext)
 }
 
-func (s *Binary_operatorContext) Operator() IOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperatorContext)(nil)).Elem(), 0)
+func (s *Binary_operatorContext) Operator_() IOperator_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperator_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IOperatorContext)
+	return t.(IOperator_Context)
 }
 
 func (s *Binary_operatorContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -865,14 +878,14 @@ func (s *Unary_operatorContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *Unary_operatorContext) Operator() IOperatorContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperatorContext)(nil)).Elem(), 0)
+func (s *Unary_operatorContext) Operator_() IOperator_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOperator_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IOperatorContext)
+	return t.(IOperator_Context)
 }
 
 func (s *Unary_operatorContext) Term() ITermContext {
@@ -1190,6 +1203,9 @@ func (p *prologParser) Term() (localctx ITermContext) {
 }
 
 func (p *prologParser) term(_p int) (localctx ITermContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewTermContext(p, p.GetParserRuleContext(), _parentState)
@@ -1315,7 +1331,7 @@ func (p *prologParser) term(_p int) (localctx ITermContext) {
 		_prevctx = localctx
 		{
 			p.SetState(59)
-			p.Operator()
+			p.Operator_()
 		}
 		{
 			p.SetState(60)
@@ -1401,7 +1417,7 @@ func (p *prologParser) term(_p int) (localctx ITermContext) {
 			}
 			{
 				p.SetState(78)
-				p.Operator()
+				p.Operator_()
 			}
 			{
 				p.SetState(79)
@@ -1417,66 +1433,69 @@ func (p *prologParser) term(_p int) (localctx ITermContext) {
 	return localctx
 }
 
-// IOperatorContext is an interface to support dynamic dispatch.
-type IOperatorContext interface {
+// IOperator_Context is an interface to support dynamic dispatch.
+type IOperator_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsOperatorContext differentiates from other interfaces.
-	IsOperatorContext()
+	// IsOperator_Context differentiates from other interfaces.
+	IsOperator_Context()
 }
 
-type OperatorContext struct {
+type Operator_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyOperatorContext() *OperatorContext {
-	var p = new(OperatorContext)
+func NewEmptyOperator_Context() *Operator_Context {
+	var p = new(Operator_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = prologParserRULE_operator
+	p.RuleIndex = prologParserRULE_operator_
 	return p
 }
 
-func (*OperatorContext) IsOperatorContext() {}
+func (*Operator_Context) IsOperator_Context() {}
 
-func NewOperatorContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *OperatorContext {
-	var p = new(OperatorContext)
+func NewOperator_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Operator_Context {
+	var p = new(Operator_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = prologParserRULE_operator
+	p.RuleIndex = prologParserRULE_operator_
 
 	return p
 }
 
-func (s *OperatorContext) GetParser() antlr.Parser { return s.parser }
-func (s *OperatorContext) GetRuleContext() antlr.RuleContext {
+func (s *Operator_Context) GetParser() antlr.Parser { return s.parser }
+func (s *Operator_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *OperatorContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Operator_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *OperatorContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Operator_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(prologListener); ok {
-		listenerT.EnterOperator(s)
+		listenerT.EnterOperator_(s)
 	}
 }
 
-func (s *OperatorContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Operator_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(prologListener); ok {
-		listenerT.ExitOperator(s)
+		listenerT.ExitOperator_(s)
 	}
 }
 
-func (p *prologParser) Operator() (localctx IOperatorContext) {
-	localctx = NewOperatorContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, prologParserRULE_operator)
+func (p *prologParser) Operator_() (localctx IOperator_Context) {
+	this := p
+	_ = this
+
+	localctx = NewOperator_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 10, prologParserRULE_operator_)
 	var _la int
 
 	defer func() {
@@ -1852,6 +1871,9 @@ func (s *SemicolonContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *prologParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, prologParserRULE_atom)
 
@@ -2041,6 +2063,9 @@ func (s *IntegerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *prologParser) Integer() (localctx IIntegerContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntegerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, prologParserRULE_integer)
 	var _la int
@@ -2092,6 +2117,9 @@ func (p *prologParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex 
 }
 
 func (p *prologParser) Term_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 5)

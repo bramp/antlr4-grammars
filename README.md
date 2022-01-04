@@ -74,18 +74,40 @@ func Example() {
 
 | Status | Language     | Notes                                                                       |
 | :-: | --------------- | --------------------------------------------------------------------------- |
-
+| ✅  | abb             |                                                                             |
 | ✅  | abnf            |                                                                             |
 | ✅  | agc             |                                                                             |
+| ✅  | alef            |                                                                             |
+| ✅  | alloy           |                                                                             |
+| ✅  | alpaca          |                                                                             |
+| ✅  | angelscript     |                                                                             |
+| ✅  | apt             |                                                                             |
+| ✅  | argus           |                                                                             |
 | ✅  | arithmetic      |                                                                             |
+| ✅  | asl             |                                                                             |
+| ✅  | asm6502         |                                                                             |
+| ✅  | asm8080         |                                                                             |
+| ✅  | asm8086         |                                                                             |
+| ✅  | asmz80          |                                                                             |
 | ✅  | asn             |                                                                             |
 | ✅  | atl             |                                                                             |
 | ✅  | b               |                                                                             |
+| ✅  | bcl             |                                                                             |
+| ✅  | bcpl            |                                                                             |
+| ✅  | bdf             |                                                                             |
+| ✅  | beep            |                                                                             |
+| ✅  | bibcode         |                                                                             |
 | ✅  | bnf             |                                                                             |
+| ✅  | brainflak       |                                                                             |
 | ✅  | brainfuck       |                                                                             |
+| ✅  | bsl             |                                                                             |
 | ✅  | c               |                                                                             |
+| ✅  | calculator      |                                                                             |
+| ✅  | callable_       |                                                                             |
+| ✅  | cayenne         |                                                                             |
+| ✅  | classify        |                                                                             |
 | ✅  | clf             |                                                                             |
-| ✅  | clif            |                                                                             |
+| ✅  | clojure         |                                                                             |
 | ✅  | clu             |                                                                             |
 | ✅  | cmake           |                                                                             |
 | ✅  | cobol85         |                                                                             |
@@ -93,39 +115,72 @@ func Example() {
 | ✅  | cookie          |                                                                             |
 | ✅  | cool            |                                                                             |
 | ✅  | corundum        |                                                                             |
+| ✅  | cql             |                                                                             |
 | ✅  | creole          |                                                                             |
+| ✅  | css3            |                                                                             |
 | ✅  | csv             |                                                                             |
+| ✅  | ctl             |                                                                             |
 | ✅  | dart2           |                                                                             |
 | ✅  | databank        |                                                                             |
 | ✅  | datetime        |                                                                             |
 | ✅  | dcm_2_0_grammar |                                                                             |
+| ✅  | dgol            |                                                                             |
 | ✅  | dgs             |                                                                             |
+| ✅  | dif             |                                                                             |
+| ✅  | doiurl          |                                                                             |
+| ✅  | domain          |                                                                             |
 | ✅  | dot             |                                                                             |
 | ✅  | ecmascript      |                                                                             |
 | ✅  | emailaddress    |                                                                             |
+| ✅  | erlang          |                                                                             |
 | ✅  | fasta           |                                                                             |
 | ✅  | fen             |                                                                             |
+| ✅  | filter          |                                                                             |
+| ✅  | flowmatic       |                                                                             |
+| ✅  | focal           |                                                                             |
 | ✅  | fol             |                                                                             |
 | ✅  | fusiontablessql |                                                                             |
+| ✅  | gedcom          |                                                                             |
+| ✅  | gff3            |                                                                             |
 | ✅  | gml             |                                                                             |
 | ✅  | graphemes       |                                                                             |
+| ✅  | graphql         |                                                                             |
 | ✅  | gtin            |                                                                             |
 | ✅  | guido           |                                                                             |
 | ✅  | http            |                                                                             |
 | ✅  | icon            |                                                                             |
 | ✅  | idl             |                                                                             |
+| ✅  | infosapient     |                                                                             |
 | ✅  | iri             |                                                                             |
+| ✅  | isl             |                                                                             |
+| ✅  | iso8601         |                                                                             |
 | ✅  | istc            |                                                                             |
+| ✅  | itn             |                                                                             |
+| ✅  | janus           |                                                                             |
+| ✅  | java8           |                                                                             |
+| ✅  | joss            |                                                                             |
 | ✅  | jpa             |                                                                             |
 | ✅  | json            |                                                                             |
+| ✅  | json5           |                                                                             |
+| ✅  | karel           |                                                                             |
+| ✅  | krl             |                                                                             |
 | ✅  | lambda          |                                                                             |
+| ✅  | lark            |                                                                             |
 | ✅  | lcc             |                                                                             |
 | ✅  | less            |                                                                             |
 | ✅  | lexunicode      |                                                                             |
+| ✅  | limbo           |                                                                             |
+| ✅  | lisa            |                                                                             |
+| ✅  | lolcode         |                                                                             |
+| ✅  | loop            |                                                                             |
+| ✅  | lrc             |                                                                             |
+| ✅  | ltl             |                                                                             |
 | ✅  | matlab          |                                                                             |
 | ✅  | mdx             |                                                                             |
 | ✅  | memcached_protocol |                                                                             |
+| ✅  | metamath        |                                                                             |
 | ✅  | metric          |                                                                             |
+| ✅  | microc          |                                                                             |
 | ✅  | modelica        |                                                                             |
 | ✅  | molecule        |                                                                             |
 | ✅  | morsecode       |                                                                             |
@@ -133,144 +188,175 @@ func Example() {
 | ✅  | mu              |                                                                             |
 | ✅  | mumath          |                                                                             |
 | ✅  | mumps           |                                                                             |
+| ✅  | nanofuck        |                                                                             |
+| ✅  | newick          |                                                                             |
 | ✅  | objectivec      |                                                                             |
 | ✅  | oncrpcv2        |                                                                             |
+| ✅  | orwell          |                                                                             |
 | ✅  | p               |                                                                             |
 | ✅  | pcre            |                                                                             |
+| ✅  | pddl            |                                                                             |
 | ✅  | peoplecode      |                                                                             |
+| ✅  | pii             |                                                                             |
+| ✅  | pike            |                                                                             |
 | ✅  | pl0             |                                                                             |
+| ✅  | plucid          |                                                                             |
+| ✅  | pmmn            |                                                                             |
 | ✅  | postalcode      |                                                                             |
-| ✅  | powerbuilder    |                                                                             |
+| ✅  | powerbuilderdw  |                                                                             |
+| ✅  | powerquery      |                                                                             |
 | ✅  | prolog          |                                                                             |
+| ✅  | promql          |                                                                             |
 | ✅  | propcalc        |                                                                             |
 | ✅  | properties      |                                                                             |
+| ✅  | protobuf3       |                                                                             |
 | ✅  | prov_n          |                                                                             |
+| ✅  | qif             |                                                                             |
 | ✅  | r               |                                                                             |
 | ✅  | rcs             |                                                                             |
 | ✅  | redcode         |                                                                             |
+| ✅  | refal           |                                                                             |
 | ✅  | regex           |                                                                             |
 | ✅  | restructuredtext |                                                                             |
 | ✅  | robotwar        |                                                                             |
 | ✅  | romannumerals   |                                                                             |
 | ✅  | rpn             |                                                                             |
+| ✅  | scala           |                                                                             |
+| ✅  | scotty          |                                                                             |
 | ✅  | scss            |                                                                             |
 | ✅  | sexpression     |                                                                             |
+| ✅  | sgf             |                                                                             |
 | ✅  | sharc           |                                                                             |
+| ✅  | sici            |                                                                             |
+| ✅  | sickbay         |                                                                             |
 | ✅  | smiles          |                                                                             |
 | ✅  | snobol          |                                                                             |
+| ✅  | snowball        |                                                                             |
 | ✅  | solidity        |                                                                             |
+| ✅  | sqlite          |                                                                             |
 | ✅  | stacktrace      |                                                                             |
+| ✅  | stellaris       |                                                                             |
+| ✅  | stl             |                                                                             |
 | ✅  | suokif          |                                                                             |
+| ✅  | systemverilog   |                                                                             |
+| ✅  | teal            |                                                                             |
 | ✅  | telephone       |                                                                             |
 | ✅  | tiny            |                                                                             |
 | ✅  | tinybasic       |                                                                             |
 | ✅  | tinyc           |                                                                             |
+| ✅  | tl              |                                                                             |
 | ✅  | tnsnames        |                                                                             |
 | ✅  | tnt             |                                                                             |
 | ✅  | tsv             |                                                                             |
 | ✅  | unicodeclasses  |                                                                             |
 | ✅  | upnp            |                                                                             |
 | ✅  | useragent       |                                                                             |
+| ✅  | vba             |                                                                             |
+| ✅  | verilog         |                                                                             |
+| ✅  | vhdl            |                                                                             |
+| ✅  | vmf             |                                                                             |
+| ✅  | wat             |                                                                             |
 | ✅  | wavefrontobj    |                                                                             |
+| ✅  | webidl          |                                                                             |
 | ✅  | wkt             |                                                                             |
+| ✅  | wln             |                                                                             |
 | ✅  | xml             |                                                                             |
-| ❌  | algol60         | antlr: error(134): algol60.g4:155:5: symbol type conflicts with generated code in target language or runtime |
-| ❌  | altpython3      | build: altpython3/altpython3_lexer.go:812:13: too many errors               |
-| ❌  | antlrv3         | antlr: error(134): ANTLRv3.g4:31:102: symbol action conflicts with generated code in target language or runtime |
-| ❌  | antlrv4         | build: antlrv4/antlrv4_lexer.go:506:2: undefined: LexerAdaptor              |
-| ❌  | antlrv4lexerpythontarget | build: antlrv4lexerpythontarget/antlrv4lexerpythontarget_lexer.go:12:1: syntax error: non-declaration statement outside function body |
-| ❌  | apex            | antlr: error(134): apex.g4:544:30: symbol type conflicts with generated code in target language or runtime |
-| ❌  | asm6502         | antlr: error(134): asm6502.g4:71:30: symbol string conflicts with generated code in target language or runtime |
-| ❌  | asm8080         | antlr: error(134): asm8080.g4:91:5: symbol string conflicts with generated code in target language or runtime |
-| ❌  | asm8086         | antlr: error(134): asm8086.g4:167:5: symbol string conflicts with generated code in target language or runtime |
-| ❌  | asmmasm         | antlr: error(134): asmMASM.g4:68:6: symbol type conflicts with generated code in target language or runtime |
-| ❌  | asmz80          | antlr: error(134): asmZ80.g4:91:5: symbol string conflicts with generated code in target language or runtime |
-| ❌  | asn_3gpp        | build: asn_3gpp/asn_3gpp_lexer.go:680:10: undefined: getCharPositionInLine  |
-| ❌  | aspectj         | antlr: error(56): /Users/bramp/go/src/bramp.net/antlr4/grammars-v4/aspectj/AspectJLexer.g4:382:21: reference to undefined rule: Identifier |
-| ❌  | calculator      | antlr: error(134): calculator.g4:54:5: symbol func conflicts with generated code in target language or runtime |
-| ❌  | capnproto       | antlr: error(134): CapnProto.g4:85:18: symbol type conflicts with generated code in target language or runtime |
-| ❌  | classify        | test: FAIL	bramp.net/antlr4/classify	0.058s                                 |
-| ❌  | clojure         | antlr: error(134): Clojure.g4:99:12: symbol map conflicts with generated code in target language or runtime |
-| ❌  | cpp14           | build: cpp14/cpp14_parser.go:28332:2: syntax error: unexpected var at end of statement |
-| ❌  | cql             | antlr: error(134): CqlParser.g4:339:44: symbol type conflicts with generated code in target language or runtime |
-| ❌  | csharp          | build: csharp/csharp_lexer.go:11:12: expected 'STRING', found '.'           |
-| ❌  | css3            | antlr: error(134): css3.g4:132:65: symbol String conflicts with generated code in target language or runtime |
-| ❌  | cto             | test: FAIL	bramp.net/antlr4/cto	0.066s                                      |
-| ❌  | dicenotation    | antlr: warning(125): DiceNotation.g4:56:23: implicit definition of token DSEPARATOR in parser |
+| ❌  | acme            | test: FAIL                                                                  |
+| ❌  | algol60         | antlr: error(134): algol60.g4:144:19: symbol String conflicts with generated code in target language or runtime |
+| ❌  | altpython3      | build: altpython3/altpython3_lexer.go:816:13: too many errors               |
+| ❌  | antlrv2         | build: antlrv2/antlrv2_lexer.go:591:2: undefined: LexerAdaptor              |
+| ❌  | antlrv3         | build: antlrv3/antlrv3_lexer.go:545:2: undefined: LexerAdaptor              |
+| ❌  | antlrv4         | build: antlrv4/antlrv4_lexer.go:410:2: undefined: LexerAdaptor              |
+| ❌  | apex            | build: apex/apex_lexer.go:930:70: syntax error: unexpected _input, expecting comma or ) |
+| ❌  | asmmasm         | antlr: error(134): asmMASM.g4:182:5: symbol string conflicts with generated code in target language or runtime |
+| ❌  | asn_3gpp        | build: asn_3gpp/asn_3gpp_lexer.go:682:10: undefined: getCharPositionInLine  |
+| ❌  | aspectj         | antlr: error(56): /Users/bramp/personal/antlr4-grammars/grammars-v4/aspectj/AspectJLexer.g4:382:21: reference to undefined rule: Identifier |
+| ❌  | capnproto       | test: FAIL                                                                  |
+| ❌  | clif            | test: FAIL                                                                  |
+| ❌  | cpp14           | build: 	/Users/bramp/personal/antlr4-grammars/cpp14/cpp14_parser.go:26954:49: previous declaration |
+| ❌  | csharp          | build: csharp/csharp_lexer.go:1194:2: undefined: CSharpLexerBase            |
+| ❌  | cto             | test: FAIL                                                                  |
+| ❌  | dicenotation    | test: FAIL                                                                  |
 | ❌  | edif300         | antlr: error(134): EDIF300.g4:3082:24: symbol string conflicts with generated code in target language or runtime |
-| ❌  | erlang          | antlr: error(134): Erlang.g4:156:36: symbol type conflicts with generated code in target language or runtime |
-| ❌  | flatbuffers     | antlr: error(134): FlatBuffers.g4:16:33: symbol type conflicts with generated code in target language or runtime |
-| ❌  | fortran77       | antlr: error(134): Fortran77Parser.g4:81:6: symbol type conflicts with generated code in target language or runtime |
-| ❌  | gff3            | antlr: error(134): gff3.g4:45:28: symbol type conflicts with generated code in target language or runtime |
-| ❌  | golang          | antlr: error(134): Golang.g4:210:23: symbol type conflicts with generated code in target language or runtime |
-| ❌  | graphql         | antlr: error(134): GraphQL.g4:140:9: symbol type conflicts with generated code in target language or runtime |
-| ❌  | html            | test: FAIL	bramp.net/antlr4/html	30.072s                                    |
+| ❌  | edn             | test: FAIL                                                                  |
+| ❌  | file.           | build: malformed import path "bramp.net/antlr4/file.": trailing dot in path element |
+| ❌  | flatbuffers     | test: FAIL                                                                  |
+| ❌  | fortran77       | build: fortran77/fortran77_lexer.go:1070:10: undefined: getCharPositionInLine |
+| ❌  | gdscript        | build: gdscript/gdscript_lexer.go:543:2: undefined: GDScriptLexerBase       |
+| ❌  | go              | build: go/go_lexer.go:3:9: expected 'IDENT', found 'go'                     |
+| ❌  | guitartab       | antlr: error(134): guitartab.g4:35:5: symbol string conflicts with generated code in target language or runtime |
+| ❌  | haskell         | build: haskell/haskell_lexer.go:871:2: undefined: HaskellBaseLexer          |
+| ❌  | hive            | build: 	/Users/bramp/personal/antlr4-grammars/hive/hive_parser.go:49454:6: previous declaration |
+| ❌  | html            | test: FAIL                                                                  |
 | ❌  | hypertalk       | antlr: error(134): HyperTalk.g4:281:20: symbol range conflicts with generated code in target language or runtime |
 | ❌  | icalendar       | antlr: error(134): ICalendar.g4:284:5: symbol action conflicts with generated code in target language or runtime |
 | ❌  | inf             | antlr: error(134): inf.g4:57:17: symbol string conflicts with generated code in target language or runtime |
 | ❌  | informix        | antlr: error(134): informix.g4:601:266: symbol string conflicts with generated code in target language or runtime |
-| ❌  | java            | test: FAIL	bramp.net/antlr4/java	30.124s                                    |
-| ❌  | java8           | build: java8/java8_lexer.go:768:70: syntax error: unexpected _input, expecting comma or ) |
-| ❌  | java9           | build: java9/java9_lexer.go:825:70: syntax error: unexpected _input, expecting comma or ) |
-| ❌  | javadoc         | build: javadoc/javadoc_lexer.go:167:10: undefined: _input                   |
-| ❌  | javascript      | build: javascript/javascript_lexer.go:631:2: undefined: JavaScriptBaseLexer |
-| ❌  | jvmbasic        | antlr: error(134): jvmBasic.g4:481:8: symbol var conflicts with generated code in target language or runtime |
+| ❌  | java            | test: FAIL                                                                  |
+| ❌  | java9           | build: java9/java9_lexer.go:635:2: undefined: Java9LexerBase                |
+| ❌  | javadoc         | build: javadoc/javadoc_lexer.go:169:10: undefined: _input                   |
+| ❌  | javascript      | build: javascript/javascript_lexer.go:894:2: undefined: JavaScriptLexerBase |
+| ❌  | jvmbasic        | test: FAIL                                                                  |
 | ❌  | kotlin          | antlr: error(134): KotlinParser.g4:325:75: symbol type conflicts with generated code in target language or runtime |
-| ❌  | krl             | antlr: error(134): krl.g4:80:68: symbol type conflicts with generated code in target language or runtime |
-| ❌  | logo            | antlr: error(134): logo.g4:128:38: symbol func conflicts with generated code in target language or runtime |
-| ❌  | lolcode         | antlr: error(134): lolcode.g4:111:5: symbol func conflicts with generated code in target language or runtime |
+| ❌  | logo            | antlr: error(134): logo.g4:60:5: symbol make conflicts with generated code in target language or runtime |
 | ❌  | lpc             | antlr: error(134): LPC.g4:671:20: symbol String conflicts with generated code in target language or runtime |
-| ❌  | lua             | antlr: error(134): Lua.g4:90:15: symbol var conflicts with generated code in target language or runtime |
-| ❌  | m2pim4          | antlr: error(134): m2pim4.g4:356:22: symbol type conflicts with generated code in target language or runtime |
-| ❌  | masm            | antlr: error(134): MASM.g4:130:31: symbol String conflicts with generated code in target language or runtime |
+| ❌  | lua             | antlr: error(134): Lua.g4:112:6: symbol string conflicts with generated code in target language or runtime |
+| ❌  | m2pim4          | antlr: error(134): m2pim4.g4:243:5: symbol string conflicts with generated code in target language or runtime |
+| ❌  | masm            | antlr: error(134): MASM.g4:127:31: symbol String conflicts with generated code in target language or runtime |
+| ❌  | mckeemanform    | antlr: error(134): McKeemanForm.g4:43:6: symbol String conflicts with generated code in target language or runtime |
 | ❌  | moo             | antlr: error(134): moo.g4:205:5: symbol real conflicts with generated code in target language or runtime |
 | ❌  | muddb           | antlr: error(134): muddb.g4:104:5: symbol string conflicts with generated code in target language or runtime |
-| ❌  | mysql           | test: FAIL	bramp.net/antlr4/mysql	30.375s                                   |
-| ❌  | pascal          | antlr: error(134): pascal.g4:120:23: symbol type conflicts with generated code in target language or runtime |
-| ❌  | pddl            | antlr: error(134): Pddl.g4:92:25: symbol type conflicts with generated code in target language or runtime |
+| ❌  | mysql           | maketest: exit status 1                                                     |
+| ❌  | oberon          | antlr: error(134): oberon.g4:65:5: symbol real conflicts with generated code in target language or runtime |
+| ❌  | pascal          | antlr: error(134): pascal.g4:367:5: symbol string conflicts with generated code in target language or runtime |
 | ❌  | pdn             | antlr: error(134): pdn.g4:44:14: symbol string conflicts with generated code in target language or runtime |
 | ❌  | pdp7            | antlr: error(134): pdp7.g4:87:5: symbol string conflicts with generated code in target language or runtime |
-| ❌  | pgn             | build: pgn/pgn_lexer.go:191:10: undefined: getCharPositionInLine            |
-| ❌  | php             | build: php/php_lexer.go:1591:4: too many errors                             |
-| ❌  | pike            | antlr: error(119): pike.g4::: The following sets of rules are mutually left-recursive [expression6, call, index, arrow] |
-| ❌  | plsql           | build: plsql/plsql_lexer.go:15793:2: undefined: PlSqlBaseLexer              |
-| ❌  | ply             | antlr: error(134): ply.g4:65:33: symbol string conflicts with generated code in target language or runtime |
-| ❌  | protobuf3       | antlr: error(134): Protobuf3.g4:138:19: symbol range conflicts with generated code in target language or runtime |
-| ❌  | python2         | build: python2/python2_lexer.go:635:15: too many errors                     |
-| ❌  | python3         | build: python3/python3_lexer.go:828:13: too many errors                     |
+| ❌  | pgn             | build: pgn/pgn_lexer.go:193:10: undefined: getCharPositionInLine            |
+| ❌  | php             | build: php/php_lexer.go:1159:2: undefined: PhpLexerBase                     |
+| ❌  | plsql           | build: plsql/plsql_lexer.go:15810:2: undefined: PlSqlLexerBase              |
+| ❌  | ply             | antlr: error(134): ply.g4:65:35: symbol string conflicts with generated code in target language or runtime |
+| ❌  | postgresql      | build: postgresql/postgresql_lexer.go:3695:73: syntax error: unexpected InputStream, expecting comma or ) |
+| ❌  | powerbuilder    | test: FAIL                                                                  |
+| ❌  | python          | build: python/python_lexer.go:548:2: undefined: PythonLexerBase             |
+| ❌  | python2         | build: python2/python2_lexer.go:636:8: too many errors                      |
+| ❌  | python3         | build: python3/python3_lexer.go:742:2: undefined: Python3LexerBase          |
 | ❌  | quakemap        | antlr: error(134): quakemap.g4:44:12: symbol string conflicts with generated code in target language or runtime |
 | ❌  | rego            | antlr: error(134): RegoLexer.g4:40:0: symbol String conflicts with generated code in target language or runtime |
-| ❌  | rexx            | build: rexx/rexx_lexer.go:877:2: syntax error: unexpected default, expecting } |
-| ❌  | scala           | antlr: error(134): Scala.g4:434:17: symbol type conflicts with generated code in target language or runtime |
-| ❌  | sgf             | antlr: error(134): sgf.g4:25:20: symbol go conflicts with generated code in target language or runtime |
+| ❌  | rexx            | build: rexx/rexx_lexer.go:880:2: syntax error: unexpected default, expecting } |
+| ❌  | rust            | build: rust/rust_lexer.go:635:2: undefined: RustLexerBase                   |
+| ❌  | sieve           | antlr: error(134): sieve.g4:70:21: symbol string conflicts with generated code in target language or runtime |
 | ❌  | smalltalk       | antlr: error(134): Smalltalk.g4:50:57: symbol string conflicts with generated code in target language or runtime |
 | ❌  | smtlibv2        | antlr: error(134): SMTLIBv2.g4:1089:23: symbol string conflicts with generated code in target language or runtime |
-| ❌  | sparql          | antlr: error(134): Sparql.g4:57:45: symbol var conflicts with generated code in target language or runtime |
-| ❌  | sqlite          | antlr: error(134): SQLite.g4:34:21: symbol error conflicts with generated code in target language or runtime |
-| ❌  | st              | build: st/st_lexer.go:777:70: syntax error: unexpected _input, expecting comma or ) |
-| ❌  | stg             | build: stg/stg_lexer.go:714:70: syntax error: unexpected _input, expecting comma or ) |
-| ❌  | swift2          | antlr: error(134): Swift2.g4:783:34: symbol type conflicts with generated code in target language or runtime |
-| ❌  | swift3          | antlr: error(134): Swift3.g4:664:16: symbol type conflicts with generated code in target language or runtime |
+| ❌  | sparql          | antlr: error(134): Sparql.g4:300:6: symbol string conflicts with generated code in target language or runtime |
+| ❌  | st              | build: st/st_lexer.go:790:70: syntax error: unexpected _input, expecting comma or ) |
+| ❌  | stg             | build: stg/stg_lexer.go:715:70: syntax error: unexpected _input, expecting comma or ) |
+| ❌  | swift2          | build: swift2/swift2_parser.go:35927:31: too many errors                    |
+| ❌  | swift3          | build: swift3/swift3_parser.go:40532:7: too many errors                     |
+| ❌  | swift5          | build: swift5/swift5_lexer.go:12:13: expected 'STRING', found '.'           |
 | ❌  | swiftfin        | antlr: error(134): SwiftFinParser.g4:61:16: symbol map conflicts with generated code in target language or runtime |
-| ❌  | sysveriloghdl   | maketest: exit status 1                                                     |
-| ❌  | thrift          | antlr: error(134): Thrift.g4:28:49: symbol struct conflicts with generated code in target language or runtime |
+| ❌  | tcp             | test: FAIL                                                                  |
+| ❌  | terraform       | antlr: error(134): terraform.g4:133:5: symbol string conflicts with generated code in target language or runtime |
+| ❌  | thrift          | test: FAIL                                                                  |
 | ❌  | tinymud         | antlr: error(134): tinymud.g4:40:16: symbol action conflicts with generated code in target language or runtime |
+| ❌  | tinyos          | build: tinyos/tinyos_parser.go:3633:3: undefined: System                    |
 | ❌  | tjs             | antlr: error(134): TJSLexer.g4:132:0: symbol String conflicts with generated code in target language or runtime |
-| ❌  | toml            | antlr: error(134): toml.g4:25:44: symbol bool conflicts with generated code in target language or runtime |
-| ❌  | tsql            | test: FAIL	bramp.net/antlr4/tsql	30.370s                                    |
+| ❌  | toml            | antlr: error(134): toml.g4:44:8: symbol string conflicts with generated code in target language or runtime |
+| ❌  | trac            | antlr: error(134): trac.g4:62:5: symbol string conflicts with generated code in target language or runtime |
+| ❌  | tsql            | test: FAIL                                                                  |
+| ❌  | ttm             | antlr: error(134): ttm.g4:62:5: symbol string conflicts with generated code in target language or runtime |
+| ❌  | turing          | antlr: error(134): turing.g4:193:31: symbol string conflicts with generated code in target language or runtime |
 | ❌  | turtle          | antlr: error(134): TURTLE.g4:112:5: symbol String conflicts with generated code in target language or runtime |
+| ❌  | typescript      | antlr: error(134): TypeScriptLexer.g4:150:0: symbol String conflicts with generated code in target language or runtime |
 | ❌  | ucblogo         | build: ucblogo/ucblogo_parser.go:14:14: expected 'STRING', found '.'        |
-| ❌  | url             | antlr: error(134): url.g4:95:18: symbol string conflicts with generated code in target language or runtime |
-| ❌  | v               | antlr: error(134): V.g4:751:31: symbol type conflicts with generated code in target language or runtime |
-| ❌  | vba             | antlr: error(134): vba.g4:569:44: symbol type conflicts with generated code in target language or runtime |
-| ❌  | verilog2001     | antlr: error(134): Verilog2001.g4:1488:5: symbol String conflicts with generated code in target language or runtime |
-| ❌  | vhdl            | test: FAIL	bramp.net/antlr4/vhdl	30.197s                                    |
-| ❌  | visualbasic6    | antlr: error(134): VisualBasic6.g4:554:35: symbol type conflicts with generated code in target language or runtime |
-| ❌  | wat             | antlr: error(134): WatLexer.g4:39:9: symbol String conflicts with generated code in target language or runtime |
-| ❌  | webidl          | antlr: error(134): WebIDL.g4:584:3: symbol type conflicts with generated code in target language or runtime |
-| ❌  | xdr             | test: FAIL	bramp.net/antlr4/xdr [build failed]                              |
-| ❌  | xpath           | build: 	previous declaration at xpath/xpath_parser.go:3504:6                |
-| ❌  | z               | build: z/z_lexer.go:1240:2: syntax error: non-declaration statement outside function body |
+| ❌  | url             | antlr: error(134): url.g4:96:18: symbol string conflicts with generated code in target language or runtime |
+| ❌  | v               | build: v/v_parser.go:419:23: syntax error: unexpected ==, expecting name    |
+| ❌  | visualbasic6    | test: FAIL                                                                  |
+| ❌  | vtl             | build: vtl/vtl_lexer.go:700:14: this._input undefined (type *VTLLexer has no field or method _input) |
+| ❌  | xdr             | test: FAIL                                                                  |
+| ❌  | xpath           | build: 	/Users/bramp/personal/antlr4-grammars/xpath/xpath_parser.go:3574:6: previous declaration |
+| ❌  | xpath20         | build: xpath20/xpath20_parser.go:11259:2: syntax error: unexpected default, expecting : |
+| ❌  | xpath31         | build: xpath31/xpath31_parser.go:17223:2: syntax error: unexpected default, expecting : |
+| ❌  | z               | build: z/z_lexer.go:1266:2: syntax error: non-declaration statement outside function body |
 
 The failures are broken down like so:
 
@@ -291,16 +377,10 @@ make <name of grammar>
 ## To update all the grammars
 
 ```bash
-# Ensure antlr is installed
-mvn dependency:get -Dartifact=org.antlr:antlr4:4.7.2:jar:complete
-go get -u github.com/antlr/antlr4/runtime/Go/antlr
-
-# Ensure some other deps are available
-go get -u github.com/iancoleman/strcase
-
 # Fetch the latest set of grammars
 git submodule init
 git submodule update
+git submodule foreach git pull origin master
 
 # Run make and all the magic will happen
 make

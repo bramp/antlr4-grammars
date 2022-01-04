@@ -1,4 +1,4 @@
-// Code generated from vhdl.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from vhdl.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package vhdl // vhdl
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -113,7 +113,8 @@ func (s *BasevhdlListener) EnterArchitecture_statement(ctx *Architecture_stateme
 func (s *BasevhdlListener) ExitArchitecture_statement(ctx *Architecture_statementContext) {}
 
 // EnterArchitecture_statement_part is called when production architecture_statement_part is entered.
-func (s *BasevhdlListener) EnterArchitecture_statement_part(ctx *Architecture_statement_partContext) {}
+func (s *BasevhdlListener) EnterArchitecture_statement_part(ctx *Architecture_statement_partContext) {
+}
 
 // ExitArchitecture_statement_part is called when production architecture_statement_part is exited.
 func (s *BasevhdlListener) ExitArchitecture_statement_part(ctx *Architecture_statement_partContext) {}
@@ -227,7 +228,8 @@ func (s *BasevhdlListener) EnterBlock_statement_part(ctx *Block_statement_partCo
 func (s *BasevhdlListener) ExitBlock_statement_part(ctx *Block_statement_partContext) {}
 
 // EnterBranch_quantity_declaration is called when production branch_quantity_declaration is entered.
-func (s *BasevhdlListener) EnterBranch_quantity_declaration(ctx *Branch_quantity_declarationContext) {}
+func (s *BasevhdlListener) EnterBranch_quantity_declaration(ctx *Branch_quantity_declarationContext) {
+}
 
 // ExitBranch_quantity_declaration is called when production branch_quantity_declaration is exited.
 func (s *BasevhdlListener) ExitBranch_quantity_declaration(ctx *Branch_quantity_declarationContext) {}
@@ -307,7 +309,8 @@ func (s *BasevhdlListener) EnterComponent_specification(ctx *Component_specifica
 func (s *BasevhdlListener) ExitComponent_specification(ctx *Component_specificationContext) {}
 
 // EnterComposite_nature_definition is called when production composite_nature_definition is entered.
-func (s *BasevhdlListener) EnterComposite_nature_definition(ctx *Composite_nature_definitionContext) {}
+func (s *BasevhdlListener) EnterComposite_nature_definition(ctx *Composite_nature_definitionContext) {
+}
 
 // ExitComposite_nature_definition is called when production composite_nature_definition is exited.
 func (s *BasevhdlListener) ExitComposite_nature_definition(ctx *Composite_nature_definitionContext) {}
@@ -403,7 +406,8 @@ func (s *BasevhdlListener) EnterConfiguration_item(ctx *Configuration_itemContex
 func (s *BasevhdlListener) ExitConfiguration_item(ctx *Configuration_itemContext) {}
 
 // EnterConfiguration_specification is called when production configuration_specification is entered.
-func (s *BasevhdlListener) EnterConfiguration_specification(ctx *Configuration_specificationContext) {}
+func (s *BasevhdlListener) EnterConfiguration_specification(ctx *Configuration_specificationContext) {
+}
 
 // ExitConfiguration_specification is called when production configuration_specification is exited.
 func (s *BasevhdlListener) ExitConfiguration_specification(ctx *Configuration_specificationContext) {}
@@ -479,7 +483,8 @@ func (s *BasevhdlListener) EnterDirection(ctx *DirectionContext) {}
 func (s *BasevhdlListener) ExitDirection(ctx *DirectionContext) {}
 
 // EnterDisconnection_specification is called when production disconnection_specification is entered.
-func (s *BasevhdlListener) EnterDisconnection_specification(ctx *Disconnection_specificationContext) {}
+func (s *BasevhdlListener) EnterDisconnection_specification(ctx *Disconnection_specificationContext) {
+}
 
 // ExitDisconnection_specification is called when production disconnection_specification is exited.
 func (s *BasevhdlListener) ExitDisconnection_specification(ctx *Disconnection_specificationContext) {}
@@ -607,7 +612,8 @@ func (s *BasevhdlListener) EnterEnumeration_literal(ctx *Enumeration_literalCont
 func (s *BasevhdlListener) ExitEnumeration_literal(ctx *Enumeration_literalContext) {}
 
 // EnterEnumeration_type_definition is called when production enumeration_type_definition is entered.
-func (s *BasevhdlListener) EnterEnumeration_type_definition(ctx *Enumeration_type_definitionContext) {}
+func (s *BasevhdlListener) EnterEnumeration_type_definition(ctx *Enumeration_type_definitionContext) {
+}
 
 // ExitEnumeration_type_definition is called when production enumeration_type_definition is exited.
 func (s *BasevhdlListener) ExitEnumeration_type_definition(ctx *Enumeration_type_definitionContext) {}
@@ -1105,13 +1111,15 @@ func (s *BasevhdlListener) EnterPrimary_unit(ctx *Primary_unitContext) {}
 func (s *BasevhdlListener) ExitPrimary_unit(ctx *Primary_unitContext) {}
 
 // EnterProcedural_declarative_item is called when production procedural_declarative_item is entered.
-func (s *BasevhdlListener) EnterProcedural_declarative_item(ctx *Procedural_declarative_itemContext) {}
+func (s *BasevhdlListener) EnterProcedural_declarative_item(ctx *Procedural_declarative_itemContext) {
+}
 
 // ExitProcedural_declarative_item is called when production procedural_declarative_item is exited.
 func (s *BasevhdlListener) ExitProcedural_declarative_item(ctx *Procedural_declarative_itemContext) {}
 
 // EnterProcedural_declarative_part is called when production procedural_declarative_part is entered.
-func (s *BasevhdlListener) EnterProcedural_declarative_part(ctx *Procedural_declarative_partContext) {}
+func (s *BasevhdlListener) EnterProcedural_declarative_part(ctx *Procedural_declarative_partContext) {
+}
 
 // ExitProcedural_declarative_part is called when production procedural_declarative_part is exited.
 func (s *BasevhdlListener) ExitProcedural_declarative_part(ctx *Procedural_declarative_partContext) {}
@@ -1309,7 +1317,8 @@ func (s *BasevhdlListener) EnterShift_operator(ctx *Shift_operatorContext) {}
 func (s *BasevhdlListener) ExitShift_operator(ctx *Shift_operatorContext) {}
 
 // EnterSignal_assignment_statement is called when production signal_assignment_statement is entered.
-func (s *BasevhdlListener) EnterSignal_assignment_statement(ctx *Signal_assignment_statementContext) {}
+func (s *BasevhdlListener) EnterSignal_assignment_statement(ctx *Signal_assignment_statementContext) {
+}
 
 // ExitSignal_assignment_statement is called when production signal_assignment_statement is exited.
 func (s *BasevhdlListener) ExitSignal_assignment_statement(ctx *Signal_assignment_statementContext) {}
@@ -1359,7 +1368,8 @@ func (s *BasevhdlListener) EnterSimultaneous_alternative(ctx *Simultaneous_alter
 func (s *BasevhdlListener) ExitSimultaneous_alternative(ctx *Simultaneous_alternativeContext) {}
 
 // EnterSimultaneous_case_statement is called when production simultaneous_case_statement is entered.
-func (s *BasevhdlListener) EnterSimultaneous_case_statement(ctx *Simultaneous_case_statementContext) {}
+func (s *BasevhdlListener) EnterSimultaneous_case_statement(ctx *Simultaneous_case_statementContext) {
+}
 
 // ExitSimultaneous_case_statement is called when production simultaneous_case_statement is exited.
 func (s *BasevhdlListener) ExitSimultaneous_case_statement(ctx *Simultaneous_case_statementContext) {}
@@ -1385,7 +1395,8 @@ func (s *BasevhdlListener) EnterSimultaneous_statement(ctx *Simultaneous_stateme
 func (s *BasevhdlListener) ExitSimultaneous_statement(ctx *Simultaneous_statementContext) {}
 
 // EnterSimultaneous_statement_part is called when production simultaneous_statement_part is entered.
-func (s *BasevhdlListener) EnterSimultaneous_statement_part(ctx *Simultaneous_statement_partContext) {}
+func (s *BasevhdlListener) EnterSimultaneous_statement_part(ctx *Simultaneous_statement_partContext) {
+}
 
 // ExitSimultaneous_statement_part is called when production simultaneous_statement_part is exited.
 func (s *BasevhdlListener) ExitSimultaneous_statement_part(ctx *Simultaneous_statement_partContext) {}
@@ -1397,7 +1408,8 @@ func (s *BasevhdlListener) EnterSource_aspect(ctx *Source_aspectContext) {}
 func (s *BasevhdlListener) ExitSource_aspect(ctx *Source_aspectContext) {}
 
 // EnterSource_quantity_declaration is called when production source_quantity_declaration is entered.
-func (s *BasevhdlListener) EnterSource_quantity_declaration(ctx *Source_quantity_declarationContext) {}
+func (s *BasevhdlListener) EnterSource_quantity_declaration(ctx *Source_quantity_declarationContext) {
+}
 
 // ExitSource_quantity_declaration is called when production source_quantity_declaration is exited.
 func (s *BasevhdlListener) ExitSource_quantity_declaration(ctx *Source_quantity_declarationContext) {}
@@ -1433,13 +1445,15 @@ func (s *BasevhdlListener) EnterSubprogram_declaration(ctx *Subprogram_declarati
 func (s *BasevhdlListener) ExitSubprogram_declaration(ctx *Subprogram_declarationContext) {}
 
 // EnterSubprogram_declarative_item is called when production subprogram_declarative_item is entered.
-func (s *BasevhdlListener) EnterSubprogram_declarative_item(ctx *Subprogram_declarative_itemContext) {}
+func (s *BasevhdlListener) EnterSubprogram_declarative_item(ctx *Subprogram_declarative_itemContext) {
+}
 
 // ExitSubprogram_declarative_item is called when production subprogram_declarative_item is exited.
 func (s *BasevhdlListener) ExitSubprogram_declarative_item(ctx *Subprogram_declarative_itemContext) {}
 
 // EnterSubprogram_declarative_part is called when production subprogram_declarative_part is entered.
-func (s *BasevhdlListener) EnterSubprogram_declarative_part(ctx *Subprogram_declarative_partContext) {}
+func (s *BasevhdlListener) EnterSubprogram_declarative_part(ctx *Subprogram_declarative_partContext) {
+}
 
 // ExitSubprogram_declarative_part is called when production subprogram_declarative_part is exited.
 func (s *BasevhdlListener) ExitSubprogram_declarative_part(ctx *Subprogram_declarative_partContext) {}

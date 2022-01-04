@@ -1,4 +1,4 @@
-// Code generated from sexpression.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from sexpression.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package sexpression // sexpression
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -32,11 +32,11 @@ func (s *BasesexpressionListener) EnterItem(ctx *ItemContext) {}
 // ExitItem is called when production item is exited.
 func (s *BasesexpressionListener) ExitItem(ctx *ItemContext) {}
 
-// EnterList is called when production list is entered.
-func (s *BasesexpressionListener) EnterList(ctx *ListContext) {}
+// EnterList_ is called when production list_ is entered.
+func (s *BasesexpressionListener) EnterList_(ctx *List_Context) {}
 
-// ExitList is called when production list is exited.
-func (s *BasesexpressionListener) ExitList(ctx *ListContext) {}
+// ExitList_ is called when production list_ is exited.
+func (s *BasesexpressionListener) ExitList_(ctx *List_Context) {}
 
 // EnterAtom is called when production atom is entered.
 func (s *BasesexpressionListener) EnterAtom(ctx *AtomContext) {}

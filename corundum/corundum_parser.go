@@ -1,4 +1,4 @@
-// Code generated from Corundum.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Corundum.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package corundum // Corundum
 import (
@@ -388,9 +388,6 @@ var parserATN = []uint16{
 	557, 585, 608, 610, 616, 624, 632, 634, 651, 665, 667, 676, 684, 686, 710,
 	720, 725, 755, 784, 786, 810, 816, 818,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "','", "';'", "", "'require'", "'end'", "'def'", "'return'", "'pir'",
 	"'if'", "'else'", "'elsif'", "'unless'", "'while'", "'retry'", "'break'",
@@ -424,27 +421,31 @@ var ruleNames = []string{
 	"loop_expression", "for_loop_list", "statement_body", "statement_expression_list",
 	"assignment", "dynamic_assignment", "int_assignment", "float_assignment",
 	"string_assignment", "initial_array_assignment", "array_assignment", "array_definition",
-	"array_definition_elements", "array_selector", "dynamic_result", "dynamic",
+	"array_definition_elements", "array_selector", "dynamic_result", "dynamic_",
 	"int_result", "float_result", "string_result", "comparison_list", "comparison",
 	"comp_var", "lvalue", "rvalue", "break_expression", "literal_t", "float_t",
-	"int_t", "bool_t", "nil_t", "id", "id_global", "id_function", "terminator",
+	"int_t", "bool_t", "nil_t", "id_", "id_global", "id_function", "terminator",
 	"else_token", "crlf",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type CorundumParser struct {
 	*antlr.BaseParser
 }
 
+// NewCorundumParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *CorundumParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewCorundumParser(input antlr.TokenStream) *CorundumParser {
 	this := new(CorundumParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -574,7 +575,7 @@ const (
 	CorundumParserRULE_array_definition_elements       = 48
 	CorundumParserRULE_array_selector                  = 49
 	CorundumParserRULE_dynamic_result                  = 50
-	CorundumParserRULE_dynamic                         = 51
+	CorundumParserRULE_dynamic_                        = 51
 	CorundumParserRULE_int_result                      = 52
 	CorundumParserRULE_float_result                    = 53
 	CorundumParserRULE_string_result                   = 54
@@ -589,7 +590,7 @@ const (
 	CorundumParserRULE_int_t                           = 63
 	CorundumParserRULE_bool_t                          = 64
 	CorundumParserRULE_nil_t                           = 65
-	CorundumParserRULE_id                              = 66
+	CorundumParserRULE_id_                             = 66
 	CorundumParserRULE_id_global                       = 67
 	CorundumParserRULE_id_function                     = 68
 	CorundumParserRULE_terminator                      = 69
@@ -666,6 +667,9 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Prog() (localctx IProgContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, CorundumParserRULE_prog)
 
@@ -787,6 +791,9 @@ func (p *CorundumParser) Expression_list() (localctx IExpression_listContext) {
 }
 
 func (p *CorundumParser) expression_list(_p int) (localctx IExpression_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewExpression_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -1032,6 +1039,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, CorundumParserRULE_expression)
 
@@ -1245,6 +1255,9 @@ func (s *Global_getContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Global_get() (localctx IGlobal_getContext) {
+	this := p
+	_ = this
+
 	localctx = NewGlobal_getContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, CorundumParserRULE_global_get)
 
@@ -1406,6 +1419,9 @@ func (s *Global_setContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Global_set() (localctx IGlobal_setContext) {
+	this := p
+	_ = this
+
 	localctx = NewGlobal_setContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, CorundumParserRULE_global_set)
 
@@ -1520,6 +1536,9 @@ func (s *Global_resultContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Global_result() (localctx IGlobal_resultContext) {
+	this := p
+	_ = this
+
 	localctx = NewGlobal_resultContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, CorundumParserRULE_global_result)
 
@@ -1617,6 +1636,9 @@ func (s *Function_inline_callContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *CorundumParser) Function_inline_call() (localctx IFunction_inline_callContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_inline_callContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, CorundumParserRULE_function_inline_call)
 
@@ -1718,6 +1740,9 @@ func (s *Require_blockContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Require_block() (localctx IRequire_blockContext) {
+	this := p
+	_ = this
+
 	localctx = NewRequire_blockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, CorundumParserRULE_require_block)
 
@@ -1837,6 +1862,9 @@ func (s *Pir_inlineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Pir_inline() (localctx IPir_inlineContext) {
+	this := p
+	_ = this
+
 	localctx = NewPir_inlineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, CorundumParserRULE_pir_inline)
 
@@ -1946,6 +1974,9 @@ func (s *Pir_expression_listContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *CorundumParser) Pir_expression_list() (localctx IPir_expression_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewPir_expression_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, CorundumParserRULE_pir_expression_list)
 
@@ -2057,6 +2088,9 @@ func (s *Function_definitionContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *CorundumParser) Function_definition() (localctx IFunction_definitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, CorundumParserRULE_function_definition)
 
@@ -2162,6 +2196,9 @@ func (s *Function_definition_bodyContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *CorundumParser) Function_definition_body() (localctx IFunction_definition_bodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_definition_bodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, CorundumParserRULE_function_definition_body)
 
@@ -2283,6 +2320,9 @@ func (s *Function_definition_headerContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *CorundumParser) Function_definition_header() (localctx IFunction_definition_headerContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_definition_headerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, CorundumParserRULE_function_definition_header)
 
@@ -2392,14 +2432,14 @@ func (s *Function_nameContext) Id_function() IId_functionContext {
 	return t.(IId_functionContext)
 }
 
-func (s *Function_nameContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *Function_nameContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *Function_nameContext) GetRuleContext() antlr.RuleContext {
@@ -2423,6 +2463,9 @@ func (s *Function_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Function_name() (localctx IFunction_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, CorundumParserRULE_function_name)
 
@@ -2457,7 +2500,7 @@ func (p *CorundumParser) Function_name() (localctx IFunction_nameContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(214)
-			p.Id()
+			p.Id_()
 		}
 
 	default:
@@ -2544,6 +2587,9 @@ func (s *Function_definition_paramsContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *CorundumParser) Function_definition_params() (localctx IFunction_definition_paramsContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_definition_paramsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, CorundumParserRULE_function_definition_params)
 
@@ -2691,6 +2737,9 @@ func (p *CorundumParser) Function_definition_params_list() (localctx IFunction_d
 }
 
 func (p *CorundumParser) function_definition_params_list(_p int) (localctx IFunction_definition_params_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewFunction_definition_params_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -2797,14 +2846,14 @@ func NewFunction_definition_param_idContext(parser antlr.Parser, parent antlr.Pa
 
 func (s *Function_definition_param_idContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *Function_definition_param_idContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *Function_definition_param_idContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *Function_definition_param_idContext) GetRuleContext() antlr.RuleContext {
@@ -2828,6 +2877,9 @@ func (s *Function_definition_param_idContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *CorundumParser) Function_definition_param_id() (localctx IFunction_definition_param_idContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_definition_param_idContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, CorundumParserRULE_function_definition_param_id)
 
@@ -2850,7 +2902,7 @@ func (p *CorundumParser) Function_definition_param_id() (localctx IFunction_defi
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(237)
-		p.Id()
+		p.Id_()
 	}
 
 	return localctx
@@ -2929,6 +2981,9 @@ func (s *Return_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Return_statement() (localctx IReturn_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewReturn_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, CorundumParserRULE_return_statement)
 
@@ -3070,6 +3125,9 @@ func (s *Function_callContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Function_call() (localctx IFunction_callContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_callContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, CorundumParserRULE_function_call)
 
@@ -3226,6 +3284,9 @@ func (s *Function_call_param_listContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *CorundumParser) Function_call_param_list() (localctx IFunction_call_param_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_call_param_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, CorundumParserRULE_function_call_param_list)
 
@@ -3341,6 +3402,9 @@ func (p *CorundumParser) Function_call_params() (localctx IFunction_call_paramsC
 }
 
 func (p *CorundumParser) function_call_params(_p int) (localctx IFunction_call_paramsContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewFunction_call_paramsContext(p, p.GetParserRuleContext(), _parentState)
@@ -3488,6 +3552,9 @@ func (s *Function_paramContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Function_param() (localctx IFunction_paramContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_paramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, CorundumParserRULE_function_param)
 
@@ -3627,6 +3694,9 @@ func (s *Function_unnamed_paramContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *CorundumParser) Function_unnamed_param() (localctx IFunction_unnamed_paramContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_unnamed_paramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, CorundumParserRULE_function_unnamed_param)
 
@@ -3728,14 +3798,14 @@ func (s *Function_named_paramContext) GetOp() antlr.Token { return s.op }
 
 func (s *Function_named_paramContext) SetOp(v antlr.Token) { s.op = v }
 
-func (s *Function_named_paramContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *Function_named_paramContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *Function_named_paramContext) ASSIGN() antlr.TerminalNode {
@@ -3803,6 +3873,9 @@ func (s *Function_named_paramContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *CorundumParser) Function_named_param() (localctx IFunction_named_paramContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_named_paramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, CorundumParserRULE_function_named_param)
 
@@ -3825,7 +3898,7 @@ func (p *CorundumParser) Function_named_param() (localctx IFunction_named_paramC
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(279)
-		p.Id()
+		p.Id_()
 	}
 	{
 		p.SetState(280)
@@ -3935,6 +4008,9 @@ func (s *Function_call_assignmentContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *CorundumParser) Function_call_assignment() (localctx IFunction_call_assignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunction_call_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, CorundumParserRULE_function_call_assignment)
 
@@ -4072,6 +4148,9 @@ func (s *All_resultContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) All_result() (localctx IAll_resultContext) {
+	this := p
+	_ = this
+
 	localctx = NewAll_resultContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, CorundumParserRULE_all_result)
 
@@ -4199,6 +4278,9 @@ func (s *Elsif_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Elsif_statement() (localctx IElsif_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewElsif_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, CorundumParserRULE_elsif_statement)
 
@@ -4366,6 +4448,9 @@ func (s *If_elsif_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) If_elsif_statement() (localctx IIf_elsif_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewIf_elsif_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, CorundumParserRULE_if_elsif_statement)
 
@@ -4609,6 +4694,9 @@ func (s *If_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) If_statement() (localctx IIf_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewIf_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, CorundumParserRULE_if_statement)
 
@@ -4864,6 +4952,9 @@ func (s *Unless_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Unless_statement() (localctx IUnless_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnless_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, CorundumParserRULE_unless_statement)
 
@@ -5073,6 +5164,9 @@ func (s *While_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) While_statement() (localctx IWhile_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhile_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, CorundumParserRULE_while_statement)
 
@@ -5250,6 +5344,9 @@ func (s *For_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) For_statement() (localctx IFor_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewFor_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, CorundumParserRULE_for_statement)
 
@@ -5432,6 +5529,9 @@ func (s *Init_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Init_expression() (localctx IInit_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewInit_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, CorundumParserRULE_init_expression)
 
@@ -5559,6 +5659,9 @@ func (s *All_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) All_assignment() (localctx IAll_assignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewAll_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, CorundumParserRULE_all_assignment)
 
@@ -5698,6 +5801,9 @@ func (p *CorundumParser) For_init_list() (localctx IFor_init_listContext) {
 }
 
 func (p *CorundumParser) for_init_list(_p int) (localctx IFor_init_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewFor_init_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -5835,6 +5941,9 @@ func (s *Cond_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Cond_expression() (localctx ICond_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCond_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, CorundumParserRULE_cond_expression)
 
@@ -5932,6 +6041,9 @@ func (s *Loop_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Loop_expression() (localctx ILoop_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewLoop_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, CorundumParserRULE_loop_expression)
 
@@ -6047,6 +6159,9 @@ func (p *CorundumParser) For_loop_list() (localctx IFor_loop_listContext) {
 }
 
 func (p *CorundumParser) for_loop_list(_p int) (localctx IFor_loop_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewFor_loop_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -6184,6 +6299,9 @@ func (s *Statement_bodyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Statement_body() (localctx IStatement_bodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatement_bodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, CorundumParserRULE_statement_body)
 
@@ -6319,6 +6437,9 @@ func (p *CorundumParser) Statement_expression_list() (localctx IStatement_expres
 }
 
 func (p *CorundumParser) statement_expression_list(_p int) (localctx IStatement_expression_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewStatement_expression_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -6588,6 +6709,9 @@ func (s *AssignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Assignment() (localctx IAssignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, CorundumParserRULE_assignment)
 	var _la int
@@ -6798,6 +6922,9 @@ func (s *Dynamic_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Dynamic_assignment() (localctx IDynamic_assignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewDynamic_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, CorundumParserRULE_dynamic_assignment)
 	var _la int
@@ -7008,6 +7135,9 @@ func (s *Int_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Int_assignment() (localctx IInt_assignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewInt_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, CorundumParserRULE_int_assignment)
 	var _la int
@@ -7218,6 +7348,9 @@ func (s *Float_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Float_assignment() (localctx IFloat_assignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewFloat_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, CorundumParserRULE_float_assignment)
 	var _la int
@@ -7408,6 +7541,9 @@ func (s *String_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) String_assignment() (localctx IString_assignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewString_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, CorundumParserRULE_string_assignment)
 
@@ -7580,6 +7716,9 @@ func (s *Initial_array_assignmentContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *CorundumParser) Initial_array_assignment() (localctx IInitial_array_assignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewInitial_array_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, CorundumParserRULE_initial_array_assignment)
 
@@ -7742,6 +7881,9 @@ func (s *Array_assignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Array_assignment() (localctx IArray_assignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewArray_assignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, CorundumParserRULE_array_assignment)
 
@@ -7864,6 +8006,9 @@ func (s *Array_definitionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Array_definition() (localctx IArray_definitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewArray_definitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, CorundumParserRULE_array_definition)
 
@@ -7997,6 +8142,9 @@ func (p *CorundumParser) Array_definition_elements() (localctx IArray_definition
 }
 
 func (p *CorundumParser) array_definition_elements(_p int) (localctx IArray_definition_elementsContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewArray_definition_elementsContext(p, p.GetParserRuleContext(), _parentState)
@@ -8127,14 +8275,14 @@ func NewArray_selectorContext(parser antlr.Parser, parent antlr.ParserRuleContex
 
 func (s *Array_selectorContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *Array_selectorContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *Array_selectorContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *Array_selectorContext) LEFT_SBRACKET() antlr.TerminalNode {
@@ -8196,6 +8344,9 @@ func (s *Array_selectorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Array_selector() (localctx IArray_selectorContext) {
+	this := p
+	_ = this
+
 	localctx = NewArray_selectorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, CorundumParserRULE_array_selector)
 
@@ -8223,7 +8374,7 @@ func (p *CorundumParser) Array_selector() (localctx IArray_selectorContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(539)
-			p.Id()
+			p.Id_()
 		}
 		{
 			p.SetState(540)
@@ -8418,14 +8569,14 @@ func (s *Dynamic_resultContext) RIGHT_RBRACKET() antlr.TerminalNode {
 	return s.GetToken(CorundumParserRIGHT_RBRACKET, 0)
 }
 
-func (s *Dynamic_resultContext) Dynamic() IDynamicContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDynamicContext)(nil)).Elem(), 0)
+func (s *Dynamic_resultContext) Dynamic_() IDynamic_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDynamic_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IDynamicContext)
+	return t.(IDynamic_Context)
 }
 
 func (s *Dynamic_resultContext) GetRuleContext() antlr.RuleContext {
@@ -8453,6 +8604,9 @@ func (p *CorundumParser) Dynamic_result() (localctx IDynamic_resultContext) {
 }
 
 func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewDynamic_resultContext(p, p.GetParserRuleContext(), _parentState)
@@ -8630,7 +8784,7 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 	case 7:
 		{
 			p.SetState(582)
-			p.Dynamic()
+			p.Dynamic_()
 		}
 
 	}
@@ -8865,55 +9019,55 @@ func (p *CorundumParser) dynamic_result(_p int) (localctx IDynamic_resultContext
 	return localctx
 }
 
-// IDynamicContext is an interface to support dynamic dispatch.
-type IDynamicContext interface {
+// IDynamic_Context is an interface to support dynamic dispatch.
+type IDynamic_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsDynamicContext differentiates from other interfaces.
-	IsDynamicContext()
+	// IsDynamic_Context differentiates from other interfaces.
+	IsDynamic_Context()
 }
 
-type DynamicContext struct {
+type Dynamic_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyDynamicContext() *DynamicContext {
-	var p = new(DynamicContext)
+func NewEmptyDynamic_Context() *Dynamic_Context {
+	var p = new(Dynamic_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = CorundumParserRULE_dynamic
+	p.RuleIndex = CorundumParserRULE_dynamic_
 	return p
 }
 
-func (*DynamicContext) IsDynamicContext() {}
+func (*Dynamic_Context) IsDynamic_Context() {}
 
-func NewDynamicContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *DynamicContext {
-	var p = new(DynamicContext)
+func NewDynamic_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Dynamic_Context {
+	var p = new(Dynamic_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = CorundumParserRULE_dynamic
+	p.RuleIndex = CorundumParserRULE_dynamic_
 
 	return p
 }
 
-func (s *DynamicContext) GetParser() antlr.Parser { return s.parser }
+func (s *Dynamic_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *DynamicContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *Dynamic_Context) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
-func (s *DynamicContext) Function_call_assignment() IFunction_call_assignmentContext {
+func (s *Dynamic_Context) Function_call_assignment() IFunction_call_assignmentContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunction_call_assignmentContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -8923,7 +9077,7 @@ func (s *DynamicContext) Function_call_assignment() IFunction_call_assignmentCon
 	return t.(IFunction_call_assignmentContext)
 }
 
-func (s *DynamicContext) Array_selector() IArray_selectorContext {
+func (s *Dynamic_Context) Array_selector() IArray_selectorContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IArray_selectorContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -8933,29 +9087,32 @@ func (s *DynamicContext) Array_selector() IArray_selectorContext {
 	return t.(IArray_selectorContext)
 }
 
-func (s *DynamicContext) GetRuleContext() antlr.RuleContext {
+func (s *Dynamic_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *DynamicContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Dynamic_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *DynamicContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Dynamic_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
-		listenerT.EnterDynamic(s)
+		listenerT.EnterDynamic_(s)
 	}
 }
 
-func (s *DynamicContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Dynamic_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
-		listenerT.ExitDynamic(s)
+		listenerT.ExitDynamic_(s)
 	}
 }
 
-func (p *CorundumParser) Dynamic() (localctx IDynamicContext) {
-	localctx = NewDynamicContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 102, CorundumParserRULE_dynamic)
+func (p *CorundumParser) Dynamic_() (localctx IDynamic_Context) {
+	this := p
+	_ = this
+
+	localctx = NewDynamic_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 102, CorundumParserRULE_dynamic_)
 
 	defer func() {
 		p.ExitRule()
@@ -8980,7 +9137,7 @@ func (p *CorundumParser) Dynamic() (localctx IDynamicContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(611)
-			p.Id()
+			p.Id_()
 		}
 
 	case 2:
@@ -9137,6 +9294,9 @@ func (p *CorundumParser) Int_result() (localctx IInt_resultContext) {
 }
 
 func (p *CorundumParser) int_result(_p int) (localctx IInt_resultContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewInt_resultContext(p, p.GetParserRuleContext(), _parentState)
@@ -9424,6 +9584,9 @@ func (p *CorundumParser) Float_result() (localctx IFloat_resultContext) {
 }
 
 func (p *CorundumParser) float_result(_p int) (localctx IFloat_resultContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewFloat_resultContext(p, p.GetParserRuleContext(), _parentState)
@@ -9806,6 +9969,9 @@ func (p *CorundumParser) String_result() (localctx IString_resultContext) {
 }
 
 func (p *CorundumParser) string_result(_p int) (localctx IString_resultContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewString_resultContext(p, p.GetParserRuleContext(), _parentState)
@@ -10064,6 +10230,9 @@ func (s *Comparison_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Comparison_list() (localctx IComparison_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewComparison_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, CorundumParserRULE_comparison_list)
 
@@ -10348,6 +10517,9 @@ func (s *ComparisonContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Comparison() (localctx IComparisonContext) {
+	this := p
+	_ = this
+
 	localctx = NewComparisonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, CorundumParserRULE_comparison)
 	var _la int
@@ -10504,14 +10676,14 @@ func (s *Comp_varContext) Array_selector() IArray_selectorContext {
 	return t.(IArray_selectorContext)
 }
 
-func (s *Comp_varContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *Comp_varContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *Comp_varContext) GetRuleContext() antlr.RuleContext {
@@ -10535,6 +10707,9 @@ func (s *Comp_varContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Comp_var() (localctx IComp_varContext) {
+	this := p
+	_ = this
+
 	localctx = NewComp_varContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, CorundumParserRULE_comp_var)
 
@@ -10575,7 +10750,7 @@ func (p *CorundumParser) Comp_var() (localctx IComp_varContext) {
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(722)
-			p.Id()
+			p.Id_()
 		}
 
 	}
@@ -10621,14 +10796,14 @@ func NewLvalueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 
 func (s *LvalueContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *LvalueContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *LvalueContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *LvalueContext) GetRuleContext() antlr.RuleContext {
@@ -10652,6 +10827,9 @@ func (s *LvalueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Lvalue() (localctx ILvalueContext) {
+	this := p
+	_ = this
+
 	localctx = NewLvalueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, CorundumParserRULE_lvalue)
 
@@ -10674,7 +10852,7 @@ func (p *CorundumParser) Lvalue() (localctx ILvalueContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(725)
-		p.Id()
+		p.Id_()
 	}
 
 	return localctx
@@ -11048,6 +11226,9 @@ func (p *CorundumParser) Rvalue() (localctx IRvalueContext) {
 }
 
 func (p *CorundumParser) rvalue(_p int) (localctx IRvalueContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewRvalueContext(p, p.GetParserRuleContext(), _parentState)
@@ -11515,6 +11696,9 @@ func (s *Break_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Break_expression() (localctx IBreak_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewBreak_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, CorundumParserRULE_break_expression)
 
@@ -11606,6 +11790,9 @@ func (s *Literal_tContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Literal_t() (localctx ILiteral_tContext) {
+	this := p
+	_ = this
+
 	localctx = NewLiteral_tContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, CorundumParserRULE_literal_t)
 
@@ -11697,6 +11884,9 @@ func (s *Float_tContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Float_t() (localctx IFloat_tContext) {
+	this := p
+	_ = this
+
 	localctx = NewFloat_tContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 124, CorundumParserRULE_float_t)
 
@@ -11788,6 +11978,9 @@ func (s *Int_tContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Int_t() (localctx IInt_tContext) {
+	this := p
+	_ = this
+
 	localctx = NewInt_tContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, CorundumParserRULE_int_t)
 
@@ -11883,6 +12076,9 @@ func (s *Bool_tContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Bool_t() (localctx IBool_tContext) {
+	this := p
+	_ = this
+
 	localctx = NewBool_tContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, CorundumParserRULE_bool_t)
 	var _la int
@@ -11982,6 +12178,9 @@ func (s *Nil_tContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Nil_t() (localctx INil_tContext) {
+	this := p
+	_ = this
+
 	localctx = NewNil_tContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 130, CorundumParserRULE_nil_t)
 
@@ -12010,71 +12209,74 @@ func (p *CorundumParser) Nil_t() (localctx INil_tContext) {
 	return localctx
 }
 
-// IIdContext is an interface to support dynamic dispatch.
-type IIdContext interface {
+// IId_Context is an interface to support dynamic dispatch.
+type IId_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsIdContext differentiates from other interfaces.
-	IsIdContext()
+	// IsId_Context differentiates from other interfaces.
+	IsId_Context()
 }
 
-type IdContext struct {
+type Id_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyIdContext() *IdContext {
-	var p = new(IdContext)
+func NewEmptyId_Context() *Id_Context {
+	var p = new(Id_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = CorundumParserRULE_id
+	p.RuleIndex = CorundumParserRULE_id_
 	return p
 }
 
-func (*IdContext) IsIdContext() {}
+func (*Id_Context) IsId_Context() {}
 
-func NewIdContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *IdContext {
-	var p = new(IdContext)
+func NewId_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Id_Context {
+	var p = new(Id_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = CorundumParserRULE_id
+	p.RuleIndex = CorundumParserRULE_id_
 
 	return p
 }
 
-func (s *IdContext) GetParser() antlr.Parser { return s.parser }
+func (s *Id_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *IdContext) ID() antlr.TerminalNode {
+func (s *Id_Context) ID() antlr.TerminalNode {
 	return s.GetToken(CorundumParserID, 0)
 }
 
-func (s *IdContext) GetRuleContext() antlr.RuleContext {
+func (s *Id_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *IdContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Id_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *IdContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Id_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
-		listenerT.EnterId(s)
+		listenerT.EnterId_(s)
 	}
 }
 
-func (s *IdContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Id_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CorundumListener); ok {
-		listenerT.ExitId(s)
+		listenerT.ExitId_(s)
 	}
 }
 
-func (p *CorundumParser) Id() (localctx IIdContext) {
-	localctx = NewIdContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 132, CorundumParserRULE_id)
+func (p *CorundumParser) Id_() (localctx IId_Context) {
+	this := p
+	_ = this
+
+	localctx = NewId_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 132, CorundumParserRULE_id_)
 
 	defer func() {
 		p.ExitRule()
@@ -12164,6 +12366,9 @@ func (s *Id_globalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Id_global() (localctx IId_globalContext) {
+	this := p
+	_ = this
+
 	localctx = NewId_globalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 134, CorundumParserRULE_id_global)
 
@@ -12255,6 +12460,9 @@ func (s *Id_functionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Id_function() (localctx IId_functionContext) {
+	this := p
+	_ = this
+
 	localctx = NewId_functionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 136, CorundumParserRULE_id_function)
 
@@ -12370,6 +12578,9 @@ func (p *CorundumParser) Terminator() (localctx ITerminatorContext) {
 }
 
 func (p *CorundumParser) terminator(_p int) (localctx ITerminatorContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewTerminatorContext(p, p.GetParserRuleContext(), _parentState)
@@ -12530,6 +12741,9 @@ func (s *Else_tokenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Else_token() (localctx IElse_tokenContext) {
+	this := p
+	_ = this
+
 	localctx = NewElse_tokenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 140, CorundumParserRULE_else_token)
 
@@ -12621,6 +12835,9 @@ func (s *CrlfContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CorundumParser) Crlf() (localctx ICrlfContext) {
+	this := p
+	_ = this
+
 	localctx = NewCrlfContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 142, CorundumParserRULE_crlf)
 
@@ -12748,6 +12965,9 @@ func (p *CorundumParser) Sempred(localctx antlr.RuleContext, ruleIndex, predInde
 }
 
 func (p *CorundumParser) Expression_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 2)
@@ -12758,6 +12978,9 @@ func (p *CorundumParser) Expression_list_Sempred(localctx antlr.RuleContext, pre
 }
 
 func (p *CorundumParser) Function_definition_params_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 1:
 		return p.Precpred(p.GetParserRuleContext(), 1)
@@ -12768,6 +12991,9 @@ func (p *CorundumParser) Function_definition_params_list_Sempred(localctx antlr.
 }
 
 func (p *CorundumParser) Function_call_params_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 2:
 		return p.Precpred(p.GetParserRuleContext(), 1)
@@ -12778,6 +13004,9 @@ func (p *CorundumParser) Function_call_params_Sempred(localctx antlr.RuleContext
 }
 
 func (p *CorundumParser) For_init_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 3:
 		return p.Precpred(p.GetParserRuleContext(), 2)
@@ -12788,6 +13017,9 @@ func (p *CorundumParser) For_init_list_Sempred(localctx antlr.RuleContext, predI
 }
 
 func (p *CorundumParser) For_loop_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 4:
 		return p.Precpred(p.GetParserRuleContext(), 2)
@@ -12798,6 +13030,9 @@ func (p *CorundumParser) For_loop_list_Sempred(localctx antlr.RuleContext, predI
 }
 
 func (p *CorundumParser) Statement_expression_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 5:
 		return p.Precpred(p.GetParserRuleContext(), 3)
@@ -12814,6 +13049,9 @@ func (p *CorundumParser) Statement_expression_list_Sempred(localctx antlr.RuleCo
 }
 
 func (p *CorundumParser) Array_definition_elements_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 8:
 		return p.Precpred(p.GetParserRuleContext(), 1)
@@ -12824,6 +13062,9 @@ func (p *CorundumParser) Array_definition_elements_Sempred(localctx antlr.RuleCo
 }
 
 func (p *CorundumParser) Dynamic_result_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 9:
 		return p.Precpred(p.GetParserRuleContext(), 10)
@@ -12852,6 +13093,9 @@ func (p *CorundumParser) Dynamic_result_Sempred(localctx antlr.RuleContext, pred
 }
 
 func (p *CorundumParser) Int_result_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 16:
 		return p.Precpred(p.GetParserRuleContext(), 4)
@@ -12865,6 +13109,9 @@ func (p *CorundumParser) Int_result_Sempred(localctx antlr.RuleContext, predInde
 }
 
 func (p *CorundumParser) Float_result_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 18:
 		return p.Precpred(p.GetParserRuleContext(), 8)
@@ -12884,6 +13131,9 @@ func (p *CorundumParser) Float_result_Sempred(localctx antlr.RuleContext, predIn
 }
 
 func (p *CorundumParser) String_result_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 22:
 		return p.Precpred(p.GetParserRuleContext(), 2)
@@ -12897,6 +13147,9 @@ func (p *CorundumParser) String_result_Sempred(localctx antlr.RuleContext, predI
 }
 
 func (p *CorundumParser) Rvalue_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 24:
 		return p.Precpred(p.GetParserRuleContext(), 11)
@@ -12931,6 +13184,9 @@ func (p *CorundumParser) Rvalue_Sempred(localctx antlr.RuleContext, predIndex in
 }
 
 func (p *CorundumParser) Terminator_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 33:
 		return p.Precpred(p.GetParserRuleContext(), 4)

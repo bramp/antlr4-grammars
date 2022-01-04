@@ -1,4 +1,4 @@
-// Code generated from gml.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from gml.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package gml // gml
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -26,11 +26,11 @@ func (s *BasegmlListener) EnterGraph(ctx *GraphContext) {}
 // ExitGraph is called when production graph is exited.
 func (s *BasegmlListener) ExitGraph(ctx *GraphContext) {}
 
-// EnterList is called when production list is entered.
-func (s *BasegmlListener) EnterList(ctx *ListContext) {}
+// EnterList_ is called when production list_ is entered.
+func (s *BasegmlListener) EnterList_(ctx *List_Context) {}
 
-// ExitList is called when production list is exited.
-func (s *BasegmlListener) ExitList(ctx *ListContext) {}
+// ExitList_ is called when production list_ is exited.
+func (s *BasegmlListener) ExitList_(ctx *List_Context) {}
 
 // EnterKv is called when production kv is entered.
 func (s *BasegmlListener) EnterKv(ctx *KvContext) {}
@@ -62,11 +62,11 @@ func (s *BasegmlListener) EnterRealnum(ctx *RealnumContext) {}
 // ExitRealnum is called when production realnum is exited.
 func (s *BasegmlListener) ExitRealnum(ctx *RealnumContext) {}
 
-// EnterStr is called when production str is entered.
-func (s *BasegmlListener) EnterStr(ctx *StrContext) {}
+// EnterStr_ is called when production str_ is entered.
+func (s *BasegmlListener) EnterStr_(ctx *Str_Context) {}
 
-// ExitStr is called when production str is exited.
-func (s *BasegmlListener) ExitStr(ctx *StrContext) {}
+// ExitStr_ is called when production str_ is exited.
+func (s *BasegmlListener) ExitStr_(ctx *Str_Context) {}
 
 // EnterStringliteral is called when production stringliteral is entered.
 func (s *BasegmlListener) EnterStringliteral(ctx *StringliteralContext) {}

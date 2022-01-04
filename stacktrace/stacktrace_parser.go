@@ -1,4 +1,4 @@
-// Code generated from StackTrace.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from StackTrace.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package stacktrace // StackTrace
 import (
@@ -67,9 +67,6 @@ var parserATN = []uint16{
 	124, 35, 3, 2, 2, 2, 125, 123, 3, 2, 2, 2, 14, 42, 47, 51, 55, 63, 76,
 	79, 85, 96, 102, 113, 123,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'('", "')'", "'$'", "'.java'", "", "", "'.'", "'at'", "'Caused by:'",
 	"'more'", "'...'", "':'", "'Native Method'", "'Unknown Source'", "'<init>'",
@@ -87,21 +84,25 @@ var ruleNames = []string{
 	"qualifiedMethod", "constructor", "methodName", "packagePath", "className",
 	"identifier", "message",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type StackTraceParser struct {
 	*antlr.BaseParser
 }
 
+// NewStackTraceParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *StackTraceParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewStackTraceParser(input antlr.TokenStream) *StackTraceParser {
 	this := new(StackTraceParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -232,6 +233,9 @@ func (s *StartRuleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) StartRule() (localctx IStartRuleContext) {
+	this := p
+	_ = this
+
 	localctx = NewStartRuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, StackTraceParserRULE_startRule)
 
@@ -379,6 +383,9 @@ func (s *StackTraceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) StackTrace() (localctx IStackTraceContext) {
+	this := p
+	_ = this
+
 	localctx = NewStackTraceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, StackTraceParserRULE_stackTrace)
 	var _la int
@@ -522,6 +529,9 @@ func (s *StackTraceLineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) StackTraceLine() (localctx IStackTraceLineContext) {
+	this := p
+	_ = this
+
 	localctx = NewStackTraceLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, StackTraceParserRULE_stackTraceLine)
 
@@ -656,6 +666,9 @@ func (s *AtLineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) AtLine() (localctx IAtLineContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, StackTraceParserRULE_atLine)
 	var _la int
@@ -789,6 +802,9 @@ func (s *CausedByLineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) CausedByLine() (localctx ICausedByLineContext) {
+	this := p
+	_ = this
+
 	localctx = NewCausedByLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, StackTraceParserRULE_causedByLine)
 
@@ -892,6 +908,9 @@ func (s *EllipsisLineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) EllipsisLine() (localctx IEllipsisLineContext) {
+	this := p
+	_ = this
+
 	localctx = NewEllipsisLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, StackTraceParserRULE_ellipsisLine)
 
@@ -1007,6 +1026,9 @@ func (s *MessageLineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) MessageLine() (localctx IMessageLineContext) {
+	this := p
+	_ = this
+
 	localctx = NewMessageLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, StackTraceParserRULE_messageLine)
 	var _la int
@@ -1149,6 +1171,9 @@ func (s *QualifiedClassContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) QualifiedClass() (localctx IQualifiedClassContext) {
+	this := p
+	_ = this
+
 	localctx = NewQualifiedClassContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, StackTraceParserRULE_qualifiedClass)
 	var _la int
@@ -1271,6 +1296,9 @@ func (s *InnerClassNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) InnerClassName() (localctx IInnerClassNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewInnerClassNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, StackTraceParserRULE_innerClassName)
 
@@ -1380,6 +1408,9 @@ func (s *ClassFileContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) ClassFile() (localctx IClassFileContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassFileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, StackTraceParserRULE_classFile)
 
@@ -1526,6 +1557,9 @@ func (s *QualifiedMethodContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) QualifiedMethod() (localctx IQualifiedMethodContext) {
+	this := p
+	_ = this
+
 	localctx = NewQualifiedMethodContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, StackTraceParserRULE_qualifiedMethod)
 
@@ -1641,6 +1675,9 @@ func (s *ConstructorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) Constructor() (localctx IConstructorContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstructorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, StackTraceParserRULE_constructor)
 
@@ -1738,6 +1775,9 @@ func (s *MethodNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) MethodName() (localctx IMethodNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewMethodNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, StackTraceParserRULE_methodName)
 
@@ -1856,6 +1896,9 @@ func (s *PackagePathContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) PackagePath() (localctx IPackagePathContext) {
+	this := p
+	_ = this
+
 	localctx = NewPackagePathContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, StackTraceParserRULE_packagePath)
 
@@ -1968,6 +2011,9 @@ func (s *ClassNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) ClassName() (localctx IClassNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, StackTraceParserRULE_className)
 
@@ -2059,6 +2105,9 @@ func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) Identifier() (localctx IIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, StackTraceParserRULE_identifier)
 
@@ -2150,6 +2199,9 @@ func (s *MessageContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *StackTraceParser) Message() (localctx IMessageContext) {
+	this := p
+	_ = this
+
 	localctx = NewMessageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, StackTraceParserRULE_message)
 

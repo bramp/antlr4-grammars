@@ -33,8 +33,17 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{
+	"grammars-v4/smiles/examples/MIC.txt",
 	"grammars-v4/smiles/examples/biphenyl.txt",
+	"grammars-v4/smiles/examples/dinitrogen.txt",
+	"grammars-v4/smiles/examples/hydronium.txt",
+	"grammars-v4/smiles/examples/hydroxide.txt",
+	"grammars-v4/smiles/examples/imidazole.txt",
+	"grammars-v4/smiles/examples/mequitazine.txt",
 	"grammars-v4/smiles/examples/methane.txt",
+	"grammars-v4/smiles/examples/nicotine.txt",
+	"grammars-v4/smiles/examples/scandium.txt",
+	"grammars-v4/smiles/examples/sulfercarbon.txt",
 	"grammars-v4/smiles/examples/uranium.txt",
 }
 

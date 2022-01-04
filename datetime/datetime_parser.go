@@ -1,4 +1,4 @@
-// Code generated from datetime.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from datetime.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package datetime // datetime
 import (
@@ -49,9 +49,6 @@ var parserATN = []uint16{
 	19, 3, 2, 2, 2, 75, 76, 9, 5, 2, 2, 76, 21, 3, 2, 2, 2, 6, 25, 35, 50,
 	65,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "','", "'Mon'", "'Tue'", "'Wed'", "'Thu'", "'Fri'", "'Sat'", "'Sun'",
 	"'Jan'", "'Feb'", "'Mar'", "'Apr'", "'May'", "'Jun'", "'Jul'", "'Aug'",
@@ -68,21 +65,25 @@ var ruleNames = []string{
 	"date_time", "day", "date", "month", "time", "hour", "zone", "two_digit",
 	"four_digit", "alphanumeric",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type datetimeParser struct {
 	*antlr.BaseParser
 }
 
+// NewdatetimeParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *datetimeParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewdatetimeParser(input antlr.TokenStream) *datetimeParser {
 	this := new(datetimeParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -238,6 +239,9 @@ func (s *Date_timeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *datetimeParser) Date_time() (localctx IDate_timeContext) {
+	this := p
+	_ = this
+
 	localctx = NewDate_timeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, datetimeParserRULE_date_time)
 	var _la int
@@ -344,6 +348,9 @@ func (s *DayContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *datetimeParser) Day() (localctx IDayContext) {
+	this := p
+	_ = this
+
 	localctx = NewDayContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, datetimeParserRULE_day)
 	var _la int
@@ -472,6 +479,9 @@ func (s *DateContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *datetimeParser) Date() (localctx IDateContext) {
+	this := p
+	_ = this
+
 	localctx = NewDateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, datetimeParserRULE_date)
 	var _la int
@@ -577,6 +587,9 @@ func (s *MonthContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *datetimeParser) Month() (localctx IMonthContext) {
+	this := p
+	_ = this
+
 	localctx = NewMonthContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, datetimeParserRULE_month)
 	var _la int
@@ -692,6 +705,9 @@ func (s *TimeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *datetimeParser) Time() (localctx ITimeContext) {
+	this := p
+	_ = this
+
 	localctx = NewTimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, datetimeParserRULE_time)
 
@@ -806,6 +822,9 @@ func (s *HourContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *datetimeParser) Hour() (localctx IHourContext) {
+	this := p
+	_ = this
+
 	localctx = NewHourContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, datetimeParserRULE_hour)
 	var _la int
@@ -931,6 +950,9 @@ func (s *ZoneContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *datetimeParser) Zone() (localctx IZoneContext) {
+	this := p
+	_ = this
+
 	localctx = NewZoneContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, datetimeParserRULE_zone)
 	var _la int
@@ -1139,6 +1161,9 @@ func (s *Two_digitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *datetimeParser) Two_digit() (localctx ITwo_digitContext) {
+	this := p
+	_ = this
+
 	localctx = NewTwo_digitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, datetimeParserRULE_two_digit)
 
@@ -1253,6 +1278,9 @@ func (s *Four_digitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *datetimeParser) Four_digit() (localctx IFour_digitContext) {
+	this := p
+	_ = this
+
 	localctx = NewFour_digitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, datetimeParserRULE_four_digit)
 
@@ -1360,6 +1388,9 @@ func (s *AlphanumericContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *datetimeParser) Alphanumeric() (localctx IAlphanumericContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlphanumericContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, datetimeParserRULE_alphanumeric)
 	var _la int

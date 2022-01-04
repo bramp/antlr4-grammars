@@ -1,4 +1,4 @@
-// Code generated from CMake.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from CMake.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package cmake // CMake
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -7,8 +7,8 @@ import "github.com/antlr/antlr4/runtime/Go/antlr"
 type CMakeListener interface {
 	antlr.ParseTreeListener
 
-	// EnterFile is called when entering the file production.
-	EnterFile(c *FileContext)
+	// EnterFile_ is called when entering the file_ production.
+	EnterFile_(c *File_Context)
 
 	// EnterCommand_invocation is called when entering the command_invocation production.
 	EnterCommand_invocation(c *Command_invocationContext)
@@ -19,8 +19,8 @@ type CMakeListener interface {
 	// EnterCompound_argument is called when entering the compound_argument production.
 	EnterCompound_argument(c *Compound_argumentContext)
 
-	// ExitFile is called when exiting the file production.
-	ExitFile(c *FileContext)
+	// ExitFile_ is called when exiting the file_ production.
+	ExitFile_(c *File_Context)
 
 	// ExitCommand_invocation is called when exiting the command_invocation production.
 	ExitCommand_invocation(c *Command_invocationContext)

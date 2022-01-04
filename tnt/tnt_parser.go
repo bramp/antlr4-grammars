@@ -1,4 +1,4 @@
-// Code generated from tnt.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from tnt.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package tnt // tnt
 import (
@@ -49,9 +49,6 @@ var parserATN = []uint16{
 	77, 78, 5, 8, 5, 2, 78, 79, 7, 9, 2, 2, 79, 15, 3, 2, 2, 2, 9, 22, 27,
 	35, 42, 59, 67, 69,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'='", "'+'", "'*'", "'('", "')'", "'~'", "':'", "'0'", "'S'", "'a'",
 	"'b'", "'c'", "'d'", "'e'", "'''", "'A'", "'E'",
@@ -64,21 +61,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"equation", "atom", "number", "variable", "expression", "forevery", "exists",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type tntParser struct {
 	*antlr.BaseParser
 }
 
+// NewtntParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *tntParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewtntParser(input antlr.TokenStream) *tntParser {
 	this := new(tntParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -206,6 +207,9 @@ func (s *EquationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tntParser) Equation() (localctx IEquationContext) {
+	this := p
+	_ = this
+
 	localctx = NewEquationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, tntParserRULE_equation)
 
@@ -321,6 +325,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tntParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, tntParserRULE_atom)
 
@@ -433,6 +440,9 @@ func (s *NumberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tntParser) Number() (localctx INumberContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, tntParserRULE_number)
 	var _la int
@@ -571,6 +581,9 @@ func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tntParser) Variable() (localctx IVariableContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, tntParserRULE_variable)
 	var _la int
@@ -755,6 +768,9 @@ func (p *tntParser) Expression() (localctx IExpressionContext) {
 }
 
 func (p *tntParser) expression(_p int) (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -971,6 +987,9 @@ func (s *ForeveryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tntParser) Forevery() (localctx IForeveryContext) {
+	this := p
+	_ = this
+
 	localctx = NewForeveryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, tntParserRULE_forevery)
 
@@ -1080,6 +1099,9 @@ func (s *ExistsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tntParser) Exists() (localctx IExistsContext) {
+	this := p
+	_ = this
+
 	localctx = NewExistsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, tntParserRULE_exists)
 
@@ -1131,6 +1153,9 @@ func (p *tntParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int
 }
 
 func (p *tntParser) Expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 6)

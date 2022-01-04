@@ -1,4 +1,4 @@
-// Code generated from lcc.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from lcc.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package lcc // lcc
 import (
@@ -48,9 +48,6 @@ var parserATN = []uint16{
 	76, 7, 5, 2, 2, 76, 77, 7, 5, 2, 2, 77, 17, 3, 2, 2, 2, 12, 20, 23, 26,
 	30, 34, 38, 51, 57, 64, 71,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "' '", "'.'",
 }
@@ -62,21 +59,25 @@ var ruleNames = []string{
 	"lcc", "topic", "subtopic", "subclasses", "subclass", "cutters", "cutter",
 	"date",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type lccParser struct {
 	*antlr.BaseParser
 }
 
+// NewlccParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *lccParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewlccParser(input antlr.TokenStream) *lccParser {
 	this := new(lccParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -223,6 +224,9 @@ func (s *LccContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *lccParser) Lcc() (localctx ILccContext) {
+	this := p
+	_ = this
+
 	localctx = NewLccContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, lccParserRULE_lcc)
 	var _la int
@@ -395,6 +399,9 @@ func (s *TopicContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *lccParser) Topic() (localctx ITopicContext) {
+	this := p
+	_ = this
+
 	localctx = NewTopicContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, lccParserRULE_topic)
 
@@ -486,6 +493,9 @@ func (s *SubtopicContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *lccParser) Subtopic() (localctx ISubtopicContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtopicContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, lccParserRULE_subtopic)
 
@@ -596,6 +606,9 @@ func (s *SubclassesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *lccParser) Subclasses() (localctx ISubclassesContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubclassesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, lccParserRULE_subclasses)
 
@@ -713,6 +726,9 @@ func (s *SubclassContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *lccParser) Subclass() (localctx ISubclassContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubclassContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, lccParserRULE_subclass)
 	var _la int
@@ -834,6 +850,9 @@ func (s *CuttersContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *lccParser) Cutters() (localctx ICuttersContext) {
+	this := p
+	_ = this
+
 	localctx = NewCuttersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, lccParserRULE_cutters)
 
@@ -955,6 +974,9 @@ func (s *CutterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *lccParser) Cutter() (localctx ICutterContext) {
+	this := p
+	_ = this
+
 	localctx = NewCutterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, lccParserRULE_cutter)
 	var _la int
@@ -1065,6 +1087,9 @@ func (s *DateContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *lccParser) Date() (localctx IDateContext) {
+	this := p
+	_ = this
+
 	localctx = NewDateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, lccParserRULE_date)
 

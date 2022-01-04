@@ -1,4 +1,4 @@
-// Code generated from JPA.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from JPA.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package jpa // JPA
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -351,7 +351,8 @@ func (s *BaseJPAListener) EnterCollection_member_expression(ctx *Collection_memb
 }
 
 // ExitCollection_member_expression is called when production collection_member_expression is exited.
-func (s *BaseJPAListener) ExitCollection_member_expression(ctx *Collection_member_expressionContext) {}
+func (s *BaseJPAListener) ExitCollection_member_expression(ctx *Collection_member_expressionContext) {
+}
 
 // EnterExists_expression is called when production exists_expression is entered.
 func (s *BaseJPAListener) EnterExists_expression(ctx *Exists_expressionContext) {}
@@ -388,7 +389,8 @@ func (s *BaseJPAListener) EnterSimple_arithmetic_expression(ctx *Simple_arithmet
 }
 
 // ExitSimple_arithmetic_expression is called when production simple_arithmetic_expression is exited.
-func (s *BaseJPAListener) ExitSimple_arithmetic_expression(ctx *Simple_arithmetic_expressionContext) {}
+func (s *BaseJPAListener) ExitSimple_arithmetic_expression(ctx *Simple_arithmetic_expressionContext) {
+}
 
 // EnterArithmetic_term is called when production arithmetic_term is entered.
 func (s *BaseJPAListener) EnterArithmetic_term(ctx *Arithmetic_termContext) {}
@@ -473,14 +475,16 @@ func (s *BaseJPAListener) EnterFunctions_returning_numerics(ctx *Functions_retur
 }
 
 // ExitFunctions_returning_numerics is called when production functions_returning_numerics is exited.
-func (s *BaseJPAListener) ExitFunctions_returning_numerics(ctx *Functions_returning_numericsContext) {}
+func (s *BaseJPAListener) ExitFunctions_returning_numerics(ctx *Functions_returning_numericsContext) {
+}
 
 // EnterFunctions_returning_datetime is called when production functions_returning_datetime is entered.
 func (s *BaseJPAListener) EnterFunctions_returning_datetime(ctx *Functions_returning_datetimeContext) {
 }
 
 // ExitFunctions_returning_datetime is called when production functions_returning_datetime is exited.
-func (s *BaseJPAListener) ExitFunctions_returning_datetime(ctx *Functions_returning_datetimeContext) {}
+func (s *BaseJPAListener) ExitFunctions_returning_datetime(ctx *Functions_returning_datetimeContext) {
+}
 
 // EnterFunctions_returning_strings is called when production functions_returning_strings is entered.
 func (s *BaseJPAListener) EnterFunctions_returning_strings(ctx *Functions_returning_stringsContext) {}

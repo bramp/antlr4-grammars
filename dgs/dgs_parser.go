@@ -1,4 +1,4 @@
-// Code generated from DGSParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from DGSParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package dgs // DGSParser
 import (
@@ -96,9 +96,6 @@ var parserATN = []uint16{
 	2, 2, 183, 43, 3, 2, 2, 2, 17, 48, 50, 69, 88, 111, 115, 124, 127, 136,
 	144, 147, 157, 160, 179, 182,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "'an'", "'cn'", "'dn'", "'ae'", "'ce'", "'de'", "'cg'", "'st'",
 	"'cl'", "", "", "'+'", "'-'", "','", "'{'", "'}'", "'['", "']'", "'.'",
@@ -113,24 +110,28 @@ var symbolicNames = []string{
 
 var ruleNames = []string{
 	"dgs", "header", "event", "an", "cn", "dn", "ae", "ce", "de", "cg", "st",
-	"cl", "attributes", "attribute", "value", "array", "a_map", "mapping",
+	"cl", "attributes", "attribute", "value", "array_", "a_map", "mapping",
 	"direction", "assign", "identifier",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type DGSParser struct {
 	*antlr.BaseParser
 }
 
+// NewDGSParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *DGSParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewDGSParser(input antlr.TokenStream) *DGSParser {
 	this := new(DGSParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -195,7 +196,7 @@ const (
 	DGSParserRULE_attributes = 12
 	DGSParserRULE_attribute  = 13
 	DGSParserRULE_value      = 14
-	DGSParserRULE_array      = 15
+	DGSParserRULE_array_     = 15
 	DGSParserRULE_a_map      = 16
 	DGSParserRULE_mapping    = 17
 	DGSParserRULE_direction  = 18
@@ -311,6 +312,9 @@ func (s *DgsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Dgs() (localctx IDgsContext) {
+	this := p
+	_ = this
+
 	localctx = NewDgsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, DGSParserRULE_dgs)
 	var _la int
@@ -464,6 +468,9 @@ func (s *HeaderContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Header() (localctx IHeaderContext) {
+	this := p
+	_ = this
+
 	localctx = NewHeaderContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, DGSParserRULE_header)
 
@@ -669,6 +676,9 @@ func (s *EventContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Event() (localctx IEventContext) {
+	this := p
+	_ = this
+
 	localctx = NewEventContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, DGSParserRULE_event)
 	var _la int
@@ -849,6 +859,9 @@ func (s *AnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) An() (localctx IAnContext) {
+	this := p
+	_ = this
+
 	localctx = NewAnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, DGSParserRULE_an)
 
@@ -968,6 +981,9 @@ func (s *CnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Cn() (localctx ICnContext) {
+	this := p
+	_ = this
+
 	localctx = NewCnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, DGSParserRULE_cn)
 
@@ -1077,6 +1093,9 @@ func (s *DnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Dn() (localctx IDnContext) {
+	this := p
+	_ = this
+
 	localctx = NewDnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, DGSParserRULE_dn)
 
@@ -1215,6 +1234,9 @@ func (s *AeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Ae() (localctx IAeContext) {
+	this := p
+	_ = this
+
 	localctx = NewAeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, DGSParserRULE_ae)
 	var _la int
@@ -1354,6 +1376,9 @@ func (s *CeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Ce() (localctx ICeContext) {
+	this := p
+	_ = this
+
 	localctx = NewCeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, DGSParserRULE_ce)
 
@@ -1463,6 +1488,9 @@ func (s *DeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) De() (localctx IDeContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, DGSParserRULE_de)
 
@@ -1568,6 +1596,9 @@ func (s *CgContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Cg() (localctx ICgContext) {
+	this := p
+	_ = this
+
 	localctx = NewCgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, DGSParserRULE_cg)
 
@@ -1667,6 +1698,9 @@ func (s *StContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) St() (localctx IStContext) {
+	this := p
+	_ = this
+
 	localctx = NewStContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, DGSParserRULE_st)
 
@@ -1762,6 +1796,9 @@ func (s *ClContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Cl() (localctx IClContext) {
+	this := p
+	_ = this
+
 	localctx = NewClContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, DGSParserRULE_cl)
 
@@ -1872,6 +1909,9 @@ func (s *AttributesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Attributes() (localctx IAttributesContext) {
+	this := p
+	_ = this
+
 	localctx = NewAttributesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, DGSParserRULE_attributes)
 	var _la int
@@ -2029,6 +2069,9 @@ func (s *AttributeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Attribute() (localctx IAttributeContext) {
+	this := p
+	_ = this
+
 	localctx = NewAttributeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, DGSParserRULE_attribute)
 	var _la int
@@ -2163,14 +2206,14 @@ func (s *ValueContext) COLOR() antlr.TerminalNode {
 	return s.GetToken(DGSParserCOLOR, 0)
 }
 
-func (s *ValueContext) Array() IArrayContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IArrayContext)(nil)).Elem(), 0)
+func (s *ValueContext) Array_() IArray_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IArray_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IArrayContext)
+	return t.(IArray_Context)
 }
 
 func (s *ValueContext) A_map() IA_mapContext {
@@ -2214,6 +2257,9 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Value() (localctx IValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, DGSParserRULE_value)
 
@@ -2268,7 +2314,7 @@ func (p *DGSParser) Value() (localctx IValueContext) {
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(131)
-			p.Array()
+			p.Array_()
 		}
 
 	case 6:
@@ -2290,53 +2336,53 @@ func (p *DGSParser) Value() (localctx IValueContext) {
 	return localctx
 }
 
-// IArrayContext is an interface to support dynamic dispatch.
-type IArrayContext interface {
+// IArray_Context is an interface to support dynamic dispatch.
+type IArray_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsArrayContext differentiates from other interfaces.
-	IsArrayContext()
+	// IsArray_Context differentiates from other interfaces.
+	IsArray_Context()
 }
 
-type ArrayContext struct {
+type Array_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyArrayContext() *ArrayContext {
-	var p = new(ArrayContext)
+func NewEmptyArray_Context() *Array_Context {
+	var p = new(Array_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DGSParserRULE_array
+	p.RuleIndex = DGSParserRULE_array_
 	return p
 }
 
-func (*ArrayContext) IsArrayContext() {}
+func (*Array_Context) IsArray_Context() {}
 
-func NewArrayContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ArrayContext {
-	var p = new(ArrayContext)
+func NewArray_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Array_Context {
+	var p = new(Array_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DGSParserRULE_array
+	p.RuleIndex = DGSParserRULE_array_
 
 	return p
 }
 
-func (s *ArrayContext) GetParser() antlr.Parser { return s.parser }
+func (s *Array_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *ArrayContext) LBRACE() antlr.TerminalNode {
+func (s *Array_Context) LBRACE() antlr.TerminalNode {
 	return s.GetToken(DGSParserLBRACE, 0)
 }
 
-func (s *ArrayContext) RBRACE() antlr.TerminalNode {
+func (s *Array_Context) RBRACE() antlr.TerminalNode {
 	return s.GetToken(DGSParserRBRACE, 0)
 }
 
-func (s *ArrayContext) AllValue() []IValueContext {
+func (s *Array_Context) AllValue() []IValueContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IValueContext)(nil)).Elem())
 	var tst = make([]IValueContext, len(ts))
 
@@ -2349,7 +2395,7 @@ func (s *ArrayContext) AllValue() []IValueContext {
 	return tst
 }
 
-func (s *ArrayContext) Value(i int) IValueContext {
+func (s *Array_Context) Value(i int) IValueContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IValueContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -2359,37 +2405,40 @@ func (s *ArrayContext) Value(i int) IValueContext {
 	return t.(IValueContext)
 }
 
-func (s *ArrayContext) AllCOMMA() []antlr.TerminalNode {
+func (s *Array_Context) AllCOMMA() []antlr.TerminalNode {
 	return s.GetTokens(DGSParserCOMMA)
 }
 
-func (s *ArrayContext) COMMA(i int) antlr.TerminalNode {
+func (s *Array_Context) COMMA(i int) antlr.TerminalNode {
 	return s.GetToken(DGSParserCOMMA, i)
 }
 
-func (s *ArrayContext) GetRuleContext() antlr.RuleContext {
+func (s *Array_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ArrayContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Array_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ArrayContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Array_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DGSParserListener); ok {
-		listenerT.EnterArray(s)
+		listenerT.EnterArray_(s)
 	}
 }
 
-func (s *ArrayContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Array_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DGSParserListener); ok {
-		listenerT.ExitArray(s)
+		listenerT.ExitArray_(s)
 	}
 }
 
-func (p *DGSParser) Array() (localctx IArrayContext) {
-	localctx = NewArrayContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 30, DGSParserRULE_array)
+func (p *DGSParser) Array_() (localctx IArray_Context) {
+	this := p
+	_ = this
+
+	localctx = NewArray_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 30, DGSParserRULE_array_)
 	var _la int
 
 	defer func() {
@@ -2548,6 +2597,9 @@ func (s *A_mapContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) A_map() (localctx IA_mapContext) {
+	this := p
+	_ = this
+
 	localctx = NewA_mapContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, DGSParserRULE_a_map)
 	var _la int
@@ -2699,6 +2751,9 @@ func (s *MappingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Mapping() (localctx IMappingContext) {
+	this := p
+	_ = this
+
 	localctx = NewMappingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, DGSParserRULE_mapping)
 
@@ -2802,6 +2857,9 @@ func (s *DirectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Direction() (localctx IDirectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewDirectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, DGSParserRULE_direction)
 	var _la int
@@ -2905,6 +2963,9 @@ func (s *AssignContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Assign() (localctx IAssignContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, DGSParserRULE_assign)
 	var _la int
@@ -3024,6 +3085,9 @@ func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DGSParser) Identifier() (localctx IIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, DGSParserRULE_identifier)
 	var _la int

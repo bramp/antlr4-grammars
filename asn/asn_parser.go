@@ -1,4 +1,4 @@
-// Code generated from ASN.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ASN.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package asn // ASN
 import (
@@ -596,9 +596,6 @@ var parserATN = []uint16{
 	1109, 1111, 1120, 1126, 1132, 1140, 1145, 1153, 1160, 1171, 1180, 1187,
 	1197, 1206, 1211, 1216, 1222, 1229, 1242, 1249, 1256,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'@'", "'*'", "'::='", "'BOOLEAN'", "'TRUE'", "'FALSE'", "'.'", "'..'",
 	"'...'", "'''", "'&'", "'<'", "'>'", "'</'", "'/>'", "'true'", "'false'",
@@ -655,7 +652,7 @@ var ruleNames = []string{
 	"withSyntaxSpec", "syntaxList", "tokenOrGroupSpec", "optionalGroup", "requiredToken",
 	"literal", "primitiveFieldName", "fieldSpec", "typeFieldSpec", "typeOptionalitySpec",
 	"fixedTypeValueFieldSpec", "valueOptionalitySpec", "variableTypeValueFieldSpec",
-	"fixedTypeValueSetFieldSpec", "valueSetOptionalitySpec", "object", "parameterizedObject",
+	"fixedTypeValueSetFieldSpec", "valueSetOptionalitySpec", "object_", "parameterizedObject",
 	"definedObject", "objectSet", "objectSetSpec", "fieldName", "valueSet",
 	"elementSetSpecs", "rootElementSetSpec", "additionalElementSetSpec", "elementSetSpec",
 	"unions", "exclusions", "intersections", "unionMark", "intersectionMark",
@@ -679,21 +676,25 @@ var ruleNames = []string{
 	"componentIdList", "octetStringType", "bitStringType", "namedBitList",
 	"namedBit", "booleanValue",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type ASNParser struct {
 	*antlr.BaseParser
 }
 
+// NewASNParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *ASNParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewASNParser(input antlr.TokenStream) *ASNParser {
 	this := new(ASNParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -873,7 +874,7 @@ const (
 	ASNParserRULE_variableTypeValueFieldSpec         = 54
 	ASNParserRULE_fixedTypeValueSetFieldSpec         = 55
 	ASNParserRULE_valueSetOptionalitySpec            = 56
-	ASNParserRULE_object                             = 57
+	ASNParserRULE_object_                            = 57
 	ASNParserRULE_parameterizedObject                = 58
 	ASNParserRULE_definedObject                      = 59
 	ASNParserRULE_objectSet                          = 60
@@ -1047,6 +1048,9 @@ func (s *ModulesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Modules() (localctx IModulesContext) {
+	this := p
+	_ = this
+
 	localctx = NewModulesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, ASNParserRULE_modules)
 	var _la int
@@ -1231,6 +1235,9 @@ func (s *ModuleDefinitionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ModuleDefinition() (localctx IModuleDefinitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewModuleDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, ASNParserRULE_moduleDefinition)
 	var _la int
@@ -1404,6 +1411,9 @@ func (s *TagDefaultContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) TagDefault() (localctx ITagDefaultContext) {
+	this := p
+	_ = this
+
 	localctx = NewTagDefaultContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, ASNParserRULE_tagDefault)
 	var _la int
@@ -1518,6 +1528,9 @@ func (s *ExtensionDefaultContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ExtensionDefault() (localctx IExtensionDefaultContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensionDefaultContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, ASNParserRULE_extensionDefault)
 	var _la int
@@ -1647,6 +1660,9 @@ func (s *ModuleBodyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ModuleBody() (localctx IModuleBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewModuleBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, ASNParserRULE_moduleBody)
 	var _la int
@@ -1772,6 +1788,9 @@ func (s *ExportsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Exports() (localctx IExportsContext) {
+	this := p
+	_ = this
+
 	localctx = NewExportsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, ASNParserRULE_exports)
 
@@ -1897,6 +1916,9 @@ func (s *SymbolsExportedContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SymbolsExported() (localctx ISymbolsExportedContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolsExportedContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, ASNParserRULE_symbolsExported)
 	var _la int
@@ -2010,6 +2032,9 @@ func (s *ImportsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Imports() (localctx IImportsContext) {
+	this := p
+	_ = this
+
 	localctx = NewImportsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, ASNParserRULE_imports)
 	var _la int
@@ -2123,6 +2148,9 @@ func (s *SymbolsImportedContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SymbolsImported() (localctx ISymbolsImportedContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolsImportedContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, ASNParserRULE_symbolsImported)
 	var _la int
@@ -2241,6 +2269,9 @@ func (s *SymbolsFromModuleListContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) SymbolsFromModuleList() (localctx ISymbolsFromModuleListContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolsFromModuleListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, ASNParserRULE_symbolsFromModuleList)
 	var _la int
@@ -2368,6 +2399,9 @@ func (s *SymbolsFromModuleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SymbolsFromModule() (localctx ISymbolsFromModuleContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolsFromModuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, ASNParserRULE_symbolsFromModule)
 
@@ -2477,6 +2511,9 @@ func (s *GlobalModuleReferenceContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) GlobalModuleReference() (localctx IGlobalModuleReferenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewGlobalModuleReferenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, ASNParserRULE_globalModuleReference)
 
@@ -2567,6 +2604,9 @@ func (s *AssignedIdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) AssignedIdentifier() (localctx IAssignedIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignedIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, ASNParserRULE_assignedIdentifier)
 
@@ -2681,6 +2721,9 @@ func (s *SymbolListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SymbolList() (localctx ISymbolListContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, ASNParserRULE_symbolList)
 	var _la int
@@ -2800,6 +2843,9 @@ func (s *SymbolContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Symbol() (localctx ISymbolContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, ASNParserRULE_symbol)
 	var _la int
@@ -2926,6 +2972,9 @@ func (s *AssignmentListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) AssignmentList() (localctx IAssignmentListContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignmentListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, ASNParserRULE_assignmentList)
 	var _la int
@@ -3073,6 +3122,9 @@ func (s *AssignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Assignment() (localctx IAssignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, ASNParserRULE_assignment)
 
@@ -3230,6 +3282,9 @@ func (s *SequenceTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SequenceType() (localctx ISequenceTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewSequenceTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, ASNParserRULE_sequenceType)
 
@@ -3359,6 +3414,9 @@ func (s *ExtensionAndExceptionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) ExtensionAndException() (localctx IExtensionAndExceptionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensionAndExceptionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, ASNParserRULE_extensionAndException)
 	var _la int
@@ -3466,6 +3524,9 @@ func (s *OptionalExtensionMarkerContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *ASNParser) OptionalExtensionMarker() (localctx IOptionalExtensionMarkerContext) {
+	this := p
+	_ = this
+
 	localctx = NewOptionalExtensionMarkerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, ASNParserRULE_optionalExtensionMarker)
 	var _la int
@@ -3630,6 +3691,9 @@ func (s *ComponentTypeListsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ComponentTypeLists() (localctx IComponentTypeListsContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponentTypeListsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, ASNParserRULE_componentTypeLists)
 	var _la int
@@ -3821,6 +3885,9 @@ func (s *RootComponentTypeListContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) RootComponentTypeList() (localctx IRootComponentTypeListContext) {
+	this := p
+	_ = this
+
 	localctx = NewRootComponentTypeListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, ASNParserRULE_rootComponentTypeList)
 
@@ -3939,6 +4006,9 @@ func (s *ComponentTypeListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ComponentTypeList() (localctx IComponentTypeListContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponentTypeListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, ASNParserRULE_componentTypeList)
 
@@ -4095,6 +4165,9 @@ func (s *ComponentTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ComponentType() (localctx IComponentTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponentTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, ASNParserRULE_componentType)
 
@@ -4244,6 +4317,9 @@ func (s *ExtensionAdditionsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ExtensionAdditions() (localctx IExtensionAdditionsContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensionAdditionsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, ASNParserRULE_extensionAdditions)
 
@@ -4372,6 +4448,9 @@ func (s *ExtensionAdditionListContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) ExtensionAdditionList() (localctx IExtensionAdditionListContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensionAdditionListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, ASNParserRULE_extensionAdditionList)
 
@@ -4502,6 +4581,9 @@ func (s *ExtensionAdditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ExtensionAddition() (localctx IExtensionAdditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensionAdditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, ASNParserRULE_extensionAddition)
 
@@ -4633,6 +4715,9 @@ func (s *ExtensionAdditionGroupContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *ASNParser) ExtensionAdditionGroup() (localctx IExtensionAdditionGroupContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensionAdditionGroupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, ASNParserRULE_extensionAdditionGroup)
 
@@ -4740,6 +4825,9 @@ func (s *VersionNumberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) VersionNumber() (localctx IVersionNumberContext) {
+	this := p
+	_ = this
+
 	localctx = NewVersionNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, ASNParserRULE_versionNumber)
 	var _la int
@@ -4895,6 +4983,9 @@ func (s *SequenceOfTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SequenceOfType() (localctx ISequenceOfTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewSequenceOfTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, ASNParserRULE_sequenceOfType)
 	var _la int
@@ -5051,6 +5142,9 @@ func (s *SizeConstraintContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SizeConstraint() (localctx ISizeConstraintContext) {
+	this := p
+	_ = this
+
 	localctx = NewSizeConstraintContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, ASNParserRULE_sizeConstraint)
 
@@ -5175,14 +5269,14 @@ func (s *ParameterizedAssignmentContext) DefinedObjectClass() IDefinedObjectClas
 	return t.(IDefinedObjectClassContext)
 }
 
-func (s *ParameterizedAssignmentContext) Object() IObjectContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IObjectContext)(nil)).Elem(), 0)
+func (s *ParameterizedAssignmentContext) Object_() IObject_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IObject_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IObjectContext)
+	return t.(IObject_Context)
 }
 
 func (s *ParameterizedAssignmentContext) ObjectClass() IObjectClassContext {
@@ -5226,6 +5320,9 @@ func (s *ParameterizedAssignmentContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *ASNParser) ParameterizedAssignment() (localctx IParameterizedAssignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewParameterizedAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, ASNParserRULE_parameterizedAssignment)
 
@@ -5299,7 +5396,7 @@ func (p *ASNParser) ParameterizedAssignment() (localctx IParameterizedAssignment
 		case 1:
 			{
 				p.SetState(512)
-				p.Object()
+				p.Object_()
 			}
 
 		case 2:
@@ -5421,6 +5518,9 @@ func (s *ParameterListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ParameterList() (localctx IParameterListContext) {
+	this := p
+	_ = this
+
 	localctx = NewParameterListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, ASNParserRULE_parameterList)
 	var _la int
@@ -5553,6 +5653,9 @@ func (s *ParameterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Parameter() (localctx IParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, ASNParserRULE_parameter)
 
@@ -5668,6 +5771,9 @@ func (s *ParamGovernorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ParamGovernor() (localctx IParamGovernorContext) {
+	this := p
+	_ = this
+
 	localctx = NewParamGovernorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, ASNParserRULE_paramGovernor)
 
@@ -5788,6 +5894,9 @@ func (s *GovernorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Governor() (localctx IGovernorContext) {
+	this := p
+	_ = this
+
 	localctx = NewGovernorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, ASNParserRULE_governor)
 
@@ -5902,6 +6011,9 @@ func (s *ObjectClassAssignmentContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) ObjectClassAssignment() (localctx IObjectClassAssignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectClassAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, ASNParserRULE_objectClassAssignment)
 
@@ -6013,6 +6125,9 @@ func (s *ObjectClassContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ObjectClass() (localctx IObjectClassContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectClassContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, ASNParserRULE_objectClass)
 
@@ -6136,6 +6251,9 @@ func (s *DefinedObjectClassContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) DefinedObjectClass() (localctx IDefinedObjectClassContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefinedObjectClassContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, ASNParserRULE_definedObjectClass)
 
@@ -6268,6 +6386,9 @@ func (s *UsefulObjectClassReferenceContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *ASNParser) UsefulObjectClassReference() (localctx IUsefulObjectClassReferenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewUsefulObjectClassReferenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, ASNParserRULE_usefulObjectClassReference)
 	var _la int
@@ -6375,6 +6496,9 @@ func (s *ExternalObjectClassReferenceContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *ASNParser) ExternalObjectClassReference() (localctx IExternalObjectClassReferenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewExternalObjectClassReferenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, ASNParserRULE_externalObjectClassReference)
 
@@ -6523,6 +6647,9 @@ func (s *ObjectClassDefnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ObjectClassDefn() (localctx IObjectClassDefnContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectClassDefnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, ASNParserRULE_objectClassDefn)
 	var _la int
@@ -6670,6 +6797,9 @@ func (s *WithSyntaxSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) WithSyntaxSpec() (localctx IWithSyntaxSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewWithSyntaxSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, ASNParserRULE_withSyntaxSpec)
 
@@ -6796,6 +6926,9 @@ func (s *SyntaxListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SyntaxList() (localctx ISyntaxListContext) {
+	this := p
+	_ = this
+
 	localctx = NewSyntaxListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, ASNParserRULE_syntaxList)
 	var _la int
@@ -6922,6 +7055,9 @@ func (s *TokenOrGroupSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) TokenOrGroupSpec() (localctx ITokenOrGroupSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewTokenOrGroupSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, ASNParserRULE_tokenOrGroupSpec)
 
@@ -7056,6 +7192,9 @@ func (s *OptionalGroupContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) OptionalGroup() (localctx IOptionalGroupContext) {
+	this := p
+	_ = this
+
 	localctx = NewOptionalGroupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, ASNParserRULE_optionalGroup)
 	var _la int
@@ -7182,6 +7321,9 @@ func (s *RequiredTokenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) RequiredToken() (localctx IRequiredTokenContext) {
+	this := p
+	_ = this
+
 	localctx = NewRequiredTokenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, ASNParserRULE_requiredToken)
 
@@ -7293,6 +7435,9 @@ func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Literal() (localctx ILiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, ASNParserRULE_literal)
 	var _la int
@@ -7396,6 +7541,9 @@ func (s *PrimitiveFieldNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) PrimitiveFieldName() (localctx IPrimitiveFieldNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewPrimitiveFieldNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, ASNParserRULE_primitiveFieldName)
 
@@ -7576,14 +7724,14 @@ func (s *FieldSpecContext) ObjectSet() IObjectSetContext {
 	return t.(IObjectSetContext)
 }
 
-func (s *FieldSpecContext) Object() IObjectContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IObjectContext)(nil)).Elem(), 0)
+func (s *FieldSpecContext) Object_() IObject_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IObject_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IObjectContext)
+	return t.(IObject_Context)
 }
 
 func (s *FieldSpecContext) GetRuleContext() antlr.RuleContext {
@@ -7607,6 +7755,9 @@ func (s *FieldSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) FieldSpec() (localctx IFieldSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewFieldSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, ASNParserRULE_fieldSpec)
 	var _la int
@@ -7774,7 +7925,7 @@ func (p *ASNParser) FieldSpec() (localctx IFieldSpecContext) {
 			case ASNParserIDENTIFIER:
 				{
 					p.SetState(644)
-					p.Object()
+					p.Object_()
 				}
 
 			default:
@@ -7868,6 +8019,9 @@ func (s *TypeFieldSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) TypeFieldSpec() (localctx ITypeFieldSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeFieldSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, ASNParserRULE_typeFieldSpec)
 	var _la int
@@ -7989,6 +8143,9 @@ func (s *TypeOptionalitySpecContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *ASNParser) TypeOptionalitySpec() (localctx ITypeOptionalitySpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeOptionalitySpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, ASNParserRULE_typeOptionalitySpec)
 
@@ -8128,6 +8285,9 @@ func (s *FixedTypeValueFieldSpecContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *ASNParser) FixedTypeValueFieldSpec() (localctx IFixedTypeValueFieldSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewFixedTypeValueFieldSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, ASNParserRULE_fixedTypeValueFieldSpec)
 	var _la int
@@ -8264,6 +8424,9 @@ func (s *ValueOptionalitySpecContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *ASNParser) ValueOptionalitySpec() (localctx IValueOptionalitySpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueOptionalitySpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, ASNParserRULE_valueOptionalitySpec)
 
@@ -8399,6 +8562,9 @@ func (s *VariableTypeValueFieldSpecContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *ASNParser) VariableTypeValueFieldSpec() (localctx IVariableTypeValueFieldSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableTypeValueFieldSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 108, ASNParserRULE_variableTypeValueFieldSpec)
 	var _la int
@@ -8534,6 +8700,9 @@ func (s *FixedTypeValueSetFieldSpecContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *ASNParser) FixedTypeValueSetFieldSpec() (localctx IFixedTypeValueSetFieldSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewFixedTypeValueSetFieldSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, ASNParserRULE_fixedTypeValueSetFieldSpec)
 	var _la int
@@ -8659,6 +8828,9 @@ func (s *ValueSetOptionalitySpecContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *ASNParser) ValueSetOptionalitySpec() (localctx IValueSetOptionalitySpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueSetOptionalitySpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, ASNParserRULE_valueSetOptionalitySpec)
 
@@ -8707,45 +8879,45 @@ func (p *ASNParser) ValueSetOptionalitySpec() (localctx IValueSetOptionalitySpec
 	return localctx
 }
 
-// IObjectContext is an interface to support dynamic dispatch.
-type IObjectContext interface {
+// IObject_Context is an interface to support dynamic dispatch.
+type IObject_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsObjectContext differentiates from other interfaces.
-	IsObjectContext()
+	// IsObject_Context differentiates from other interfaces.
+	IsObject_Context()
 }
 
-type ObjectContext struct {
+type Object_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyObjectContext() *ObjectContext {
-	var p = new(ObjectContext)
+func NewEmptyObject_Context() *Object_Context {
+	var p = new(Object_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = ASNParserRULE_object
+	p.RuleIndex = ASNParserRULE_object_
 	return p
 }
 
-func (*ObjectContext) IsObjectContext() {}
+func (*Object_Context) IsObject_Context() {}
 
-func NewObjectContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ObjectContext {
-	var p = new(ObjectContext)
+func NewObject_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Object_Context {
+	var p = new(Object_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = ASNParserRULE_object
+	p.RuleIndex = ASNParserRULE_object_
 
 	return p
 }
 
-func (s *ObjectContext) GetParser() antlr.Parser { return s.parser }
+func (s *Object_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *ObjectContext) DefinedObject() IDefinedObjectContext {
+func (s *Object_Context) DefinedObject() IDefinedObjectContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IDefinedObjectContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -8755,7 +8927,7 @@ func (s *ObjectContext) DefinedObject() IDefinedObjectContext {
 	return t.(IDefinedObjectContext)
 }
 
-func (s *ObjectContext) ParameterizedObject() IParameterizedObjectContext {
+func (s *Object_Context) ParameterizedObject() IParameterizedObjectContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IParameterizedObjectContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -8765,29 +8937,32 @@ func (s *ObjectContext) ParameterizedObject() IParameterizedObjectContext {
 	return t.(IParameterizedObjectContext)
 }
 
-func (s *ObjectContext) GetRuleContext() antlr.RuleContext {
+func (s *Object_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ObjectContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Object_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ObjectContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Object_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ASNListener); ok {
-		listenerT.EnterObject(s)
+		listenerT.EnterObject_(s)
 	}
 }
 
-func (s *ObjectContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Object_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ASNListener); ok {
-		listenerT.ExitObject(s)
+		listenerT.ExitObject_(s)
 	}
 }
 
-func (p *ASNParser) Object() (localctx IObjectContext) {
-	localctx = NewObjectContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 114, ASNParserRULE_object)
+func (p *ASNParser) Object_() (localctx IObject_Context) {
+	this := p
+	_ = this
+
+	localctx = NewObject_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 114, ASNParserRULE_object_)
 
 	defer func() {
 		p.ExitRule()
@@ -8906,6 +9081,9 @@ func (s *ParameterizedObjectContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *ASNParser) ParameterizedObject() (localctx IParameterizedObjectContext) {
+	this := p
+	_ = this
+
 	localctx = NewParameterizedObjectContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, ASNParserRULE_parameterizedObject)
 
@@ -9005,6 +9183,9 @@ func (s *DefinedObjectContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) DefinedObject() (localctx IDefinedObjectContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefinedObjectContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 118, ASNParserRULE_definedObject)
 	var _la int
@@ -9122,6 +9303,9 @@ func (s *ObjectSetContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ObjectSet() (localctx IObjectSetContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectSetContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, ASNParserRULE_objectSet)
 
@@ -9249,6 +9433,9 @@ func (s *ObjectSetSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ObjectSetSpec() (localctx IObjectSetSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectSetSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, ASNParserRULE_objectSetSpec)
 	var _la int
@@ -9422,6 +9609,9 @@ func (s *FieldNameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) FieldName() (localctx IFieldNameContext) {
+	this := p
+	_ = this
+
 	localctx = NewFieldNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 124, ASNParserRULE_fieldName)
 	var _la int
@@ -9555,6 +9745,9 @@ func (s *ValueSetContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ValueSet() (localctx IValueSetContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueSetContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, ASNParserRULE_valueSet)
 
@@ -9682,6 +9875,9 @@ func (s *ElementSetSpecsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ElementSetSpecs() (localctx IElementSetSpecsContext) {
+	this := p
+	_ = this
+
 	localctx = NewElementSetSpecsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, ASNParserRULE_elementSetSpecs)
 	var _la int
@@ -9810,6 +10006,9 @@ func (s *RootElementSetSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) RootElementSetSpec() (localctx IRootElementSetSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewRootElementSetSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 130, ASNParserRULE_rootElementSetSpec)
 
@@ -9907,6 +10106,9 @@ func (s *AdditionalElementSetSpecContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *ASNParser) AdditionalElementSetSpec() (localctx IAdditionalElementSetSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewAdditionalElementSetSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, ASNParserRULE_additionalElementSetSpec)
 
@@ -10018,6 +10220,9 @@ func (s *ElementSetSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ElementSetSpec() (localctx IElementSetSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewElementSetSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 134, ASNParserRULE_elementSetSpec)
 
@@ -10171,6 +10376,9 @@ func (s *UnionsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Unions() (localctx IUnionsContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnionsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 136, ASNParserRULE_unions)
 	var _la int
@@ -10292,6 +10500,9 @@ func (s *ExclusionsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Exclusions() (localctx IExclusionsContext) {
+	this := p
+	_ = this
+
 	localctx = NewExclusionsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 138, ASNParserRULE_exclusions)
 
@@ -10429,6 +10640,9 @@ func (s *IntersectionsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Intersections() (localctx IIntersectionsContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntersectionsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 140, ASNParserRULE_intersections)
 	var _la int
@@ -10544,6 +10758,9 @@ func (s *UnionMarkContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) UnionMark() (localctx IUnionMarkContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnionMarkContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 142, ASNParserRULE_unionMark)
 	var _la int
@@ -10647,6 +10864,9 @@ func (s *IntersectionMarkContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) IntersectionMark() (localctx IIntersectionMarkContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntersectionMarkContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 144, ASNParserRULE_intersectionMark)
 	var _la int
@@ -10752,6 +10972,9 @@ func (s *ElementsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Elements() (localctx IElementsContext) {
+	this := p
+	_ = this
+
 	localctx = NewElementsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 146, ASNParserRULE_elements)
 
@@ -10818,14 +11041,14 @@ func NewObjectSetElementsContext(parser antlr.Parser, parent antlr.ParserRuleCon
 
 func (s *ObjectSetElementsContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ObjectSetElementsContext) Object() IObjectContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IObjectContext)(nil)).Elem(), 0)
+func (s *ObjectSetElementsContext) Object_() IObject_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IObject_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IObjectContext)
+	return t.(IObject_Context)
 }
 
 func (s *ObjectSetElementsContext) DefinedObject() IDefinedObjectContext {
@@ -10859,6 +11082,9 @@ func (s *ObjectSetElementsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ObjectSetElements() (localctx IObjectSetElementsContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectSetElementsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 148, ASNParserRULE_objectSetElements)
 
@@ -10885,7 +11111,7 @@ func (p *ASNParser) ObjectSetElements() (localctx IObjectSetElementsContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(783)
-			p.Object()
+			p.Object_()
 		}
 
 	case 2:
@@ -10979,6 +11205,9 @@ func (s *IntersectionElementsContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *ASNParser) IntersectionElements() (localctx IIntersectionElementsContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntersectionElementsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 150, ASNParserRULE_intersectionElements)
 	var _la int
@@ -11135,6 +11364,9 @@ func (s *SubtypeElementsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SubtypeElements() (localctx ISubtypeElementsContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtypeElementsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 152, ASNParserRULE_subtypeElements)
 	var _la int
@@ -11342,6 +11574,9 @@ func (s *VariableTypeValueSetFieldSpecContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *ASNParser) VariableTypeValueSetFieldSpec() (localctx IVariableTypeValueSetFieldSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableTypeValueSetFieldSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 154, ASNParserRULE_variableTypeValueSetFieldSpec)
 	var _la int
@@ -11477,6 +11712,9 @@ func (s *ObjectFieldSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ObjectFieldSpec() (localctx IObjectFieldSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectFieldSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 156, ASNParserRULE_objectFieldSpec)
 	var _la int
@@ -11571,14 +11809,14 @@ func (s *ObjectOptionalitySpecContext) DEFAULT_LITERAL() antlr.TerminalNode {
 	return s.GetToken(ASNParserDEFAULT_LITERAL, 0)
 }
 
-func (s *ObjectOptionalitySpecContext) Object() IObjectContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IObjectContext)(nil)).Elem(), 0)
+func (s *ObjectOptionalitySpecContext) Object_() IObject_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IObject_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IObjectContext)
+	return t.(IObject_Context)
 }
 
 func (s *ObjectOptionalitySpecContext) GetRuleContext() antlr.RuleContext {
@@ -11602,6 +11840,9 @@ func (s *ObjectOptionalitySpecContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) ObjectOptionalitySpec() (localctx IObjectOptionalitySpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectOptionalitySpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 158, ASNParserRULE_objectOptionalitySpec)
 
@@ -11640,7 +11881,7 @@ func (p *ASNParser) ObjectOptionalitySpec() (localctx IObjectOptionalitySpecCont
 		}
 		{
 			p.SetState(826)
-			p.Object()
+			p.Object_()
 		}
 
 	default:
@@ -11737,6 +11978,9 @@ func (s *ObjectSetFieldSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ObjectSetFieldSpec() (localctx IObjectSetFieldSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectSetFieldSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 160, ASNParserRULE_objectSetFieldSpec)
 	var _la int
@@ -11862,6 +12106,9 @@ func (s *ObjectSetOptionalitySpecContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *ASNParser) ObjectSetOptionalitySpec() (localctx IObjectSetOptionalitySpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectSetOptionalitySpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 162, ASNParserRULE_objectSetOptionalitySpec)
 
@@ -11983,6 +12230,9 @@ func (s *TypeAssignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) TypeAssignment() (localctx ITypeAssignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 164, ASNParserRULE_typeAssignment)
 
@@ -12098,6 +12348,9 @@ func (s *ValueAssignmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ValueAssignment() (localctx IValueAssignmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueAssignmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 166, ASNParserRULE_valueAssignment)
 
@@ -12236,6 +12489,9 @@ func (s *AsnTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) AsnType() (localctx IAsnTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewAsnTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 168, ASNParserRULE_asnType)
 
@@ -12471,6 +12727,9 @@ func (s *BuiltinTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) BuiltinType() (localctx IBuiltinTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewBuiltinTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 170, ASNParserRULE_builtinType)
 
@@ -12672,6 +12931,9 @@ func (s *ObjectClassFieldTypeContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *ASNParser) ObjectClassFieldType() (localctx IObjectClassFieldTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectClassFieldTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 172, ASNParserRULE_objectClassFieldType)
 
@@ -12809,6 +13071,9 @@ func (s *SetTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SetType() (localctx ISetTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 174, ASNParserRULE_setType)
 
@@ -12972,6 +13237,9 @@ func (s *SetOfTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SetOfType() (localctx ISetOfTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetOfTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 176, ASNParserRULE_setOfType)
 
@@ -13109,6 +13377,9 @@ func (s *ReferencedTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ReferencedType() (localctx IReferencedTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewReferencedTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 178, ASNParserRULE_referencedType)
 
@@ -13218,6 +13489,9 @@ func (s *DefinedTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) DefinedType() (localctx IDefinedTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefinedTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 180, ASNParserRULE_definedType)
 	var _la int
@@ -13359,6 +13633,9 @@ func (s *ConstraintContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Constraint() (localctx IConstraintContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstraintContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 182, ASNParserRULE_constraint)
 	var _la int
@@ -13486,6 +13763,9 @@ func (s *ConstraintSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ConstraintSpec() (localctx IConstraintSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstraintSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 184, ASNParserRULE_constraintSpec)
 
@@ -13633,6 +13913,9 @@ func (s *UserDefinedConstraintContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) UserDefinedConstraint() (localctx IUserDefinedConstraintContext) {
+	this := p
+	_ = this
+
 	localctx = NewUserDefinedConstraintContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 186, ASNParserRULE_userDefinedConstraint)
 	var _la int
@@ -13785,6 +14068,9 @@ func (s *GeneralConstraintContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) GeneralConstraint() (localctx IGeneralConstraintContext) {
+	this := p
+	_ = this
+
 	localctx = NewGeneralConstraintContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 188, ASNParserRULE_generalConstraint)
 
@@ -13908,14 +14194,14 @@ func (s *UserDefinedConstraintParameterContext) ValueSet() IValueSetContext {
 	return t.(IValueSetContext)
 }
 
-func (s *UserDefinedConstraintParameterContext) Object() IObjectContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IObjectContext)(nil)).Elem(), 0)
+func (s *UserDefinedConstraintParameterContext) Object_() IObject_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IObject_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IObjectContext)
+	return t.(IObject_Context)
 }
 
 func (s *UserDefinedConstraintParameterContext) ObjectSet() IObjectSetContext {
@@ -13949,6 +14235,9 @@ func (s *UserDefinedConstraintParameterContext) ExitRule(listener antlr.ParseTre
 }
 
 func (p *ASNParser) UserDefinedConstraintParameter() (localctx IUserDefinedConstraintParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewUserDefinedConstraintParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 190, ASNParserRULE_userDefinedConstraintParameter)
 
@@ -13995,7 +14284,7 @@ func (p *ASNParser) UserDefinedConstraintParameter() (localctx IUserDefinedConst
 	} else if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 102, p.GetParserRuleContext()) == 3 {
 		{
 			p.SetState(939)
-			p.Object()
+			p.Object_()
 		}
 
 	} else if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 102, p.GetParserRuleContext()) == 4 {
@@ -14078,6 +14367,9 @@ func (s *TableConstraintContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) TableConstraint() (localctx ITableConstraintContext) {
+	this := p
+	_ = this
+
 	localctx = NewTableConstraintContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 192, ASNParserRULE_tableConstraint)
 
@@ -14175,6 +14467,9 @@ func (s *SimpleTableConstraintContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) SimpleTableConstraint() (localctx ISimpleTableConstraintContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimpleTableConstraintContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 194, ASNParserRULE_simpleTableConstraint)
 
@@ -14320,6 +14615,9 @@ func (s *ContentsConstraintContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ContentsConstraint() (localctx IContentsConstraintContext) {
+	this := p
+	_ = this
+
 	localctx = NewContentsConstraintContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 196, ASNParserRULE_contentsConstraint)
 
@@ -14513,6 +14811,9 @@ func (s *ComponentPresenceListsContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *ASNParser) ComponentPresenceLists() (localctx IComponentPresenceListsContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponentPresenceListsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 198, ASNParserRULE_componentPresenceLists)
 	var _la int
@@ -14700,6 +15001,9 @@ func (s *ComponentPresenceListContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) ComponentPresenceList() (localctx IComponentPresenceListContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponentPresenceListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 200, ASNParserRULE_componentPresenceList)
 
@@ -14822,6 +15126,9 @@ func (s *ComponentPresenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ComponentPresence() (localctx IComponentPresenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponentPresenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 202, ASNParserRULE_componentPresence)
 	var _la int
@@ -14931,6 +15238,9 @@ func (s *SubtypeConstraintContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SubtypeConstraint() (localctx ISubtypeConstraintContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubtypeConstraintContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 204, ASNParserRULE_subtypeConstraint)
 
@@ -15028,6 +15338,9 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Value() (localctx IValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 206, ASNParserRULE_value)
 
@@ -15173,6 +15486,9 @@ func (s *BuiltinValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) BuiltinValue() (localctx IBuiltinValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewBuiltinValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 208, ASNParserRULE_builtinValue)
 
@@ -15326,6 +15642,9 @@ func (s *ObjectIdentifierValueContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) ObjectIdentifierValue() (localctx IObjectIdentifierValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectIdentifierValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 210, ASNParserRULE_objectIdentifierValue)
 
@@ -15444,6 +15763,9 @@ func (s *ObjIdComponentsListContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *ASNParser) ObjIdComponentsList() (localctx IObjIdComponentsListContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjIdComponentsListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 212, ASNParserRULE_objIdComponentsList)
 	var _la int
@@ -15573,6 +15895,9 @@ func (s *ObjIdComponentsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ObjIdComponents() (localctx IObjIdComponentsContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjIdComponentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 214, ASNParserRULE_objIdComponents)
 	var _la int
@@ -15729,6 +16054,9 @@ func (s *IntegerValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) IntegerValue() (localctx IIntegerValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntegerValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 216, ASNParserRULE_integerValue)
 
@@ -15850,6 +16178,9 @@ func (s *ChoiceValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ChoiceValue() (localctx IChoiceValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewChoiceValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 218, ASNParserRULE_choiceValue)
 
@@ -15949,6 +16280,9 @@ func (s *EnumeratedValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) EnumeratedValue() (localctx IEnumeratedValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumeratedValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 220, ASNParserRULE_enumeratedValue)
 
@@ -16044,6 +16378,9 @@ func (s *SignedNumberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SignedNumber() (localctx ISignedNumberContext) {
+	this := p
+	_ = this
+
 	localctx = NewSignedNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 222, ASNParserRULE_signedNumber)
 	var _la int
@@ -16165,6 +16502,9 @@ func (s *ChoiceTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ChoiceType() (localctx IChoiceTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewChoiceTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 224, ASNParserRULE_choiceType)
 
@@ -16308,6 +16648,9 @@ func (s *AlternativeTypeListsContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *ASNParser) AlternativeTypeLists() (localctx IAlternativeTypeListsContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlternativeTypeListsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 226, ASNParserRULE_alternativeTypeLists)
 	var _la int
@@ -16433,6 +16776,9 @@ func (s *ExtensionAdditionAlternativesContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *ASNParser) ExtensionAdditionAlternatives() (localctx IExtensionAdditionAlternativesContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensionAdditionAlternativesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 228, ASNParserRULE_extensionAdditionAlternatives)
 
@@ -16561,6 +16907,9 @@ func (s *ExtensionAdditionAlternativesListContext) ExitRule(listener antlr.Parse
 }
 
 func (p *ASNParser) ExtensionAdditionAlternativesList() (localctx IExtensionAdditionAlternativesListContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensionAdditionAlternativesListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 230, ASNParserRULE_extensionAdditionAlternativesList)
 
@@ -16691,6 +17040,9 @@ func (s *ExtensionAdditionAlternativeContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *ASNParser) ExtensionAdditionAlternative() (localctx IExtensionAdditionAlternativeContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensionAdditionAlternativeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 232, ASNParserRULE_extensionAdditionAlternative)
 
@@ -16822,6 +17174,9 @@ func (s *ExtensionAdditionAlternativesGroupContext) ExitRule(listener antlr.Pars
 }
 
 func (p *ASNParser) ExtensionAdditionAlternativesGroup() (localctx IExtensionAdditionAlternativesGroupContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensionAdditionAlternativesGroupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 234, ASNParserRULE_extensionAdditionAlternativesGroup)
 
@@ -16931,6 +17286,9 @@ func (s *RootAlternativeTypeListContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *ASNParser) RootAlternativeTypeList() (localctx IRootAlternativeTypeListContext) {
+	this := p
+	_ = this
+
 	localctx = NewRootAlternativeTypeListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 236, ASNParserRULE_rootAlternativeTypeList)
 
@@ -17049,6 +17407,9 @@ func (s *AlternativeTypeListContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *ASNParser) AlternativeTypeList() (localctx IAlternativeTypeListContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlternativeTypeListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 238, ASNParserRULE_alternativeTypeList)
 
@@ -17173,6 +17534,9 @@ func (s *NamedTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) NamedType() (localctx INamedTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamedTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 240, ASNParserRULE_namedType)
 
@@ -17286,6 +17650,9 @@ func (s *EnumeratedTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) EnumeratedType() (localctx IEnumeratedTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumeratedTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 242, ASNParserRULE_enumeratedType)
 
@@ -17427,6 +17794,9 @@ func (s *EnumerationsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Enumerations() (localctx IEnumerationsContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumerationsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 244, ASNParserRULE_enumerations)
 	var _la int
@@ -17566,6 +17936,9 @@ func (s *RootEnumerationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) RootEnumeration() (localctx IRootEnumerationContext) {
+	this := p
+	_ = this
+
 	localctx = NewRootEnumerationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 246, ASNParserRULE_rootEnumeration)
 
@@ -17684,6 +18057,9 @@ func (s *EnumerationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Enumeration() (localctx IEnumerationContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumerationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 248, ASNParserRULE_enumeration)
 
@@ -17817,6 +18193,9 @@ func (s *EnumerationItemContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) EnumerationItem() (localctx IEnumerationItemContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumerationItemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 250, ASNParserRULE_enumerationItem)
 
@@ -17956,6 +18335,9 @@ func (s *NamedNumberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) NamedNumber() (localctx INamedNumberContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamedNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 252, ASNParserRULE_namedNumber)
 
@@ -18080,6 +18462,9 @@ func (s *DefinedValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) DefinedValue() (localctx IDefinedValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefinedValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 254, ASNParserRULE_definedValue)
 
@@ -18187,6 +18572,9 @@ func (s *ParameterizedValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ParameterizedValue() (localctx IParameterizedValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewParameterizedValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 256, ASNParserRULE_parameterizedValue)
 	var _la int
@@ -18298,6 +18686,9 @@ func (s *SimpleDefinedValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) SimpleDefinedValue() (localctx ISimpleDefinedValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimpleDefinedValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 258, ASNParserRULE_simpleDefinedValue)
 	var _la int
@@ -18440,6 +18831,9 @@ func (s *ActualParameterListContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *ASNParser) ActualParameterList() (localctx IActualParameterListContext) {
+	this := p
+	_ = this
+
 	localctx = NewActualParameterListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 260, ASNParserRULE_actualParameterList)
 	var _la int
@@ -18574,6 +18968,9 @@ func (s *ActualParameterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ActualParameter() (localctx IActualParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewActualParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 262, ASNParserRULE_actualParameter)
 
@@ -18688,6 +19085,9 @@ func (s *ExceptionSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ExceptionSpec() (localctx IExceptionSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewExceptionSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 264, ASNParserRULE_exceptionSpec)
 
@@ -18823,6 +19223,9 @@ func (s *ExceptionIdentificationContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *ASNParser) ExceptionIdentification() (localctx IExceptionIdentificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewExceptionIdentificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 266, ASNParserRULE_exceptionIdentification)
 
@@ -18948,6 +19351,9 @@ func (s *AdditionalEnumerationContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ASNParser) AdditionalEnumeration() (localctx IAdditionalEnumerationContext) {
+	this := p
+	_ = this
+
 	localctx = NewAdditionalEnumerationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 268, ASNParserRULE_additionalEnumeration)
 
@@ -19057,6 +19463,9 @@ func (s *IntegerTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) IntegerType() (localctx IIntegerTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntegerTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 270, ASNParserRULE_integerType)
 
@@ -19193,6 +19602,9 @@ func (s *NamedNumberListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) NamedNumberList() (localctx INamedNumberListContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamedNumberListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 272, ASNParserRULE_namedNumberList)
 	var _la int
@@ -19308,6 +19720,9 @@ func (s *ObjectidentifiertypeContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *ASNParser) Objectidentifiertype() (localctx IObjectidentifiertypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjectidentifiertypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 274, ASNParserRULE_objectidentifiertype)
 
@@ -19458,6 +19873,9 @@ func (s *ComponentRelationConstraintContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *ASNParser) ComponentRelationConstraint() (localctx IComponentRelationConstraintContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponentRelationConstraintContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 276, ASNParserRULE_componentRelationConstraint)
 	var _la int
@@ -19636,6 +20054,9 @@ func (s *AtNotationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) AtNotation() (localctx IAtNotationContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtNotationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 278, ASNParserRULE_atNotation)
 
@@ -19760,6 +20181,9 @@ func (s *LevelContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) Level() (localctx ILevelContext) {
+	this := p
+	_ = this
+
 	localctx = NewLevelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 280, ASNParserRULE_level)
 	var _la int
@@ -19875,6 +20299,9 @@ func (s *ComponentIdListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) ComponentIdList() (localctx IComponentIdListContext) {
+	this := p
+	_ = this
+
 	localctx = NewComponentIdListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 282, ASNParserRULE_componentIdList)
 	var _la int
@@ -19989,6 +20416,9 @@ func (s *OctetStringTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) OctetStringType() (localctx IOctetStringTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewOctetStringTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 284, ASNParserRULE_octetStringType)
 
@@ -20106,6 +20536,9 @@ func (s *BitStringTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) BitStringType() (localctx IBitStringTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewBitStringTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 286, ASNParserRULE_bitStringType)
 
@@ -20247,6 +20680,9 @@ func (s *NamedBitListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) NamedBitList() (localctx INamedBitListContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamedBitListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 288, ASNParserRULE_namedBitList)
 	var _la int
@@ -20380,6 +20816,9 @@ func (s *NamedBitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) NamedBit() (localctx INamedBitContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamedBitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 290, ASNParserRULE_namedBit)
 
@@ -20510,6 +20949,9 @@ func (s *BooleanValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ASNParser) BooleanValue() (localctx IBooleanValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewBooleanValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 292, ASNParserRULE_booleanValue)
 	var _la int

@@ -1,4 +1,4 @@
-// Code generated from oncrpcv2.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from oncrpcv2.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package oncrpcv2 // oncrpcv2
 import (
@@ -140,9 +140,6 @@ var parserATN = []uint16{
 	2, 2, 25, 51, 66, 82, 92, 96, 100, 102, 118, 132, 139, 147, 151, 156, 160,
 	171, 187, 204, 221, 229, 243, 274, 278, 283,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'program'", "'{'", "'}'", "'='", "';'", "'version'", "'('", "','",
 	"')'", "'void'", "'['", "']'", "'<'", "'>'", "'opaque'", "'string'", "'*'",
@@ -162,21 +159,25 @@ var ruleNames = []string{
 	"enumTypeSpec", "enumBody", "structTypeSpec", "structBody", "unionTypeSpec",
 	"unionBody", "caseSpec", "constantDef", "typeDef", "definition", "xdrSpecification",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type oncrpcv2Parser struct {
 	*antlr.BaseParser
 }
 
+// Newoncrpcv2Parser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *oncrpcv2Parser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func Newoncrpcv2Parser(input antlr.TokenStream) *oncrpcv2Parser {
 	this := new(oncrpcv2Parser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -353,6 +354,9 @@ func (s *ProgramDefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) ProgramDef() (localctx IProgramDefContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramDefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, oncrpcv2ParserRULE_programDef)
 	var _la int
@@ -520,6 +524,9 @@ func (s *VersionDefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) VersionDef() (localctx IVersionDefContext) {
+	this := p
+	_ = this
+
 	localctx = NewVersionDefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, oncrpcv2ParserRULE_versionDef)
 	var _la int
@@ -707,6 +714,9 @@ func (s *ProcedureDefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) ProcedureDef() (localctx IProcedureDefContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcedureDefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, oncrpcv2ParserRULE_procedureDef)
 	var _la int
@@ -851,6 +861,9 @@ func (s *ProcReturnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) ProcReturn() (localctx IProcReturnContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcReturnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, oncrpcv2ParserRULE_procReturn)
 
@@ -964,6 +977,9 @@ func (s *ProcFirstArgContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) ProcFirstArg() (localctx IProcFirstArgContext) {
+	this := p
+	_ = this
+
 	localctx = NewProcFirstArgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, oncrpcv2ParserRULE_procFirstArg)
 
@@ -1113,6 +1129,9 @@ func (s *Oncrpcv2SpecificationContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *oncrpcv2Parser) Oncrpcv2Specification() (localctx IOncrpcv2SpecificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewOncrpcv2SpecificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, oncrpcv2ParserRULE_oncrpcv2Specification)
 	var _la int
@@ -1250,6 +1269,9 @@ func (s *DeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) Declaration() (localctx IDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, oncrpcv2ParserRULE_declaration)
 	var _la int
@@ -1520,6 +1542,9 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) Value() (localctx IValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, oncrpcv2ParserRULE_value)
 
@@ -1635,6 +1660,9 @@ func (s *ConstantContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) Constant() (localctx IConstantContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstantContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, oncrpcv2ParserRULE_constant)
 	var _la int
@@ -1764,6 +1792,9 @@ func (s *TypeSpecifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) TypeSpecifier() (localctx ITypeSpecifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeSpecifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, oncrpcv2ParserRULE_typeSpecifier)
 	var _la int
@@ -1953,6 +1984,9 @@ func (s *EnumTypeSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) EnumTypeSpec() (localctx IEnumTypeSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumTypeSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, oncrpcv2ParserRULE_enumTypeSpec)
 
@@ -2075,6 +2109,9 @@ func (s *EnumBodyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) EnumBody() (localctx IEnumBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, oncrpcv2ParserRULE_enumBody)
 	var _la int
@@ -2217,6 +2254,9 @@ func (s *StructTypeSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) StructTypeSpec() (localctx IStructTypeSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewStructTypeSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, oncrpcv2ParserRULE_structTypeSpec)
 
@@ -2331,6 +2371,9 @@ func (s *StructBodyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) StructBody() (localctx IStructBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewStructBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, oncrpcv2ParserRULE_structBody)
 	var _la int
@@ -2461,6 +2504,9 @@ func (s *UnionTypeSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) UnionTypeSpec() (localctx IUnionTypeSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnionTypeSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, oncrpcv2ParserRULE_unionTypeSpec)
 
@@ -2598,6 +2644,9 @@ func (s *UnionBodyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) UnionBody() (localctx IUnionBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnionBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, oncrpcv2ParserRULE_unionBody)
 	var _la int
@@ -2780,6 +2829,9 @@ func (s *CaseSpecContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) CaseSpec() (localctx ICaseSpecContext) {
+	this := p
+	_ = this
+
 	localctx = NewCaseSpecContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, oncrpcv2ParserRULE_caseSpec)
 	var _la int
@@ -2921,6 +2973,9 @@ func (s *ConstantDefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) ConstantDef() (localctx IConstantDefContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstantDefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, oncrpcv2ParserRULE_constantDef)
 
@@ -3068,6 +3123,9 @@ func (s *TypeDefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) TypeDef() (localctx ITypeDefContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypeDefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, oncrpcv2ParserRULE_typeDef)
 
@@ -3249,6 +3307,9 @@ func (s *DefinitionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) Definition() (localctx IDefinitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, oncrpcv2ParserRULE_definition)
 
@@ -3375,6 +3436,9 @@ func (s *XdrSpecificationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *oncrpcv2Parser) XdrSpecification() (localctx IXdrSpecificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewXdrSpecificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, oncrpcv2ParserRULE_xdrSpecification)
 

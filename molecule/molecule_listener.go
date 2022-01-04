@@ -1,4 +1,4 @@
-// Code generated from molecule.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from molecule.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package molecule // molecule
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -10,8 +10,8 @@ type moleculeListener interface {
 	// EnterMolecule is called when entering the molecule production.
 	EnterMolecule(c *MoleculeContext)
 
-	// EnterPart is called when entering the part production.
-	EnterPart(c *PartContext)
+	// EnterPart_ is called when entering the part_ production.
+	EnterPart_(c *Part_Context)
 
 	// EnterStructure is called when entering the structure production.
 	EnterStructure(c *StructureContext)
@@ -34,8 +34,8 @@ type moleculeListener interface {
 	// ExitMolecule is called when exiting the molecule production.
 	ExitMolecule(c *MoleculeContext)
 
-	// ExitPart is called when exiting the part production.
-	ExitPart(c *PartContext)
+	// ExitPart_ is called when exiting the part_ production.
+	ExitPart_(c *Part_Context)
 
 	// ExitStructure is called when exiting the structure production.
 	ExitStructure(c *StructureContext)

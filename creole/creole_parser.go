@@ -1,4 +1,4 @@
-// Code generated from creole.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from creole.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package creole // creole
 import (
@@ -97,9 +97,6 @@ var parserATN = []uint16{
 	2, 2, 179, 29, 3, 2, 2, 2, 26, 31, 36, 42, 55, 60, 66, 73, 76, 83, 94,
 	96, 106, 110, 121, 127, 130, 136, 140, 146, 153, 157, 163, 169, 175,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'\\\\'", "'**'", "'|'", "'----'", "'*'", "'|='", "'='", "'#'", "'[['",
 	"']]'", "'{{'", "'}}'", "", "", "", "", "'/'",
@@ -110,24 +107,28 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"document", "line", "markup", "text", "bold", "italics", "href", "image",
+	"document", "line", "markup", "text_", "bold", "italics", "href", "image",
 	"hline", "listitem", "tableheader", "tablerow", "title", "nowiki",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type creoleParser struct {
 	*antlr.BaseParser
 }
 
+// NewcreoleParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *creoleParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewcreoleParser(input antlr.TokenStream) *creoleParser {
 	this := new(creoleParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -166,7 +167,7 @@ const (
 	creoleParserRULE_document    = 0
 	creoleParserRULE_line        = 1
 	creoleParserRULE_markup      = 2
-	creoleParserRULE_text        = 3
+	creoleParserRULE_text_       = 3
 	creoleParserRULE_bold        = 4
 	creoleParserRULE_italics     = 5
 	creoleParserRULE_href        = 6
@@ -269,6 +270,9 @@ func (s *DocumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Document() (localctx IDocumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewDocumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, creoleParserRULE_document)
 	var _la int
@@ -401,6 +405,9 @@ func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Line() (localctx ILineContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, creoleParserRULE_line)
 	var _la int
@@ -528,14 +535,14 @@ func (s *MarkupContext) Hline() IHlineContext {
 	return t.(IHlineContext)
 }
 
-func (s *MarkupContext) Text() ITextContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITextContext)(nil)).Elem(), 0)
+func (s *MarkupContext) Text_() IText_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IText_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ITextContext)
+	return t.(IText_Context)
 }
 
 func (s *MarkupContext) Listitem() IListitemContext {
@@ -609,6 +616,9 @@ func (s *MarkupContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Markup() (localctx IMarkupContext) {
+	this := p
+	_ = this
+
 	localctx = NewMarkupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, creoleParserRULE_markup)
 
@@ -670,7 +680,7 @@ func (p *creoleParser) Markup() (localctx IMarkupContext) {
 		p.EnterOuterAlt(localctx, 6)
 		{
 			p.SetState(47)
-			p.Text()
+			p.Text_()
 		}
 
 	case 7:
@@ -713,106 +723,109 @@ func (p *creoleParser) Markup() (localctx IMarkupContext) {
 	return localctx
 }
 
-// ITextContext is an interface to support dynamic dispatch.
-type ITextContext interface {
+// IText_Context is an interface to support dynamic dispatch.
+type IText_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsTextContext differentiates from other interfaces.
-	IsTextContext()
+	// IsText_Context differentiates from other interfaces.
+	IsText_Context()
 }
 
-type TextContext struct {
+type Text_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyTextContext() *TextContext {
-	var p = new(TextContext)
+func NewEmptyText_Context() *Text_Context {
+	var p = new(Text_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creoleParserRULE_text
+	p.RuleIndex = creoleParserRULE_text_
 	return p
 }
 
-func (*TextContext) IsTextContext() {}
+func (*Text_Context) IsText_Context() {}
 
-func NewTextContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *TextContext {
-	var p = new(TextContext)
+func NewText_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Text_Context {
+	var p = new(Text_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creoleParserRULE_text
+	p.RuleIndex = creoleParserRULE_text_
 
 	return p
 }
 
-func (s *TextContext) GetParser() antlr.Parser { return s.parser }
+func (s *Text_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *TextContext) AllText() []ITextContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ITextContext)(nil)).Elem())
-	var tst = make([]ITextContext, len(ts))
+func (s *Text_Context) AllText_() []IText_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IText_Context)(nil)).Elem())
+	var tst = make([]IText_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(ITextContext)
+			tst[i] = t.(IText_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *TextContext) Text(i int) ITextContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITextContext)(nil)).Elem(), i)
+func (s *Text_Context) Text_(i int) IText_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IText_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ITextContext)
+	return t.(IText_Context)
 }
 
-func (s *TextContext) AllTEXT() []antlr.TerminalNode {
+func (s *Text_Context) AllTEXT() []antlr.TerminalNode {
 	return s.GetTokens(creoleParserTEXT)
 }
 
-func (s *TextContext) TEXT(i int) antlr.TerminalNode {
+func (s *Text_Context) TEXT(i int) antlr.TerminalNode {
 	return s.GetToken(creoleParserTEXT, i)
 }
 
-func (s *TextContext) AllRSLASH() []antlr.TerminalNode {
+func (s *Text_Context) AllRSLASH() []antlr.TerminalNode {
 	return s.GetTokens(creoleParserRSLASH)
 }
 
-func (s *TextContext) RSLASH(i int) antlr.TerminalNode {
+func (s *Text_Context) RSLASH(i int) antlr.TerminalNode {
 	return s.GetToken(creoleParserRSLASH, i)
 }
 
-func (s *TextContext) GetRuleContext() antlr.RuleContext {
+func (s *Text_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *TextContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Text_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *TextContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Text_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(creoleListener); ok {
-		listenerT.EnterText(s)
+		listenerT.EnterText_(s)
 	}
 }
 
-func (s *TextContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Text_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(creoleListener); ok {
-		listenerT.ExitText(s)
+		listenerT.ExitText_(s)
 	}
 }
 
-func (p *creoleParser) Text() (localctx ITextContext) {
-	localctx = NewTextContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, creoleParserRULE_text)
+func (p *creoleParser) Text_() (localctx IText_Context) {
+	this := p
+	_ = this
+
+	localctx = NewText_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 6, creoleParserRULE_text_)
 	var _la int
 
 	defer func() {
@@ -872,7 +885,7 @@ func (p *creoleParser) Text() (localctx ITextContext) {
 			}
 			{
 				p.SetState(61)
-				p.Text()
+				p.Text_()
 			}
 
 		}
@@ -966,6 +979,9 @@ func (s *BoldContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Bold() (localctx IBoldContext) {
+	this := p
+	_ = this
+
 	localctx = NewBoldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, creoleParserRULE_bold)
 
@@ -1115,6 +1131,9 @@ func (s *ItalicsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Italics() (localctx IItalicsContext) {
+	this := p
+	_ = this
+
 	localctx = NewItalicsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, creoleParserRULE_italics)
 
@@ -1218,14 +1237,14 @@ func (s *HrefContext) LBRACKET() antlr.TerminalNode {
 	return s.GetToken(creoleParserLBRACKET, 0)
 }
 
-func (s *HrefContext) Text() ITextContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITextContext)(nil)).Elem(), 0)
+func (s *HrefContext) Text_() IText_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IText_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ITextContext)
+	return t.(IText_Context)
 }
 
 func (s *HrefContext) RBRACKET() antlr.TerminalNode {
@@ -1284,6 +1303,9 @@ func (s *HrefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Href() (localctx IHrefContext) {
+	this := p
+	_ = this
+
 	localctx = NewHrefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, creoleParserRULE_href)
 	var _la int
@@ -1316,7 +1338,7 @@ func (p *creoleParser) Href() (localctx IHrefContext) {
 		}
 		{
 			p.SetState(87)
-			p.Text()
+			p.Text_()
 		}
 		p.SetState(94)
 		p.GetErrorHandler().Sync(p)
@@ -1356,7 +1378,7 @@ func (p *creoleParser) Href() (localctx IHrefContext) {
 		}
 		{
 			p.SetState(99)
-			p.Text()
+			p.Text_()
 		}
 		{
 			p.SetState(100)
@@ -1430,14 +1452,14 @@ func (s *ImageContext) LBRACE() antlr.TerminalNode {
 	return s.GetToken(creoleParserLBRACE, 0)
 }
 
-func (s *ImageContext) Text() ITextContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITextContext)(nil)).Elem(), 0)
+func (s *ImageContext) Text_() IText_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IText_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ITextContext)
+	return t.(IText_Context)
 }
 
 func (s *ImageContext) RBRACE() antlr.TerminalNode {
@@ -1465,6 +1487,9 @@ func (s *ImageContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Image() (localctx IImageContext) {
+	this := p
+	_ = this
+
 	localctx = NewImageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, creoleParserRULE_image)
 
@@ -1491,7 +1516,7 @@ func (p *creoleParser) Image() (localctx IImageContext) {
 	}
 	{
 		p.SetState(111)
-		p.Text()
+		p.Text_()
 	}
 	{
 		p.SetState(112)
@@ -1559,6 +1584,9 @@ func (s *HlineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Hline() (localctx IHlineContext) {
+	this := p
+	_ = this
+
 	localctx = NewHlineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, creoleParserRULE_hline)
 
@@ -1664,6 +1692,9 @@ func (s *ListitemContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Listitem() (localctx IListitemContext) {
+	this := p
+	_ = this
+
 	localctx = NewListitemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, creoleParserRULE_listitem)
 
@@ -1838,6 +1869,9 @@ func (s *TableheaderContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Tableheader() (localctx ITableheaderContext) {
+	this := p
+	_ = this
+
 	localctx = NewTableheaderContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, creoleParserRULE_tableheader)
 	var _la int
@@ -2006,6 +2040,9 @@ func (s *TablerowContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Tablerow() (localctx ITablerowContext) {
+	this := p
+	_ = this
+
 	localctx = NewTablerowContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, creoleParserRULE_tablerow)
 	var _la int
@@ -2158,6 +2195,9 @@ func (s *TitleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Title() (localctx ITitleContext) {
+	this := p
+	_ = this
+
 	localctx = NewTitleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, creoleParserRULE_title)
 
@@ -2286,6 +2326,9 @@ func (s *NowikiContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *creoleParser) Nowiki() (localctx INowikiContext) {
+	this := p
+	_ = this
+
 	localctx = NewNowikiContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, creoleParserRULE_nowiki)
 

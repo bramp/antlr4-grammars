@@ -1,4 +1,4 @@
-// Code generated from bnf.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from bnf.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package bnf // bnf
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -28,8 +28,8 @@ type bnfListener interface {
 	// EnterElement is called when entering the element production.
 	EnterElement(c *ElementContext)
 
-	// EnterOptional is called when entering the optional production.
-	EnterOptional(c *OptionalContext)
+	// EnterOptional_ is called when entering the optional_ production.
+	EnterOptional_(c *Optional_Context)
 
 	// EnterZeroormore is called when entering the zeroormore production.
 	EnterZeroormore(c *ZeroormoreContext)
@@ -37,11 +37,11 @@ type bnfListener interface {
 	// EnterOneormore is called when entering the oneormore production.
 	EnterOneormore(c *OneormoreContext)
 
-	// EnterText is called when entering the text production.
-	EnterText(c *TextContext)
+	// EnterText_ is called when entering the text_ production.
+	EnterText_(c *Text_Context)
 
-	// EnterId is called when entering the id production.
-	EnterId(c *IdContext)
+	// EnterId_ is called when entering the id_ production.
+	EnterId_(c *Id_Context)
 
 	// EnterRuleid is called when entering the ruleid production.
 	EnterRuleid(c *RuleidContext)
@@ -67,8 +67,8 @@ type bnfListener interface {
 	// ExitElement is called when exiting the element production.
 	ExitElement(c *ElementContext)
 
-	// ExitOptional is called when exiting the optional production.
-	ExitOptional(c *OptionalContext)
+	// ExitOptional_ is called when exiting the optional_ production.
+	ExitOptional_(c *Optional_Context)
 
 	// ExitZeroormore is called when exiting the zeroormore production.
 	ExitZeroormore(c *ZeroormoreContext)
@@ -76,11 +76,11 @@ type bnfListener interface {
 	// ExitOneormore is called when exiting the oneormore production.
 	ExitOneormore(c *OneormoreContext)
 
-	// ExitText is called when exiting the text production.
-	ExitText(c *TextContext)
+	// ExitText_ is called when exiting the text_ production.
+	ExitText_(c *Text_Context)
 
-	// ExitId is called when exiting the id production.
-	ExitId(c *IdContext)
+	// ExitId_ is called when exiting the id_ production.
+	ExitId_(c *Id_Context)
 
 	// ExitRuleid is called when exiting the ruleid production.
 	ExitRuleid(c *RuleidContext)

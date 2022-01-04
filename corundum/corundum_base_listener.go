@@ -1,4 +1,4 @@
-// Code generated from Corundum.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Corundum.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package corundum // Corundum
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -263,7 +263,8 @@ func (s *BaseCorundumListener) EnterStatement_body(ctx *Statement_bodyContext) {
 func (s *BaseCorundumListener) ExitStatement_body(ctx *Statement_bodyContext) {}
 
 // EnterStatement_expression_list is called when production statement_expression_list is entered.
-func (s *BaseCorundumListener) EnterStatement_expression_list(ctx *Statement_expression_listContext) {}
+func (s *BaseCorundumListener) EnterStatement_expression_list(ctx *Statement_expression_listContext) {
+}
 
 // ExitStatement_expression_list is called when production statement_expression_list is exited.
 func (s *BaseCorundumListener) ExitStatement_expression_list(ctx *Statement_expression_listContext) {}
@@ -317,7 +318,8 @@ func (s *BaseCorundumListener) EnterArray_definition(ctx *Array_definitionContex
 func (s *BaseCorundumListener) ExitArray_definition(ctx *Array_definitionContext) {}
 
 // EnterArray_definition_elements is called when production array_definition_elements is entered.
-func (s *BaseCorundumListener) EnterArray_definition_elements(ctx *Array_definition_elementsContext) {}
+func (s *BaseCorundumListener) EnterArray_definition_elements(ctx *Array_definition_elementsContext) {
+}
 
 // ExitArray_definition_elements is called when production array_definition_elements is exited.
 func (s *BaseCorundumListener) ExitArray_definition_elements(ctx *Array_definition_elementsContext) {}
@@ -334,11 +336,11 @@ func (s *BaseCorundumListener) EnterDynamic_result(ctx *Dynamic_resultContext) {
 // ExitDynamic_result is called when production dynamic_result is exited.
 func (s *BaseCorundumListener) ExitDynamic_result(ctx *Dynamic_resultContext) {}
 
-// EnterDynamic is called when production dynamic is entered.
-func (s *BaseCorundumListener) EnterDynamic(ctx *DynamicContext) {}
+// EnterDynamic_ is called when production dynamic_ is entered.
+func (s *BaseCorundumListener) EnterDynamic_(ctx *Dynamic_Context) {}
 
-// ExitDynamic is called when production dynamic is exited.
-func (s *BaseCorundumListener) ExitDynamic(ctx *DynamicContext) {}
+// ExitDynamic_ is called when production dynamic_ is exited.
+func (s *BaseCorundumListener) ExitDynamic_(ctx *Dynamic_Context) {}
 
 // EnterInt_result is called when production int_result is entered.
 func (s *BaseCorundumListener) EnterInt_result(ctx *Int_resultContext) {}
@@ -424,11 +426,11 @@ func (s *BaseCorundumListener) EnterNil_t(ctx *Nil_tContext) {}
 // ExitNil_t is called when production nil_t is exited.
 func (s *BaseCorundumListener) ExitNil_t(ctx *Nil_tContext) {}
 
-// EnterId is called when production id is entered.
-func (s *BaseCorundumListener) EnterId(ctx *IdContext) {}
+// EnterId_ is called when production id_ is entered.
+func (s *BaseCorundumListener) EnterId_(ctx *Id_Context) {}
 
-// ExitId is called when production id is exited.
-func (s *BaseCorundumListener) ExitId(ctx *IdContext) {}
+// ExitId_ is called when production id_ is exited.
+func (s *BaseCorundumListener) ExitId_(ctx *Id_Context) {}
 
 // EnterId_global is called when production id_global is entered.
 func (s *BaseCorundumListener) EnterId_global(ctx *Id_globalContext) {}

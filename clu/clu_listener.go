@@ -1,4 +1,4 @@
-// Code generated from clu.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from clu.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package clu // clu
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -43,14 +43,14 @@ type cluListener interface {
 	// EnterSignals is called when entering the signals production.
 	EnterSignals(c *SignalsContext)
 
-	// EnterException is called when entering the exception production.
-	EnterException(c *ExceptionContext)
+	// EnterException_ is called when entering the exception_ production.
+	EnterException_(c *Exception_Context)
 
 	// EnterType_spec_list is called when entering the type_spec_list production.
 	EnterType_spec_list(c *Type_spec_listContext)
 
-	// EnterWhere is called when entering the where production.
-	EnterWhere(c *WhereContext)
+	// EnterWhere_ is called when entering the where_ production.
+	EnterWhere_(c *Where_Context)
 
 	// EnterRestriction is called when entering the restriction production.
 	EnterRestriction(c *RestrictionContext)
@@ -190,14 +190,14 @@ type cluListener interface {
 	// ExitSignals is called when exiting the signals production.
 	ExitSignals(c *SignalsContext)
 
-	// ExitException is called when exiting the exception production.
-	ExitException(c *ExceptionContext)
+	// ExitException_ is called when exiting the exception_ production.
+	ExitException_(c *Exception_Context)
 
 	// ExitType_spec_list is called when exiting the type_spec_list production.
 	ExitType_spec_list(c *Type_spec_listContext)
 
-	// ExitWhere is called when exiting the where production.
-	ExitWhere(c *WhereContext)
+	// ExitWhere_ is called when exiting the where_ production.
+	ExitWhere_(c *Where_Context)
 
 	// ExitRestriction is called when exiting the restriction production.
 	ExitRestriction(c *RestrictionContext)

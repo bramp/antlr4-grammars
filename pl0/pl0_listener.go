@@ -1,4 +1,4 @@
-// Code generated from pl0.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from pl0.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package pl0 // pl0
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -16,8 +16,8 @@ type pl0Listener interface {
 	// EnterConsts is called when entering the consts production.
 	EnterConsts(c *ConstsContext)
 
-	// EnterVars is called when entering the vars production.
-	EnterVars(c *VarsContext)
+	// EnterVars_ is called when entering the vars_ production.
+	EnterVars_(c *Vars_Context)
 
 	// EnterProcedure is called when entering the procedure production.
 	EnterProcedure(c *ProcedureContext)
@@ -76,8 +76,8 @@ type pl0Listener interface {
 	// ExitConsts is called when exiting the consts production.
 	ExitConsts(c *ConstsContext)
 
-	// ExitVars is called when exiting the vars production.
-	ExitVars(c *VarsContext)
+	// ExitVars_ is called when exiting the vars_ production.
+	ExitVars_(c *Vars_Context)
 
 	// ExitProcedure is called when exiting the procedure production.
 	ExitProcedure(c *ProcedureContext)

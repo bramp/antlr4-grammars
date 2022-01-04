@@ -1,4 +1,4 @@
-// Code generated from propcalc.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from propcalc.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package propcalc // propcalc
 import (
@@ -42,9 +42,6 @@ var parserATN = []uint16{
 	2, 62, 65, 3, 2, 2, 2, 63, 61, 3, 2, 2, 2, 63, 64, 3, 2, 2, 2, 64, 17,
 	3, 2, 2, 2, 65, 63, 3, 2, 2, 2, 7, 27, 33, 40, 50, 63,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "','", "'^'", "'v'", "'!'", "'='", "'->'", "'|-'", "'<->'", "'('",
 	"')'",
@@ -58,21 +55,25 @@ var ruleNames = []string{
 	"proposition", "expression", "relExpression", "atoms", "atom", "equiv",
 	"implies", "variable",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type propcalcParser struct {
 	*antlr.BaseParser
 }
 
+// NewpropcalcParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *propcalcParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewpropcalcParser(input antlr.TokenStream) *propcalcParser {
 	this := new(propcalcParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -199,6 +200,9 @@ func (s *PropositionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propcalcParser) Proposition() (localctx IPropositionContext) {
+	this := p
+	_ = this
+
 	localctx = NewPropositionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, propcalcParserRULE_proposition)
 
@@ -333,6 +337,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propcalcParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, propcalcParserRULE_expression)
 	var _la int
@@ -476,6 +483,9 @@ func (s *RelExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propcalcParser) RelExpression() (localctx IRelExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, propcalcParserRULE_relExpression)
 
@@ -606,6 +616,9 @@ func (s *AtomsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propcalcParser) Atoms() (localctx IAtomsContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, propcalcParserRULE_atoms)
 	var _la int
@@ -754,6 +767,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propcalcParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, propcalcParserRULE_atom)
 
@@ -903,6 +919,9 @@ func (s *EquivContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propcalcParser) Equiv() (localctx IEquivContext) {
+	this := p
+	_ = this
+
 	localctx = NewEquivContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, propcalcParserRULE_equiv)
 
@@ -1025,6 +1044,9 @@ func (s *ImpliesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propcalcParser) Implies() (localctx IImpliesContext) {
+	this := p
+	_ = this
+
 	localctx = NewImpliesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, propcalcParserRULE_implies)
 
@@ -1128,6 +1150,9 @@ func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *propcalcParser) Variable() (localctx IVariableContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, propcalcParserRULE_variable)
 	var _la int

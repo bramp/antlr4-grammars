@@ -1,4 +1,4 @@
-// Code generated from fasta.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from fasta.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package fasta // fasta
 import "github.com/antlr/antlr4/runtime/Go/antlr"

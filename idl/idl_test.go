@@ -33,6 +33,7 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{
+	"grammars-v4/idl/examples/TestIDLv4.idl",
 	"grammars-v4/idl/examples/helloworld.idl",
 }
 

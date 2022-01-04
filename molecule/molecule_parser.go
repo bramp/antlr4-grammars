@@ -1,4 +1,4 @@
-// Code generated from molecule.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from molecule.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package molecule // molecule
 import (
@@ -41,9 +41,6 @@ var parserATN = []uint16{
 	7, 2, 2, 58, 13, 3, 2, 2, 2, 59, 60, 7, 8, 2, 2, 60, 15, 3, 2, 2, 2, 61,
 	62, 7, 9, 2, 2, 62, 17, 3, 2, 2, 2, 9, 23, 27, 32, 36, 41, 47, 55,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'\u00B7'", "'('", "')'", "'['", "']'",
 }
@@ -52,23 +49,28 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"molecule", "part", "structure", "symbol", "group", "ion", "element", "count",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"molecule", "part_", "structure", "symbol", "group", "ion", "element",
+	"count",
 }
 
 type moleculeParser struct {
 	*antlr.BaseParser
 }
 
+// NewmoleculeParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *moleculeParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewmoleculeParser(input antlr.TokenStream) *moleculeParser {
 	this := new(moleculeParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -96,7 +98,7 @@ const (
 // moleculeParser rules.
 const (
 	moleculeParserRULE_molecule  = 0
-	moleculeParserRULE_part      = 1
+	moleculeParserRULE_part_     = 1
 	moleculeParserRULE_structure = 2
 	moleculeParserRULE_symbol    = 3
 	moleculeParserRULE_group     = 4
@@ -143,27 +145,27 @@ func NewMoleculeContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 
 func (s *MoleculeContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *MoleculeContext) AllPart() []IPartContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IPartContext)(nil)).Elem())
-	var tst = make([]IPartContext, len(ts))
+func (s *MoleculeContext) AllPart_() []IPart_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IPart_Context)(nil)).Elem())
+	var tst = make([]IPart_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IPartContext)
+			tst[i] = t.(IPart_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *MoleculeContext) Part(i int) IPartContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPartContext)(nil)).Elem(), i)
+func (s *MoleculeContext) Part_(i int) IPart_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPart_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IPartContext)
+	return t.(IPart_Context)
 }
 
 func (s *MoleculeContext) GetRuleContext() antlr.RuleContext {
@@ -187,6 +189,9 @@ func (s *MoleculeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *moleculeParser) Molecule() (localctx IMoleculeContext) {
+	this := p
+	_ = this
+
 	localctx = NewMoleculeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, moleculeParserRULE_molecule)
 	var _la int
@@ -210,7 +215,7 @@ func (p *moleculeParser) Molecule() (localctx IMoleculeContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(16)
-		p.Part()
+		p.Part_()
 	}
 	p.SetState(21)
 	p.GetErrorHandler().Sync(p)
@@ -223,7 +228,7 @@ func (p *moleculeParser) Molecule() (localctx IMoleculeContext) {
 		}
 		{
 			p.SetState(18)
-			p.Part()
+			p.Part_()
 		}
 
 		p.SetState(23)
@@ -234,45 +239,45 @@ func (p *moleculeParser) Molecule() (localctx IMoleculeContext) {
 	return localctx
 }
 
-// IPartContext is an interface to support dynamic dispatch.
-type IPartContext interface {
+// IPart_Context is an interface to support dynamic dispatch.
+type IPart_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsPartContext differentiates from other interfaces.
-	IsPartContext()
+	// IsPart_Context differentiates from other interfaces.
+	IsPart_Context()
 }
 
-type PartContext struct {
+type Part_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyPartContext() *PartContext {
-	var p = new(PartContext)
+func NewEmptyPart_Context() *Part_Context {
+	var p = new(Part_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = moleculeParserRULE_part
+	p.RuleIndex = moleculeParserRULE_part_
 	return p
 }
 
-func (*PartContext) IsPartContext() {}
+func (*Part_Context) IsPart_Context() {}
 
-func NewPartContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *PartContext {
-	var p = new(PartContext)
+func NewPart_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Part_Context {
+	var p = new(Part_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = moleculeParserRULE_part
+	p.RuleIndex = moleculeParserRULE_part_
 
 	return p
 }
 
-func (s *PartContext) GetParser() antlr.Parser { return s.parser }
+func (s *Part_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *PartContext) AllStructure() []IStructureContext {
+func (s *Part_Context) AllStructure() []IStructureContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IStructureContext)(nil)).Elem())
 	var tst = make([]IStructureContext, len(ts))
 
@@ -285,7 +290,7 @@ func (s *PartContext) AllStructure() []IStructureContext {
 	return tst
 }
 
-func (s *PartContext) Structure(i int) IStructureContext {
+func (s *Part_Context) Structure(i int) IStructureContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStructureContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -295,7 +300,7 @@ func (s *PartContext) Structure(i int) IStructureContext {
 	return t.(IStructureContext)
 }
 
-func (s *PartContext) AllCount() []ICountContext {
+func (s *Part_Context) AllCount() []ICountContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ICountContext)(nil)).Elem())
 	var tst = make([]ICountContext, len(ts))
 
@@ -308,7 +313,7 @@ func (s *PartContext) AllCount() []ICountContext {
 	return tst
 }
 
-func (s *PartContext) Count(i int) ICountContext {
+func (s *Part_Context) Count(i int) ICountContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICountContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -318,29 +323,32 @@ func (s *PartContext) Count(i int) ICountContext {
 	return t.(ICountContext)
 }
 
-func (s *PartContext) GetRuleContext() antlr.RuleContext {
+func (s *Part_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *PartContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Part_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *PartContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Part_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(moleculeListener); ok {
-		listenerT.EnterPart(s)
+		listenerT.EnterPart_(s)
 	}
 }
 
-func (s *PartContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Part_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(moleculeListener); ok {
-		listenerT.ExitPart(s)
+		listenerT.ExitPart_(s)
 	}
 }
 
-func (p *moleculeParser) Part() (localctx IPartContext) {
-	localctx = NewPartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, moleculeParserRULE_part)
+func (p *moleculeParser) Part_() (localctx IPart_Context) {
+	this := p
+	_ = this
+
+	localctx = NewPart_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 2, moleculeParserRULE_part_)
 	var _la int
 
 	defer func() {
@@ -468,6 +476,9 @@ func (s *StructureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *moleculeParser) Structure() (localctx IStructureContext) {
+	this := p
+	_ = this
+
 	localctx = NewStructureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, moleculeParserRULE_structure)
 
@@ -595,6 +606,9 @@ func (s *SymbolContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *moleculeParser) Symbol() (localctx ISymbolContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, moleculeParserRULE_symbol)
 
@@ -728,6 +742,9 @@ func (s *GroupContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *moleculeParser) Group() (localctx IGroupContext) {
+	this := p
+	_ = this
+
 	localctx = NewGroupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, moleculeParserRULE_group)
 	var _la int
@@ -857,6 +874,9 @@ func (s *IonContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *moleculeParser) Ion() (localctx IIonContext) {
+	this := p
+	_ = this
+
 	localctx = NewIonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, moleculeParserRULE_ion)
 	var _la int
@@ -967,6 +987,9 @@ func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *moleculeParser) Element() (localctx IElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, moleculeParserRULE_element)
 
@@ -1058,6 +1081,9 @@ func (s *CountContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *moleculeParser) Count() (localctx ICountContext) {
+	this := p
+	_ = this
+
 	localctx = NewCountContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, moleculeParserRULE_count)
 

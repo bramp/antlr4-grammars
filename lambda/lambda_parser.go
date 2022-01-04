@@ -1,4 +1,4 @@
-// Code generated from lambda.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from lambda.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package lambda // lambda
 import (
@@ -26,9 +26,6 @@ var parserATN = []uint16{
 	21, 7, 5, 2, 2, 21, 22, 5, 2, 2, 2, 22, 23, 5, 2, 2, 2, 23, 24, 7, 6, 2,
 	2, 24, 7, 3, 2, 2, 2, 25, 26, 5, 2, 2, 2, 26, 9, 3, 2, 2, 2, 3, 13,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'\u03BB'", "'.'", "'('", "')'",
 }
@@ -37,23 +34,27 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"expression", "function", "application", "scope",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"expression", "function_", "application", "scope",
 }
 
 type lambdaParser struct {
 	*antlr.BaseParser
 }
 
+// NewlambdaParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *lambdaParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewlambdaParser(input antlr.TokenStream) *lambdaParser {
 	this := new(lambdaParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -79,7 +80,7 @@ const (
 // lambdaParser rules.
 const (
 	lambdaParserRULE_expression  = 0
-	lambdaParserRULE_function    = 1
+	lambdaParserRULE_function_   = 1
 	lambdaParserRULE_application = 2
 	lambdaParserRULE_scope       = 3
 )
@@ -126,14 +127,14 @@ func (s *ExpressionContext) VARIABLE() antlr.TerminalNode {
 	return s.GetToken(lambdaParserVARIABLE, 0)
 }
 
-func (s *ExpressionContext) Function() IFunctionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionContext)(nil)).Elem(), 0)
+func (s *ExpressionContext) Function_() IFunction_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunction_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IFunctionContext)
+	return t.(IFunction_Context)
 }
 
 func (s *ExpressionContext) Application() IApplicationContext {
@@ -167,6 +168,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *lambdaParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, lambdaParserRULE_expression)
 
@@ -201,7 +205,7 @@ func (p *lambdaParser) Expression() (localctx IExpressionContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(9)
-			p.Function()
+			p.Function_()
 		}
 
 	case lambdaParserT__2:
@@ -218,49 +222,49 @@ func (p *lambdaParser) Expression() (localctx IExpressionContext) {
 	return localctx
 }
 
-// IFunctionContext is an interface to support dynamic dispatch.
-type IFunctionContext interface {
+// IFunction_Context is an interface to support dynamic dispatch.
+type IFunction_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsFunctionContext differentiates from other interfaces.
-	IsFunctionContext()
+	// IsFunction_Context differentiates from other interfaces.
+	IsFunction_Context()
 }
 
-type FunctionContext struct {
+type Function_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyFunctionContext() *FunctionContext {
-	var p = new(FunctionContext)
+func NewEmptyFunction_Context() *Function_Context {
+	var p = new(Function_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = lambdaParserRULE_function
+	p.RuleIndex = lambdaParserRULE_function_
 	return p
 }
 
-func (*FunctionContext) IsFunctionContext() {}
+func (*Function_Context) IsFunction_Context() {}
 
-func NewFunctionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FunctionContext {
-	var p = new(FunctionContext)
+func NewFunction_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Function_Context {
+	var p = new(Function_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = lambdaParserRULE_function
+	p.RuleIndex = lambdaParserRULE_function_
 
 	return p
 }
 
-func (s *FunctionContext) GetParser() antlr.Parser { return s.parser }
+func (s *Function_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *FunctionContext) VARIABLE() antlr.TerminalNode {
+func (s *Function_Context) VARIABLE() antlr.TerminalNode {
 	return s.GetToken(lambdaParserVARIABLE, 0)
 }
 
-func (s *FunctionContext) Scope() IScopeContext {
+func (s *Function_Context) Scope() IScopeContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IScopeContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -270,29 +274,32 @@ func (s *FunctionContext) Scope() IScopeContext {
 	return t.(IScopeContext)
 }
 
-func (s *FunctionContext) GetRuleContext() antlr.RuleContext {
+func (s *Function_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *FunctionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Function_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *FunctionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Function_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(lambdaListener); ok {
-		listenerT.EnterFunction(s)
+		listenerT.EnterFunction_(s)
 	}
 }
 
-func (s *FunctionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Function_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(lambdaListener); ok {
-		listenerT.ExitFunction(s)
+		listenerT.ExitFunction_(s)
 	}
 }
 
-func (p *lambdaParser) Function() (localctx IFunctionContext) {
-	localctx = NewFunctionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, lambdaParserRULE_function)
+func (p *lambdaParser) Function_() (localctx IFunction_Context) {
+	this := p
+	_ = this
+
+	localctx = NewFunction_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 2, lambdaParserRULE_function_)
 
 	defer func() {
 		p.ExitRule()
@@ -413,6 +420,9 @@ func (s *ApplicationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *lambdaParser) Application() (localctx IApplicationContext) {
+	this := p
+	_ = this
+
 	localctx = NewApplicationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, lambdaParserRULE_application)
 
@@ -522,6 +532,9 @@ func (s *ScopeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *lambdaParser) Scope() (localctx IScopeContext) {
+	this := p
+	_ = this
+
 	localctx = NewScopeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, lambdaParserRULE_scope)
 

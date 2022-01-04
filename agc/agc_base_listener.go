@@ -1,4 +1,4 @@
-// Code generated from agc.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from agc.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package agc // agc
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -134,11 +134,11 @@ func (s *BaseagcListener) EnterDecimal(ctx *DecimalContext) {}
 // ExitDecimal is called when production decimal is exited.
 func (s *BaseagcListener) ExitDecimal(ctx *DecimalContext) {}
 
-// EnterRegister is called when production register is entered.
-func (s *BaseagcListener) EnterRegister(ctx *RegisterContext) {}
+// EnterRegister_ is called when production register_ is entered.
+func (s *BaseagcListener) EnterRegister_(ctx *Register_Context) {}
 
-// ExitRegister is called when production register is exited.
-func (s *BaseagcListener) ExitRegister(ctx *RegisterContext) {}
+// ExitRegister_ is called when production register_ is exited.
+func (s *BaseagcListener) ExitRegister_(ctx *Register_Context) {}
 
 // EnterOpcode is called when production opcode is entered.
 func (s *BaseagcListener) EnterOpcode(ctx *OpcodeContext) {}

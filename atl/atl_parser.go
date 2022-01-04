@@ -1,4 +1,4 @@
-// Code generated from ATL.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ATL.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package atl // ATL
 import (
@@ -474,9 +474,6 @@ var parserATN = []uint16{
 	796, 808, 819, 822, 840, 844, 859, 885, 891, 893, 895, 903, 914, 916, 924,
 	926, 942, 944, 956, 958, 962, 965, 968, 974, 983, 987, 990, 993, 1020,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'module'", "';'", "'create'", "','", "'refining'", "'from'", "'library'",
 	"'query'", "'='", "'uses'", "'helper'", "'def'", "':'", "'context'", "'('",
@@ -501,7 +498,7 @@ var symbolicNames = []string{
 
 var ruleNames = []string{
 	"unit", "module", "targetModelPattern", "sourceModelPattern", "transformationMode",
-	"library", "query", "libraryRef", "moduleElement", "helper", "oclFeatureDefinition",
+	"library_", "query", "libraryRef", "moduleElement", "helper", "oclFeatureDefinition",
 	"oclContextDefinition", "oclFeature", "operation", "parameter", "attribute",
 	"arule", "matchedRule", "lazyMatchedRule", "ruleVariableDeclaration", "calledRule",
 	"inPattern", "inPatternElement", "simpleInPatternElement", "outPattern",
@@ -520,21 +517,25 @@ var ruleNames = []string{
 	"priority_4", "priority_5", "matchedRule_abstractContents", "oclType_abstractContents",
 	"oclAnyType_abstractContents", "collectionType_abstractContents", "primary_oclExpression",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type ATLParser struct {
 	*antlr.BaseParser
 }
 
+// NewATLParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *ATLParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewATLParser(input antlr.TokenStream) *ATLParser {
 	this := new(ATLParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -645,7 +646,7 @@ const (
 	ATLParserRULE_targetModelPattern              = 2
 	ATLParserRULE_sourceModelPattern              = 3
 	ATLParserRULE_transformationMode              = 4
-	ATLParserRULE_library                         = 5
+	ATLParserRULE_library_                        = 5
 	ATLParserRULE_query                           = 6
 	ATLParserRULE_libraryRef                      = 7
 	ATLParserRULE_moduleElement                   = 8
@@ -783,14 +784,14 @@ func (s *UnitContext) Module() IModuleContext {
 	return t.(IModuleContext)
 }
 
-func (s *UnitContext) Library() ILibraryContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILibraryContext)(nil)).Elem(), 0)
+func (s *UnitContext) Library_() ILibrary_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILibrary_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ILibraryContext)
+	return t.(ILibrary_Context)
 }
 
 func (s *UnitContext) Query() IQueryContext {
@@ -824,6 +825,9 @@ func (s *UnitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Unit() (localctx IUnitContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, ATLParserRULE_unit)
 
@@ -858,7 +862,7 @@ func (p *ATLParser) Unit() (localctx IUnitContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(187)
-			p.Library()
+			p.Library_()
 		}
 
 	case ATLParserT__7:
@@ -1018,6 +1022,9 @@ func (s *ModuleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Module() (localctx IModuleContext) {
+	this := p
+	_ = this
+
 	localctx = NewModuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, ATLParserRULE_module)
 	var _la int
@@ -1192,6 +1199,9 @@ func (s *TargetModelPatternContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) TargetModelPattern() (localctx ITargetModelPatternContext) {
+	this := p
+	_ = this
+
 	localctx = NewTargetModelPatternContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, ATLParserRULE_targetModelPattern)
 	var _la int
@@ -1321,6 +1331,9 @@ func (s *SourceModelPatternContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) SourceModelPattern() (localctx ISourceModelPatternContext) {
+	this := p
+	_ = this
+
 	localctx = NewSourceModelPatternContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, ATLParserRULE_sourceModelPattern)
 	var _la int
@@ -1426,6 +1439,9 @@ func (s *TransformationModeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) TransformationMode() (localctx ITransformationModeContext) {
+	this := p
+	_ = this
+
 	localctx = NewTransformationModeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, ATLParserRULE_transformationMode)
 	var _la int
@@ -1462,53 +1478,53 @@ func (p *ATLParser) TransformationMode() (localctx ITransformationModeContext) {
 	return localctx
 }
 
-// ILibraryContext is an interface to support dynamic dispatch.
-type ILibraryContext interface {
+// ILibrary_Context is an interface to support dynamic dispatch.
+type ILibrary_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsLibraryContext differentiates from other interfaces.
-	IsLibraryContext()
+	// IsLibrary_Context differentiates from other interfaces.
+	IsLibrary_Context()
 }
 
-type LibraryContext struct {
+type Library_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyLibraryContext() *LibraryContext {
-	var p = new(LibraryContext)
+func NewEmptyLibrary_Context() *Library_Context {
+	var p = new(Library_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = ATLParserRULE_library
+	p.RuleIndex = ATLParserRULE_library_
 	return p
 }
 
-func (*LibraryContext) IsLibraryContext() {}
+func (*Library_Context) IsLibrary_Context() {}
 
-func NewLibraryContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *LibraryContext {
-	var p = new(LibraryContext)
+func NewLibrary_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Library_Context {
+	var p = new(Library_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = ATLParserRULE_library
+	p.RuleIndex = ATLParserRULE_library_
 
 	return p
 }
 
-func (s *LibraryContext) GetParser() antlr.Parser { return s.parser }
+func (s *Library_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *LibraryContext) STRING() antlr.TerminalNode {
+func (s *Library_Context) STRING() antlr.TerminalNode {
 	return s.GetToken(ATLParserSTRING, 0)
 }
 
-func (s *LibraryContext) IDENTIFIER() antlr.TerminalNode {
+func (s *Library_Context) IDENTIFIER() antlr.TerminalNode {
 	return s.GetToken(ATLParserIDENTIFIER, 0)
 }
 
-func (s *LibraryContext) AllLibraryRef() []ILibraryRefContext {
+func (s *Library_Context) AllLibraryRef() []ILibraryRefContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ILibraryRefContext)(nil)).Elem())
 	var tst = make([]ILibraryRefContext, len(ts))
 
@@ -1521,7 +1537,7 @@ func (s *LibraryContext) AllLibraryRef() []ILibraryRefContext {
 	return tst
 }
 
-func (s *LibraryContext) LibraryRef(i int) ILibraryRefContext {
+func (s *Library_Context) LibraryRef(i int) ILibraryRefContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILibraryRefContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -1531,7 +1547,7 @@ func (s *LibraryContext) LibraryRef(i int) ILibraryRefContext {
 	return t.(ILibraryRefContext)
 }
 
-func (s *LibraryContext) AllHelper() []IHelperContext {
+func (s *Library_Context) AllHelper() []IHelperContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IHelperContext)(nil)).Elem())
 	var tst = make([]IHelperContext, len(ts))
 
@@ -1544,7 +1560,7 @@ func (s *LibraryContext) AllHelper() []IHelperContext {
 	return tst
 }
 
-func (s *LibraryContext) Helper(i int) IHelperContext {
+func (s *Library_Context) Helper(i int) IHelperContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IHelperContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -1554,29 +1570,32 @@ func (s *LibraryContext) Helper(i int) IHelperContext {
 	return t.(IHelperContext)
 }
 
-func (s *LibraryContext) GetRuleContext() antlr.RuleContext {
+func (s *Library_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *LibraryContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Library_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *LibraryContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Library_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
-		listenerT.EnterLibrary(s)
+		listenerT.EnterLibrary_(s)
 	}
 }
 
-func (s *LibraryContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Library_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(ATLListener); ok {
-		listenerT.ExitLibrary(s)
+		listenerT.ExitLibrary_(s)
 	}
 }
 
-func (p *ATLParser) Library() (localctx ILibraryContext) {
-	localctx = NewLibraryContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, ATLParserRULE_library)
+func (p *ATLParser) Library_() (localctx ILibrary_Context) {
+	this := p
+	_ = this
+
+	localctx = NewLibrary_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 10, ATLParserRULE_library_)
 	var _la int
 
 	defer func() {
@@ -1770,6 +1789,9 @@ func (s *QueryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Query() (localctx IQueryContext) {
+	this := p
+	_ = this
+
 	localctx = NewQueryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, ATLParserRULE_query)
 	var _la int
@@ -1913,6 +1935,9 @@ func (s *LibraryRefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) LibraryRef() (localctx ILibraryRefContext) {
+	this := p
+	_ = this
+
 	localctx = NewLibraryRefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, ATLParserRULE_libraryRef)
 
@@ -2028,6 +2053,9 @@ func (s *ModuleElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) ModuleElement() (localctx IModuleElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewModuleElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, ATLParserRULE_moduleElement)
 
@@ -2141,6 +2169,9 @@ func (s *HelperContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Helper() (localctx IHelperContext) {
+	this := p
+	_ = this
+
 	localctx = NewHelperContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, ATLParserRULE_helper)
 
@@ -2256,6 +2287,9 @@ func (s *OclFeatureDefinitionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *ATLParser) OclFeatureDefinition() (localctx IOclFeatureDefinitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewOclFeatureDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, ATLParserRULE_oclFeatureDefinition)
 	var _la int
@@ -2373,6 +2407,9 @@ func (s *OclContextDefinitionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *ATLParser) OclContextDefinition() (localctx IOclContextDefinitionContext) {
+	this := p
+	_ = this
+
 	localctx = NewOclContextDefinitionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, ATLParserRULE_oclContextDefinition)
 
@@ -2484,6 +2521,9 @@ func (s *OclFeatureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OclFeature() (localctx IOclFeatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewOclFeatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, ATLParserRULE_oclFeature)
 
@@ -2631,6 +2671,9 @@ func (s *OperationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Operation() (localctx IOperationContext) {
+	this := p
+	_ = this
+
 	localctx = NewOperationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, ATLParserRULE_operation)
 	var _la int
@@ -2786,6 +2829,9 @@ func (s *ParameterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Parameter() (localctx IParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, ATLParserRULE_parameter)
 
@@ -2905,6 +2951,9 @@ func (s *AttributeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Attribute() (localctx IAttributeContext) {
+	this := p
+	_ = this
+
 	localctx = NewAttributeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, ATLParserRULE_attribute)
 
@@ -3028,6 +3077,9 @@ func (s *AruleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Arule() (localctx IAruleContext) {
+	this := p
+	_ = this
+
 	localctx = NewAruleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, ATLParserRULE_arule)
 
@@ -3148,6 +3200,9 @@ func (s *MatchedRuleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) MatchedRule() (localctx IMatchedRuleContext) {
+	this := p
+	_ = this
+
 	localctx = NewMatchedRuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, ATLParserRULE_matchedRule)
 
@@ -3312,6 +3367,9 @@ func (s *LazyMatchedRuleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) LazyMatchedRule() (localctx ILazyMatchedRuleContext) {
+	this := p
+	_ = this
+
 	localctx = NewLazyMatchedRuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, ATLParserRULE_lazyMatchedRule)
 	var _la int
@@ -3547,6 +3605,9 @@ func (s *RuleVariableDeclarationContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *ATLParser) RuleVariableDeclaration() (localctx IRuleVariableDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewRuleVariableDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, ATLParserRULE_ruleVariableDeclaration)
 
@@ -3724,6 +3785,9 @@ func (s *CalledRuleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) CalledRule() (localctx ICalledRuleContext) {
+	this := p
+	_ = this
+
 	localctx = NewCalledRuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, ATLParserRULE_calledRule)
 	var _la int
@@ -3971,6 +4035,9 @@ func (s *InPatternContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) InPattern() (localctx IInPatternContext) {
+	this := p
+	_ = this
+
 	localctx = NewInPatternContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, ATLParserRULE_inPattern)
 	var _la int
@@ -4110,6 +4177,9 @@ func (s *InPatternElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) InPatternElement() (localctx IInPatternElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewInPatternElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, ATLParserRULE_inPatternElement)
 
@@ -4215,6 +4285,9 @@ func (s *SimpleInPatternElementContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *ATLParser) SimpleInPatternElement() (localctx ISimpleInPatternElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimpleInPatternElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, ATLParserRULE_simpleInPatternElement)
 	var _la int
@@ -4371,6 +4444,9 @@ func (s *OutPatternContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OutPattern() (localctx IOutPatternContext) {
+	this := p
+	_ = this
+
 	localctx = NewOutPatternContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, ATLParserRULE_outPattern)
 	var _la int
@@ -4501,6 +4577,9 @@ func (s *OutPatternElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OutPatternElement() (localctx IOutPatternElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewOutPatternElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, ATLParserRULE_outPatternElement)
 
@@ -4642,6 +4721,9 @@ func (s *SimpleOutPatternElementContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *ATLParser) SimpleOutPatternElement() (localctx ISimpleOutPatternElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimpleOutPatternElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, ATLParserRULE_simpleOutPatternElement)
 	var _la int
@@ -4873,6 +4955,9 @@ func (s *ForEachOutPatternElementContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *ATLParser) ForEachOutPatternElement() (localctx IForEachOutPatternElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewForEachOutPatternElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, ATLParserRULE_forEachOutPatternElement)
 	var _la int
@@ -5070,6 +5155,9 @@ func (s *BindingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Binding() (localctx IBindingContext) {
+	this := p
+	_ = this
+
 	localctx = NewBindingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, ATLParserRULE_binding)
 
@@ -5188,6 +5276,9 @@ func (s *ActionBlockContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) ActionBlock() (localctx IActionBlockContext) {
+	this := p
+	_ = this
+
 	localctx = NewActionBlockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, ATLParserRULE_actionBlock)
 	var _la int
@@ -5338,6 +5429,9 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, ATLParserRULE_statement)
 
@@ -5475,6 +5569,9 @@ func (s *BindingStatContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) BindingStat() (localctx IBindingStatContext) {
+	this := p
+	_ = this
+
 	localctx = NewBindingStatContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, ATLParserRULE_bindingStat)
 
@@ -5584,6 +5681,9 @@ func (s *ExpressionStatContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) ExpressionStat() (localctx IExpressionStatContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionStatContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, ATLParserRULE_expressionStat)
 
@@ -5708,6 +5808,9 @@ func (s *IfStatContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) IfStat() (localctx IIfStatContext) {
+	this := p
+	_ = this
+
 	localctx = NewIfStatContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, ATLParserRULE_ifStat)
 	var _la int
@@ -5935,6 +6038,9 @@ func (s *ForStatContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) ForStat() (localctx IForStatContext) {
+	this := p
+	_ = this
+
 	localctx = NewForStatContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, ATLParserRULE_forStat)
 	var _la int
@@ -6073,6 +6179,9 @@ func (s *OclModelContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OclModel() (localctx IOclModelContext) {
+	this := p
+	_ = this
+
 	localctx = NewOclModelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, ATLParserRULE_oclModel)
 
@@ -6180,6 +6289,9 @@ func (s *OclModelElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OclModelElement() (localctx IOclModelElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewOclModelElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, ATLParserRULE_oclModelElement)
 	var _la int
@@ -6303,6 +6415,9 @@ func (s *OclExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OclExpression() (localctx IOclExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewOclExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, ATLParserRULE_oclExpression)
 
@@ -6443,6 +6558,9 @@ func (s *IteratorExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) IteratorExp() (localctx IIteratorExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewIteratorExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, ATLParserRULE_iteratorExp)
 	var _la int
@@ -6612,6 +6730,9 @@ func (s *IterateExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) IterateExp() (localctx IIterateExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewIterateExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, ATLParserRULE_iterateExp)
 	var _la int
@@ -6773,6 +6894,9 @@ func (s *CollectionOperationCallExpContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *ATLParser) CollectionOperationCallExp() (localctx ICollectionOperationCallExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewCollectionOperationCallExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, ATLParserRULE_collectionOperationCallExp)
 	var _la int
@@ -6925,6 +7049,9 @@ func (s *OperationCallExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OperationCallExp() (localctx IOperationCallExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewOperationCallExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, ATLParserRULE_operationCallExp)
 	var _la int
@@ -7054,6 +7181,9 @@ func (s *NavigationOrAttributeCallExpContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *ATLParser) NavigationOrAttributeCallExp() (localctx INavigationOrAttributeCallExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewNavigationOrAttributeCallExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, ATLParserRULE_navigationOrAttributeCallExp)
 
@@ -7145,6 +7275,9 @@ func (s *IteratorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Iterator() (localctx IIteratorContext) {
+	this := p
+	_ = this
+
 	localctx = NewIteratorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, ATLParserRULE_iterator)
 
@@ -7231,6 +7364,9 @@ func (s *OclUndefinedExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OclUndefinedExp() (localctx IOclUndefinedExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewOclUndefinedExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, ATLParserRULE_oclUndefinedExp)
 
@@ -7348,6 +7484,9 @@ func (s *PrimitiveExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) PrimitiveExp() (localctx IPrimitiveExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewPrimitiveExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, ATLParserRULE_primitiveExp)
 
@@ -7478,6 +7617,9 @@ func (s *NumericExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) NumericExp() (localctx INumericExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumericExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, ATLParserRULE_numericExp)
 
@@ -7580,6 +7722,9 @@ func (s *BooleanExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) BooleanExp() (localctx IBooleanExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewBooleanExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, ATLParserRULE_booleanExp)
 	var _la int
@@ -7679,6 +7824,9 @@ func (s *IntegerExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) IntegerExp() (localctx IIntegerExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntegerExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, ATLParserRULE_integerExp)
 
@@ -7770,6 +7918,9 @@ func (s *RealExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) RealExp() (localctx IRealExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewRealExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, ATLParserRULE_realExp)
 
@@ -7861,6 +8012,9 @@ func (s *StringExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) StringExp() (localctx IStringExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, ATLParserRULE_stringExp)
 
@@ -7971,6 +8125,9 @@ func (s *IfExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) IfExp() (localctx IIfExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewIfExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, ATLParserRULE_ifExp)
 
@@ -8086,6 +8243,9 @@ func (s *VariableExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) VariableExp() (localctx IVariableExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, ATLParserRULE_variableExp)
 
@@ -8172,6 +8332,9 @@ func (s *SuperExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) SuperExp() (localctx ISuperExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewSuperExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, ATLParserRULE_superExp)
 
@@ -8279,6 +8442,9 @@ func (s *LetExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) LetExp() (localctx ILetExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewLetExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 108, ATLParserRULE_letExp)
 
@@ -8402,6 +8568,9 @@ func (s *VariableDeclarationContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *ATLParser) VariableDeclaration() (localctx IVariableDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, ATLParserRULE_variableDeclaration)
 
@@ -8509,6 +8678,9 @@ func (s *EnumLiteralExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) EnumLiteralExp() (localctx IEnumLiteralExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnumLiteralExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, ATLParserRULE_enumLiteralExp)
 
@@ -8640,6 +8812,9 @@ func (s *CollectionExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) CollectionExp() (localctx ICollectionExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewCollectionExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, ATLParserRULE_collectionExp)
 
@@ -8780,6 +8955,9 @@ func (s *BagExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) BagExp() (localctx IBagExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewBagExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, ATLParserRULE_bagExp)
 	var _la int
@@ -8928,6 +9106,9 @@ func (s *SetExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) SetExp() (localctx ISetExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 118, ATLParserRULE_setExp)
 	var _la int
@@ -9076,6 +9257,9 @@ func (s *OrderedSetExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OrderedSetExp() (localctx IOrderedSetExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewOrderedSetExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, ATLParserRULE_orderedSetExp)
 	var _la int
@@ -9224,6 +9408,9 @@ func (s *SequenceExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) SequenceExp() (localctx ISequenceExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewSequenceExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, ATLParserRULE_sequenceExp)
 	var _la int
@@ -9372,6 +9559,9 @@ func (s *MapExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) MapExp() (localctx IMapExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewMapExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 124, ATLParserRULE_mapExp)
 	var _la int
@@ -9520,6 +9710,9 @@ func (s *MapElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) MapElement() (localctx IMapElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewMapElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, ATLParserRULE_mapElement)
 
@@ -9646,6 +9839,9 @@ func (s *TupleExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) TupleExp() (localctx ITupleExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewTupleExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, ATLParserRULE_tupleExp)
 	var _la int
@@ -9795,6 +9991,9 @@ func (s *TuplePartContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) TuplePart() (localctx ITuplePartContext) {
+	this := p
+	_ = this
+
 	localctx = NewTuplePartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 130, ATLParserRULE_tuplePart)
 	var _la int
@@ -9976,6 +10175,9 @@ func (s *OclTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OclType() (localctx IOclTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewOclTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, ATLParserRULE_oclType)
 
@@ -10124,6 +10326,9 @@ func (s *OclAnyTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OclAnyType() (localctx IOclAnyTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewOclAnyTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 134, ATLParserRULE_oclAnyType)
 
@@ -10234,6 +10439,9 @@ func (s *TupleTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) TupleType() (localctx ITupleTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewTupleTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 136, ATLParserRULE_tupleType)
 	var _la int
@@ -10373,6 +10581,9 @@ func (s *TupleTypeAttributeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) TupleTypeAttribute() (localctx ITupleTypeAttributeContext) {
+	this := p
+	_ = this
+
 	localctx = NewTupleTypeAttributeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 138, ATLParserRULE_tupleTypeAttribute)
 
@@ -10491,6 +10702,9 @@ func (s *MapTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) MapType() (localctx IMapTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewMapTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 140, ATLParserRULE_mapType)
 
@@ -10628,6 +10842,9 @@ func (s *PrimitiveContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Primitive() (localctx IPrimitiveContext) {
+	this := p
+	_ = this
+
 	localctx = NewPrimitiveContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 142, ATLParserRULE_primitive)
 
@@ -10758,6 +10975,9 @@ func (s *NumericTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) NumericType() (localctx INumericTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumericTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 144, ATLParserRULE_numericType)
 
@@ -10860,6 +11080,9 @@ func (s *IntegerTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) IntegerType() (localctx IIntegerTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntegerTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 146, ATLParserRULE_integerType)
 
@@ -10946,6 +11169,9 @@ func (s *RealTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) RealType() (localctx IRealTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewRealTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 148, ATLParserRULE_realType)
 
@@ -11032,6 +11258,9 @@ func (s *BooleanTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) BooleanType() (localctx IBooleanTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewBooleanTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 150, ATLParserRULE_booleanType)
 
@@ -11118,6 +11347,9 @@ func (s *StringTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) StringType() (localctx IStringTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 152, ATLParserRULE_stringType)
 
@@ -11255,6 +11487,9 @@ func (s *CollectionTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) CollectionType() (localctx ICollectionTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewCollectionTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 154, ATLParserRULE_collectionType)
 
@@ -11389,6 +11624,9 @@ func (s *BagTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) BagType() (localctx IBagTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewBagTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 156, ATLParserRULE_bagType)
 
@@ -11498,6 +11736,9 @@ func (s *SetTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) SetType() (localctx ISetTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 158, ATLParserRULE_setType)
 
@@ -11607,6 +11848,9 @@ func (s *OrderedSetTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) OrderedSetType() (localctx IOrderedSetTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewOrderedSetTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 160, ATLParserRULE_orderedSetType)
 
@@ -11716,6 +11960,9 @@ func (s *SequenceTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) SequenceType() (localctx ISequenceTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewSequenceTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 162, ATLParserRULE_sequenceType)
 
@@ -11940,6 +12187,9 @@ func (s *Priority_0Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Priority_0() (localctx IPriority_0Context) {
+	this := p
+	_ = this
+
 	localctx = NewPriority_0Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 164, ATLParserRULE_priority_0)
 	var _la int
@@ -12105,6 +12355,9 @@ func (s *Priority_1Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Priority_1() (localctx IPriority_1Context) {
+	this := p
+	_ = this
+
 	localctx = NewPriority_1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 166, ATLParserRULE_priority_1)
 
@@ -12246,6 +12499,9 @@ func (s *Priority_2Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Priority_2() (localctx IPriority_2Context) {
+	this := p
+	_ = this
+
 	localctx = NewPriority_2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 168, ATLParserRULE_priority_2)
 	var _la int
@@ -12414,6 +12670,9 @@ func (s *Priority_3Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Priority_3() (localctx IPriority_3Context) {
+	this := p
+	_ = this
+
 	localctx = NewPriority_3Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 170, ATLParserRULE_priority_3)
 	var _la int
@@ -12562,6 +12821,9 @@ func (s *Priority_4Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Priority_4() (localctx IPriority_4Context) {
+	this := p
+	_ = this
+
 	localctx = NewPriority_4Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 172, ATLParserRULE_priority_4)
 	var _la int
@@ -12750,6 +13012,9 @@ func (s *Priority_5Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ATLParser) Priority_5() (localctx IPriority_5Context) {
+	this := p
+	_ = this
+
 	localctx = NewPriority_5Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 174, ATLParserRULE_priority_5)
 	var _la int
@@ -12956,6 +13221,9 @@ func (s *MatchedRule_abstractContentsContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *ATLParser) MatchedRule_abstractContents() (localctx IMatchedRule_abstractContentsContext) {
+	this := p
+	_ = this
+
 	localctx = NewMatchedRule_abstractContentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 176, ATLParserRULE_matchedRule_abstractContents)
 	var _la int
@@ -13162,6 +13430,9 @@ func (s *OclType_abstractContentsContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *ATLParser) OclType_abstractContents() (localctx IOclType_abstractContentsContext) {
+	this := p
+	_ = this
+
 	localctx = NewOclType_abstractContentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 178, ATLParserRULE_oclType_abstractContents)
 
@@ -13248,6 +13519,9 @@ func (s *OclAnyType_abstractContentsContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *ATLParser) OclAnyType_abstractContents() (localctx IOclAnyType_abstractContentsContext) {
+	this := p
+	_ = this
+
 	localctx = NewOclAnyType_abstractContentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 180, ATLParserRULE_oclAnyType_abstractContents)
 
@@ -13345,6 +13619,9 @@ func (s *CollectionType_abstractContentsContext) ExitRule(listener antlr.ParseTr
 }
 
 func (p *ATLParser) CollectionType_abstractContents() (localctx ICollectionType_abstractContentsContext) {
+	this := p
+	_ = this
+
 	localctx = NewCollectionType_abstractContentsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 182, ATLParserRULE_collectionType_abstractContents)
 
@@ -13554,6 +13831,9 @@ func (s *Primary_oclExpressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *ATLParser) Primary_oclExpression() (localctx IPrimary_oclExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewPrimary_oclExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 184, ATLParserRULE_primary_oclExpression)
 

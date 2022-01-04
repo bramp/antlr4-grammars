@@ -1,4 +1,4 @@
-// Code generated from ECMAScript.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ECMAScript.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package ecmascript // ECMAScript
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -267,7 +267,8 @@ func (s *BaseECMAScriptListener) EnterObjectLiteral(ctx *ObjectLiteralContext) {
 func (s *BaseECMAScriptListener) ExitObjectLiteral(ctx *ObjectLiteralContext) {}
 
 // EnterPropertyNameAndValueList is called when production propertyNameAndValueList is entered.
-func (s *BaseECMAScriptListener) EnterPropertyNameAndValueList(ctx *PropertyNameAndValueListContext) {}
+func (s *BaseECMAScriptListener) EnterPropertyNameAndValueList(ctx *PropertyNameAndValueListContext) {
+}
 
 // ExitPropertyNameAndValueList is called when production propertyNameAndValueList is exited.
 func (s *BaseECMAScriptListener) ExitPropertyNameAndValueList(ctx *PropertyNameAndValueListContext) {}
@@ -299,7 +300,8 @@ func (s *BaseECMAScriptListener) EnterPropertyName(ctx *PropertyNameContext) {}
 func (s *BaseECMAScriptListener) ExitPropertyName(ctx *PropertyNameContext) {}
 
 // EnterPropertySetParameterList is called when production propertySetParameterList is entered.
-func (s *BaseECMAScriptListener) EnterPropertySetParameterList(ctx *PropertySetParameterListContext) {}
+func (s *BaseECMAScriptListener) EnterPropertySetParameterList(ctx *PropertySetParameterListContext) {
+}
 
 // ExitPropertySetParameterList is called when production propertySetParameterList is exited.
 func (s *BaseECMAScriptListener) ExitPropertySetParameterList(ctx *PropertySetParameterListContext) {}
@@ -443,7 +445,8 @@ func (s *BaseECMAScriptListener) EnterBitXOrExpression(ctx *BitXOrExpressionCont
 func (s *BaseECMAScriptListener) ExitBitXOrExpression(ctx *BitXOrExpressionContext) {}
 
 // EnterMultiplicativeExpression is called when production MultiplicativeExpression is entered.
-func (s *BaseECMAScriptListener) EnterMultiplicativeExpression(ctx *MultiplicativeExpressionContext) {}
+func (s *BaseECMAScriptListener) EnterMultiplicativeExpression(ctx *MultiplicativeExpressionContext) {
+}
 
 // ExitMultiplicativeExpression is called when production MultiplicativeExpression is exited.
 func (s *BaseECMAScriptListener) ExitMultiplicativeExpression(ctx *MultiplicativeExpressionContext) {}

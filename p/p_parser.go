@@ -1,4 +1,4 @@
-// Code generated from p.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from p.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package p // p
 import (
@@ -28,9 +28,6 @@ var parserATN = []uint16{
 	2, 24, 25, 3, 2, 2, 2, 25, 26, 7, 4, 2, 2, 26, 7, 3, 2, 2, 2, 27, 28, 9,
 	2, 2, 2, 28, 9, 3, 2, 2, 2, 5, 13, 17, 23,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'('", "')'", "'R'", "'\u03BB'",
 }
@@ -41,21 +38,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"prog", "symbol", "iterate", "atom",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type pParser struct {
 	*antlr.BaseParser
 }
 
+// NewpParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *pParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewpParser(input antlr.TokenStream) *pParser {
 	this := new(pParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -167,6 +168,9 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *pParser) Prog() (localctx IProgContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, pParserRULE_prog)
 	var _la int
@@ -285,6 +289,9 @@ func (s *SymbolContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *pParser) Symbol() (localctx ISymbolContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, pParserRULE_symbol)
 
@@ -411,6 +418,9 @@ func (s *IterateContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *pParser) Iterate() (localctx IIterateContext) {
+	this := p
+	_ = this
+
 	localctx = NewIterateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, pParserRULE_iterate)
 	var _la int
@@ -525,6 +535,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *pParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, pParserRULE_atom)
 	var _la int

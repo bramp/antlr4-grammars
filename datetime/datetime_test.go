@@ -33,8 +33,8 @@ import (
 const MAX_TOKENS = 1000000
 
 var examples = []string{
-	"grammars-v4/rfc822-datetime/examples/example1.txt",
-	"grammars-v4/rfc822-datetime/examples/example2.txt",
+	"grammars-v4/rfc822/rfc822-datetime/examples/example1.txt",
+	"grammars-v4/rfc822/rfc822-datetime/examples/example2.txt",
 }
 
 type exampleListener struct {

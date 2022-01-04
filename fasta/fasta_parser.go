@@ -1,4 +1,4 @@
-// Code generated from fasta.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from fasta.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package fasta // fasta
 import (
@@ -29,9 +29,6 @@ var parserATN = []uint16{
 	27, 28, 7, 4, 2, 2, 28, 9, 3, 2, 2, 2, 29, 30, 7, 3, 2, 2, 30, 11, 3, 2,
 	2, 2, 5, 15, 20, 25,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames []string
 
 var symbolicNames = []string{
@@ -41,21 +38,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"sequence", "section", "sequencelines", "descriptionline", "commentline",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type fastaParser struct {
 	*antlr.BaseParser
 }
 
+// NewfastaParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *fastaParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewfastaParser(input antlr.TokenStream) *fastaParser {
 	this := new(fastaParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -168,6 +169,9 @@ func (s *SequenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fastaParser) Sequence() (localctx ISequenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewSequenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, fastaParserRULE_sequence)
 	var _la int
@@ -296,6 +300,9 @@ func (s *SectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fastaParser) Section() (localctx ISectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, fastaParserRULE_section)
 
@@ -414,6 +421,9 @@ func (s *SequencelinesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fastaParser) Sequencelines() (localctx ISequencelinesContext) {
+	this := p
+	_ = this
+
 	localctx = NewSequencelinesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, fastaParserRULE_sequencelines)
 
@@ -522,6 +532,9 @@ func (s *DescriptionlineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fastaParser) Descriptionline() (localctx IDescriptionlineContext) {
+	this := p
+	_ = this
+
 	localctx = NewDescriptionlineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, fastaParserRULE_descriptionline)
 
@@ -613,6 +626,9 @@ func (s *CommentlineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fastaParser) Commentline() (localctx ICommentlineContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentlineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, fastaParserRULE_commentline)
 

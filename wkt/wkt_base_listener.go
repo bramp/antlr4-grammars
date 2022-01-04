@@ -1,4 +1,4 @@
-// Code generated from wkt.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from wkt.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package wkt // wkt
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -19,6 +19,12 @@ func (s *BasewktListener) EnterEveryRule(ctx antlr.ParserRuleContext) {}
 
 // ExitEveryRule is called when any rule is exited.
 func (s *BasewktListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
+
+// EnterGeometryCollection is called when production geometryCollection is entered.
+func (s *BasewktListener) EnterGeometryCollection(ctx *GeometryCollectionContext) {}
+
+// ExitGeometryCollection is called when production geometryCollection is exited.
+func (s *BasewktListener) ExitGeometryCollection(ctx *GeometryCollectionContext) {}
 
 // EnterGeometry is called when production geometry is entered.
 func (s *BasewktListener) EnterGeometry(ctx *GeometryContext) {}
@@ -44,6 +50,30 @@ func (s *BasewktListener) EnterPolygonGeometry(ctx *PolygonGeometryContext) {}
 // ExitPolygonGeometry is called when production polygonGeometry is exited.
 func (s *BasewktListener) ExitPolygonGeometry(ctx *PolygonGeometryContext) {}
 
+// EnterMultiCurveGeometry is called when production multiCurveGeometry is entered.
+func (s *BasewktListener) EnterMultiCurveGeometry(ctx *MultiCurveGeometryContext) {}
+
+// ExitMultiCurveGeometry is called when production multiCurveGeometry is exited.
+func (s *BasewktListener) ExitMultiCurveGeometry(ctx *MultiCurveGeometryContext) {}
+
+// EnterMultiSurfaceGeometry is called when production multiSurfaceGeometry is entered.
+func (s *BasewktListener) EnterMultiSurfaceGeometry(ctx *MultiSurfaceGeometryContext) {}
+
+// ExitMultiSurfaceGeometry is called when production multiSurfaceGeometry is exited.
+func (s *BasewktListener) ExitMultiSurfaceGeometry(ctx *MultiSurfaceGeometryContext) {}
+
+// EnterCurvePolygonGeometry is called when production curvePolygonGeometry is entered.
+func (s *BasewktListener) EnterCurvePolygonGeometry(ctx *CurvePolygonGeometryContext) {}
+
+// ExitCurvePolygonGeometry is called when production curvePolygonGeometry is exited.
+func (s *BasewktListener) ExitCurvePolygonGeometry(ctx *CurvePolygonGeometryContext) {}
+
+// EnterCompoundCurveGeometry is called when production compoundCurveGeometry is entered.
+func (s *BasewktListener) EnterCompoundCurveGeometry(ctx *CompoundCurveGeometryContext) {}
+
+// ExitCompoundCurveGeometry is called when production compoundCurveGeometry is exited.
+func (s *BasewktListener) ExitCompoundCurveGeometry(ctx *CompoundCurveGeometryContext) {}
+
 // EnterMultiPointGeometry is called when production multiPointGeometry is entered.
 func (s *BasewktListener) EnterMultiPointGeometry(ctx *MultiPointGeometryContext) {}
 
@@ -61,6 +91,20 @@ func (s *BasewktListener) EnterMultiPolygonGeometry(ctx *MultiPolygonGeometryCon
 
 // ExitMultiPolygonGeometry is called when production multiPolygonGeometry is exited.
 func (s *BasewktListener) ExitMultiPolygonGeometry(ctx *MultiPolygonGeometryContext) {}
+
+// EnterMultiPolyhedralSurfaceGeometry is called when production multiPolyhedralSurfaceGeometry is entered.
+func (s *BasewktListener) EnterMultiPolyhedralSurfaceGeometry(ctx *MultiPolyhedralSurfaceGeometryContext) {
+}
+
+// ExitMultiPolyhedralSurfaceGeometry is called when production multiPolyhedralSurfaceGeometry is exited.
+func (s *BasewktListener) ExitMultiPolyhedralSurfaceGeometry(ctx *MultiPolyhedralSurfaceGeometryContext) {
+}
+
+// EnterMultiTinGeometry is called when production multiTinGeometry is entered.
+func (s *BasewktListener) EnterMultiTinGeometry(ctx *MultiTinGeometryContext) {}
+
+// ExitMultiTinGeometry is called when production multiTinGeometry is exited.
+func (s *BasewktListener) ExitMultiTinGeometry(ctx *MultiTinGeometryContext) {}
 
 // EnterCircularStringGeometry is called when production circularStringGeometry is entered.
 func (s *BasewktListener) EnterCircularStringGeometry(ctx *CircularStringGeometryContext) {}

@@ -1,4 +1,4 @@
-// Code generated from mdx.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from mdx.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package mdx // mdx
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -55,8 +55,8 @@ type mdxListener interface {
 	// EnterProperty_list is called when entering the property_list production.
 	EnterProperty_list(c *Property_listContext)
 
-	// EnterProperty is called when entering the property production.
-	EnterProperty(c *PropertyContext)
+	// EnterProperty_ is called when entering the property_ production.
+	EnterProperty_(c *Property_Context)
 
 	// EnterCube_specification is called when entering the cube_specification production.
 	EnterCube_specification(c *Cube_specificationContext)
@@ -112,8 +112,8 @@ type mdxListener interface {
 	// EnterFactor is called when entering the factor production.
 	EnterFactor(c *FactorContext)
 
-	// EnterFunction is called when entering the function production.
-	EnterFunction(c *FunctionContext)
+	// EnterFunction_ is called when entering the function_ production.
+	EnterFunction_(c *Function_Context)
 
 	// EnterValue_expression_primary is called when entering the value_expression_primary production.
 	EnterValue_expression_primary(c *Value_expression_primaryContext)
@@ -199,8 +199,8 @@ type mdxListener interface {
 	// ExitProperty_list is called when exiting the property_list production.
 	ExitProperty_list(c *Property_listContext)
 
-	// ExitProperty is called when exiting the property production.
-	ExitProperty(c *PropertyContext)
+	// ExitProperty_ is called when exiting the property_ production.
+	ExitProperty_(c *Property_Context)
 
 	// ExitCube_specification is called when exiting the cube_specification production.
 	ExitCube_specification(c *Cube_specificationContext)
@@ -256,8 +256,8 @@ type mdxListener interface {
 	// ExitFactor is called when exiting the factor production.
 	ExitFactor(c *FactorContext)
 
-	// ExitFunction is called when exiting the function production.
-	ExitFunction(c *FunctionContext)
+	// ExitFunction_ is called when exiting the function_ production.
+	ExitFunction_(c *Function_Context)
 
 	// ExitValue_expression_primary is called when exiting the value_expression_primary production.
 	ExitValue_expression_primary(c *Value_expression_primaryContext)

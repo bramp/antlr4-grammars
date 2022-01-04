@@ -1,4 +1,4 @@
-// Code generated from istc.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from istc.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package istc // istc
 import "github.com/antlr/antlr4/runtime/Go/antlr"

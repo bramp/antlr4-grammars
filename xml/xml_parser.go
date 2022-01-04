@@ -1,4 +1,4 @@
-// Code generated from XMLParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from XMLParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package xml // XMLParser
 import (
@@ -57,9 +57,6 @@ var parserATN = []uint16{
 	3, 2, 2, 94, 15, 3, 2, 2, 2, 95, 96, 9, 4, 2, 2, 96, 17, 3, 2, 2, 2, 13,
 	19, 24, 31, 38, 44, 51, 54, 58, 66, 81, 85,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "", "", "", "", "", "'<'", "", "", "'>'", "", "'/>'", "'/'", "'='",
 }
@@ -73,21 +70,25 @@ var ruleNames = []string{
 	"document", "prolog", "content", "element", "reference", "attribute", "chardata",
 	"misc",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type XMLParser struct {
 	*antlr.BaseParser
 }
 
+// NewXMLParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *XMLParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewXMLParser(input antlr.TokenStream) *XMLParser {
 	this := new(XMLParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -236,6 +237,9 @@ func (s *DocumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *XMLParser) Document() (localctx IDocumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewDocumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, XMLParserRULE_document)
 	var _la int
@@ -394,6 +398,9 @@ func (s *PrologContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *XMLParser) Prolog() (localctx IPrologContext) {
+	this := p
+	_ = this
+
 	localctx = NewPrologContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, XMLParserRULE_prolog)
 	var _la int
@@ -593,6 +600,9 @@ func (s *ContentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *XMLParser) Content() (localctx IContentContext) {
+	this := p
+	_ = this
+
 	localctx = NewContentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, XMLParserRULE_content)
 	var _la int
@@ -815,6 +825,9 @@ func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *XMLParser) Element() (localctx IElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, XMLParserRULE_element)
 	var _la int
@@ -988,6 +1001,9 @@ func (s *ReferenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *XMLParser) Reference() (localctx IReferenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewReferenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, XMLParserRULE_reference)
 	var _la int
@@ -1095,6 +1111,9 @@ func (s *AttributeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *XMLParser) Attribute() (localctx IAttributeContext) {
+	this := p
+	_ = this
+
 	localctx = NewAttributeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, XMLParserRULE_attribute)
 
@@ -1198,6 +1217,9 @@ func (s *ChardataContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *XMLParser) Chardata() (localctx IChardataContext) {
+	this := p
+	_ = this
+
 	localctx = NewChardataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, XMLParserRULE_chardata)
 	var _la int
@@ -1305,6 +1327,9 @@ func (s *MiscContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *XMLParser) Misc() (localctx IMiscContext) {
+	this := p
+	_ = this
+
 	localctx = NewMiscContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, XMLParserRULE_misc)
 	var _la int

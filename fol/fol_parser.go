@@ -1,4 +1,4 @@
-// Code generated from fol.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from fol.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package fol // fol
 import (
@@ -71,9 +71,6 @@ var parserATN = []uint16{
 	2, 2, 129, 17, 3, 2, 2, 2, 130, 128, 3, 2, 2, 2, 131, 132, 7, 7, 2, 2,
 	132, 19, 3, 2, 2, 2, 13, 25, 31, 64, 73, 81, 94, 99, 107, 114, 121, 128,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'?'", "'_'", "'#'", "'.'", "','", "'('", "')'", "'='", "'!'", "'Forall'",
 	"'Exists'", "", "'\\/'", "'^'", "'->'", "'<->'",
@@ -87,21 +84,25 @@ var ruleNames = []string{
 	"condition", "formula", "term", "bin_connective", "variable", "pred_constant",
 	"ind_constant", "func_constant", "separator",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type folParser struct {
 	*antlr.BaseParser
 }
 
+// NewfolParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *folParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewfolParser(input antlr.TokenStream) *folParser {
 	this := new(folParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -243,6 +244,9 @@ func (s *ConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *folParser) Condition() (localctx IConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, folParserRULE_condition)
 	var _la int
@@ -498,6 +502,9 @@ func (p *folParser) Formula() (localctx IFormulaContext) {
 }
 
 func (p *folParser) formula(_p int) (localctx IFormulaContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewFormulaContext(p, p.GetParserRuleContext(), _parentState)
@@ -831,6 +838,9 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *folParser) Term() (localctx ITermContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, folParserRULE_term)
 	var _la int
@@ -988,6 +998,9 @@ func (s *Bin_connectiveContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *folParser) Bin_connective() (localctx IBin_connectiveContext) {
+	this := p
+	_ = this
+
 	localctx = NewBin_connectiveContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, folParserRULE_bin_connective)
 	var _la int
@@ -1091,6 +1104,9 @@ func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *folParser) Variable() (localctx IVariableContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, folParserRULE_variable)
 
@@ -1204,6 +1220,9 @@ func (s *Pred_constantContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *folParser) Pred_constant() (localctx IPred_constantContext) {
+	this := p
+	_ = this
+
 	localctx = NewPred_constantContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, folParserRULE_pred_constant)
 	var _la int
@@ -1314,6 +1333,9 @@ func (s *Ind_constantContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *folParser) Ind_constant() (localctx IInd_constantContext) {
+	this := p
+	_ = this
+
 	localctx = NewInd_constantContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, folParserRULE_ind_constant)
 
@@ -1427,6 +1449,9 @@ func (s *Func_constantContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *folParser) Func_constant() (localctx IFunc_constantContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunc_constantContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, folParserRULE_func_constant)
 	var _la int
@@ -1528,6 +1553,9 @@ func (s *SeparatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *folParser) Separator() (localctx ISeparatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewSeparatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, folParserRULE_separator)
 
@@ -1571,6 +1599,9 @@ func (p *folParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int
 }
 
 func (p *folParser) Formula_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 7)

@@ -1,4 +1,4 @@
-// Code generated from wkt.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from wkt.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package wkt // wkt
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -6,6 +6,9 @@ import "github.com/antlr/antlr4/runtime/Go/antlr"
 // wktListener is a complete listener for a parse tree produced by wktParser.
 type wktListener interface {
 	antlr.ParseTreeListener
+
+	// EnterGeometryCollection is called when entering the geometryCollection production.
+	EnterGeometryCollection(c *GeometryCollectionContext)
 
 	// EnterGeometry is called when entering the geometry production.
 	EnterGeometry(c *GeometryContext)
@@ -19,6 +22,18 @@ type wktListener interface {
 	// EnterPolygonGeometry is called when entering the polygonGeometry production.
 	EnterPolygonGeometry(c *PolygonGeometryContext)
 
+	// EnterMultiCurveGeometry is called when entering the multiCurveGeometry production.
+	EnterMultiCurveGeometry(c *MultiCurveGeometryContext)
+
+	// EnterMultiSurfaceGeometry is called when entering the multiSurfaceGeometry production.
+	EnterMultiSurfaceGeometry(c *MultiSurfaceGeometryContext)
+
+	// EnterCurvePolygonGeometry is called when entering the curvePolygonGeometry production.
+	EnterCurvePolygonGeometry(c *CurvePolygonGeometryContext)
+
+	// EnterCompoundCurveGeometry is called when entering the compoundCurveGeometry production.
+	EnterCompoundCurveGeometry(c *CompoundCurveGeometryContext)
+
 	// EnterMultiPointGeometry is called when entering the multiPointGeometry production.
 	EnterMultiPointGeometry(c *MultiPointGeometryContext)
 
@@ -27,6 +42,12 @@ type wktListener interface {
 
 	// EnterMultiPolygonGeometry is called when entering the multiPolygonGeometry production.
 	EnterMultiPolygonGeometry(c *MultiPolygonGeometryContext)
+
+	// EnterMultiPolyhedralSurfaceGeometry is called when entering the multiPolyhedralSurfaceGeometry production.
+	EnterMultiPolyhedralSurfaceGeometry(c *MultiPolyhedralSurfaceGeometryContext)
+
+	// EnterMultiTinGeometry is called when entering the multiTinGeometry production.
+	EnterMultiTinGeometry(c *MultiTinGeometryContext)
 
 	// EnterCircularStringGeometry is called when entering the circularStringGeometry production.
 	EnterCircularStringGeometry(c *CircularStringGeometryContext)
@@ -46,6 +67,9 @@ type wktListener interface {
 	// EnterName is called when entering the name production.
 	EnterName(c *NameContext)
 
+	// ExitGeometryCollection is called when exiting the geometryCollection production.
+	ExitGeometryCollection(c *GeometryCollectionContext)
+
 	// ExitGeometry is called when exiting the geometry production.
 	ExitGeometry(c *GeometryContext)
 
@@ -58,6 +82,18 @@ type wktListener interface {
 	// ExitPolygonGeometry is called when exiting the polygonGeometry production.
 	ExitPolygonGeometry(c *PolygonGeometryContext)
 
+	// ExitMultiCurveGeometry is called when exiting the multiCurveGeometry production.
+	ExitMultiCurveGeometry(c *MultiCurveGeometryContext)
+
+	// ExitMultiSurfaceGeometry is called when exiting the multiSurfaceGeometry production.
+	ExitMultiSurfaceGeometry(c *MultiSurfaceGeometryContext)
+
+	// ExitCurvePolygonGeometry is called when exiting the curvePolygonGeometry production.
+	ExitCurvePolygonGeometry(c *CurvePolygonGeometryContext)
+
+	// ExitCompoundCurveGeometry is called when exiting the compoundCurveGeometry production.
+	ExitCompoundCurveGeometry(c *CompoundCurveGeometryContext)
+
 	// ExitMultiPointGeometry is called when exiting the multiPointGeometry production.
 	ExitMultiPointGeometry(c *MultiPointGeometryContext)
 
@@ -66,6 +102,12 @@ type wktListener interface {
 
 	// ExitMultiPolygonGeometry is called when exiting the multiPolygonGeometry production.
 	ExitMultiPolygonGeometry(c *MultiPolygonGeometryContext)
+
+	// ExitMultiPolyhedralSurfaceGeometry is called when exiting the multiPolyhedralSurfaceGeometry production.
+	ExitMultiPolyhedralSurfaceGeometry(c *MultiPolyhedralSurfaceGeometryContext)
+
+	// ExitMultiTinGeometry is called when exiting the multiTinGeometry production.
+	ExitMultiTinGeometry(c *MultiTinGeometryContext)
 
 	// ExitCircularStringGeometry is called when exiting the circularStringGeometry production.
 	ExitCircularStringGeometry(c *CircularStringGeometryContext)

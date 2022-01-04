@@ -1,4 +1,4 @@
-// Code generated from PROV_N.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from PROV_N.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package prov_n // PROV_N
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -19,8 +19,8 @@ type PROV_NListener interface {
 	// EnterNamespaceDeclaration is called when entering the namespaceDeclaration production.
 	EnterNamespaceDeclaration(c *NamespaceDeclarationContext)
 
-	// EnterNamespace is called when entering the namespace production.
-	EnterNamespace(c *NamespaceContext)
+	// EnterNamespace_ is called when entering the namespace_ production.
+	EnterNamespace_(c *Namespace_Context)
 
 	// EnterBundle is called when entering the bundle production.
 	EnterBundle(c *BundleContext)
@@ -172,8 +172,8 @@ type PROV_NListener interface {
 	// ExitNamespaceDeclaration is called when exiting the namespaceDeclaration production.
 	ExitNamespaceDeclaration(c *NamespaceDeclarationContext)
 
-	// ExitNamespace is called when exiting the namespace production.
-	ExitNamespace(c *NamespaceContext)
+	// ExitNamespace_ is called when exiting the namespace_ production.
+	ExitNamespace_(c *Namespace_Context)
 
 	// ExitBundle is called when exiting the bundle production.
 	ExitBundle(c *BundleContext)

@@ -1,4 +1,4 @@
-// Code generated from ASN.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ASN.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package asn // ASN
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -265,7 +265,8 @@ func (s *BaseASNListener) EnterExternalObjectClassReference(ctx *ExternalObjectC
 }
 
 // ExitExternalObjectClassReference is called when production externalObjectClassReference is exited.
-func (s *BaseASNListener) ExitExternalObjectClassReference(ctx *ExternalObjectClassReferenceContext) {}
+func (s *BaseASNListener) ExitExternalObjectClassReference(ctx *ExternalObjectClassReferenceContext) {
+}
 
 // EnterObjectClassDefn is called when production objectClassDefn is entered.
 func (s *BaseASNListener) EnterObjectClassDefn(ctx *ObjectClassDefnContext) {}
@@ -363,11 +364,11 @@ func (s *BaseASNListener) EnterValueSetOptionalitySpec(ctx *ValueSetOptionalityS
 // ExitValueSetOptionalitySpec is called when production valueSetOptionalitySpec is exited.
 func (s *BaseASNListener) ExitValueSetOptionalitySpec(ctx *ValueSetOptionalitySpecContext) {}
 
-// EnterObject is called when production object is entered.
-func (s *BaseASNListener) EnterObject(ctx *ObjectContext) {}
+// EnterObject_ is called when production object_ is entered.
+func (s *BaseASNListener) EnterObject_(ctx *Object_Context) {}
 
-// ExitObject is called when production object is exited.
-func (s *BaseASNListener) ExitObject(ctx *ObjectContext) {}
+// ExitObject_ is called when production object_ is exited.
+func (s *BaseASNListener) ExitObject_(ctx *Object_Context) {}
 
 // EnterParameterizedObject is called when production parameterizedObject is entered.
 func (s *BaseASNListener) EnterParameterizedObject(ctx *ParameterizedObjectContext) {}
@@ -730,7 +731,8 @@ func (s *BaseASNListener) EnterExtensionAdditionAlternative(ctx *ExtensionAdditi
 }
 
 // ExitExtensionAdditionAlternative is called when production extensionAdditionAlternative is exited.
-func (s *BaseASNListener) ExitExtensionAdditionAlternative(ctx *ExtensionAdditionAlternativeContext) {}
+func (s *BaseASNListener) ExitExtensionAdditionAlternative(ctx *ExtensionAdditionAlternativeContext) {
+}
 
 // EnterExtensionAdditionAlternativesGroup is called when production extensionAdditionAlternativesGroup is entered.
 func (s *BaseASNListener) EnterExtensionAdditionAlternativesGroup(ctx *ExtensionAdditionAlternativesGroupContext) {

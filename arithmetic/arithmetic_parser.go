@@ -1,4 +1,4 @@
-// Code generated from arithmetic.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from arithmetic.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package arithmetic // arithmetic
 import (
@@ -43,9 +43,6 @@ var parserATN = []uint16{
 	2, 2, 63, 13, 3, 2, 2, 2, 64, 65, 9, 4, 2, 2, 65, 15, 3, 2, 2, 2, 8, 19,
 	36, 40, 51, 53, 58,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "", "'('", "')'", "'+'", "'-'", "'*'", "'/'", "'>'", "'<'", "'='",
 	"'.'", "'^'",
@@ -56,23 +53,27 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"file", "equation", "expression", "atom", "scientific", "variable", "relop",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"file_", "equation", "expression", "atom", "scientific", "variable", "relop",
 }
 
 type arithmeticParser struct {
 	*antlr.BaseParser
 }
 
+// NewarithmeticParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *arithmeticParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewarithmeticParser(input antlr.TokenStream) *arithmeticParser {
 	this := new(arithmeticParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -105,7 +106,7 @@ const (
 
 // arithmeticParser rules.
 const (
-	arithmeticParserRULE_file       = 0
+	arithmeticParserRULE_file_      = 0
 	arithmeticParserRULE_equation   = 1
 	arithmeticParserRULE_expression = 2
 	arithmeticParserRULE_atom       = 3
@@ -114,49 +115,49 @@ const (
 	arithmeticParserRULE_relop      = 6
 )
 
-// IFileContext is an interface to support dynamic dispatch.
-type IFileContext interface {
+// IFile_Context is an interface to support dynamic dispatch.
+type IFile_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsFileContext differentiates from other interfaces.
-	IsFileContext()
+	// IsFile_Context differentiates from other interfaces.
+	IsFile_Context()
 }
 
-type FileContext struct {
+type File_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyFileContext() *FileContext {
-	var p = new(FileContext)
+func NewEmptyFile_Context() *File_Context {
+	var p = new(File_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = arithmeticParserRULE_file
+	p.RuleIndex = arithmeticParserRULE_file_
 	return p
 }
 
-func (*FileContext) IsFileContext() {}
+func (*File_Context) IsFile_Context() {}
 
-func NewFileContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FileContext {
-	var p = new(FileContext)
+func NewFile_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *File_Context {
+	var p = new(File_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = arithmeticParserRULE_file
+	p.RuleIndex = arithmeticParserRULE_file_
 
 	return p
 }
 
-func (s *FileContext) GetParser() antlr.Parser { return s.parser }
+func (s *File_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *FileContext) EOF() antlr.TerminalNode {
+func (s *File_Context) EOF() antlr.TerminalNode {
 	return s.GetToken(arithmeticParserEOF, 0)
 }
 
-func (s *FileContext) AllEquation() []IEquationContext {
+func (s *File_Context) AllEquation() []IEquationContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IEquationContext)(nil)).Elem())
 	var tst = make([]IEquationContext, len(ts))
 
@@ -169,7 +170,7 @@ func (s *FileContext) AllEquation() []IEquationContext {
 	return tst
 }
 
-func (s *FileContext) Equation(i int) IEquationContext {
+func (s *File_Context) Equation(i int) IEquationContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IEquationContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -179,29 +180,32 @@ func (s *FileContext) Equation(i int) IEquationContext {
 	return t.(IEquationContext)
 }
 
-func (s *FileContext) GetRuleContext() antlr.RuleContext {
+func (s *File_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *FileContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *File_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *FileContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *File_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(arithmeticListener); ok {
-		listenerT.EnterFile(s)
+		listenerT.EnterFile_(s)
 	}
 }
 
-func (s *FileContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *File_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(arithmeticListener); ok {
-		listenerT.ExitFile(s)
+		listenerT.ExitFile_(s)
 	}
 }
 
-func (p *arithmeticParser) File() (localctx IFileContext) {
-	localctx = NewFileContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 0, arithmeticParserRULE_file)
+func (p *arithmeticParser) File_() (localctx IFile_Context) {
+	this := p
+	_ = this
+
+	localctx = NewFile_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 0, arithmeticParserRULE_file_)
 	var _la int
 
 	defer func() {
@@ -335,6 +339,9 @@ func (s *EquationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *arithmeticParser) Equation() (localctx IEquationContext) {
+	this := p
+	_ = this
+
 	localctx = NewEquationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, arithmeticParserRULE_equation)
 
@@ -503,6 +510,9 @@ func (p *arithmeticParser) Expression() (localctx IExpressionContext) {
 }
 
 func (p *arithmeticParser) expression(_p int) (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -748,6 +758,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *arithmeticParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, arithmeticParserRULE_atom)
 
@@ -855,6 +868,9 @@ func (s *ScientificContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *arithmeticParser) Scientific() (localctx IScientificContext) {
+	this := p
+	_ = this
+
 	localctx = NewScientificContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, arithmeticParserRULE_scientific)
 
@@ -946,6 +962,9 @@ func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *arithmeticParser) Variable() (localctx IVariableContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, arithmeticParserRULE_variable)
 
@@ -1045,6 +1064,9 @@ func (s *RelopContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *arithmeticParser) Relop() (localctx IRelopContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelopContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, arithmeticParserRULE_relop)
 	var _la int
@@ -1096,6 +1118,9 @@ func (p *arithmeticParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIn
 }
 
 func (p *arithmeticParser) Expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 5)

@@ -61,7 +61,7 @@ func Example() {
 	p.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 
 	// Finally walk the tree
-	tree := p.File()
+	tree := p.File_()
 	antlr.ParseTreeWalkerDefault.Walk(&exampleListener{}, tree)
 }
 
@@ -120,7 +120,7 @@ func TestRedcodeParser(t *testing.T) {
 		p.AddErrorListener(internal.NewTestingErrorListener(t, file))
 
 		// Finally test
-		p.File()
+		p.File_()
 
 		// TODO(bramp): If there is a "file.tree", then compare the output
 		// TODO(bramp): If there is a "file.errors", then check the error

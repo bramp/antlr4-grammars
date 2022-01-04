@@ -1,4 +1,4 @@
-// Code generated from ASN.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ASN.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package asn // ASN
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -178,8 +178,8 @@ type ASNListener interface {
 	// EnterValueSetOptionalitySpec is called when entering the valueSetOptionalitySpec production.
 	EnterValueSetOptionalitySpec(c *ValueSetOptionalitySpecContext)
 
-	// EnterObject is called when entering the object production.
-	EnterObject(c *ObjectContext)
+	// EnterObject_ is called when entering the object_ production.
+	EnterObject_(c *Object_Context)
 
 	// EnterParameterizedObject is called when entering the parameterizedObject production.
 	EnterParameterizedObject(c *ParameterizedObjectContext)
@@ -619,8 +619,8 @@ type ASNListener interface {
 	// ExitValueSetOptionalitySpec is called when exiting the valueSetOptionalitySpec production.
 	ExitValueSetOptionalitySpec(c *ValueSetOptionalitySpecContext)
 
-	// ExitObject is called when exiting the object production.
-	ExitObject(c *ObjectContext)
+	// ExitObject_ is called when exiting the object_ production.
+	ExitObject_(c *Object_Context)
 
 	// ExitParameterizedObject is called when exiting the parameterizedObject production.
 	ExitParameterizedObject(c *ParameterizedObjectContext)

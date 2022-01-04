@@ -1,4 +1,4 @@
-// Code generated from CMake.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from CMake.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package cmake // CMake
 import (
@@ -33,9 +33,6 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 36, 37, 3, 2, 2, 2, 37, 39, 3, 2, 2, 2, 38, 36, 3, 2, 2, 2,
 	39, 40, 7, 4, 2, 2, 40, 9, 3, 2, 2, 2, 7, 13, 22, 24, 34, 36,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'('", "')'",
 }
@@ -45,23 +42,27 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"file", "command_invocation", "single_argument", "compound_argument",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"file_", "command_invocation", "single_argument", "compound_argument",
 }
 
 type CMakeParser struct {
 	*antlr.BaseParser
 }
 
+// NewCMakeParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *CMakeParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewCMakeParser(input antlr.TokenStream) *CMakeParser {
 	this := new(CMakeParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -91,55 +92,55 @@ const (
 
 // CMakeParser rules.
 const (
-	CMakeParserRULE_file               = 0
+	CMakeParserRULE_file_              = 0
 	CMakeParserRULE_command_invocation = 1
 	CMakeParserRULE_single_argument    = 2
 	CMakeParserRULE_compound_argument  = 3
 )
 
-// IFileContext is an interface to support dynamic dispatch.
-type IFileContext interface {
+// IFile_Context is an interface to support dynamic dispatch.
+type IFile_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsFileContext differentiates from other interfaces.
-	IsFileContext()
+	// IsFile_Context differentiates from other interfaces.
+	IsFile_Context()
 }
 
-type FileContext struct {
+type File_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyFileContext() *FileContext {
-	var p = new(FileContext)
+func NewEmptyFile_Context() *File_Context {
+	var p = new(File_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = CMakeParserRULE_file
+	p.RuleIndex = CMakeParserRULE_file_
 	return p
 }
 
-func (*FileContext) IsFileContext() {}
+func (*File_Context) IsFile_Context() {}
 
-func NewFileContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FileContext {
-	var p = new(FileContext)
+func NewFile_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *File_Context {
+	var p = new(File_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = CMakeParserRULE_file
+	p.RuleIndex = CMakeParserRULE_file_
 
 	return p
 }
 
-func (s *FileContext) GetParser() antlr.Parser { return s.parser }
+func (s *File_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *FileContext) EOF() antlr.TerminalNode {
+func (s *File_Context) EOF() antlr.TerminalNode {
 	return s.GetToken(CMakeParserEOF, 0)
 }
 
-func (s *FileContext) AllCommand_invocation() []ICommand_invocationContext {
+func (s *File_Context) AllCommand_invocation() []ICommand_invocationContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ICommand_invocationContext)(nil)).Elem())
 	var tst = make([]ICommand_invocationContext, len(ts))
 
@@ -152,7 +153,7 @@ func (s *FileContext) AllCommand_invocation() []ICommand_invocationContext {
 	return tst
 }
 
-func (s *FileContext) Command_invocation(i int) ICommand_invocationContext {
+func (s *File_Context) Command_invocation(i int) ICommand_invocationContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ICommand_invocationContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -162,29 +163,32 @@ func (s *FileContext) Command_invocation(i int) ICommand_invocationContext {
 	return t.(ICommand_invocationContext)
 }
 
-func (s *FileContext) GetRuleContext() antlr.RuleContext {
+func (s *File_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *FileContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *File_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *FileContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *File_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CMakeListener); ok {
-		listenerT.EnterFile(s)
+		listenerT.EnterFile_(s)
 	}
 }
 
-func (s *FileContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *File_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(CMakeListener); ok {
-		listenerT.ExitFile(s)
+		listenerT.ExitFile_(s)
 	}
 }
 
-func (p *CMakeParser) File() (localctx IFileContext) {
-	localctx = NewFileContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 0, CMakeParserRULE_file)
+func (p *CMakeParser) File_() (localctx IFile_Context) {
+	this := p
+	_ = this
+
+	localctx = NewFile_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 0, CMakeParserRULE_file_)
 	var _la int
 
 	defer func() {
@@ -335,6 +339,9 @@ func (s *Command_invocationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CMakeParser) Command_invocation() (localctx ICommand_invocationContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommand_invocationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, CMakeParserRULE_command_invocation)
 	var _la int
@@ -476,6 +483,9 @@ func (s *Single_argumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CMakeParser) Single_argument() (localctx ISingle_argumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewSingle_argumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, CMakeParserRULE_single_argument)
 	var _la int
@@ -617,6 +627,9 @@ func (s *Compound_argumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *CMakeParser) Compound_argument() (localctx ICompound_argumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCompound_argumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, CMakeParserRULE_compound_argument)
 	var _la int

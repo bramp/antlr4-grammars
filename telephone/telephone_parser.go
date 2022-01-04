@@ -1,4 +1,4 @@
-// Code generated from telephone.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from telephone.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package telephone // telephone
 import (
@@ -35,9 +35,6 @@ var parserATN = []uint16{
 	47, 7, 6, 2, 2, 47, 48, 5, 8, 5, 2, 48, 49, 5, 10, 6, 2, 49, 50, 5, 12,
 	7, 2, 50, 15, 3, 2, 2, 2, 5, 17, 20, 26,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'+1'", "'+'", "'011'", "'010'",
 }
@@ -48,21 +45,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"number", "variation", "nanp", "areacode", "exchange", "subscriber", "japan",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type telephoneParser struct {
 	*antlr.BaseParser
 }
 
+// NewtelephoneParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *telephoneParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewtelephoneParser(input antlr.TokenStream) *telephoneParser {
 	this := new(telephoneParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -165,6 +166,9 @@ func (s *NumberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *telephoneParser) Number() (localctx INumberContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, telephoneParserRULE_number)
 	var _la int
@@ -295,6 +299,9 @@ func (s *VariationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *telephoneParser) Variation() (localctx IVariationContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, telephoneParserRULE_variation)
 
@@ -428,6 +435,9 @@ func (s *NanpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *telephoneParser) Nanp() (localctx INanpContext) {
+	this := p
+	_ = this
+
 	localctx = NewNanpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, telephoneParserRULE_nanp)
 
@@ -535,6 +545,9 @@ func (s *AreacodeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *telephoneParser) Areacode() (localctx IAreacodeContext) {
+	this := p
+	_ = this
+
 	localctx = NewAreacodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, telephoneParserRULE_areacode)
 
@@ -638,6 +651,9 @@ func (s *ExchangeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *telephoneParser) Exchange() (localctx IExchangeContext) {
+	this := p
+	_ = this
+
 	localctx = NewExchangeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, telephoneParserRULE_exchange)
 
@@ -741,6 +757,9 @@ func (s *SubscriberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *telephoneParser) Subscriber() (localctx ISubscriberContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubscriberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, telephoneParserRULE_subscriber)
 
@@ -870,6 +889,9 @@ func (s *JapanContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *telephoneParser) Japan() (localctx IJapanContext) {
+	this := p
+	_ = this
+
 	localctx = NewJapanContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, telephoneParserRULE_japan)
 

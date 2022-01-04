@@ -1,4 +1,4 @@
-// Code generated from redcode.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from redcode.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package redcode // redcode
 import (
@@ -41,9 +41,6 @@ var parserATN = []uint16{
 	56, 57, 3, 2, 2, 2, 57, 58, 7, 35, 2, 2, 58, 15, 3, 2, 2, 2, 59, 60, 7,
 	36, 2, 2, 60, 17, 3, 2, 2, 2, 10, 21, 25, 32, 35, 40, 43, 46, 55,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'.'", "','", "'#'", "'$'", "'@'", "'<'", "'>'", "'+'", "'-'", "'A'",
 	"'B'", "'AB'", "'BA'", "'F'", "'X'", "'I'", "'DAT'", "'MOV'", "'ADD'",
@@ -57,24 +54,28 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"file", "line", "instruction", "opcode", "modifier", "mmode", "number",
+	"file_", "line", "instruction", "opcode", "modifier", "mmode", "number",
 	"comment",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type redcodeParser struct {
 	*antlr.BaseParser
 }
 
+// NewredcodeParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *redcodeParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewredcodeParser(input antlr.TokenStream) *redcodeParser {
 	this := new(redcodeParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -129,7 +130,7 @@ const (
 
 // redcodeParser rules.
 const (
-	redcodeParserRULE_file        = 0
+	redcodeParserRULE_file_       = 0
 	redcodeParserRULE_line        = 1
 	redcodeParserRULE_instruction = 2
 	redcodeParserRULE_opcode      = 3
@@ -139,45 +140,45 @@ const (
 	redcodeParserRULE_comment     = 7
 )
 
-// IFileContext is an interface to support dynamic dispatch.
-type IFileContext interface {
+// IFile_Context is an interface to support dynamic dispatch.
+type IFile_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsFileContext differentiates from other interfaces.
-	IsFileContext()
+	// IsFile_Context differentiates from other interfaces.
+	IsFile_Context()
 }
 
-type FileContext struct {
+type File_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyFileContext() *FileContext {
-	var p = new(FileContext)
+func NewEmptyFile_Context() *File_Context {
+	var p = new(File_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = redcodeParserRULE_file
+	p.RuleIndex = redcodeParserRULE_file_
 	return p
 }
 
-func (*FileContext) IsFileContext() {}
+func (*File_Context) IsFile_Context() {}
 
-func NewFileContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FileContext {
-	var p = new(FileContext)
+func NewFile_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *File_Context {
+	var p = new(File_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = redcodeParserRULE_file
+	p.RuleIndex = redcodeParserRULE_file_
 
 	return p
 }
 
-func (s *FileContext) GetParser() antlr.Parser { return s.parser }
+func (s *File_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *FileContext) AllLine() []ILineContext {
+func (s *File_Context) AllLine() []ILineContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*ILineContext)(nil)).Elem())
 	var tst = make([]ILineContext, len(ts))
 
@@ -190,7 +191,7 @@ func (s *FileContext) AllLine() []ILineContext {
 	return tst
 }
 
-func (s *FileContext) Line(i int) ILineContext {
+func (s *File_Context) Line(i int) ILineContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILineContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -200,29 +201,32 @@ func (s *FileContext) Line(i int) ILineContext {
 	return t.(ILineContext)
 }
 
-func (s *FileContext) GetRuleContext() antlr.RuleContext {
+func (s *File_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *FileContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *File_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *FileContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *File_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(redcodeListener); ok {
-		listenerT.EnterFile(s)
+		listenerT.EnterFile_(s)
 	}
 }
 
-func (s *FileContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *File_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(redcodeListener); ok {
-		listenerT.ExitFile(s)
+		listenerT.ExitFile_(s)
 	}
 }
 
-func (p *redcodeParser) File() (localctx IFileContext) {
-	localctx = NewFileContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 0, redcodeParserRULE_file)
+func (p *redcodeParser) File_() (localctx IFile_Context) {
+	this := p
+	_ = this
+
+	localctx = NewFile_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 0, redcodeParserRULE_file_)
 	var _la int
 
 	defer func() {
@@ -343,6 +347,9 @@ func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *redcodeParser) Line() (localctx ILineContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, redcodeParserRULE_line)
 
@@ -525,6 +532,9 @@ func (s *InstructionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *redcodeParser) Instruction() (localctx IInstructionContext) {
+	this := p
+	_ = this
+
 	localctx = NewInstructionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, redcodeParserRULE_instruction)
 	var _la int
@@ -744,6 +754,9 @@ func (s *OpcodeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *redcodeParser) Opcode() (localctx IOpcodeContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpcodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, redcodeParserRULE_opcode)
 	var _la int
@@ -867,6 +880,9 @@ func (s *ModifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *redcodeParser) Modifier() (localctx IModifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewModifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, redcodeParserRULE_modifier)
 	var _la int
@@ -961,6 +977,9 @@ func (s *MmodeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *redcodeParser) Mmode() (localctx IMmodeContext) {
+	this := p
+	_ = this
+
 	localctx = NewMmodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, redcodeParserRULE_mmode)
 	var _la int
@@ -1060,6 +1079,9 @@ func (s *NumberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *redcodeParser) Number() (localctx INumberContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, redcodeParserRULE_number)
 	var _la int
@@ -1170,6 +1192,9 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *redcodeParser) Comment() (localctx ICommentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, redcodeParserRULE_comment)
 

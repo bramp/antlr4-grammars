@@ -1,4 +1,4 @@
-// Code generated from morsecode.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from morsecode.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package morsecode // morsecode
 import (
@@ -133,9 +133,6 @@ var parserATN = []uint16{
 	4, 2, 2, 287, 288, 7, 4, 2, 2, 288, 289, 7, 4, 2, 2, 289, 290, 7, 4, 2,
 	2, 290, 77, 3, 2, 2, 2, 4, 83, 121,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'.'", "'-'", "' '",
 }
@@ -149,21 +146,25 @@ var ruleNames = []string{
 	"z", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
 	"zero",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type morsecodeParser struct {
 	*antlr.BaseParser
 }
 
+// NewmorsecodeParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *morsecodeParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewmorsecodeParser(input antlr.TokenStream) *morsecodeParser {
 	this := new(morsecodeParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -316,6 +317,9 @@ func (s *MorsecodeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Morsecode() (localctx IMorsecodeContext) {
+	this := p
+	_ = this
+
 	localctx = NewMorsecodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, morsecodeParserRULE_morsecode)
 	var _la int
@@ -782,6 +786,9 @@ func (s *LetterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Letter() (localctx ILetterContext) {
+	this := p
+	_ = this
+
 	localctx = NewLetterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, morsecodeParserRULE_letter)
 
@@ -1128,6 +1135,9 @@ func (s *AContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) A() (localctx IAContext) {
+	this := p
+	_ = this
+
 	localctx = NewAContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, morsecodeParserRULE_a)
 
@@ -1231,6 +1241,9 @@ func (s *BContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) B() (localctx IBContext) {
+	this := p
+	_ = this
+
 	localctx = NewBContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, morsecodeParserRULE_b)
 
@@ -1346,6 +1359,9 @@ func (s *CContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) C() (localctx ICContext) {
+	this := p
+	_ = this
+
 	localctx = NewCContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, morsecodeParserRULE_c)
 
@@ -1457,6 +1473,9 @@ func (s *DContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) D() (localctx IDContext) {
+	this := p
+	_ = this
+
 	localctx = NewDContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, morsecodeParserRULE_d)
 
@@ -1556,6 +1575,9 @@ func (s *EContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) E() (localctx IEContext) {
+	this := p
+	_ = this
+
 	localctx = NewEContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, morsecodeParserRULE_e)
 
@@ -1655,6 +1677,9 @@ func (s *FContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) F() (localctx IFContext) {
+	this := p
+	_ = this
+
 	localctx = NewFContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, morsecodeParserRULE_f)
 
@@ -1766,6 +1791,9 @@ func (s *GContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) G() (localctx IGContext) {
+	this := p
+	_ = this
+
 	localctx = NewGContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, morsecodeParserRULE_g)
 
@@ -1869,6 +1897,9 @@ func (s *HContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) H() (localctx IHContext) {
+	this := p
+	_ = this
+
 	localctx = NewHContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, morsecodeParserRULE_h)
 
@@ -1976,6 +2007,9 @@ func (s *IContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) I() (localctx IIContext) {
+	this := p
+	_ = this
+
 	localctx = NewIContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, morsecodeParserRULE_i)
 
@@ -2079,6 +2113,9 @@ func (s *JContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) J() (localctx IJContext) {
+	this := p
+	_ = this
+
 	localctx = NewJContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, morsecodeParserRULE_j)
 
@@ -2190,6 +2227,9 @@ func (s *KContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) K() (localctx IKContext) {
+	this := p
+	_ = this
+
 	localctx = NewKContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, morsecodeParserRULE_k)
 
@@ -2297,6 +2337,9 @@ func (s *LContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) L() (localctx ILContext) {
+	this := p
+	_ = this
+
 	localctx = NewLContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, morsecodeParserRULE_l)
 
@@ -2404,6 +2447,9 @@ func (s *MContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) M() (localctx IMContext) {
+	this := p
+	_ = this
+
 	localctx = NewMContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, morsecodeParserRULE_m)
 
@@ -2503,6 +2549,9 @@ func (s *NContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) N() (localctx INContext) {
+	this := p
+	_ = this
+
 	localctx = NewNContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, morsecodeParserRULE_n)
 
@@ -2602,6 +2651,9 @@ func (s *OContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) O() (localctx IOContext) {
+	this := p
+	_ = this
+
 	localctx = NewOContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, morsecodeParserRULE_o)
 
@@ -2713,6 +2765,9 @@ func (s *PContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) P() (localctx IPContext) {
+	this := p
+	_ = this
+
 	localctx = NewPContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, morsecodeParserRULE_p)
 
@@ -2824,6 +2879,9 @@ func (s *QContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Q() (localctx IQContext) {
+	this := p
+	_ = this
+
 	localctx = NewQContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, morsecodeParserRULE_q)
 
@@ -2935,6 +2993,9 @@ func (s *RContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) R() (localctx IRContext) {
+	this := p
+	_ = this
+
 	localctx = NewRContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, morsecodeParserRULE_r)
 
@@ -3038,6 +3099,9 @@ func (s *SContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) S() (localctx ISContext) {
+	this := p
+	_ = this
+
 	localctx = NewSContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, morsecodeParserRULE_s)
 
@@ -3137,6 +3201,9 @@ func (s *TContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) T() (localctx ITContext) {
+	this := p
+	_ = this
+
 	localctx = NewTContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, morsecodeParserRULE_t)
 
@@ -3236,6 +3303,9 @@ func (s *UContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) U() (localctx IUContext) {
+	this := p
+	_ = this
+
 	localctx = NewUContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, morsecodeParserRULE_u)
 
@@ -3343,6 +3413,9 @@ func (s *VContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) V() (localctx IVContext) {
+	this := p
+	_ = this
+
 	localctx = NewVContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, morsecodeParserRULE_v)
 
@@ -3454,6 +3527,9 @@ func (s *WContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) W() (localctx IWContext) {
+	this := p
+	_ = this
+
 	localctx = NewWContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, morsecodeParserRULE_w)
 
@@ -3565,6 +3641,9 @@ func (s *XContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) X() (localctx IXContext) {
+	this := p
+	_ = this
+
 	localctx = NewXContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, morsecodeParserRULE_x)
 
@@ -3676,6 +3755,9 @@ func (s *YContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Y() (localctx IYContext) {
+	this := p
+	_ = this
+
 	localctx = NewYContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, morsecodeParserRULE_y)
 
@@ -3791,6 +3873,9 @@ func (s *ZContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Z() (localctx IZContext) {
+	this := p
+	_ = this
+
 	localctx = NewZContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, morsecodeParserRULE_z)
 
@@ -3902,6 +3987,9 @@ func (s *OneContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) One() (localctx IOneContext) {
+	this := p
+	_ = this
+
 	localctx = NewOneContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, morsecodeParserRULE_one)
 
@@ -4021,6 +4109,9 @@ func (s *TwoContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Two() (localctx ITwoContext) {
+	this := p
+	_ = this
+
 	localctx = NewTwoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, morsecodeParserRULE_two)
 
@@ -4140,6 +4231,9 @@ func (s *ThreeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Three() (localctx IThreeContext) {
+	this := p
+	_ = this
+
 	localctx = NewThreeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, morsecodeParserRULE_three)
 
@@ -4255,6 +4349,9 @@ func (s *FourContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Four() (localctx IFourContext) {
+	this := p
+	_ = this
+
 	localctx = NewFourContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, morsecodeParserRULE_four)
 
@@ -4366,6 +4463,9 @@ func (s *FiveContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Five() (localctx IFiveContext) {
+	this := p
+	_ = this
+
 	localctx = NewFiveContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, morsecodeParserRULE_five)
 
@@ -4481,6 +4581,9 @@ func (s *SixContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Six() (localctx ISixContext) {
+	this := p
+	_ = this
+
 	localctx = NewSixContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, morsecodeParserRULE_six)
 
@@ -4600,6 +4703,9 @@ func (s *SevenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Seven() (localctx ISevenContext) {
+	this := p
+	_ = this
+
 	localctx = NewSevenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, morsecodeParserRULE_seven)
 
@@ -4719,6 +4825,9 @@ func (s *EightContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Eight() (localctx IEightContext) {
+	this := p
+	_ = this
+
 	localctx = NewEightContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, morsecodeParserRULE_eight)
 
@@ -4834,6 +4943,9 @@ func (s *NineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Nine() (localctx INineContext) {
+	this := p
+	_ = this
+
 	localctx = NewNineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, morsecodeParserRULE_nine)
 
@@ -4945,6 +5057,9 @@ func (s *ZeroContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *morsecodeParser) Zero() (localctx IZeroContext) {
+	this := p
+	_ = this
+
 	localctx = NewZeroContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, morsecodeParserRULE_zero)
 

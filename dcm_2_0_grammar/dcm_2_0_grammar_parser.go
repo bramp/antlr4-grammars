@@ -1,4 +1,4 @@
-// Code generated from DCM_2_0_grammar.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from DCM_2_0_grammar.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package dcm_2_0_grammar // DCM_2_0_grammar
 import (
@@ -286,9 +286,6 @@ var parserATN = []uint16{
 	456, 459, 462, 465, 468, 496, 509, 521, 529, 537, 540, 546, 554, 557, 562,
 	567, 569, 577, 585,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'\n'", "'KONSERVIERUNG_FORMAT 2.0'", "'MODULKOPF'", "'FUNKTIONEN'",
 	"'END'", "'FKT'", "'VARIANTENKODIERUNG'", "'KRITERIUM'", "'FESTWERT'",
@@ -315,21 +312,25 @@ var ruleNames = []string{
 	"werteliste_kwb", "sst_liste_x", "kf_zeile_liste", "kf_zeile_liste_r",
 	"kf_zeile_liste_tx", "realzahl",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type DCM_2_0_grammarParser struct {
 	*antlr.BaseParser
 }
 
+// NewDCM_2_0_grammarParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *DCM_2_0_grammarParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewDCM_2_0_grammarParser(input antlr.TokenStream) *DCM_2_0_grammarParser {
 	this := new(DCM_2_0_grammarParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -511,6 +512,9 @@ func (s *KonservierungContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Konservierung() (localctx IKonservierungContext) {
+	this := p
+	_ = this
+
 	localctx = NewKonservierungContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, DCM_2_0_grammarParserRULE_konservierung)
 	var _la int
@@ -665,6 +669,9 @@ func (s *Kons_kopfContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kons_kopf() (localctx IKons_kopfContext) {
+	this := p
+	_ = this
+
 	localctx = NewKons_kopfContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, DCM_2_0_grammarParserRULE_kons_kopf)
 	var _la int
@@ -805,6 +812,9 @@ func (s *Modulkopf_infoContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Modulkopf_info() (localctx IModulkopf_infoContext) {
+	this := p
+	_ = this
+
 	localctx = NewModulkopf_infoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, DCM_2_0_grammarParserRULE_modulkopf_info)
 	var _la int
@@ -936,6 +946,9 @@ func (s *Mod_zeileContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Mod_zeile() (localctx IMod_zeileContext) {
+	this := p
+	_ = this
+
 	localctx = NewMod_zeileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, DCM_2_0_grammarParserRULE_mod_zeile)
 
@@ -1061,6 +1074,9 @@ func (s *Mod_anf_zeileContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Mod_anf_zeile() (localctx IMod_anf_zeileContext) {
+	this := p
+	_ = this
+
 	localctx = NewMod_anf_zeileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, DCM_2_0_grammarParserRULE_mod_anf_zeile)
 
@@ -1166,6 +1182,9 @@ func (s *Mod_fort_zeileContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Mod_fort_zeile() (localctx IMod_fort_zeileContext) {
+	this := p
+	_ = this
+
 	localctx = NewMod_fort_zeileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, DCM_2_0_grammarParserRULE_mod_fort_zeile)
 
@@ -1261,6 +1280,9 @@ func (s *Mod_ele_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Mod_ele_name() (localctx IMod_ele_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewMod_ele_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, DCM_2_0_grammarParserRULE_mod_ele_name)
 
@@ -1352,6 +1374,9 @@ func (s *Mod_ele_wertContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Mod_ele_wert() (localctx IMod_ele_wertContext) {
+	this := p
+	_ = this
+
 	localctx = NewMod_ele_wertContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, DCM_2_0_grammarParserRULE_mod_ele_wert)
 	var _la int
@@ -1477,6 +1502,9 @@ func (s *FunktionsdefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Funktionsdef() (localctx IFunktionsdefContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunktionsdefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, DCM_2_0_grammarParserRULE_funktionsdef)
 	var _la int
@@ -1625,6 +1653,9 @@ func (s *FunktionszeileContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Funktionszeile() (localctx IFunktionszeileContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunktionszeileContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, DCM_2_0_grammarParserRULE_funktionszeile)
 
@@ -1728,6 +1759,9 @@ func (s *Fkt_versionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Fkt_version() (localctx IFkt_versionContext) {
+	this := p
+	_ = this
+
 	localctx = NewFkt_versionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, DCM_2_0_grammarParserRULE_fkt_version)
 
@@ -1819,6 +1853,9 @@ func (s *Fkt_langnameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Fkt_langname() (localctx IFkt_langnameContext) {
+	this := p
+	_ = this
+
 	localctx = NewFkt_langnameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, DCM_2_0_grammarParserRULE_fkt_langname)
 	var _la int
@@ -1944,6 +1981,9 @@ func (s *VariantendefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Variantendef() (localctx IVariantendefContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariantendefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, DCM_2_0_grammarParserRULE_variantendef)
 	var _la int
@@ -2101,6 +2141,9 @@ func (s *VariantenkritContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Variantenkrit() (localctx IVariantenkritContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariantenkritContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, DCM_2_0_grammarParserRULE_variantenkrit)
 	var _la int
@@ -2225,6 +2268,9 @@ func (s *Krit_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Krit_name() (localctx IKrit_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewKrit_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, DCM_2_0_grammarParserRULE_krit_name)
 
@@ -2316,6 +2362,9 @@ func (s *Krit_wertContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Krit_wert() (localctx IKrit_wertContext) {
+	this := p
+	_ = this
+
 	localctx = NewKrit_wertContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, DCM_2_0_grammarParserRULE_krit_wert)
 
@@ -2426,6 +2475,9 @@ func (s *Kons_rumpfContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kons_rumpf() (localctx IKons_rumpfContext) {
+	this := p
+	_ = this
+
 	localctx = NewKons_rumpfContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, DCM_2_0_grammarParserRULE_kons_rumpf)
 	var _la int
@@ -2584,6 +2636,9 @@ func (s *KenngroesseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kenngroesse() (localctx IKenngroesseContext) {
+	this := p
+	_ = this
+
 	localctx = NewKenngroesseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, DCM_2_0_grammarParserRULE_kenngroesse)
 
@@ -2748,6 +2803,9 @@ func (s *KennwertContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kennwert() (localctx IKennwertContext) {
+	this := p
+	_ = this
+
 	localctx = NewKennwertContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, DCM_2_0_grammarParserRULE_kennwert)
 	var _la int
@@ -3012,6 +3070,9 @@ func (s *KennwerteblockContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kennwerteblock() (localctx IKennwerteblockContext) {
+	this := p
+	_ = this
+
 	localctx = NewKennwerteblockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, DCM_2_0_grammarParserRULE_kennwerteblock)
 	var _la int
@@ -3249,6 +3310,9 @@ func (s *KennlinieContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kennlinie() (localctx IKennlinieContext) {
+	this := p
+	_ = this
+
 	localctx = NewKennlinieContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, DCM_2_0_grammarParserRULE_kennlinie)
 	var _la int
@@ -3712,6 +3776,9 @@ func (s *KennfeldContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kennfeld() (localctx IKennfeldContext) {
+	this := p
+	_ = this
+
 	localctx = NewKennfeldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, DCM_2_0_grammarParserRULE_kennfeld)
 	var _la int
@@ -4150,6 +4217,9 @@ func (s *GruppenstuetzstellenContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *DCM_2_0_grammarParser) Gruppenstuetzstellen() (localctx IGruppenstuetzstellenContext) {
+	this := p
+	_ = this
+
 	localctx = NewGruppenstuetzstellenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, DCM_2_0_grammarParserRULE_gruppenstuetzstellen)
 	var _la int
@@ -4315,6 +4385,9 @@ func (s *KenntextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kenntext() (localctx IKenntextContext) {
+	this := p
+	_ = this
+
 	localctx = NewKenntextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, DCM_2_0_grammarParserRULE_kenntext)
 	var _la int
@@ -4485,6 +4558,9 @@ func (s *Kgr_infoContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kgr_info() (localctx IKgr_infoContext) {
+	this := p
+	_ = this
+
 	localctx = NewKgr_infoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, DCM_2_0_grammarParserRULE_kgr_info)
 	var _la int
@@ -4617,6 +4693,9 @@ func (s *Einheit_xContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Einheit_x() (localctx IEinheit_xContext) {
+	this := p
+	_ = this
+
 	localctx = NewEinheit_xContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, DCM_2_0_grammarParserRULE_einheit_x)
 
@@ -4716,6 +4795,9 @@ func (s *Einheit_yContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Einheit_y() (localctx IEinheit_yContext) {
+	this := p
+	_ = this
+
 	localctx = NewEinheit_yContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, DCM_2_0_grammarParserRULE_einheit_y)
 
@@ -4815,6 +4897,9 @@ func (s *Einheit_wContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Einheit_w() (localctx IEinheit_wContext) {
+	this := p
+	_ = this
+
 	localctx = NewEinheit_wContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, DCM_2_0_grammarParserRULE_einheit_w)
 
@@ -4914,6 +4999,9 @@ func (s *LangnameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Langname() (localctx ILangnameContext) {
+	this := p
+	_ = this
+
 	localctx = NewLangnameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, DCM_2_0_grammarParserRULE_langname)
 
@@ -5017,6 +5105,9 @@ func (s *DisplaynameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Displayname() (localctx IDisplaynameContext) {
+	this := p
+	_ = this
+
 	localctx = NewDisplaynameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, DCM_2_0_grammarParserRULE_displayname)
 	var _la int
@@ -5143,6 +5234,9 @@ func (s *Var_abhangigkeitenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Var_abhangigkeiten() (localctx IVar_abhangigkeitenContext) {
+	this := p
+	_ = this
+
 	localctx = NewVar_abhangigkeitenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, DCM_2_0_grammarParserRULE_var_abhangigkeiten)
 	var _la int
@@ -5265,6 +5359,9 @@ func (s *Var_abhContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Var_abh() (localctx IVar_abhContext) {
+	this := p
+	_ = this
+
 	localctx = NewVar_abhContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, DCM_2_0_grammarParserRULE_var_abh)
 
@@ -5368,6 +5465,9 @@ func (s *FunktionszugehorigkeitContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *DCM_2_0_grammarParser) Funktionszugehorigkeit() (localctx IFunktionszugehorigkeitContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunktionszugehorigkeitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, DCM_2_0_grammarParserRULE_funktionszugehorigkeit)
 	var _la int
@@ -5478,6 +5578,9 @@ func (s *Anzahl_xContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Anzahl_x() (localctx IAnzahl_xContext) {
+	this := p
+	_ = this
+
 	localctx = NewAnzahl_xContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, DCM_2_0_grammarParserRULE_anzahl_x)
 
@@ -5569,6 +5672,9 @@ func (s *Anzahl_yContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Anzahl_y() (localctx IAnzahl_yContext) {
+	this := p
+	_ = this
+
 	localctx = NewAnzahl_yContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, DCM_2_0_grammarParserRULE_anzahl_y)
 
@@ -5679,6 +5785,9 @@ func (s *WertelisteContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Werteliste() (localctx IWertelisteContext) {
+	this := p
+	_ = this
+
 	localctx = NewWertelisteContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, DCM_2_0_grammarParserRULE_werteliste)
 	var _la int
@@ -5816,6 +5925,9 @@ func (s *Werteliste_kwbContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Werteliste_kwb() (localctx IWerteliste_kwbContext) {
+	this := p
+	_ = this
+
 	localctx = NewWerteliste_kwbContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, DCM_2_0_grammarParserRULE_werteliste_kwb)
 	var _la int
@@ -5986,6 +6098,9 @@ func (s *Sst_liste_xContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Sst_liste_x() (localctx ISst_liste_xContext) {
+	this := p
+	_ = this
+
 	localctx = NewSst_liste_xContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, DCM_2_0_grammarParserRULE_sst_liste_x)
 	var _la int
@@ -6171,6 +6286,9 @@ func (s *Kf_zeile_listeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kf_zeile_liste() (localctx IKf_zeile_listeContext) {
+	this := p
+	_ = this
+
 	localctx = NewKf_zeile_listeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, DCM_2_0_grammarParserRULE_kf_zeile_liste)
 	var _la int
@@ -6327,6 +6445,9 @@ func (s *Kf_zeile_liste_rContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kf_zeile_liste_r() (localctx IKf_zeile_liste_rContext) {
+	this := p
+	_ = this
+
 	localctx = NewKf_zeile_liste_rContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, DCM_2_0_grammarParserRULE_kf_zeile_liste_r)
 	var _la int
@@ -6464,6 +6585,9 @@ func (s *Kf_zeile_liste_txContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Kf_zeile_liste_tx() (localctx IKf_zeile_liste_txContext) {
+	this := p
+	_ = this
+
 	localctx = NewKf_zeile_liste_txContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, DCM_2_0_grammarParserRULE_kf_zeile_liste_tx)
 	var _la int
@@ -6582,6 +6706,9 @@ func (s *RealzahlContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DCM_2_0_grammarParser) Realzahl() (localctx IRealzahlContext) {
+	this := p
+	_ = this
+
 	localctx = NewRealzahlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, DCM_2_0_grammarParserRULE_realzahl)
 	var _la int

@@ -1,4 +1,4 @@
-// Code generated from tinyc.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from tinyc.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package tinyc // tinyc
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -50,11 +50,11 @@ func (s *BasetinycListener) EnterTest(ctx *TestContext) {}
 // ExitTest is called when production test is exited.
 func (s *BasetinycListener) ExitTest(ctx *TestContext) {}
 
-// EnterSum is called when production sum is entered.
-func (s *BasetinycListener) EnterSum(ctx *SumContext) {}
+// EnterSum_ is called when production sum_ is entered.
+func (s *BasetinycListener) EnterSum_(ctx *Sum_Context) {}
 
-// ExitSum is called when production sum is exited.
-func (s *BasetinycListener) ExitSum(ctx *SumContext) {}
+// ExitSum_ is called when production sum_ is exited.
+func (s *BasetinycListener) ExitSum_(ctx *Sum_Context) {}
 
 // EnterTerm is called when production term is entered.
 func (s *BasetinycListener) EnterTerm(ctx *TermContext) {}
@@ -62,11 +62,11 @@ func (s *BasetinycListener) EnterTerm(ctx *TermContext) {}
 // ExitTerm is called when production term is exited.
 func (s *BasetinycListener) ExitTerm(ctx *TermContext) {}
 
-// EnterId is called when production id is entered.
-func (s *BasetinycListener) EnterId(ctx *IdContext) {}
+// EnterId_ is called when production id_ is entered.
+func (s *BasetinycListener) EnterId_(ctx *Id_Context) {}
 
-// ExitId is called when production id is exited.
-func (s *BasetinycListener) ExitId(ctx *IdContext) {}
+// ExitId_ is called when production id_ is exited.
+func (s *BasetinycListener) ExitId_(ctx *Id_Context) {}
 
 // EnterInteger is called when production integer is entered.
 func (s *BasetinycListener) EnterInteger(ctx *IntegerContext) {}

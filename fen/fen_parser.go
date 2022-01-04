@@ -1,4 +1,4 @@
-// Code generated from fen.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from fen.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package fen // fen
 import (
@@ -44,9 +44,6 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 67, 19, 3, 2, 2, 2, 68, 69, 9, 5, 2, 2, 69, 21, 3, 2, 2, 2,
 	8, 40, 42, 46, 60, 64, 66,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "' '", "'w'", "'b'", "'-'", "'Q'", "'K'", "'k'", "'q'", "'a'", "'c'",
 	"'d'", "'e'", "'f'", "'g'", "'h'", "'/'", "'p'", "'r'", "'n'", "'P'", "'R'",
@@ -61,21 +58,25 @@ var ruleNames = []string{
 	"fen", "color", "castling", "enpassant", "position", "halfmoveclock", "fullmoveclock",
 	"placement", "rank", "piece",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type fenParser struct {
 	*antlr.BaseParser
 }
 
+// NewfenParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *fenParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewfenParser(input antlr.TokenStream) *fenParser {
 	this := new(fenParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -250,6 +251,9 @@ func (s *FenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fenParser) Fen() (localctx IFenContext) {
+	this := p
+	_ = this
+
 	localctx = NewFenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, fenParserRULE_fen)
 
@@ -376,6 +380,9 @@ func (s *ColorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fenParser) Color() (localctx IColorContext) {
+	this := p
+	_ = this
+
 	localctx = NewColorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, fenParserRULE_color)
 	var _la int
@@ -470,6 +477,9 @@ func (s *CastlingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fenParser) Castling() (localctx ICastlingContext) {
+	this := p
+	_ = this
+
 	localctx = NewCastlingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, fenParserRULE_castling)
 	var _la int
@@ -601,6 +611,9 @@ func (s *EnpassantContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fenParser) Enpassant() (localctx IEnpassantContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnpassantContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, fenParserRULE_enpassant)
 
@@ -708,6 +721,9 @@ func (s *PositionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fenParser) Position() (localctx IPositionContext) {
+	this := p
+	_ = this
+
 	localctx = NewPositionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, fenParserRULE_position)
 	var _la int
@@ -811,6 +827,9 @@ func (s *HalfmoveclockContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fenParser) Halfmoveclock() (localctx IHalfmoveclockContext) {
+	this := p
+	_ = this
+
 	localctx = NewHalfmoveclockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, fenParserRULE_halfmoveclock)
 
@@ -902,6 +921,9 @@ func (s *FullmoveclockContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fenParser) Fullmoveclock() (localctx IFullmoveclockContext) {
+	this := p
+	_ = this
+
 	localctx = NewFullmoveclockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, fenParserRULE_fullmoveclock)
 
@@ -1012,6 +1034,9 @@ func (s *PlacementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fenParser) Placement() (localctx IPlacementContext) {
+	this := p
+	_ = this
+
 	localctx = NewPlacementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, fenParserRULE_placement)
 	var _la int
@@ -1149,6 +1174,9 @@ func (s *RankContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fenParser) Rank() (localctx IRankContext) {
+	this := p
+	_ = this
+
 	localctx = NewRankContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, fenParserRULE_rank)
 	var _la int
@@ -1261,6 +1289,9 @@ func (s *PieceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *fenParser) Piece() (localctx IPieceContext) {
+	this := p
+	_ = this
+
 	localctx = NewPieceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, fenParserRULE_piece)
 	var _la int

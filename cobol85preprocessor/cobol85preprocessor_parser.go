@@ -1,4 +1,4 @@
-// Code generated from Cobol85Preprocessor.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Cobol85Preprocessor.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package cobol85preprocessor // Cobol85Preprocessor
 import (
@@ -397,9 +397,6 @@ var parserATN = []uint16{
 	600, 606, 611, 617, 623, 627, 631, 636, 640, 646, 648, 654, 656, 665, 667,
 	671,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
 	"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
@@ -468,21 +465,25 @@ var ruleNames = []string{
 	"pseudoText", "charData", "charDataSql", "charDataLine", "cobolWord", "literal",
 	"filename", "charDataKeyword",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type Cobol85PreprocessorParser struct {
 	*antlr.BaseParser
 }
 
+// NewCobol85PreprocessorParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *Cobol85PreprocessorParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewCobol85PreprocessorParser(input antlr.TokenStream) *Cobol85PreprocessorParser {
 	this := new(Cobol85PreprocessorParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -1149,6 +1150,9 @@ func (s *StartRuleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) StartRule() (localctx IStartRuleContext) {
+	this := p
+	_ = this
+
 	localctx = NewStartRuleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, Cobol85PreprocessorParserRULE_startRule)
 	var _la int
@@ -1385,6 +1389,9 @@ func (s *CompilerOptionsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) CompilerOptions() (localctx ICompilerOptionsContext) {
+	this := p
+	_ = this
+
 	localctx = NewCompilerOptionsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, Cobol85PreprocessorParserRULE_compilerOptions)
 	var _la int
@@ -1570,6 +1577,9 @@ func (s *CompilerXOptsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) CompilerXOpts() (localctx ICompilerXOptsContext) {
+	this := p
+	_ = this
+
 	localctx = NewCompilerXOptsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, Cobol85PreprocessorParserRULE_compilerXOpts)
 	var _la int
@@ -2784,6 +2794,9 @@ func (s *CompilerOptionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) CompilerOption() (localctx ICompilerOptionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCompilerOptionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, Cobol85PreprocessorParserRULE_compilerOption)
 	var _la int
@@ -5173,6 +5186,9 @@ func (s *ExecCicsStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) ExecCicsStatement() (localctx IExecCicsStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewExecCicsStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, Cobol85PreprocessorParserRULE_execCicsStatement)
 
@@ -5308,6 +5324,9 @@ func (s *ExecSqlStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) ExecSqlStatement() (localctx IExecSqlStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewExecSqlStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, Cobol85PreprocessorParserRULE_execSqlStatement)
 
@@ -5443,6 +5462,9 @@ func (s *ExecSqlImsStatementContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85PreprocessorParser) ExecSqlImsStatement() (localctx IExecSqlImsStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewExecSqlImsStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, Cobol85PreprocessorParserRULE_execSqlImsStatement)
 
@@ -5655,6 +5677,9 @@ func (s *CopyStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) CopyStatement() (localctx ICopyStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewCopyStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, Cobol85PreprocessorParserRULE_copyStatement)
 	var _la int
@@ -5872,6 +5897,9 @@ func (s *CopySourceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) CopySource() (localctx ICopySourceContext) {
+	this := p
+	_ = this
+
 	localctx = NewCopySourceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, Cobol85PreprocessorParserRULE_copySource)
 	var _la int
@@ -6022,6 +6050,9 @@ func (s *CopyLibraryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) CopyLibrary() (localctx ICopyLibraryContext) {
+	this := p
+	_ = this
+
 	localctx = NewCopyLibraryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, Cobol85PreprocessorParserRULE_copyLibrary)
 
@@ -6160,6 +6191,9 @@ func (s *ReplacingPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) ReplacingPhrase() (localctx IReplacingPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReplacingPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, Cobol85PreprocessorParserRULE_replacingPhrase)
 	var _la int
@@ -6364,6 +6398,9 @@ func (s *ReplaceAreaContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) ReplaceArea() (localctx IReplaceAreaContext) {
+	this := p
+	_ = this
+
 	localctx = NewReplaceAreaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, Cobol85PreprocessorParserRULE_replaceArea)
 
@@ -6533,6 +6570,9 @@ func (s *ReplaceByStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) ReplaceByStatement() (localctx IReplaceByStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewReplaceByStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, Cobol85PreprocessorParserRULE_replaceByStatement)
 	var _la int
@@ -6672,6 +6712,9 @@ func (s *ReplaceOffStatementContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *Cobol85PreprocessorParser) ReplaceOffStatement() (localctx IReplaceOffStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewReplaceOffStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, Cobol85PreprocessorParserRULE_replaceOffStatement)
 
@@ -6819,6 +6862,9 @@ func (s *ReplaceClauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) ReplaceClause() (localctx IReplaceClauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewReplaceClauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, Cobol85PreprocessorParserRULE_replaceClause)
 	var _la int
@@ -7027,6 +7073,9 @@ func (s *DirectoryPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) DirectoryPhrase() (localctx IDirectoryPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDirectoryPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, Cobol85PreprocessorParserRULE_directoryPhrase)
 	var _la int
@@ -7187,6 +7236,9 @@ func (s *FamilyPhraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) FamilyPhrase() (localctx IFamilyPhraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewFamilyPhraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, Cobol85PreprocessorParserRULE_familyPhrase)
 	var _la int
@@ -7348,6 +7400,9 @@ func (s *ReplaceableContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) Replaceable() (localctx IReplaceableContext) {
+	this := p
+	_ = this
+
 	localctx = NewReplaceableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, Cobol85PreprocessorParserRULE_replaceable)
 
@@ -7502,6 +7557,9 @@ func (s *ReplacementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) Replacement() (localctx IReplacementContext) {
+	this := p
+	_ = this
+
 	localctx = NewReplacementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, Cobol85PreprocessorParserRULE_replacement)
 
@@ -7624,6 +7682,9 @@ func (s *EjectStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) EjectStatement() (localctx IEjectStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewEjectStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, Cobol85PreprocessorParserRULE_ejectStatement)
 
@@ -7737,6 +7798,9 @@ func (s *SkipStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) SkipStatement() (localctx ISkipStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSkipStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, Cobol85PreprocessorParserRULE_skipStatement)
 	var _la int
@@ -7860,6 +7924,9 @@ func (s *TitleStatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) TitleStatement() (localctx ITitleStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewTitleStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, Cobol85PreprocessorParserRULE_titleStatement)
 
@@ -7979,6 +8046,9 @@ func (s *PseudoTextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) PseudoText() (localctx IPseudoTextContext) {
+	this := p
+	_ = this
+
 	localctx = NewPseudoTextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, Cobol85PreprocessorParserRULE_pseudoText)
 	var _la int
@@ -8113,6 +8183,9 @@ func (s *CharDataContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) CharData() (localctx ICharDataContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharDataContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, Cobol85PreprocessorParserRULE_charData)
 
@@ -8279,6 +8352,9 @@ func (s *CharDataSqlContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) CharDataSql() (localctx ICharDataSqlContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharDataSqlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, Cobol85PreprocessorParserRULE_charDataSql)
 	var _la int
@@ -8505,6 +8581,9 @@ func (s *CharDataLineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) CharDataLine() (localctx ICharDataLineContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharDataLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, Cobol85PreprocessorParserRULE_charDataLine)
 
@@ -8668,6 +8747,9 @@ func (s *CobolWordContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) CobolWord() (localctx ICobolWordContext) {
+	this := p
+	_ = this
+
 	localctx = NewCobolWordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, Cobol85PreprocessorParserRULE_cobolWord)
 
@@ -8779,6 +8861,9 @@ func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) Literal() (localctx ILiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, Cobol85PreprocessorParserRULE_literal)
 	var _la int
@@ -8878,6 +8963,9 @@ func (s *FilenameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) Filename() (localctx IFilenameContext) {
+	this := p
+	_ = this
+
 	localctx = NewFilenameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, Cobol85PreprocessorParserRULE_filename)
 
@@ -10021,6 +10109,9 @@ func (s *CharDataKeywordContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *Cobol85PreprocessorParser) CharDataKeyword() (localctx ICharDataKeywordContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharDataKeywordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, Cobol85PreprocessorParserRULE_charDataKeyword)
 	var _la int

@@ -1,4 +1,4 @@
-// Code generated from guido.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from guido.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package guido // guido
 import (
@@ -110,9 +110,6 @@ var parserATN = []uint16{
 	59, 3, 2, 2, 2, 26, 63, 66, 72, 81, 88, 90, 97, 100, 112, 120, 128, 135,
 	140, 142, 148, 151, 154, 157, 165, 175, 182, 186, 189, 196,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'{'", "'}'", "','", "'['", "']'", "'<'", "'>'", "'='", "'('", "')'",
 	"'#'", "'&'", "'-'", "'+'", "'/'", "'*'", "'.'", "'title'", "'tempo'",
@@ -131,21 +128,25 @@ var ruleNames = []string{
 	"number", "octave", "fraction", "duration", "dotting", "title", "tempo",
 	"clef", "meter", "slur", "key", "barformat", "staff", "repeatEnd", "t",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type guidoParser struct {
 	*antlr.BaseParser
 }
 
+// NewguidoParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *guidoParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewguidoParser(input antlr.TokenStream) *guidoParser {
 	this := new(guidoParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -321,6 +322,9 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Prog() (localctx IProgContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, guidoParserRULE_prog)
 	var _la int
@@ -458,6 +462,9 @@ func (s *SegmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Segment() (localctx ISegmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewSegmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, guidoParserRULE_segment)
 	var _la int
@@ -587,6 +594,9 @@ func (s *SequencelistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Sequencelist() (localctx ISequencelistContext) {
+	this := p
+	_ = this
+
 	localctx = NewSequencelistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, guidoParserRULE_sequencelist)
 	var _la int
@@ -762,6 +772,9 @@ func (s *SequenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Sequence() (localctx ISequenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewSequenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, guidoParserRULE_sequence)
 	var _la int
@@ -923,6 +936,9 @@ func (s *TagContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Tag() (localctx ITagContext) {
+	this := p
+	_ = this
+
 	localctx = NewTagContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, guidoParserRULE_tag)
 	var _la int
@@ -1137,6 +1153,9 @@ func (s *TagnameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Tagname() (localctx ITagnameContext) {
+	this := p
+	_ = this
+
 	localctx = NewTagnameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, guidoParserRULE_tagname)
 
@@ -1319,6 +1338,9 @@ func (s *ParametersContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Parameters() (localctx IParametersContext) {
+	this := p
+	_ = this
+
 	localctx = NewParametersContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, guidoParserRULE_parameters)
 	var _la int
@@ -1457,6 +1479,9 @@ func (s *ParameterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Parameter() (localctx IParameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewParameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, guidoParserRULE_parameter)
 
@@ -1583,6 +1608,9 @@ func (s *KvpairContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Kvpair() (localctx IKvpairContext) {
+	this := p
+	_ = this
+
 	localctx = NewKvpairContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, guidoParserRULE_kvpair)
 	var _la int
@@ -1742,6 +1770,9 @@ func (s *NotesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Notes() (localctx INotesContext) {
+	this := p
+	_ = this
+
 	localctx = NewNotesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, guidoParserRULE_notes)
 	var _la int
@@ -1913,6 +1944,9 @@ func (s *NoteContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Note() (localctx INoteContext) {
+	this := p
+	_ = this
+
 	localctx = NewNoteContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, guidoParserRULE_note)
 	var _la int
@@ -2066,6 +2100,9 @@ func (s *ChordContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Chord() (localctx IChordContext) {
+	this := p
+	_ = this
+
 	localctx = NewChordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, guidoParserRULE_chord)
 	var _la int
@@ -2188,6 +2225,9 @@ func (s *NotenameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Notename() (localctx INotenameContext) {
+	this := p
+	_ = this
+
 	localctx = NewNotenameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, guidoParserRULE_notename)
 	var _la int
@@ -2282,6 +2322,9 @@ func (s *AccidentalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Accidental() (localctx IAccidentalContext) {
+	this := p
+	_ = this
+
 	localctx = NewAccidentalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, guidoParserRULE_accidental)
 	var _la int
@@ -2381,6 +2424,9 @@ func (s *NumberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Number() (localctx INumberContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, guidoParserRULE_number)
 	var _la int
@@ -2497,6 +2543,9 @@ func (s *OctaveContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Octave() (localctx IOctaveContext) {
+	this := p
+	_ = this
+
 	localctx = NewOctaveContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, guidoParserRULE_octave)
 
@@ -2607,6 +2656,9 @@ func (s *FractionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Fraction() (localctx IFractionContext) {
+	this := p
+	_ = this
+
 	localctx = NewFractionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, guidoParserRULE_fraction)
 	var _la int
@@ -2727,6 +2779,9 @@ func (s *DurationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Duration() (localctx IDurationContext) {
+	this := p
+	_ = this
+
 	localctx = NewDurationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, guidoParserRULE_duration)
 	var _la int
@@ -2825,6 +2880,9 @@ func (s *DottingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Dotting() (localctx IDottingContext) {
+	this := p
+	_ = this
+
 	localctx = NewDottingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, guidoParserRULE_dotting)
 	var _la int
@@ -2922,6 +2980,9 @@ func (s *TitleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Title() (localctx ITitleContext) {
+	this := p
+	_ = this
+
 	localctx = NewTitleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, guidoParserRULE_title)
 
@@ -3008,6 +3069,9 @@ func (s *TempoContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Tempo() (localctx ITempoContext) {
+	this := p
+	_ = this
+
 	localctx = NewTempoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, guidoParserRULE_tempo)
 
@@ -3094,6 +3158,9 @@ func (s *ClefContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Clef() (localctx IClefContext) {
+	this := p
+	_ = this
+
 	localctx = NewClefContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, guidoParserRULE_clef)
 
@@ -3180,6 +3247,9 @@ func (s *MeterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Meter() (localctx IMeterContext) {
+	this := p
+	_ = this
+
 	localctx = NewMeterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, guidoParserRULE_meter)
 
@@ -3266,6 +3336,9 @@ func (s *SlurContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Slur() (localctx ISlurContext) {
+	this := p
+	_ = this
+
 	localctx = NewSlurContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, guidoParserRULE_slur)
 
@@ -3352,6 +3425,9 @@ func (s *KeyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Key() (localctx IKeyContext) {
+	this := p
+	_ = this
+
 	localctx = NewKeyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, guidoParserRULE_key)
 
@@ -3438,6 +3514,9 @@ func (s *BarformatContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Barformat() (localctx IBarformatContext) {
+	this := p
+	_ = this
+
 	localctx = NewBarformatContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, guidoParserRULE_barformat)
 
@@ -3524,6 +3603,9 @@ func (s *StaffContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) Staff() (localctx IStaffContext) {
+	this := p
+	_ = this
+
 	localctx = NewStaffContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, guidoParserRULE_staff)
 
@@ -3610,6 +3692,9 @@ func (s *RepeatEndContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) RepeatEnd() (localctx IRepeatEndContext) {
+	this := p
+	_ = this
+
 	localctx = NewRepeatEndContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, guidoParserRULE_repeatEnd)
 
@@ -3696,6 +3781,9 @@ func (s *TContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *guidoParser) T() (localctx ITContext) {
+	this := p
+	_ = this
+
 	localctx = NewTContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, guidoParserRULE_t)
 

@@ -1,4 +1,4 @@
-// Code generated from mumps.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from mumps.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package mumps // mumps
 import (
@@ -252,9 +252,6 @@ var parserATN = []uint16{
 	353, 358, 370, 375, 380, 386, 391, 394, 398, 403, 409, 414, 421, 426, 431,
 	437, 442, 448, 453, 458, 462, 464, 469, 476, 485, 492, 497,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
 	"", "", "", "", "", "", "", "", "", "':'", "','", "'$'", "'%'", "'&'",
@@ -276,25 +273,29 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"program", "eof", "line", "code", "label", "routinedecl", "paramlist",
 	"param", "subproc", "command", "postcondition", "expression", "term", "condition",
-	"identifier", "variable", "function", "break_", "do_", "for_", "halt_",
+	"identifier", "variable", "function_", "break_", "do_", "for_", "halt_",
 	"hang_", "if_", "kill_", "merge_", "new_", "quit_", "read_", "set_", "view_",
 	"write_", "xecute_", "assign", "arglist", "arg",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type mumpsParser struct {
 	*antlr.BaseParser
 }
 
+// NewmumpsParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *mumpsParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewmumpsParser(input antlr.TokenStream) *mumpsParser {
 	this := new(mumpsParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -390,7 +391,7 @@ const (
 	mumpsParserRULE_condition     = 13
 	mumpsParserRULE_identifier    = 14
 	mumpsParserRULE_variable      = 15
-	mumpsParserRULE_function      = 16
+	mumpsParserRULE_function_     = 16
 	mumpsParserRULE_break_        = 17
 	mumpsParserRULE_do_           = 18
 	mumpsParserRULE_for_          = 19
@@ -503,6 +504,9 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Program() (localctx IProgramContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, mumpsParserRULE_program)
 
@@ -623,6 +627,9 @@ func (s *EofContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Eof() (localctx IEofContext) {
+	this := p
+	_ = this
+
 	localctx = NewEofContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, mumpsParserRULE_eof)
 	var _la int
@@ -756,6 +763,9 @@ func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Line() (localctx ILineContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, mumpsParserRULE_line)
 
@@ -936,6 +946,9 @@ func (s *CodeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Code() (localctx ICodeContext) {
+	this := p
+	_ = this
+
 	localctx = NewCodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, mumpsParserRULE_code)
 	var _la int
@@ -1155,6 +1168,9 @@ func (s *LabelContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Label() (localctx ILabelContext) {
+	this := p
+	_ = this
+
 	localctx = NewLabelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, mumpsParserRULE_label)
 
@@ -1307,6 +1323,9 @@ func (s *RoutinedeclContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Routinedecl() (localctx IRoutinedeclContext) {
+	this := p
+	_ = this
+
 	localctx = NewRoutinedeclContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, mumpsParserRULE_routinedecl)
 	var _la int
@@ -1481,6 +1500,9 @@ func (s *ParamlistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Paramlist() (localctx IParamlistContext) {
+	this := p
+	_ = this
+
 	localctx = NewParamlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, mumpsParserRULE_paramlist)
 	var _la int
@@ -1597,6 +1619,9 @@ func (s *ParamContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Param() (localctx IParamContext) {
+	this := p
+	_ = this
+
 	localctx = NewParamContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, mumpsParserRULE_param)
 
@@ -1743,6 +1768,9 @@ func (s *SubprocContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Subproc() (localctx ISubprocContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubprocContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, mumpsParserRULE_subproc)
 	var _la int
@@ -2076,6 +2104,9 @@ func (s *CommandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Command() (localctx ICommandContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, mumpsParserRULE_command)
 	var _la int
@@ -2292,6 +2323,9 @@ func (s *PostconditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Postcondition() (localctx IPostconditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewPostconditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, mumpsParserRULE_postcondition)
 
@@ -2480,6 +2514,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, mumpsParserRULE_expression)
 	var _la int
@@ -2600,14 +2637,14 @@ func (s *TermContext) Variable() IVariableContext {
 	return t.(IVariableContext)
 }
 
-func (s *TermContext) Function() IFunctionContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunctionContext)(nil)).Elem(), 0)
+func (s *TermContext) Function_() IFunction_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IFunction_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IFunctionContext)
+	return t.(IFunction_Context)
 }
 
 func (s *TermContext) NUMBER() antlr.TerminalNode {
@@ -2653,6 +2690,9 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Term() (localctx ITermContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, mumpsParserRULE_term)
 
@@ -2687,7 +2727,7 @@ func (p *mumpsParser) Term() (localctx ITermContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(215)
-			p.Function()
+			p.Function_()
 		}
 
 	case mumpsParserNUMBER:
@@ -2821,6 +2861,9 @@ func (s *ConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Condition() (localctx IConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, mumpsParserRULE_condition)
 	var _la int
@@ -2941,6 +2984,9 @@ func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Identifier() (localctx IIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, mumpsParserRULE_identifier)
 
@@ -3054,6 +3100,9 @@ func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Variable() (localctx IVariableContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, mumpsParserRULE_variable)
 	var _la int
@@ -3104,49 +3153,49 @@ func (p *mumpsParser) Variable() (localctx IVariableContext) {
 	return localctx
 }
 
-// IFunctionContext is an interface to support dynamic dispatch.
-type IFunctionContext interface {
+// IFunction_Context is an interface to support dynamic dispatch.
+type IFunction_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsFunctionContext differentiates from other interfaces.
-	IsFunctionContext()
+	// IsFunction_Context differentiates from other interfaces.
+	IsFunction_Context()
 }
 
-type FunctionContext struct {
+type Function_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyFunctionContext() *FunctionContext {
-	var p = new(FunctionContext)
+func NewEmptyFunction_Context() *Function_Context {
+	var p = new(Function_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = mumpsParserRULE_function
+	p.RuleIndex = mumpsParserRULE_function_
 	return p
 }
 
-func (*FunctionContext) IsFunctionContext() {}
+func (*Function_Context) IsFunction_Context() {}
 
-func NewFunctionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FunctionContext {
-	var p = new(FunctionContext)
+func NewFunction_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Function_Context {
+	var p = new(Function_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = mumpsParserRULE_function
+	p.RuleIndex = mumpsParserRULE_function_
 
 	return p
 }
 
-func (s *FunctionContext) GetParser() antlr.Parser { return s.parser }
+func (s *Function_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *FunctionContext) DOLLAR() antlr.TerminalNode {
+func (s *Function_Context) DOLLAR() antlr.TerminalNode {
 	return s.GetToken(mumpsParserDOLLAR, 0)
 }
 
-func (s *FunctionContext) Identifier() IIdentifierContext {
+func (s *Function_Context) Identifier() IIdentifierContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdentifierContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -3156,11 +3205,11 @@ func (s *FunctionContext) Identifier() IIdentifierContext {
 	return t.(IIdentifierContext)
 }
 
-func (s *FunctionContext) LPAREN() antlr.TerminalNode {
+func (s *Function_Context) LPAREN() antlr.TerminalNode {
 	return s.GetToken(mumpsParserLPAREN, 0)
 }
 
-func (s *FunctionContext) Arglist() IArglistContext {
+func (s *Function_Context) Arglist() IArglistContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IArglistContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -3170,33 +3219,36 @@ func (s *FunctionContext) Arglist() IArglistContext {
 	return t.(IArglistContext)
 }
 
-func (s *FunctionContext) RPAREN() antlr.TerminalNode {
+func (s *Function_Context) RPAREN() antlr.TerminalNode {
 	return s.GetToken(mumpsParserRPAREN, 0)
 }
 
-func (s *FunctionContext) GetRuleContext() antlr.RuleContext {
+func (s *Function_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *FunctionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Function_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *FunctionContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Function_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
-		listenerT.EnterFunction(s)
+		listenerT.EnterFunction_(s)
 	}
 }
 
-func (s *FunctionContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Function_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(mumpsListener); ok {
-		listenerT.ExitFunction(s)
+		listenerT.ExitFunction_(s)
 	}
 }
 
-func (p *mumpsParser) Function() (localctx IFunctionContext) {
-	localctx = NewFunctionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, mumpsParserRULE_function)
+func (p *mumpsParser) Function_() (localctx IFunction_Context) {
+	this := p
+	_ = this
+
+	localctx = NewFunction_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 32, mumpsParserRULE_function_)
 	var _la int
 
 	defer func() {
@@ -3320,6 +3372,9 @@ func (s *Break_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Break_() (localctx IBreak_Context) {
+	this := p
+	_ = this
+
 	localctx = NewBreak_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, mumpsParserRULE_break_)
 
@@ -3467,6 +3522,9 @@ func (s *Do_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Do_() (localctx IDo_Context) {
+	this := p
+	_ = this
+
 	localctx = NewDo_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, mumpsParserRULE_do_)
 	var _la int
@@ -3690,6 +3748,9 @@ func (s *For_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) For_() (localctx IFor_Context) {
+	this := p
+	_ = this
+
 	localctx = NewFor_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, mumpsParserRULE_for_)
 	var _la int
@@ -3901,6 +3962,9 @@ func (s *Halt_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Halt_() (localctx IHalt_Context) {
+	this := p
+	_ = this
+
 	localctx = NewHalt_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, mumpsParserRULE_halt_)
 
@@ -4030,6 +4094,9 @@ func (s *Hang_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Hang_() (localctx IHang_Context) {
+	this := p
+	_ = this
+
 	localctx = NewHang_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, mumpsParserRULE_hang_)
 	var _la int
@@ -4179,6 +4246,9 @@ func (s *If_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) If_() (localctx IIf_Context) {
+	this := p
+	_ = this
+
 	localctx = NewIf_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, mumpsParserRULE_if_)
 	var _la int
@@ -4335,6 +4405,9 @@ func (s *Kill_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Kill_() (localctx IKill_Context) {
+	this := p
+	_ = this
+
 	localctx = NewKill_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, mumpsParserRULE_kill_)
 	var _la int
@@ -4513,6 +4586,9 @@ func (s *Merge_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Merge_() (localctx IMerge_Context) {
+	this := p
+	_ = this
+
 	localctx = NewMerge_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, mumpsParserRULE_merge_)
 	var _la int
@@ -4696,6 +4772,9 @@ func (s *New_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) New_() (localctx INew_Context) {
+	this := p
+	_ = this
+
 	localctx = NewNew_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, mumpsParserRULE_new_)
 	var _la int
@@ -4845,6 +4924,9 @@ func (s *Quit_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Quit_() (localctx IQuit_Context) {
+	this := p
+	_ = this
+
 	localctx = NewQuit_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, mumpsParserRULE_quit_)
 	var _la int
@@ -4999,6 +5081,9 @@ func (s *Read_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Read_() (localctx IRead_Context) {
+	this := p
+	_ = this
+
 	localctx = NewRead_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, mumpsParserRULE_read_)
 	var _la int
@@ -5169,6 +5254,9 @@ func (s *Set_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Set_() (localctx ISet_Context) {
+	this := p
+	_ = this
+
 	localctx = NewSet_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, mumpsParserRULE_set_)
 	var _la int
@@ -5337,6 +5425,9 @@ func (s *View_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) View_() (localctx IView_Context) {
+	this := p
+	_ = this
+
 	localctx = NewView_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, mumpsParserRULE_view_)
 	var _la int
@@ -5486,6 +5577,9 @@ func (s *Write_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Write_() (localctx IWrite_Context) {
+	this := p
+	_ = this
+
 	localctx = NewWrite_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, mumpsParserRULE_write_)
 	var _la int
@@ -5629,6 +5723,9 @@ func (s *Xecute_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Xecute_() (localctx IXecute_Context) {
+	this := p
+	_ = this
+
 	localctx = NewXecute_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, mumpsParserRULE_xecute_)
 	var _la int
@@ -5786,6 +5883,9 @@ func (s *AssignContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Assign() (localctx IAssignContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssignContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, mumpsParserRULE_assign)
 	var _la int
@@ -5977,6 +6077,9 @@ func (s *ArglistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Arglist() (localctx IArglistContext) {
+	this := p
+	_ = this
+
 	localctx = NewArglistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, mumpsParserRULE_arglist)
 	var _la int
@@ -6119,6 +6222,9 @@ func (s *ArgContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *mumpsParser) Arg() (localctx IArgContext) {
+	this := p
+	_ = this
+
 	localctx = NewArgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, mumpsParserRULE_arg)
 	var _la int

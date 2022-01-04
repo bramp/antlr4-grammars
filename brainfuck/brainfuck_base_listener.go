@@ -1,4 +1,4 @@
-// Code generated from brainfuck.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from brainfuck.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package brainfuck // brainfuck
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -20,11 +20,11 @@ func (s *BasebrainfuckListener) EnterEveryRule(ctx antlr.ParserRuleContext) {}
 // ExitEveryRule is called when any rule is exited.
 func (s *BasebrainfuckListener) ExitEveryRule(ctx antlr.ParserRuleContext) {}
 
-// EnterFile is called when production file is entered.
-func (s *BasebrainfuckListener) EnterFile(ctx *FileContext) {}
+// EnterFile_ is called when production file_ is entered.
+func (s *BasebrainfuckListener) EnterFile_(ctx *File_Context) {}
 
-// ExitFile is called when production file is exited.
-func (s *BasebrainfuckListener) ExitFile(ctx *FileContext) {}
+// ExitFile_ is called when production file_ is exited.
+func (s *BasebrainfuckListener) ExitFile_(ctx *File_Context) {}
 
 // EnterStatement is called when production statement is entered.
 func (s *BasebrainfuckListener) EnterStatement(ctx *StatementContext) {}

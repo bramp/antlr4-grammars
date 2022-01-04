@@ -1,4 +1,4 @@
-// Code generated from ScssParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ScssParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package scss // ScssParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -32,17 +32,17 @@ func (s *BaseScssParserListener) EnterStatement(ctx *StatementContext) {}
 // ExitStatement is called when production statement is exited.
 func (s *BaseScssParserListener) ExitStatement(ctx *StatementContext) {}
 
-// EnterParams is called when production params is entered.
-func (s *BaseScssParserListener) EnterParams(ctx *ParamsContext) {}
+// EnterDeclaredParams is called when production declaredParams is entered.
+func (s *BaseScssParserListener) EnterDeclaredParams(ctx *DeclaredParamsContext) {}
 
-// ExitParams is called when production params is exited.
-func (s *BaseScssParserListener) ExitParams(ctx *ParamsContext) {}
+// ExitDeclaredParams is called when production declaredParams is exited.
+func (s *BaseScssParserListener) ExitDeclaredParams(ctx *DeclaredParamsContext) {}
 
-// EnterParam is called when production param is entered.
-func (s *BaseScssParserListener) EnterParam(ctx *ParamContext) {}
+// EnterDeclaredParam is called when production declaredParam is entered.
+func (s *BaseScssParserListener) EnterDeclaredParam(ctx *DeclaredParamContext) {}
 
-// ExitParam is called when production param is exited.
-func (s *BaseScssParserListener) ExitParam(ctx *ParamContext) {}
+// ExitDeclaredParam is called when production declaredParam is exited.
+func (s *BaseScssParserListener) ExitDeclaredParam(ctx *DeclaredParamContext) {}
 
 // EnterVariableName is called when production variableName is entered.
 func (s *BaseScssParserListener) EnterVariableName(ctx *VariableNameContext) {}
@@ -56,11 +56,29 @@ func (s *BaseScssParserListener) EnterParamOptionalValue(ctx *ParamOptionalValue
 // ExitParamOptionalValue is called when production paramOptionalValue is exited.
 func (s *BaseScssParserListener) ExitParamOptionalValue(ctx *ParamOptionalValueContext) {}
 
+// EnterPassedParams is called when production passedParams is entered.
+func (s *BaseScssParserListener) EnterPassedParams(ctx *PassedParamsContext) {}
+
+// ExitPassedParams is called when production passedParams is exited.
+func (s *BaseScssParserListener) ExitPassedParams(ctx *PassedParamsContext) {}
+
+// EnterPassedParam is called when production passedParam is entered.
+func (s *BaseScssParserListener) EnterPassedParam(ctx *PassedParamContext) {}
+
+// ExitPassedParam is called when production passedParam is exited.
+func (s *BaseScssParserListener) ExitPassedParam(ctx *PassedParamContext) {}
+
 // EnterMixinDeclaration is called when production mixinDeclaration is entered.
 func (s *BaseScssParserListener) EnterMixinDeclaration(ctx *MixinDeclarationContext) {}
 
 // ExitMixinDeclaration is called when production mixinDeclaration is exited.
 func (s *BaseScssParserListener) ExitMixinDeclaration(ctx *MixinDeclarationContext) {}
+
+// EnterContentDeclaration is called when production contentDeclaration is entered.
+func (s *BaseScssParserListener) EnterContentDeclaration(ctx *ContentDeclarationContext) {}
+
+// ExitContentDeclaration is called when production contentDeclaration is exited.
+func (s *BaseScssParserListener) ExitContentDeclaration(ctx *ContentDeclarationContext) {}
 
 // EnterIncludeDeclaration is called when production includeDeclaration is entered.
 func (s *BaseScssParserListener) EnterIncludeDeclaration(ctx *IncludeDeclarationContext) {}
@@ -188,18 +206,6 @@ func (s *BaseScssParserListener) EnterEachValueList(ctx *EachValueListContext) {
 // ExitEachValueList is called when production eachValueList is exited.
 func (s *BaseScssParserListener) ExitEachValueList(ctx *EachValueListContext) {}
 
-// EnterIdentifierListOrMap is called when production identifierListOrMap is entered.
-func (s *BaseScssParserListener) EnterIdentifierListOrMap(ctx *IdentifierListOrMapContext) {}
-
-// ExitIdentifierListOrMap is called when production identifierListOrMap is exited.
-func (s *BaseScssParserListener) ExitIdentifierListOrMap(ctx *IdentifierListOrMapContext) {}
-
-// EnterIdentifierValue is called when production identifierValue is entered.
-func (s *BaseScssParserListener) EnterIdentifierValue(ctx *IdentifierValueContext) {}
-
-// ExitIdentifierValue is called when production identifierValue is exited.
-func (s *BaseScssParserListener) ExitIdentifierValue(ctx *IdentifierValueContext) {}
-
 // EnterImportDeclaration is called when production importDeclaration is entered.
 func (s *BaseScssParserListener) EnterImportDeclaration(ctx *ImportDeclarationContext) {}
 
@@ -212,23 +218,59 @@ func (s *BaseScssParserListener) EnterReferenceUrl(ctx *ReferenceUrlContext) {}
 // ExitReferenceUrl is called when production referenceUrl is exited.
 func (s *BaseScssParserListener) ExitReferenceUrl(ctx *ReferenceUrlContext) {}
 
-// EnterMediaTypes is called when production mediaTypes is entered.
-func (s *BaseScssParserListener) EnterMediaTypes(ctx *MediaTypesContext) {}
+// EnterAsClause is called when production asClause is entered.
+func (s *BaseScssParserListener) EnterAsClause(ctx *AsClauseContext) {}
 
-// ExitMediaTypes is called when production mediaTypes is exited.
-func (s *BaseScssParserListener) ExitMediaTypes(ctx *MediaTypesContext) {}
+// ExitAsClause is called when production asClause is exited.
+func (s *BaseScssParserListener) ExitAsClause(ctx *AsClauseContext) {}
 
-// EnterNested is called when production nested is entered.
-func (s *BaseScssParserListener) EnterNested(ctx *NestedContext) {}
+// EnterWithClause is called when production withClause is entered.
+func (s *BaseScssParserListener) EnterWithClause(ctx *WithClauseContext) {}
 
-// ExitNested is called when production nested is exited.
-func (s *BaseScssParserListener) ExitNested(ctx *NestedContext) {}
+// ExitWithClause is called when production withClause is exited.
+func (s *BaseScssParserListener) ExitWithClause(ctx *WithClauseContext) {}
 
-// EnterNest is called when production nest is entered.
-func (s *BaseScssParserListener) EnterNest(ctx *NestContext) {}
+// EnterKeywordArgument is called when production keywordArgument is entered.
+func (s *BaseScssParserListener) EnterKeywordArgument(ctx *KeywordArgumentContext) {}
 
-// ExitNest is called when production nest is exited.
-func (s *BaseScssParserListener) ExitNest(ctx *NestContext) {}
+// ExitKeywordArgument is called when production keywordArgument is exited.
+func (s *BaseScssParserListener) ExitKeywordArgument(ctx *KeywordArgumentContext) {}
+
+// EnterMediaDeclaration is called when production mediaDeclaration is entered.
+func (s *BaseScssParserListener) EnterMediaDeclaration(ctx *MediaDeclarationContext) {}
+
+// ExitMediaDeclaration is called when production mediaDeclaration is exited.
+func (s *BaseScssParserListener) ExitMediaDeclaration(ctx *MediaDeclarationContext) {}
+
+// EnterMediaQueryList is called when production mediaQueryList is entered.
+func (s *BaseScssParserListener) EnterMediaQueryList(ctx *MediaQueryListContext) {}
+
+// ExitMediaQueryList is called when production mediaQueryList is exited.
+func (s *BaseScssParserListener) ExitMediaQueryList(ctx *MediaQueryListContext) {}
+
+// EnterMediaQuery is called when production mediaQuery is entered.
+func (s *BaseScssParserListener) EnterMediaQuery(ctx *MediaQueryContext) {}
+
+// ExitMediaQuery is called when production mediaQuery is exited.
+func (s *BaseScssParserListener) ExitMediaQuery(ctx *MediaQueryContext) {}
+
+// EnterMediaType is called when production mediaType is entered.
+func (s *BaseScssParserListener) EnterMediaType(ctx *MediaTypeContext) {}
+
+// ExitMediaType is called when production mediaType is exited.
+func (s *BaseScssParserListener) ExitMediaType(ctx *MediaTypeContext) {}
+
+// EnterMediaExpression is called when production mediaExpression is entered.
+func (s *BaseScssParserListener) EnterMediaExpression(ctx *MediaExpressionContext) {}
+
+// ExitMediaExpression is called when production mediaExpression is exited.
+func (s *BaseScssParserListener) ExitMediaExpression(ctx *MediaExpressionContext) {}
+
+// EnterMediaFeature is called when production mediaFeature is entered.
+func (s *BaseScssParserListener) EnterMediaFeature(ctx *MediaFeatureContext) {}
+
+// ExitMediaFeature is called when production mediaFeature is exited.
+func (s *BaseScssParserListener) ExitMediaFeature(ctx *MediaFeatureContext) {}
 
 // EnterRuleset is called when production ruleset is entered.
 func (s *BaseScssParserListener) EnterRuleset(ctx *RulesetContext) {}
@@ -254,17 +296,17 @@ func (s *BaseScssParserListener) EnterSelector(ctx *SelectorContext) {}
 // ExitSelector is called when production selector is exited.
 func (s *BaseScssParserListener) ExitSelector(ctx *SelectorContext) {}
 
-// EnterSelectorPrefix is called when production selectorPrefix is entered.
-func (s *BaseScssParserListener) EnterSelectorPrefix(ctx *SelectorPrefixContext) {}
-
-// ExitSelectorPrefix is called when production selectorPrefix is exited.
-func (s *BaseScssParserListener) ExitSelectorPrefix(ctx *SelectorPrefixContext) {}
-
 // EnterElement is called when production element is entered.
 func (s *BaseScssParserListener) EnterElement(ctx *ElementContext) {}
 
 // ExitElement is called when production element is exited.
 func (s *BaseScssParserListener) ExitElement(ctx *ElementContext) {}
+
+// EnterCombinator is called when production combinator is entered.
+func (s *BaseScssParserListener) EnterCombinator(ctx *CombinatorContext) {}
+
+// ExitCombinator is called when production combinator is exited.
+func (s *BaseScssParserListener) ExitCombinator(ctx *CombinatorContext) {}
 
 // EnterPseudo is called when production pseudo is entered.
 func (s *BaseScssParserListener) EnterPseudo(ctx *PseudoContext) {}
@@ -290,6 +332,12 @@ func (s *BaseScssParserListener) EnterIdentifier(ctx *IdentifierContext) {}
 // ExitIdentifier is called when production identifier is exited.
 func (s *BaseScssParserListener) ExitIdentifier(ctx *IdentifierContext) {}
 
+// EnterPseudoIdentifier is called when production pseudoIdentifier is entered.
+func (s *BaseScssParserListener) EnterPseudoIdentifier(ctx *PseudoIdentifierContext) {}
+
+// ExitPseudoIdentifier is called when production pseudoIdentifier is exited.
+func (s *BaseScssParserListener) ExitPseudoIdentifier(ctx *PseudoIdentifierContext) {}
+
 // EnterIdentifierPart is called when production identifierPart is entered.
 func (s *BaseScssParserListener) EnterIdentifierPart(ctx *IdentifierPartContext) {}
 
@@ -302,17 +350,23 @@ func (s *BaseScssParserListener) EnterIdentifierVariableName(ctx *IdentifierVari
 // ExitIdentifierVariableName is called when production identifierVariableName is exited.
 func (s *BaseScssParserListener) ExitIdentifierVariableName(ctx *IdentifierVariableNameContext) {}
 
-// EnterProperty is called when production property is entered.
-func (s *BaseScssParserListener) EnterProperty(ctx *PropertyContext) {}
+// EnterProperty_ is called when production property_ is entered.
+func (s *BaseScssParserListener) EnterProperty_(ctx *Property_Context) {}
 
-// ExitProperty is called when production property is exited.
-func (s *BaseScssParserListener) ExitProperty(ctx *PropertyContext) {}
+// ExitProperty_ is called when production property_ is exited.
+func (s *BaseScssParserListener) ExitProperty_(ctx *Property_Context) {}
 
-// EnterValues is called when production values is entered.
-func (s *BaseScssParserListener) EnterValues(ctx *ValuesContext) {}
+// EnterLastProperty is called when production lastProperty is entered.
+func (s *BaseScssParserListener) EnterLastProperty(ctx *LastPropertyContext) {}
 
-// ExitValues is called when production values is exited.
-func (s *BaseScssParserListener) ExitValues(ctx *ValuesContext) {}
+// ExitLastProperty is called when production lastProperty is exited.
+func (s *BaseScssParserListener) ExitLastProperty(ctx *LastPropertyContext) {}
+
+// EnterPropertyValue is called when production propertyValue is entered.
+func (s *BaseScssParserListener) EnterPropertyValue(ctx *PropertyValueContext) {}
+
+// ExitPropertyValue is called when production propertyValue is exited.
+func (s *BaseScssParserListener) ExitPropertyValue(ctx *PropertyValueContext) {}
 
 // EnterUrl is called when production url is entered.
 func (s *BaseScssParserListener) EnterUrl(ctx *UrlContext) {}
@@ -331,3 +385,63 @@ func (s *BaseScssParserListener) EnterFunctionCall(ctx *FunctionCallContext) {}
 
 // ExitFunctionCall is called when production functionCall is exited.
 func (s *BaseScssParserListener) ExitFunctionCall(ctx *FunctionCallContext) {}
+
+// EnterNamespace is called when production namespace is entered.
+func (s *BaseScssParserListener) EnterNamespace(ctx *NamespaceContext) {}
+
+// ExitNamespace is called when production namespace is exited.
+func (s *BaseScssParserListener) ExitNamespace(ctx *NamespaceContext) {}
+
+// EnterList_ is called when production list_ is entered.
+func (s *BaseScssParserListener) EnterList_(ctx *List_Context) {}
+
+// ExitList_ is called when production list_ is exited.
+func (s *BaseScssParserListener) ExitList_(ctx *List_Context) {}
+
+// EnterListCommaSeparated is called when production listCommaSeparated is entered.
+func (s *BaseScssParserListener) EnterListCommaSeparated(ctx *ListCommaSeparatedContext) {}
+
+// ExitListCommaSeparated is called when production listCommaSeparated is exited.
+func (s *BaseScssParserListener) ExitListCommaSeparated(ctx *ListCommaSeparatedContext) {}
+
+// EnterListSpaceSeparated is called when production listSpaceSeparated is entered.
+func (s *BaseScssParserListener) EnterListSpaceSeparated(ctx *ListSpaceSeparatedContext) {}
+
+// ExitListSpaceSeparated is called when production listSpaceSeparated is exited.
+func (s *BaseScssParserListener) ExitListSpaceSeparated(ctx *ListSpaceSeparatedContext) {}
+
+// EnterListBracketed is called when production listBracketed is entered.
+func (s *BaseScssParserListener) EnterListBracketed(ctx *ListBracketedContext) {}
+
+// ExitListBracketed is called when production listBracketed is exited.
+func (s *BaseScssParserListener) ExitListBracketed(ctx *ListBracketedContext) {}
+
+// EnterListElement is called when production listElement is entered.
+func (s *BaseScssParserListener) EnterListElement(ctx *ListElementContext) {}
+
+// ExitListElement is called when production listElement is exited.
+func (s *BaseScssParserListener) ExitListElement(ctx *ListElementContext) {}
+
+// EnterMap_ is called when production map_ is entered.
+func (s *BaseScssParserListener) EnterMap_(ctx *Map_Context) {}
+
+// ExitMap_ is called when production map_ is exited.
+func (s *BaseScssParserListener) ExitMap_(ctx *Map_Context) {}
+
+// EnterMapEntry is called when production mapEntry is entered.
+func (s *BaseScssParserListener) EnterMapEntry(ctx *MapEntryContext) {}
+
+// ExitMapEntry is called when production mapEntry is exited.
+func (s *BaseScssParserListener) ExitMapEntry(ctx *MapEntryContext) {}
+
+// EnterMapKey is called when production mapKey is entered.
+func (s *BaseScssParserListener) EnterMapKey(ctx *MapKeyContext) {}
+
+// ExitMapKey is called when production mapKey is exited.
+func (s *BaseScssParserListener) ExitMapKey(ctx *MapKeyContext) {}
+
+// EnterMapValue is called when production mapValue is entered.
+func (s *BaseScssParserListener) EnterMapValue(ctx *MapValueContext) {}
+
+// ExitMapValue is called when production mapValue is exited.
+func (s *BaseScssParserListener) ExitMapValue(ctx *MapValueContext) {}

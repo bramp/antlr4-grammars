@@ -1,4 +1,4 @@
-// Code generated from creole.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from creole.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package creole // creole
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -38,11 +38,11 @@ func (s *BasecreoleListener) EnterMarkup(ctx *MarkupContext) {}
 // ExitMarkup is called when production markup is exited.
 func (s *BasecreoleListener) ExitMarkup(ctx *MarkupContext) {}
 
-// EnterText is called when production text is entered.
-func (s *BasecreoleListener) EnterText(ctx *TextContext) {}
+// EnterText_ is called when production text_ is entered.
+func (s *BasecreoleListener) EnterText_(ctx *Text_Context) {}
 
-// ExitText is called when production text is exited.
-func (s *BasecreoleListener) ExitText(ctx *TextContext) {}
+// ExitText_ is called when production text_ is exited.
+func (s *BasecreoleListener) ExitText_(ctx *Text_Context) {}
 
 // EnterBold is called when production bold is entered.
 func (s *BasecreoleListener) EnterBold(ctx *BoldContext) {}

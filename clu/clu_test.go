@@ -32,7 +32,10 @@ import (
 
 const MAX_TOKENS = 1000000
 
-var examples = []string{}
+var examples = []string{
+	"grammars-v4/clu/examples/bottles-133.txt",
+	"grammars-v4/clu/examples/hello.txt",
+}
 
 type exampleListener struct {
 	*clu.BasecluListener

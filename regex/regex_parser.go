@@ -1,4 +1,4 @@
-// Code generated from regexParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from regexParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package regex // regexParser
 import (
@@ -83,9 +83,6 @@ var parserATN = []uint16{
 	21, 2, 2, 152, 39, 3, 2, 2, 2, 153, 154, 9, 6, 2, 2, 154, 41, 3, 2, 2,
 	2, 17, 50, 56, 61, 70, 75, 90, 95, 102, 113, 116, 119, 123, 125, 129, 143,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'('", "')'", "'|'", "'+'", "'?'", "'*'", "'.'", "", "'{'", "", "",
 	"", "", "", "", "", "", "','", "", "", "", "", "", "", "", "", "", "",
@@ -107,21 +104,25 @@ var ruleNames = []string{
 	"charRange", "seRange", "charOrEsc", "charClassEsc", "catEsc", "complEsc",
 	"charProp",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type regexParser struct {
 	*antlr.BaseParser
 }
 
+// NewregexParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *regexParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewregexParser(input antlr.TokenStream) *regexParser {
 	this := new(regexParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -272,6 +273,9 @@ func (s *RootContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) Root() (localctx IRootContext) {
+	this := p
+	_ = this
+
 	localctx = NewRootContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, regexParserRULE_root)
 
@@ -394,6 +398,9 @@ func (s *RegExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) RegExp() (localctx IRegExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewRegExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, regexParserRULE_regExp)
 	var _la int
@@ -523,6 +530,9 @@ func (s *BranchContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) Branch() (localctx IBranchContext) {
+	this := p
+	_ = this
+
 	localctx = NewBranchContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, regexParserRULE_branch)
 	var _la int
@@ -641,6 +651,9 @@ func (s *PieceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) Piece() (localctx IPieceContext) {
+	this := p
+	_ = this
+
 	localctx = NewPieceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, regexParserRULE_piece)
 	var _la int
@@ -770,6 +783,9 @@ func (s *QuantifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) Quantifier() (localctx IQuantifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuantifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, regexParserRULE_quantifier)
 
@@ -919,6 +935,9 @@ func (s *QuantityContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) Quantity() (localctx IQuantityContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuantityContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, regexParserRULE_quantity)
 
@@ -1038,6 +1057,9 @@ func (s *QuantRangeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) QuantRange() (localctx IQuantRangeContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuantRangeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, regexParserRULE_quantRange)
 
@@ -1141,6 +1163,9 @@ func (s *QuantMinContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) QuantMin() (localctx IQuantMinContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuantMinContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, regexParserRULE_quantMin)
 
@@ -1264,6 +1289,9 @@ func (s *AtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) Atom() (localctx IAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, regexParserRULE_atom)
 
@@ -1406,6 +1434,9 @@ func (s *CharClassContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) CharClass() (localctx ICharClassContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharClassContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, regexParserRULE_charClass)
 
@@ -1546,6 +1577,9 @@ func (s *CharClassExprContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) CharClassExpr() (localctx ICharClassExprContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharClassExprContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, regexParserRULE_charClassExpr)
 	var _la int
@@ -1677,6 +1711,9 @@ func (s *CharGroupContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) CharGroup() (localctx ICharGroupContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharGroupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, regexParserRULE_charGroup)
 	var _la int
@@ -1879,6 +1916,9 @@ func (s *PosCharGroupContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) PosCharGroup() (localctx IPosCharGroupContext) {
+	this := p
+	_ = this
+
 	localctx = NewPosCharGroupContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, regexParserRULE_posCharGroup)
 	var _la int
@@ -2014,6 +2054,9 @@ func (s *CharRangeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) CharRange() (localctx ICharRangeContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharRangeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, regexParserRULE_charRange)
 
@@ -2141,6 +2184,9 @@ func (s *SeRangeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) SeRange() (localctx ISeRangeContext) {
+	this := p
+	_ = this
+
 	localctx = NewSeRangeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, regexParserRULE_seRange)
 
@@ -2244,6 +2290,9 @@ func (s *CharOrEscContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) CharOrEsc() (localctx ICharOrEscContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharOrEscContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, regexParserRULE_charOrEsc)
 	var _la int
@@ -2375,6 +2424,9 @@ func (s *CharClassEscContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) CharClassEsc() (localctx ICharClassEscContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharClassEscContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, regexParserRULE_charClassEsc)
 
@@ -2528,6 +2580,9 @@ func (s *CatEscContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) CatEsc() (localctx ICatEscContext) {
+	this := p
+	_ = this
+
 	localctx = NewCatEscContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, regexParserRULE_catEsc)
 	var _la int
@@ -2653,6 +2708,9 @@ func (s *ComplEscContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) ComplEsc() (localctx IComplEscContext) {
+	this := p
+	_ = this
+
 	localctx = NewComplEscContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, regexParserRULE_complEsc)
 	var _la int
@@ -2764,6 +2822,9 @@ func (s *CharPropContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *regexParser) CharProp() (localctx ICharPropContext) {
+	this := p
+	_ = this
+
 	localctx = NewCharPropContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, regexParserRULE_charProp)
 	var _la int

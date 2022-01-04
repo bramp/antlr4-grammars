@@ -1,4 +1,4 @@
-// Code generated from http.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from http.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package http // http
 import (
@@ -88,9 +88,6 @@ var parserATN = []uint16{
 	47, 3, 2, 2, 2, 168, 169, 9, 7, 2, 2, 169, 49, 3, 2, 2, 2, 18, 56, 77,
 	83, 88, 94, 96, 111, 118, 126, 130, 132, 138, 141, 145, 153, 160,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'GET'", "'HEAD'", "'POST'", "'PUT'", "'DELETE'", "'CONNECT'", "'OPTIONS'",
 	"'TRACE'", "'HTTP/'", "' '", "", "", "", "", "'('", "')'", "';'", "'='",
@@ -113,21 +110,25 @@ var ruleNames = []string{
 	"field_vchar", "obs_text", "obs_fold", "pchar", "unreserved", "sub_delims",
 	"tchar", "vCHAR",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type httpParser struct {
 	*antlr.BaseParser
 }
 
+// NewhttpParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *httpParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewhttpParser(input antlr.TokenStream) *httpParser {
 	this := new(httpParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -315,6 +316,9 @@ func (s *Http_messageContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Http_message() (localctx IHttp_messageContext) {
+	this := p
+	_ = this
+
 	localctx = NewHttp_messageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, httpParserRULE_http_message)
 	var _la int
@@ -435,6 +439,9 @@ func (s *Start_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Start_line() (localctx IStart_lineContext) {
+	this := p
+	_ = this
+
 	localctx = NewStart_lineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, httpParserRULE_start_line)
 
@@ -564,6 +571,9 @@ func (s *Request_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Request_line() (localctx IRequest_lineContext) {
+	this := p
+	_ = this
+
 	localctx = NewRequest_lineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, httpParserRULE_request_line)
 
@@ -670,6 +680,9 @@ func (s *MethodContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Method() (localctx IMethodContext) {
+	this := p
+	_ = this
+
 	localctx = NewMethodContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, httpParserRULE_method)
 	var _la int
@@ -775,6 +788,9 @@ func (s *Request_targetContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Request_target() (localctx IRequest_targetContext) {
+	this := p
+	_ = this
+
 	localctx = NewRequest_targetContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, httpParserRULE_request_target)
 
@@ -886,6 +902,9 @@ func (s *Origin_formContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Origin_form() (localctx IOrigin_formContext) {
+	this := p
+	_ = this
+
 	localctx = NewOrigin_formContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, httpParserRULE_origin_form)
 	var _la int
@@ -1020,6 +1039,9 @@ func (s *Absolute_pathContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Absolute_path() (localctx IAbsolute_pathContext) {
+	this := p
+	_ = this
+
 	localctx = NewAbsolute_pathContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, httpParserRULE_absolute_path)
 	var _la int
@@ -1145,6 +1167,9 @@ func (s *SegmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Segment() (localctx ISegmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewSegmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, httpParserRULE_segment)
 	var _la int
@@ -1282,6 +1307,9 @@ func (s *QueryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Query() (localctx IQueryContext) {
+	this := p
+	_ = this
+
 	localctx = NewQueryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, httpParserRULE_query)
 	var _la int
@@ -1423,6 +1451,9 @@ func (s *Http_versionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Http_version() (localctx IHttp_versionContext) {
+	this := p
+	_ = this
+
 	localctx = NewHttp_versionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, httpParserRULE_http_version)
 
@@ -1521,6 +1552,9 @@ func (s *Http_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Http_name() (localctx IHttp_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewHttp_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, httpParserRULE_http_name)
 
@@ -1640,6 +1674,9 @@ func (s *Header_fieldContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Header_field() (localctx IHeader_fieldContext) {
+	this := p
+	_ = this
+
 	localctx = NewHeader_fieldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, httpParserRULE_header_field)
 	var _la int
@@ -1774,6 +1811,9 @@ func (s *Field_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Field_name() (localctx IField_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewField_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, httpParserRULE_field_name)
 
@@ -1884,6 +1924,9 @@ func (s *TokenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Token() (localctx ITokenContext) {
+	this := p
+	_ = this
+
 	localctx = NewTokenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, httpParserRULE_token)
 	var _la int
@@ -2028,6 +2071,9 @@ func (s *Field_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Field_value() (localctx IField_valueContext) {
+	this := p
+	_ = this
+
 	localctx = NewField_valueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, httpParserRULE_field_value)
 
@@ -2186,6 +2232,9 @@ func (s *Field_contentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Field_content() (localctx IField_contentContext) {
+	this := p
+	_ = this
+
 	localctx = NewField_contentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, httpParserRULE_field_content)
 	var _la int
@@ -2326,6 +2375,9 @@ func (s *Field_vcharContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Field_vchar() (localctx IField_vcharContext) {
+	this := p
+	_ = this
+
 	localctx = NewField_vcharContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, httpParserRULE_field_vchar)
 
@@ -2433,6 +2485,9 @@ func (s *Obs_textContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Obs_text() (localctx IObs_textContext) {
+	this := p
+	_ = this
+
 	localctx = NewObs_textContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, httpParserRULE_obs_text)
 
@@ -2540,6 +2595,9 @@ func (s *Obs_foldContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Obs_fold() (localctx IObs_foldContext) {
+	this := p
+	_ = this
+
 	localctx = NewObs_foldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, httpParserRULE_obs_fold)
 	var _la int
@@ -2681,6 +2739,9 @@ func (s *PcharContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Pchar() (localctx IPcharContext) {
+	this := p
+	_ = this
+
 	localctx = NewPcharContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, httpParserRULE_pchar)
 
@@ -2829,6 +2890,9 @@ func (s *UnreservedContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Unreserved() (localctx IUnreservedContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnreservedContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, httpParserRULE_unreserved)
 	var _la int
@@ -2968,6 +3032,9 @@ func (s *Sub_delimsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Sub_delims() (localctx ISub_delimsContext) {
+	this := p
+	_ = this
+
 	localctx = NewSub_delimsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, httpParserRULE_sub_delims)
 	var _la int
@@ -3131,6 +3198,9 @@ func (s *TcharContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) Tchar() (localctx ITcharContext) {
+	this := p
+	_ = this
+
 	localctx = NewTcharContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, httpParserRULE_tchar)
 	var _la int
@@ -3238,6 +3308,9 @@ func (s *VCHARContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *httpParser) VCHAR() (localctx IVCHARContext) {
+	this := p
+	_ = this
+
 	localctx = NewVCHARContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, httpParserRULE_vCHAR)
 	var _la int

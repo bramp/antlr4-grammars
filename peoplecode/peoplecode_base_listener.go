@@ -1,4 +1,4 @@
-// Code generated from PeopleCode.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from PeopleCode.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package peoplecode // PeopleCode
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -344,11 +344,11 @@ func (s *BasePeopleCodeListener) EnterConstant(ctx *ConstantContext) {}
 // ExitConstant is called when production constant is exited.
 func (s *BasePeopleCodeListener) ExitConstant(ctx *ConstantContext) {}
 
-// EnterProperty is called when production property is entered.
-func (s *BasePeopleCodeListener) EnterProperty(ctx *PropertyContext) {}
+// EnterProperty_ is called when production property_ is entered.
+func (s *BasePeopleCodeListener) EnterProperty_(ctx *Property_Context) {}
 
-// ExitProperty is called when production property is exited.
-func (s *BasePeopleCodeListener) ExitProperty(ctx *PropertyContext) {}
+// ExitProperty_ is called when production property_ is exited.
+func (s *BasePeopleCodeListener) ExitProperty_(ctx *Property_Context) {}
 
 // EnterInstance is called when production instance is entered.
 func (s *BasePeopleCodeListener) EnterInstance(ctx *InstanceContext) {}
@@ -464,8 +464,8 @@ func (s *BasePeopleCodeListener) EnterLiteral(ctx *LiteralContext) {}
 // ExitLiteral is called when production literal is exited.
 func (s *BasePeopleCodeListener) ExitLiteral(ctx *LiteralContext) {}
 
-// EnterId is called when production id is entered.
-func (s *BasePeopleCodeListener) EnterId(ctx *IdContext) {}
+// EnterId_ is called when production id_ is entered.
+func (s *BasePeopleCodeListener) EnterId_(ctx *Id_Context) {}
 
-// ExitId is called when production id is exited.
-func (s *BasePeopleCodeListener) ExitId(ctx *IdContext) {}
+// ExitId_ is called when production id_ is exited.
+func (s *BasePeopleCodeListener) ExitId_(ctx *Id_Context) {}

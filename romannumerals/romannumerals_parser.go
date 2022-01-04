@@ -1,4 +1,4 @@
-// Code generated from romannumerals.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from romannumerals.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package romannumerals // romannumerals
 import (
@@ -53,9 +53,6 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 83, 80, 3, 2, 2, 2, 83, 82, 3, 2, 2, 2, 84, 21, 3, 2, 2, 2,
 	85, 86, 9, 4, 2, 2, 86, 23, 3, 2, 2, 2, 9, 31, 40, 48, 56, 65, 73, 83,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'M'", "'CD'", "'D'", "'CM'", "'C'", "'CC'", "'CCC'", "'XL'", "'L'",
 	"'XC'", "'X'", "'XX'", "'XXX'", "'IV'", "'V'", "'IX'", "'I'", "'II'", "'III'",
@@ -69,21 +66,25 @@ var ruleNames = []string{
 	"expression", "thousands", "thous_part", "hundreds", "hun_part", "hun_rep",
 	"tens", "tens_part", "tens_rep", "ones", "ones_rep",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type romannumeralsParser struct {
 	*antlr.BaseParser
 }
 
+// NewromannumeralsParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *romannumeralsParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewromannumeralsParser(input antlr.TokenStream) *romannumeralsParser {
 	this := new(romannumeralsParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -204,6 +205,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *romannumeralsParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, romannumeralsParserRULE_expression)
 
@@ -311,6 +315,9 @@ func (s *ThousandsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *romannumeralsParser) Thousands() (localctx IThousandsContext) {
+	this := p
+	_ = this
+
 	localctx = NewThousandsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, romannumeralsParserRULE_thousands)
 
@@ -440,6 +447,9 @@ func (p *romannumeralsParser) Thous_part() (localctx IThous_partContext) {
 }
 
 func (p *romannumeralsParser) thous_part(_p int) (localctx IThous_partContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewThous_partContext(p, p.GetParserRuleContext(), _parentState)
@@ -583,6 +593,9 @@ func (s *HundredsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *romannumeralsParser) Hundreds() (localctx IHundredsContext) {
+	this := p
+	_ = this
+
 	localctx = NewHundredsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, romannumeralsParserRULE_hundreds)
 
@@ -716,6 +729,9 @@ func (s *Hun_partContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *romannumeralsParser) Hun_part() (localctx IHun_partContext) {
+	this := p
+	_ = this
+
 	localctx = NewHun_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, romannumeralsParserRULE_hun_part)
 
@@ -853,6 +869,9 @@ func (s *Hun_repContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *romannumeralsParser) Hun_rep() (localctx IHun_repContext) {
+	this := p
+	_ = this
+
 	localctx = NewHun_repContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, romannumeralsParserRULE_hun_rep)
 	var _la int
@@ -968,6 +987,9 @@ func (s *TensContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *romannumeralsParser) Tens() (localctx ITensContext) {
+	this := p
+	_ = this
+
 	localctx = NewTensContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, romannumeralsParserRULE_tens)
 
@@ -1101,6 +1123,9 @@ func (s *Tens_partContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *romannumeralsParser) Tens_part() (localctx ITens_partContext) {
+	this := p
+	_ = this
+
 	localctx = NewTens_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, romannumeralsParserRULE_tens_part)
 
@@ -1238,6 +1263,9 @@ func (s *Tens_repContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *romannumeralsParser) Tens_rep() (localctx ITens_repContext) {
+	this := p
+	_ = this
+
 	localctx = NewTens_repContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, romannumeralsParserRULE_tens_rep)
 	var _la int
@@ -1355,6 +1383,9 @@ func (s *OnesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *romannumeralsParser) Ones() (localctx IOnesContext) {
+	this := p
+	_ = this
+
 	localctx = NewOnesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, romannumeralsParserRULE_ones)
 
@@ -1492,6 +1523,9 @@ func (s *Ones_repContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *romannumeralsParser) Ones_rep() (localctx IOnes_repContext) {
+	this := p
+	_ = this
+
 	localctx = NewOnes_repContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, romannumeralsParserRULE_ones_rep)
 	var _la int
@@ -1543,6 +1577,9 @@ func (p *romannumeralsParser) Sempred(localctx antlr.RuleContext, ruleIndex, pre
 }
 
 func (p *romannumeralsParser) Thous_part_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 2)

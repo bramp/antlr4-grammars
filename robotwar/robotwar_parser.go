@@ -1,4 +1,4 @@
-// Code generated from robotwar.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from robotwar.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package robotwar // robotwar
 import (
@@ -74,9 +74,6 @@ var parserATN = []uint16{
 	2, 134, 37, 3, 2, 2, 2, 135, 136, 7, 55, 2, 2, 136, 39, 3, 2, 2, 2, 14,
 	43, 48, 60, 70, 81, 87, 92, 96, 110, 117, 126, 131,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'='", "'#'", "'<'", "'>'", "'GOSUB'", "'GOTO'", "'TO'", "'ENDSUB'",
 	"'IF'", "'+'", "'-'", "'*'", "'/'", "'A'", "'B'", "'C'", "'D'", "'E'",
@@ -96,24 +93,28 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"program", "line", "label", "statement", "accumstatement", "accumexpression",
 	"gosubstatement", "gotostatement", "tostatement", "endsubstatement", "ifstatement",
-	"condition", "expression", "operation", "comparison", "argument", "register",
+	"condition", "expression", "operation", "comparison", "argument", "register_",
 	"number", "comment",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
 }
 
 type robotwarParser struct {
 	*antlr.BaseParser
 }
 
+// NewrobotwarParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *robotwarParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewrobotwarParser(input antlr.TokenStream) *robotwarParser {
 	this := new(robotwarParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -203,7 +204,7 @@ const (
 	robotwarParserRULE_operation       = 13
 	robotwarParserRULE_comparison      = 14
 	robotwarParserRULE_argument        = 15
-	robotwarParserRULE_register        = 16
+	robotwarParserRULE_register_       = 16
 	robotwarParserRULE_number          = 17
 	robotwarParserRULE_comment         = 18
 )
@@ -290,6 +291,9 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Program() (localctx IProgramContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, robotwarParserRULE_program)
 	var _la int
@@ -422,6 +426,9 @@ func (s *LineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Line() (localctx ILineContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, robotwarParserRULE_line)
 
@@ -539,6 +546,9 @@ func (s *LabelContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Label() (localctx ILabelContext) {
+	this := p
+	_ = this
+
 	localctx = NewLabelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, robotwarParserRULE_label)
 
@@ -686,6 +696,9 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, robotwarParserRULE_statement)
 
@@ -824,6 +837,9 @@ func (s *AccumstatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Accumstatement() (localctx IAccumstatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewAccumstatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, robotwarParserRULE_accumstatement)
 
@@ -931,6 +947,9 @@ func (s *AccumexpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Accumexpression() (localctx IAccumexpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAccumexpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, robotwarParserRULE_accumexpression)
 
@@ -1067,6 +1086,9 @@ func (s *GosubstatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Gosubstatement() (localctx IGosubstatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewGosubstatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, robotwarParserRULE_gosubstatement)
 
@@ -1168,6 +1190,9 @@ func (s *GotostatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Gotostatement() (localctx IGotostatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewGotostatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, robotwarParserRULE_gotostatement)
 
@@ -1248,27 +1273,27 @@ func (s *TostatementContext) Expression() IExpressionContext {
 	return t.(IExpressionContext)
 }
 
-func (s *TostatementContext) AllRegister() []IRegisterContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IRegisterContext)(nil)).Elem())
-	var tst = make([]IRegisterContext, len(ts))
+func (s *TostatementContext) AllRegister_() []IRegister_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IRegister_Context)(nil)).Elem())
+	var tst = make([]IRegister_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IRegisterContext)
+			tst[i] = t.(IRegister_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *TostatementContext) Register(i int) IRegisterContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRegisterContext)(nil)).Elem(), i)
+func (s *TostatementContext) Register_(i int) IRegister_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRegister_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IRegisterContext)
+	return t.(IRegister_Context)
 }
 
 func (s *TostatementContext) GetRuleContext() antlr.RuleContext {
@@ -1292,6 +1317,9 @@ func (s *TostatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Tostatement() (localctx ITostatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewTostatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, robotwarParserRULE_tostatement)
 	var _la int
@@ -1335,7 +1363,7 @@ func (p *robotwarParser) Tostatement() (localctx ITostatementContext) {
 		}
 		{
 			p.SetState(82)
-			p.Register()
+			p.Register_()
 		}
 
 		p.SetState(85)
@@ -1404,6 +1432,9 @@ func (s *EndsubstatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Endsubstatement() (localctx IEndsubstatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewEndsubstatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, robotwarParserRULE_endsubstatement)
 
@@ -1523,6 +1554,9 @@ func (s *IfstatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Ifstatement() (localctx IIfstatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewIfstatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, robotwarParserRULE_ifstatement)
 	var _la int
@@ -1677,6 +1711,9 @@ func (s *ConditionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Condition() (localctx IConditionContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, robotwarParserRULE_condition)
 
@@ -1818,6 +1855,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, robotwarParserRULE_expression)
 
@@ -1950,6 +1990,9 @@ func (s *OperationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Operation() (localctx IOperationContext) {
+	this := p
+	_ = this
+
 	localctx = NewOperationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, robotwarParserRULE_operation)
 	var _la int
@@ -2044,6 +2087,9 @@ func (s *ComparisonContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Comparison() (localctx IComparisonContext) {
+	this := p
+	_ = this
+
 	localctx = NewComparisonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, robotwarParserRULE_comparison)
 	var _la int
@@ -2128,14 +2174,14 @@ func (s *ArgumentContext) Number() INumberContext {
 	return t.(INumberContext)
 }
 
-func (s *ArgumentContext) Register() IRegisterContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRegisterContext)(nil)).Elem(), 0)
+func (s *ArgumentContext) Register_() IRegister_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRegister_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IRegisterContext)
+	return t.(IRegister_Context)
 }
 
 func (s *ArgumentContext) DATA() antlr.TerminalNode {
@@ -2163,6 +2209,9 @@ func (s *ArgumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Argument() (localctx IArgumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewArgumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, robotwarParserRULE_argument)
 
@@ -2196,7 +2245,7 @@ func (p *robotwarParser) Argument() (localctx IArgumentContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(122)
-			p.Register()
+			p.Register_()
 		}
 
 	case 3:
@@ -2211,207 +2260,210 @@ func (p *robotwarParser) Argument() (localctx IArgumentContext) {
 	return localctx
 }
 
-// IRegisterContext is an interface to support dynamic dispatch.
-type IRegisterContext interface {
+// IRegister_Context is an interface to support dynamic dispatch.
+type IRegister_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsRegisterContext differentiates from other interfaces.
-	IsRegisterContext()
+	// IsRegister_Context differentiates from other interfaces.
+	IsRegister_Context()
 }
 
-type RegisterContext struct {
+type Register_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyRegisterContext() *RegisterContext {
-	var p = new(RegisterContext)
+func NewEmptyRegister_Context() *Register_Context {
+	var p = new(Register_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = robotwarParserRULE_register
+	p.RuleIndex = robotwarParserRULE_register_
 	return p
 }
 
-func (*RegisterContext) IsRegisterContext() {}
+func (*Register_Context) IsRegister_Context() {}
 
-func NewRegisterContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *RegisterContext {
-	var p = new(RegisterContext)
+func NewRegister_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Register_Context {
+	var p = new(Register_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = robotwarParserRULE_register
+	p.RuleIndex = robotwarParserRULE_register_
 
 	return p
 }
 
-func (s *RegisterContext) GetParser() antlr.Parser { return s.parser }
+func (s *Register_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *RegisterContext) A() antlr.TerminalNode {
+func (s *Register_Context) A() antlr.TerminalNode {
 	return s.GetToken(robotwarParserA, 0)
 }
 
-func (s *RegisterContext) B() antlr.TerminalNode {
+func (s *Register_Context) B() antlr.TerminalNode {
 	return s.GetToken(robotwarParserB, 0)
 }
 
-func (s *RegisterContext) C() antlr.TerminalNode {
+func (s *Register_Context) C() antlr.TerminalNode {
 	return s.GetToken(robotwarParserC, 0)
 }
 
-func (s *RegisterContext) D() antlr.TerminalNode {
+func (s *Register_Context) D() antlr.TerminalNode {
 	return s.GetToken(robotwarParserD, 0)
 }
 
-func (s *RegisterContext) E() antlr.TerminalNode {
+func (s *Register_Context) E() antlr.TerminalNode {
 	return s.GetToken(robotwarParserE, 0)
 }
 
-func (s *RegisterContext) F() antlr.TerminalNode {
+func (s *Register_Context) F() antlr.TerminalNode {
 	return s.GetToken(robotwarParserF, 0)
 }
 
-func (s *RegisterContext) G() antlr.TerminalNode {
+func (s *Register_Context) G() antlr.TerminalNode {
 	return s.GetToken(robotwarParserG, 0)
 }
 
-func (s *RegisterContext) H() antlr.TerminalNode {
+func (s *Register_Context) H() antlr.TerminalNode {
 	return s.GetToken(robotwarParserH, 0)
 }
 
-func (s *RegisterContext) I() antlr.TerminalNode {
+func (s *Register_Context) I() antlr.TerminalNode {
 	return s.GetToken(robotwarParserI, 0)
 }
 
-func (s *RegisterContext) J() antlr.TerminalNode {
+func (s *Register_Context) J() antlr.TerminalNode {
 	return s.GetToken(robotwarParserJ, 0)
 }
 
-func (s *RegisterContext) K() antlr.TerminalNode {
+func (s *Register_Context) K() antlr.TerminalNode {
 	return s.GetToken(robotwarParserK, 0)
 }
 
-func (s *RegisterContext) L() antlr.TerminalNode {
+func (s *Register_Context) L() antlr.TerminalNode {
 	return s.GetToken(robotwarParserL, 0)
 }
 
-func (s *RegisterContext) M() antlr.TerminalNode {
+func (s *Register_Context) M() antlr.TerminalNode {
 	return s.GetToken(robotwarParserM, 0)
 }
 
-func (s *RegisterContext) N() antlr.TerminalNode {
+func (s *Register_Context) N() antlr.TerminalNode {
 	return s.GetToken(robotwarParserN, 0)
 }
 
-func (s *RegisterContext) O() antlr.TerminalNode {
+func (s *Register_Context) O() antlr.TerminalNode {
 	return s.GetToken(robotwarParserO, 0)
 }
 
-func (s *RegisterContext) P() antlr.TerminalNode {
+func (s *Register_Context) P() antlr.TerminalNode {
 	return s.GetToken(robotwarParserP, 0)
 }
 
-func (s *RegisterContext) Q() antlr.TerminalNode {
+func (s *Register_Context) Q() antlr.TerminalNode {
 	return s.GetToken(robotwarParserQ, 0)
 }
 
-func (s *RegisterContext) R() antlr.TerminalNode {
+func (s *Register_Context) R() antlr.TerminalNode {
 	return s.GetToken(robotwarParserR, 0)
 }
 
-func (s *RegisterContext) S() antlr.TerminalNode {
+func (s *Register_Context) S() antlr.TerminalNode {
 	return s.GetToken(robotwarParserS, 0)
 }
 
-func (s *RegisterContext) T() antlr.TerminalNode {
+func (s *Register_Context) T() antlr.TerminalNode {
 	return s.GetToken(robotwarParserT, 0)
 }
 
-func (s *RegisterContext) U() antlr.TerminalNode {
+func (s *Register_Context) U() antlr.TerminalNode {
 	return s.GetToken(robotwarParserU, 0)
 }
 
-func (s *RegisterContext) V() antlr.TerminalNode {
+func (s *Register_Context) V() antlr.TerminalNode {
 	return s.GetToken(robotwarParserV, 0)
 }
 
-func (s *RegisterContext) W() antlr.TerminalNode {
+func (s *Register_Context) W() antlr.TerminalNode {
 	return s.GetToken(robotwarParserW, 0)
 }
 
-func (s *RegisterContext) X() antlr.TerminalNode {
+func (s *Register_Context) X() antlr.TerminalNode {
 	return s.GetToken(robotwarParserX, 0)
 }
 
-func (s *RegisterContext) Y() antlr.TerminalNode {
+func (s *Register_Context) Y() antlr.TerminalNode {
 	return s.GetToken(robotwarParserY, 0)
 }
 
-func (s *RegisterContext) Z() antlr.TerminalNode {
+func (s *Register_Context) Z() antlr.TerminalNode {
 	return s.GetToken(robotwarParserZ, 0)
 }
 
-func (s *RegisterContext) AIM() antlr.TerminalNode {
+func (s *Register_Context) AIM() antlr.TerminalNode {
 	return s.GetToken(robotwarParserAIM, 0)
 }
 
-func (s *RegisterContext) SHOT() antlr.TerminalNode {
+func (s *Register_Context) SHOT() antlr.TerminalNode {
 	return s.GetToken(robotwarParserSHOT, 0)
 }
 
-func (s *RegisterContext) RADAR() antlr.TerminalNode {
+func (s *Register_Context) RADAR() antlr.TerminalNode {
 	return s.GetToken(robotwarParserRADAR, 0)
 }
 
-func (s *RegisterContext) SPEEDX() antlr.TerminalNode {
+func (s *Register_Context) SPEEDX() antlr.TerminalNode {
 	return s.GetToken(robotwarParserSPEEDX, 0)
 }
 
-func (s *RegisterContext) SPEEDY() antlr.TerminalNode {
+func (s *Register_Context) SPEEDY() antlr.TerminalNode {
 	return s.GetToken(robotwarParserSPEEDY, 0)
 }
 
-func (s *RegisterContext) RANDOM() antlr.TerminalNode {
+func (s *Register_Context) RANDOM() antlr.TerminalNode {
 	return s.GetToken(robotwarParserRANDOM, 0)
 }
 
-func (s *RegisterContext) INDEX() antlr.TerminalNode {
+func (s *Register_Context) INDEX() antlr.TerminalNode {
 	return s.GetToken(robotwarParserINDEX, 0)
 }
 
-func (s *RegisterContext) DATA() antlr.TerminalNode {
+func (s *Register_Context) DATA() antlr.TerminalNode {
 	return s.GetToken(robotwarParserDATA, 0)
 }
 
-func (s *RegisterContext) DAMAGE() antlr.TerminalNode {
+func (s *Register_Context) DAMAGE() antlr.TerminalNode {
 	return s.GetToken(robotwarParserDAMAGE, 0)
 }
 
-func (s *RegisterContext) GetRuleContext() antlr.RuleContext {
+func (s *Register_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *RegisterContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Register_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *RegisterContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Register_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(robotwarListener); ok {
-		listenerT.EnterRegister(s)
+		listenerT.EnterRegister_(s)
 	}
 }
 
-func (s *RegisterContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Register_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(robotwarListener); ok {
-		listenerT.ExitRegister(s)
+		listenerT.ExitRegister_(s)
 	}
 }
 
-func (p *robotwarParser) Register() (localctx IRegisterContext) {
-	localctx = NewRegisterContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, robotwarParserRULE_register)
+func (p *robotwarParser) Register_() (localctx IRegister_Context) {
+	this := p
+	_ = this
+
+	localctx = NewRegister_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 32, robotwarParserRULE_register_)
 	var _la int
 
 	defer func() {
@@ -2509,6 +2561,9 @@ func (s *NumberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Number() (localctx INumberContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, robotwarParserRULE_number)
 	var _la int
@@ -2619,6 +2674,9 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *robotwarParser) Comment() (localctx ICommentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, robotwarParserRULE_comment)
 

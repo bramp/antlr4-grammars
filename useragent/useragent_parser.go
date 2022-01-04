@@ -1,4 +1,4 @@
-// Code generated from useragent.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from useragent.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package useragent // useragent
 import (
@@ -30,9 +30,6 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 31, 32, 3, 2, 2, 2, 32, 9, 3, 2, 2, 2, 33, 31, 3, 2, 2, 2,
 	34, 35, 7, 5, 2, 2, 35, 11, 3, 2, 2, 2, 5, 14, 18, 31,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'/'", "'.'",
 }
@@ -43,21 +40,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"prog", "product", "name", "version", "comment",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type useragentParser struct {
 	*antlr.BaseParser
 }
 
+// NewuseragentParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *useragentParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewuseragentParser(input antlr.TokenStream) *useragentParser {
 	this := new(useragentParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -193,6 +194,9 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *useragentParser) Prog() (localctx IProgContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, useragentParserRULE_prog)
 	var _la int
@@ -322,6 +326,9 @@ func (s *ProductContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *useragentParser) Product() (localctx IProductContext) {
+	this := p
+	_ = this
+
 	localctx = NewProductContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, useragentParserRULE_product)
 
@@ -421,6 +428,9 @@ func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *useragentParser) Name() (localctx INameContext) {
+	this := p
+	_ = this
+
 	localctx = NewNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, useragentParserRULE_name)
 
@@ -516,6 +526,9 @@ func (s *VersionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *useragentParser) Version() (localctx IVersionContext) {
+	this := p
+	_ = this
+
 	localctx = NewVersionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, useragentParserRULE_version)
 	var _la int
@@ -626,6 +639,9 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *useragentParser) Comment() (localctx ICommentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, useragentParserRULE_comment)
 

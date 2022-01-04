@@ -1,4 +1,4 @@
-// Code generated from lambda.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from lambda.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package lambda // lambda
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -26,11 +26,11 @@ func (s *BaselambdaListener) EnterExpression(ctx *ExpressionContext) {}
 // ExitExpression is called when production expression is exited.
 func (s *BaselambdaListener) ExitExpression(ctx *ExpressionContext) {}
 
-// EnterFunction is called when production function is entered.
-func (s *BaselambdaListener) EnterFunction(ctx *FunctionContext) {}
+// EnterFunction_ is called when production function_ is entered.
+func (s *BaselambdaListener) EnterFunction_(ctx *Function_Context) {}
 
-// ExitFunction is called when production function is exited.
-func (s *BaselambdaListener) ExitFunction(ctx *FunctionContext) {}
+// ExitFunction_ is called when production function_ is exited.
+func (s *BaselambdaListener) ExitFunction_(ctx *Function_Context) {}
 
 // EnterApplication is called when production application is entered.
 func (s *BaselambdaListener) EnterApplication(ctx *ApplicationContext) {}

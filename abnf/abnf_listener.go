@@ -1,4 +1,4 @@
-// Code generated from Abnf.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Abnf.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package abnf // Abnf
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -25,8 +25,8 @@ type AbnfListener interface {
 	// EnterRepetition is called when entering the repetition production.
 	EnterRepetition(c *RepetitionContext)
 
-	// EnterRepeat is called when entering the repeat production.
-	EnterRepeat(c *RepeatContext)
+	// EnterRepeat_ is called when entering the repeat_ production.
+	EnterRepeat_(c *Repeat_Context)
 
 	// EnterElement is called when entering the element production.
 	EnterElement(c *ElementContext)
@@ -55,8 +55,8 @@ type AbnfListener interface {
 	// ExitRepetition is called when exiting the repetition production.
 	ExitRepetition(c *RepetitionContext)
 
-	// ExitRepeat is called when exiting the repeat production.
-	ExitRepeat(c *RepeatContext)
+	// ExitRepeat_ is called when exiting the repeat_ production.
+	ExitRepeat_(c *Repeat_Context)
 
 	// ExitElement is called when exiting the element production.
 	ExitElement(c *ElementContext)

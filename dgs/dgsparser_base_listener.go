@@ -1,4 +1,4 @@
-// Code generated from DGSParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from DGSParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package dgs // DGSParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -110,11 +110,11 @@ func (s *BaseDGSParserListener) EnterValue(ctx *ValueContext) {}
 // ExitValue is called when production value is exited.
 func (s *BaseDGSParserListener) ExitValue(ctx *ValueContext) {}
 
-// EnterArray is called when production array is entered.
-func (s *BaseDGSParserListener) EnterArray(ctx *ArrayContext) {}
+// EnterArray_ is called when production array_ is entered.
+func (s *BaseDGSParserListener) EnterArray_(ctx *Array_Context) {}
 
-// ExitArray is called when production array is exited.
-func (s *BaseDGSParserListener) ExitArray(ctx *ArrayContext) {}
+// ExitArray_ is called when production array_ is exited.
+func (s *BaseDGSParserListener) ExitArray_(ctx *Array_Context) {}
 
 // EnterA_map is called when production a_map is entered.
 func (s *BaseDGSParserListener) EnterA_map(ctx *A_mapContext) {}

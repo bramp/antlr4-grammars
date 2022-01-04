@@ -1,4 +1,4 @@
-// Code generated from IRI.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from IRI.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package iri // IRI
 import (
@@ -280,9 +280,6 @@ var parserATN = []uint16{
 	374, 379, 384, 387, 397, 402, 407, 412, 415, 422, 427, 432, 437, 442, 445,
 	452, 457, 462, 467, 472, 477, 480, 483, 498, 505, 529, 538, 542, 552, 556,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "", "'0'", "'1'", "'2'", "'3'", "'4'", "'5'", "'6'", "'7'", "'8'",
 	"'9'", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
@@ -309,21 +306,25 @@ var ruleNames = []string{
 	"unreserved", "reserved", "gen_delims", "sub_delims", "alpha", "hexdig",
 	"digit", "non_zero_digit",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type IRIParser struct {
 	*antlr.BaseParser
 }
 
+// NewIRIParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *IRIParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewIRIParser(input antlr.TokenStream) *IRIParser {
 	this := new(IRIParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -522,6 +523,9 @@ func (s *ParseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Parse() (localctx IParseContext) {
+	this := p
+	_ = this
+
 	localctx = NewParseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, IRIParserRULE_parse)
 
@@ -665,6 +669,9 @@ func (s *IriContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Iri() (localctx IIriContext) {
+	this := p
+	_ = this
+
 	localctx = NewIriContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, IRIParserRULE_iri)
 	var _la int
@@ -845,6 +852,9 @@ func (s *Ihier_partContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ihier_part() (localctx IIhier_partContext) {
+	this := p
+	_ = this
+
 	localctx = NewIhier_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, IRIParserRULE_ihier_part)
 
@@ -990,6 +1000,9 @@ func (s *Iri_referenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Iri_reference() (localctx IIri_referenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewIri_referenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, IRIParserRULE_iri_reference)
 
@@ -1128,6 +1141,9 @@ func (s *Absolute_iriContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Absolute_iri() (localctx IAbsolute_iriContext) {
+	this := p
+	_ = this
+
 	localctx = NewAbsolute_iriContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, IRIParserRULE_absolute_iri)
 	var _la int
@@ -1277,6 +1293,9 @@ func (s *Irelative_refContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Irelative_ref() (localctx IIrelative_refContext) {
+	this := p
+	_ = this
+
 	localctx = NewIrelative_refContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, IRIParserRULE_irelative_ref)
 	var _la int
@@ -1449,6 +1468,9 @@ func (s *Irelative_partContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Irelative_part() (localctx IIrelative_partContext) {
+	this := p
+	_ = this
+
 	localctx = NewIrelative_partContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, IRIParserRULE_irelative_part)
 
@@ -1612,6 +1634,9 @@ func (s *IauthorityContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Iauthority() (localctx IIauthorityContext) {
+	this := p
+	_ = this
+
 	localctx = NewIauthorityContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, IRIParserRULE_iauthority)
 	var _la int
@@ -1806,6 +1831,9 @@ func (s *IuserinfoContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Iuserinfo() (localctx IIuserinfoContext) {
+	this := p
+	_ = this
+
 	localctx = NewIuserinfoContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, IRIParserRULE_iuserinfo)
 	var _la int
@@ -1961,6 +1989,9 @@ func (s *IhostContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ihost() (localctx IIhostContext) {
+	this := p
+	_ = this
+
 	localctx = NewIhostContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, IRIParserRULE_ihost)
 
@@ -2137,6 +2168,9 @@ func (s *Ireg_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ireg_name() (localctx IIreg_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewIreg_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, IRIParserRULE_ireg_name)
 	var _la int
@@ -2306,6 +2340,9 @@ func (s *IpathContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ipath() (localctx IIpathContext) {
+	this := p
+	_ = this
+
 	localctx = NewIpathContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, IRIParserRULE_ipath)
 
@@ -2458,6 +2495,9 @@ func (s *Ipath_abemptyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ipath_abempty() (localctx IIpath_abemptyContext) {
+	this := p
+	_ = this
+
 	localctx = NewIpath_abemptyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, IRIParserRULE_ipath_abempty)
 	var _la int
@@ -2601,6 +2641,9 @@ func (s *Ipath_absoluteContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ipath_absolute() (localctx IIpath_absoluteContext) {
+	this := p
+	_ = this
+
 	localctx = NewIpath_absoluteContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, IRIParserRULE_ipath_absolute)
 	var _la int
@@ -2759,6 +2802,9 @@ func (s *Ipath_noschemeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ipath_noscheme() (localctx IIpath_noschemeContext) {
+	this := p
+	_ = this
+
 	localctx = NewIpath_noschemeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, IRIParserRULE_ipath_noscheme)
 	var _la int
@@ -2906,6 +2952,9 @@ func (s *Ipath_rootlessContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ipath_rootless() (localctx IIpath_rootlessContext) {
+	this := p
+	_ = this
+
 	localctx = NewIpath_rootlessContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, IRIParserRULE_ipath_rootless)
 	var _la int
@@ -3011,6 +3060,9 @@ func (s *Ipath_emptyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ipath_empty() (localctx IIpath_emptyContext) {
+	this := p
+	_ = this
+
 	localctx = NewIpath_emptyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, IRIParserRULE_ipath_empty)
 
@@ -3117,6 +3169,9 @@ func (s *IsegmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Isegment() (localctx IIsegmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewIsegmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, IRIParserRULE_isegment)
 	var _la int
@@ -3238,6 +3293,9 @@ func (s *Isegment_nzContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Isegment_nz() (localctx IIsegment_nzContext) {
+	this := p
+	_ = this
+
 	localctx = NewIsegment_nzContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, IRIParserRULE_isegment_nz)
 	var _la int
@@ -3413,6 +3471,9 @@ func (s *Isegment_nz_ncContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Isegment_nz_nc() (localctx IIsegment_nz_ncContext) {
+	this := p
+	_ = this
+
 	localctx = NewIsegment_nz_ncContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, IRIParserRULE_isegment_nz_nc)
 	var _la int
@@ -3576,6 +3637,9 @@ func (s *IpcharContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ipchar() (localctx IIpcharContext) {
+	this := p
+	_ = this
+
 	localctx = NewIpcharContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, IRIParserRULE_ipchar)
 	var _la int
@@ -3748,6 +3812,9 @@ func (s *IqueryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Iquery() (localctx IIqueryContext) {
+	this := p
+	_ = this
+
 	localctx = NewIqueryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, IRIParserRULE_iquery)
 	var _la int
@@ -3907,6 +3974,9 @@ func (s *IfragmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ifragment() (localctx IIfragmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewIfragmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, IRIParserRULE_ifragment)
 	var _la int
@@ -4067,6 +4137,9 @@ func (s *IunreservedContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Iunreserved() (localctx IIunreservedContext) {
+	this := p
+	_ = this
+
 	localctx = NewIunreservedContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, IRIParserRULE_iunreserved)
 	var _la int
@@ -4255,6 +4328,9 @@ func (s *SchemeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Scheme() (localctx ISchemeContext) {
+	this := p
+	_ = this
+
 	localctx = NewSchemeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, IRIParserRULE_scheme)
 	var _la int
@@ -4408,6 +4484,9 @@ func (s *PortContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Port() (localctx IPortContext) {
+	this := p
+	_ = this
+
 	localctx = NewPortContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, IRIParserRULE_port)
 	var _la int
@@ -4534,6 +4613,9 @@ func (s *Ip_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ip_literal() (localctx IIp_literalContext) {
+	this := p
+	_ = this
+
 	localctx = NewIp_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, IRIParserRULE_ip_literal)
 
@@ -4729,6 +4811,9 @@ func (s *Ip_v_futureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ip_v_future() (localctx IIp_v_futureContext) {
+	this := p
+	_ = this
+
 	localctx = NewIp_v_futureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, IRIParserRULE_ip_v_future)
 	var _la int
@@ -4915,6 +5000,9 @@ func (s *Ip_v6_addressContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ip_v6_address() (localctx IIp_v6_addressContext) {
+	this := p
+	_ = this
+
 	localctx = NewIp_v6_addressContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, IRIParserRULE_ip_v6_address)
 	var _la int
@@ -5655,6 +5743,9 @@ func (s *H16Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) H16() (localctx IH16Context) {
+	this := p
+	_ = this
+
 	localctx = NewH16Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, IRIParserRULE_h16)
 
@@ -5830,6 +5921,9 @@ func (s *Ls32Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ls32() (localctx ILs32Context) {
+	this := p
+	_ = this
+
 	localctx = NewLs32Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, IRIParserRULE_ls32)
 
@@ -5969,6 +6063,9 @@ func (s *Ip_v4_addressContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Ip_v4_address() (localctx IIp_v4_addressContext) {
+	this := p
+	_ = this
+
 	localctx = NewIp_v4_addressContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, IRIParserRULE_ip_v4_address)
 
@@ -6145,6 +6242,9 @@ func (s *Dec_octetContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Dec_octet() (localctx IDec_octetContext) {
+	this := p
+	_ = this
+
 	localctx = NewDec_octetContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, IRIParserRULE_dec_octet)
 	var _la int
@@ -6336,6 +6436,9 @@ func (s *Pct_encodedContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Pct_encoded() (localctx IPct_encodedContext) {
+	this := p
+	_ = this
+
 	localctx = NewPct_encodedContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, IRIParserRULE_pct_encoded)
 
@@ -6467,6 +6570,9 @@ func (s *UnreservedContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Unreserved() (localctx IUnreservedContext) {
+	this := p
+	_ = this
+
 	localctx = NewUnreservedContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, IRIParserRULE_unreserved)
 	var _la int
@@ -6605,6 +6711,9 @@ func (s *ReservedContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Reserved() (localctx IReservedContext) {
+	this := p
+	_ = this
+
 	localctx = NewReservedContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, IRIParserRULE_reserved)
 
@@ -6736,6 +6845,9 @@ func (s *Gen_delimsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Gen_delims() (localctx IGen_delimsContext) {
+	this := p
+	_ = this
+
 	localctx = NewGen_delimsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, IRIParserRULE_gen_delims)
 	var _la int
@@ -6875,6 +6987,9 @@ func (s *Sub_delimsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Sub_delims() (localctx ISub_delimsContext) {
+	this := p
+	_ = this
+
 	localctx = NewSub_delimsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, IRIParserRULE_sub_delims)
 	var _la int
@@ -7074,6 +7189,9 @@ func (s *AlphaContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Alpha() (localctx IAlphaContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlphaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, IRIParserRULE_alpha)
 	var _la int
@@ -7203,6 +7321,9 @@ func (s *HexdigContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Hexdig() (localctx IHexdigContext) {
+	this := p
+	_ = this
+
 	localctx = NewHexdigContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, IRIParserRULE_hexdig)
 	var _la int
@@ -7328,6 +7449,9 @@ func (s *DigitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Digit() (localctx IDigitContext) {
+	this := p
+	_ = this
+
 	localctx = NewDigitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, IRIParserRULE_digit)
 
@@ -7467,6 +7591,9 @@ func (s *Non_zero_digitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *IRIParser) Non_zero_digit() (localctx INon_zero_digitContext) {
+	this := p
+	_ = this
+
 	localctx = NewNon_zero_digitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, IRIParserRULE_non_zero_digit)
 	var _la int

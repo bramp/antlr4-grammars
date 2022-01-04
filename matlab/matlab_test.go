@@ -35,6 +35,7 @@ const MAX_TOKENS = 1000000
 var examples = []string{
 	"grammars-v4/matlab/examples/example1.txt",
 	"grammars-v4/matlab/examples/example2.txt",
+	"grammars-v4/matlab/examples/example3.txt",
 }
 
 type exampleListener struct {

@@ -1,4 +1,4 @@
-// Code generated from modelica.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from modelica.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package modelica // modelica
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -229,8 +229,8 @@ type modelicaListener interface {
 	// EnterArray_subscripts is called when entering the array_subscripts production.
 	EnterArray_subscripts(c *Array_subscriptsContext)
 
-	// EnterSubscript is called when entering the subscript production.
-	EnterSubscript(c *SubscriptContext)
+	// EnterSubscript_ is called when entering the subscript_ production.
+	EnterSubscript_(c *Subscript_Context)
 
 	// EnterComment is called when entering the comment production.
 	EnterComment(c *CommentContext)
@@ -463,8 +463,8 @@ type modelicaListener interface {
 	// ExitArray_subscripts is called when exiting the array_subscripts production.
 	ExitArray_subscripts(c *Array_subscriptsContext)
 
-	// ExitSubscript is called when exiting the subscript production.
-	ExitSubscript(c *SubscriptContext)
+	// ExitSubscript_ is called when exiting the subscript_ production.
+	ExitSubscript_(c *Subscript_Context)
 
 	// ExitComment is called when exiting the comment production.
 	ExitComment(c *CommentContext)

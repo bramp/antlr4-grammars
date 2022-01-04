@@ -1,4 +1,4 @@
-// Code generated from redcode.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from redcode.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package redcode // redcode
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -7,8 +7,8 @@ import "github.com/antlr/antlr4/runtime/Go/antlr"
 type redcodeListener interface {
 	antlr.ParseTreeListener
 
-	// EnterFile is called when entering the file production.
-	EnterFile(c *FileContext)
+	// EnterFile_ is called when entering the file_ production.
+	EnterFile_(c *File_Context)
 
 	// EnterLine is called when entering the line production.
 	EnterLine(c *LineContext)
@@ -31,8 +31,8 @@ type redcodeListener interface {
 	// EnterComment is called when entering the comment production.
 	EnterComment(c *CommentContext)
 
-	// ExitFile is called when exiting the file production.
-	ExitFile(c *FileContext)
+	// ExitFile_ is called when exiting the file_ production.
+	ExitFile_(c *File_Context)
 
 	// ExitLine is called when exiting the line production.
 	ExitLine(c *LineContext)

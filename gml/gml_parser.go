@@ -1,4 +1,4 @@
-// Code generated from gml.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from gml.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package gml // gml
 import (
@@ -40,9 +40,6 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 57, 58, 7, 5, 2, 2, 58, 19, 3, 2, 2, 2, 7, 23, 29, 41, 46,
 	51,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'['", "']'",
 }
@@ -52,23 +49,27 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"graph", "list", "kv", "value", "key", "integer", "realnum", "str", "stringliteral",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"graph", "list_", "kv", "value", "key", "integer", "realnum", "str_", "stringliteral",
 }
 
 type gmlParser struct {
 	*antlr.BaseParser
 }
 
+// NewgmlParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *gmlParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewgmlParser(input antlr.TokenStream) *gmlParser {
 	this := new(gmlParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -97,13 +98,13 @@ const (
 // gmlParser rules.
 const (
 	gmlParserRULE_graph         = 0
-	gmlParserRULE_list          = 1
+	gmlParserRULE_list_         = 1
 	gmlParserRULE_kv            = 2
 	gmlParserRULE_value         = 3
 	gmlParserRULE_key           = 4
 	gmlParserRULE_integer       = 5
 	gmlParserRULE_realnum       = 6
-	gmlParserRULE_str           = 7
+	gmlParserRULE_str_          = 7
 	gmlParserRULE_stringliteral = 8
 )
 
@@ -189,6 +190,9 @@ func (s *GraphContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gmlParser) Graph() (localctx IGraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewGraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, gmlParserRULE_graph)
 	var _la int
@@ -228,45 +232,45 @@ func (p *gmlParser) Graph() (localctx IGraphContext) {
 	return localctx
 }
 
-// IListContext is an interface to support dynamic dispatch.
-type IListContext interface {
+// IList_Context is an interface to support dynamic dispatch.
+type IList_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsListContext differentiates from other interfaces.
-	IsListContext()
+	// IsList_Context differentiates from other interfaces.
+	IsList_Context()
 }
 
-type ListContext struct {
+type List_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyListContext() *ListContext {
-	var p = new(ListContext)
+func NewEmptyList_Context() *List_Context {
+	var p = new(List_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = gmlParserRULE_list
+	p.RuleIndex = gmlParserRULE_list_
 	return p
 }
 
-func (*ListContext) IsListContext() {}
+func (*List_Context) IsList_Context() {}
 
-func NewListContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ListContext {
-	var p = new(ListContext)
+func NewList_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *List_Context {
+	var p = new(List_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = gmlParserRULE_list
+	p.RuleIndex = gmlParserRULE_list_
 
 	return p
 }
 
-func (s *ListContext) GetParser() antlr.Parser { return s.parser }
+func (s *List_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *ListContext) AllKv() []IKvContext {
+func (s *List_Context) AllKv() []IKvContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IKvContext)(nil)).Elem())
 	var tst = make([]IKvContext, len(ts))
 
@@ -279,7 +283,7 @@ func (s *ListContext) AllKv() []IKvContext {
 	return tst
 }
 
-func (s *ListContext) Kv(i int) IKvContext {
+func (s *List_Context) Kv(i int) IKvContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IKvContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -289,29 +293,32 @@ func (s *ListContext) Kv(i int) IKvContext {
 	return t.(IKvContext)
 }
 
-func (s *ListContext) GetRuleContext() antlr.RuleContext {
+func (s *List_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ListContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *List_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ListContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *List_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gmlListener); ok {
-		listenerT.EnterList(s)
+		listenerT.EnterList_(s)
 	}
 }
 
-func (s *ListContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *List_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gmlListener); ok {
-		listenerT.ExitList(s)
+		listenerT.ExitList_(s)
 	}
 }
 
-func (p *gmlParser) List() (localctx IListContext) {
-	localctx = NewListContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, gmlParserRULE_list)
+func (p *gmlParser) List_() (localctx IList_Context) {
+	this := p
+	_ = this
+
+	localctx = NewList_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 2, gmlParserRULE_list_)
 	var _la int
 
 	defer func() {
@@ -436,6 +443,9 @@ func (s *KvContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gmlParser) Kv() (localctx IKvContext) {
+	this := p
+	_ = this
+
 	localctx = NewKvContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, gmlParserRULE_kv)
 
@@ -536,24 +546,24 @@ func (s *ValueContext) Stringliteral() IStringliteralContext {
 	return t.(IStringliteralContext)
 }
 
-func (s *ValueContext) Str() IStrContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStrContext)(nil)).Elem(), 0)
+func (s *ValueContext) Str_() IStr_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStr_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IStrContext)
+	return t.(IStr_Context)
 }
 
-func (s *ValueContext) List() IListContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IListContext)(nil)).Elem(), 0)
+func (s *ValueContext) List_() IList_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IList_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IListContext)
+	return t.(IList_Context)
 }
 
 func (s *ValueContext) GetRuleContext() antlr.RuleContext {
@@ -577,6 +587,9 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gmlParser) Value() (localctx IValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, gmlParserRULE_value)
 
@@ -625,14 +638,14 @@ func (p *gmlParser) Value() (localctx IValueContext) {
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(37)
-			p.Str()
+			p.Str_()
 		}
 
 	case gmlParserT__0:
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(38)
-			p.List()
+			p.List_()
 		}
 
 	default:
@@ -705,6 +718,9 @@ func (s *KeyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gmlParser) Key() (localctx IKeyContext) {
+	this := p
+	_ = this
+
 	localctx = NewKeyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, gmlParserRULE_key)
 
@@ -804,6 +820,9 @@ func (s *IntegerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gmlParser) Integer() (localctx IIntegerContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntegerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, gmlParserRULE_integer)
 	var _la int
@@ -917,6 +936,9 @@ func (s *RealnumContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gmlParser) Realnum() (localctx IRealnumContext) {
+	this := p
+	_ = this
+
 	localctx = NewRealnumContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, gmlParserRULE_realnum)
 
@@ -945,71 +967,74 @@ func (p *gmlParser) Realnum() (localctx IRealnumContext) {
 	return localctx
 }
 
-// IStrContext is an interface to support dynamic dispatch.
-type IStrContext interface {
+// IStr_Context is an interface to support dynamic dispatch.
+type IStr_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsStrContext differentiates from other interfaces.
-	IsStrContext()
+	// IsStr_Context differentiates from other interfaces.
+	IsStr_Context()
 }
 
-type StrContext struct {
+type Str_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyStrContext() *StrContext {
-	var p = new(StrContext)
+func NewEmptyStr_Context() *Str_Context {
+	var p = new(Str_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = gmlParserRULE_str
+	p.RuleIndex = gmlParserRULE_str_
 	return p
 }
 
-func (*StrContext) IsStrContext() {}
+func (*Str_Context) IsStr_Context() {}
 
-func NewStrContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *StrContext {
-	var p = new(StrContext)
+func NewStr_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Str_Context {
+	var p = new(Str_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = gmlParserRULE_str
+	p.RuleIndex = gmlParserRULE_str_
 
 	return p
 }
 
-func (s *StrContext) GetParser() antlr.Parser { return s.parser }
+func (s *Str_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *StrContext) VALUE() antlr.TerminalNode {
+func (s *Str_Context) VALUE() antlr.TerminalNode {
 	return s.GetToken(gmlParserVALUE, 0)
 }
 
-func (s *StrContext) GetRuleContext() antlr.RuleContext {
+func (s *Str_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *StrContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Str_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *StrContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Str_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gmlListener); ok {
-		listenerT.EnterStr(s)
+		listenerT.EnterStr_(s)
 	}
 }
 
-func (s *StrContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Str_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(gmlListener); ok {
-		listenerT.ExitStr(s)
+		listenerT.ExitStr_(s)
 	}
 }
 
-func (p *gmlParser) Str() (localctx IStrContext) {
-	localctx = NewStrContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, gmlParserRULE_str)
+func (p *gmlParser) Str_() (localctx IStr_Context) {
+	this := p
+	_ = this
+
+	localctx = NewStr_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 14, gmlParserRULE_str_)
 
 	defer func() {
 		p.ExitRule()
@@ -1099,6 +1124,9 @@ func (s *StringliteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gmlParser) Stringliteral() (localctx IStringliteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewStringliteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, gmlParserRULE_stringliteral)
 

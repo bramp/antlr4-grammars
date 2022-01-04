@@ -1,4 +1,4 @@
-// Code generated from ReStructuredText.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ReStructuredText.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package restructuredtext // ReStructuredText
 import (
@@ -408,9 +408,6 @@ var parserATN = []uint16{
 	611, 619, 627, 633, 641, 648, 656, 661, 667, 671, 676, 682, 688, 698, 702,
 	708, 715, 723, 727, 732, 739, 744, 752, 762, 768, 783, 796, 801,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "':doc:'", "", "", "", "", "", "", "'['", "']'", "'('", "')'", "'<'",
 	"'>'", "'^'", "'\"'", "'''", "'.'", "';'", "':'", "'='", "'+'", "'-'",
@@ -437,21 +434,25 @@ var ruleNames = []string{
 	"backTickNoSpace", "backTickAtom", "reference", "referenceIn", "hyperlinkTarget",
 	"hyperlink", "hyperlinkDoc", "url", "urlAtom", "hyperlinkAtom", "separator",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type ReStructuredTextParser struct {
 	*antlr.BaseParser
 }
 
+// NewReStructuredTextParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *ReStructuredTextParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewReStructuredTextParser(input antlr.TokenStream) *ReStructuredTextParser {
 	this := new(ReStructuredTextParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -670,6 +671,9 @@ func (s *ParseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Parse() (localctx IParseContext) {
+	this := p
+	_ = this
+
 	localctx = NewParseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, ReStructuredTextParserRULE_parse)
 
@@ -810,6 +814,9 @@ func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Element() (localctx IElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, ReStructuredTextParserRULE_element)
 
@@ -960,6 +967,9 @@ func (s *SectionElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) SectionElement() (localctx ISectionElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSectionElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, ReStructuredTextParserRULE_sectionElement)
 
@@ -1113,6 +1123,9 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Comment() (localctx ICommentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, ReStructuredTextParserRULE_comment)
 	var _la int
@@ -1284,6 +1297,9 @@ func (s *CommentParagraphsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) CommentParagraphs() (localctx ICommentParagraphsContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentParagraphsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, ReStructuredTextParserRULE_commentParagraphs)
 
@@ -1424,6 +1440,9 @@ func (s *CommentRestContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) CommentRest() (localctx ICommentRestContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentRestContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, ReStructuredTextParserRULE_commentRest)
 
@@ -1552,6 +1571,9 @@ func (s *CommentParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) CommentParagraph() (localctx ICommentParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, ReStructuredTextParserRULE_commentParagraph)
 
@@ -1666,6 +1688,9 @@ func (s *CommentLineNoBreakContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) CommentLineNoBreak() (localctx ICommentLineNoBreakContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentLineNoBreakContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, ReStructuredTextParserRULE_commentLineNoBreak)
 
@@ -1775,6 +1800,9 @@ func (s *CommentLineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) CommentLine() (localctx ICommentLineContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, ReStructuredTextParserRULE_commentLine)
 
@@ -1886,6 +1914,9 @@ func (s *CommentLineAtomsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) CommentLineAtoms() (localctx ICommentLineAtomsContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentLineAtomsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, ReStructuredTextParserRULE_commentLineAtoms)
 	var _la int
@@ -2008,6 +2039,9 @@ func (s *ParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Paragraph() (localctx IParagraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewParagraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, ReStructuredTextParserRULE_paragraph)
 
@@ -2155,6 +2189,9 @@ func (s *SectionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Section() (localctx ISectionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSectionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, ReStructuredTextParserRULE_section)
 	var _la int
@@ -2371,6 +2408,9 @@ func (s *TitleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Title() (localctx ITitleContext) {
+	this := p
+	_ = this
+
 	localctx = NewTitleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, ReStructuredTextParserRULE_title)
 	var _la int
@@ -2557,6 +2597,9 @@ func (s *LineBlockContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) LineBlock() (localctx ILineBlockContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineBlockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, ReStructuredTextParserRULE_lineBlock)
 	var _la int
@@ -2724,6 +2767,9 @@ func (s *LineBlockLineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) LineBlockLine() (localctx ILineBlockLineContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineBlockLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, ReStructuredTextParserRULE_lineBlockLine)
 
@@ -2944,6 +2990,9 @@ func (s *ListItemBulletContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) ListItemBullet() (localctx IListItemBulletContext) {
+	this := p
+	_ = this
+
 	localctx = NewListItemBulletContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, ReStructuredTextParserRULE_listItemBullet)
 	var _la int
@@ -3129,6 +3178,9 @@ func (s *BulletCrossLineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) BulletCrossLine() (localctx IBulletCrossLineContext) {
+	this := p
+	_ = this
+
 	localctx = NewBulletCrossLineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, ReStructuredTextParserRULE_bulletCrossLine)
 	var _la int
@@ -3333,6 +3385,9 @@ func (s *BulletSimpleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) BulletSimple() (localctx IBulletSimpleContext) {
+	this := p
+	_ = this
+
 	localctx = NewBulletSimpleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, ReStructuredTextParserRULE_bulletSimple)
 	var _la int
@@ -3492,6 +3547,9 @@ func (s *BulletContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Bullet() (localctx IBulletContext) {
+	this := p
+	_ = this
+
 	localctx = NewBulletContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, ReStructuredTextParserRULE_bullet)
 	var _la int
@@ -3653,6 +3711,9 @@ func (s *ListItemEnumeratedContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) ListItemEnumerated() (localctx IListItemEnumeratedContext) {
+	this := p
+	_ = this
+
 	localctx = NewListItemEnumeratedContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, ReStructuredTextParserRULE_listItemEnumerated)
 
@@ -3827,6 +3888,9 @@ func (s *ParagraphNoBreakContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) ParagraphNoBreak() (localctx IParagraphNoBreakContext) {
+	this := p
+	_ = this
+
 	localctx = NewParagraphNoBreakContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, ReStructuredTextParserRULE_paragraphNoBreak)
 
@@ -3975,6 +4039,9 @@ func (s *LineNoBreakContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) LineNoBreak() (localctx ILineNoBreakContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineNoBreakContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, ReStructuredTextParserRULE_lineNoBreak)
 	var _la int
@@ -4112,6 +4179,9 @@ func (s *LinesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Lines() (localctx ILinesContext) {
+	this := p
+	_ = this
+
 	localctx = NewLinesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, ReStructuredTextParserRULE_lines)
 
@@ -4242,6 +4312,9 @@ func (s *LinesNormalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) LinesNormal() (localctx ILinesNormalContext) {
+	this := p
+	_ = this
+
 	localctx = NewLinesNormalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, ReStructuredTextParserRULE_linesNormal)
 
@@ -4391,6 +4464,9 @@ func (s *LinesStarContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) LinesStar() (localctx ILinesStarContext) {
+	this := p
+	_ = this
+
 	localctx = NewLinesStarContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, ReStructuredTextParserRULE_linesStar)
 
@@ -4613,6 +4689,9 @@ func (s *LineNormalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) LineNormal() (localctx ILineNormalContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineNormalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, ReStructuredTextParserRULE_lineNormal)
 	var _la int
@@ -4857,6 +4936,9 @@ func (s *LineStarContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) LineStar() (localctx ILineStarContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineStarContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, ReStructuredTextParserRULE_lineStar)
 	var _la int
@@ -5062,6 +5144,9 @@ func (s *LineSpecialContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) LineSpecial() (localctx ILineSpecialContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineSpecialContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, ReStructuredTextParserRULE_lineSpecial)
 	var _la int
@@ -5254,6 +5339,9 @@ func (s *Empty_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Empty_line() (localctx IEmpty_lineContext) {
+	this := p
+	_ = this
+
 	localctx = NewEmpty_lineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, ReStructuredTextParserRULE_empty_line)
 
@@ -5367,6 +5455,9 @@ func (s *IndentationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Indentation() (localctx IIndentationContext) {
+	this := p
+	_ = this
+
 	localctx = NewIndentationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, ReStructuredTextParserRULE_indentation)
 
@@ -5551,6 +5642,9 @@ func (s *SpanLineStartNoStarContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *ReStructuredTextParser) SpanLineStartNoStar() (localctx ISpanLineStartNoStarContext) {
+	this := p
+	_ = this
+
 	localctx = NewSpanLineStartNoStarContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, ReStructuredTextParserRULE_spanLineStartNoStar)
 
@@ -5739,6 +5833,9 @@ func (s *TextLineStartContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) TextLineStart() (localctx ITextLineStartContext) {
+	this := p
+	_ = this
+
 	localctx = NewTextLineStartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, ReStructuredTextParserRULE_textLineStart)
 
@@ -5970,6 +6067,9 @@ func (s *LineStart_fragmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) LineStart_fragment() (localctx ILineStart_fragmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewLineStart_fragmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, ReStructuredTextParserRULE_lineStart_fragment)
 	var _la int
@@ -6360,6 +6460,9 @@ func (s *TextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Text() (localctx ITextContext) {
+	this := p
+	_ = this
+
 	localctx = NewTextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, ReStructuredTextParserRULE_text)
 
@@ -6527,6 +6630,9 @@ func (s *TextStartContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) TextStart() (localctx ITextStartContext) {
+	this := p
+	_ = this
+
 	localctx = NewTextStartContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, ReStructuredTextParserRULE_textStart)
 
@@ -6698,6 +6804,9 @@ func (s *ForcedTextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) ForcedText() (localctx IForcedTextContext) {
+	this := p
+	_ = this
+
 	localctx = NewForcedTextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, ReStructuredTextParserRULE_forcedText)
 
@@ -6932,6 +7041,9 @@ func (s *SpanNoStarContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) SpanNoStar() (localctx ISpanNoStarContext) {
+	this := p
+	_ = this
+
 	localctx = NewSpanNoStarContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, ReStructuredTextParserRULE_spanNoStar)
 
@@ -7094,6 +7206,9 @@ func (s *SpanContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Span() (localctx ISpanContext) {
+	this := p
+	_ = this
+
 	localctx = NewSpanContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, ReStructuredTextParserRULE_span)
 
@@ -7212,6 +7327,9 @@ func (s *QuotedLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) QuotedLiteral() (localctx IQuotedLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuotedLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, ReStructuredTextParserRULE_quotedLiteral)
 
@@ -7377,6 +7495,9 @@ func (s *Text_fragment_startContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *ReStructuredTextParser) Text_fragment_start() (localctx IText_fragment_startContext) {
+	this := p
+	_ = this
+
 	localctx = NewText_fragment_startContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, ReStructuredTextParserRULE_text_fragment_start)
 
@@ -7622,6 +7743,9 @@ func (s *Text_fragmentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Text_fragment() (localctx IText_fragmentContext) {
+	this := p
+	_ = this
+
 	localctx = NewText_fragmentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, ReStructuredTextParserRULE_text_fragment)
 
@@ -7827,6 +7951,9 @@ func (s *StarTextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) StarText() (localctx IStarTextContext) {
+	this := p
+	_ = this
+
 	localctx = NewStarTextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, ReStructuredTextParserRULE_starText)
 	var _la int
@@ -8150,6 +8277,9 @@ func (s *StarAtomsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) StarAtoms() (localctx IStarAtomsContext) {
+	this := p
+	_ = this
+
 	localctx = NewStarAtomsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, ReStructuredTextParserRULE_starAtoms)
 	var _la int
@@ -8298,6 +8428,9 @@ func (s *StarNoSpaceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) StarNoSpace() (localctx IStarNoSpaceContext) {
+	this := p
+	_ = this
+
 	localctx = NewStarNoSpaceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, ReStructuredTextParserRULE_starNoSpace)
 	var _la int
@@ -8401,6 +8534,9 @@ func (s *StarAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) StarAtom() (localctx IStarAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewStarAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, ReStructuredTextParserRULE_starAtom)
 	var _la int
@@ -8533,6 +8669,9 @@ func (s *BackTickTextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) BackTickText() (localctx IBackTickTextContext) {
+	this := p
+	_ = this
+
 	localctx = NewBackTickTextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, ReStructuredTextParserRULE_backTickText)
 	var _la int
@@ -8681,6 +8820,9 @@ func (s *BodyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Body() (localctx IBodyContext) {
+	this := p
+	_ = this
+
 	localctx = NewBodyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, ReStructuredTextParserRULE_body)
 
@@ -8883,6 +9025,9 @@ func (s *BackTickAtomsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) BackTickAtoms() (localctx IBackTickAtomsContext) {
+	this := p
+	_ = this
+
 	localctx = NewBackTickAtomsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, ReStructuredTextParserRULE_backTickAtoms)
 
@@ -8999,6 +9144,9 @@ func (s *BackTickNoSpaceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) BackTickNoSpace() (localctx IBackTickNoSpaceContext) {
+	this := p
+	_ = this
+
 	localctx = NewBackTickNoSpaceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, ReStructuredTextParserRULE_backTickNoSpace)
 	var _la int
@@ -9106,6 +9254,9 @@ func (s *BackTickAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) BackTickAtom() (localctx IBackTickAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewBackTickAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, ReStructuredTextParserRULE_backTickAtom)
 	var _la int
@@ -9240,6 +9391,9 @@ func (s *ReferenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Reference() (localctx IReferenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewReferenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, ReStructuredTextParserRULE_reference)
 	var _la int
@@ -9387,6 +9541,9 @@ func (s *ReferenceInContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) ReferenceIn() (localctx IReferenceInContext) {
+	this := p
+	_ = this
+
 	localctx = NewReferenceInContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, ReStructuredTextParserRULE_referenceIn)
 
@@ -9519,6 +9676,9 @@ func (s *HyperlinkTargetContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) HyperlinkTarget() (localctx IHyperlinkTargetContext) {
+	this := p
+	_ = this
+
 	localctx = NewHyperlinkTargetContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, ReStructuredTextParserRULE_hyperlinkTarget)
 
@@ -9688,6 +9848,9 @@ func (s *HyperlinkContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Hyperlink() (localctx IHyperlinkContext) {
+	this := p
+	_ = this
+
 	localctx = NewHyperlinkContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, ReStructuredTextParserRULE_hyperlink)
 
@@ -9877,6 +10040,9 @@ func (s *HyperlinkDocContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) HyperlinkDoc() (localctx IHyperlinkDocContext) {
+	this := p
+	_ = this
+
 	localctx = NewHyperlinkDocContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 108, ReStructuredTextParserRULE_hyperlinkDoc)
 
@@ -10057,6 +10223,9 @@ func (s *UrlContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Url() (localctx IUrlContext) {
+	this := p
+	_ = this
+
 	localctx = NewUrlContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, ReStructuredTextParserRULE_url)
 
@@ -10169,6 +10338,9 @@ func (s *UrlAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) UrlAtom() (localctx IUrlAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewUrlAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, ReStructuredTextParserRULE_urlAtom)
 	var _la int
@@ -10284,6 +10456,9 @@ func (s *HyperlinkAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) HyperlinkAtom() (localctx IHyperlinkAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewHyperlinkAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, ReStructuredTextParserRULE_hyperlinkAtom)
 	var _la int
@@ -10395,6 +10570,9 @@ func (s *SeparatorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *ReStructuredTextParser) Separator() (localctx ISeparatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewSeparatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, ReStructuredTextParserRULE_separator)
 	var _la int

@@ -1,4 +1,4 @@
-// Code generated from Upnp.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Upnp.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package upnp // Upnp
 import (
@@ -61,9 +61,6 @@ var parserATN = []uint16{
 	2, 2, 102, 11, 3, 2, 2, 2, 103, 101, 3, 2, 2, 2, 17, 14, 22, 29, 34, 40,
 	46, 51, 58, 64, 71, 77, 80, 89, 95, 101,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'('", "')'", "", "", "", "", "", "", "'exists'", "", "", "", "'\t'",
 	"' '", "'\"'", "'*'",
@@ -77,21 +74,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"searchCrit", "searchExp", "relExp", "quotedVal", "escapedQuote",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type UpnpParser struct {
 	*antlr.BaseParser
 }
 
+// NewUpnpParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *UpnpParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewUpnpParser(input antlr.TokenStream) *UpnpParser {
 	this := new(UpnpParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -207,6 +208,9 @@ func (s *SearchCritContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *UpnpParser) SearchCrit() (localctx ISearchCritContext) {
+	this := p
+	_ = this
+
 	localctx = NewSearchCritContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, UpnpParserRULE_searchCrit)
 
@@ -359,6 +363,9 @@ func (p *UpnpParser) SearchExp() (localctx ISearchExpContext) {
 }
 
 func (p *UpnpParser) searchExp(_p int) (localctx ISearchExpContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewSearchExpContext(p, p.GetParserRuleContext(), _parentState)
@@ -599,6 +606,9 @@ func (s *RelExpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *UpnpParser) RelExp() (localctx IRelExpContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelExpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, UpnpParserRULE_relExp)
 	var _la int
@@ -790,6 +800,9 @@ func (s *QuotedValContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *UpnpParser) QuotedVal() (localctx IQuotedValContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuotedValContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, UpnpParserRULE_quotedVal)
 
@@ -901,6 +914,9 @@ func (s *EscapedQuoteContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *UpnpParser) EscapedQuote() (localctx IEscapedQuoteContext) {
+	this := p
+	_ = this
+
 	localctx = NewEscapedQuoteContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, UpnpParserRULE_escapedQuote)
 	var _la int
@@ -987,6 +1003,9 @@ func (p *UpnpParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex in
 }
 
 func (p *UpnpParser) SearchExp_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 2)

@@ -1,4 +1,4 @@
-// Code generated from cookie.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from cookie.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package cookie // cookie
 import (
@@ -36,9 +36,6 @@ var parserATN = []uint16{
 	48, 15, 3, 2, 2, 2, 49, 50, 7, 6, 2, 2, 50, 17, 3, 2, 2, 2, 51, 52, 7,
 	5, 2, 2, 52, 19, 3, 2, 2, 2, 6, 23, 33, 39, 47,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "';'", "'='",
 }
@@ -50,21 +47,25 @@ var ruleNames = []string{
 	"cookie", "name", "av_pairs", "av_pair", "attr", "value", "word", "token",
 	"quoted_string",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type cookieParser struct {
 	*antlr.BaseParser
 }
 
+// NewcookieParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *cookieParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewcookieParser(input antlr.TokenStream) *cookieParser {
 	this := new(cookieParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -182,6 +183,9 @@ func (s *CookieContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *cookieParser) Cookie() (localctx ICookieContext) {
+	this := p
+	_ = this
+
 	localctx = NewCookieContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, cookieParserRULE_cookie)
 	var _la int
@@ -290,6 +294,9 @@ func (s *NameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *cookieParser) Name() (localctx INameContext) {
+	this := p
+	_ = this
+
 	localctx = NewNameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, cookieParserRULE_name)
 
@@ -400,6 +407,9 @@ func (s *Av_pairsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *cookieParser) Av_pairs() (localctx IAv_pairsContext) {
+	this := p
+	_ = this
+
 	localctx = NewAv_pairsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, cookieParserRULE_av_pairs)
 	var _la int
@@ -526,6 +536,9 @@ func (s *Av_pairContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *cookieParser) Av_pair() (localctx IAv_pairContext) {
+	this := p
+	_ = this
+
 	localctx = NewAv_pairContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, cookieParserRULE_av_pair)
 	var _la int
@@ -639,6 +652,9 @@ func (s *AttrContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *cookieParser) Attr() (localctx IAttrContext) {
+	this := p
+	_ = this
+
 	localctx = NewAttrContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, cookieParserRULE_attr)
 
@@ -736,6 +752,9 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *cookieParser) Value() (localctx IValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, cookieParserRULE_value)
 
@@ -843,6 +862,9 @@ func (s *WordContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *cookieParser) Word() (localctx IWordContext) {
+	this := p
+	_ = this
+
 	localctx = NewWordContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, cookieParserRULE_word)
 
@@ -950,6 +972,9 @@ func (s *TokenContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *cookieParser) Token() (localctx ITokenContext) {
+	this := p
+	_ = this
+
 	localctx = NewTokenContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, cookieParserRULE_token)
 
@@ -1041,6 +1066,9 @@ func (s *Quoted_stringContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *cookieParser) Quoted_string() (localctx IQuoted_stringContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuoted_stringContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, cookieParserRULE_quoted_string)
 

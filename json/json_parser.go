@@ -1,4 +1,4 @@
-// Code generated from JSON.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from JSON.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package json // JSON
 import (
@@ -40,9 +40,6 @@ var parserATN = []uint16{
 	51, 3, 2, 2, 2, 55, 52, 3, 2, 2, 2, 55, 53, 3, 2, 2, 2, 55, 54, 3, 2, 2,
 	2, 56, 11, 3, 2, 2, 2, 7, 20, 27, 39, 46, 55,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'{'", "','", "'}'", "':'", "'['", "']'", "'true'", "'false'", "'null'",
 }
@@ -51,23 +48,27 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"json", "obj", "pair", "array", "value",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"json", "obj", "pair", "arr", "value",
 }
 
 type JSONParser struct {
 	*antlr.BaseParser
 }
 
+// NewJSONParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *JSONParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewJSONParser(input antlr.TokenStream) *JSONParser {
 	this := new(JSONParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -101,7 +102,7 @@ const (
 	JSONParserRULE_json  = 0
 	JSONParserRULE_obj   = 1
 	JSONParserRULE_pair  = 2
-	JSONParserRULE_array = 3
+	JSONParserRULE_arr   = 3
 	JSONParserRULE_value = 4
 )
 
@@ -174,6 +175,9 @@ func (s *JsonContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JSONParser) Json() (localctx IJsonContext) {
+	this := p
+	_ = this
+
 	localctx = NewJsonContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, JSONParserRULE_json)
 
@@ -284,6 +288,9 @@ func (s *ObjContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JSONParser) Obj() (localctx IObjContext) {
+	this := p
+	_ = this
+
 	localctx = NewObjContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, JSONParserRULE_obj)
 	var _la int
@@ -429,6 +436,9 @@ func (s *PairContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JSONParser) Pair() (localctx IPairContext) {
+	this := p
+	_ = this
+
 	localctx = NewPairContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, JSONParserRULE_pair)
 
@@ -465,45 +475,45 @@ func (p *JSONParser) Pair() (localctx IPairContext) {
 	return localctx
 }
 
-// IArrayContext is an interface to support dynamic dispatch.
-type IArrayContext interface {
+// IArrContext is an interface to support dynamic dispatch.
+type IArrContext interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsArrayContext differentiates from other interfaces.
-	IsArrayContext()
+	// IsArrContext differentiates from other interfaces.
+	IsArrContext()
 }
 
-type ArrayContext struct {
+type ArrContext struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyArrayContext() *ArrayContext {
-	var p = new(ArrayContext)
+func NewEmptyArrContext() *ArrContext {
+	var p = new(ArrContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = JSONParserRULE_array
+	p.RuleIndex = JSONParserRULE_arr
 	return p
 }
 
-func (*ArrayContext) IsArrayContext() {}
+func (*ArrContext) IsArrContext() {}
 
-func NewArrayContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ArrayContext {
-	var p = new(ArrayContext)
+func NewArrContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *ArrContext {
+	var p = new(ArrContext)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = JSONParserRULE_array
+	p.RuleIndex = JSONParserRULE_arr
 
 	return p
 }
 
-func (s *ArrayContext) GetParser() antlr.Parser { return s.parser }
+func (s *ArrContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ArrayContext) AllValue() []IValueContext {
+func (s *ArrContext) AllValue() []IValueContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IValueContext)(nil)).Elem())
 	var tst = make([]IValueContext, len(ts))
 
@@ -516,7 +526,7 @@ func (s *ArrayContext) AllValue() []IValueContext {
 	return tst
 }
 
-func (s *ArrayContext) Value(i int) IValueContext {
+func (s *ArrContext) Value(i int) IValueContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IValueContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -526,29 +536,32 @@ func (s *ArrayContext) Value(i int) IValueContext {
 	return t.(IValueContext)
 }
 
-func (s *ArrayContext) GetRuleContext() antlr.RuleContext {
+func (s *ArrContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ArrayContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *ArrContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *ArrayContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *ArrContext) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JSONListener); ok {
-		listenerT.EnterArray(s)
+		listenerT.EnterArr(s)
 	}
 }
 
-func (s *ArrayContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *ArrContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(JSONListener); ok {
-		listenerT.ExitArray(s)
+		listenerT.ExitArr(s)
 	}
 }
 
-func (p *JSONParser) Array() (localctx IArrayContext) {
-	localctx = NewArrayContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, JSONParserRULE_array)
+func (p *JSONParser) Arr() (localctx IArrContext) {
+	this := p
+	_ = this
+
+	localctx = NewArrContext(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 6, JSONParserRULE_arr)
 	var _la int
 
 	defer func() {
@@ -675,14 +688,14 @@ func (s *ValueContext) Obj() IObjContext {
 	return t.(IObjContext)
 }
 
-func (s *ValueContext) Array() IArrayContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IArrayContext)(nil)).Elem(), 0)
+func (s *ValueContext) Arr() IArrContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IArrContext)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IArrayContext)
+	return t.(IArrContext)
 }
 
 func (s *ValueContext) GetRuleContext() antlr.RuleContext {
@@ -706,6 +719,9 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JSONParser) Value() (localctx IValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, JSONParserRULE_value)
 
@@ -754,7 +770,7 @@ func (p *JSONParser) Value() (localctx IValueContext) {
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(49)
-			p.Array()
+			p.Arr()
 		}
 
 	case JSONParserT__6:

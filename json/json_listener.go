@@ -1,4 +1,4 @@
-// Code generated from JSON.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from JSON.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package json // JSON
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -16,8 +16,8 @@ type JSONListener interface {
 	// EnterPair is called when entering the pair production.
 	EnterPair(c *PairContext)
 
-	// EnterArray is called when entering the array production.
-	EnterArray(c *ArrayContext)
+	// EnterArr is called when entering the arr production.
+	EnterArr(c *ArrContext)
 
 	// EnterValue is called when entering the value production.
 	EnterValue(c *ValueContext)
@@ -31,8 +31,8 @@ type JSONListener interface {
 	// ExitPair is called when exiting the pair production.
 	ExitPair(c *PairContext)
 
-	// ExitArray is called when exiting the array production.
-	ExitArray(c *ArrayContext)
+	// ExitArr is called when exiting the arr production.
+	ExitArr(c *ArrContext)
 
 	// ExitValue is called when exiting the value production.
 	ExitValue(c *ValueContext)

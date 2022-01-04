@@ -1,4 +1,4 @@
-// Code generated from brainfuck.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from brainfuck.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package brainfuck // brainfuck
 import (
@@ -28,9 +28,6 @@ var parserATN = []uint16{
 	2, 2, 2, 24, 5, 3, 2, 2, 2, 25, 26, 9, 2, 2, 2, 26, 7, 3, 2, 2, 2, 5, 11,
 	19, 23,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'>'", "'<'", "'+'", "'-'", "'.'", "','", "'['", "']'",
 }
@@ -39,23 +36,27 @@ var symbolicNames = []string{
 }
 
 var ruleNames = []string{
-	"file", "statement", "opcode",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"file_", "statement", "opcode",
 }
 
 type brainfuckParser struct {
 	*antlr.BaseParser
 }
 
+// NewbrainfuckParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *brainfuckParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewbrainfuckParser(input antlr.TokenStream) *brainfuckParser {
 	this := new(brainfuckParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -83,50 +84,50 @@ const (
 
 // brainfuckParser rules.
 const (
-	brainfuckParserRULE_file      = 0
+	brainfuckParserRULE_file_     = 0
 	brainfuckParserRULE_statement = 1
 	brainfuckParserRULE_opcode    = 2
 )
 
-// IFileContext is an interface to support dynamic dispatch.
-type IFileContext interface {
+// IFile_Context is an interface to support dynamic dispatch.
+type IFile_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsFileContext differentiates from other interfaces.
-	IsFileContext()
+	// IsFile_Context differentiates from other interfaces.
+	IsFile_Context()
 }
 
-type FileContext struct {
+type File_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyFileContext() *FileContext {
-	var p = new(FileContext)
+func NewEmptyFile_Context() *File_Context {
+	var p = new(File_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = brainfuckParserRULE_file
+	p.RuleIndex = brainfuckParserRULE_file_
 	return p
 }
 
-func (*FileContext) IsFileContext() {}
+func (*File_Context) IsFile_Context() {}
 
-func NewFileContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *FileContext {
-	var p = new(FileContext)
+func NewFile_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *File_Context {
+	var p = new(File_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = brainfuckParserRULE_file
+	p.RuleIndex = brainfuckParserRULE_file_
 
 	return p
 }
 
-func (s *FileContext) GetParser() antlr.Parser { return s.parser }
+func (s *File_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *FileContext) AllStatement() []IStatementContext {
+func (s *File_Context) AllStatement() []IStatementContext {
 	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IStatementContext)(nil)).Elem())
 	var tst = make([]IStatementContext, len(ts))
 
@@ -139,7 +140,7 @@ func (s *FileContext) AllStatement() []IStatementContext {
 	return tst
 }
 
-func (s *FileContext) Statement(i int) IStatementContext {
+func (s *File_Context) Statement(i int) IStatementContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IStatementContext)(nil)).Elem(), i)
 
 	if t == nil {
@@ -149,29 +150,32 @@ func (s *FileContext) Statement(i int) IStatementContext {
 	return t.(IStatementContext)
 }
 
-func (s *FileContext) GetRuleContext() antlr.RuleContext {
+func (s *File_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *FileContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *File_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *FileContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *File_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(brainfuckListener); ok {
-		listenerT.EnterFile(s)
+		listenerT.EnterFile_(s)
 	}
 }
 
-func (s *FileContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *File_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(brainfuckListener); ok {
-		listenerT.ExitFile(s)
+		listenerT.ExitFile_(s)
 	}
 }
 
-func (p *brainfuckParser) File() (localctx IFileContext) {
-	localctx = NewFileContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 0, brainfuckParserRULE_file)
+func (p *brainfuckParser) File_() (localctx IFile_Context) {
+	this := p
+	_ = this
+
+	localctx = NewFile_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 0, brainfuckParserRULE_file_)
 	var _la int
 
 	defer func() {
@@ -309,6 +313,9 @@ func (s *StatementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *brainfuckParser) Statement() (localctx IStatementContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, brainfuckParserRULE_statement)
 	var _la int
@@ -455,6 +462,9 @@ func (s *OpcodeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *brainfuckParser) Opcode() (localctx IOpcodeContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpcodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, brainfuckParserRULE_opcode)
 	var _la int

@@ -1,4 +1,4 @@
-// Code generated from R.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from R.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package r // R
 import (
@@ -121,9 +121,6 @@ var parserATN = []uint16{
 	2, 2, 2, 16, 20, 24, 26, 41, 99, 153, 155, 161, 165, 169, 176, 185, 192,
 	214,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "';'", "'[['", "']'", "'['", "'::'", "':::'", "'$'", "'@'", "'^'",
 	"'-'", "'+'", "':'", "'*'", "'/'", "'>'", "'>='", "'<'", "'<='", "'=='",
@@ -144,21 +141,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"prog", "expr", "exprlist", "formlist", "form", "sublist", "sub",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type RParser struct {
 	*antlr.BaseParser
 }
 
+// NewRParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *RParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewRParser(input antlr.TokenStream) *RParser {
 	this := new(RParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -344,6 +345,9 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RParser) Prog() (localctx IProgContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, RParserRULE_prog)
 	var _la int
@@ -571,6 +575,9 @@ func (p *RParser) Expr() (localctx IExprContext) {
 }
 
 func (p *RParser) expr(_p int) (localctx IExprContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewExprContext(p, p.GetParserRuleContext(), _parentState)
@@ -1347,6 +1354,9 @@ func (s *ExprlistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RParser) Exprlist() (localctx IExprlistContext) {
+	this := p
+	_ = this
+
 	localctx = NewExprlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, RParserRULE_exprlist)
 	var _la int
@@ -1502,6 +1512,9 @@ func (s *FormlistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RParser) Formlist() (localctx IFormlistContext) {
+	this := p
+	_ = this
+
 	localctx = NewFormlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, RParserRULE_formlist)
 	var _la int
@@ -1622,6 +1635,9 @@ func (s *FormContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RParser) Form() (localctx IFormContext) {
+	this := p
+	_ = this
+
 	localctx = NewFormContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, RParserRULE_form)
 
@@ -1767,6 +1783,9 @@ func (s *SublistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RParser) Sublist() (localctx ISublistContext) {
+	this := p
+	_ = this
+
 	localctx = NewSublistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, RParserRULE_sublist)
 	var _la int
@@ -1891,6 +1910,9 @@ func (s *SubContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RParser) Sub() (localctx ISubContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, RParserRULE_sub)
 
@@ -2035,6 +2057,9 @@ func (p *RParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int) 
 }
 
 func (p *RParser) Expr_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 39)

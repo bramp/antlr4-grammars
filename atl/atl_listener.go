@@ -1,4 +1,4 @@
-// Code generated from ATL.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ATL.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package atl // ATL
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -22,8 +22,8 @@ type ATLListener interface {
 	// EnterTransformationMode is called when entering the transformationMode production.
 	EnterTransformationMode(c *TransformationModeContext)
 
-	// EnterLibrary is called when entering the library production.
-	EnterLibrary(c *LibraryContext)
+	// EnterLibrary_ is called when entering the library_ production.
+	EnterLibrary_(c *Library_Context)
 
 	// EnterQuery is called when entering the query production.
 	EnterQuery(c *QueryContext)
@@ -301,8 +301,8 @@ type ATLListener interface {
 	// ExitTransformationMode is called when exiting the transformationMode production.
 	ExitTransformationMode(c *TransformationModeContext)
 
-	// ExitLibrary is called when exiting the library production.
-	ExitLibrary(c *LibraryContext)
+	// ExitLibrary_ is called when exiting the library_ production.
+	ExitLibrary_(c *Library_Context)
 
 	// ExitQuery is called when exiting the query production.
 	ExitQuery(c *QueryContext)

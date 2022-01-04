@@ -1,4 +1,4 @@
-// Code generated from SUOKIF.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from SUOKIF.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package suokif // SUOKIF
 import (
@@ -75,9 +75,6 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 134, 122, 3, 2, 2, 2, 135, 19, 3, 2, 2, 2, 14, 23, 32, 36,
 	43, 53, 66, 80, 89, 108, 116, 128, 134,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'not'", "'and'", "'or'", "'forall'", "'exists'", "", "", "", "", "",
 	"", "'('", "')'", "'='", "'>'", "'<'", "'?'",
@@ -92,21 +89,25 @@ var ruleNames = []string{
 	"top_level", "term", "argument", "funterm", "sentence", "equation", "relsent",
 	"logsent", "quantsent",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type SUOKIFParser struct {
 	*antlr.BaseParser
 }
 
+// NewSUOKIFParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *SUOKIFParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewSUOKIFParser(input antlr.TokenStream) *SUOKIFParser {
 	this := new(SUOKIFParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -235,6 +236,9 @@ func (s *Top_levelContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SUOKIFParser) Top_level() (localctx ITop_levelContext) {
+	this := p
+	_ = this
+
 	localctx = NewTop_levelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, SUOKIFParserRULE_top_level)
 	var _la int
@@ -369,6 +373,9 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SUOKIFParser) Term() (localctx ITermContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, SUOKIFParserRULE_term)
 
@@ -517,6 +524,9 @@ func (s *ArgumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SUOKIFParser) Argument() (localctx IArgumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewArgumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, SUOKIFParserRULE_argument)
 
@@ -652,6 +662,9 @@ func (s *FuntermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SUOKIFParser) Funterm() (localctx IFuntermContext) {
+	this := p
+	_ = this
+
 	localctx = NewFuntermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, SUOKIFParserRULE_funterm)
 	var _la int
@@ -810,6 +823,9 @@ func (s *SentenceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SUOKIFParser) Sentence() (localctx ISentenceContext) {
+	this := p
+	_ = this
+
 	localctx = NewSentenceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, SUOKIFParserRULE_sentence)
 
@@ -973,6 +989,9 @@ func (s *EquationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SUOKIFParser) Equation() (localctx IEquationContext) {
+	this := p
+	_ = this
+
 	localctx = NewEquationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, SUOKIFParserRULE_equation)
 
@@ -1115,6 +1134,9 @@ func (s *RelsentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SUOKIFParser) Relsent() (localctx IRelsentContext) {
+	this := p
+	_ = this
+
 	localctx = NewRelsentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, SUOKIFParserRULE_relsent)
 	var _la int
@@ -1287,6 +1309,9 @@ func (s *LogsentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SUOKIFParser) Logsent() (localctx ILogsentContext) {
+	this := p
+	_ = this
+
 	localctx = NewLogsentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, SUOKIFParserRULE_logsent)
 	var _la int
@@ -1551,6 +1576,9 @@ func (s *QuantsentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *SUOKIFParser) Quantsent() (localctx IQuantsentContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuantsentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, SUOKIFParserRULE_quantsent)
 	var _la int

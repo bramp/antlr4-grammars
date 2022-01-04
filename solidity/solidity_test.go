@@ -32,9 +32,7 @@ import (
 
 const MAX_TOKENS = 1000000
 
-var examples = []string{
-	"grammars-v4/solidity/examples/test.sol",
-}
+var examples = []string{}
 
 type exampleListener struct {
 	*solidity.BaseSolidityListener

@@ -1,4 +1,4 @@
-// Code generated from PeopleCode.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from PeopleCode.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package peoplecode // PeopleCode
 import (
@@ -228,9 +228,6 @@ var parserATN = []uint16{
 	278, 284, 289, 295, 301, 312, 315, 318, 327, 352, 355, 358, 366, 369, 376,
 	385, 390, 393, 406, 414, 424, 427, 434, 455, 459,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "';'", "'Exit'", "'Break'", "'Error'", "'Warning'", "'Return'", "'throw'",
 	"'='", "'('", "')'", "'@'", "'.'", "'['", "']'", "'-'", "'Not'", "'*'",
@@ -258,26 +255,30 @@ var ruleNames = []string{
 	"program", "stmtList", "stmt", "expr", "exprList", "varDeclaration", "varDeclarator",
 	"varType", "appClassImport", "appPkgPath", "appClassPath", "extFuncImport",
 	"recDefnPath", "event", "classDeclaration", "classBlock", "classBlockStmt",
-	"method", "constant", "property", "instance", "methodImpl", "getImpl",
+	"method", "constant", "property_", "instance", "methodImpl", "getImpl",
 	"setImpl", "funcImpl", "funcSignature", "formalParamList", "param", "returnType",
 	"ifStmt", "forStmt", "whileStmt", "evaluateStmt", "whenBranch", "whenOtherBranch",
-	"tryCatchStmt", "catchSignature", "createInvocation", "literal", "id",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"tryCatchStmt", "catchSignature", "createInvocation", "literal", "id_",
 }
 
 type PeopleCodeParser struct {
 	*antlr.BaseParser
 }
 
+// NewPeopleCodeParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *PeopleCodeParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewPeopleCodeParser(input antlr.TokenStream) *PeopleCodeParser {
 	this := new(PeopleCodeParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -398,7 +399,7 @@ const (
 	PeopleCodeParserRULE_classBlockStmt   = 16
 	PeopleCodeParserRULE_method           = 17
 	PeopleCodeParserRULE_constant         = 18
-	PeopleCodeParserRULE_property         = 19
+	PeopleCodeParserRULE_property_        = 19
 	PeopleCodeParserRULE_instance         = 20
 	PeopleCodeParserRULE_methodImpl       = 21
 	PeopleCodeParserRULE_getImpl          = 22
@@ -418,7 +419,7 @@ const (
 	PeopleCodeParserRULE_catchSignature   = 36
 	PeopleCodeParserRULE_createInvocation = 37
 	PeopleCodeParserRULE_literal          = 38
-	PeopleCodeParserRULE_id               = 39
+	PeopleCodeParserRULE_id_              = 39
 )
 
 // IProgramContext is an interface to support dynamic dispatch.
@@ -490,6 +491,9 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) Program() (localctx IProgramContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, PeopleCodeParserRULE_program)
 
@@ -600,6 +604,9 @@ func (s *StmtListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) StmtList() (localctx IStmtListContext) {
+	this := p
+	_ = this
+
 	localctx = NewStmtListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, PeopleCodeParserRULE_stmtList)
 	var _la int
@@ -1552,6 +1559,9 @@ func (s *StmtBreakContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) Stmt() (localctx IStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, PeopleCodeParserRULE_stmt)
 	var _la int
@@ -2184,14 +2194,14 @@ func (s *ExprDotAccessContext) Expr() IExprContext {
 	return t.(IExprContext)
 }
 
-func (s *ExprDotAccessContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *ExprDotAccessContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *ExprDotAccessContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -2610,14 +2620,14 @@ func (s *ExprIdContext) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *ExprIdContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *ExprIdContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *ExprIdContext) EnterRule(listener antlr.ParseTreeListener) {
@@ -2637,6 +2647,9 @@ func (p *PeopleCodeParser) Expr() (localctx IExprContext) {
 }
 
 func (p *PeopleCodeParser) expr(_p int) (localctx IExprContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewExprContext(p, p.GetParserRuleContext(), _parentState)
@@ -2715,7 +2728,7 @@ func (p *PeopleCodeParser) expr(_p int) (localctx IExprContext) {
 		_prevctx = localctx
 		{
 			p.SetState(136)
-			p.Id()
+			p.Id_()
 		}
 
 	case PeopleCodeParserT__70:
@@ -3009,7 +3022,7 @@ func (p *PeopleCodeParser) expr(_p int) (localctx IExprContext) {
 				}
 				{
 					p.SetState(181)
-					p.Id()
+					p.Id_()
 				}
 
 			case 8:
@@ -3154,6 +3167,9 @@ func (s *ExprListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) ExprList() (localctx IExprListContext) {
+	this := p
+	_ = this
+
 	localctx = NewExprListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, PeopleCodeParserRULE_exprList)
 	var _la int
@@ -3308,6 +3324,9 @@ func (s *VarDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) VarDeclaration() (localctx IVarDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewVarDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, PeopleCodeParserRULE_varDeclaration)
 	var _la int
@@ -3439,6 +3458,9 @@ func (s *VarDeclaratorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) VarDeclarator() (localctx IVarDeclaratorContext) {
+	this := p
+	_ = this
+
 	localctx = NewVarDeclaratorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, PeopleCodeParserRULE_varDeclarator)
 	var _la int
@@ -3566,6 +3588,9 @@ func (s *VarTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) VarType() (localctx IVarTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewVarTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, PeopleCodeParserRULE_varType)
 	var _la int
@@ -3702,6 +3727,9 @@ func (s *AppClassImportContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) AppClassImport() (localctx IAppClassImportContext) {
+	this := p
+	_ = this
+
 	localctx = NewAppClassImportContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, PeopleCodeParserRULE_appClassImport)
 
@@ -3813,6 +3841,9 @@ func (s *AppPkgPathContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) AppPkgPath() (localctx IAppPkgPathContext) {
+	this := p
+	_ = this
+
 	localctx = NewAppPkgPathContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, PeopleCodeParserRULE_appPkgPath)
 
@@ -3938,6 +3969,9 @@ func (s *AppClassPathContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) AppClassPath() (localctx IAppClassPathContext) {
+	this := p
+	_ = this
+
 	localctx = NewAppClassPathContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, PeopleCodeParserRULE_appClassPath)
 	var _la int
@@ -4068,6 +4102,9 @@ func (s *ExtFuncImportContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) ExtFuncImport() (localctx IExtFuncImportContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtFuncImportContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, PeopleCodeParserRULE_extFuncImport)
 
@@ -4183,6 +4220,9 @@ func (s *RecDefnPathContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) RecDefnPath() (localctx IRecDefnPathContext) {
+	this := p
+	_ = this
+
 	localctx = NewRecDefnPathContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, PeopleCodeParserRULE_recDefnPath)
 
@@ -4277,6 +4317,9 @@ func (s *EventContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) Event() (localctx IEventContext) {
+	this := p
+	_ = this
+
 	localctx = NewEventContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, PeopleCodeParserRULE_event)
 	var _la int
@@ -4399,6 +4442,9 @@ func (s *ClassDeclarationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) ClassDeclaration() (localctx IClassDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, PeopleCodeParserRULE_classDeclaration)
 	var _la int
@@ -4543,6 +4589,9 @@ func (s *ClassBlockContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) ClassBlock() (localctx IClassBlockContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassBlockContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, PeopleCodeParserRULE_classBlock)
 	var _la int
@@ -4675,14 +4724,14 @@ func (s *ClassBlockStmtContext) Constant() IConstantContext {
 	return t.(IConstantContext)
 }
 
-func (s *ClassBlockStmtContext) Property() IPropertyContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IPropertyContext)(nil)).Elem(), 0)
+func (s *ClassBlockStmtContext) Property_() IProperty_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IProperty_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IPropertyContext)
+	return t.(IProperty_Context)
 }
 
 func (s *ClassBlockStmtContext) Instance() IInstanceContext {
@@ -4716,6 +4765,9 @@ func (s *ClassBlockStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) ClassBlockStmt() (localctx IClassBlockStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassBlockStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, PeopleCodeParserRULE_classBlockStmt)
 
@@ -4757,7 +4809,7 @@ func (p *PeopleCodeParser) ClassBlockStmt() (localctx IClassBlockStmtContext) {
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(291)
-			p.Property()
+			p.Property_()
 		}
 
 	case PeopleCodeParserT__45:
@@ -4857,6 +4909,9 @@ func (s *MethodContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) Method() (localctx IMethodContext) {
+	this := p
+	_ = this
+
 	localctx = NewMethodContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, PeopleCodeParserRULE_method)
 	var _la int
@@ -4978,6 +5033,9 @@ func (s *ConstantContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) Constant() (localctx IConstantContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstantContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, PeopleCodeParserRULE_constant)
 
@@ -5018,8 +5076,8 @@ func (p *PeopleCodeParser) Constant() (localctx IConstantContext) {
 	return localctx
 }
 
-// IPropertyContext is an interface to support dynamic dispatch.
-type IPropertyContext interface {
+// IProperty_Context is an interface to support dynamic dispatch.
+type IProperty_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
@@ -5043,11 +5101,11 @@ type IPropertyContext interface {
 	// SetR sets the r token.
 	SetR(antlr.Token)
 
-	// IsPropertyContext differentiates from other interfaces.
-	IsPropertyContext()
+	// IsProperty_Context differentiates from other interfaces.
+	IsProperty_Context()
 }
 
-type PropertyContext struct {
+type Property_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 	g      antlr.Token
@@ -5055,41 +5113,41 @@ type PropertyContext struct {
 	r      antlr.Token
 }
 
-func NewEmptyPropertyContext() *PropertyContext {
-	var p = new(PropertyContext)
+func NewEmptyProperty_Context() *Property_Context {
+	var p = new(Property_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = PeopleCodeParserRULE_property
+	p.RuleIndex = PeopleCodeParserRULE_property_
 	return p
 }
 
-func (*PropertyContext) IsPropertyContext() {}
+func (*Property_Context) IsProperty_Context() {}
 
-func NewPropertyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *PropertyContext {
-	var p = new(PropertyContext)
+func NewProperty_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Property_Context {
+	var p = new(Property_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = PeopleCodeParserRULE_property
+	p.RuleIndex = PeopleCodeParserRULE_property_
 
 	return p
 }
 
-func (s *PropertyContext) GetParser() antlr.Parser { return s.parser }
+func (s *Property_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *PropertyContext) GetG() antlr.Token { return s.g }
+func (s *Property_Context) GetG() antlr.Token { return s.g }
 
-func (s *PropertyContext) GetS() antlr.Token { return s.s }
+func (s *Property_Context) GetS() antlr.Token { return s.s }
 
-func (s *PropertyContext) GetR() antlr.Token { return s.r }
+func (s *Property_Context) GetR() antlr.Token { return s.r }
 
-func (s *PropertyContext) SetG(v antlr.Token) { s.g = v }
+func (s *Property_Context) SetG(v antlr.Token) { s.g = v }
 
-func (s *PropertyContext) SetS(v antlr.Token) { s.s = v }
+func (s *Property_Context) SetS(v antlr.Token) { s.s = v }
 
-func (s *PropertyContext) SetR(v antlr.Token) { s.r = v }
+func (s *Property_Context) SetR(v antlr.Token) { s.r = v }
 
-func (s *PropertyContext) VarType() IVarTypeContext {
+func (s *Property_Context) VarType() IVarTypeContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IVarTypeContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -5099,33 +5157,36 @@ func (s *PropertyContext) VarType() IVarTypeContext {
 	return t.(IVarTypeContext)
 }
 
-func (s *PropertyContext) GENERIC_ID() antlr.TerminalNode {
+func (s *Property_Context) GENERIC_ID() antlr.TerminalNode {
 	return s.GetToken(PeopleCodeParserGENERIC_ID, 0)
 }
 
-func (s *PropertyContext) GetRuleContext() antlr.RuleContext {
+func (s *Property_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *PropertyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Property_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *PropertyContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Property_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(PeopleCodeListener); ok {
-		listenerT.EnterProperty(s)
+		listenerT.EnterProperty_(s)
 	}
 }
 
-func (s *PropertyContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Property_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(PeopleCodeListener); ok {
-		listenerT.ExitProperty(s)
+		listenerT.ExitProperty_(s)
 	}
 }
 
-func (p *PeopleCodeParser) Property() (localctx IPropertyContext) {
-	localctx = NewPropertyContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 38, PeopleCodeParserRULE_property)
+func (p *PeopleCodeParser) Property_() (localctx IProperty_Context) {
+	this := p
+	_ = this
+
+	localctx = NewProperty_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 38, PeopleCodeParserRULE_property_)
 	var _la int
 
 	defer func() {
@@ -5167,7 +5228,7 @@ func (p *PeopleCodeParser) Property() (localctx IPropertyContext) {
 
 			var _m = p.Match(PeopleCodeParserT__42)
 
-			localctx.(*PropertyContext).g = _m
+			localctx.(*Property_Context).g = _m
 		}
 
 	}
@@ -5181,7 +5242,7 @@ func (p *PeopleCodeParser) Property() (localctx IPropertyContext) {
 
 			var _m = p.Match(PeopleCodeParserT__43)
 
-			localctx.(*PropertyContext).s = _m
+			localctx.(*Property_Context).s = _m
 		}
 
 	}
@@ -5195,7 +5256,7 @@ func (p *PeopleCodeParser) Property() (localctx IPropertyContext) {
 
 			var _m = p.Match(PeopleCodeParserT__44)
 
-			localctx.(*PropertyContext).r = _m
+			localctx.(*Property_Context).r = _m
 		}
 
 	}
@@ -5280,6 +5341,9 @@ func (s *InstanceContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) Instance() (localctx IInstanceContext) {
+	this := p
+	_ = this
+
 	localctx = NewInstanceContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, PeopleCodeParserRULE_instance)
 	var _la int
@@ -5419,6 +5483,9 @@ func (s *MethodImplContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) MethodImpl() (localctx IMethodImplContext) {
+	this := p
+	_ = this
+
 	localctx = NewMethodImplContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, PeopleCodeParserRULE_methodImpl)
 
@@ -5546,6 +5613,9 @@ func (s *GetImplContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) GetImpl() (localctx IGetImplContext) {
+	this := p
+	_ = this
+
 	localctx = NewGetImplContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, PeopleCodeParserRULE_getImpl)
 
@@ -5673,6 +5743,9 @@ func (s *SetImplContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) SetImpl() (localctx ISetImplContext) {
+	this := p
+	_ = this
+
 	localctx = NewSetImplContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, PeopleCodeParserRULE_setImpl)
 
@@ -5806,6 +5879,9 @@ func (s *FuncImplContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) FuncImpl() (localctx IFuncImplContext) {
+	this := p
+	_ = this
+
 	localctx = NewFuncImplContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, PeopleCodeParserRULE_funcImpl)
 
@@ -5928,6 +6004,9 @@ func (s *FuncSignatureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) FuncSignature() (localctx IFuncSignatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewFuncSignatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, PeopleCodeParserRULE_funcSignature)
 	var _la int
@@ -6075,6 +6154,9 @@ func (s *FormalParamListContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) FormalParamList() (localctx IFormalParamListContext) {
+	this := p
+	_ = this
+
 	localctx = NewFormalParamListContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, PeopleCodeParserRULE_formalParamList)
 	var _la int
@@ -6210,6 +6292,9 @@ func (s *ParamContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) Param() (localctx IParamContext) {
+	this := p
+	_ = this
+
 	localctx = NewParamContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, PeopleCodeParserRULE_param)
 	var _la int
@@ -6323,6 +6408,9 @@ func (s *ReturnTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) ReturnType() (localctx IReturnTypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewReturnTypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, PeopleCodeParserRULE_returnType)
 
@@ -6469,6 +6557,9 @@ func (s *IfStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) IfStmt() (localctx IIfStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewIfStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, PeopleCodeParserRULE_ifStmt)
 	var _la int
@@ -6664,6 +6755,9 @@ func (s *ForStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) ForStmt() (localctx IForStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewForStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, PeopleCodeParserRULE_forStmt)
 
@@ -6826,6 +6920,9 @@ func (s *WhileStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) WhileStmt() (localctx IWhileStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhileStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, PeopleCodeParserRULE_whileStmt)
 	var _la int
@@ -6991,6 +7088,9 @@ func (s *EvaluateStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) EvaluateStmt() (localctx IEvaluateStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewEvaluateStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, PeopleCodeParserRULE_evaluateStmt)
 	var _la int
@@ -7146,6 +7246,9 @@ func (s *WhenBranchContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) WhenBranch() (localctx IWhenBranchContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhenBranchContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, PeopleCodeParserRULE_whenBranch)
 
@@ -7277,6 +7380,9 @@ func (s *WhenOtherBranchContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) WhenOtherBranch() (localctx IWhenOtherBranchContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhenOtherBranchContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, PeopleCodeParserRULE_whenOtherBranch)
 
@@ -7423,6 +7529,9 @@ func (s *TryCatchStmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) TryCatchStmt() (localctx ITryCatchStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewTryCatchStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, PeopleCodeParserRULE_tryCatchStmt)
 
@@ -7547,6 +7656,9 @@ func (s *CatchSignatureContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) CatchSignature() (localctx ICatchSignatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewCatchSignatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, PeopleCodeParserRULE_catchSignature)
 
@@ -7669,6 +7781,9 @@ func (s *CreateInvocationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) CreateInvocation() (localctx ICreateInvocationContext) {
+	this := p
+	_ = this
+
 	localctx = NewCreateInvocationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, PeopleCodeParserRULE_createInvocation)
 	var _la int
@@ -7808,6 +7923,9 @@ func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PeopleCodeParser) Literal() (localctx ILiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, PeopleCodeParserRULE_literal)
 	var _la int
@@ -7844,79 +7962,82 @@ func (p *PeopleCodeParser) Literal() (localctx ILiteralContext) {
 	return localctx
 }
 
-// IIdContext is an interface to support dynamic dispatch.
-type IIdContext interface {
+// IId_Context is an interface to support dynamic dispatch.
+type IId_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsIdContext differentiates from other interfaces.
-	IsIdContext()
+	// IsId_Context differentiates from other interfaces.
+	IsId_Context()
 }
 
-type IdContext struct {
+type Id_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyIdContext() *IdContext {
-	var p = new(IdContext)
+func NewEmptyId_Context() *Id_Context {
+	var p = new(Id_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = PeopleCodeParserRULE_id
+	p.RuleIndex = PeopleCodeParserRULE_id_
 	return p
 }
 
-func (*IdContext) IsIdContext() {}
+func (*Id_Context) IsId_Context() {}
 
-func NewIdContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *IdContext {
-	var p = new(IdContext)
+func NewId_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Id_Context {
+	var p = new(Id_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = PeopleCodeParserRULE_id
+	p.RuleIndex = PeopleCodeParserRULE_id_
 
 	return p
 }
 
-func (s *IdContext) GetParser() antlr.Parser { return s.parser }
+func (s *Id_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *IdContext) SYS_VAR_ID() antlr.TerminalNode {
+func (s *Id_Context) SYS_VAR_ID() antlr.TerminalNode {
 	return s.GetToken(PeopleCodeParserSYS_VAR_ID, 0)
 }
 
-func (s *IdContext) VAR_ID() antlr.TerminalNode {
+func (s *Id_Context) VAR_ID() antlr.TerminalNode {
 	return s.GetToken(PeopleCodeParserVAR_ID, 0)
 }
 
-func (s *IdContext) GENERIC_ID() antlr.TerminalNode {
+func (s *Id_Context) GENERIC_ID() antlr.TerminalNode {
 	return s.GetToken(PeopleCodeParserGENERIC_ID, 0)
 }
 
-func (s *IdContext) GetRuleContext() antlr.RuleContext {
+func (s *Id_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *IdContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Id_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *IdContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Id_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(PeopleCodeListener); ok {
-		listenerT.EnterId(s)
+		listenerT.EnterId_(s)
 	}
 }
 
-func (s *IdContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Id_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(PeopleCodeListener); ok {
-		listenerT.ExitId(s)
+		listenerT.ExitId_(s)
 	}
 }
 
-func (p *PeopleCodeParser) Id() (localctx IIdContext) {
-	localctx = NewIdContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 78, PeopleCodeParserRULE_id)
+func (p *PeopleCodeParser) Id_() (localctx IId_Context) {
+	this := p
+	_ = this
+
+	localctx = NewId_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 78, PeopleCodeParserRULE_id_)
 	var _la int
 
 	defer func() {
@@ -7966,6 +8087,9 @@ func (p *PeopleCodeParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIn
 }
 
 func (p *PeopleCodeParser) Expr_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 6)

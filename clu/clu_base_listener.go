@@ -1,4 +1,4 @@
-// Code generated from clu.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from clu.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package clu // clu
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -92,11 +92,11 @@ func (s *BasecluListener) EnterSignals(ctx *SignalsContext) {}
 // ExitSignals is called when production signals is exited.
 func (s *BasecluListener) ExitSignals(ctx *SignalsContext) {}
 
-// EnterException is called when production exception is entered.
-func (s *BasecluListener) EnterException(ctx *ExceptionContext) {}
+// EnterException_ is called when production exception_ is entered.
+func (s *BasecluListener) EnterException_(ctx *Exception_Context) {}
 
-// ExitException is called when production exception is exited.
-func (s *BasecluListener) ExitException(ctx *ExceptionContext) {}
+// ExitException_ is called when production exception_ is exited.
+func (s *BasecluListener) ExitException_(ctx *Exception_Context) {}
 
 // EnterType_spec_list is called when production type_spec_list is entered.
 func (s *BasecluListener) EnterType_spec_list(ctx *Type_spec_listContext) {}
@@ -104,11 +104,11 @@ func (s *BasecluListener) EnterType_spec_list(ctx *Type_spec_listContext) {}
 // ExitType_spec_list is called when production type_spec_list is exited.
 func (s *BasecluListener) ExitType_spec_list(ctx *Type_spec_listContext) {}
 
-// EnterWhere is called when production where is entered.
-func (s *BasecluListener) EnterWhere(ctx *WhereContext) {}
+// EnterWhere_ is called when production where_ is entered.
+func (s *BasecluListener) EnterWhere_(ctx *Where_Context) {}
 
-// ExitWhere is called when production where is exited.
-func (s *BasecluListener) ExitWhere(ctx *WhereContext) {}
+// ExitWhere_ is called when production where_ is exited.
+func (s *BasecluListener) ExitWhere_(ctx *Where_Context) {}
 
 // EnterRestriction is called when production restriction is entered.
 func (s *BasecluListener) EnterRestriction(ctx *RestrictionContext) {}

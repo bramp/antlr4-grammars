@@ -1,4 +1,4 @@
-// Code generated from pl0.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from pl0.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package pl0 // pl0
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -38,11 +38,11 @@ func (s *Basepl0Listener) EnterConsts(ctx *ConstsContext) {}
 // ExitConsts is called when production consts is exited.
 func (s *Basepl0Listener) ExitConsts(ctx *ConstsContext) {}
 
-// EnterVars is called when production vars is entered.
-func (s *Basepl0Listener) EnterVars(ctx *VarsContext) {}
+// EnterVars_ is called when production vars_ is entered.
+func (s *Basepl0Listener) EnterVars_(ctx *Vars_Context) {}
 
-// ExitVars is called when production vars is exited.
-func (s *Basepl0Listener) ExitVars(ctx *VarsContext) {}
+// ExitVars_ is called when production vars_ is exited.
+func (s *Basepl0Listener) ExitVars_(ctx *Vars_Context) {}
 
 // EnterProcedure is called when production procedure is entered.
 func (s *Basepl0Listener) EnterProcedure(ctx *ProcedureContext) {}

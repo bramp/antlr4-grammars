@@ -1,4 +1,4 @@
-// Code generated from CLIF.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from CLIF.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package clif // CLIF
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -50,11 +50,11 @@ func (s *BaseCLIFListener) EnterTerm(ctx *TermContext) {}
 // ExitTerm is called when production term is exited.
 func (s *BaseCLIFListener) ExitTerm(ctx *TermContext) {}
 
-// EnterOperator is called when production operator is entered.
-func (s *BaseCLIFListener) EnterOperator(ctx *OperatorContext) {}
+// EnterOperator_ is called when production operator_ is entered.
+func (s *BaseCLIFListener) EnterOperator_(ctx *Operator_Context) {}
 
-// ExitOperator is called when production operator is exited.
-func (s *BaseCLIFListener) ExitOperator(ctx *OperatorContext) {}
+// ExitOperator_ is called when production operator_ is exited.
+func (s *BaseCLIFListener) ExitOperator_(ctx *Operator_Context) {}
 
 // EnterEquation is called when production equation is entered.
 func (s *BaseCLIFListener) EnterEquation(ctx *EquationContext) {}

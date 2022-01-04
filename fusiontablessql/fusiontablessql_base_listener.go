@@ -1,4 +1,4 @@
-// Code generated from FusionTablesSql.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from FusionTablesSql.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package fusiontablessql // FusionTablesSql
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -210,11 +210,11 @@ func (s *BaseFusionTablesSqlListener) EnterKeyword(ctx *KeywordContext) {}
 // ExitKeyword is called when production keyword is exited.
 func (s *BaseFusionTablesSqlListener) ExitKeyword(ctx *KeywordContext) {}
 
-// EnterOperator is called when production operator is entered.
-func (s *BaseFusionTablesSqlListener) EnterOperator(ctx *OperatorContext) {}
+// EnterOperator_ is called when production operator_ is entered.
+func (s *BaseFusionTablesSqlListener) EnterOperator_(ctx *Operator_Context) {}
 
-// ExitOperator is called when production operator is exited.
-func (s *BaseFusionTablesSqlListener) ExitOperator(ctx *OperatorContext) {}
+// ExitOperator_ is called when production operator_ is exited.
+func (s *BaseFusionTablesSqlListener) ExitOperator_(ctx *Operator_Context) {}
 
 // EnterLiteral is called when production literal is entered.
 func (s *BaseFusionTablesSqlListener) EnterLiteral(ctx *LiteralContext) {}

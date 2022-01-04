@@ -1,4 +1,4 @@
-// Code generated from Abnf.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Abnf.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package abnf // Abnf
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -56,11 +56,11 @@ func (s *BaseAbnfListener) EnterRepetition(ctx *RepetitionContext) {}
 // ExitRepetition is called when production repetition is exited.
 func (s *BaseAbnfListener) ExitRepetition(ctx *RepetitionContext) {}
 
-// EnterRepeat is called when production repeat is entered.
-func (s *BaseAbnfListener) EnterRepeat(ctx *RepeatContext) {}
+// EnterRepeat_ is called when production repeat_ is entered.
+func (s *BaseAbnfListener) EnterRepeat_(ctx *Repeat_Context) {}
 
-// ExitRepeat is called when production repeat is exited.
-func (s *BaseAbnfListener) ExitRepeat(ctx *RepeatContext) {}
+// ExitRepeat_ is called when production repeat_ is exited.
+func (s *BaseAbnfListener) ExitRepeat_(ctx *Repeat_Context) {}
 
 // EnterElement is called when production element is entered.
 func (s *BaseAbnfListener) EnterElement(ctx *ElementContext) {}

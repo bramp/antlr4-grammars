@@ -1,4 +1,4 @@
-// Code generated from snobol.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from snobol.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package snobol // snobol
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -112,8 +112,8 @@ type snobolListener interface {
 	// EnterTrim is called when entering the trim production.
 	EnterTrim(c *TrimContext)
 
-	// EnterArray is called when entering the array production.
-	EnterArray(c *ArrayContext)
+	// EnterArray_ is called when entering the array_ production.
+	EnterArray_(c *Array_Context)
 
 	// EnterConvert is called when entering the convert production.
 	EnterConvert(c *ConvertContext)
@@ -238,8 +238,8 @@ type snobolListener interface {
 	// ExitTrim is called when exiting the trim production.
 	ExitTrim(c *TrimContext)
 
-	// ExitArray is called when exiting the array production.
-	ExitArray(c *ArrayContext)
+	// ExitArray_ is called when exiting the array_ production.
+	ExitArray_(c *Array_Context)
 
 	// ExitConvert is called when exiting the convert production.
 	ExitConvert(c *ConvertContext)

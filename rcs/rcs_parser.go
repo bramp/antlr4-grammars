@@ -1,4 +1,4 @@
-// Code generated from RCS.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from RCS.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package rcs // RCS
 import (
@@ -15,7 +15,7 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 30, 221,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 29, 221,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
 	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
@@ -59,64 +59,61 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 80, 82, 5, 26, 14, 2, 81, 80, 3, 2, 2, 2, 81, 82, 3, 2, 2,
 	2, 82, 86, 3, 2, 2, 2, 83, 85, 5, 52, 27, 2, 84, 83, 3, 2, 2, 2, 85, 88,
 	3, 2, 2, 2, 86, 84, 3, 2, 2, 2, 86, 87, 3, 2, 2, 2, 87, 9, 3, 2, 2, 2,
-	88, 86, 3, 2, 2, 2, 89, 90, 7, 8, 2, 2, 90, 91, 7, 26, 2, 2, 91, 92, 7,
-	28, 2, 2, 92, 11, 3, 2, 2, 2, 93, 94, 7, 9, 2, 2, 94, 95, 7, 4, 2, 2, 95,
-	96, 7, 28, 2, 2, 96, 13, 3, 2, 2, 2, 97, 101, 7, 10, 2, 2, 98, 100, 7,
-	24, 2, 2, 99, 98, 3, 2, 2, 2, 100, 103, 3, 2, 2, 2, 101, 99, 3, 2, 2, 2,
-	101, 102, 3, 2, 2, 2, 102, 104, 3, 2, 2, 2, 103, 101, 3, 2, 2, 2, 104,
-	105, 7, 28, 2, 2, 105, 15, 3, 2, 2, 2, 106, 110, 7, 11, 2, 2, 107, 109,
+	88, 86, 3, 2, 2, 2, 89, 90, 7, 7, 2, 2, 90, 91, 7, 25, 2, 2, 91, 92, 7,
+	27, 2, 2, 92, 11, 3, 2, 2, 2, 93, 94, 7, 8, 2, 2, 94, 95, 7, 25, 2, 2,
+	95, 96, 7, 27, 2, 2, 96, 13, 3, 2, 2, 2, 97, 101, 7, 9, 2, 2, 98, 100,
+	7, 23, 2, 2, 99, 98, 3, 2, 2, 2, 100, 103, 3, 2, 2, 2, 101, 99, 3, 2, 2,
+	2, 101, 102, 3, 2, 2, 2, 102, 104, 3, 2, 2, 2, 103, 101, 3, 2, 2, 2, 104,
+	105, 7, 27, 2, 2, 105, 15, 3, 2, 2, 2, 106, 110, 7, 10, 2, 2, 107, 109,
 	5, 18, 10, 2, 108, 107, 3, 2, 2, 2, 109, 112, 3, 2, 2, 2, 110, 108, 3,
 	2, 2, 2, 110, 111, 3, 2, 2, 2, 111, 113, 3, 2, 2, 2, 112, 110, 3, 2, 2,
-	2, 113, 114, 7, 28, 2, 2, 114, 17, 3, 2, 2, 2, 115, 116, 7, 24, 2, 2, 116,
-	117, 7, 29, 2, 2, 117, 118, 7, 26, 2, 2, 118, 19, 3, 2, 2, 2, 119, 123,
-	7, 12, 2, 2, 120, 122, 7, 24, 2, 2, 121, 120, 3, 2, 2, 2, 122, 125, 3,
+	2, 113, 114, 7, 27, 2, 2, 114, 17, 3, 2, 2, 2, 115, 116, 7, 23, 2, 2, 116,
+	117, 7, 28, 2, 2, 117, 118, 7, 25, 2, 2, 118, 19, 3, 2, 2, 2, 119, 123,
+	7, 11, 2, 2, 120, 122, 7, 23, 2, 2, 121, 120, 3, 2, 2, 2, 122, 125, 3,
 	2, 2, 2, 123, 121, 3, 2, 2, 2, 123, 124, 3, 2, 2, 2, 124, 126, 3, 2, 2,
-	2, 125, 123, 3, 2, 2, 2, 126, 127, 7, 28, 2, 2, 127, 21, 3, 2, 2, 2, 128,
-	129, 7, 13, 2, 2, 129, 130, 7, 28, 2, 2, 130, 23, 3, 2, 2, 2, 131, 133,
-	7, 14, 2, 2, 132, 134, 7, 27, 2, 2, 133, 132, 3, 2, 2, 2, 133, 134, 3,
-	2, 2, 2, 134, 135, 3, 2, 2, 2, 135, 136, 7, 28, 2, 2, 136, 25, 3, 2, 2,
-	2, 137, 139, 7, 15, 2, 2, 138, 140, 7, 27, 2, 2, 139, 138, 3, 2, 2, 2,
-	139, 140, 3, 2, 2, 2, 140, 141, 3, 2, 2, 2, 141, 142, 7, 28, 2, 2, 142,
+	2, 125, 123, 3, 2, 2, 2, 126, 127, 7, 27, 2, 2, 127, 21, 3, 2, 2, 2, 128,
+	129, 7, 12, 2, 2, 129, 130, 7, 27, 2, 2, 130, 23, 3, 2, 2, 2, 131, 133,
+	7, 13, 2, 2, 132, 134, 7, 26, 2, 2, 133, 132, 3, 2, 2, 2, 133, 134, 3,
+	2, 2, 2, 134, 135, 3, 2, 2, 2, 135, 136, 7, 27, 2, 2, 136, 25, 3, 2, 2,
+	2, 137, 139, 7, 14, 2, 2, 138, 140, 7, 26, 2, 2, 139, 138, 3, 2, 2, 2,
+	139, 140, 3, 2, 2, 2, 140, 141, 3, 2, 2, 2, 141, 142, 7, 27, 2, 2, 142,
 	27, 3, 2, 2, 2, 143, 145, 5, 30, 16, 2, 144, 143, 3, 2, 2, 2, 145, 148,
 	3, 2, 2, 2, 146, 144, 3, 2, 2, 2, 146, 147, 3, 2, 2, 2, 147, 29, 3, 2,
-	2, 2, 148, 146, 3, 2, 2, 2, 149, 150, 7, 26, 2, 2, 150, 151, 5, 32, 17,
+	2, 2, 148, 146, 3, 2, 2, 2, 149, 150, 7, 25, 2, 2, 150, 151, 5, 32, 17,
 	2, 151, 152, 5, 34, 18, 2, 152, 153, 5, 36, 19, 2, 153, 154, 5, 38, 20,
 	2, 154, 158, 5, 40, 21, 2, 155, 157, 5, 52, 27, 2, 156, 155, 3, 2, 2, 2,
 	157, 160, 3, 2, 2, 2, 158, 156, 3, 2, 2, 2, 158, 159, 3, 2, 2, 2, 159,
-	31, 3, 2, 2, 2, 160, 158, 3, 2, 2, 2, 161, 162, 7, 16, 2, 2, 162, 163,
-	7, 26, 2, 2, 163, 164, 7, 28, 2, 2, 164, 33, 3, 2, 2, 2, 165, 166, 7, 17,
-	2, 2, 166, 167, 7, 24, 2, 2, 167, 168, 7, 28, 2, 2, 168, 35, 3, 2, 2, 2,
-	169, 170, 7, 18, 2, 2, 170, 171, 7, 24, 2, 2, 171, 172, 7, 28, 2, 2, 172,
-	37, 3, 2, 2, 2, 173, 177, 7, 19, 2, 2, 174, 176, 7, 26, 2, 2, 175, 174,
+	31, 3, 2, 2, 2, 160, 158, 3, 2, 2, 2, 161, 162, 7, 15, 2, 2, 162, 163,
+	7, 25, 2, 2, 163, 164, 7, 27, 2, 2, 164, 33, 3, 2, 2, 2, 165, 166, 7, 16,
+	2, 2, 166, 167, 7, 23, 2, 2, 167, 168, 7, 27, 2, 2, 168, 35, 3, 2, 2, 2,
+	169, 170, 7, 17, 2, 2, 170, 171, 7, 23, 2, 2, 171, 172, 7, 27, 2, 2, 172,
+	37, 3, 2, 2, 2, 173, 177, 7, 18, 2, 2, 174, 176, 7, 25, 2, 2, 175, 174,
 	3, 2, 2, 2, 176, 179, 3, 2, 2, 2, 177, 175, 3, 2, 2, 2, 177, 178, 3, 2,
-	2, 2, 178, 180, 3, 2, 2, 2, 179, 177, 3, 2, 2, 2, 180, 181, 7, 28, 2, 2,
-	181, 39, 3, 2, 2, 2, 182, 184, 7, 20, 2, 2, 183, 185, 7, 26, 2, 2, 184,
+	2, 2, 178, 180, 3, 2, 2, 2, 179, 177, 3, 2, 2, 2, 180, 181, 7, 27, 2, 2,
+	181, 39, 3, 2, 2, 2, 182, 184, 7, 19, 2, 2, 183, 185, 7, 25, 2, 2, 184,
 	183, 3, 2, 2, 2, 184, 185, 3, 2, 2, 2, 185, 186, 3, 2, 2, 2, 186, 187,
-	7, 28, 2, 2, 187, 41, 3, 2, 2, 2, 188, 189, 7, 21, 2, 2, 189, 190, 7, 27,
+	7, 27, 2, 2, 187, 41, 3, 2, 2, 2, 188, 189, 7, 20, 2, 2, 189, 190, 7, 26,
 	2, 2, 190, 43, 3, 2, 2, 2, 191, 193, 5, 46, 24, 2, 192, 191, 3, 2, 2, 2,
 	193, 196, 3, 2, 2, 2, 194, 192, 3, 2, 2, 2, 194, 195, 3, 2, 2, 2, 195,
-	45, 3, 2, 2, 2, 196, 194, 3, 2, 2, 2, 197, 198, 7, 26, 2, 2, 198, 202,
+	45, 3, 2, 2, 2, 196, 194, 3, 2, 2, 2, 197, 198, 7, 25, 2, 2, 198, 202,
 	5, 48, 25, 2, 199, 201, 5, 52, 27, 2, 200, 199, 3, 2, 2, 2, 201, 204, 3,
 	2, 2, 2, 202, 200, 3, 2, 2, 2, 202, 203, 3, 2, 2, 2, 203, 205, 3, 2, 2,
 	2, 204, 202, 3, 2, 2, 2, 205, 206, 5, 50, 26, 2, 206, 47, 3, 2, 2, 2, 207,
-	208, 7, 22, 2, 2, 208, 209, 7, 27, 2, 2, 209, 49, 3, 2, 2, 2, 210, 211,
-	7, 23, 2, 2, 211, 212, 7, 27, 2, 2, 212, 51, 3, 2, 2, 2, 213, 215, 7, 24,
+	208, 7, 21, 2, 2, 208, 209, 7, 26, 2, 2, 209, 49, 3, 2, 2, 2, 210, 211,
+	7, 22, 2, 2, 211, 212, 7, 26, 2, 2, 212, 51, 3, 2, 2, 2, 213, 215, 7, 23,
 	2, 2, 214, 213, 3, 2, 2, 2, 215, 216, 3, 2, 2, 2, 216, 214, 3, 2, 2, 2,
-	216, 217, 3, 2, 2, 2, 217, 218, 3, 2, 2, 2, 218, 219, 7, 28, 2, 2, 219,
+	216, 217, 3, 2, 2, 2, 217, 218, 3, 2, 2, 2, 218, 219, 7, 27, 2, 2, 219,
 	53, 3, 2, 2, 2, 20, 67, 72, 75, 78, 81, 86, 101, 110, 123, 133, 139, 146,
 	158, 177, 184, 194, 202, 216,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
-	"", "'COMMA'", "'BRANCH'", "'LOGS'", "'ADMIN'", "'DELTAS'", "'head'", "'branch'",
-	"'access'", "'symbols'", "'locks'", "'strict'", "'comment'", "'expand'",
-	"'date'", "'author'", "'state'", "'branches'", "'next'", "'desc'", "'log'",
-	"'text'", "", "", "", "", "';'", "':'",
+	"", "'COMMA'", "'LOGS'", "'ADMIN'", "'DELTAS'", "'head'", "'branch'", "'access'",
+	"'symbols'", "'locks'", "'strict'", "'comment'", "'expand'", "'date'",
+	"'author'", "'state'", "'branches'", "'next'", "'desc'", "'log'", "'text'",
+	"", "", "", "", "';'", "':'",
 }
 var symbolicNames = []string{
-	"", "COMMA", "BRANCH", "LOGS", "ADMIN", "DELTAS", "LITERAL_HEAD", "LITERAL_BRANCH",
+	"", "COMMA", "LOGS", "ADMIN", "DELTAS", "LITERAL_HEAD", "LITERAL_BRANCH",
 	"LITERAL_ACCESS", "LITERAL_SYMBOLS", "LITERAL_LOCKS", "LITERAL_STRICT",
 	"LITERAL_COMMENT", "LITERAL_EXPAND", "LITERAL_DATE", "LITERAL_AUTHOR",
 	"LITERAL_STATE", "LITERAL_BRANCHES", "LITERAL_NEXT", "LITERAL_DESC", "LITERAL_LOG",
@@ -131,21 +128,25 @@ var ruleNames = []string{
 	"delta_next", "desc", "deltatextlist", "deltatext", "deltatext_log", "deltatext_text",
 	"newphrase",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type RCSParser struct {
 	*antlr.BaseParser
 }
 
+// NewRCSParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *RCSParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewRCSParser(input antlr.TokenStream) *RCSParser {
 	this := new(RCSParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -161,33 +162,32 @@ func NewRCSParser(input antlr.TokenStream) *RCSParser {
 const (
 	RCSParserEOF              = antlr.TokenEOF
 	RCSParserCOMMA            = 1
-	RCSParserBRANCH           = 2
-	RCSParserLOGS             = 3
-	RCSParserADMIN            = 4
-	RCSParserDELTAS           = 5
-	RCSParserLITERAL_HEAD     = 6
-	RCSParserLITERAL_BRANCH   = 7
-	RCSParserLITERAL_ACCESS   = 8
-	RCSParserLITERAL_SYMBOLS  = 9
-	RCSParserLITERAL_LOCKS    = 10
-	RCSParserLITERAL_STRICT   = 11
-	RCSParserLITERAL_COMMENT  = 12
-	RCSParserLITERAL_EXPAND   = 13
-	RCSParserLITERAL_DATE     = 14
-	RCSParserLITERAL_AUTHOR   = 15
-	RCSParserLITERAL_STATE    = 16
-	RCSParserLITERAL_BRANCHES = 17
-	RCSParserLITERAL_NEXT     = 18
-	RCSParserLITERAL_DESC     = 19
-	RCSParserLITERAL_LOG      = 20
-	RCSParserLITERAL_TEXT     = 21
-	RCSParserIDENT            = 22
-	RCSParserINT              = 23
-	RCSParserREVISION         = 24
-	RCSParserSTRING           = 25
-	RCSParserSEMI             = 26
-	RCSParserCOLON            = 27
-	RCSParserWS               = 28
+	RCSParserLOGS             = 2
+	RCSParserADMIN            = 3
+	RCSParserDELTAS           = 4
+	RCSParserLITERAL_HEAD     = 5
+	RCSParserLITERAL_BRANCH   = 6
+	RCSParserLITERAL_ACCESS   = 7
+	RCSParserLITERAL_SYMBOLS  = 8
+	RCSParserLITERAL_LOCKS    = 9
+	RCSParserLITERAL_STRICT   = 10
+	RCSParserLITERAL_COMMENT  = 11
+	RCSParserLITERAL_EXPAND   = 12
+	RCSParserLITERAL_DATE     = 13
+	RCSParserLITERAL_AUTHOR   = 14
+	RCSParserLITERAL_STATE    = 15
+	RCSParserLITERAL_BRANCHES = 16
+	RCSParserLITERAL_NEXT     = 17
+	RCSParserLITERAL_DESC     = 18
+	RCSParserLITERAL_LOG      = 19
+	RCSParserLITERAL_TEXT     = 20
+	RCSParserIDENT            = 21
+	RCSParserINT              = 22
+	RCSParserREVISION         = 23
+	RCSParserSTRING           = 24
+	RCSParserSEMI             = 25
+	RCSParserCOLON            = 26
+	RCSParserWS               = 27
 )
 
 // RCSParser rules.
@@ -323,6 +323,9 @@ func (s *RcstextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Rcstext() (localctx IRcstextContext) {
+	this := p
+	_ = this
+
 	localctx = NewRcstextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, RCSParserRULE_rcstext)
 
@@ -436,6 +439,9 @@ func (s *RcsheaderContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Rcsheader() (localctx IRcsheaderContext) {
+	this := p
+	_ = this
+
 	localctx = NewRcsheaderContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, RCSParserRULE_rcsheader)
 
@@ -543,6 +549,9 @@ func (s *RcsrevisionsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Rcsrevisions() (localctx IRcsrevisionsContext) {
+	this := p
+	_ = this
+
 	localctx = NewRcsrevisionsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, RCSParserRULE_rcsrevisions)
 
@@ -737,6 +746,9 @@ func (s *AdminContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Admin() (localctx IAdminContext) {
+	this := p
+	_ = this
+
 	localctx = NewAdminContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, RCSParserRULE_admin)
 	var _la int
@@ -914,6 +926,9 @@ func (s *HeadContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Head() (localctx IHeadContext) {
+	this := p
+	_ = this
+
 	localctx = NewHeadContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, RCSParserRULE_head)
 
@@ -992,8 +1007,8 @@ func (s *BranchContext) LITERAL_BRANCH() antlr.TerminalNode {
 	return s.GetToken(RCSParserLITERAL_BRANCH, 0)
 }
 
-func (s *BranchContext) BRANCH() antlr.TerminalNode {
-	return s.GetToken(RCSParserBRANCH, 0)
+func (s *BranchContext) REVISION() antlr.TerminalNode {
+	return s.GetToken(RCSParserREVISION, 0)
 }
 
 func (s *BranchContext) SEMI() antlr.TerminalNode {
@@ -1021,6 +1036,9 @@ func (s *BranchContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Branch() (localctx IBranchContext) {
+	this := p
+	_ = this
+
 	localctx = NewBranchContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, RCSParserRULE_branch)
 
@@ -1047,7 +1065,7 @@ func (p *RCSParser) Branch() (localctx IBranchContext) {
 	}
 	{
 		p.SetState(92)
-		p.Match(RCSParserBRANCH)
+		p.Match(RCSParserREVISION)
 	}
 	{
 		p.SetState(93)
@@ -1132,6 +1150,9 @@ func (s *AccessContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Access() (localctx IAccessContext) {
+	this := p
+	_ = this
+
 	localctx = NewAccessContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, RCSParserRULE_access)
 	var _la int
@@ -1269,6 +1290,9 @@ func (s *SymbolsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Symbols() (localctx ISymbolsContext) {
+	this := p
+	_ = this
+
 	localctx = NewSymbolsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, RCSParserRULE_symbols)
 	var _la int
@@ -1387,6 +1411,9 @@ func (s *TagsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Tags() (localctx ITagsContext) {
+	this := p
+	_ = this
+
 	localctx = NewTagsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, RCSParserRULE_tags)
 
@@ -1498,6 +1525,9 @@ func (s *LocksContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Locks() (localctx ILocksContext) {
+	this := p
+	_ = this
+
 	localctx = NewLocksContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, RCSParserRULE_locks)
 	var _la int
@@ -1612,6 +1642,9 @@ func (s *StrictContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Strict() (localctx IStrictContext) {
+	this := p
+	_ = this
+
 	localctx = NewStrictContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, RCSParserRULE_strict)
 
@@ -1715,6 +1748,9 @@ func (s *CommentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Comment() (localctx ICommentContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, RCSParserRULE_comment)
 	var _la int
@@ -1830,6 +1866,9 @@ func (s *ExpandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Expand() (localctx IExpandContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, RCSParserRULE_expand)
 	var _la int
@@ -1956,6 +1995,9 @@ func (s *DeltalistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Deltalist() (localctx IDeltalistContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeltalistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, RCSParserRULE_deltalist)
 	var _la int
@@ -2131,6 +2173,9 @@ func (s *DeltaContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Delta() (localctx IDeltaContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeltaContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, RCSParserRULE_delta)
 	var _la int
@@ -2265,6 +2310,9 @@ func (s *Delta_dateContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Delta_date() (localctx IDelta_dateContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelta_dateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, RCSParserRULE_delta_date)
 
@@ -2372,6 +2420,9 @@ func (s *Delta_authorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Delta_author() (localctx IDelta_authorContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelta_authorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, RCSParserRULE_delta_author)
 
@@ -2479,6 +2530,9 @@ func (s *Delta_stateContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Delta_state() (localctx IDelta_stateContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelta_stateContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, RCSParserRULE_delta_state)
 
@@ -2590,6 +2644,9 @@ func (s *Delta_branchesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Delta_branches() (localctx IDelta_branchesContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelta_branchesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, RCSParserRULE_delta_branches)
 	var _la int
@@ -2708,6 +2765,9 @@ func (s *Delta_nextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Delta_next() (localctx IDelta_nextContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelta_nextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, RCSParserRULE_delta_next)
 	var _la int
@@ -2819,6 +2879,9 @@ func (s *DescContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Desc() (localctx IDescContext) {
+	this := p
+	_ = this
+
 	localctx = NewDescContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, RCSParserRULE_desc)
 
@@ -2933,6 +2996,9 @@ func (s *DeltatextlistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Deltatextlist() (localctx IDeltatextlistContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeltatextlistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, RCSParserRULE_deltatextlist)
 	var _la int
@@ -3078,6 +3144,9 @@ func (s *DeltatextContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Deltatext() (localctx IDeltatextContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeltatextContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, RCSParserRULE_deltatext)
 	var _la int
@@ -3196,6 +3265,9 @@ func (s *Deltatext_logContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Deltatext_log() (localctx IDeltatext_logContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeltatext_logContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, RCSParserRULE_deltatext_log)
 
@@ -3295,6 +3367,9 @@ func (s *Deltatext_textContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Deltatext_text() (localctx IDeltatext_textContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeltatext_textContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, RCSParserRULE_deltatext_text)
 
@@ -3398,6 +3473,9 @@ func (s *NewphraseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *RCSParser) Newphrase() (localctx INewphraseContext) {
+	this := p
+	_ = this
+
 	localctx = NewNewphraseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, RCSParserRULE_newphrase)
 	var _la int

@@ -1,4 +1,4 @@
-// Code generated from JPA.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from JPA.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package jpa // JPA
 import (
@@ -423,9 +423,6 @@ var parserATN = []uint16{
 	731, 738, 744, 751, 756, 763, 768, 772, 776, 790, 816, 839, 842, 845, 860,
 	872,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'FROM'", "','", "'AS'", "'FETCH'", "'LEFT'", "'OUTER'", "'INNER'",
 	"'JOIN'", "'.'", "'IN'", "'('", "')'", "'UPDATE'", "'SET'", "'='", "'NULL'",
@@ -476,21 +473,25 @@ var ruleNames = []string{
 	"single_valued_association_field", "collection_valued_association_field",
 	"abstract_schema_name",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type JPAParser struct {
 	*antlr.BaseParser
 }
 
+// NewJPAParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *JPAParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewJPAParser(input antlr.TokenStream) *JPAParser {
 	this := new(JPAParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -771,6 +772,9 @@ func (s *Ql_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Ql_statement() (localctx IQl_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewQl_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, JPAParserRULE_ql_statement)
 
@@ -941,6 +945,9 @@ func (s *Select_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Select_statement() (localctx ISelect_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewSelect_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, JPAParserRULE_select_statement)
 	var _la int
@@ -1097,6 +1104,9 @@ func (s *Update_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Update_statement() (localctx IUpdate_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewUpdate_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, JPAParserRULE_update_statement)
 	var _la int
@@ -1216,6 +1226,9 @@ func (s *Delete_statementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Delete_statement() (localctx IDelete_statementContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelete_statementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, JPAParserRULE_delete_statement)
 	var _la int
@@ -1361,6 +1374,9 @@ func (s *From_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) From_clause() (localctx IFrom_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewFrom_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, JPAParserRULE_from_clause)
 	var _la int
@@ -1542,6 +1558,9 @@ func (s *Identification_variable_declarationContext) ExitRule(listener antlr.Par
 }
 
 func (p *JPAParser) Identification_variable_declaration() (localctx IIdentification_variable_declarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentification_variable_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, JPAParserRULE_identification_variable_declaration)
 	var _la int
@@ -1670,6 +1689,9 @@ func (s *Range_variable_declarationContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *JPAParser) Range_variable_declaration() (localctx IRange_variable_declarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewRange_variable_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, JPAParserRULE_range_variable_declaration)
 	var _la int
@@ -1797,6 +1819,9 @@ func (s *JoinContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Join() (localctx IJoinContext) {
+	this := p
+	_ = this
+
 	localctx = NewJoinContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, JPAParserRULE_join)
 	var _la int
@@ -1924,6 +1949,9 @@ func (s *Fetch_joinContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Fetch_join() (localctx IFetch_joinContext) {
+	this := p
+	_ = this
+
 	localctx = NewFetch_joinContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, JPAParserRULE_fetch_join)
 
@@ -2018,6 +2046,9 @@ func (s *Join_specContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Join_spec() (localctx IJoin_specContext) {
+	this := p
+	_ = this
+
 	localctx = NewJoin_specContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, JPAParserRULE_join_spec)
 	var _la int
@@ -2158,6 +2189,9 @@ func (s *Join_association_path_expressionContext) ExitRule(listener antlr.ParseT
 }
 
 func (p *JPAParser) Join_association_path_expression() (localctx IJoin_association_path_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewJoin_association_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, JPAParserRULE_join_association_path_expression)
 
@@ -2273,6 +2307,9 @@ func (s *Join_collection_valued_path_expressionContext) ExitRule(listener antlr.
 }
 
 func (p *JPAParser) Join_collection_valued_path_expression() (localctx IJoin_collection_valued_path_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewJoin_collection_valued_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, JPAParserRULE_join_collection_valued_path_expression)
 
@@ -2385,6 +2422,9 @@ func (s *Join_single_valued_association_path_expressionContext) ExitRule(listene
 }
 
 func (p *JPAParser) Join_single_valued_association_path_expression() (localctx IJoin_single_valued_association_path_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewJoin_single_valued_association_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, JPAParserRULE_join_single_valued_association_path_expression)
 
@@ -2494,6 +2534,9 @@ func (s *Collection_member_declarationContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *JPAParser) Collection_member_declaration() (localctx ICollection_member_declarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewCollection_member_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, JPAParserRULE_collection_member_declaration)
 	var _la int
@@ -2629,6 +2672,9 @@ func (s *Single_valued_path_expressionContext) ExitRule(listener antlr.ParseTree
 }
 
 func (p *JPAParser) Single_valued_path_expression() (localctx ISingle_valued_path_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSingle_valued_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, JPAParserRULE_single_valued_path_expression)
 
@@ -2753,6 +2799,9 @@ func (s *State_field_path_expressionContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *JPAParser) State_field_path_expression() (localctx IState_field_path_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewState_field_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, JPAParserRULE_state_field_path_expression)
 
@@ -2888,6 +2937,9 @@ func (s *Single_valued_association_path_expressionContext) ExitRule(listener ant
 }
 
 func (p *JPAParser) Single_valued_association_path_expression() (localctx ISingle_valued_association_path_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSingle_valued_association_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, JPAParserRULE_single_valued_association_path_expression)
 
@@ -3042,6 +3094,9 @@ func (s *Collection_valued_path_expressionContext) ExitRule(listener antlr.Parse
 }
 
 func (p *JPAParser) Collection_valued_path_expression() (localctx ICollection_valued_path_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCollection_valued_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, JPAParserRULE_collection_valued_path_expression)
 	var _la int
@@ -3189,6 +3244,9 @@ func (s *State_fieldContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) State_field() (localctx IState_fieldContext) {
+	this := p
+	_ = this
+
 	localctx = NewState_fieldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, JPAParserRULE_state_field)
 	var _la int
@@ -3332,6 +3390,9 @@ func (s *Update_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Update_clause() (localctx IUpdate_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewUpdate_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, JPAParserRULE_update_clause)
 	var _la int
@@ -3506,6 +3567,9 @@ func (s *Update_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Update_item() (localctx IUpdate_itemContext) {
+	this := p
+	_ = this
+
 	localctx = NewUpdate_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, JPAParserRULE_update_item)
 	var _la int
@@ -3689,6 +3753,9 @@ func (s *New_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) New_value() (localctx INew_valueContext) {
+	this := p
+	_ = this
+
 	localctx = NewNew_valueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, JPAParserRULE_new_value)
 
@@ -3838,6 +3905,9 @@ func (s *Delete_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Delete_clause() (localctx IDelete_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelete_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, JPAParserRULE_delete_clause)
 	var _la int
@@ -3979,6 +4049,9 @@ func (s *Select_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Select_clause() (localctx ISelect_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSelect_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, JPAParserRULE_select_clause)
 	var _la int
@@ -4134,6 +4207,9 @@ func (s *Select_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Select_expression() (localctx ISelect_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSelect_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, JPAParserRULE_select_expression)
 
@@ -4300,6 +4376,9 @@ func (s *Constructor_expressionContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *JPAParser) Constructor_expression() (localctx IConstructor_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstructor_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, JPAParserRULE_constructor_expression)
 	var _la int
@@ -4442,6 +4521,9 @@ func (s *Constructor_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Constructor_item() (localctx IConstructor_itemContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstructor_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, JPAParserRULE_constructor_item)
 
@@ -4569,6 +4651,9 @@ func (s *Aggregate_expressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *JPAParser) Aggregate_expression() (localctx IAggregate_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAggregate_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, JPAParserRULE_aggregate_expression)
 	var _la int
@@ -4754,6 +4839,9 @@ func (s *Where_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Where_clause() (localctx IWhere_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewWhere_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, JPAParserRULE_where_clause)
 
@@ -4868,6 +4956,9 @@ func (s *Groupby_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Groupby_clause() (localctx IGroupby_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewGroupby_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, JPAParserRULE_groupby_clause)
 	var _la int
@@ -4996,6 +5087,9 @@ func (s *Groupby_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Groupby_item() (localctx IGroupby_itemContext) {
+	this := p
+	_ = this
+
 	localctx = NewGroupby_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, JPAParserRULE_groupby_item)
 
@@ -5106,6 +5200,9 @@ func (s *Having_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Having_clause() (localctx IHaving_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewHaving_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, JPAParserRULE_having_clause)
 
@@ -5220,6 +5317,9 @@ func (s *Orderby_clauseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Orderby_clause() (localctx IOrderby_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewOrderby_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, JPAParserRULE_orderby_clause)
 	var _la int
@@ -5344,6 +5444,9 @@ func (s *Orderby_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Orderby_item() (localctx IOrderby_itemContext) {
+	this := p
+	_ = this
+
 	localctx = NewOrderby_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, JPAParserRULE_orderby_item)
 	var _la int
@@ -5500,6 +5603,9 @@ func (s *SubqueryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Subquery() (localctx ISubqueryContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubqueryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, JPAParserRULE_subquery)
 	var _la int
@@ -5648,6 +5754,9 @@ func (s *Subquery_from_clauseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *JPAParser) Subquery_from_clause() (localctx ISubquery_from_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubquery_from_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, JPAParserRULE_subquery_from_clause)
 	var _la int
@@ -5795,6 +5904,9 @@ func (s *Subselect_identification_variable_declarationContext) ExitRule(listener
 }
 
 func (p *JPAParser) Subselect_identification_variable_declaration() (localctx ISubselect_identification_variable_declarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubselect_identification_variable_declarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, JPAParserRULE_subselect_identification_variable_declaration)
 	var _la int
@@ -5938,6 +6050,9 @@ func (s *Association_path_expressionContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *JPAParser) Association_path_expression() (localctx IAssociation_path_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssociation_path_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, JPAParserRULE_association_path_expression)
 
@@ -6048,6 +6163,9 @@ func (s *Simple_select_clauseContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *JPAParser) Simple_select_clause() (localctx ISimple_select_clauseContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimple_select_clauseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, JPAParserRULE_simple_select_clause)
 	var _la int
@@ -6175,6 +6293,9 @@ func (s *Simple_select_expressionContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *JPAParser) Simple_select_expression() (localctx ISimple_select_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimple_select_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, JPAParserRULE_simple_select_expression)
 
@@ -6305,6 +6426,9 @@ func (s *Conditional_expressionContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *JPAParser) Conditional_expression() (localctx IConditional_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditional_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, JPAParserRULE_conditional_expression)
 	var _la int
@@ -6435,6 +6559,9 @@ func (s *Conditional_termContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Conditional_term() (localctx IConditional_termContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditional_termContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, JPAParserRULE_conditional_term)
 	var _la int
@@ -6552,6 +6679,9 @@ func (s *Conditional_factorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Conditional_factor() (localctx IConditional_factorContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditional_factorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, JPAParserRULE_conditional_factor)
 
@@ -6669,6 +6799,9 @@ func (s *Conditional_primaryContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *JPAParser) Conditional_primary() (localctx IConditional_primaryContext) {
+	this := p
+	_ = this
+
 	localctx = NewConditional_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, JPAParserRULE_conditional_primary)
 
@@ -6857,6 +6990,9 @@ func (s *Simple_cond_expressionContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *JPAParser) Simple_cond_expression() (localctx ISimple_cond_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimple_cond_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, JPAParserRULE_simple_cond_expression)
 
@@ -7068,6 +7204,9 @@ func (s *Between_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Between_expression() (localctx IBetween_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewBetween_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, JPAParserRULE_between_expression)
 	var _la int
@@ -7300,6 +7439,9 @@ func (s *In_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) In_expression() (localctx IIn_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewIn_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, JPAParserRULE_in_expression)
 	var _la int
@@ -7468,6 +7610,9 @@ func (s *In_itemContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) In_item() (localctx IIn_itemContext) {
+	this := p
+	_ = this
+
 	localctx = NewIn_itemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, JPAParserRULE_in_item)
 
@@ -7595,6 +7740,9 @@ func (s *Like_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Like_expression() (localctx ILike_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewLike_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, JPAParserRULE_like_expression)
 	var _la int
@@ -7737,6 +7885,9 @@ func (s *Null_comparison_expressionContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *JPAParser) Null_comparison_expression() (localctx INull_comparison_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewNull_comparison_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, JPAParserRULE_null_comparison_expression)
 	var _la int
@@ -7870,6 +8021,9 @@ func (s *Empty_collection_comparison_expressionContext) ExitRule(listener antlr.
 }
 
 func (p *JPAParser) Empty_collection_comparison_expression() (localctx IEmpty_collection_comparison_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewEmpty_collection_comparison_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, JPAParserRULE_empty_collection_comparison_expression)
 	var _la int
@@ -7997,6 +8151,9 @@ func (s *Collection_member_expressionContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *JPAParser) Collection_member_expression() (localctx ICollection_member_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCollection_member_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 102, JPAParserRULE_collection_member_expression)
 	var _la int
@@ -8125,6 +8282,9 @@ func (s *Exists_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Exists_expression() (localctx IExists_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExists_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 104, JPAParserRULE_exists_expression)
 	var _la int
@@ -8246,6 +8406,9 @@ func (s *All_or_any_expressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *JPAParser) All_or_any_expression() (localctx IAll_or_any_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAll_or_any_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 106, JPAParserRULE_all_or_any_expression)
 	var _la int
@@ -8511,6 +8674,9 @@ func (s *Comparison_expressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *JPAParser) Comparison_expression() (localctx IComparison_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewComparison_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 108, JPAParserRULE_comparison_expression)
 	var _la int
@@ -8798,6 +8964,9 @@ func (s *Comparison_operatorContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *JPAParser) Comparison_operator() (localctx IComparison_operatorContext) {
+	this := p
+	_ = this
+
 	localctx = NewComparison_operatorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 110, JPAParserRULE_comparison_operator)
 	var _la int
@@ -8913,6 +9082,9 @@ func (s *Arithmetic_expressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *JPAParser) Arithmetic_expression() (localctx IArithmetic_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewArithmetic_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 112, JPAParserRULE_arithmetic_expression)
 
@@ -9044,6 +9216,9 @@ func (s *Simple_arithmetic_expressionContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *JPAParser) Simple_arithmetic_expression() (localctx ISimple_arithmetic_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimple_arithmetic_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 114, JPAParserRULE_simple_arithmetic_expression)
 	var _la int
@@ -9181,6 +9356,9 @@ func (s *Arithmetic_termContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Arithmetic_term() (localctx IArithmetic_termContext) {
+	this := p
+	_ = this
+
 	localctx = NewArithmetic_termContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 116, JPAParserRULE_arithmetic_term)
 	var _la int
@@ -9305,6 +9483,9 @@ func (s *Arithmetic_factorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Arithmetic_factor() (localctx IArithmetic_factorContext) {
+	this := p
+	_ = this
+
 	localctx = NewArithmetic_factorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 118, JPAParserRULE_arithmetic_factor)
 	var _la int
@@ -9470,6 +9651,9 @@ func (s *Arithmetic_primaryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Arithmetic_primary() (localctx IArithmetic_primaryContext) {
+	this := p
+	_ = this
+
 	localctx = NewArithmetic_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 120, JPAParserRULE_arithmetic_primary)
 
@@ -9629,6 +9813,9 @@ func (s *String_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) String_expression() (localctx IString_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewString_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 122, JPAParserRULE_string_expression)
 
@@ -9784,6 +9971,9 @@ func (s *String_primaryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) String_primary() (localctx IString_primaryContext) {
+	this := p
+	_ = this
+
 	localctx = NewString_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 124, JPAParserRULE_string_primary)
 
@@ -9928,6 +10118,9 @@ func (s *Datetime_expressionContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *JPAParser) Datetime_expression() (localctx IDatetime_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewDatetime_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 126, JPAParserRULE_datetime_expression)
 
@@ -10079,6 +10272,9 @@ func (s *Datetime_primaryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Datetime_primary() (localctx IDatetime_primaryContext) {
+	this := p
+	_ = this
+
 	localctx = NewDatetime_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 128, JPAParserRULE_datetime_primary)
 
@@ -10216,6 +10412,9 @@ func (s *Boolean_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Boolean_expression() (localctx IBoolean_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewBoolean_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 130, JPAParserRULE_boolean_expression)
 
@@ -10357,6 +10556,9 @@ func (s *Boolean_primaryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Boolean_primary() (localctx IBoolean_primaryContext) {
+	this := p
+	_ = this
+
 	localctx = NewBoolean_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 132, JPAParserRULE_boolean_primary)
 
@@ -10487,6 +10689,9 @@ func (s *Enum_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Enum_expression() (localctx IEnum_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnum_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 134, JPAParserRULE_enum_expression)
 
@@ -10628,6 +10833,9 @@ func (s *Enum_primaryContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Enum_primary() (localctx IEnum_primaryContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnum_primaryContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 136, JPAParserRULE_enum_primary)
 
@@ -10758,6 +10966,9 @@ func (s *Entity_expressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Entity_expression() (localctx IEntity_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewEntity_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 138, JPAParserRULE_entity_expression)
 
@@ -10872,6 +11083,9 @@ func (s *Simple_entity_expressionContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *JPAParser) Simple_entity_expression() (localctx ISimple_entity_expressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimple_entity_expressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 140, JPAParserRULE_simple_entity_expression)
 
@@ -11031,6 +11245,9 @@ func (s *Functions_returning_numericsContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *JPAParser) Functions_returning_numerics() (localctx IFunctions_returning_numericsContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctions_returning_numericsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 142, JPAParserRULE_functions_returning_numerics)
 	var _la int
@@ -11265,6 +11482,9 @@ func (s *Functions_returning_datetimeContext) ExitRule(listener antlr.ParseTreeL
 }
 
 func (p *JPAParser) Functions_returning_datetime() (localctx IFunctions_returning_datetimeContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctions_returning_datetimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 144, JPAParserRULE_functions_returning_datetime)
 	var _la int
@@ -11420,6 +11640,9 @@ func (s *Functions_returning_stringsContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *JPAParser) Functions_returning_strings() (localctx IFunctions_returning_stringsContext) {
+	this := p
+	_ = this
+
 	localctx = NewFunctions_returning_stringsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 146, JPAParserRULE_functions_returning_strings)
 	var _la int
@@ -11661,6 +11884,9 @@ func (s *Trim_specificationContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Trim_specification() (localctx ITrim_specificationContext) {
+	this := p
+	_ = this
+
 	localctx = NewTrim_specificationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 148, JPAParserRULE_trim_specification)
 	var _la int
@@ -11755,6 +11981,9 @@ func (s *Numeric_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Numeric_literal() (localctx INumeric_literalContext) {
+	this := p
+	_ = this
+
 	localctx = NewNumeric_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 150, JPAParserRULE_numeric_literal)
 
@@ -11837,6 +12066,9 @@ func (s *Pattern_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Pattern_value() (localctx IPattern_valueContext) {
+	this := p
+	_ = this
+
 	localctx = NewPattern_valueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 152, JPAParserRULE_pattern_value)
 
@@ -11928,6 +12160,9 @@ func (s *Input_parameterContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Input_parameter() (localctx IInput_parameterContext) {
+	this := p
+	_ = this
+
 	localctx = NewInput_parameterContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 154, JPAParserRULE_input_parameter)
 
@@ -12038,6 +12273,9 @@ func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Literal() (localctx ILiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 156, JPAParserRULE_literal)
 
@@ -12120,6 +12358,9 @@ func (s *Constructor_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Constructor_name() (localctx IConstructor_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewConstructor_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 158, JPAParserRULE_constructor_name)
 
@@ -12202,6 +12443,9 @@ func (s *Enum_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Enum_literal() (localctx IEnum_literalContext) {
+	this := p
+	_ = this
+
 	localctx = NewEnum_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 160, JPAParserRULE_enum_literal)
 
@@ -12284,6 +12528,9 @@ func (s *Boolean_literalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Boolean_literal() (localctx IBoolean_literalContext) {
+	this := p
+	_ = this
+
 	localctx = NewBoolean_literalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 162, JPAParserRULE_boolean_literal)
 	var _la int
@@ -12378,6 +12625,9 @@ func (s *Simple_state_fieldContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *JPAParser) Simple_state_field() (localctx ISimple_state_fieldContext) {
+	this := p
+	_ = this
+
 	localctx = NewSimple_state_fieldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 164, JPAParserRULE_simple_state_field)
 
@@ -12460,6 +12710,9 @@ func (s *Embedded_class_state_fieldContext) ExitRule(listener antlr.ParseTreeLis
 }
 
 func (p *JPAParser) Embedded_class_state_field() (localctx IEmbedded_class_state_fieldContext) {
+	this := p
+	_ = this
+
 	localctx = NewEmbedded_class_state_fieldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 166, JPAParserRULE_embedded_class_state_field)
 
@@ -12542,6 +12795,9 @@ func (s *Single_valued_association_fieldContext) ExitRule(listener antlr.ParseTr
 }
 
 func (p *JPAParser) Single_valued_association_field() (localctx ISingle_valued_association_fieldContext) {
+	this := p
+	_ = this
+
 	localctx = NewSingle_valued_association_fieldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 168, JPAParserRULE_single_valued_association_field)
 
@@ -12624,6 +12880,9 @@ func (s *Collection_valued_association_fieldContext) ExitRule(listener antlr.Par
 }
 
 func (p *JPAParser) Collection_valued_association_field() (localctx ICollection_valued_association_fieldContext) {
+	this := p
+	_ = this
+
 	localctx = NewCollection_valued_association_fieldContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 170, JPAParserRULE_collection_valued_association_field)
 
@@ -12706,6 +12965,9 @@ func (s *Abstract_schema_nameContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *JPAParser) Abstract_schema_name() (localctx IAbstract_schema_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewAbstract_schema_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 172, JPAParserRULE_abstract_schema_name)
 

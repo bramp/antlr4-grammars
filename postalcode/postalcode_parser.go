@@ -1,4 +1,4 @@
-// Code generated from postalcode.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from postalcode.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package postalcode // postalcode
 import (
@@ -21,9 +21,6 @@ var parserATN = []uint16{
 	4, 2, 2, 7, 8, 7, 3, 2, 2, 8, 9, 7, 4, 2, 2, 9, 10, 7, 3, 2, 2, 10, 3,
 	3, 2, 2, 2, 2,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames []string
 
 var symbolicNames = []string{
@@ -33,21 +30,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"postalcode",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type postalcodeParser struct {
 	*antlr.BaseParser
 }
 
+// NewpostalcodeParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *postalcodeParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewpostalcodeParser(input antlr.TokenStream) *postalcodeParser {
 	this := new(postalcodeParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -145,6 +146,9 @@ func (s *PostalcodeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *postalcodeParser) Postalcode() (localctx IPostalcodeContext) {
+	this := p
+	_ = this
+
 	localctx = NewPostalcodeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, postalcodeParserRULE_postalcode)
 

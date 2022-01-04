@@ -1,4 +1,4 @@
-// Code generated from robotwar.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from robotwar.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package robotwar // robotwar
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -55,8 +55,8 @@ type robotwarListener interface {
 	// EnterArgument is called when entering the argument production.
 	EnterArgument(c *ArgumentContext)
 
-	// EnterRegister is called when entering the register production.
-	EnterRegister(c *RegisterContext)
+	// EnterRegister_ is called when entering the register_ production.
+	EnterRegister_(c *Register_Context)
 
 	// EnterNumber is called when entering the number production.
 	EnterNumber(c *NumberContext)
@@ -112,8 +112,8 @@ type robotwarListener interface {
 	// ExitArgument is called when exiting the argument production.
 	ExitArgument(c *ArgumentContext)
 
-	// ExitRegister is called when exiting the register production.
-	ExitRegister(c *RegisterContext)
+	// ExitRegister_ is called when exiting the register_ production.
+	ExitRegister_(c *Register_Context)
 
 	// ExitNumber is called when exiting the number production.
 	ExitNumber(c *NumberContext)

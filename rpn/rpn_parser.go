@@ -1,4 +1,4 @@
-// Code generated from rpn.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from rpn.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package rpn // rpn
 import (
@@ -32,9 +32,6 @@ var parserATN = []uint16{
 	35, 36, 7, 4, 2, 2, 36, 11, 3, 2, 2, 2, 37, 38, 7, 3, 2, 2, 38, 13, 3,
 	2, 2, 2, 5, 18, 23, 33,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "", "", "'^'", "'+'", "'-'", "'*'", "'/'", "'cos'", "'sin'", "'tan'",
 	"'acos'", "'asin'", "'atan'", "'ln'", "'log'", "'.'",
@@ -47,21 +44,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"expression", "term", "oper", "signedAtom", "variable", "scientific",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type rpnParser struct {
 	*antlr.BaseParser
 }
 
+// NewrpnParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *rpnParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewrpnParser(input antlr.TokenStream) *rpnParser {
 	this := new(rpnParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -197,6 +198,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *rpnParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, rpnParserRULE_expression)
 	var _la int
@@ -319,6 +323,9 @@ func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *rpnParser) Term() (localctx ITermContext) {
+	this := p
+	_ = this
+
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, rpnParserRULE_term)
 
@@ -471,6 +478,9 @@ func (s *OperContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *rpnParser) Oper() (localctx IOperContext) {
+	this := p
+	_ = this
+
 	localctx = NewOperContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, rpnParserRULE_oper)
 	var _la int
@@ -604,6 +614,9 @@ func (s *SignedAtomContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *rpnParser) SignedAtom() (localctx ISignedAtomContext) {
+	this := p
+	_ = this
+
 	localctx = NewSignedAtomContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, rpnParserRULE_signedAtom)
 
@@ -733,6 +746,9 @@ func (s *VariableContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *rpnParser) Variable() (localctx IVariableContext) {
+	this := p
+	_ = this
+
 	localctx = NewVariableContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, rpnParserRULE_variable)
 
@@ -824,6 +840,9 @@ func (s *ScientificContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *rpnParser) Scientific() (localctx IScientificContext) {
+	this := p
+	_ = this
+
 	localctx = NewScientificContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, rpnParserRULE_scientific)
 

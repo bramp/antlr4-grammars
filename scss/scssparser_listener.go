@@ -1,4 +1,4 @@
-// Code generated from ScssParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from ScssParser.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package scss // ScssParser
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -13,11 +13,11 @@ type ScssParserListener interface {
 	// EnterStatement is called when entering the statement production.
 	EnterStatement(c *StatementContext)
 
-	// EnterParams is called when entering the params production.
-	EnterParams(c *ParamsContext)
+	// EnterDeclaredParams is called when entering the declaredParams production.
+	EnterDeclaredParams(c *DeclaredParamsContext)
 
-	// EnterParam is called when entering the param production.
-	EnterParam(c *ParamContext)
+	// EnterDeclaredParam is called when entering the declaredParam production.
+	EnterDeclaredParam(c *DeclaredParamContext)
 
 	// EnterVariableName is called when entering the variableName production.
 	EnterVariableName(c *VariableNameContext)
@@ -25,8 +25,17 @@ type ScssParserListener interface {
 	// EnterParamOptionalValue is called when entering the paramOptionalValue production.
 	EnterParamOptionalValue(c *ParamOptionalValueContext)
 
+	// EnterPassedParams is called when entering the passedParams production.
+	EnterPassedParams(c *PassedParamsContext)
+
+	// EnterPassedParam is called when entering the passedParam production.
+	EnterPassedParam(c *PassedParamContext)
+
 	// EnterMixinDeclaration is called when entering the mixinDeclaration production.
 	EnterMixinDeclaration(c *MixinDeclarationContext)
+
+	// EnterContentDeclaration is called when entering the contentDeclaration production.
+	EnterContentDeclaration(c *ContentDeclarationContext)
 
 	// EnterIncludeDeclaration is called when entering the includeDeclaration production.
 	EnterIncludeDeclaration(c *IncludeDeclarationContext)
@@ -91,26 +100,38 @@ type ScssParserListener interface {
 	// EnterEachValueList is called when entering the eachValueList production.
 	EnterEachValueList(c *EachValueListContext)
 
-	// EnterIdentifierListOrMap is called when entering the identifierListOrMap production.
-	EnterIdentifierListOrMap(c *IdentifierListOrMapContext)
-
-	// EnterIdentifierValue is called when entering the identifierValue production.
-	EnterIdentifierValue(c *IdentifierValueContext)
-
 	// EnterImportDeclaration is called when entering the importDeclaration production.
 	EnterImportDeclaration(c *ImportDeclarationContext)
 
 	// EnterReferenceUrl is called when entering the referenceUrl production.
 	EnterReferenceUrl(c *ReferenceUrlContext)
 
-	// EnterMediaTypes is called when entering the mediaTypes production.
-	EnterMediaTypes(c *MediaTypesContext)
+	// EnterAsClause is called when entering the asClause production.
+	EnterAsClause(c *AsClauseContext)
 
-	// EnterNested is called when entering the nested production.
-	EnterNested(c *NestedContext)
+	// EnterWithClause is called when entering the withClause production.
+	EnterWithClause(c *WithClauseContext)
 
-	// EnterNest is called when entering the nest production.
-	EnterNest(c *NestContext)
+	// EnterKeywordArgument is called when entering the keywordArgument production.
+	EnterKeywordArgument(c *KeywordArgumentContext)
+
+	// EnterMediaDeclaration is called when entering the mediaDeclaration production.
+	EnterMediaDeclaration(c *MediaDeclarationContext)
+
+	// EnterMediaQueryList is called when entering the mediaQueryList production.
+	EnterMediaQueryList(c *MediaQueryListContext)
+
+	// EnterMediaQuery is called when entering the mediaQuery production.
+	EnterMediaQuery(c *MediaQueryContext)
+
+	// EnterMediaType is called when entering the mediaType production.
+	EnterMediaType(c *MediaTypeContext)
+
+	// EnterMediaExpression is called when entering the mediaExpression production.
+	EnterMediaExpression(c *MediaExpressionContext)
+
+	// EnterMediaFeature is called when entering the mediaFeature production.
+	EnterMediaFeature(c *MediaFeatureContext)
 
 	// EnterRuleset is called when entering the ruleset production.
 	EnterRuleset(c *RulesetContext)
@@ -124,11 +145,11 @@ type ScssParserListener interface {
 	// EnterSelector is called when entering the selector production.
 	EnterSelector(c *SelectorContext)
 
-	// EnterSelectorPrefix is called when entering the selectorPrefix production.
-	EnterSelectorPrefix(c *SelectorPrefixContext)
-
 	// EnterElement is called when entering the element production.
 	EnterElement(c *ElementContext)
+
+	// EnterCombinator is called when entering the combinator production.
+	EnterCombinator(c *CombinatorContext)
 
 	// EnterPseudo is called when entering the pseudo production.
 	EnterPseudo(c *PseudoContext)
@@ -142,17 +163,23 @@ type ScssParserListener interface {
 	// EnterIdentifier is called when entering the identifier production.
 	EnterIdentifier(c *IdentifierContext)
 
+	// EnterPseudoIdentifier is called when entering the pseudoIdentifier production.
+	EnterPseudoIdentifier(c *PseudoIdentifierContext)
+
 	// EnterIdentifierPart is called when entering the identifierPart production.
 	EnterIdentifierPart(c *IdentifierPartContext)
 
 	// EnterIdentifierVariableName is called when entering the identifierVariableName production.
 	EnterIdentifierVariableName(c *IdentifierVariableNameContext)
 
-	// EnterProperty is called when entering the property production.
-	EnterProperty(c *PropertyContext)
+	// EnterProperty_ is called when entering the property_ production.
+	EnterProperty_(c *Property_Context)
 
-	// EnterValues is called when entering the values production.
-	EnterValues(c *ValuesContext)
+	// EnterLastProperty is called when entering the lastProperty production.
+	EnterLastProperty(c *LastPropertyContext)
+
+	// EnterPropertyValue is called when entering the propertyValue production.
+	EnterPropertyValue(c *PropertyValueContext)
 
 	// EnterUrl is called when entering the url production.
 	EnterUrl(c *UrlContext)
@@ -163,17 +190,47 @@ type ScssParserListener interface {
 	// EnterFunctionCall is called when entering the functionCall production.
 	EnterFunctionCall(c *FunctionCallContext)
 
+	// EnterNamespace is called when entering the namespace production.
+	EnterNamespace(c *NamespaceContext)
+
+	// EnterList_ is called when entering the list_ production.
+	EnterList_(c *List_Context)
+
+	// EnterListCommaSeparated is called when entering the listCommaSeparated production.
+	EnterListCommaSeparated(c *ListCommaSeparatedContext)
+
+	// EnterListSpaceSeparated is called when entering the listSpaceSeparated production.
+	EnterListSpaceSeparated(c *ListSpaceSeparatedContext)
+
+	// EnterListBracketed is called when entering the listBracketed production.
+	EnterListBracketed(c *ListBracketedContext)
+
+	// EnterListElement is called when entering the listElement production.
+	EnterListElement(c *ListElementContext)
+
+	// EnterMap_ is called when entering the map_ production.
+	EnterMap_(c *Map_Context)
+
+	// EnterMapEntry is called when entering the mapEntry production.
+	EnterMapEntry(c *MapEntryContext)
+
+	// EnterMapKey is called when entering the mapKey production.
+	EnterMapKey(c *MapKeyContext)
+
+	// EnterMapValue is called when entering the mapValue production.
+	EnterMapValue(c *MapValueContext)
+
 	// ExitStylesheet is called when exiting the stylesheet production.
 	ExitStylesheet(c *StylesheetContext)
 
 	// ExitStatement is called when exiting the statement production.
 	ExitStatement(c *StatementContext)
 
-	// ExitParams is called when exiting the params production.
-	ExitParams(c *ParamsContext)
+	// ExitDeclaredParams is called when exiting the declaredParams production.
+	ExitDeclaredParams(c *DeclaredParamsContext)
 
-	// ExitParam is called when exiting the param production.
-	ExitParam(c *ParamContext)
+	// ExitDeclaredParam is called when exiting the declaredParam production.
+	ExitDeclaredParam(c *DeclaredParamContext)
 
 	// ExitVariableName is called when exiting the variableName production.
 	ExitVariableName(c *VariableNameContext)
@@ -181,8 +238,17 @@ type ScssParserListener interface {
 	// ExitParamOptionalValue is called when exiting the paramOptionalValue production.
 	ExitParamOptionalValue(c *ParamOptionalValueContext)
 
+	// ExitPassedParams is called when exiting the passedParams production.
+	ExitPassedParams(c *PassedParamsContext)
+
+	// ExitPassedParam is called when exiting the passedParam production.
+	ExitPassedParam(c *PassedParamContext)
+
 	// ExitMixinDeclaration is called when exiting the mixinDeclaration production.
 	ExitMixinDeclaration(c *MixinDeclarationContext)
+
+	// ExitContentDeclaration is called when exiting the contentDeclaration production.
+	ExitContentDeclaration(c *ContentDeclarationContext)
 
 	// ExitIncludeDeclaration is called when exiting the includeDeclaration production.
 	ExitIncludeDeclaration(c *IncludeDeclarationContext)
@@ -247,26 +313,38 @@ type ScssParserListener interface {
 	// ExitEachValueList is called when exiting the eachValueList production.
 	ExitEachValueList(c *EachValueListContext)
 
-	// ExitIdentifierListOrMap is called when exiting the identifierListOrMap production.
-	ExitIdentifierListOrMap(c *IdentifierListOrMapContext)
-
-	// ExitIdentifierValue is called when exiting the identifierValue production.
-	ExitIdentifierValue(c *IdentifierValueContext)
-
 	// ExitImportDeclaration is called when exiting the importDeclaration production.
 	ExitImportDeclaration(c *ImportDeclarationContext)
 
 	// ExitReferenceUrl is called when exiting the referenceUrl production.
 	ExitReferenceUrl(c *ReferenceUrlContext)
 
-	// ExitMediaTypes is called when exiting the mediaTypes production.
-	ExitMediaTypes(c *MediaTypesContext)
+	// ExitAsClause is called when exiting the asClause production.
+	ExitAsClause(c *AsClauseContext)
 
-	// ExitNested is called when exiting the nested production.
-	ExitNested(c *NestedContext)
+	// ExitWithClause is called when exiting the withClause production.
+	ExitWithClause(c *WithClauseContext)
 
-	// ExitNest is called when exiting the nest production.
-	ExitNest(c *NestContext)
+	// ExitKeywordArgument is called when exiting the keywordArgument production.
+	ExitKeywordArgument(c *KeywordArgumentContext)
+
+	// ExitMediaDeclaration is called when exiting the mediaDeclaration production.
+	ExitMediaDeclaration(c *MediaDeclarationContext)
+
+	// ExitMediaQueryList is called when exiting the mediaQueryList production.
+	ExitMediaQueryList(c *MediaQueryListContext)
+
+	// ExitMediaQuery is called when exiting the mediaQuery production.
+	ExitMediaQuery(c *MediaQueryContext)
+
+	// ExitMediaType is called when exiting the mediaType production.
+	ExitMediaType(c *MediaTypeContext)
+
+	// ExitMediaExpression is called when exiting the mediaExpression production.
+	ExitMediaExpression(c *MediaExpressionContext)
+
+	// ExitMediaFeature is called when exiting the mediaFeature production.
+	ExitMediaFeature(c *MediaFeatureContext)
 
 	// ExitRuleset is called when exiting the ruleset production.
 	ExitRuleset(c *RulesetContext)
@@ -280,11 +358,11 @@ type ScssParserListener interface {
 	// ExitSelector is called when exiting the selector production.
 	ExitSelector(c *SelectorContext)
 
-	// ExitSelectorPrefix is called when exiting the selectorPrefix production.
-	ExitSelectorPrefix(c *SelectorPrefixContext)
-
 	// ExitElement is called when exiting the element production.
 	ExitElement(c *ElementContext)
+
+	// ExitCombinator is called when exiting the combinator production.
+	ExitCombinator(c *CombinatorContext)
 
 	// ExitPseudo is called when exiting the pseudo production.
 	ExitPseudo(c *PseudoContext)
@@ -298,17 +376,23 @@ type ScssParserListener interface {
 	// ExitIdentifier is called when exiting the identifier production.
 	ExitIdentifier(c *IdentifierContext)
 
+	// ExitPseudoIdentifier is called when exiting the pseudoIdentifier production.
+	ExitPseudoIdentifier(c *PseudoIdentifierContext)
+
 	// ExitIdentifierPart is called when exiting the identifierPart production.
 	ExitIdentifierPart(c *IdentifierPartContext)
 
 	// ExitIdentifierVariableName is called when exiting the identifierVariableName production.
 	ExitIdentifierVariableName(c *IdentifierVariableNameContext)
 
-	// ExitProperty is called when exiting the property production.
-	ExitProperty(c *PropertyContext)
+	// ExitProperty_ is called when exiting the property_ production.
+	ExitProperty_(c *Property_Context)
 
-	// ExitValues is called when exiting the values production.
-	ExitValues(c *ValuesContext)
+	// ExitLastProperty is called when exiting the lastProperty production.
+	ExitLastProperty(c *LastPropertyContext)
+
+	// ExitPropertyValue is called when exiting the propertyValue production.
+	ExitPropertyValue(c *PropertyValueContext)
 
 	// ExitUrl is called when exiting the url production.
 	ExitUrl(c *UrlContext)
@@ -318,4 +402,34 @@ type ScssParserListener interface {
 
 	// ExitFunctionCall is called when exiting the functionCall production.
 	ExitFunctionCall(c *FunctionCallContext)
+
+	// ExitNamespace is called when exiting the namespace production.
+	ExitNamespace(c *NamespaceContext)
+
+	// ExitList_ is called when exiting the list_ production.
+	ExitList_(c *List_Context)
+
+	// ExitListCommaSeparated is called when exiting the listCommaSeparated production.
+	ExitListCommaSeparated(c *ListCommaSeparatedContext)
+
+	// ExitListSpaceSeparated is called when exiting the listSpaceSeparated production.
+	ExitListSpaceSeparated(c *ListSpaceSeparatedContext)
+
+	// ExitListBracketed is called when exiting the listBracketed production.
+	ExitListBracketed(c *ListBracketedContext)
+
+	// ExitListElement is called when exiting the listElement production.
+	ExitListElement(c *ListElementContext)
+
+	// ExitMap_ is called when exiting the map_ production.
+	ExitMap_(c *Map_Context)
+
+	// ExitMapEntry is called when exiting the mapEntry production.
+	ExitMapEntry(c *MapEntryContext)
+
+	// ExitMapKey is called when exiting the mapKey production.
+	ExitMapKey(c *MapKeyContext)
+
+	// ExitMapValue is called when exiting the mapValue production.
+	ExitMapValue(c *MapValueContext)
 }

@@ -1,4 +1,4 @@
-// Code generated from PROV_N.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from PROV_N.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package prov_n // PROV_N
 import (
@@ -232,9 +232,6 @@ var parserATN = []uint16{
 	277, 283, 293, 299, 310, 326, 342, 356, 385, 407, 425, 468, 479, 487, 498,
 	503,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'default'", "'prefix'", "'entity'", "'('", "')'", "','", "'['", "']'",
 	"'='", "'%%'", "'activity'", "'wasGeneratedBy'", "';'", "'used'", "'wasStartedBy'",
@@ -255,7 +252,7 @@ var symbolicNames = []string{
 
 var ruleNames = []string{
 	"document", "namespaceDeclarations", "defaultNamespaceDeclaration", "namespaceDeclaration",
-	"namespace", "bundle", "identifier", "expression", "entityExpression",
+	"namespace_", "bundle", "identifier", "expression", "entityExpression",
 	"optionalAttributeValuePairs", "attributeValuePairs", "attributeValuePair",
 	"attribute", "literal", "typedLiteral", "datatype", "convenienceNotation",
 	"activityExpression", "timeOrMarker", "time", "generationExpression", "optionalIdentifier",
@@ -268,21 +265,25 @@ var ruleNames = []string{
 	"membershipExpression", "extensibilityExpression", "extensibilityArgument",
 	"extensibilityTuple",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type PROV_NParser struct {
 	*antlr.BaseParser
 }
 
+// NewPROV_NParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *PROV_NParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewPROV_NParser(input antlr.TokenStream) *PROV_NParser {
 	this := new(PROV_NParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -357,7 +358,7 @@ const (
 	PROV_NParserRULE_namespaceDeclarations       = 1
 	PROV_NParserRULE_defaultNamespaceDeclaration = 2
 	PROV_NParserRULE_namespaceDeclaration        = 3
-	PROV_NParserRULE_namespace                   = 4
+	PROV_NParserRULE_namespace_                  = 4
 	PROV_NParserRULE_bundle                      = 5
 	PROV_NParserRULE_identifier                  = 6
 	PROV_NParserRULE_expression                  = 7
@@ -529,6 +530,9 @@ func (s *DocumentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) Document() (localctx IDocumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewDocumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, PROV_NParserRULE_document)
 	var _la int
@@ -704,6 +708,9 @@ func (s *NamespaceDeclarationsContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *PROV_NParser) NamespaceDeclarations() (localctx INamespaceDeclarationsContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamespaceDeclarationsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, PROV_NParserRULE_namespaceDeclarations)
 	var _la int
@@ -825,6 +832,9 @@ func (s *DefaultNamespaceDeclarationContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *PROV_NParser) DefaultNamespaceDeclaration() (localctx IDefaultNamespaceDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewDefaultNamespaceDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, PROV_NParserRULE_defaultNamespaceDeclaration)
 
@@ -899,14 +909,14 @@ func (s *NamespaceDeclarationContext) PREFX() antlr.TerminalNode {
 	return s.GetToken(PROV_NParserPREFX, 0)
 }
 
-func (s *NamespaceDeclarationContext) Namespace() INamespaceContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*INamespaceContext)(nil)).Elem(), 0)
+func (s *NamespaceDeclarationContext) Namespace_() INamespace_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*INamespace_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(INamespaceContext)
+	return t.(INamespace_Context)
 }
 
 func (s *NamespaceDeclarationContext) GetRuleContext() antlr.RuleContext {
@@ -930,6 +940,9 @@ func (s *NamespaceDeclarationContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *PROV_NParser) NamespaceDeclaration() (localctx INamespaceDeclarationContext) {
+	this := p
+	_ = this
+
 	localctx = NewNamespaceDeclarationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, PROV_NParserRULE_namespaceDeclaration)
 
@@ -960,77 +973,80 @@ func (p *PROV_NParser) NamespaceDeclaration() (localctx INamespaceDeclarationCon
 	}
 	{
 		p.SetState(138)
-		p.Namespace()
+		p.Namespace_()
 	}
 
 	return localctx
 }
 
-// INamespaceContext is an interface to support dynamic dispatch.
-type INamespaceContext interface {
+// INamespace_Context is an interface to support dynamic dispatch.
+type INamespace_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsNamespaceContext differentiates from other interfaces.
-	IsNamespaceContext()
+	// IsNamespace_Context differentiates from other interfaces.
+	IsNamespace_Context()
 }
 
-type NamespaceContext struct {
+type Namespace_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyNamespaceContext() *NamespaceContext {
-	var p = new(NamespaceContext)
+func NewEmptyNamespace_Context() *Namespace_Context {
+	var p = new(Namespace_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = PROV_NParserRULE_namespace
+	p.RuleIndex = PROV_NParserRULE_namespace_
 	return p
 }
 
-func (*NamespaceContext) IsNamespaceContext() {}
+func (*Namespace_Context) IsNamespace_Context() {}
 
-func NewNamespaceContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *NamespaceContext {
-	var p = new(NamespaceContext)
+func NewNamespace_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Namespace_Context {
+	var p = new(Namespace_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = PROV_NParserRULE_namespace
+	p.RuleIndex = PROV_NParserRULE_namespace_
 
 	return p
 }
 
-func (s *NamespaceContext) GetParser() antlr.Parser { return s.parser }
+func (s *Namespace_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *NamespaceContext) IRI_REF() antlr.TerminalNode {
+func (s *Namespace_Context) IRI_REF() antlr.TerminalNode {
 	return s.GetToken(PROV_NParserIRI_REF, 0)
 }
 
-func (s *NamespaceContext) GetRuleContext() antlr.RuleContext {
+func (s *Namespace_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *NamespaceContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Namespace_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *NamespaceContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Namespace_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(PROV_NListener); ok {
-		listenerT.EnterNamespace(s)
+		listenerT.EnterNamespace_(s)
 	}
 }
 
-func (s *NamespaceContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Namespace_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(PROV_NListener); ok {
-		listenerT.ExitNamespace(s)
+		listenerT.ExitNamespace_(s)
 	}
 }
 
-func (p *PROV_NParser) Namespace() (localctx INamespaceContext) {
-	localctx = NewNamespaceContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, PROV_NParserRULE_namespace)
+func (p *PROV_NParser) Namespace_() (localctx INamespace_Context) {
+	this := p
+	_ = this
+
+	localctx = NewNamespace_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 8, PROV_NParserRULE_namespace_)
 
 	defer func() {
 		p.ExitRule()
@@ -1167,6 +1183,9 @@ func (s *BundleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) Bundle() (localctx IBundleContext) {
+	this := p
+	_ = this
+
 	localctx = NewBundleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, PROV_NParserRULE_bundle)
 	var _la int
@@ -1296,6 +1315,9 @@ func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) Identifier() (localctx IIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, PROV_NParserRULE_identifier)
 	var _la int
@@ -1571,6 +1593,9 @@ func (s *ExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) Expression() (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, PROV_NParserRULE_expression)
 
@@ -1789,6 +1814,9 @@ func (s *EntityExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) EntityExpression() (localctx IEntityExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewEntityExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, PROV_NParserRULE_entityExpression)
 
@@ -1902,6 +1930,9 @@ func (s *OptionalAttributeValuePairsContext) ExitRule(listener antlr.ParseTreeLi
 }
 
 func (p *PROV_NParser) OptionalAttributeValuePairs() (localctx IOptionalAttributeValuePairsContext) {
+	this := p
+	_ = this
+
 	localctx = NewOptionalAttributeValuePairsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, PROV_NParserRULE_optionalAttributeValuePairs)
 	var _la int
@@ -2032,6 +2063,9 @@ func (s *AttributeValuePairsContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *PROV_NParser) AttributeValuePairs() (localctx IAttributeValuePairsContext) {
+	this := p
+	_ = this
+
 	localctx = NewAttributeValuePairsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, PROV_NParserRULE_attributeValuePairs)
 	var _la int
@@ -2169,6 +2203,9 @@ func (s *AttributeValuePairContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) AttributeValuePair() (localctx IAttributeValuePairContext) {
+	this := p
+	_ = this
+
 	localctx = NewAttributeValuePairContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, PROV_NParserRULE_attributeValuePair)
 
@@ -2272,6 +2309,9 @@ func (s *AttributeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) Attribute() (localctx IAttributeContext) {
+	this := p
+	_ = this
+
 	localctx = NewAttributeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, PROV_NParserRULE_attribute)
 	var _la int
@@ -2387,6 +2427,9 @@ func (s *LiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) Literal() (localctx ILiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, PROV_NParserRULE_literal)
 
@@ -2501,6 +2544,9 @@ func (s *TypedLiteralContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) TypedLiteral() (localctx ITypedLiteralContext) {
+	this := p
+	_ = this
+
 	localctx = NewTypedLiteralContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, PROV_NParserRULE_typedLiteral)
 
@@ -2604,6 +2650,9 @@ func (s *DatatypeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) Datatype() (localctx IDatatypeContext) {
+	this := p
+	_ = this
+
 	localctx = NewDatatypeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, PROV_NParserRULE_datatype)
 	var _la int
@@ -2715,6 +2764,9 @@ func (s *ConvenienceNotationContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *PROV_NParser) ConvenienceNotation() (localctx IConvenienceNotationContext) {
+	this := p
+	_ = this
+
 	localctx = NewConvenienceNotationContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, PROV_NParserRULE_convenienceNotation)
 	var _la int
@@ -2880,6 +2932,9 @@ func (s *ActivityExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) ActivityExpression() (localctx IActivityExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewActivityExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, PROV_NParserRULE_activityExpression)
 
@@ -3019,6 +3074,9 @@ func (s *TimeOrMarkerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) TimeOrMarker() (localctx ITimeOrMarkerContext) {
+	this := p
+	_ = this
+
 	localctx = NewTimeOrMarkerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, PROV_NParserRULE_timeOrMarker)
 
@@ -3125,6 +3183,9 @@ func (s *TimeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) Time() (localctx ITimeContext) {
+	this := p
+	_ = this
+
 	localctx = NewTimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, PROV_NParserRULE_time)
 
@@ -3262,6 +3323,9 @@ func (s *GenerationExpressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *PROV_NParser) GenerationExpression() (localctx IGenerationExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewGenerationExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, PROV_NParserRULE_generationExpression)
 
@@ -3401,6 +3465,9 @@ func (s *OptionalIdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) OptionalIdentifier() (localctx IOptionalIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewOptionalIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, PROV_NParserRULE_optionalIdentifier)
 
@@ -3512,6 +3579,9 @@ func (s *IdentifierOrMarkerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) IdentifierOrMarker() (localctx IIdentifierOrMarkerContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentifierOrMarkerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, PROV_NParserRULE_identifierOrMarker)
 
@@ -3624,6 +3694,9 @@ func (s *EIdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) EIdentifier() (localctx IEIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewEIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, PROV_NParserRULE_eIdentifier)
 
@@ -3725,6 +3798,9 @@ func (s *EIdentifierOrMarkerContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *PROV_NParser) EIdentifierOrMarker() (localctx IEIdentifierOrMarkerContext) {
+	this := p
+	_ = this
+
 	localctx = NewEIdentifierOrMarkerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, PROV_NParserRULE_eIdentifierOrMarker)
 
@@ -3841,6 +3917,9 @@ func (s *AIdentifierOrMarkerContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *PROV_NParser) AIdentifierOrMarker() (localctx IAIdentifierOrMarkerContext) {
+	this := p
+	_ = this
+
 	localctx = NewAIdentifierOrMarkerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, PROV_NParserRULE_aIdentifierOrMarker)
 
@@ -3953,6 +4032,9 @@ func (s *AIdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) AIdentifier() (localctx IAIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewAIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, PROV_NParserRULE_aIdentifier)
 
@@ -4054,6 +4136,9 @@ func (s *AgIdentifierOrMarkerContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *PROV_NParser) AgIdentifierOrMarker() (localctx IAgIdentifierOrMarkerContext) {
+	this := p
+	_ = this
+
 	localctx = NewAgIdentifierOrMarkerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, PROV_NParserRULE_agIdentifierOrMarker)
 
@@ -4166,6 +4251,9 @@ func (s *AgIdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) AgIdentifier() (localctx IAgIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewAgIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, PROV_NParserRULE_agIdentifier)
 
@@ -4263,6 +4351,9 @@ func (s *CIdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) CIdentifier() (localctx ICIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewCIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, PROV_NParserRULE_cIdentifier)
 
@@ -4360,6 +4451,9 @@ func (s *GIdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) GIdentifier() (localctx IGIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewGIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, PROV_NParserRULE_gIdentifier)
 
@@ -4461,6 +4555,9 @@ func (s *GIdentifierOrMarkerContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *PROV_NParser) GIdentifierOrMarker() (localctx IGIdentifierOrMarkerContext) {
+	this := p
+	_ = this
+
 	localctx = NewGIdentifierOrMarkerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, PROV_NParserRULE_gIdentifierOrMarker)
 
@@ -4573,6 +4670,9 @@ func (s *UIdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) UIdentifier() (localctx IUIdentifierContext) {
+	this := p
+	_ = this
+
 	localctx = NewUIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, PROV_NParserRULE_uIdentifier)
 
@@ -4674,6 +4774,9 @@ func (s *UIdentifierOrMarkerContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *PROV_NParser) UIdentifierOrMarker() (localctx IUIdentifierOrMarkerContext) {
+	this := p
+	_ = this
+
 	localctx = NewUIdentifierOrMarkerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, PROV_NParserRULE_uIdentifierOrMarker)
 
@@ -4826,6 +4929,9 @@ func (s *UsageExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) UsageExpression() (localctx IUsageExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewUsageExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, PROV_NParserRULE_usageExpression)
 
@@ -5015,6 +5121,9 @@ func (s *StartExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) StartExpression() (localctx IStartExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewStartExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, PROV_NParserRULE_startExpression)
 
@@ -5212,6 +5321,9 @@ func (s *EndExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) EndExpression() (localctx IEndExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewEndExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, PROV_NParserRULE_endExpression)
 
@@ -5399,6 +5511,9 @@ func (s *InvalidationExpressionContext) ExitRule(listener antlr.ParseTreeListene
 }
 
 func (p *PROV_NParser) InvalidationExpression() (localctx IInvalidationExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewInvalidationExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, PROV_NParserRULE_invalidationExpression)
 
@@ -5571,6 +5686,9 @@ func (s *CommunicationExpressionContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *PROV_NParser) CommunicationExpression() (localctx ICommunicationExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommunicationExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, PROV_NParserRULE_communicationExpression)
 
@@ -5706,6 +5824,9 @@ func (s *AgentExpressionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) AgentExpression() (localctx IAgentExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAgentExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 78, PROV_NParserRULE_agentExpression)
 
@@ -5859,6 +5980,9 @@ func (s *AssociationExpressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *PROV_NParser) AssociationExpression() (localctx IAssociationExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssociationExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 80, PROV_NParserRULE_associationExpression)
 
@@ -6028,6 +6152,9 @@ func (s *AttributionExpressionContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *PROV_NParser) AttributionExpression() (localctx IAttributionExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAttributionExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 82, PROV_NParserRULE_attributionExpression)
 
@@ -6196,6 +6323,9 @@ func (s *DelegationExpressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *PROV_NParser) DelegationExpression() (localctx IDelegationExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelegationExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 84, PROV_NParserRULE_delegationExpression)
 
@@ -6398,6 +6528,9 @@ func (s *DerivationExpressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *PROV_NParser) DerivationExpression() (localctx IDerivationExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewDerivationExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 86, PROV_NParserRULE_derivationExpression)
 
@@ -6586,6 +6719,9 @@ func (s *InfluenceExpressionContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *PROV_NParser) InfluenceExpression() (localctx IInfluenceExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewInfluenceExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 88, PROV_NParserRULE_influenceExpression)
 
@@ -6724,6 +6860,9 @@ func (s *AlternateExpressionContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *PROV_NParser) AlternateExpression() (localctx IAlternateExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlternateExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, PROV_NParserRULE_alternateExpression)
 
@@ -6854,6 +6993,9 @@ func (s *SpecializationExpressionContext) ExitRule(listener antlr.ParseTreeListe
 }
 
 func (p *PROV_NParser) SpecializationExpression() (localctx ISpecializationExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewSpecializationExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 92, PROV_NParserRULE_specializationExpression)
 
@@ -6981,6 +7123,9 @@ func (s *MembershipExpressionContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *PROV_NParser) MembershipExpression() (localctx IMembershipExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewMembershipExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 94, PROV_NParserRULE_membershipExpression)
 
@@ -7139,6 +7284,9 @@ func (s *ExtensibilityExpressionContext) ExitRule(listener antlr.ParseTreeListen
 }
 
 func (p *PROV_NParser) ExtensibilityExpression() (localctx IExtensibilityExpressionContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensibilityExpressionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 96, PROV_NParserRULE_extensibilityExpression)
 	var _la int
@@ -7326,6 +7474,9 @@ func (s *ExtensibilityArgumentContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *PROV_NParser) ExtensibilityArgument() (localctx IExtensibilityArgumentContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensibilityArgumentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 98, PROV_NParserRULE_extensibilityArgument)
 
@@ -7466,6 +7617,9 @@ func (s *ExtensibilityTupleContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *PROV_NParser) ExtensibilityTuple() (localctx IExtensibilityTupleContext) {
+	this := p
+	_ = this
+
 	localctx = NewExtensibilityTupleContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 100, PROV_NParserRULE_extensibilityTuple)
 	var _la int

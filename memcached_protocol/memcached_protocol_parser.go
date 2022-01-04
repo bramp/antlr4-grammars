@@ -1,4 +1,4 @@
-// Code generated from memcached_protocol.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from memcached_protocol.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package memcached_protocol // memcached_protocol
 import (
@@ -122,9 +122,6 @@ var parserATN = []uint16{
 	92, 107, 110, 118, 123, 126, 132, 138, 142, 148, 151, 165, 173, 176, 181,
 	186, 192, 197, 212, 218,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'cas'", "'set'", "'add'", "'replace'", "'append'", "'prepend'", "'get'",
 	"'gets'", "'delete'", "'incr'", "'decr'", "'stats'", "'items'", "'slabs'",
@@ -149,21 +146,25 @@ var ruleNames = []string{
 	"time", "delay", "verbosity_level", "statistic_name", "statistic_value",
 	"size", "count",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type memcached_protocolParser struct {
 	*antlr.BaseParser
 }
 
+// Newmemcached_protocolParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *memcached_protocolParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func Newmemcached_protocolParser(input antlr.TokenStream) *memcached_protocolParser {
 	this := new(memcached_protocolParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -546,6 +547,9 @@ func (s *Command_lineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Command_line() (localctx ICommand_lineContext) {
+	this := p
+	_ = this
+
 	localctx = NewCommand_lineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, memcached_protocolParserRULE_command_line)
 	var _la int
@@ -777,6 +781,9 @@ func (s *Storage_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Storage_command() (localctx IStorage_commandContext) {
+	this := p
+	_ = this
+
 	localctx = NewStorage_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, memcached_protocolParserRULE_storage_command)
 	var _la int
@@ -926,6 +933,9 @@ func (s *Storage_command_nameContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *memcached_protocolParser) Storage_command_name() (localctx IStorage_command_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewStorage_command_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, memcached_protocolParserRULE_storage_command_name)
 	var _la int
@@ -1044,6 +1054,9 @@ func (s *Retrieval_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Retrieval_command() (localctx IRetrieval_commandContext) {
+	this := p
+	_ = this
+
 	localctx = NewRetrieval_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, memcached_protocolParserRULE_retrieval_command)
 	var _la int
@@ -1190,6 +1203,9 @@ func (s *Delete_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Delete_command() (localctx IDelete_commandContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelete_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, memcached_protocolParserRULE_delete_command)
 	var _la int
@@ -1334,6 +1350,9 @@ func (s *Increment_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Increment_command() (localctx IIncrement_commandContext) {
+	this := p
+	_ = this
+
 	localctx = NewIncrement_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, memcached_protocolParserRULE_increment_command)
 	var _la int
@@ -1471,6 +1490,9 @@ func (s *Decrement_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Decrement_command() (localctx IDecrement_commandContext) {
+	this := p
+	_ = this
+
 	localctx = NewDecrement_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, memcached_protocolParserRULE_decrement_command)
 	var _la int
@@ -1588,6 +1610,9 @@ func (s *Statistics_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Statistics_command() (localctx IStatistics_commandContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatistics_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, memcached_protocolParserRULE_statistics_command)
 	var _la int
@@ -1686,6 +1711,9 @@ func (s *Statistics_optionContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Statistics_option() (localctx IStatistics_optionContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatistics_optionContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, memcached_protocolParserRULE_statistics_option)
 	var _la int
@@ -1801,6 +1829,9 @@ func (s *Flush_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Flush_command() (localctx IFlush_commandContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlush_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, memcached_protocolParserRULE_flush_command)
 	var _la int
@@ -1910,6 +1941,9 @@ func (s *Version_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Version_command() (localctx IVersion_commandContext) {
+	this := p
+	_ = this
+
 	localctx = NewVersion_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, memcached_protocolParserRULE_version_command)
 
@@ -2007,6 +2041,9 @@ func (s *Verbosity_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Verbosity_command() (localctx IVerbosity_commandContext) {
+	this := p
+	_ = this
+
 	localctx = NewVerbosity_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, memcached_protocolParserRULE_verbosity_command)
 
@@ -2097,6 +2134,9 @@ func (s *Quit_commandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Quit_command() (localctx IQuit_commandContext) {
+	this := p
+	_ = this
+
 	localctx = NewQuit_commandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, memcached_protocolParserRULE_quit_command)
 
@@ -2194,6 +2234,9 @@ func (s *Storage_responseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Storage_response() (localctx IStorage_responseContext) {
+	this := p
+	_ = this
+
 	localctx = NewStorage_responseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, memcached_protocolParserRULE_storage_response)
 
@@ -2378,6 +2421,9 @@ func (s *Retrieval_responseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Retrieval_response() (localctx IRetrieval_responseContext) {
+	this := p
+	_ = this
+
 	localctx = NewRetrieval_responseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, memcached_protocolParserRULE_retrieval_response)
 	var _la int
@@ -2522,6 +2568,9 @@ func (s *Deletion_responseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Deletion_response() (localctx IDeletion_responseContext) {
+	this := p
+	_ = this
+
 	localctx = NewDeletion_responseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, memcached_protocolParserRULE_deletion_response)
 
@@ -2646,6 +2695,9 @@ func (s *Incr_or_decr_responseContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *memcached_protocolParser) Incr_or_decr_response() (localctx IIncr_or_decr_responseContext) {
+	this := p
+	_ = this
+
 	localctx = NewIncr_or_decr_responseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, memcached_protocolParserRULE_incr_or_decr_response)
 
@@ -2796,6 +2848,9 @@ func (s *Statistics_responseContext) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *memcached_protocolParser) Statistics_response() (localctx IStatistics_responseContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatistics_responseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, memcached_protocolParserRULE_statistics_response)
 
@@ -2943,6 +2998,9 @@ func (s *Error_responseContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Error_response() (localctx IError_responseContext) {
+	this := p
+	_ = this
+
 	localctx = NewError_responseContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, memcached_protocolParserRULE_error_response)
 
@@ -3073,6 +3131,9 @@ func (s *General_statisticContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) General_statistic() (localctx IGeneral_statisticContext) {
+	this := p
+	_ = this
+
 	localctx = NewGeneral_statisticContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, memcached_protocolParserRULE_general_statistic)
 
@@ -3188,6 +3249,9 @@ func (s *Size_statisticContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Size_statistic() (localctx ISize_statisticContext) {
+	this := p
+	_ = this
+
 	localctx = NewSize_statisticContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, memcached_protocolParserRULE_size_statistic)
 
@@ -3278,6 +3342,9 @@ func (s *General_errorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) General_error() (localctx IGeneral_errorContext) {
+	this := p
+	_ = this
+
 	localctx = NewGeneral_errorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, memcached_protocolParserRULE_general_error)
 
@@ -3364,6 +3431,9 @@ func (s *Client_error_messageContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *memcached_protocolParser) Client_error_message() (localctx IClient_error_messageContext) {
+	this := p
+	_ = this
+
 	localctx = NewClient_error_messageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, memcached_protocolParserRULE_client_error_message)
 
@@ -3469,6 +3539,9 @@ func (s *Server_error_messageContext) ExitRule(listener antlr.ParseTreeListener)
 }
 
 func (p *memcached_protocolParser) Server_error_message() (localctx IServer_error_messageContext) {
+	this := p
+	_ = this
+
 	localctx = NewServer_error_messageContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, memcached_protocolParserRULE_server_error_message)
 
@@ -3574,6 +3647,9 @@ func (s *EndContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) End() (localctx IEndContext) {
+	this := p
+	_ = this
+
 	localctx = NewEndContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, memcached_protocolParserRULE_end)
 
@@ -3660,6 +3736,9 @@ func (s *NoreplyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Noreply() (localctx INoreplyContext) {
+	this := p
+	_ = this
+
 	localctx = NewNoreplyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, memcached_protocolParserRULE_noreply)
 
@@ -3746,6 +3825,9 @@ func (s *KeyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Key() (localctx IKeyContext) {
+	this := p
+	_ = this
+
 	localctx = NewKeyContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, memcached_protocolParserRULE_key)
 
@@ -3835,6 +3917,9 @@ func (s *FlagsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Flags() (localctx IFlagsContext) {
+	this := p
+	_ = this
+
 	localctx = NewFlagsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, memcached_protocolParserRULE_flags)
 
@@ -3926,6 +4011,9 @@ func (s *ExptimeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Exptime() (localctx IExptimeContext) {
+	this := p
+	_ = this
+
 	localctx = NewExptimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, memcached_protocolParserRULE_exptime)
 
@@ -4017,6 +4105,9 @@ func (s *BytesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Bytes() (localctx IBytesContext) {
+	this := p
+	_ = this
+
 	localctx = NewBytesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, memcached_protocolParserRULE_bytes)
 
@@ -4108,6 +4199,9 @@ func (s *Cas_uniqueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Cas_unique() (localctx ICas_uniqueContext) {
+	this := p
+	_ = this
+
 	localctx = NewCas_uniqueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, memcached_protocolParserRULE_cas_unique)
 
@@ -4199,6 +4293,9 @@ func (s *ValueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Value() (localctx IValueContext) {
+	this := p
+	_ = this
+
 	localctx = NewValueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, memcached_protocolParserRULE_value)
 
@@ -4290,6 +4387,9 @@ func (s *TimeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Time() (localctx ITimeContext) {
+	this := p
+	_ = this
+
 	localctx = NewTimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, memcached_protocolParserRULE_time)
 
@@ -4381,6 +4481,9 @@ func (s *DelayContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Delay() (localctx IDelayContext) {
+	this := p
+	_ = this
+
 	localctx = NewDelayContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, memcached_protocolParserRULE_delay)
 
@@ -4472,6 +4575,9 @@ func (s *Verbosity_levelContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Verbosity_level() (localctx IVerbosity_levelContext) {
+	this := p
+	_ = this
+
 	localctx = NewVerbosity_levelContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, memcached_protocolParserRULE_verbosity_level)
 
@@ -4563,6 +4669,9 @@ func (s *Statistic_nameContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Statistic_name() (localctx IStatistic_nameContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatistic_nameContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, memcached_protocolParserRULE_statistic_name)
 
@@ -4649,6 +4758,9 @@ func (s *Statistic_valueContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Statistic_value() (localctx IStatistic_valueContext) {
+	this := p
+	_ = this
+
 	localctx = NewStatistic_valueContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, memcached_protocolParserRULE_statistic_value)
 
@@ -4738,6 +4850,9 @@ func (s *SizeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Size() (localctx ISizeContext) {
+	this := p
+	_ = this
+
 	localctx = NewSizeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 74, memcached_protocolParserRULE_size)
 
@@ -4829,6 +4944,9 @@ func (s *CountContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *memcached_protocolParser) Count() (localctx ICountContext) {
+	this := p
+	_ = this
+
 	localctx = NewCountContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 76, memcached_protocolParserRULE_count)
 

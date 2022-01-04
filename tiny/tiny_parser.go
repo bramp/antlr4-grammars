@@ -1,4 +1,4 @@
-// Code generated from tiny.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from tiny.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package tiny // tiny
 import (
@@ -57,9 +57,6 @@ var parserATN = []uint16{
 	102, 103, 7, 11, 2, 2, 103, 27, 3, 2, 2, 2, 9, 39, 45, 65, 76, 88, 93,
 	96,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'BEGIN'", "'END'", "':='", "'READ'", "'WRITE'", "','", "'-'", "'+'",
 }
@@ -71,21 +68,25 @@ var ruleNames = []string{
 	"program", "stmt_list", "stmt", "assign_stmt", "read_stmt", "write_stmt",
 	"id_list", "expr_list", "expr", "factor", "integer", "op", "ident",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type tinyParser struct {
 	*antlr.BaseParser
 }
 
+// NewtinyParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *tinyParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewtinyParser(input antlr.TokenStream) *tinyParser {
 	this := new(tinyParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -199,6 +200,9 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinyParser) Program() (localctx IProgramContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, tinyParserRULE_program)
 
@@ -318,6 +322,9 @@ func (p *tinyParser) Stmt_list() (localctx IStmt_listContext) {
 }
 
 func (p *tinyParser) stmt_list(_p int) (localctx IStmt_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewStmt_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -471,6 +478,9 @@ func (s *StmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinyParser) Stmt() (localctx IStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, tinyParserRULE_stmt)
 
@@ -601,6 +611,9 @@ func (s *Assign_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinyParser) Assign_stmt() (localctx IAssign_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewAssign_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, tinyParserRULE_assign_stmt)
 
@@ -706,6 +719,9 @@ func (s *Read_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinyParser) Read_stmt() (localctx IRead_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewRead_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, tinyParserRULE_read_stmt)
 
@@ -807,6 +823,9 @@ func (s *Write_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinyParser) Write_stmt() (localctx IWrite_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewWrite_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, tinyParserRULE_write_stmt)
 
@@ -922,6 +941,9 @@ func (p *tinyParser) Id_list() (localctx IId_listContext) {
 }
 
 func (p *tinyParser) id_list(_p int) (localctx IId_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewId_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -1073,6 +1095,9 @@ func (p *tinyParser) Expr_list() (localctx IExpr_listContext) {
 }
 
 func (p *tinyParser) expr_list(_p int) (localctx IExpr_listContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewExpr_listContext(p, p.GetParserRuleContext(), _parentState)
@@ -1234,6 +1259,9 @@ func (p *tinyParser) Expr() (localctx IExprContext) {
 }
 
 func (p *tinyParser) expr(_p int) (localctx IExprContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewExprContext(p, p.GetParserRuleContext(), _parentState)
@@ -1381,6 +1409,9 @@ func (s *FactorContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinyParser) Factor() (localctx IFactorContext) {
+	this := p
+	_ = this
+
 	localctx = NewFactorContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, tinyParserRULE_factor)
 
@@ -1488,6 +1519,9 @@ func (s *IntegerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinyParser) Integer() (localctx IIntegerContext) {
+	this := p
+	_ = this
+
 	localctx = NewIntegerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, tinyParserRULE_integer)
 	var _la int
@@ -1586,6 +1620,9 @@ func (s *OpContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinyParser) Op() (localctx IOpContext) {
+	this := p
+	_ = this
+
 	localctx = NewOpContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, tinyParserRULE_op)
 	var _la int
@@ -1685,6 +1722,9 @@ func (s *IdentContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *tinyParser) Ident() (localctx IIdentContext) {
+	this := p
+	_ = this
+
 	localctx = NewIdentContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, tinyParserRULE_ident)
 
@@ -1749,6 +1789,9 @@ func (p *tinyParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex in
 }
 
 func (p *tinyParser) Stmt_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 2)
@@ -1759,6 +1802,9 @@ func (p *tinyParser) Stmt_list_Sempred(localctx antlr.RuleContext, predIndex int
 }
 
 func (p *tinyParser) Id_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 1:
 		return p.Precpred(p.GetParserRuleContext(), 2)
@@ -1769,6 +1815,9 @@ func (p *tinyParser) Id_list_Sempred(localctx antlr.RuleContext, predIndex int) 
 }
 
 func (p *tinyParser) Expr_list_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 2:
 		return p.Precpred(p.GetParserRuleContext(), 2)
@@ -1779,6 +1828,9 @@ func (p *tinyParser) Expr_list_Sempred(localctx antlr.RuleContext, predIndex int
 }
 
 func (p *tinyParser) Expr_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 3:
 		return p.Precpred(p.GetParserRuleContext(), 2)

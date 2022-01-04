@@ -1,4 +1,4 @@
-// Code generated from Cobol85.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from Cobol85.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package cobol85 // Cobol85
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -55,7 +55,8 @@ func (s *BaseCobol85Listener) EnterIdentificationDivisionBody(ctx *Identificatio
 }
 
 // ExitIdentificationDivisionBody is called when production identificationDivisionBody is exited.
-func (s *BaseCobol85Listener) ExitIdentificationDivisionBody(ctx *IdentificationDivisionBodyContext) {}
+func (s *BaseCobol85Listener) ExitIdentificationDivisionBody(ctx *IdentificationDivisionBodyContext) {
+}
 
 // EnterProgramIdParagraph is called when production programIdParagraph is entered.
 func (s *BaseCobol85Listener) EnterProgramIdParagraph(ctx *ProgramIdParagraphContext) {}
@@ -526,7 +527,8 @@ func (s *BaseCobol85Listener) EnterFileDescriptionEntryClause(ctx *FileDescripti
 }
 
 // ExitFileDescriptionEntryClause is called when production fileDescriptionEntryClause is exited.
-func (s *BaseCobol85Listener) ExitFileDescriptionEntryClause(ctx *FileDescriptionEntryClauseContext) {}
+func (s *BaseCobol85Listener) ExitFileDescriptionEntryClause(ctx *FileDescriptionEntryClauseContext) {
+}
 
 // EnterExternalClause is called when production externalClause is entered.
 func (s *BaseCobol85Listener) EnterExternalClause(ctx *ExternalClauseContext) {}
@@ -1193,7 +1195,8 @@ func (s *BaseCobol85Listener) EnterReportGroupJustifiedClause(ctx *ReportGroupJu
 }
 
 // ExitReportGroupJustifiedClause is called when production reportGroupJustifiedClause is exited.
-func (s *BaseCobol85Listener) ExitReportGroupJustifiedClause(ctx *ReportGroupJustifiedClauseContext) {}
+func (s *BaseCobol85Listener) ExitReportGroupJustifiedClause(ctx *ReportGroupJustifiedClauseContext) {
+}
 
 // EnterReportGroupLineNumberClause is called when production reportGroupLineNumberClause is entered.
 func (s *BaseCobol85Listener) EnterReportGroupLineNumberClause(ctx *ReportGroupLineNumberClauseContext) {
@@ -1222,7 +1225,8 @@ func (s *BaseCobol85Listener) EnterReportGroupNextGroupClause(ctx *ReportGroupNe
 }
 
 // ExitReportGroupNextGroupClause is called when production reportGroupNextGroupClause is exited.
-func (s *BaseCobol85Listener) ExitReportGroupNextGroupClause(ctx *ReportGroupNextGroupClauseContext) {}
+func (s *BaseCobol85Listener) ExitReportGroupNextGroupClause(ctx *ReportGroupNextGroupClauseContext) {
+}
 
 // EnterReportGroupNextGroupPlus is called when production reportGroupNextGroupPlus is entered.
 func (s *BaseCobol85Listener) EnterReportGroupNextGroupPlus(ctx *ReportGroupNextGroupPlusContext) {}
@@ -1287,7 +1291,8 @@ func (s *BaseCobol85Listener) EnterReportGroupTypePageHeading(ctx *ReportGroupTy
 }
 
 // ExitReportGroupTypePageHeading is called when production reportGroupTypePageHeading is exited.
-func (s *BaseCobol85Listener) ExitReportGroupTypePageHeading(ctx *ReportGroupTypePageHeadingContext) {}
+func (s *BaseCobol85Listener) ExitReportGroupTypePageHeading(ctx *ReportGroupTypePageHeadingContext) {
+}
 
 // EnterReportGroupTypeControlHeading is called when production reportGroupTypeControlHeading is entered.
 func (s *BaseCobol85Listener) EnterReportGroupTypeControlHeading(ctx *ReportGroupTypeControlHeadingContext) {
@@ -1322,7 +1327,8 @@ func (s *BaseCobol85Listener) EnterReportGroupTypePageFooting(ctx *ReportGroupTy
 }
 
 // ExitReportGroupTypePageFooting is called when production reportGroupTypePageFooting is exited.
-func (s *BaseCobol85Listener) ExitReportGroupTypePageFooting(ctx *ReportGroupTypePageFootingContext) {}
+func (s *BaseCobol85Listener) ExitReportGroupTypePageFooting(ctx *ReportGroupTypePageFootingContext) {
+}
 
 // EnterReportGroupTypeReportFooting is called when production reportGroupTypeReportFooting is entered.
 func (s *BaseCobol85Listener) EnterReportGroupTypeReportFooting(ctx *ReportGroupTypeReportFootingContext) {
@@ -2379,7 +2385,8 @@ func (s *BaseCobol85Listener) EnterInspectReplacingCharacters(ctx *InspectReplac
 }
 
 // ExitInspectReplacingCharacters is called when production inspectReplacingCharacters is exited.
-func (s *BaseCobol85Listener) ExitInspectReplacingCharacters(ctx *InspectReplacingCharactersContext) {}
+func (s *BaseCobol85Listener) ExitInspectReplacingCharacters(ctx *InspectReplacingCharactersContext) {
+}
 
 // EnterInspectAllLeadings is called when production inspectAllLeadings is entered.
 func (s *BaseCobol85Listener) EnterInspectAllLeadings(ctx *InspectAllLeadingsContext) {}
@@ -2406,7 +2413,8 @@ func (s *BaseCobol85Listener) EnterInspectReplacingAllLeading(ctx *InspectReplac
 }
 
 // ExitInspectReplacingAllLeading is called when production inspectReplacingAllLeading is exited.
-func (s *BaseCobol85Listener) ExitInspectReplacingAllLeading(ctx *InspectReplacingAllLeadingContext) {}
+func (s *BaseCobol85Listener) ExitInspectReplacingAllLeading(ctx *InspectReplacingAllLeadingContext) {
+}
 
 // EnterInspectBy is called when production inspectBy is entered.
 func (s *BaseCobol85Listener) EnterInspectBy(ctx *InspectByContext) {}
@@ -2451,7 +2459,8 @@ func (s *BaseCobol85Listener) EnterMergeCollatingAlphanumeric(ctx *MergeCollatin
 }
 
 // ExitMergeCollatingAlphanumeric is called when production mergeCollatingAlphanumeric is exited.
-func (s *BaseCobol85Listener) ExitMergeCollatingAlphanumeric(ctx *MergeCollatingAlphanumericContext) {}
+func (s *BaseCobol85Listener) ExitMergeCollatingAlphanumeric(ctx *MergeCollatingAlphanumericContext) {
+}
 
 // EnterMergeCollatingNational is called when production mergeCollatingNational is entered.
 func (s *BaseCobol85Listener) EnterMergeCollatingNational(ctx *MergeCollatingNationalContext) {}
@@ -2470,7 +2479,8 @@ func (s *BaseCobol85Listener) EnterMergeOutputProcedurePhrase(ctx *MergeOutputPr
 }
 
 // ExitMergeOutputProcedurePhrase is called when production mergeOutputProcedurePhrase is exited.
-func (s *BaseCobol85Listener) ExitMergeOutputProcedurePhrase(ctx *MergeOutputProcedurePhraseContext) {}
+func (s *BaseCobol85Listener) ExitMergeOutputProcedurePhrase(ctx *MergeOutputProcedurePhraseContext) {
+}
 
 // EnterMergeOutputThrough is called when production mergeOutputThrough is entered.
 func (s *BaseCobol85Listener) EnterMergeOutputThrough(ctx *MergeOutputThroughContext) {}
@@ -3435,7 +3445,8 @@ func (s *BaseCobol85Listener) EnterRelationCombinedComparison(ctx *RelationCombi
 }
 
 // ExitRelationCombinedComparison is called when production relationCombinedComparison is exited.
-func (s *BaseCobol85Listener) ExitRelationCombinedComparison(ctx *RelationCombinedComparisonContext) {}
+func (s *BaseCobol85Listener) ExitRelationCombinedComparison(ctx *RelationCombinedComparisonContext) {
+}
 
 // EnterRelationCombinedCondition is called when production relationCombinedCondition is entered.
 func (s *BaseCobol85Listener) EnterRelationCombinedCondition(ctx *RelationCombinedConditionContext) {}
@@ -3491,11 +3502,11 @@ func (s *BaseCobol85Listener) EnterLength(ctx *LengthContext) {}
 // ExitLength is called when production length is exited.
 func (s *BaseCobol85Listener) ExitLength(ctx *LengthContext) {}
 
-// EnterSubscript is called when production subscript is entered.
-func (s *BaseCobol85Listener) EnterSubscript(ctx *SubscriptContext) {}
+// EnterSubscript_ is called when production subscript_ is entered.
+func (s *BaseCobol85Listener) EnterSubscript_(ctx *Subscript_Context) {}
 
-// ExitSubscript is called when production subscript is exited.
-func (s *BaseCobol85Listener) ExitSubscript(ctx *SubscriptContext) {}
+// ExitSubscript_ is called when production subscript_ is exited.
+func (s *BaseCobol85Listener) ExitSubscript_(ctx *Subscript_Context) {}
 
 // EnterArgument is called when production argument is entered.
 func (s *BaseCobol85Listener) EnterArgument(ctx *ArgumentContext) {}

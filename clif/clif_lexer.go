@@ -1,4 +1,4 @@
-// Code generated from CLIF.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from CLIF.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package clif
 
@@ -152,9 +152,6 @@ var serializedLexerAtn = []uint16{
 	105, 116, 125, 137, 139, 152, 154, 271, 273, 285, 287, 301, 3, 8, 2, 2,
 }
 
-var lexerDeserializer = antlr.NewATNDeserializer(nil)
-var lexerAtn = lexerDeserializer.DeserializeFromUInt16(serializedLexerAtn)
-
 var lexerChannelNames = []string{
 	"DEFAULT_TOKEN_CHANNEL", "HIDDEN",
 }
@@ -194,18 +191,20 @@ type CLIFLexer struct {
 	// TODO: EOF string
 }
 
-var lexerDecisionToDFA = make([]*antlr.DFA, len(lexerAtn.DecisionToState))
-
-func init() {
+// NewCLIFLexer produces a new lexer instance for the optional input antlr.CharStream.
+//
+// The *CLIFLexer instance produced may be reused by calling the SetInputStream method.
+// The initial lexer configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
+func NewCLIFLexer(input antlr.CharStream) *CLIFLexer {
+	l := new(CLIFLexer)
+	lexerDeserializer := antlr.NewATNDeserializer(nil)
+	lexerAtn := lexerDeserializer.DeserializeFromUInt16(serializedLexerAtn)
+	lexerDecisionToDFA := make([]*antlr.DFA, len(lexerAtn.DecisionToState))
 	for index, ds := range lexerAtn.DecisionToState {
 		lexerDecisionToDFA[index] = antlr.NewDFA(ds, index)
 	}
-}
-
-func NewCLIFLexer(input antlr.CharStream) *CLIFLexer {
-
-	l := new(CLIFLexer)
-
 	l.BaseLexer = antlr.NewBaseLexer(input)
 	l.Interpreter = antlr.NewLexerATNSimulator(l, lexerAtn, lexerDecisionToDFA, antlr.NewPredictionContextCache())
 

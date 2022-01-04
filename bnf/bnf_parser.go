@@ -1,4 +1,4 @@
-// Code generated from bnf.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from bnf.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package bnf // bnf
 import (
@@ -48,9 +48,6 @@ var parserATN = []uint16{
 	81, 5, 26, 14, 2, 81, 82, 7, 11, 2, 2, 82, 25, 3, 2, 2, 2, 83, 84, 7, 13,
 	2, 2, 84, 27, 3, 2, 2, 2, 6, 31, 49, 55, 63,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'::='", "')'", "'('", "'}'", "'{'", "']'", "'['", "'|'", "'>'", "'<'",
 }
@@ -61,23 +58,27 @@ var symbolicNames = []string{
 
 var ruleNames = []string{
 	"rulelist", "rule_", "lhs", "rhs", "alternatives", "alternative", "element",
-	"optional", "zeroormore", "oneormore", "text", "id", "ruleid",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"optional_", "zeroormore", "oneormore", "text_", "id_", "ruleid",
 }
 
 type bnfParser struct {
 	*antlr.BaseParser
 }
 
+// NewbnfParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *bnfParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewbnfParser(input antlr.TokenStream) *bnfParser {
 	this := new(bnfParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -115,11 +116,11 @@ const (
 	bnfParserRULE_alternatives = 4
 	bnfParserRULE_alternative  = 5
 	bnfParserRULE_element      = 6
-	bnfParserRULE_optional     = 7
+	bnfParserRULE_optional_    = 7
 	bnfParserRULE_zeroormore   = 8
 	bnfParserRULE_oneormore    = 9
-	bnfParserRULE_text         = 10
-	bnfParserRULE_id           = 11
+	bnfParserRULE_text_        = 10
+	bnfParserRULE_id_          = 11
 	bnfParserRULE_ruleid       = 12
 )
 
@@ -209,6 +210,9 @@ func (s *RulelistContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *bnfParser) Rulelist() (localctx IRulelistContext) {
+	this := p
+	_ = this
+
 	localctx = NewRulelistContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, bnfParserRULE_rulelist)
 	var _la int
@@ -335,6 +339,9 @@ func (s *Rule_Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *bnfParser) Rule_() (localctx IRule_Context) {
+	this := p
+	_ = this
+
 	localctx = NewRule_Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, bnfParserRULE_rule_)
 
@@ -409,14 +416,14 @@ func NewLhsContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoking
 
 func (s *LhsContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *LhsContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *LhsContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *LhsContext) GetRuleContext() antlr.RuleContext {
@@ -440,6 +447,9 @@ func (s *LhsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *bnfParser) Lhs() (localctx ILhsContext) {
+	this := p
+	_ = this
+
 	localctx = NewLhsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, bnfParserRULE_lhs)
 
@@ -462,7 +472,7 @@ func (p *bnfParser) Lhs() (localctx ILhsContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(38)
-		p.Id()
+		p.Id_()
 	}
 
 	return localctx
@@ -537,6 +547,9 @@ func (s *RhsContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *bnfParser) Rhs() (localctx IRhsContext) {
+	this := p
+	_ = this
+
 	localctx = NewRhsContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, bnfParserRULE_rhs)
 
@@ -655,6 +668,9 @@ func (s *AlternativesContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *bnfParser) Alternatives() (localctx IAlternativesContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlternativesContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, bnfParserRULE_alternatives)
 	var _la int
@@ -784,6 +800,9 @@ func (s *AlternativeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *bnfParser) Alternative() (localctx IAlternativeContext) {
+	this := p
+	_ = this
+
 	localctx = NewAlternativeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, bnfParserRULE_alternative)
 
@@ -864,14 +883,14 @@ func NewElementContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 
 func (s *ElementContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *ElementContext) Optional() IOptionalContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOptionalContext)(nil)).Elem(), 0)
+func (s *ElementContext) Optional_() IOptional_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IOptional_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IOptionalContext)
+	return t.(IOptional_Context)
 }
 
 func (s *ElementContext) Zeroormore() IZeroormoreContext {
@@ -894,24 +913,24 @@ func (s *ElementContext) Oneormore() IOneormoreContext {
 	return t.(IOneormoreContext)
 }
 
-func (s *ElementContext) Text() ITextContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*ITextContext)(nil)).Elem(), 0)
+func (s *ElementContext) Text_() IText_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IText_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(ITextContext)
+	return t.(IText_Context)
 }
 
-func (s *ElementContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *ElementContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *ElementContext) GetRuleContext() antlr.RuleContext {
@@ -935,6 +954,9 @@ func (s *ElementContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *bnfParser) Element() (localctx IElementContext) {
+	this := p
+	_ = this
+
 	localctx = NewElementContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, bnfParserRULE_element)
 
@@ -962,7 +984,7 @@ func (p *bnfParser) Element() (localctx IElementContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(56)
-			p.Optional()
+			p.Optional_()
 		}
 
 	case bnfParserRBRACE:
@@ -983,14 +1005,14 @@ func (p *bnfParser) Element() (localctx IElementContext) {
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(59)
-			p.Text()
+			p.Text_()
 		}
 
 	case bnfParserLT:
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(60)
-			p.Id()
+			p.Id_()
 		}
 
 	default:
@@ -1000,49 +1022,49 @@ func (p *bnfParser) Element() (localctx IElementContext) {
 	return localctx
 }
 
-// IOptionalContext is an interface to support dynamic dispatch.
-type IOptionalContext interface {
+// IOptional_Context is an interface to support dynamic dispatch.
+type IOptional_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsOptionalContext differentiates from other interfaces.
-	IsOptionalContext()
+	// IsOptional_Context differentiates from other interfaces.
+	IsOptional_Context()
 }
 
-type OptionalContext struct {
+type Optional_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyOptionalContext() *OptionalContext {
-	var p = new(OptionalContext)
+func NewEmptyOptional_Context() *Optional_Context {
+	var p = new(Optional_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = bnfParserRULE_optional
+	p.RuleIndex = bnfParserRULE_optional_
 	return p
 }
 
-func (*OptionalContext) IsOptionalContext() {}
+func (*Optional_Context) IsOptional_Context() {}
 
-func NewOptionalContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *OptionalContext {
-	var p = new(OptionalContext)
+func NewOptional_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Optional_Context {
+	var p = new(Optional_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = bnfParserRULE_optional
+	p.RuleIndex = bnfParserRULE_optional_
 
 	return p
 }
 
-func (s *OptionalContext) GetParser() antlr.Parser { return s.parser }
+func (s *Optional_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *OptionalContext) REND() antlr.TerminalNode {
+func (s *Optional_Context) REND() antlr.TerminalNode {
 	return s.GetToken(bnfParserREND, 0)
 }
 
-func (s *OptionalContext) Alternatives() IAlternativesContext {
+func (s *Optional_Context) Alternatives() IAlternativesContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IAlternativesContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1052,33 +1074,36 @@ func (s *OptionalContext) Alternatives() IAlternativesContext {
 	return t.(IAlternativesContext)
 }
 
-func (s *OptionalContext) LEND() antlr.TerminalNode {
+func (s *Optional_Context) LEND() antlr.TerminalNode {
 	return s.GetToken(bnfParserLEND, 0)
 }
 
-func (s *OptionalContext) GetRuleContext() antlr.RuleContext {
+func (s *Optional_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *OptionalContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Optional_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *OptionalContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Optional_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
-		listenerT.EnterOptional(s)
+		listenerT.EnterOptional_(s)
 	}
 }
 
-func (s *OptionalContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Optional_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
-		listenerT.ExitOptional(s)
+		listenerT.ExitOptional_(s)
 	}
 }
 
-func (p *bnfParser) Optional() (localctx IOptionalContext) {
-	localctx = NewOptionalContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, bnfParserRULE_optional)
+func (p *bnfParser) Optional_() (localctx IOptional_Context) {
+	this := p
+	_ = this
+
+	localctx = NewOptional_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 14, bnfParserRULE_optional_)
 
 	defer func() {
 		p.ExitRule()
@@ -1190,6 +1215,9 @@ func (s *ZeroormoreContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *bnfParser) Zeroormore() (localctx IZeroormoreContext) {
+	this := p
+	_ = this
+
 	localctx = NewZeroormoreContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, bnfParserRULE_zeroormore)
 
@@ -1303,6 +1331,9 @@ func (s *OneormoreContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *bnfParser) Oneormore() (localctx IOneormoreContext) {
+	this := p
+	_ = this
+
 	localctx = NewOneormoreContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, bnfParserRULE_oneormore)
 
@@ -1339,71 +1370,74 @@ func (p *bnfParser) Oneormore() (localctx IOneormoreContext) {
 	return localctx
 }
 
-// ITextContext is an interface to support dynamic dispatch.
-type ITextContext interface {
+// IText_Context is an interface to support dynamic dispatch.
+type IText_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsTextContext differentiates from other interfaces.
-	IsTextContext()
+	// IsText_Context differentiates from other interfaces.
+	IsText_Context()
 }
 
-type TextContext struct {
+type Text_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyTextContext() *TextContext {
-	var p = new(TextContext)
+func NewEmptyText_Context() *Text_Context {
+	var p = new(Text_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = bnfParserRULE_text
+	p.RuleIndex = bnfParserRULE_text_
 	return p
 }
 
-func (*TextContext) IsTextContext() {}
+func (*Text_Context) IsText_Context() {}
 
-func NewTextContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *TextContext {
-	var p = new(TextContext)
+func NewText_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Text_Context {
+	var p = new(Text_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = bnfParserRULE_text
+	p.RuleIndex = bnfParserRULE_text_
 
 	return p
 }
 
-func (s *TextContext) GetParser() antlr.Parser { return s.parser }
+func (s *Text_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *TextContext) ID() antlr.TerminalNode {
+func (s *Text_Context) ID() antlr.TerminalNode {
 	return s.GetToken(bnfParserID, 0)
 }
 
-func (s *TextContext) GetRuleContext() antlr.RuleContext {
+func (s *Text_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *TextContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Text_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *TextContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Text_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
-		listenerT.EnterText(s)
+		listenerT.EnterText_(s)
 	}
 }
 
-func (s *TextContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Text_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
-		listenerT.ExitText(s)
+		listenerT.ExitText_(s)
 	}
 }
 
-func (p *bnfParser) Text() (localctx ITextContext) {
-	localctx = NewTextContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 20, bnfParserRULE_text)
+func (p *bnfParser) Text_() (localctx IText_Context) {
+	this := p
+	_ = this
+
+	localctx = NewText_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 20, bnfParserRULE_text_)
 
 	defer func() {
 		p.ExitRule()
@@ -1430,49 +1464,49 @@ func (p *bnfParser) Text() (localctx ITextContext) {
 	return localctx
 }
 
-// IIdContext is an interface to support dynamic dispatch.
-type IIdContext interface {
+// IId_Context is an interface to support dynamic dispatch.
+type IId_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsIdContext differentiates from other interfaces.
-	IsIdContext()
+	// IsId_Context differentiates from other interfaces.
+	IsId_Context()
 }
 
-type IdContext struct {
+type Id_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyIdContext() *IdContext {
-	var p = new(IdContext)
+func NewEmptyId_Context() *Id_Context {
+	var p = new(Id_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = bnfParserRULE_id
+	p.RuleIndex = bnfParserRULE_id_
 	return p
 }
 
-func (*IdContext) IsIdContext() {}
+func (*Id_Context) IsId_Context() {}
 
-func NewIdContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *IdContext {
-	var p = new(IdContext)
+func NewId_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Id_Context {
+	var p = new(Id_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = bnfParserRULE_id
+	p.RuleIndex = bnfParserRULE_id_
 
 	return p
 }
 
-func (s *IdContext) GetParser() antlr.Parser { return s.parser }
+func (s *Id_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *IdContext) LT() antlr.TerminalNode {
+func (s *Id_Context) LT() antlr.TerminalNode {
 	return s.GetToken(bnfParserLT, 0)
 }
 
-func (s *IdContext) Ruleid() IRuleidContext {
+func (s *Id_Context) Ruleid() IRuleidContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*IRuleidContext)(nil)).Elem(), 0)
 
 	if t == nil {
@@ -1482,33 +1516,36 @@ func (s *IdContext) Ruleid() IRuleidContext {
 	return t.(IRuleidContext)
 }
 
-func (s *IdContext) GT() antlr.TerminalNode {
+func (s *Id_Context) GT() antlr.TerminalNode {
 	return s.GetToken(bnfParserGT, 0)
 }
 
-func (s *IdContext) GetRuleContext() antlr.RuleContext {
+func (s *Id_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *IdContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Id_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *IdContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Id_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
-		listenerT.EnterId(s)
+		listenerT.EnterId_(s)
 	}
 }
 
-func (s *IdContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Id_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(bnfListener); ok {
-		listenerT.ExitId(s)
+		listenerT.ExitId_(s)
 	}
 }
 
-func (p *bnfParser) Id() (localctx IIdContext) {
-	localctx = NewIdContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, bnfParserRULE_id)
+func (p *bnfParser) Id_() (localctx IId_Context) {
+	this := p
+	_ = this
+
+	localctx = NewId_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 22, bnfParserRULE_id_)
 
 	defer func() {
 		p.ExitRule()
@@ -1606,6 +1643,9 @@ func (s *RuleidContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *bnfParser) Ruleid() (localctx IRuleidContext) {
+	this := p
+	_ = this
+
 	localctx = NewRuleidContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, bnfParserRULE_ruleid)
 

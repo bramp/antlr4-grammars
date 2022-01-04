@@ -1,4 +1,4 @@
-// Code generated from DOT.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from DOT.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package dot // DOT
 import (
@@ -72,9 +72,6 @@ var parserATN = []uint16{
 	2, 2, 2, 127, 128, 9, 5, 2, 2, 128, 29, 3, 2, 2, 2, 21, 31, 35, 43, 47,
 	58, 65, 70, 75, 78, 82, 86, 90, 95, 99, 105, 109, 115, 119, 121,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'{'", "'}'", "';'", "'='", "'['", "']'", "','", "'->'", "'--'", "':'",
 }
@@ -86,23 +83,27 @@ var symbolicNames = []string{
 
 var ruleNames = []string{
 	"graph", "stmt_list", "stmt", "attr_stmt", "attr_list", "a_list", "edge_stmt",
-	"edgeRHS", "edgeop", "node_stmt", "node_id", "port", "subgraph", "id",
-}
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
+	"edgeRHS", "edgeop", "node_stmt", "node_id", "port", "subgraph", "id_",
 }
 
 type DOTParser struct {
 	*antlr.BaseParser
 }
 
+// NewDOTParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *DOTParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewDOTParser(input antlr.TokenStream) *DOTParser {
 	this := new(DOTParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -158,7 +159,7 @@ const (
 	DOTParserRULE_node_id   = 10
 	DOTParserRULE_port      = 11
 	DOTParserRULE_subgraph  = 12
-	DOTParserRULE_id        = 13
+	DOTParserRULE_id_       = 13
 )
 
 // IGraphContext is an interface to support dynamic dispatch.
@@ -221,14 +222,14 @@ func (s *GraphContext) STRICT() antlr.TerminalNode {
 	return s.GetToken(DOTParserSTRICT, 0)
 }
 
-func (s *GraphContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *GraphContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *GraphContext) GetRuleContext() antlr.RuleContext {
@@ -252,6 +253,9 @@ func (s *GraphContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) Graph() (localctx IGraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewGraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, DOTParserRULE_graph)
 	var _la int
@@ -302,7 +306,7 @@ func (p *DOTParser) Graph() (localctx IGraphContext) {
 	if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DOTParserNUMBER)|(1<<DOTParserSTRING)|(1<<DOTParserID)|(1<<DOTParserHTML_STRING))) != 0 {
 		{
 			p.SetState(32)
-			p.Id()
+			p.Id_()
 		}
 
 	}
@@ -404,6 +408,9 @@ func (s *Stmt_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) Stmt_list() (localctx IStmt_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewStmt_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, DOTParserRULE_stmt_list)
 	var _la int
@@ -522,27 +529,27 @@ func (s *StmtContext) Attr_stmt() IAttr_stmtContext {
 	return t.(IAttr_stmtContext)
 }
 
-func (s *StmtContext) AllId() []IIdContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IIdContext)(nil)).Elem())
-	var tst = make([]IIdContext, len(ts))
+func (s *StmtContext) AllId_() []IId_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IId_Context)(nil)).Elem())
+	var tst = make([]IId_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IIdContext)
+			tst[i] = t.(IId_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *StmtContext) Id(i int) IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), i)
+func (s *StmtContext) Id_(i int) IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *StmtContext) Subgraph() ISubgraphContext {
@@ -576,6 +583,9 @@ func (s *StmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) Stmt() (localctx IStmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewStmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, DOTParserRULE_stmt)
 
@@ -623,7 +633,7 @@ func (p *DOTParser) Stmt() (localctx IStmtContext) {
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(51)
-			p.Id()
+			p.Id_()
 		}
 		{
 			p.SetState(52)
@@ -631,7 +641,7 @@ func (p *DOTParser) Stmt() (localctx IStmtContext) {
 		}
 		{
 			p.SetState(53)
-			p.Id()
+			p.Id_()
 		}
 
 	case 5:
@@ -727,6 +737,9 @@ func (s *Attr_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) Attr_stmt() (localctx IAttr_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewAttr_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, DOTParserRULE_attr_stmt)
 	var _la int
@@ -849,6 +862,9 @@ func (s *Attr_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) Attr_list() (localctx IAttr_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewAttr_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, DOTParserRULE_attr_list)
 	var _la int
@@ -941,27 +957,27 @@ func NewA_listContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 
 func (s *A_listContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *A_listContext) AllId() []IIdContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IIdContext)(nil)).Elem())
-	var tst = make([]IIdContext, len(ts))
+func (s *A_listContext) AllId_() []IId_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IId_Context)(nil)).Elem())
+	var tst = make([]IId_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IIdContext)
+			tst[i] = t.(IId_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *A_listContext) Id(i int) IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), i)
+func (s *A_listContext) Id_(i int) IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *A_listContext) GetRuleContext() antlr.RuleContext {
@@ -985,6 +1001,9 @@ func (s *A_listContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) A_list() (localctx IA_listContext) {
+	this := p
+	_ = this
+
 	localctx = NewA_listContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, DOTParserRULE_a_list)
 	var _la int
@@ -1013,7 +1032,7 @@ func (p *DOTParser) A_list() (localctx IA_listContext) {
 	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DOTParserNUMBER)|(1<<DOTParserSTRING)|(1<<DOTParserID)|(1<<DOTParserHTML_STRING))) != 0) {
 		{
 			p.SetState(70)
-			p.Id()
+			p.Id_()
 		}
 		p.SetState(73)
 		p.GetErrorHandler().Sync(p)
@@ -1026,7 +1045,7 @@ func (p *DOTParser) A_list() (localctx IA_listContext) {
 			}
 			{
 				p.SetState(72)
-				p.Id()
+				p.Id_()
 			}
 
 		}
@@ -1149,6 +1168,9 @@ func (s *Edge_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) Edge_stmt() (localctx IEdge_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewEdge_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, DOTParserRULE_edge_stmt)
 	var _la int
@@ -1336,6 +1358,9 @@ func (s *EdgeRHSContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) EdgeRHS() (localctx IEdgeRHSContext) {
+	this := p
+	_ = this
+
 	localctx = NewEdgeRHSContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, DOTParserRULE_edgeRHS)
 	var _la int
@@ -1452,6 +1477,9 @@ func (s *EdgeopContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) Edgeop() (localctx IEdgeopContext) {
+	this := p
+	_ = this
+
 	localctx = NewEdgeopContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, DOTParserRULE_edgeop)
 	var _la int
@@ -1567,6 +1595,9 @@ func (s *Node_stmtContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) Node_stmt() (localctx INode_stmtContext) {
+	this := p
+	_ = this
+
 	localctx = NewNode_stmtContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, DOTParserRULE_node_stmt)
 	var _la int
@@ -1645,14 +1676,14 @@ func NewNode_idContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 
 func (s *Node_idContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *Node_idContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *Node_idContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *Node_idContext) Port() IPortContext {
@@ -1686,6 +1717,9 @@ func (s *Node_idContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) Node_id() (localctx INode_idContext) {
+	this := p
+	_ = this
+
 	localctx = NewNode_idContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, DOTParserRULE_node_id)
 	var _la int
@@ -1709,7 +1743,7 @@ func (p *DOTParser) Node_id() (localctx INode_idContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(105)
-		p.Id()
+		p.Id_()
 	}
 	p.SetState(107)
 	p.GetErrorHandler().Sync(p)
@@ -1764,27 +1798,27 @@ func NewPortContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 
 func (s *PortContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *PortContext) AllId() []IIdContext {
-	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IIdContext)(nil)).Elem())
-	var tst = make([]IIdContext, len(ts))
+func (s *PortContext) AllId_() []IId_Context {
+	var ts = s.GetTypedRuleContexts(reflect.TypeOf((*IId_Context)(nil)).Elem())
+	var tst = make([]IId_Context, len(ts))
 
 	for i, t := range ts {
 		if t != nil {
-			tst[i] = t.(IIdContext)
+			tst[i] = t.(IId_Context)
 		}
 	}
 
 	return tst
 }
 
-func (s *PortContext) Id(i int) IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), i)
+func (s *PortContext) Id_(i int) IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), i)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *PortContext) GetRuleContext() antlr.RuleContext {
@@ -1808,6 +1842,9 @@ func (s *PortContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) Port() (localctx IPortContext) {
+	this := p
+	_ = this
+
 	localctx = NewPortContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, DOTParserRULE_port)
 	var _la int
@@ -1835,7 +1872,7 @@ func (p *DOTParser) Port() (localctx IPortContext) {
 	}
 	{
 		p.SetState(110)
-		p.Id()
+		p.Id_()
 	}
 	p.SetState(113)
 	p.GetErrorHandler().Sync(p)
@@ -1848,7 +1885,7 @@ func (p *DOTParser) Port() (localctx IPortContext) {
 		}
 		{
 			p.SetState(112)
-			p.Id()
+			p.Id_()
 		}
 
 	}
@@ -1908,14 +1945,14 @@ func (s *SubgraphContext) SUBGRAPH() antlr.TerminalNode {
 	return s.GetToken(DOTParserSUBGRAPH, 0)
 }
 
-func (s *SubgraphContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+func (s *SubgraphContext) Id_() IId_Context {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IId_Context)(nil)).Elem(), 0)
 
 	if t == nil {
 		return nil
 	}
 
-	return t.(IIdContext)
+	return t.(IId_Context)
 }
 
 func (s *SubgraphContext) GetRuleContext() antlr.RuleContext {
@@ -1939,6 +1976,9 @@ func (s *SubgraphContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *DOTParser) Subgraph() (localctx ISubgraphContext) {
+	this := p
+	_ = this
+
 	localctx = NewSubgraphContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, DOTParserRULE_subgraph)
 	var _la int
@@ -1976,7 +2016,7 @@ func (p *DOTParser) Subgraph() (localctx ISubgraphContext) {
 		if ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<DOTParserNUMBER)|(1<<DOTParserSTRING)|(1<<DOTParserID)|(1<<DOTParserHTML_STRING))) != 0 {
 			{
 				p.SetState(116)
-				p.Id()
+				p.Id_()
 			}
 
 		}
@@ -1998,83 +2038,86 @@ func (p *DOTParser) Subgraph() (localctx ISubgraphContext) {
 	return localctx
 }
 
-// IIdContext is an interface to support dynamic dispatch.
-type IIdContext interface {
+// IId_Context is an interface to support dynamic dispatch.
+type IId_Context interface {
 	antlr.ParserRuleContext
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
-	// IsIdContext differentiates from other interfaces.
-	IsIdContext()
+	// IsId_Context differentiates from other interfaces.
+	IsId_Context()
 }
 
-type IdContext struct {
+type Id_Context struct {
 	*antlr.BaseParserRuleContext
 	parser antlr.Parser
 }
 
-func NewEmptyIdContext() *IdContext {
-	var p = new(IdContext)
+func NewEmptyId_Context() *Id_Context {
+	var p = new(Id_Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = DOTParserRULE_id
+	p.RuleIndex = DOTParserRULE_id_
 	return p
 }
 
-func (*IdContext) IsIdContext() {}
+func (*Id_Context) IsId_Context() {}
 
-func NewIdContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *IdContext {
-	var p = new(IdContext)
+func NewId_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invokingState int) *Id_Context {
+	var p = new(Id_Context)
 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = DOTParserRULE_id
+	p.RuleIndex = DOTParserRULE_id_
 
 	return p
 }
 
-func (s *IdContext) GetParser() antlr.Parser { return s.parser }
+func (s *Id_Context) GetParser() antlr.Parser { return s.parser }
 
-func (s *IdContext) ID() antlr.TerminalNode {
+func (s *Id_Context) ID() antlr.TerminalNode {
 	return s.GetToken(DOTParserID, 0)
 }
 
-func (s *IdContext) STRING() antlr.TerminalNode {
+func (s *Id_Context) STRING() antlr.TerminalNode {
 	return s.GetToken(DOTParserSTRING, 0)
 }
 
-func (s *IdContext) HTML_STRING() antlr.TerminalNode {
+func (s *Id_Context) HTML_STRING() antlr.TerminalNode {
 	return s.GetToken(DOTParserHTML_STRING, 0)
 }
 
-func (s *IdContext) NUMBER() antlr.TerminalNode {
+func (s *Id_Context) NUMBER() antlr.TerminalNode {
 	return s.GetToken(DOTParserNUMBER, 0)
 }
 
-func (s *IdContext) GetRuleContext() antlr.RuleContext {
+func (s *Id_Context) GetRuleContext() antlr.RuleContext {
 	return s
 }
 
-func (s *IdContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
+func (s *Id_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer) string {
 	return antlr.TreesStringTree(s, ruleNames, recog)
 }
 
-func (s *IdContext) EnterRule(listener antlr.ParseTreeListener) {
+func (s *Id_Context) EnterRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DOTListener); ok {
-		listenerT.EnterId(s)
+		listenerT.EnterId_(s)
 	}
 }
 
-func (s *IdContext) ExitRule(listener antlr.ParseTreeListener) {
+func (s *Id_Context) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(DOTListener); ok {
-		listenerT.ExitId(s)
+		listenerT.ExitId_(s)
 	}
 }
 
-func (p *DOTParser) Id() (localctx IIdContext) {
-	localctx = NewIdContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 26, DOTParserRULE_id)
+func (p *DOTParser) Id_() (localctx IId_Context) {
+	this := p
+	_ = this
+
+	localctx = NewId_Context(p, p.GetParserRuleContext(), p.GetState())
+	p.EnterRule(localctx, 26, DOTParserRULE_id_)
 	var _la int
 
 	defer func() {

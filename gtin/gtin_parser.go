@@ -1,4 +1,4 @@
-// Code generated from gtin.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from gtin.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package gtin // gtin
 import (
@@ -115,9 +115,6 @@ var parserATN = []uint16{
 	2, 252, 253, 5, 74, 38, 2, 253, 254, 5, 74, 38, 2, 254, 73, 3, 2, 2, 2,
 	255, 256, 9, 4, 2, 2, 256, 75, 3, 2, 2, 2, 7, 81, 104, 134, 149, 177,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "'0'", "'1'", "'2'", "'3'", "'4'", "'5'", "'6'", "'7'", "'8'", "'9'",
 	"'-'",
@@ -137,21 +134,25 @@ var ruleNames = []string{
 	"gs1_prefix", "ean14", "ean14_appid", "ean14_packaging", "ean14_product",
 	"any_digit",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type gtinParser struct {
 	*antlr.BaseParser
 }
 
+// NewgtinParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *gtinParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewgtinParser(input antlr.TokenStream) *gtinParser {
 	this := new(gtinParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -334,6 +335,9 @@ func (s *GtinContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Gtin() (localctx IGtinContext) {
+	this := p
+	_ = this
+
 	localctx = NewGtinContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, gtinParserRULE_gtin)
 
@@ -465,6 +469,9 @@ func (s *Gtin8Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Gtin8() (localctx IGtin8Context) {
+	this := p
+	_ = this
+
 	localctx = NewGtin8Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, gtinParserRULE_gtin8)
 
@@ -575,6 +582,9 @@ func (s *Ean8Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ean8() (localctx IEan8Context) {
+	this := p
+	_ = this
+
 	localctx = NewEan8Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, gtinParserRULE_ean8)
 
@@ -700,6 +710,9 @@ func (s *Gtin12Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Gtin12() (localctx IGtin12Context) {
+	this := p
+	_ = this
+
 	localctx = NewGtin12Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, gtinParserRULE_gtin12)
 
@@ -797,6 +810,9 @@ func (s *Gtin13Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Gtin13() (localctx IGtin13Context) {
+	this := p
+	_ = this
+
 	localctx = NewGtin13Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, gtinParserRULE_gtin13)
 
@@ -894,6 +910,9 @@ func (s *Gtin14Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Gtin14() (localctx IGtin14Context) {
+	this := p
+	_ = this
+
 	localctx = NewGtin14Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 10, gtinParserRULE_gtin14)
 
@@ -1001,6 +1020,9 @@ func (s *UpcContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Upc() (localctx IUpcContext) {
+	this := p
+	_ = this
+
 	localctx = NewUpcContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 12, gtinParserRULE_upc)
 
@@ -1140,6 +1162,9 @@ func (s *Upc_aContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Upc_a() (localctx IUpc_aContext) {
+	this := p
+	_ = this
+
 	localctx = NewUpc_aContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 14, gtinParserRULE_upc_a)
 
@@ -1249,6 +1274,9 @@ func (s *Upc_a_manufacturerContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Upc_a_manufacturer() (localctx IUpc_a_manufacturerContext) {
+	this := p
+	_ = this
+
 	localctx = NewUpc_a_manufacturerContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 16, gtinParserRULE_upc_a_manufacturer)
 
@@ -1346,6 +1374,9 @@ func (s *Upc_a_productContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Upc_a_product() (localctx IUpc_a_productContext) {
+	this := p
+	_ = this
+
 	localctx = NewUpc_a_productContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 18, gtinParserRULE_upc_a_product)
 
@@ -1456,6 +1487,9 @@ func (s *Upc_a_5Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Upc_a_5() (localctx IUpc_a_5Context) {
+	this := p
+	_ = this
+
 	localctx = NewUpc_a_5Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 20, gtinParserRULE_upc_a_5)
 
@@ -1582,6 +1616,9 @@ func (s *Upc_eContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Upc_e() (localctx IUpc_eContext) {
+	this := p
+	_ = this
+
 	localctx = NewUpc_eContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 22, gtinParserRULE_upc_e)
 
@@ -1699,6 +1736,9 @@ func (s *Num_systemContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Num_system() (localctx INum_systemContext) {
+	this := p
+	_ = this
+
 	localctx = NewNum_systemContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 24, gtinParserRULE_num_system)
 
@@ -1796,6 +1836,9 @@ func (s *Check_codeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Check_code() (localctx ICheck_codeContext) {
+	this := p
+	_ = this
+
 	localctx = NewCheck_codeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 26, gtinParserRULE_check_code)
 
@@ -1903,6 +1946,9 @@ func (s *Supplemental_codeContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Supplemental_code() (localctx ISupplemental_codeContext) {
+	this := p
+	_ = this
+
 	localctx = NewSupplemental_codeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 28, gtinParserRULE_supplemental_code)
 
@@ -2026,6 +2072,9 @@ func (s *Supplemental_code_5Context) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *gtinParser) Supplemental_code_5() (localctx ISupplemental_code_5Context) {
+	this := p
+	_ = this
+
 	localctx = NewSupplemental_code_5Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 30, gtinParserRULE_supplemental_code_5)
 
@@ -2152,6 +2201,9 @@ func (s *Supplemental_code_2Context) ExitRule(listener antlr.ParseTreeListener) 
 }
 
 func (p *gtinParser) Supplemental_code_2() (localctx ISupplemental_code_2Context) {
+	this := p
+	_ = this
+
 	localctx = NewSupplemental_code_2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 32, gtinParserRULE_supplemental_code_2)
 
@@ -2283,6 +2335,9 @@ func (s *Ean13Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ean13() (localctx IEan13Context) {
+	this := p
+	_ = this
+
 	localctx = NewEan13Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, gtinParserRULE_ean13)
 
@@ -2424,6 +2479,9 @@ func (s *Ean13_genericContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ean13_generic() (localctx IEan13_genericContext) {
+	this := p
+	_ = this
+
 	localctx = NewEan13_genericContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, gtinParserRULE_ean13_generic)
 
@@ -2559,6 +2617,9 @@ func (s *Ean13_ismnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ean13_ismn() (localctx IEan13_ismnContext) {
+	this := p
+	_ = this
+
 	localctx = NewEan13_ismnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 38, gtinParserRULE_ean13_ismn)
 
@@ -2674,6 +2735,9 @@ func (s *Gs1_prefix_ismnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Gs1_prefix_ismn() (localctx IGs1_prefix_ismnContext) {
+	this := p
+	_ = this
+
 	localctx = NewGs1_prefix_ismnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, gtinParserRULE_gs1_prefix_ismn)
 
@@ -2796,6 +2860,9 @@ func (s *Ismn_publisher_numberContext) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *gtinParser) Ismn_publisher_number() (localctx IIsmn_publisher_numberContext) {
+	this := p
+	_ = this
+
 	localctx = NewIsmn_publisher_numberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 42, gtinParserRULE_ismn_publisher_number)
 
@@ -2918,6 +2985,9 @@ func (s *Ismn_item_numberContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ismn_item_number() (localctx IIsmn_item_numberContext) {
+	this := p
+	_ = this
+
 	localctx = NewIsmn_item_numberContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 44, gtinParserRULE_ismn_item_number)
 
@@ -3047,6 +3117,9 @@ func (s *Ean13_booklandContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ean13_bookland() (localctx IEan13_booklandContext) {
+	this := p
+	_ = this
+
 	localctx = NewEan13_booklandContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 46, gtinParserRULE_ean13_bookland)
 
@@ -3173,6 +3246,9 @@ func (s *Bookland_isbnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Bookland_isbn() (localctx IBookland_isbnContext) {
+	this := p
+	_ = this
+
 	localctx = NewBookland_isbnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 48, gtinParserRULE_bookland_isbn)
 
@@ -3336,6 +3412,9 @@ func (s *Gs1_prefix_bookland_1Context) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *gtinParser) Gs1_prefix_bookland_1() (localctx IGs1_prefix_bookland_1Context) {
+	this := p
+	_ = this
+
 	localctx = NewGs1_prefix_bookland_1Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 50, gtinParserRULE_gs1_prefix_bookland_1)
 	var _la int
@@ -3465,6 +3544,9 @@ func (s *Gs1_prefix_bookland_2Context) ExitRule(listener antlr.ParseTreeListener
 }
 
 func (p *gtinParser) Gs1_prefix_bookland_2() (localctx IGs1_prefix_bookland_2Context) {
+	this := p
+	_ = this
+
 	localctx = NewGs1_prefix_bookland_2Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 52, gtinParserRULE_gs1_prefix_bookland_2)
 
@@ -3576,6 +3658,9 @@ func (s *Gs1_prefix_issnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Gs1_prefix_issn() (localctx IGs1_prefix_issnContext) {
+	this := p
+	_ = this
+
 	localctx = NewGs1_prefix_issnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 54, gtinParserRULE_gs1_prefix_issn)
 
@@ -3701,6 +3786,9 @@ func (s *Ean13_issnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ean13_issn() (localctx IEan13_issnContext) {
+	this := p
+	_ = this
+
 	localctx = NewEan13_issnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 56, gtinParserRULE_ean13_issn)
 
@@ -3819,6 +3907,9 @@ func (s *IssnContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Issn() (localctx IIssnContext) {
+	this := p
+	_ = this
+
 	localctx = NewIssnContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, gtinParserRULE_issn)
 
@@ -3961,6 +4052,9 @@ func (s *Ean_13_manprodContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ean_13_manprod() (localctx IEan_13_manprodContext) {
+	this := p
+	_ = this
+
 	localctx = NewEan_13_manprodContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 60, gtinParserRULE_ean_13_manprod)
 
@@ -4103,6 +4197,9 @@ func (s *Gs1_prefixContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Gs1_prefix() (localctx IGs1_prefixContext) {
+	this := p
+	_ = this
+
 	localctx = NewGs1_prefixContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 62, gtinParserRULE_gs1_prefix)
 
@@ -4228,6 +4325,9 @@ func (s *Ean14Context) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ean14() (localctx IEan14Context) {
+	this := p
+	_ = this
+
 	localctx = NewEan14Context(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 64, gtinParserRULE_ean14)
 
@@ -4346,6 +4446,9 @@ func (s *Ean14_appidContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ean14_appid() (localctx IEan14_appidContext) {
+	this := p
+	_ = this
+
 	localctx = NewEan14_appidContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 66, gtinParserRULE_ean14_appid)
 
@@ -4473,6 +4576,9 @@ func (s *Ean14_packagingContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ean14_packaging() (localctx IEan14_packagingContext) {
+	this := p
+	_ = this
+
 	localctx = NewEan14_packagingContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 68, gtinParserRULE_ean14_packaging)
 	var _la int
@@ -4591,6 +4697,9 @@ func (s *Ean14_productContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Ean14_product() (localctx IEan14_productContext) {
+	this := p
+	_ = this
+
 	localctx = NewEan14_productContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 70, gtinParserRULE_ean14_product)
 
@@ -4762,6 +4871,9 @@ func (s *Any_digitContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *gtinParser) Any_digit() (localctx IAny_digitContext) {
+	this := p
+	_ = this
+
 	localctx = NewAny_digitContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 72, gtinParserRULE_any_digit)
 	var _la int

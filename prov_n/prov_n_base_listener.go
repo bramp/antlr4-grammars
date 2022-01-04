@@ -1,4 +1,4 @@
-// Code generated from PROV_N.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from PROV_N.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package prov_n // PROV_N
 import "github.com/antlr/antlr4/runtime/Go/antlr"
@@ -46,11 +46,11 @@ func (s *BasePROV_NListener) EnterNamespaceDeclaration(ctx *NamespaceDeclaration
 // ExitNamespaceDeclaration is called when production namespaceDeclaration is exited.
 func (s *BasePROV_NListener) ExitNamespaceDeclaration(ctx *NamespaceDeclarationContext) {}
 
-// EnterNamespace is called when production namespace is entered.
-func (s *BasePROV_NListener) EnterNamespace(ctx *NamespaceContext) {}
+// EnterNamespace_ is called when production namespace_ is entered.
+func (s *BasePROV_NListener) EnterNamespace_(ctx *Namespace_Context) {}
 
-// ExitNamespace is called when production namespace is exited.
-func (s *BasePROV_NListener) ExitNamespace(ctx *NamespaceContext) {}
+// ExitNamespace_ is called when production namespace_ is exited.
+func (s *BasePROV_NListener) ExitNamespace_(ctx *Namespace_Context) {}
 
 // EnterBundle is called when production bundle is entered.
 func (s *BasePROV_NListener) EnterBundle(ctx *BundleContext) {}

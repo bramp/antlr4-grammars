@@ -1,4 +1,4 @@
-// Code generated from JPA.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from JPA.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package jpa
 
@@ -264,9 +264,6 @@ var serializedLexerAtn = []uint16{
 	2, 2, 588, 166, 3, 2, 2, 2, 5, 2, 567, 578, 3, 8, 2, 2,
 }
 
-var lexerDeserializer = antlr.NewATNDeserializer(nil)
-var lexerAtn = lexerDeserializer.DeserializeFromUInt16(serializedLexerAtn)
-
 var lexerChannelNames = []string{
 	"DEFAULT_TOKEN_CHANNEL", "HIDDEN",
 }
@@ -319,18 +316,20 @@ type JPALexer struct {
 	// TODO: EOF string
 }
 
-var lexerDecisionToDFA = make([]*antlr.DFA, len(lexerAtn.DecisionToState))
-
-func init() {
+// NewJPALexer produces a new lexer instance for the optional input antlr.CharStream.
+//
+// The *JPALexer instance produced may be reused by calling the SetInputStream method.
+// The initial lexer configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
+func NewJPALexer(input antlr.CharStream) *JPALexer {
+	l := new(JPALexer)
+	lexerDeserializer := antlr.NewATNDeserializer(nil)
+	lexerAtn := lexerDeserializer.DeserializeFromUInt16(serializedLexerAtn)
+	lexerDecisionToDFA := make([]*antlr.DFA, len(lexerAtn.DecisionToState))
 	for index, ds := range lexerAtn.DecisionToState {
 		lexerDecisionToDFA[index] = antlr.NewDFA(ds, index)
 	}
-}
-
-func NewJPALexer(input antlr.CharStream) *JPALexer {
-
-	l := new(JPALexer)
-
 	l.BaseLexer = antlr.NewBaseLexer(input)
 	l.Interpreter = antlr.NewLexerATNSimulator(l, lexerAtn, lexerDecisionToDFA, antlr.NewPredictionContextCache())
 

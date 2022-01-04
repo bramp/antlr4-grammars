@@ -1,4 +1,4 @@
-// Code generated from COOL.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from COOL.g4 by ANTLR 4.9.3. DO NOT EDIT.
 
 package cool // COOL
 import (
@@ -15,31 +15,30 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 49, 226,
+	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 49, 217,
 	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
 	3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 22, 10, 3, 3, 4, 3, 4,
 	3, 4, 3, 4, 5, 4, 28, 10, 4, 3, 4, 3, 4, 3, 4, 3, 4, 7, 4, 34, 10, 4, 12,
 	4, 14, 4, 37, 11, 4, 3, 4, 3, 4, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 7, 5, 46,
-	10, 5, 12, 5, 14, 5, 49, 11, 5, 7, 5, 51, 10, 5, 12, 5, 14, 5, 54, 11,
-	5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3,
-	5, 5, 5, 68, 10, 5, 5, 5, 70, 10, 5, 3, 6, 3, 6, 3, 6, 3, 6, 3, 7, 3, 7,
-	3, 7, 3, 7, 3, 7, 3, 7, 7, 7, 82, 10, 7, 12, 7, 14, 7, 85, 11, 7, 7, 7,
-	87, 10, 7, 12, 7, 14, 7, 90, 11, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7,
+	10, 5, 12, 5, 14, 5, 49, 11, 5, 5, 5, 51, 10, 5, 3, 5, 3, 5, 3, 5, 3, 5,
+	3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 3, 5, 5, 5, 65, 10, 5, 5, 5,
+	67, 10, 5, 3, 6, 3, 6, 3, 6, 3, 6, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7,
+	7, 7, 79, 10, 7, 12, 7, 14, 7, 82, 11, 7, 5, 7, 84, 10, 7, 3, 7, 3, 7,
 	3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7,
-	3, 7, 6, 7, 111, 10, 7, 13, 7, 14, 7, 112, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7,
-	3, 7, 3, 7, 3, 7, 5, 7, 123, 10, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7,
-	5, 7, 131, 10, 7, 7, 7, 133, 10, 7, 12, 7, 14, 7, 136, 11, 7, 3, 7, 3,
-	7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 6, 7, 150,
-	10, 7, 13, 7, 14, 7, 151, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3,
+	3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 6, 7, 105, 10, 7, 13, 7, 14, 7, 106, 3, 7,
+	3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 5, 7, 117, 10, 7, 3, 7, 3, 7,
+	3, 7, 3, 7, 3, 7, 3, 7, 5, 7, 125, 10, 7, 7, 7, 127, 10, 7, 12, 7, 14,
+	7, 130, 11, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3,
+	7, 3, 7, 3, 7, 6, 7, 144, 10, 7, 13, 7, 14, 7, 145, 3, 7, 3, 7, 3, 7, 3,
 	7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3,
-	7, 3, 7, 3, 7, 5, 7, 176, 10, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3,
+	7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 5, 7, 170, 10, 7, 3, 7, 3, 7, 3,
 	7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3,
-	7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 5, 7, 202, 10, 7, 3, 7, 3, 7, 3, 7, 3,
-	7, 3, 7, 3, 7, 7, 7, 210, 10, 7, 12, 7, 14, 7, 213, 11, 7, 7, 7, 215, 10,
-	7, 12, 7, 14, 7, 218, 11, 7, 3, 7, 7, 7, 221, 10, 7, 12, 7, 14, 7, 224,
-	11, 7, 3, 7, 2, 3, 12, 8, 2, 4, 6, 8, 10, 12, 2, 2, 2, 260, 2, 14, 3, 2,
-	2, 2, 4, 21, 3, 2, 2, 2, 6, 23, 3, 2, 2, 2, 8, 69, 3, 2, 2, 2, 10, 71,
-	3, 2, 2, 2, 12, 175, 3, 2, 2, 2, 14, 15, 5, 4, 3, 2, 15, 3, 3, 2, 2, 2,
+	7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 5, 7, 196, 10,
+	7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 7, 7, 204, 10, 7, 12, 7, 14, 7,
+	207, 11, 7, 5, 7, 209, 10, 7, 3, 7, 7, 7, 212, 10, 7, 12, 7, 14, 7, 215,
+	11, 7, 3, 7, 2, 3, 12, 8, 2, 4, 6, 8, 10, 12, 2, 2, 2, 251, 2, 14, 3, 2,
+	2, 2, 4, 21, 3, 2, 2, 2, 6, 23, 3, 2, 2, 2, 8, 66, 3, 2, 2, 2, 10, 68,
+	3, 2, 2, 2, 12, 169, 3, 2, 2, 2, 14, 15, 5, 4, 3, 2, 15, 3, 3, 2, 2, 2,
 	16, 17, 5, 6, 4, 2, 17, 18, 7, 3, 2, 2, 18, 19, 5, 4, 3, 2, 19, 22, 3,
 	2, 2, 2, 20, 22, 7, 2, 2, 3, 21, 16, 3, 2, 2, 2, 21, 20, 3, 2, 2, 2, 22,
 	5, 3, 2, 2, 2, 23, 24, 7, 12, 2, 2, 24, 27, 7, 33, 2, 2, 25, 26, 7, 18,
@@ -47,80 +46,74 @@ var parserATN = []uint16{
 	29, 3, 2, 2, 2, 29, 35, 7, 4, 2, 2, 30, 31, 5, 8, 5, 2, 31, 32, 7, 3, 2,
 	2, 32, 34, 3, 2, 2, 2, 33, 30, 3, 2, 2, 2, 34, 37, 3, 2, 2, 2, 35, 33,
 	3, 2, 2, 2, 35, 36, 3, 2, 2, 2, 36, 38, 3, 2, 2, 2, 37, 35, 3, 2, 2, 2,
-	38, 39, 7, 5, 2, 2, 39, 7, 3, 2, 2, 2, 40, 41, 7, 34, 2, 2, 41, 52, 7,
+	38, 39, 7, 5, 2, 2, 39, 7, 3, 2, 2, 2, 40, 41, 7, 34, 2, 2, 41, 50, 7,
 	6, 2, 2, 42, 47, 5, 10, 6, 2, 43, 44, 7, 7, 2, 2, 44, 46, 5, 10, 6, 2,
 	45, 43, 3, 2, 2, 2, 46, 49, 3, 2, 2, 2, 47, 45, 3, 2, 2, 2, 47, 48, 3,
-	2, 2, 2, 48, 51, 3, 2, 2, 2, 49, 47, 3, 2, 2, 2, 50, 42, 3, 2, 2, 2, 51,
-	54, 3, 2, 2, 2, 52, 50, 3, 2, 2, 2, 52, 53, 3, 2, 2, 2, 53, 55, 3, 2, 2,
-	2, 54, 52, 3, 2, 2, 2, 55, 56, 7, 8, 2, 2, 56, 57, 7, 9, 2, 2, 57, 58,
-	7, 33, 2, 2, 58, 59, 7, 4, 2, 2, 59, 60, 5, 12, 7, 2, 60, 61, 7, 5, 2,
-	2, 61, 70, 3, 2, 2, 2, 62, 63, 7, 34, 2, 2, 63, 64, 7, 9, 2, 2, 64, 67,
-	7, 33, 2, 2, 65, 66, 7, 35, 2, 2, 66, 68, 5, 12, 7, 2, 67, 65, 3, 2, 2,
-	2, 67, 68, 3, 2, 2, 2, 68, 70, 3, 2, 2, 2, 69, 40, 3, 2, 2, 2, 69, 62,
-	3, 2, 2, 2, 70, 9, 3, 2, 2, 2, 71, 72, 7, 34, 2, 2, 72, 73, 7, 9, 2, 2,
-	73, 74, 7, 33, 2, 2, 74, 11, 3, 2, 2, 2, 75, 76, 8, 7, 1, 2, 76, 77, 7,
-	34, 2, 2, 77, 88, 7, 6, 2, 2, 78, 83, 5, 12, 7, 2, 79, 80, 7, 7, 2, 2,
-	80, 82, 5, 12, 7, 2, 81, 79, 3, 2, 2, 2, 82, 85, 3, 2, 2, 2, 83, 81, 3,
-	2, 2, 2, 83, 84, 3, 2, 2, 2, 84, 87, 3, 2, 2, 2, 85, 83, 3, 2, 2, 2, 86,
-	78, 3, 2, 2, 2, 87, 90, 3, 2, 2, 2, 88, 86, 3, 2, 2, 2, 88, 89, 3, 2, 2,
-	2, 89, 91, 3, 2, 2, 2, 90, 88, 3, 2, 2, 2, 91, 176, 7, 8, 2, 2, 92, 93,
-	7, 16, 2, 2, 93, 94, 5, 12, 7, 2, 94, 95, 7, 23, 2, 2, 95, 96, 5, 12, 7,
-	2, 96, 97, 7, 13, 2, 2, 97, 98, 5, 12, 7, 2, 98, 99, 7, 15, 2, 2, 99, 176,
-	3, 2, 2, 2, 100, 101, 7, 24, 2, 2, 101, 102, 5, 12, 7, 2, 102, 103, 7,
-	21, 2, 2, 103, 104, 5, 12, 7, 2, 104, 105, 7, 22, 2, 2, 105, 176, 3, 2,
-	2, 2, 106, 110, 7, 4, 2, 2, 107, 108, 5, 12, 7, 2, 108, 109, 7, 3, 2, 2,
-	109, 111, 3, 2, 2, 2, 110, 107, 3, 2, 2, 2, 111, 112, 3, 2, 2, 2, 112,
-	110, 3, 2, 2, 2, 112, 113, 3, 2, 2, 2, 113, 114, 3, 2, 2, 2, 114, 115,
-	7, 5, 2, 2, 115, 176, 3, 2, 2, 2, 116, 117, 7, 20, 2, 2, 117, 118, 7, 34,
-	2, 2, 118, 119, 7, 9, 2, 2, 119, 122, 7, 33, 2, 2, 120, 121, 7, 35, 2,
-	2, 121, 123, 5, 12, 7, 2, 122, 120, 3, 2, 2, 2, 122, 123, 3, 2, 2, 2, 123,
-	134, 3, 2, 2, 2, 124, 125, 7, 7, 2, 2, 125, 126, 7, 34, 2, 2, 126, 127,
-	7, 9, 2, 2, 127, 130, 7, 33, 2, 2, 128, 129, 7, 35, 2, 2, 129, 131, 5,
-	12, 7, 2, 130, 128, 3, 2, 2, 2, 130, 131, 3, 2, 2, 2, 131, 133, 3, 2, 2,
-	2, 132, 124, 3, 2, 2, 2, 133, 136, 3, 2, 2, 2, 134, 132, 3, 2, 2, 2, 134,
-	135, 3, 2, 2, 2, 135, 137, 3, 2, 2, 2, 136, 134, 3, 2, 2, 2, 137, 138,
-	7, 17, 2, 2, 138, 176, 5, 12, 7, 22, 139, 140, 7, 25, 2, 2, 140, 141, 5,
-	12, 7, 2, 141, 149, 7, 28, 2, 2, 142, 143, 7, 34, 2, 2, 143, 144, 7, 9,
-	2, 2, 144, 145, 7, 33, 2, 2, 145, 146, 7, 36, 2, 2, 146, 147, 5, 12, 7,
-	2, 147, 148, 7, 3, 2, 2, 148, 150, 3, 2, 2, 2, 149, 142, 3, 2, 2, 2, 150,
-	151, 3, 2, 2, 2, 151, 149, 3, 2, 2, 2, 151, 152, 3, 2, 2, 2, 152, 153,
-	3, 2, 2, 2, 153, 154, 7, 26, 2, 2, 154, 176, 3, 2, 2, 2, 155, 156, 7, 27,
-	2, 2, 156, 176, 7, 33, 2, 2, 157, 158, 7, 44, 2, 2, 158, 176, 5, 12, 7,
-	19, 159, 160, 7, 19, 2, 2, 160, 176, 5, 12, 7, 18, 161, 162, 7, 29, 2,
-	2, 162, 176, 5, 12, 7, 10, 163, 164, 7, 6, 2, 2, 164, 165, 5, 12, 7, 2,
-	165, 166, 7, 8, 2, 2, 166, 176, 3, 2, 2, 2, 167, 176, 7, 34, 2, 2, 168,
-	176, 7, 32, 2, 2, 169, 176, 7, 31, 2, 2, 170, 176, 7, 30, 2, 2, 171, 176,
-	7, 14, 2, 2, 172, 173, 7, 34, 2, 2, 173, 174, 7, 35, 2, 2, 174, 176, 5,
-	12, 7, 3, 175, 75, 3, 2, 2, 2, 175, 92, 3, 2, 2, 2, 175, 100, 3, 2, 2,
-	2, 175, 106, 3, 2, 2, 2, 175, 116, 3, 2, 2, 2, 175, 139, 3, 2, 2, 2, 175,
-	155, 3, 2, 2, 2, 175, 157, 3, 2, 2, 2, 175, 159, 3, 2, 2, 2, 175, 161,
-	3, 2, 2, 2, 175, 163, 3, 2, 2, 2, 175, 167, 3, 2, 2, 2, 175, 168, 3, 2,
-	2, 2, 175, 169, 3, 2, 2, 2, 175, 170, 3, 2, 2, 2, 175, 171, 3, 2, 2, 2,
-	175, 172, 3, 2, 2, 2, 176, 222, 3, 2, 2, 2, 177, 178, 12, 17, 2, 2, 178,
-	179, 7, 39, 2, 2, 179, 221, 5, 12, 7, 18, 180, 181, 12, 16, 2, 2, 181,
-	182, 7, 40, 2, 2, 182, 221, 5, 12, 7, 17, 183, 184, 12, 15, 2, 2, 184,
-	185, 7, 37, 2, 2, 185, 221, 5, 12, 7, 16, 186, 187, 12, 14, 2, 2, 187,
-	188, 7, 38, 2, 2, 188, 221, 5, 12, 7, 15, 189, 190, 12, 13, 2, 2, 190,
-	191, 7, 41, 2, 2, 191, 221, 5, 12, 7, 14, 192, 193, 12, 12, 2, 2, 193,
-	194, 7, 42, 2, 2, 194, 221, 5, 12, 7, 13, 195, 196, 12, 11, 2, 2, 196,
-	197, 7, 43, 2, 2, 197, 221, 5, 12, 7, 12, 198, 201, 12, 27, 2, 2, 199,
-	200, 7, 10, 2, 2, 200, 202, 7, 33, 2, 2, 201, 199, 3, 2, 2, 2, 201, 202,
-	3, 2, 2, 2, 202, 203, 3, 2, 2, 2, 203, 204, 7, 11, 2, 2, 204, 205, 7, 34,
-	2, 2, 205, 216, 7, 6, 2, 2, 206, 211, 5, 12, 7, 2, 207, 208, 7, 7, 2, 2,
-	208, 210, 5, 12, 7, 2, 209, 207, 3, 2, 2, 2, 210, 213, 3, 2, 2, 2, 211,
-	209, 3, 2, 2, 2, 211, 212, 3, 2, 2, 2, 212, 215, 3, 2, 2, 2, 213, 211,
-	3, 2, 2, 2, 214, 206, 3, 2, 2, 2, 215, 218, 3, 2, 2, 2, 216, 214, 3, 2,
-	2, 2, 216, 217, 3, 2, 2, 2, 217, 219, 3, 2, 2, 2, 218, 216, 3, 2, 2, 2,
-	219, 221, 7, 8, 2, 2, 220, 177, 3, 2, 2, 2, 220, 180, 3, 2, 2, 2, 220,
-	183, 3, 2, 2, 2, 220, 186, 3, 2, 2, 2, 220, 189, 3, 2, 2, 2, 220, 192,
-	3, 2, 2, 2, 220, 195, 3, 2, 2, 2, 220, 198, 3, 2, 2, 2, 221, 224, 3, 2,
-	2, 2, 222, 220, 3, 2, 2, 2, 222, 223, 3, 2, 2, 2, 223, 13, 3, 2, 2, 2,
-	224, 222, 3, 2, 2, 2, 22, 21, 27, 35, 47, 52, 67, 69, 83, 88, 112, 122,
-	130, 134, 151, 175, 201, 211, 216, 220, 222,
+	2, 2, 2, 48, 51, 3, 2, 2, 2, 49, 47, 3, 2, 2, 2, 50, 42, 3, 2, 2, 2, 50,
+	51, 3, 2, 2, 2, 51, 52, 3, 2, 2, 2, 52, 53, 7, 8, 2, 2, 53, 54, 7, 9, 2,
+	2, 54, 55, 7, 33, 2, 2, 55, 56, 7, 4, 2, 2, 56, 57, 5, 12, 7, 2, 57, 58,
+	7, 5, 2, 2, 58, 67, 3, 2, 2, 2, 59, 60, 7, 34, 2, 2, 60, 61, 7, 9, 2, 2,
+	61, 64, 7, 33, 2, 2, 62, 63, 7, 35, 2, 2, 63, 65, 5, 12, 7, 2, 64, 62,
+	3, 2, 2, 2, 64, 65, 3, 2, 2, 2, 65, 67, 3, 2, 2, 2, 66, 40, 3, 2, 2, 2,
+	66, 59, 3, 2, 2, 2, 67, 9, 3, 2, 2, 2, 68, 69, 7, 34, 2, 2, 69, 70, 7,
+	9, 2, 2, 70, 71, 7, 33, 2, 2, 71, 11, 3, 2, 2, 2, 72, 73, 8, 7, 1, 2, 73,
+	74, 7, 34, 2, 2, 74, 83, 7, 6, 2, 2, 75, 80, 5, 12, 7, 2, 76, 77, 7, 7,
+	2, 2, 77, 79, 5, 12, 7, 2, 78, 76, 3, 2, 2, 2, 79, 82, 3, 2, 2, 2, 80,
+	78, 3, 2, 2, 2, 80, 81, 3, 2, 2, 2, 81, 84, 3, 2, 2, 2, 82, 80, 3, 2, 2,
+	2, 83, 75, 3, 2, 2, 2, 83, 84, 3, 2, 2, 2, 84, 85, 3, 2, 2, 2, 85, 170,
+	7, 8, 2, 2, 86, 87, 7, 16, 2, 2, 87, 88, 5, 12, 7, 2, 88, 89, 7, 23, 2,
+	2, 89, 90, 5, 12, 7, 2, 90, 91, 7, 13, 2, 2, 91, 92, 5, 12, 7, 2, 92, 93,
+	7, 15, 2, 2, 93, 170, 3, 2, 2, 2, 94, 95, 7, 24, 2, 2, 95, 96, 5, 12, 7,
+	2, 96, 97, 7, 21, 2, 2, 97, 98, 5, 12, 7, 2, 98, 99, 7, 22, 2, 2, 99, 170,
+	3, 2, 2, 2, 100, 104, 7, 4, 2, 2, 101, 102, 5, 12, 7, 2, 102, 103, 7, 3,
+	2, 2, 103, 105, 3, 2, 2, 2, 104, 101, 3, 2, 2, 2, 105, 106, 3, 2, 2, 2,
+	106, 104, 3, 2, 2, 2, 106, 107, 3, 2, 2, 2, 107, 108, 3, 2, 2, 2, 108,
+	109, 7, 5, 2, 2, 109, 170, 3, 2, 2, 2, 110, 111, 7, 20, 2, 2, 111, 112,
+	7, 34, 2, 2, 112, 113, 7, 9, 2, 2, 113, 116, 7, 33, 2, 2, 114, 115, 7,
+	35, 2, 2, 115, 117, 5, 12, 7, 2, 116, 114, 3, 2, 2, 2, 116, 117, 3, 2,
+	2, 2, 117, 128, 3, 2, 2, 2, 118, 119, 7, 7, 2, 2, 119, 120, 7, 34, 2, 2,
+	120, 121, 7, 9, 2, 2, 121, 124, 7, 33, 2, 2, 122, 123, 7, 35, 2, 2, 123,
+	125, 5, 12, 7, 2, 124, 122, 3, 2, 2, 2, 124, 125, 3, 2, 2, 2, 125, 127,
+	3, 2, 2, 2, 126, 118, 3, 2, 2, 2, 127, 130, 3, 2, 2, 2, 128, 126, 3, 2,
+	2, 2, 128, 129, 3, 2, 2, 2, 129, 131, 3, 2, 2, 2, 130, 128, 3, 2, 2, 2,
+	131, 132, 7, 17, 2, 2, 132, 170, 5, 12, 7, 22, 133, 134, 7, 25, 2, 2, 134,
+	135, 5, 12, 7, 2, 135, 143, 7, 28, 2, 2, 136, 137, 7, 34, 2, 2, 137, 138,
+	7, 9, 2, 2, 138, 139, 7, 33, 2, 2, 139, 140, 7, 36, 2, 2, 140, 141, 5,
+	12, 7, 2, 141, 142, 7, 3, 2, 2, 142, 144, 3, 2, 2, 2, 143, 136, 3, 2, 2,
+	2, 144, 145, 3, 2, 2, 2, 145, 143, 3, 2, 2, 2, 145, 146, 3, 2, 2, 2, 146,
+	147, 3, 2, 2, 2, 147, 148, 7, 26, 2, 2, 148, 170, 3, 2, 2, 2, 149, 150,
+	7, 27, 2, 2, 150, 170, 7, 33, 2, 2, 151, 152, 7, 44, 2, 2, 152, 170, 5,
+	12, 7, 19, 153, 154, 7, 19, 2, 2, 154, 170, 5, 12, 7, 18, 155, 156, 7,
+	29, 2, 2, 156, 170, 5, 12, 7, 10, 157, 158, 7, 6, 2, 2, 158, 159, 5, 12,
+	7, 2, 159, 160, 7, 8, 2, 2, 160, 170, 3, 2, 2, 2, 161, 170, 7, 34, 2, 2,
+	162, 170, 7, 32, 2, 2, 163, 170, 7, 31, 2, 2, 164, 170, 7, 30, 2, 2, 165,
+	170, 7, 14, 2, 2, 166, 167, 7, 34, 2, 2, 167, 168, 7, 35, 2, 2, 168, 170,
+	5, 12, 7, 3, 169, 72, 3, 2, 2, 2, 169, 86, 3, 2, 2, 2, 169, 94, 3, 2, 2,
+	2, 169, 100, 3, 2, 2, 2, 169, 110, 3, 2, 2, 2, 169, 133, 3, 2, 2, 2, 169,
+	149, 3, 2, 2, 2, 169, 151, 3, 2, 2, 2, 169, 153, 3, 2, 2, 2, 169, 155,
+	3, 2, 2, 2, 169, 157, 3, 2, 2, 2, 169, 161, 3, 2, 2, 2, 169, 162, 3, 2,
+	2, 2, 169, 163, 3, 2, 2, 2, 169, 164, 3, 2, 2, 2, 169, 165, 3, 2, 2, 2,
+	169, 166, 3, 2, 2, 2, 170, 213, 3, 2, 2, 2, 171, 172, 12, 17, 2, 2, 172,
+	173, 7, 39, 2, 2, 173, 212, 5, 12, 7, 18, 174, 175, 12, 16, 2, 2, 175,
+	176, 7, 40, 2, 2, 176, 212, 5, 12, 7, 17, 177, 178, 12, 15, 2, 2, 178,
+	179, 7, 37, 2, 2, 179, 212, 5, 12, 7, 16, 180, 181, 12, 14, 2, 2, 181,
+	182, 7, 38, 2, 2, 182, 212, 5, 12, 7, 15, 183, 184, 12, 13, 2, 2, 184,
+	185, 7, 41, 2, 2, 185, 212, 5, 12, 7, 14, 186, 187, 12, 12, 2, 2, 187,
+	188, 7, 42, 2, 2, 188, 212, 5, 12, 7, 13, 189, 190, 12, 11, 2, 2, 190,
+	191, 7, 43, 2, 2, 191, 212, 5, 12, 7, 12, 192, 195, 12, 27, 2, 2, 193,
+	194, 7, 10, 2, 2, 194, 196, 7, 33, 2, 2, 195, 193, 3, 2, 2, 2, 195, 196,
+	3, 2, 2, 2, 196, 197, 3, 2, 2, 2, 197, 198, 7, 11, 2, 2, 198, 199, 7, 34,
+	2, 2, 199, 208, 7, 6, 2, 2, 200, 205, 5, 12, 7, 2, 201, 202, 7, 7, 2, 2,
+	202, 204, 5, 12, 7, 2, 203, 201, 3, 2, 2, 2, 204, 207, 3, 2, 2, 2, 205,
+	203, 3, 2, 2, 2, 205, 206, 3, 2, 2, 2, 206, 209, 3, 2, 2, 2, 207, 205,
+	3, 2, 2, 2, 208, 200, 3, 2, 2, 2, 208, 209, 3, 2, 2, 2, 209, 210, 3, 2,
+	2, 2, 210, 212, 7, 8, 2, 2, 211, 171, 3, 2, 2, 2, 211, 174, 3, 2, 2, 2,
+	211, 177, 3, 2, 2, 2, 211, 180, 3, 2, 2, 2, 211, 183, 3, 2, 2, 2, 211,
+	186, 3, 2, 2, 2, 211, 189, 3, 2, 2, 2, 211, 192, 3, 2, 2, 2, 212, 215,
+	3, 2, 2, 2, 213, 211, 3, 2, 2, 2, 213, 214, 3, 2, 2, 2, 214, 13, 3, 2,
+	2, 2, 215, 213, 3, 2, 2, 2, 22, 21, 27, 35, 47, 50, 64, 66, 80, 83, 106,
+	116, 124, 128, 145, 169, 195, 205, 208, 211, 213,
 }
-var deserializer = antlr.NewATNDeserializer(nil)
-var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
-
 var literalNames = []string{
 	"", "';'", "'{'", "'}'", "'('", "','", "')'", "':'", "'@'", "'.'", "",
 	"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
@@ -139,21 +132,25 @@ var symbolicNames = []string{
 var ruleNames = []string{
 	"program", "programBlocks", "classDefine", "feature", "formal", "expression",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type COOLParser struct {
 	*antlr.BaseParser
 }
 
+// NewCOOLParser produces a new parser instance for the optional input antlr.TokenStream.
+//
+// The *COOLParser instance produced may be reused by calling the SetInputStream method.
+// The initial parser configuration is expensive to construct, and the object is not thread-safe;
+// however, if used within a Golang sync.Pool, the construction cost amortizes well and the
+// objects can be used in a thread-safe manner.
 func NewCOOLParser(input antlr.TokenStream) *COOLParser {
 	this := new(COOLParser)
-
+	deserializer := antlr.NewATNDeserializer(nil)
+	deserializedATN := deserializer.DeserializeFromUInt16(parserATN)
+	decisionToDFA := make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
 	this.BaseParser = antlr.NewBaseParser(input)
 
 	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
@@ -296,6 +293,9 @@ func (s *ProgramContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *COOLParser) Program() (localctx IProgramContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 0, COOLParserRULE_program)
 
@@ -459,6 +459,9 @@ func (s *EofContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *COOLParser) ProgramBlocks() (localctx IProgramBlocksContext) {
+	this := p
+	_ = this
+
 	localctx = NewProgramBlocksContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 2, COOLParserRULE_programBlocks)
 
@@ -611,6 +614,9 @@ func (s *ClassDefineContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *COOLParser) ClassDefine() (localctx IClassDefineContext) {
+	this := p
+	_ = this
+
 	localctx = NewClassDefineContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 4, COOLParserRULE_classDefine)
 	var _la int
@@ -859,6 +865,9 @@ func (s *PropertyContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *COOLParser) Feature() (localctx IFeatureContext) {
+	this := p
+	_ = this
+
 	localctx = NewFeatureContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 6, COOLParserRULE_feature)
 	var _la int
@@ -879,7 +888,7 @@ func (p *COOLParser) Feature() (localctx IFeatureContext) {
 		}
 	}()
 
-	p.SetState(67)
+	p.SetState(64)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 6, p.GetParserRuleContext()) {
 	case 1:
@@ -893,11 +902,11 @@ func (p *COOLParser) Feature() (localctx IFeatureContext) {
 			p.SetState(39)
 			p.Match(COOLParserT__3)
 		}
-		p.SetState(50)
+		p.SetState(48)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == COOLParserOBJECTID {
+		if _la == COOLParserOBJECTID {
 			{
 				p.SetState(40)
 				p.Formal()
@@ -921,32 +930,29 @@ func (p *COOLParser) Feature() (localctx IFeatureContext) {
 				_la = p.GetTokenStream().LA(1)
 			}
 
-			p.SetState(52)
-			p.GetErrorHandler().Sync(p)
-			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(53)
+			p.SetState(50)
 			p.Match(COOLParserT__5)
 		}
 		{
-			p.SetState(54)
+			p.SetState(51)
 			p.Match(COOLParserT__6)
 		}
 		{
-			p.SetState(55)
+			p.SetState(52)
 			p.Match(COOLParserTYPEID)
 		}
 		{
-			p.SetState(56)
+			p.SetState(53)
 			p.Match(COOLParserT__1)
 		}
 		{
-			p.SetState(57)
+			p.SetState(54)
 			p.expression(0)
 		}
 		{
-			p.SetState(58)
+			p.SetState(55)
 			p.Match(COOLParserT__2)
 		}
 
@@ -954,28 +960,28 @@ func (p *COOLParser) Feature() (localctx IFeatureContext) {
 		localctx = NewPropertyContext(p, localctx)
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(60)
+			p.SetState(57)
 			p.Match(COOLParserOBJECTID)
 		}
 		{
-			p.SetState(61)
+			p.SetState(58)
 			p.Match(COOLParserT__6)
 		}
 		{
-			p.SetState(62)
+			p.SetState(59)
 			p.Match(COOLParserTYPEID)
 		}
-		p.SetState(65)
+		p.SetState(62)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == COOLParserASSIGNMENT {
 			{
-				p.SetState(63)
+				p.SetState(60)
 				p.Match(COOLParserASSIGNMENT)
 			}
 			{
-				p.SetState(64)
+				p.SetState(61)
 				p.expression(0)
 			}
 
@@ -1053,6 +1059,9 @@ func (s *FormalContext) ExitRule(listener antlr.ParseTreeListener) {
 }
 
 func (p *COOLParser) Formal() (localctx IFormalContext) {
+	this := p
+	_ = this
+
 	localctx = NewFormalContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 8, COOLParserRULE_formal)
 
@@ -1074,15 +1083,15 @@ func (p *COOLParser) Formal() (localctx IFormalContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(69)
+		p.SetState(66)
 		p.Match(COOLParserOBJECTID)
 	}
 	{
-		p.SetState(70)
+		p.SetState(67)
 		p.Match(COOLParserT__6)
 	}
 	{
-		p.SetState(71)
+		p.SetState(68)
 		p.Match(COOLParserTYPEID)
 	}
 
@@ -2450,6 +2459,9 @@ func (p *COOLParser) Expression() (localctx IExpressionContext) {
 }
 
 func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
+	this := p
+	_ = this
+
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), _parentState)
@@ -2478,7 +2490,7 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 	var _alt int
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(173)
+	p.SetState(167)
 	p.GetErrorHandler().Sync(p)
 	switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 14, p.GetParserRuleContext()) {
 	case 1:
@@ -2487,47 +2499,44 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		_prevctx = localctx
 
 		{
-			p.SetState(74)
+			p.SetState(71)
 			p.Match(COOLParserOBJECTID)
 		}
 		{
-			p.SetState(75)
+			p.SetState(72)
 			p.Match(COOLParserT__3)
 		}
-		p.SetState(86)
+		p.SetState(81)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<COOLParserT__1)|(1<<COOLParserT__3)|(1<<COOLParserFALSE)|(1<<COOLParserIF)|(1<<COOLParserISVOID)|(1<<COOLParserLET)|(1<<COOLParserWHILE)|(1<<COOLParserCASE)|(1<<COOLParserNEW)|(1<<COOLParserNOT)|(1<<COOLParserTRUE)|(1<<COOLParserSTRING)|(1<<COOLParserINT))) != 0) || _la == COOLParserOBJECTID || _la == COOLParserINTEGER_NEGATIVE {
+		if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<COOLParserT__1)|(1<<COOLParserT__3)|(1<<COOLParserFALSE)|(1<<COOLParserIF)|(1<<COOLParserISVOID)|(1<<COOLParserLET)|(1<<COOLParserWHILE)|(1<<COOLParserCASE)|(1<<COOLParserNEW)|(1<<COOLParserNOT)|(1<<COOLParserTRUE)|(1<<COOLParserSTRING)|(1<<COOLParserINT))) != 0) || _la == COOLParserOBJECTID || _la == COOLParserINTEGER_NEGATIVE {
 			{
-				p.SetState(76)
+				p.SetState(73)
 				p.expression(0)
 			}
-			p.SetState(81)
+			p.SetState(78)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
 			for _la == COOLParserT__4 {
 				{
-					p.SetState(77)
+					p.SetState(74)
 					p.Match(COOLParserT__4)
 				}
 				{
-					p.SetState(78)
+					p.SetState(75)
 					p.expression(0)
 				}
 
-				p.SetState(83)
+				p.SetState(80)
 				p.GetErrorHandler().Sync(p)
 				_la = p.GetTokenStream().LA(1)
 			}
 
-			p.SetState(88)
-			p.GetErrorHandler().Sync(p)
-			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(89)
+			p.SetState(83)
 			p.Match(COOLParserT__5)
 		}
 
@@ -2536,31 +2545,31 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(90)
+			p.SetState(84)
 			p.Match(COOLParserIF)
 		}
 		{
-			p.SetState(91)
+			p.SetState(85)
 			p.expression(0)
 		}
 		{
-			p.SetState(92)
+			p.SetState(86)
 			p.Match(COOLParserTHEN)
 		}
 		{
-			p.SetState(93)
+			p.SetState(87)
 			p.expression(0)
 		}
 		{
-			p.SetState(94)
+			p.SetState(88)
 			p.Match(COOLParserELSE)
 		}
 		{
-			p.SetState(95)
+			p.SetState(89)
 			p.expression(0)
 		}
 		{
-			p.SetState(96)
+			p.SetState(90)
 			p.Match(COOLParserFI)
 		}
 
@@ -2569,23 +2578,23 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(98)
+			p.SetState(92)
 			p.Match(COOLParserWHILE)
 		}
 		{
-			p.SetState(99)
+			p.SetState(93)
 			p.expression(0)
 		}
 		{
-			p.SetState(100)
+			p.SetState(94)
 			p.Match(COOLParserLOOP)
 		}
 		{
-			p.SetState(101)
+			p.SetState(95)
 			p.expression(0)
 		}
 		{
-			p.SetState(102)
+			p.SetState(96)
 			p.Match(COOLParserPOOL)
 		}
 
@@ -2594,29 +2603,29 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(104)
+			p.SetState(98)
 			p.Match(COOLParserT__1)
 		}
-		p.SetState(108)
+		p.SetState(102)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<COOLParserT__1)|(1<<COOLParserT__3)|(1<<COOLParserFALSE)|(1<<COOLParserIF)|(1<<COOLParserISVOID)|(1<<COOLParserLET)|(1<<COOLParserWHILE)|(1<<COOLParserCASE)|(1<<COOLParserNEW)|(1<<COOLParserNOT)|(1<<COOLParserTRUE)|(1<<COOLParserSTRING)|(1<<COOLParserINT))) != 0) || _la == COOLParserOBJECTID || _la == COOLParserINTEGER_NEGATIVE {
 			{
-				p.SetState(105)
+				p.SetState(99)
 				p.expression(0)
 			}
 			{
-				p.SetState(106)
+				p.SetState(100)
 				p.Match(COOLParserT__0)
 			}
 
-			p.SetState(110)
+			p.SetState(104)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(112)
+			p.SetState(106)
 			p.Match(COOLParserT__2)
 		}
 
@@ -2625,83 +2634,83 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(114)
+			p.SetState(108)
 			p.Match(COOLParserLET)
 		}
 		{
-			p.SetState(115)
+			p.SetState(109)
 			p.Match(COOLParserOBJECTID)
 		}
 		{
-			p.SetState(116)
+			p.SetState(110)
 			p.Match(COOLParserT__6)
 		}
 		{
-			p.SetState(117)
+			p.SetState(111)
 			p.Match(COOLParserTYPEID)
 		}
-		p.SetState(120)
+		p.SetState(114)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == COOLParserASSIGNMENT {
 			{
-				p.SetState(118)
+				p.SetState(112)
 				p.Match(COOLParserASSIGNMENT)
 			}
 			{
-				p.SetState(119)
+				p.SetState(113)
 				p.expression(0)
 			}
 
 		}
-		p.SetState(132)
+		p.SetState(126)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for _la == COOLParserT__4 {
 			{
-				p.SetState(122)
+				p.SetState(116)
 				p.Match(COOLParserT__4)
 			}
 			{
-				p.SetState(123)
+				p.SetState(117)
 				p.Match(COOLParserOBJECTID)
 			}
 			{
-				p.SetState(124)
+				p.SetState(118)
 				p.Match(COOLParserT__6)
 			}
 			{
-				p.SetState(125)
+				p.SetState(119)
 				p.Match(COOLParserTYPEID)
 			}
-			p.SetState(128)
+			p.SetState(122)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
 			if _la == COOLParserASSIGNMENT {
 				{
-					p.SetState(126)
+					p.SetState(120)
 					p.Match(COOLParserASSIGNMENT)
 				}
 				{
-					p.SetState(127)
+					p.SetState(121)
 					p.expression(0)
 				}
 
 			}
 
-			p.SetState(134)
+			p.SetState(128)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(135)
+			p.SetState(129)
 			p.Match(COOLParserIN)
 		}
 		{
-			p.SetState(136)
+			p.SetState(130)
 			p.expression(20)
 		}
 
@@ -2710,53 +2719,53 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(137)
+			p.SetState(131)
 			p.Match(COOLParserCASE)
 		}
 		{
-			p.SetState(138)
+			p.SetState(132)
 			p.expression(0)
 		}
 		{
-			p.SetState(139)
+			p.SetState(133)
 			p.Match(COOLParserOF)
 		}
-		p.SetState(147)
+		p.SetState(141)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		for ok := true; ok; ok = _la == COOLParserOBJECTID {
 			{
-				p.SetState(140)
+				p.SetState(134)
 				p.Match(COOLParserOBJECTID)
 			}
 			{
-				p.SetState(141)
+				p.SetState(135)
 				p.Match(COOLParserT__6)
 			}
 			{
-				p.SetState(142)
+				p.SetState(136)
 				p.Match(COOLParserTYPEID)
 			}
 			{
-				p.SetState(143)
+				p.SetState(137)
 				p.Match(COOLParserCASE_ARROW)
 			}
 			{
-				p.SetState(144)
+				p.SetState(138)
 				p.expression(0)
 			}
 			{
-				p.SetState(145)
+				p.SetState(139)
 				p.Match(COOLParserT__0)
 			}
 
-			p.SetState(149)
+			p.SetState(143)
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 		}
 		{
-			p.SetState(151)
+			p.SetState(145)
 			p.Match(COOLParserESAC)
 		}
 
@@ -2765,11 +2774,11 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(153)
+			p.SetState(147)
 			p.Match(COOLParserNEW)
 		}
 		{
-			p.SetState(154)
+			p.SetState(148)
 			p.Match(COOLParserTYPEID)
 		}
 
@@ -2778,11 +2787,11 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(155)
+			p.SetState(149)
 			p.Match(COOLParserINTEGER_NEGATIVE)
 		}
 		{
-			p.SetState(156)
+			p.SetState(150)
 			p.expression(17)
 		}
 
@@ -2791,11 +2800,11 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(157)
+			p.SetState(151)
 			p.Match(COOLParserISVOID)
 		}
 		{
-			p.SetState(158)
+			p.SetState(152)
 			p.expression(16)
 		}
 
@@ -2804,11 +2813,11 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(159)
+			p.SetState(153)
 			p.Match(COOLParserNOT)
 		}
 		{
-			p.SetState(160)
+			p.SetState(154)
 			p.expression(8)
 		}
 
@@ -2817,15 +2826,15 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(161)
+			p.SetState(155)
 			p.Match(COOLParserT__3)
 		}
 		{
-			p.SetState(162)
+			p.SetState(156)
 			p.expression(0)
 		}
 		{
-			p.SetState(163)
+			p.SetState(157)
 			p.Match(COOLParserT__5)
 		}
 
@@ -2834,7 +2843,7 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(165)
+			p.SetState(159)
 			p.Match(COOLParserOBJECTID)
 		}
 
@@ -2843,7 +2852,7 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(166)
+			p.SetState(160)
 			p.Match(COOLParserINT)
 		}
 
@@ -2852,7 +2861,7 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(167)
+			p.SetState(161)
 			p.Match(COOLParserSTRING)
 		}
 
@@ -2861,7 +2870,7 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(168)
+			p.SetState(162)
 			p.Match(COOLParserTRUE)
 		}
 
@@ -2870,7 +2879,7 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(169)
+			p.SetState(163)
 			p.Match(COOLParserFALSE)
 		}
 
@@ -2879,21 +2888,21 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 		p.SetParserRuleContext(localctx)
 		_prevctx = localctx
 		{
-			p.SetState(170)
+			p.SetState(164)
 			p.Match(COOLParserOBJECTID)
 		}
 		{
-			p.SetState(171)
+			p.SetState(165)
 			p.Match(COOLParserASSIGNMENT)
 		}
 		{
-			p.SetState(172)
+			p.SetState(166)
 			p.expression(1)
 		}
 
 	}
 	p.GetParserRuleContext().SetStop(p.GetTokenStream().LT(-1))
-	p.SetState(220)
+	p.SetState(211)
 	p.GetErrorHandler().Sync(p)
 	_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 19, p.GetParserRuleContext())
 
@@ -2903,204 +2912,201 @@ func (p *COOLParser) expression(_p int) (localctx IExpressionContext) {
 				p.TriggerExitRuleEvent()
 			}
 			_prevctx = localctx
-			p.SetState(218)
+			p.SetState(209)
 			p.GetErrorHandler().Sync(p)
 			switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 18, p.GetParserRuleContext()) {
 			case 1:
 				localctx = NewMultiplyContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, COOLParserRULE_expression)
-				p.SetState(175)
+				p.SetState(169)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 15)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 15)", ""))
 				}
 				{
-					p.SetState(176)
+					p.SetState(170)
 					p.Match(COOLParserMULTIPLY)
 				}
 				{
-					p.SetState(177)
+					p.SetState(171)
 					p.expression(16)
 				}
 
 			case 2:
 				localctx = NewDivisionContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, COOLParserRULE_expression)
-				p.SetState(178)
+				p.SetState(172)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 14)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 14)", ""))
 				}
 				{
-					p.SetState(179)
+					p.SetState(173)
 					p.Match(COOLParserDIVISION)
 				}
 				{
-					p.SetState(180)
+					p.SetState(174)
 					p.expression(15)
 				}
 
 			case 3:
 				localctx = NewAddContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, COOLParserRULE_expression)
-				p.SetState(181)
+				p.SetState(175)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 13)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 13)", ""))
 				}
 				{
-					p.SetState(182)
+					p.SetState(176)
 					p.Match(COOLParserADD)
 				}
 				{
-					p.SetState(183)
+					p.SetState(177)
 					p.expression(14)
 				}
 
 			case 4:
 				localctx = NewMinusContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, COOLParserRULE_expression)
-				p.SetState(184)
+				p.SetState(178)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 12)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 12)", ""))
 				}
 				{
-					p.SetState(185)
+					p.SetState(179)
 					p.Match(COOLParserMINUS)
 				}
 				{
-					p.SetState(186)
+					p.SetState(180)
 					p.expression(13)
 				}
 
 			case 5:
 				localctx = NewLessThanContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, COOLParserRULE_expression)
-				p.SetState(187)
+				p.SetState(181)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 11)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 11)", ""))
 				}
 				{
-					p.SetState(188)
+					p.SetState(182)
 					p.Match(COOLParserLESS_THAN)
 				}
 				{
-					p.SetState(189)
+					p.SetState(183)
 					p.expression(12)
 				}
 
 			case 6:
 				localctx = NewLessEqualContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, COOLParserRULE_expression)
-				p.SetState(190)
+				p.SetState(184)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 10)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 10)", ""))
 				}
 				{
-					p.SetState(191)
+					p.SetState(185)
 					p.Match(COOLParserLESS_EQUAL)
 				}
 				{
-					p.SetState(192)
+					p.SetState(186)
 					p.expression(11)
 				}
 
 			case 7:
 				localctx = NewEqualContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, COOLParserRULE_expression)
-				p.SetState(193)
+				p.SetState(187)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 9)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 9)", ""))
 				}
 				{
-					p.SetState(194)
+					p.SetState(188)
 					p.Match(COOLParserEQUAL)
 				}
 				{
-					p.SetState(195)
+					p.SetState(189)
 					p.expression(10)
 				}
 
 			case 8:
 				localctx = NewMethodCallContext(p, NewExpressionContext(p, _parentctx, _parentState))
 				p.PushNewRecursionContext(localctx, _startState, COOLParserRULE_expression)
-				p.SetState(196)
+				p.SetState(190)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 25)) {
 					panic(antlr.NewFailedPredicateException(p, "p.Precpred(p.GetParserRuleContext(), 25)", ""))
 				}
-				p.SetState(199)
+				p.SetState(193)
 				p.GetErrorHandler().Sync(p)
 				_la = p.GetTokenStream().LA(1)
 
 				if _la == COOLParserT__7 {
 					{
-						p.SetState(197)
+						p.SetState(191)
 						p.Match(COOLParserT__7)
 					}
 					{
-						p.SetState(198)
+						p.SetState(192)
 						p.Match(COOLParserTYPEID)
 					}
 
 				}
 				{
-					p.SetState(201)
+					p.SetState(195)
 					p.Match(COOLParserT__8)
 				}
 				{
-					p.SetState(202)
+					p.SetState(196)
 					p.Match(COOLParserOBJECTID)
 				}
 				{
-					p.SetState(203)
+					p.SetState(197)
 					p.Match(COOLParserT__3)
 				}
-				p.SetState(214)
+				p.SetState(206)
 				p.GetErrorHandler().Sync(p)
 				_la = p.GetTokenStream().LA(1)
 
-				for (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<COOLParserT__1)|(1<<COOLParserT__3)|(1<<COOLParserFALSE)|(1<<COOLParserIF)|(1<<COOLParserISVOID)|(1<<COOLParserLET)|(1<<COOLParserWHILE)|(1<<COOLParserCASE)|(1<<COOLParserNEW)|(1<<COOLParserNOT)|(1<<COOLParserTRUE)|(1<<COOLParserSTRING)|(1<<COOLParserINT))) != 0) || _la == COOLParserOBJECTID || _la == COOLParserINTEGER_NEGATIVE {
+				if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<COOLParserT__1)|(1<<COOLParserT__3)|(1<<COOLParserFALSE)|(1<<COOLParserIF)|(1<<COOLParserISVOID)|(1<<COOLParserLET)|(1<<COOLParserWHILE)|(1<<COOLParserCASE)|(1<<COOLParserNEW)|(1<<COOLParserNOT)|(1<<COOLParserTRUE)|(1<<COOLParserSTRING)|(1<<COOLParserINT))) != 0) || _la == COOLParserOBJECTID || _la == COOLParserINTEGER_NEGATIVE {
 					{
-						p.SetState(204)
+						p.SetState(198)
 						p.expression(0)
 					}
-					p.SetState(209)
+					p.SetState(203)
 					p.GetErrorHandler().Sync(p)
 					_la = p.GetTokenStream().LA(1)
 
 					for _la == COOLParserT__4 {
 						{
-							p.SetState(205)
+							p.SetState(199)
 							p.Match(COOLParserT__4)
 						}
 						{
-							p.SetState(206)
+							p.SetState(200)
 							p.expression(0)
 						}
 
-						p.SetState(211)
+						p.SetState(205)
 						p.GetErrorHandler().Sync(p)
 						_la = p.GetTokenStream().LA(1)
 					}
 
-					p.SetState(216)
-					p.GetErrorHandler().Sync(p)
-					_la = p.GetTokenStream().LA(1)
 				}
 				{
-					p.SetState(217)
+					p.SetState(208)
 					p.Match(COOLParserT__5)
 				}
 
 			}
 
 		}
-		p.SetState(222)
+		p.SetState(213)
 		p.GetErrorHandler().Sync(p)
 		_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 19, p.GetParserRuleContext())
 	}
@@ -3123,6 +3129,9 @@ func (p *COOLParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex in
 }
 
 func (p *COOLParser) Expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+	this := p
+	_ = this
+
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 15)
